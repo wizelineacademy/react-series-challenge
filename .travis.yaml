@@ -1,0 +1,10 @@
+language: node_js
+sudo: false
+node_js: "8.7"
+dist: trusty
+cache: yarn
+
+notifications:
+  webhooks:
+    urls:
+      - https://wizeline-webhooks.appspot.com/travis/notifications
