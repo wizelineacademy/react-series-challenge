@@ -44,5 +44,14 @@ Use React Router and React 16 (already included - in the boilerplate)
 
 
 ## Restrictions
+- Don’t include extra dependencies (lodash, ramda)
+- Don’t include css loaders or css libraries (bootstrap, bulma, semantic)
+- Don’t use inline styles
+- Don’t use React State
+- Application must preserve the state for favorites. This means that if your refresh the page, it must display the ones that you previously selected
+- Constantly commit your code
 
-## Constraints
+## Code Review
+- Fork this project
+- You have until March 14th to open a PR against this repo (master branch)
+- If you send a commit after the deadline
