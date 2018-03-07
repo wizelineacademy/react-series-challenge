@@ -1,13 +1,4 @@
-## Challenge
-1. Giphy API
-2. Home ListView
-  - API Search
-3. Favorite ListView
-  - Local Search
-4. Details View
-  - Show GIF
-5. Unit Testing
-  - Coverage 75%
+# React Series Challenge
 
 The output of this challenge is to create a Giphy Client.
 
@@ -55,3 +46,18 @@ Use React Router and React 16 (already included - in the boilerplate)
 - Fork this project
 - You have until March 14th to open a PR against this repo (master branch)
 - If you send a commit after the deadline
+
+## TL;DR
+1. Use Giphy API
+2. Home ListView
+  - Trending API
+  - Search API
+3. Favorite ListView
+  - Redux State List
+  - Redux State Search
+4. Details View
+  - Show Selected GIF
+5. Unit Testing
+  - Coverage 75%
+6. Styling
+  - Use styled components
