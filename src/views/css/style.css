@@ -1,0 +1,5 @@
+html,
+body,
+body > div#root { height: 100%; }
+
+body { background: #131313; }
