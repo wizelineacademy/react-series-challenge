@@ -1,0 +1,1 @@
+export const FETCH_TREND = 'fetch_trend'
