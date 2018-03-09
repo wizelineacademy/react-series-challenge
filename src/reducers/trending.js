@@ -2,7 +2,7 @@ import trendingActions from '../actions/trending';
 
 const initialState = {};
 
-const trendingReducer = (state = initialState, action) => {
+const trendingGifs = (state = initialState, action) => {
   const { type, payload } = action;
 
   switch (type) {
@@ -14,4 +14,4 @@ const trendingReducer = (state = initialState, action) => {
   }
 };
 
-export default trendingReducer;
+export default trendingGifs;
