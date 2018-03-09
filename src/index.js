@@ -6,6 +6,9 @@ import Routes from './routes';
 import store from './store';
 import registerServiceWorker from './registerServiceWorker';
 
+import './views/css/reset.css';
+import './views/css/style.css';
+
 ReactDOM.render(
   <Provider store={store}>
     <Routes />

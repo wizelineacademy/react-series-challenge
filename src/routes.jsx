@@ -1,10 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import { PageWrapper } from './styled-components';
+import { PageWrapper } from './components';
 import { Home, Favorites, Details, Search, NotFound } from './views';
-import './views/css/reset.css';
-import './views/css/style.css';
 
 export default () => (
   <PageWrapper>
