@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import styled from 'styled-components';
 
 import { fetchTrending } from '../reducers/trending';
-import { Thumbnail } from '../components';
+import { Loader, Thumbnail } from '../components';
 
 const Grid = styled.div`
   position: relative;
@@ -14,10 +14,12 @@ class Home extends Component {
   static propTypes = {
     fetchTrending: PropTypes.func.isRequired,
     data: PropTypes.object,
+    loading: PropTypes.bool,
   };
 
   static defaultProps = {
     data: undefined,
+    loading: false,
   };
 
   componentDidMount = () => {
@@ -34,6 +36,8 @@ class Home extends Component {
     const gridHeights = [0, 0, 0, 0];
     for (let i = 0; i < data.length; i++) {
       const note = this[`gif-${data[i].id}`];
+      if (!note) continue;
+
       let minHeight = gridHeights[0];
       let minCol = 0;
 
@@ -48,13 +52,16 @@ class Home extends Component {
   }
 
   render() {
-    const { data } = this.props;
+    const { data, loading } = this.props;
     return (
       <div>
         <div>Home</div>
-        <Grid>
-          { data && data.data.map(({ id, title, images: { fixed_width_downsampled: { url, width, height } } }) => (<Thumbnail key={id} title={title} url={url} width={width} height={height} ref={(c) => { this[`gif-${id}`] = c; }} />)) }
-        </Grid>
+        { loading && <Loader /> }
+        { !loading && data && (
+          <Grid>
+            { data.data.map(({ id, title, images: { fixed_width_downsampled: { url, width, height } } }) => (<Thumbnail key={id} title={title} url={url} width={width} height={height} ref={(c) => { this[`gif-${id}`] = c; }} />)) }
+          </Grid>
+        ) }
       </div>
     );
   }
