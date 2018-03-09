@@ -6,9 +6,10 @@ import { getTrending } from '../services/api'
 export function* loadTrendingGifs() {
   try {
     const trendingResponse = yield call(getTrending);
-    yield put(trending.creators.REQUEST_TRENDING_GIFS_SUCCESS(trendingResponse));
+    console.log(trendingResponse.data);
+    yield put(trending.creators.requestTrendingGifsSuccess(trendingResponse.data));
   } catch (error) {
-    yield put(trending.creators.REQUEST_TRENDING_GIFS_FAIL(error));
+    yield put(trending.creators.requestTrendingGifsFail(error));
   }
 }
 
