@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-const WrapperStyled = styled.div`
+const NavigationWrapperStyled = styled.div`
   display: flex;
   justify-content: space-between;
 `;
 
-export { WrapperStyled };
+export { NavigationWrapperStyled };

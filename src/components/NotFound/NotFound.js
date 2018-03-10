@@ -1,11 +1,11 @@
 import React from "react";
-import { WrapperStyled } from "./NotFound.styled";
+import { NotFoundWrapperStyled } from "./NotFound.styled";
 import image from "./404.gif";
 
 const NotFound = () => (
-  <WrapperStyled>
+  <NotFoundWrapperStyled>
     <img src={image} alt="Not Found" />
-  </WrapperStyled>
+  </NotFoundWrapperStyled>
 );
 
 export default NotFound;

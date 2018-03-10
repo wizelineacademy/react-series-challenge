@@ -2,14 +2,14 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 import Search from "../Search";
-import { WrapperStyled } from "./Navigation.styled";
+import { NavigationWrapperStyled } from "./Navigation.styled";
 
 const Navigation = () => (
-  <WrapperStyled>
+  <NavigationWrapperStyled>
     <NavLink to="/">Home</NavLink>
     <NavLink to="/favs">Favorite</NavLink>
     <Search />
-  </WrapperStyled>
+  </NavigationWrapperStyled>
 );
 
 export default Navigation;

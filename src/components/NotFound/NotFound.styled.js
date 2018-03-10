@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const WrapperStyled = styled.div`
+const NotFoundWrapperStyled = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,4 +8,4 @@ const WrapperStyled = styled.div`
   height: 90vh;
 `;
 
-export { WrapperStyled };
+export { NotFoundWrapperStyled };
