@@ -8,7 +8,6 @@ import {fetchTrend} from '../actions'
 class Home extends Component {
 
   listGiphy = giphys => {
-    console.log(giphys)
     let list = []
     for (let giphy of giphys){
       list.push(
