@@ -1,8 +1,8 @@
-import {FETCH_TREND} from '../actions/types'
+import {FETCHED_TREND} from '../actions/types'
 
 export default function(state={}, action) {
   switch(action.type){
-    case FETCH_TREND:
+    case FETCHED_TREND:
       return {...state, 'giphys': [...action.payload] }
     default:
       return state
