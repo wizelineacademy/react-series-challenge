@@ -59,13 +59,13 @@ class Details extends Component {
   render() {
     const { data, loading, error } = this.props;
     if (error) return (<div>{error.message}</div>);
-    if (!data) return null;
+    if (!data && !loading) return null;
 
     return (
       <DetailsWrapper>
         <DetailsLeftSidebar>
           { loading && <Loader /> }
-          { !loading && <UserCard data={data.data.user} /> }
+          { !loading && data.data.user && <UserCard data={data.data.user} /> }
         </DetailsLeftSidebar>
         <DetailsContent>
           { loading && <Loader /> }
