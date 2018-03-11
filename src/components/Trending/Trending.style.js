@@ -9,12 +9,16 @@ export const GifList = styled.ul`
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  height: 1700px;
-  margin: 0 20% 5% 20%;
+  height: 2100px;
+  width: 1000px;
+  padding: 5px;
+  margin: auto;
 `
 
 export const GifItem = styled.div`
-  padding: 5px;
+  margin: 5px;
+  width: fit-content;
+  height: fit-content;
 `
 export const StyledTitle = styled.h1`
   color: white;
