@@ -2,14 +2,14 @@ import React from "react";
 import { Provider } from "react-redux";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import "./App.css";
 import store from "./state/store";
+import { AppWrapperStyled } from "./App.styled";
 import { Home, Navigation, Details, Favs, NotFound } from "./components";
 
 const App = () => (
   <Provider store={store}>
     <Router>
-      <div>
+      <AppWrapperStyled>
         <Navigation />
         <Switch>
           <Route exact path="/" component={Home} />
@@ -18,7 +18,7 @@ const App = () => (
           <Route component={NotFound} />
           <Route />
         </Switch>
-      </div>
+      </AppWrapperStyled>
     </Router>
   </Provider>
 );
