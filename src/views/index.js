@@ -1,3 +1,4 @@
+export { default as Template } from './template';
 export { default as Home } from './home';
 export { default as Favorites } from './favorites';
 export { default as Details } from './details';
