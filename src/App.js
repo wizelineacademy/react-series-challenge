@@ -8,6 +8,7 @@ import {
   Switch
 } from 'react-router-dom';
 import TrendingContainer from './containers/Trending'
+import FavoritesContainer from './containers/Favorites'
 
 class App extends Component {
   render() {
@@ -15,6 +16,7 @@ class App extends Component {
       <Provider store={store}>
         <div className="App">
           <Switch>
+            <Route path="/favorites" component={FavoritesContainer} />
             <Route path="/" component={TrendingContainer}  />
             <Redirect to={{
               pathname:"/",
