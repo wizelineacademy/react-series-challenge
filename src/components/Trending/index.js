@@ -19,9 +19,12 @@ class Trending extends Component {
         <GifList>
           {this.props.trendingGifs.map(gif => {
             return(
-              <GifItem>
-                <StyledButton>LIKE</StyledButton>
-                <img alt={gif.title} key={gif.id} src={gif.images.fixed_width_downsampled.url} />
+              <GifItem key={gif.id}>
+                <StyledButton
+                   onClick={() => this.props.setFavorite(gif)}>
+                   LIKE
+                 </StyledButton>
+                <img alt={gif.title} src={gif.images.fixed_width_downsampled.url} />
               </GifItem>
 
             )

@@ -1,6 +1,6 @@
 import trendingActions from '../actions/trending';
 
-const initialState = {};
+const initialState = [];
 
 const trendingGifs = (state = initialState, action) => {
   const { type, payload } = action;
