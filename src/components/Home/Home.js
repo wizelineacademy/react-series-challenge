@@ -11,21 +11,33 @@ class Home extends React.Component {
     this.props.getTrendingRequested();
   }
 
+  markFavorite(gifs, favs) {
+    console.log(favs)
+    return gifs.map(gif => ({
+      ...gif,
+      favorite: favs.some(fav => fav.id === gif.id)
+    }));
+  }
+
   render() {
-    const { fetching, gifs } = this.props;
+    const { fetching, gifs, favs } = this.props;
+    const marked = this.markFavorite(gifs, favs);
     return (
       <HomeWrapperStyled>
-        <TileList fetching={fetching} gifs={gifs} />
+        <TileList fetching={fetching} gifs={marked} />
       </HomeWrapperStyled>
     );
   }
 }
 
 const mapStateToProps = state => {
+  console.log(state);
+  const { favs } = state.favsReducer;
   const { fetching, gifs } = state.homeReducer;
   return {
     fetching,
-    gifs
+    gifs,
+    favs
   };
 };
 

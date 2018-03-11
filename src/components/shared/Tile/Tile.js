@@ -1,12 +1,28 @@
 import React from "react";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 
 import ImageLoader from "../ImageLoader";
-import { TileWrapperStyled } from "./Tile.styled";
+import actions from "../../Favs/FavsActions";
+import { TileWrapperStyled, FavoriteMarkStyled } from "./Tile.styled";
 
-const Tile = ({ gif, size }) => (
-  <TileWrapperStyled size={size}>
-    <ImageLoader image={gif} size={size} />
-  </TileWrapperStyled>
-);
+const Tile = ({ gif, size, toggleFavorite }) => {
+  return (
+    <TileWrapperStyled size={size}>
+      <FavoriteMarkStyled
+        onClick={() => toggleFavorite(gif)}
+        marked={gif.favorite}
+      >
+        ❤
+      </FavoriteMarkStyled>
+      <ImageLoader image={gif} size={size} />
+    </TileWrapperStyled>
+  );
+};
 
-export default Tile;
+const mapDispatchToProps = dispatch => {
+  const { toggleFavorite } = actions.creators;
+  return bindActionCreators({ toggleFavorite }, dispatch);
+};
+
+export default connect(null, mapDispatchToProps)(Tile);

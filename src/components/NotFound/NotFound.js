@@ -1,6 +1,7 @@
 import React from "react";
-import { NotFoundWrapperStyled } from "./NotFound.styled";
+
 import image from "./404.gif";
+import { NotFoundWrapperStyled } from "./NotFound.styled";
 
 const NotFound = () => (
   <NotFoundWrapperStyled>

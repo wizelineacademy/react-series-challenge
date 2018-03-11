@@ -11,6 +11,11 @@ const ImageTagStyled = styled.div`
   background-repeat: no-repeat;
   border-radius: 2px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  transition: 0.1s ease;
+
+  &:hover {
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.2);
+  }
 `;
 
 export { ImageTagStyled };
