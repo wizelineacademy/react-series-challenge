@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const ThumbnailWrapper = styled.section`
@@ -9,6 +10,7 @@ const ThumbnailWrapper = styled.section`
 
 export default class Thumbnail extends Component {
   static propTypes = {
+    id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     url: PropTypes.string.isRequired,
     width: PropTypes.string.isRequired,
@@ -29,10 +31,10 @@ export default class Thumbnail extends Component {
   }
 
   render() {
-    const { title, url, width, height } = this.props;
+    const { id, title, url, width, height } = this.props;
     return (
       <ThumbnailWrapper>
-        <img src={url} alt={title} width={width} height={height} />
+        <Link to={`/gifs/${id}`}><img src={url} alt={title} width={width} height={height} /></Link>
       </ThumbnailWrapper>
     );
   }

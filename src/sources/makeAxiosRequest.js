@@ -7,10 +7,7 @@ const makeAxiosRequest = (method, url, params, payload, headers) => {
   if (headers) request.headers = headers;
 
   return axios.request(request)
-    .catch(error =>
-      Promise.reject(!error.response
-        ? new Error('Unable to establish connection to server')
-        : error.response.data.errors[0]));
+    .catch(error => (Promise.reject(new Error(error.message))));
 };
 
 export default makeAxiosRequest;

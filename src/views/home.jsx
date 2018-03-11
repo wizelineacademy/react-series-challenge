@@ -59,7 +59,7 @@ class Home extends Component {
         { loading && <Loader /> }
         { !loading && data && (
           <Grid>
-            { data.data.map(({ id, title, images: { fixed_width_downsampled: { url, width, height } } }) => (<Thumbnail key={id} title={title} url={url} width={width} height={height} ref={(c) => { this[`gif-${id}`] = c; }} />)) }
+            { data.data.map(({ id, title, images: { fixed_width_downsampled: { url, width, height } } }) => (<Thumbnail key={id} id={id} title={title} url={url} width={width} height={height} ref={(c) => { this[`gif-${id}`] = c; }} />)) }
           </Grid>
         ) }
       </div>

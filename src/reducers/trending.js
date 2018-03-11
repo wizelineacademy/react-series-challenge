@@ -16,11 +16,9 @@ const setError = error => ({ type: SET_TRENDING_ERROR, payload: error });
 
 export const fetchTrending = () => (dispatch) => {
   dispatch(loadingTrending());
-  try {
-    getTrending().then(response => dispatch(loadTrending(response.data)));
-  } catch (error) {
-    dispatch(setError(error));
-  }
+  getTrending()
+    .then(response => dispatch(loadTrending(response.data)))
+    .catch(error => dispatch(setError(error)));
 };
 
 export default (state = initialState, action) => {
