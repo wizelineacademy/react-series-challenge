@@ -1,2 +1,6 @@
 export const FETCH_TREND = 'fetch_trend'
 export const FETCHED_TREND = 'fetched_trend'
+export const ADD_FAVORITE = 'add_favorite'
+export const ADDED_FAVORITE = 'added_favorite'
+export const DELETE_FAVORITE = 'delete_favorite'
+export const DELETED_FAVORITE = 'deleted_favorite'
