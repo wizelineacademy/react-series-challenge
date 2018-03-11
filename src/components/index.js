@@ -1,3 +1,4 @@
+export { default as Grid } from './grid';
 export { default as Loader } from './loader';
 export { default as Thumbnail } from './thumbnail';
 export { default as PageWrapper } from './page-wrapper';
