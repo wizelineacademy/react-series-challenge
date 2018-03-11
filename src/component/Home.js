@@ -3,11 +3,20 @@ import {connect} from 'react-redux'
 import SearchBar from './SearchBar'
 import ListGiphy from './ListGimphy'
 
-import {fetchTrend} from '../actions'
+import {fetchTrend, addFavorite, deleteFavorite} from '../actions'
 
 class Home extends Component {
 
-  listGiphy = giphys => {
+  handleOnclick (giphy) {
+    if (giphy.id in this.props.favorites) {
+      this.props.deleteFavorite(giphy)
+    }else{
+      this.props.addFavorite(giphy)
+    }
+    
+  }
+
+  listGiphy (giphys) {
     let list = []
     for (let giphy of giphys){
       list.push(
@@ -15,6 +24,7 @@ class Home extends Component {
           key={giphy.id}
           url={giphy.images.fixed_width.url}
           selected={giphy.id in this.props.favorites}
+          handleOnclick={() => this.handleOnclick(giphy)}
         />
       )
     }
@@ -45,4 +55,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps,{fetchTrend})(Home)
+export default connect(mapStateToProps,{fetchTrend, addFavorite, deleteFavorite})(Home)
