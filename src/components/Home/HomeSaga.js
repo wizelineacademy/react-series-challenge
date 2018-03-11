@@ -5,7 +5,7 @@ import { getTrendingGifs } from "../../api";
 
 function* loadTrendingGifs() {
   try {
-    const gifs = yield call(getTrendingGifs, {limit: 4});
+    const gifs = yield call(getTrendingGifs);
     yield put(actions.creators.getTrendingCompleted(gifs));
   } catch (error) {
     yield put(actions.creators.getTrendingFailed());

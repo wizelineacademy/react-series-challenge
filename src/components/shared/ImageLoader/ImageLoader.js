@@ -11,18 +11,15 @@ class ImageLoader extends React.Component {
 
     const holder = new Image();
     holder.src = image.images.fixed_width.url;
-    holder.onload = imageLoaded;
+    holder.onload = () => imageLoaded(image.id);
   }
 
   render() {
-    const { loaded, size } = this.props;
+    const { loaded, image, size } = this.props;
     const { url } = this.props.image.images.fixed_width;
 
-    return !loaded ? (
-      <ImageTagStyled size={size} />
-    ) : (
-      <ImageTagStyled src={url} size={size} />
-    );
+    if (!loaded[image.id]) return null;
+    return <ImageTagStyled src={url} size={size} />;
   }
 }
 

@@ -12,7 +12,6 @@ class Home extends React.Component {
   }
 
   markFavorite(gifs, favs) {
-    console.log(favs)
     return gifs.map(gif => ({
       ...gif,
       favorite: favs.some(fav => fav.id === gif.id)
@@ -31,7 +30,6 @@ class Home extends React.Component {
 }
 
 const mapStateToProps = state => {
-  console.log(state);
   const { favs } = state.favsReducer;
   const { fetching, gifs } = state.homeReducer;
   return {

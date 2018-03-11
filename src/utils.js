@@ -1,5 +1,16 @@
 const partial = (fn, first) => second => fn(first, second);
 
+const db = {
+  get(key) {
+    const encoded = window.localStorage.getItem(key);
+    return JSON.parse(encoded);
+  },
+  set(key, value) {
+    const encoded = JSON.stringify(value);
+    window.localStorage.setItem(key, encoded);
+  }
+};
+
 const getColor = () => {
   const colors = [
     "#55efc4",
@@ -17,15 +28,4 @@ const getColor = () => {
   return colors[index];
 };
 
-const db = {
-  get(key) {
-    const encoded = window.localStorage.getItem(key);
-    return JSON.parse(encoded);
-  },
-  set(key, value) {
-    const encoded = JSON.stringify(value);
-    window.localStorage.setItem(key, encoded);
-  }
-};
-
-export { partial, getColor, db };
+export { partial, db, getColor };
