@@ -10,7 +10,7 @@ const endPoints = {
   }
 }
 
-const searchGet = (q, limit=25, offset=0) => request.get(endPoints.search.get(q, limit, config.apiKey, offset))
+const searchGet = (q, limit=25, offset=0) => request.get(endPoints.search.get(q, limit, offset, config.apiKey))
 const search = {
   get: searchGet
 }
