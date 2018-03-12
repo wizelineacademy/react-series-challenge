@@ -2,10 +2,9 @@ import React, { Component } from 'react'
 import {
   TrendingWrapper,
   GifList,
-  GifItem,
   StyledTitle,
-  StyledButton
 } from './Trending.style'
+import GifItem from '../GifItem'
 
 class Trending extends Component {
 
@@ -13,20 +12,24 @@ class Trending extends Component {
     this.props.requestTrendingGifs()
   }
 
+  checkIfFavorite(id) {
+    const fav = this.props.favoriteGifs.find(gif => gif.id === id)
+    return (fav) ? true : false
+  }
+
   renderTrendingIfExist() {
     if(Array.isArray(this.props.trendingGifs)){
       return(
         <GifList>
           {this.props.trendingGifs.map(gif => {
+            const isFavorite = this.checkIfFavorite(gif.id)
             return(
-              <GifItem key={gif.id}>
-                <StyledButton
-                   onClick={() => this.props.setFavorite(gif)}>
-                   LIKE
-                 </StyledButton>
-                <img alt={gif.title} src={gif.images.fixed_width_downsampled.url} />
-              </GifItem>
-
+              <GifItem
+                key={gif.id}
+                gif={gif}
+                setFavorite={this.props.setFavorite}
+                isFavorite={isFavorite}
+              />
             )
           })}
         </GifList>
