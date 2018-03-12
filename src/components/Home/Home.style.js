@@ -29,12 +29,21 @@ export const SearchInput = styled.input`
   }
 `;
 
-export const SearchButton = styled.img`
-  background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+const Btn = styled.img`
   cursor: pointer;
   height: 64px;
-  margin-top: 50px;
   width: 64px;
+`;
+
+export const SearchBtn = Btn.extend`
+  background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+  margin-top: 50px;
+`;
+
+export const FavoriteBtn = Btn.extend`
+  background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
+  margin-top: 50px;
+  margin-left: 10px;
 `;
 
 export const TrendingGifCards = styled.div`

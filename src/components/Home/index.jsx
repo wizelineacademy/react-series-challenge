@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {HomeWrapper, SearchButton, SearchInput, SearchWrapper, TrendingGifCards} from './Home.style';
+import {FavoriteBtn, HomeWrapper, SearchBtn, SearchInput, SearchWrapper, TrendingGifCards} from './Home.style';
 import searchIcon from './search.png';
+import favoriteIcon from './heart-filled-white.png'
 import GifCard from "../GifCard";
 
 class Home extends React.Component {
@@ -14,7 +15,8 @@ class Home extends React.Component {
       <HomeWrapper>
         <SearchWrapper>
           <SearchInput placeholder={'Type to search cool GIFs'} />
-          <SearchButton src={searchIcon} />
+          <SearchBtn src={searchIcon} />
+          <FavoriteBtn src={favoriteIcon} />
         </SearchWrapper>
         <TrendingGifCards>
           {
