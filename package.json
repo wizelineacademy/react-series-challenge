@@ -33,7 +33,9 @@
     "eject": "react-scripts eject",
     "lint": "eslint ./",
     "test": "yarn lint && yarn jest",
-    "jest": "react-scripts test --env=jsdom --coverage"
+    "jest": "react-scripts test --env=jsdom --coverage",
+    "jest-watch": "react-scripts test --env=jsdom",
+    "deploy": "yarn build && firebase deploy"
   },
   "devDependencies": {
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
