@@ -22,8 +22,9 @@ export const GifItemWrapper = styled.div`
 `
 export const StyledTitle = styled.h1`
   color: white;
-  margin: 0;
+  margin: 0 0 10px 23%;
   padding: 10px;
+  width: 300px;
 `
 export const StyledButton = styled.div`
   position: absolute;

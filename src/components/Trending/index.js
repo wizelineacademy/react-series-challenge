@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import {
   TrendingWrapper,
-  GifList,
-  StyledTitle,
+  GifList
 } from './Trending.style'
 import GifItem from '../GifItem'
+import Menu from '../Menu'
 
 class Trending extends Component {
 
@@ -39,7 +39,7 @@ class Trending extends Component {
   render() {
     return(
       <TrendingWrapper>
-        <StyledTitle>Awesome Gif App</StyledTitle>
+        <Menu />
         {this.renderTrendingIfExist()}
       </TrendingWrapper>
     )

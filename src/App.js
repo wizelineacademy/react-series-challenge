@@ -7,6 +7,9 @@ import {
   Redirect,
   Switch
 } from 'react-router-dom';
+import {
+  StyledTitle
+} from './App.style'
 import TrendingContainer from './containers/Trending'
 import FavoritesContainer from './containers/Favorites'
 
@@ -15,6 +18,7 @@ class App extends Component {
     return (
       <Provider store={store}>
         <div className="App">
+          <StyledTitle>Awesome Gif App</StyledTitle>
           <Switch>
             <Route path="/favorites" component={FavoritesContainer} />
             <Route path="/" component={TrendingContainer}  />

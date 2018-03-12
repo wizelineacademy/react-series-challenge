@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import {
   TrendingWrapper,
-  StyledTitle,
   GifList,
 } from '../Trending/Trending.style'
 import GifItem from '../GifItem'
+import Menu from '../Menu'
 
 class Favorites extends Component {
 
@@ -33,7 +33,7 @@ class Favorites extends Component {
   render() {
     return(
       <TrendingWrapper>
-        <StyledTitle>Favorite Gifs</StyledTitle>
+        <Menu />
         {this.renderFavoritesIfExist()}
       </TrendingWrapper>
     )
