@@ -27,12 +27,16 @@ class Favorites extends Component {
   }
 
   render () {
-    return (
-      <div>
-        <SearchBar />
-        {this.listGiphy(this.props.favorites)}
-      </div>
-    )
+    if (Object.keys(this.props.favorites).length === 0) {
+      return <div>Your favorites list is empty...</div>
+    } else {
+      return (
+        <div>
+          <SearchBar />
+          {this.listGiphy(this.props.favorites)}
+        </div>
+      )
+    }
   }
 }
 
