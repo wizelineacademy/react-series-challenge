@@ -26,6 +26,7 @@ class Home extends Component {
           url={giphy.images.fixed_width.url}
           selected={giphy.id in this.props.favorites}
           handleOnclick={() => this.handleOnclick(giphy)}
+          showDetailButton
         />
       )
     }
@@ -37,7 +38,7 @@ class Home extends Component {
   }
 
   render () {
-    if (!this.props.giphys) {
+    if (this.props.giphys.lenght === 0) {
       return <div>Loading...........</div>
     }
     return (
@@ -51,7 +52,7 @@ class Home extends Component {
 
 function mapStateToProps(state) {
   return {
-    giphys : state.home.giphys,
+    giphys : state.gimphyList.giphys,
     favorites: state.favorites
   }
 }
