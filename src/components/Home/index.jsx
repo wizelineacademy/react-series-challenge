@@ -10,12 +10,13 @@ class Home extends React.Component {
   }
 
   render() {
-    const { giphies, onSearchChange, searchValue } = this.props
+    const { giphies, onSearchChange, onSearchSubmit, searchValue } = this.props
 
     return (
       <HomeWrapper>
-        <Header />
-        <SearchBar value={searchValue} onChange={onSearchChange} />
+        <Header>
+          <SearchBar value={searchValue} onChange={onSearchChange} onSubmit={onSearchSubmit} />
+        </Header>
         <Grid giphies={giphies} />
       </HomeWrapper>
     )
@@ -26,6 +27,7 @@ Home.propTypes = {
   giphies: arrayOf(object),
   initialSetup: func,
   onSearchChange: func.isRequired,
+  onSearchSubmit: func.isRequired,
   searchValue: string
 }
 Home.defaultProps = {

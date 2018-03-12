@@ -9,15 +9,15 @@ const mapStateToProps = ({ searchBar, grid, home }) => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  onSearchChange: event => {
-    const query = event.target.value
-    dispatch(changeSearchBar(query))
-    if (query !== '') {
-      dispatch(homeFetchSearchGifs(query))
-    } else {
+  onSearchChange: event => dispatch(changeSearchBar(event.target.value)),
+  onSearchSubmit: event => {
+    event.preventDefault()
+    const query = event.target.search.value
+    if (query === '') {
       dispatch(homeFetchInitialGifs())
+    } else {
+      dispatch(homeFetchSearchGifs(query))
     }
-
   },
   initialSetup: () => dispatch(homeFetchInitialGifs())
 })

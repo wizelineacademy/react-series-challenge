@@ -1,26 +1,41 @@
 import React from 'react'
+import { node } from 'prop-types'
 
-import { Title, NavWrapper, OptionWrapper, StyledLink } from './Header.style'
+import { ChildrenWrapper, Title, NavWrapper, Option, OptionsWrapper, StyledLink } from './Header.style'
 import { paths } from '../../utils'
 
-const Header = () => (
+const Header = ({ children }) => (
   <div>
     <Title>
       <h1>React - Giphy</h1>
     </Title>
     <NavWrapper>
-      <OptionWrapper>
-        <StyledLink to={paths.HOME}>
-          Search
-        </StyledLink>
-      </OptionWrapper>
-      <OptionWrapper>
-        <StyledLink to={paths.FAVORITES}>
-          Favorites
-        </StyledLink>
-      </OptionWrapper>
+      <OptionsWrapper>
+        <Option>
+          <StyledLink to={paths.HOME}>
+            Search
+          </StyledLink>
+        </Option>
+        <Option>
+          <StyledLink to={paths.FAVORITES}>
+            Favorites
+          </StyledLink>
+        </Option>
+      </OptionsWrapper>
+      {
+        children &&
+        <ChildrenWrapper>
+          {children}
+        </ChildrenWrapper>
+      }
     </NavWrapper>
   </div>
 )
 
+Header.propTypes = {
+  children: node,
+}
+Header.defaultProps = {
+  children: null
+}
 export default Header
