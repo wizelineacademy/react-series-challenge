@@ -10,7 +10,7 @@ const TileList = ({ gifs, fetching }) => {
 
   return (
     <TilesWrapperStyled>
-      {gifs.map(gif => <Tile key={gif.id} gif={gif} size={300} />)}
+      {gifs.map(gif => <Tile key={gif.id} gif={gif} />)}
     </TilesWrapperStyled>
   );
 };

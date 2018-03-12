@@ -7,19 +7,20 @@ import { ImageTagStyled } from "./ImageLoader.styled";
 
 class ImageLoader extends React.Component {
   componentDidMount() {
-    const { image, imageLoaded } = this.props;
+    const { image, original, imageLoaded } = this.props;
+    const { images } = image;
+    this.imageUrl = original ? images.original.url : images.fixed_width.url;
 
     const holder = new Image();
-    holder.src = image.images.fixed_width.url;
+    holder.src = this.imageUrl;
     holder.onload = () => imageLoaded(image.id);
   }
 
   render() {
-    const { loaded, image, size } = this.props;
-    const { url } = this.props.image.images.fixed_width;
+    const { loaded, image, width, height } = this.props;
 
     if (!loaded[image.id]) return null;
-    return <ImageTagStyled src={url} size={size} />;
+    return <ImageTagStyled src={this.imageUrl} width={width} height={height} />;
   }
 }
 
