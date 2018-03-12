@@ -1,5 +1,5 @@
 import React from 'react'
-import { arrayOf, object, func } from 'prop-types'
+import { arrayOf, object } from 'prop-types'
 
 import Card from '../Card'
 
@@ -8,10 +8,6 @@ const Grid = ({ giphies }) => (
 )
 
 Grid.propTypes = {
-  giphies: arrayOf(object),
-  initialCallback: func
-}
-Grid.defaultProps = {
-  initialCallback: () => {}
+  giphies: arrayOf(object)
 }
 export default Grid

@@ -10,12 +10,12 @@ const endPoints = {
   }
 }
 
-const searchGet = (q, limit=25, offset=0) => request.get(endPoints.search.get(q, limit, offset, config.apiKey))
+const searchGet = (q, limit=config.defaultLimit, offset=0) => request.get(endPoints.search.get(q, limit, offset, config.apiKey))
 const search = {
   get: searchGet
 }
 
-const trendingGet = (limit=25) => request.get(endPoints.trending.get(limit, config.apiKey))
+const trendingGet = (limit=config.defaultLimit) => request.get(endPoints.trending.get(limit, config.apiKey))
 const trending = {
   get: trendingGet
 }

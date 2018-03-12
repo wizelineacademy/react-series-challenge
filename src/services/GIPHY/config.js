@@ -9,7 +9,8 @@ const config = {
   },
   trending: {
     baseUrl: 'https://api.giphy.com/v1/gifs/trending?rating=G'
-  }
+  },
+  defaultLimit: 30
 }
 
 export default config
