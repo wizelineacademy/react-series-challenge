@@ -16,7 +16,7 @@ const Favs = ({ favs }) => {
       <EmptyFavsContainerStyled>
         <EmptyFavsImgStyled src={image} />
         <EmptyFavsMessageStyled>
-          There are no favorite to show. Go <Link to="">back</Link> and add some
+          empty favs collection, go <Link to="">home</Link> and click some hearts.
         </EmptyFavsMessageStyled>
       </EmptyFavsContainerStyled>
     );

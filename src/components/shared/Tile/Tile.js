@@ -9,7 +9,7 @@ import { getColor } from "../../../utils";
 import actions from "../../Favs/FavsActions";
 import { TileWrapperStyled, FavoriteMarkStyled } from "./Tile.styled";
 
-const Tile = ({ gif, original, favs, toggleFavorite }) => {
+const Tile = ({ gif, original, favs, loaded, toggleFavorite }) => {
   const dimensions = original ? gif.images.original : constants;
   const { width, height } = dimensions;
 
@@ -23,9 +23,11 @@ const Tile = ({ gif, original, favs, toggleFavorite }) => {
   return (
     <Link to={`/details/${gif.id}`}>
       <TileWrapperStyled color={getColor()} width={width} height={height}>
-        <FavoriteMarkStyled marked={gif.favorite} onClick={handleClick}>
-          ❤
-        </FavoriteMarkStyled>
+        {loaded[gif.id] && (
+          <FavoriteMarkStyled marked={gif.favorite} onClick={handleClick}>
+            ❤
+          </FavoriteMarkStyled>
+        )}
         <ImageLoader
           image={gif}
           width={width}
@@ -39,7 +41,8 @@ const Tile = ({ gif, original, favs, toggleFavorite }) => {
 
 const mapStateToProps = state => {
   const { favs } = state.favsReducer;
-  return { favs };
+  const { loaded } = state.imageLoaderReducer;
+  return { favs, loaded };
 };
 
 const mapDispatchToProps = dispatch => {

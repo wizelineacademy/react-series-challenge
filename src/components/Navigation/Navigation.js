@@ -2,12 +2,17 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 import Search from "../Search";
-import { NavigationWrapperStyled } from "./Navigation.styled";
+import {
+  NavigationWrapperStyled,
+  LinkWrapperStyled
+} from "./Navigation.styled";
 
 const Navigation = () => (
   <NavigationWrapperStyled>
-    <NavLink to="/">Home</NavLink>
-    <NavLink to="/favs">Favorite</NavLink>
+    <LinkWrapperStyled>
+      <NavLink to="/">home</NavLink>
+      <NavLink to="/favs">favs</NavLink>
+    </LinkWrapperStyled>
     <Search />
   </NavigationWrapperStyled>
 );

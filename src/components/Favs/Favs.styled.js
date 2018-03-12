@@ -14,10 +14,6 @@ const EmptyFavsImgStyled = styled.img`
 `;
 
 const EmptyFavsMessageStyled = styled.p`
-  color: #72470c;
-  font-weight: bold;
-  text-shadow: 0 2px white;
-
   & > a {
     text-decoration: none;
   }

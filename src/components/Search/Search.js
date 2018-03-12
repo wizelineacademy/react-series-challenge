@@ -1,3 +1,5 @@
 import React from "react";
 
-export default () => <input type="text" />;
+import { SearchBarStyled } from "./Search.styled";
+
+export default () => <SearchBarStyled type="search" />;

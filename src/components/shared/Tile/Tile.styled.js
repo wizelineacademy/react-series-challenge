@@ -19,7 +19,7 @@ const FavoriteMarkStyled = styled.label`
   position: absolute;
   right: 14px;
   top: 8px;
-  font-size: 1.5em;
+  font-size: 2em;
   color: ${props => (props.marked ? "red" : "white")};
   opacity: ${props => (props.marked ? 1 : 0.4)};
   transition: 0.1s ease-in;
@@ -32,6 +32,7 @@ const FavoriteMarkStyled = styled.label`
 
   &:active {
     opacity: 1;
+    transform: scale(1.1);
   }
 `;
 

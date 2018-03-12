@@ -4,7 +4,6 @@ import { bindActionCreators } from "redux";
 
 import actions from "./HomeActions";
 import { TileList } from "../shared";
-import { HomeWrapperStyled } from "./Home.styled";
 
 class Home extends React.Component {
   componentDidMount() {
@@ -21,11 +20,7 @@ class Home extends React.Component {
   render() {
     const { fetching, gifs, favs } = this.props;
     const marked = this.markFavorite(gifs, favs);
-    return (
-      <HomeWrapperStyled>
-        <TileList fetching={fetching} gifs={marked} />
-      </HomeWrapperStyled>
-    );
+    return <TileList fetching={fetching} gifs={marked} />;
   }
 }
 
