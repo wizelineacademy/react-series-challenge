@@ -2,8 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
-import { Router, Route} from 'react-router';
-import createBrowserHistory from 'history/createBrowserHistory'
+import { BrowserRouter, Route, Switch} from 'react-router-dom';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import createSagaMiddleware from 'redux-saga'
 
@@ -11,7 +10,9 @@ import reducers from './reducers';
 import rootSaga from './sagas'
 import registerServiceWorker from './registerServiceWorker';
 
+import Header from './component/Header'
 import Home from './component/Home'
+import Favorites from './component/Favorites'
 
 const sagaMiddleware = createSagaMiddleware()
 const createStoreWithMiddleware = composeWithDevTools(applyMiddleware(sagaMiddleware))(createStore)
@@ -20,9 +21,15 @@ sagaMiddleware.run(rootSaga)
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router history={createBrowserHistory()}>
-      <Route path="/" component={Home}/>
-    </Router>
+    <BrowserRouter>
+      <div>
+        <Route path="/" component={Header}/>
+        <Switch>
+          <Route path="/favorites" component={Favorites}/>
+          <Route path="/" component={Home}/>
+        </Switch>
+      </div>
+    </BrowserRouter>
   </Provider>
   , document.getElementById('root'));
 registerServiceWorker();
