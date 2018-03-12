@@ -3,9 +3,8 @@ import {
   TrendingWrapper,
   StyledTitle,
   GifList,
-  GifItem,
-  StyledButton
 } from '../Trending/Trending.style'
+import GifItem from '../GifItem'
 
 class Favorites extends Component {
 
@@ -15,11 +14,12 @@ class Favorites extends Component {
       <GifList>
         {this.props.favoriteGifs.map(gif => {
           return(
-            <GifItem>
-              <StyledButton>LIKE</StyledButton>
-              <img alt={gif.title} key={gif.id} src={gif.images.fixed_width_downsampled.url} />
-            </GifItem>
-
+            <GifItem
+              key={gif.id}
+              gif={gif}
+              setFavorite={this.props.setFavorite}
+              isFavorite={true}
+            />
           )
         })}
       </GifList>
