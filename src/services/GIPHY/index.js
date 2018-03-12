@@ -3,10 +3,13 @@ import config from './config'
 
 const endPoints = {
   search: {
-    get: (q, limit, offset, apiKey) => `${config.search.baseUrl}&api_key=${apiKey}&limit=${limit}&q=${q}&offset=${offset}`
+    get: (q, limit, offset, apiKey) => `${config.search.url}&api_key=${apiKey}&limit=${limit}&q=${q}&offset=${offset}`
   },
   trending: {
-    get: (limit, apiKey) => `${config.trending.baseUrl}&api_key=${apiKey}&limit=${limit}`
+    get: (limit, apiKey) => `${config.trending.url}&api_key=${apiKey}&limit=${limit}`
+  },
+  byId: {
+    get: (id, apiKey) => `${config.byId.url}${id}?api_key=${apiKey}`
   }
 }
 
@@ -19,7 +22,13 @@ const trendingGet = (limit=config.defaultLimit) => request.get(endPoints.trendin
 const trending = {
   get: trendingGet
 }
+
+const byIdGet = id => request.get(endPoints.byId.get(id, config.apiKey))
+const byId = {
+  get: byIdGet
+}
 export default {
+  byId,
   search,
   trending
 }
