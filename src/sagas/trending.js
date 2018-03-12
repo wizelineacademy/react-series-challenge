@@ -9,7 +9,6 @@ function * onFetchTrendingGifs () {
   } catch (error) {
     yield put(fetchTrendingGifsFail());
   }
-  console.log(trendingGifs);
   yield put(fetchTrendingGifsOk(trendingGifs));
 }
 
