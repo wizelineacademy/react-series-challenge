@@ -15,7 +15,7 @@ export const GifList = styled.ul`
   margin: auto;
 `
 
-export const GifItem = styled.div`
+export const GifItemWrapper = styled.div`
   margin: 5px;
   width: fit-content;
   height: fit-content;
@@ -27,7 +27,7 @@ export const StyledTitle = styled.h1`
 `
 export const StyledButton = styled.div`
   position: absolute;
-  color: white;
+  color: ${props => props.isFavorite ? 'red' : 'white'};
   cursor: pointer;
 
   :hover {
