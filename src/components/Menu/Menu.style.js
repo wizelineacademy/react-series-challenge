@@ -11,7 +11,11 @@ export const MenuWrapper = styled.div`
 export const MenuOption = styled.a`
   color: white;
   font-size: 20px;
-  border-bottom: solid 3px blueviolet;
-  cursor: pointer;
+  border-bottom: ${props => props.isActive ? 'solid 3px blueviolet' : 'none'};
   text-decoration: none;
+  padding: 5px;
+
+  :hover {
+    opacity: 0.85;
+  }
 `

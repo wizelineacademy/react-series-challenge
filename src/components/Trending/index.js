@@ -39,7 +39,7 @@ class Trending extends Component {
   render() {
     return(
       <TrendingWrapper>
-        <Menu />
+        <Menu location={this.props.location.pathname} />
         {this.renderTrendingIfExist()}
       </TrendingWrapper>
     )

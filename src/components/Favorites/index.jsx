@@ -33,7 +33,7 @@ class Favorites extends Component {
   render() {
     return(
       <TrendingWrapper>
-        <Menu />
+        <Menu location={this.props.location.pathname} />
         {this.renderFavoritesIfExist()}
       </TrendingWrapper>
     )

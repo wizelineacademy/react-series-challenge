@@ -4,11 +4,12 @@ import {
   MenuOption
 } from './Menu.style'
 
-const Menu = () => {
+const Menu = (props) => {
+  const { location } = props
   return(
     <MenuWrapper>
-      <MenuOption href="/">Home</MenuOption>
-      <MenuOption href="/favorites">Favorites</MenuOption>
+      <MenuOption href="/" isActive={location === '/'}>Home</MenuOption>
+      <MenuOption href="/favorites" isActive={location === '/favorites'}>Favorites</MenuOption>
     </MenuWrapper>
   )
 }
