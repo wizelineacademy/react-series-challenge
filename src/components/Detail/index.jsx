@@ -2,6 +2,7 @@ import React from 'react'
 import { func, object } from 'prop-types'
 
 import { Header } from '../'
+import { DetailWrapper, DetailInfo } from './Detail.style'
 
 class Detail extends React.Component {
   componentWillMount() {
@@ -14,18 +15,18 @@ class Detail extends React.Component {
     return (
       <div>
         <Header />
+        <DetailWrapper>
         { giph !== null &&
           <div>
-            <h1>{giph.title}</h1>
-            <p>Author: {giph.username}</p>
-            <p>Rating: {giph.rating}</p>
             <img src={giph.images.original.url} alt={giph.title}></img>
+            <h1>{giph.title}</h1>
           </div>
         }
         {
           giph === null &&
           <h1>Loading</h1>
         }
+        </DetailWrapper>
       </div>
     )
   }
