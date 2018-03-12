@@ -1,8 +1,9 @@
 import { connect } from 'react-redux'
 import favoritesActions from '../../actions/favorites'
-import Favorites from '../../components/Favorites'
+import GifList from '../../components/GifList'
 
 const mapStateToProps = (state) => ({
+  gifs: state.favoriteGifs,
   favoriteGifs: state.favoriteGifs
 })
 
@@ -13,6 +14,6 @@ const mapDispatchToProps = dispatch => ({
 const FavoritesContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(Favorites)
+)(GifList)
 
 export default FavoritesContainer

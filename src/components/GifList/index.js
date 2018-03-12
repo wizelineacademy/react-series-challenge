@@ -1,15 +1,18 @@
 import React, { Component } from 'react'
 import {
-  TrendingWrapper,
-  GifList
-} from './Trending.style'
+  GifWrapper,
+  GifStyledList
+} from './GifList.style'
 import GifItem from '../GifItem'
 import Menu from '../Menu'
+import SearchBar from '../SearchBar'
 
-class Trending extends Component {
+class GifList extends Component {
 
   componentWillMount() {
-    this.props.requestTrendingGifs()
+    if (this.props.requestGifs){
+      this.props.requestGifs()
+    }
   }
 
   checkIfFavorite(id) {
@@ -17,11 +20,11 @@ class Trending extends Component {
     return (fav) ? true : false
   }
 
-  renderTrendingIfExist() {
-    if(Array.isArray(this.props.trendingGifs)){
+  renderGifsIfExist() {
+    if(Array.isArray(this.props.gifs)){
       return(
-        <GifList>
-          {this.props.trendingGifs.map(gif => {
+        <GifStyledList>
+          {this.props.gifs.map(gif => {
             const isFavorite = this.checkIfFavorite(gif.id)
             return(
               <GifItem
@@ -32,18 +35,19 @@ class Trending extends Component {
               />
             )
           })}
-        </GifList>
+        </GifStyledList>
       )
     }
   }
   render() {
     return(
-      <TrendingWrapper>
+      <GifWrapper>
+        <SearchBar />
         <Menu location={this.props.location.pathname} />
-        {this.renderTrendingIfExist()}
-      </TrendingWrapper>
+        {this.renderGifsIfExist()}
+      </GifWrapper>
     )
   }
 }
 
-export default Trending
+export default GifList
