@@ -1,4 +1,4 @@
-import {FETCH_TREND, ADD_FAVORITE, DELETE_FAVORITE} from './types'
+import {FETCH_TREND, ADD_FAVORITE, DELETE_FAVORITE, FETCH_DETAILS} from './types'
 
 export function fetchTrend () {
   return ({
@@ -17,6 +17,13 @@ export function deleteFavorite (favorite) {
   return({
     type: DELETE_FAVORITE,
     favorite
+  })
+}
+
+export function fetchDetails (gimphyId) {
+  return({
+    type: FETCH_DETAILS,
+    gimphyId
   })
 }
 

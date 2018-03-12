@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
-import homeReducer from './home-reducer';
+import gimphyListReducer from './gimphyList-reducer';
 import favoritesReducer from './favorites-reducer'
 
 
 const rootReducer = combineReducers({
-  home: homeReducer,
+  gimphyList: gimphyListReducer,
   favorites: favoritesReducer
 });
 

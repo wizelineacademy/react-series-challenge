@@ -7,7 +7,9 @@ import {
   ADD_FAVORITE,
   ADDED_FAVORITE,
   DELETE_FAVORITE,
-  DELETED_FAVORITE
+  DELETED_FAVORITE,
+  FETCH_DETAILS,
+  FETCHED_DETAILS
 } from '../actions/types'
 
 const API_KEY = 'rqQsxVnE0vVW4UVFNqfjHpgjMijSundV'
@@ -47,6 +49,32 @@ function* deletingFromFavorites(action) {
   })
 }
 
+function* fetchDetail(action) {
+  const PATH = `/v1/gifs/${action.gimphyId}`
+  let actionCreator
+  try{
+    const response = yield axios.get(
+      `${BASE_URL}${PATH}`,
+      {
+        params: {
+          api_key: API_KEY
+        }
+      }
+    )
+    actionCreator = {
+      type: FETCHED_DETAILS,
+      payload: response.data.data
+    }
+  }catch(err){
+    const responseData = {}
+    actionCreator = {
+      type: FETCHED_DETAILS,
+      payload: responseData
+    }
+  }
+  yield put(actionCreator)
+}
+
 function* watchFetchTrend() {
   yield takeEvery(FETCH_TREND, fetchTrend)
 }
@@ -59,11 +87,16 @@ function* watchDeleteFavorite() {
   yield takeEvery(DELETE_FAVORITE, deletingFromFavorites)
 }
 
+function* watchFetchDetails() {
+  yield takeEvery(FETCH_DETAILS, fetchDetail)
+}
+
 export default function* rootSaga() {
   yield all([
     helloSaga(),
     watchFetchTrend(),
     watchAddFavorite(),
-    watchDeleteFavorite()
+    watchDeleteFavorite(),
+    watchFetchDetails()
   ])
 }
