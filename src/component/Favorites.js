@@ -21,6 +21,7 @@ class Favorites extends Component {
           url={giphys[key].images.fixed_width.url}
           selected
           handleOnclick={() => this.handleOnclick(giphys[key])}
+          showDetailButton
         />
       )
     }
