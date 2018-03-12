@@ -13,7 +13,7 @@ const favsReducer = (state = initialState, action) => {
       const { payload: gif } = action;
       const favs = gif.favorite
         ? state.favs.filter(fav => fav.id !== gif.id)
-        : [...state.favs, { ...gif, favorite: true }];
+        : [{ ...gif, favorite: true }, ...state.favs];
 
       db.set("favs", favs);
       return { favs };
