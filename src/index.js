@@ -13,6 +13,7 @@ import registerServiceWorker from './registerServiceWorker';
 import Header from './component/Header'
 import Home from './component/Home'
 import Favorites from './component/Favorites'
+import Detail from './component/Detail'
 
 const sagaMiddleware = createSagaMiddleware()
 const createStoreWithMiddleware = composeWithDevTools(applyMiddleware(sagaMiddleware))(createStore)
@@ -25,6 +26,7 @@ ReactDOM.render(
       <div>
         <Route path="/" component={Header}/>
         <Switch>
+          <Route path="/gimphy_details/:gimphyId" component={Detail} />
           <Route path="/favorites" component={Favorites}/>
           <Route path="/" component={Home}/>
         </Switch>
