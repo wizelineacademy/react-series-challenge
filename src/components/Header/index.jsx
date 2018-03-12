@@ -14,9 +14,6 @@ import { paths } from '../../utils'
 
 const Header = ({ children }) => (
   <div>
-    <Title>
-      <StyledH1>React - Giphy</StyledH1>
-    </Title>
     <NavWrapper>
       <OptionsWrapper>
         <Option>
@@ -30,12 +27,12 @@ const Header = ({ children }) => (
           </StyledLink>
         </Option>
       </OptionsWrapper>
-      {
-        children &&
-        <ChildrenWrapper>
-          {children}
-        </ChildrenWrapper>
-      }
+      <Title>
+        <StyledH1>React - Giphy</StyledH1>
+      </Title>
+      <ChildrenWrapper>
+        {children}
+      </ChildrenWrapper>
     </NavWrapper>
   </div>
 )

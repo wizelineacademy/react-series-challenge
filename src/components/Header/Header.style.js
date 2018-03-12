@@ -5,6 +5,9 @@ export const NavWrapper = styled.div`
   background-color: #333;
   display: flex;
   justify-content: space-between;
+  position: fixed;
+  top: 0;
+  width: 100%;
 `
 
 export const OptionsWrapper = styled.div`
@@ -12,10 +15,9 @@ export const OptionsWrapper = styled.div`
 `
 
 export const Option = styled.div`
-  color: white;
-  padding: 14px 20px;
-  text-decoration: none;
-  text-align: center;
+  display: flex;
+  font-size: large;
+  padding: 5px 30px;
 
   :hover {
     background-color: #DDD;
@@ -42,7 +44,7 @@ export const StyledLink = styled(Link)`
 `
 
 export const Title = styled.div`
-  color: black;
+  color: white;
   padding: 15px;
   text-align: center;
 `
