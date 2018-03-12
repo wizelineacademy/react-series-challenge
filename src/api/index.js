@@ -23,5 +23,6 @@ const trending = request(API_TRENDING);
 
 const searchGifs = ({ ...config }) => search(config);
 const getTrendingGifs = ({ ...config }) => trending(config);
+const getGifById = ({ id, ...config }) => request(`${API_ROOT}/${id}`)(config);
 
-export { searchGifs, getTrendingGifs };
+export { searchGifs, getTrendingGifs, getGifById };
