@@ -1,7 +1,8 @@
 import React from 'react'
 import { arrayOf, func, object, string } from 'prop-types'
 
-import { SearchBar, Grid } from '../'
+import { Header, SearchBar, Grid } from '../'
+import { HomeWrapper } from './Home.style'
 
 class Home extends React.Component {
   componentDidMount() {
@@ -12,10 +13,11 @@ class Home extends React.Component {
     const { giphies, onSearchChange, searchValue } = this.props
 
     return (
-      <div>
+      <HomeWrapper>
+        <Header />
         <SearchBar value={searchValue} onChange={onSearchChange} />
         <Grid giphies={giphies} />
-      </div>
+      </HomeWrapper>
     )
   }
 }

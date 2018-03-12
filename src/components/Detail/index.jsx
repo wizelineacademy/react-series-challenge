@@ -1,6 +1,8 @@
 import React from 'react'
 import { func, object } from 'prop-types'
 
+import { Header } from '../'
+
 class Detail extends React.Component {
   componentWillMount() {
     this.props.initialSetup(this.props.match.params.id)
@@ -11,6 +13,7 @@ class Detail extends React.Component {
 
     return (
       <div>
+        <Header />
         { giph !== null &&
           <div>
             <h1>{giph.title}</h1>

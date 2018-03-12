@@ -13,7 +13,7 @@ const config = {
   byId: {
     url: '/'
   },
-  defaultLimit: 30
+  defaultLimit: 24
 }
 
 export default config
