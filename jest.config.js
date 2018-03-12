@@ -5,6 +5,11 @@ module.exports = {
     '/node_modules/',
   ],
   testMatch: ['**/test/*Test.js'],
+  collectCoverageFrom: [
+    "**/*.{js,jsx}",
+    "!**/node_modules/**",
+    "!**/coverage/**"
+  ],
   coverageThreshold: {
     global: {
       statements: 75,
