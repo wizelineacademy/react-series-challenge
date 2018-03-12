@@ -4,7 +4,8 @@ import favoritesActions from '../../actions/favorites'
 import Trending from '../../components/Trending'
 
 const mapStateToProps = (state) => ({
-  trendingGifs: state.trendingGifs
+  trendingGifs: state.trendingGifs,
+  favoriteGifs: state.favoriteGifs
 })
 
 const mapDispatchToProps = dispatch => ({
