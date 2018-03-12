@@ -8,7 +8,7 @@ import { CardWrapper, StyledImg } from './Card.style'
 const Card = ({ images, title, onClick, id }) => (
   <CardWrapper>
     <Link to={`${paths.DETAIL}/${id}`}>
-      <StyledImg src={images.fixed_height_small.url} alt={title} onClick={onClick} />
+      <StyledImg src={images.fixed_height.url} alt={title} onClick={onClick} />
     </Link>
   </CardWrapper>
 )

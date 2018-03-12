@@ -1,13 +1,21 @@
 import React from 'react'
 import { node } from 'prop-types'
 
-import { ChildrenWrapper, Title, NavWrapper, Option, OptionsWrapper, StyledLink } from './Header.style'
+import {
+  ChildrenWrapper,
+  NavWrapper,
+  Option,
+  OptionsWrapper,
+  StyledH1,
+  StyledLink,
+  Title,
+} from './Header.style'
 import { paths } from '../../utils'
 
 const Header = ({ children }) => (
   <div>
     <Title>
-      <h1>React - Giphy</h1>
+      <StyledH1>React - Giphy</StyledH1>
     </Title>
     <NavWrapper>
       <OptionsWrapper>

@@ -43,6 +43,10 @@ export const StyledLink = styled(Link)`
 
 export const Title = styled.div`
   color: black;
-  padding: 0;
+  padding: 15px;
   text-align: center;
+`
+
+export const StyledH1 = styled.h1`
+  margin: 0;
 `
