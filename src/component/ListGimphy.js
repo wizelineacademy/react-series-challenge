@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import styled from 'styled-components'
+import {Link} from 'react-router-dom'
 
 const Image = styled.img`
   width: 100%;
@@ -24,14 +25,14 @@ const Span = styled.span`
   font-size: 10px;
   color: gray;
 `
-const Button = styled.button`
+const LinkStyled = styled(Link)`
+  text-decoration: none;
   border-radius: 3px;
   color: #fff;
   background-color: #5cb85c;
   width: 100%
   display: block
   margin: 10px 0;
-
 `
 
 class ListGimphy extends Component {
@@ -39,7 +40,7 @@ class ListGimphy extends Component {
   renderInfoMessage () {
     const message = this.props.selected 
       ? 'This Gimphy is save on favorites.To remove click on image'
-      : 'Click on Gimphy to save it as favorite'
+      : 'Click on the Gimphy to save it as favorite'
 
     return (
       <Span>{message}</Span>
@@ -52,7 +53,9 @@ class ListGimphy extends Component {
         <GroupWrapper>
           <Image src={this.props.url} alt="" onClick={() => this.props.handleOnclick()}/>
           {this.renderInfoMessage()}
-          <Button>View Gimphy detail</Button>
+          <LinkStyled to={`/gimphy_details/${this.props.gimphyId}`}>
+            View Gimphy detail
+          </LinkStyled>
         </GroupWrapper>
       </ItemWrapper>
       
