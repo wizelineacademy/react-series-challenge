@@ -1,5 +1,7 @@
 import { combineReducers } from 'redux';
-import red from './init'
+import search from './search'
+import trending from './trending';
 export default combineReducers({
-  red,
+  search,
+  trending
 });
