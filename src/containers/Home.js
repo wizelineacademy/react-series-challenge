@@ -1,13 +1,16 @@
 import Home from "../components/Home";
 import {fetchTrendingGifs} from "../actions/trending";
 import {connect} from "react-redux";
+import {toggleFavorite} from "../actions/favorite";
 
-const mapStateToProps = ({trending}) => ({
+const mapStateToProps = ({favorites, trending}) => ({
+  favorites,
   trending
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchTrendingGifs: () => dispatch(fetchTrendingGifs())
+  fetchTrendingGifs: () => dispatch(fetchTrendingGifs()),
+  toggleFavorite: (gif) => dispatch(toggleFavorite(gif))
 });
 
 const HomeContainer = connect(

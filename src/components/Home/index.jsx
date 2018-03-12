@@ -19,8 +19,15 @@ class Home extends React.Component {
         <TrendingGifCards>
           {
             this.props.trending.map((gif) => {
+              const isFavorite = !!this.props.favorites.find((favorite) => favorite.id === gif.id);
               return (
-                <GifCard url={gif.images.fixed_width_downsampled.url}  isFavorite={false} />
+                <GifCard
+                  gif={gif}
+                  isFavorite={isFavorite}
+                  imageSize={'small'}
+                  key={gif.id}
+                  toggleFavorite={this.props.toggleFavorite}
+                 />
               )
             })
           }
@@ -32,6 +39,7 @@ class Home extends React.Component {
 
 Home.propTypes = {
   fetchTrendingGifs: PropTypes.func.isRequired,
+  toggleFavorite: PropTypes.func.isRequired,
   trending: PropTypes.array.isRequired
 };
 
