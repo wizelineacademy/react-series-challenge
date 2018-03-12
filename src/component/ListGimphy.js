@@ -37,6 +37,16 @@ const LinkStyled = styled(Link)`
 
 class ListGimphy extends Component {
 
+  renderDetailButton () {
+    if (this.props.showDetailButton) {
+      return (
+        <LinkStyled to={`/gimphy_details/${this.props.gimphyId}`}>
+          View Gimphy detail
+        </LinkStyled>
+      )
+    }
+  }
+
   renderInfoMessage () {
     const message = this.props.selected 
       ? 'This Gimphy is save on favorites.To remove click on image'
@@ -53,9 +63,7 @@ class ListGimphy extends Component {
         <GroupWrapper>
           <Image src={this.props.url} alt="" onClick={() => this.props.handleOnclick()}/>
           {this.renderInfoMessage()}
-          <LinkStyled to={`/gimphy_details/${this.props.gimphyId}`}>
-            View Gimphy detail
-          </LinkStyled>
+          {this.renderDetailButton()}
         </GroupWrapper>
       </ItemWrapper>
       
