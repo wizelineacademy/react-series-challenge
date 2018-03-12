@@ -32,7 +32,6 @@ export const SearchInput = styled.input`
 const Btn = styled.img`
   cursor: pointer;
   height: 64px;
-  width: 64px;
 `;
 
 export const SearchBtn = Btn.extend`
