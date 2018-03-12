@@ -22,6 +22,7 @@ class Home extends Component {
       list.push(
         <ListGiphy
           key={giphy.id}
+          gimphyId={giphy.id}
           url={giphy.images.fixed_width.url}
           selected={giphy.id in this.props.favorites}
           handleOnclick={() => this.handleOnclick(giphy)}
