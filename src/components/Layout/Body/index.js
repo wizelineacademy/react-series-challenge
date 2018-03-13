@@ -1,11 +1,11 @@
 import React from 'react';
-import './styles.css';
+import StyledBody from './styles';
 
 const Body = ({ children }) => {
   return (
-    <div className="Body">
+    <StyledBody>
       { children }
-    </div>
+    </StyledBody>
   );
 };
 
