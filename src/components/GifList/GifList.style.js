@@ -19,13 +19,22 @@ export const GifItemWrapper = styled.div`
   margin: 5px;
   width: fit-content;
   height: fit-content;
-`
-export const StyledButton = styled.div`
-  position: absolute;
-  color: ${props => props.isFavorite ? 'red' : 'white'};
   cursor: pointer;
 
-  :hover {
-    color:red;
+  .favorite {
+    visibility: hidden;
   }
+
+  :hover {
+    .favorite {
+      visibility: visible;
+    }
+  }
+`
+export const FavoriteButton = styled.img`
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  margin: 5px 0 0 5px;
 `
