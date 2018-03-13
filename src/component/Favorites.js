@@ -47,6 +47,12 @@ class Favorites extends Component {
     this.setState({favorites: filteredFavs})
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.favorites !== this.props.favorites) {
+      this.setState({favorites: nextProps.favorites})
+    }
+  }
+
   render () {
     if (Object.keys(this.props.favorites).length === 0) {
       return <div>Your favorites list is empty...</div>
