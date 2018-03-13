@@ -4,7 +4,6 @@ import { MemoryRouter as Router } from "react-router-dom";
 import renderer from "react-test-renderer";
 import ReactDOM from "react-dom";
 import configureStore from "redux-mock-store";
-import { shallow } from "enzyme";
 import "jest-styled-components";
 import TileList from "../";
 

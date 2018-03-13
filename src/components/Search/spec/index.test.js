@@ -1,7 +1,6 @@
 import React from "react";
 import { Provider } from "react-redux";
 import renderer from "react-test-renderer";
-import ReactDOM from "react-dom";
 import { MemoryRouter as Router } from "react-router-dom";
 import configureStore from "redux-mock-store";
 import "jest-styled-components";

@@ -3,7 +3,6 @@ import { Provider } from "react-redux";
 import { MemoryRouter as Router } from "react-router-dom";
 import renderer from "react-test-renderer";
 import configureStore from "redux-mock-store";
-import { shallow } from "enzyme";
 import "jest-styled-components";
 import Tile from "../";
 
