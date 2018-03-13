@@ -13,10 +13,17 @@ exports[`<Details /> renders properly 1`] = `
   height: 400px;
   position: relative;
   margin: 5px;
-  -webkit-transition: 0.1s ease-in-out;
-  transition: 0.1s ease-in-out;
-  background: antiquewhite;
+  -webkit-transition: 0.1s ease-in-out -webkit-transform;
+  -webkit-transition: 0.1s ease-in-out transform;
+  transition: 0.1s ease-in-out transform;
   border-radius: 2px;
+  background: linear-gradient(to right,#eeeeee 8%,#dddddd 18%,#eeeeee 33%);
+  -webkit-animation: 1.5s bFrnLp linear infinite;
+  animation: 1.5s bFrnLp linear infinite;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  background-size: 800px 104px;
+  position: relative;
 }
 
 .c1:hover {
