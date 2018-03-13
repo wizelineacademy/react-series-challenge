@@ -19,6 +19,7 @@ export const BtnsWrapper =  styled.div`
 export const GifCardWrapper = styled.div`
   padding: 3px;
   position: relative;
+  width: fit-content;
   
   &:hover ${BtnsWrapper} {
     opacity: 1;
