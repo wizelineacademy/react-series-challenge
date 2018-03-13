@@ -4,7 +4,14 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import store from "./state/store";
 import { AppWrapperStyled } from "./App.styled";
-import { Home, Navigation, Details, Favs, NotFound } from "./components";
+import {
+  Home,
+  Navigation,
+  Details,
+  Favs,
+  SearchResults,
+  NotFound
+} from "./components";
 
 const App = () => (
   <Provider store={store}>
@@ -15,6 +22,7 @@ const App = () => (
           <Route exact path="/" component={Home} />
           <Route exact path="/favs" component={Favs} />
           <Route exact path="/details/:id" component={Details} />
+          <Route exact path="/search/:query" component={SearchResults} />
           <Route component={NotFound} />
           <Route />
         </Switch>

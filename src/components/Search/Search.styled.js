@@ -18,4 +18,6 @@ const SearchBarStyled = styled.input`
   }
 `;
 
-export { SearchBarStyled };
+const SearchFormStyled = styled.form``;
+
+export { SearchFormStyled, SearchBarStyled };
