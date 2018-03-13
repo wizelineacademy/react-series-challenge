@@ -13,6 +13,9 @@ const config = {
   byId: {
     url: '/'
   },
+  byIds: {
+    url: ''
+  },
   defaultLimit: 24
 }
 

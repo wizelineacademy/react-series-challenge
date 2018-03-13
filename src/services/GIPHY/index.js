@@ -10,6 +10,9 @@ const endPoints = {
   },
   byId: {
     get: (id, apiKey) => `${config.byId.url}${id}?api_key=${apiKey}`
+  },
+  byIds: {
+    get: (ids, apiKey) => `${config.byIds.url}?api_key=${apiKey}&ids=${ids}`
   }
 }
 
@@ -27,8 +30,15 @@ const byIdGet = id => request.get(endPoints.byId.get(id, config.apiKey))
 const byId = {
   get: byIdGet
 }
+
+const byIdsGet = ids => request.get(endPoints.byIds.get(ids, config.apiKey))
+const byIds = {
+  get: byIdsGet
+}
+
 export default {
   byId,
+  byIds,
   search,
   trending
 }

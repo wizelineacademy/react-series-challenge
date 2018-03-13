@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import Home from '../../components/Home'
 import { changeSearchBar, homeFetchInitialGifs, homeFetchSearchGifs } from '../../actions'
 
-const mapStateToProps = ({ searchBar, grid, home }) => ({
+const mapStateToProps = ({ searchBar, home }) => ({
   searchValue: searchBar.value,
   giphies: home.giphies
 })

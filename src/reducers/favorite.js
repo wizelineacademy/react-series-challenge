@@ -1,12 +1,18 @@
-import { FAVORITE_CLICK } from '../actions'
+import { FAVORITE_CLICK, FAVORITE_FETCH_INITIAL_GIFS_SUCCESS } from '../actions'
 import { updateFavoritesArray, getFavsFromStorage } from '../utils'
 
 const initialState = {
-  favorites:  getFavsFromStorage()
+  favorites:  getFavsFromStorage(),
+  giphies: []
 }
 
 const favorite = (state = initialState, action) => {
   switch (action.type) {
+    case FAVORITE_FETCH_INITIAL_GIFS_SUCCESS:
+      return {
+        ...state,
+        giphies: action.payload
+      }
     case FAVORITE_CLICK:
       const favorites = updateFavoritesArray(action.payload.id, state.favorites.slice())
 
