@@ -9,6 +9,7 @@
     "react/jsx-filename-extension": [ 1, { "extensions": [".js", ".jsx"] } ],
     "react/forbid-prop-types": 0,
     "import/prefer-default-export": 0,
+    "jsx-a11y/href-no-hash": 0,
     "jsx-a11y/anchor-is-valid": [
       "error",
       {
@@ -24,6 +25,7 @@
     "object-curly-newline": 0,
     "object-property-newline": 0,
     "react/no-find-dom-node": 0,
+    "import/no-extraneous-dependencies": 0,
   },
   "env": {
     "browser": true,
