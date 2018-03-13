@@ -15,7 +15,7 @@ exports[`<Details /> renders properly 1`] = `
   margin: 5px;
   -webkit-transition: 0.1s ease-in-out;
   transition: 0.1s ease-in-out;
-  background: #fab1a0;
+  background: antiquewhite;
   border-radius: 2px;
 }
 
@@ -86,7 +86,6 @@ exports[`<Details /> renders properly 1`] = `
   >
     <div
       className="c1"
-      color="#fab1a0"
       height={400}
       width={400}
     >

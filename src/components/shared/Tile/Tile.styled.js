@@ -6,7 +6,7 @@ const TileWrapperStyled = styled.div`
   position: relative;
   margin: 5px;
   transition: 0.1s ease-in-out;
-  background: ${props => props.color};
+  background: antiquewhite;
   border-radius: 2px;
 
   &:hover {

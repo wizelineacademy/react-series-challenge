@@ -15,7 +15,7 @@ exports[`<Home /> renders properly 1`] = `
   margin: 5px;
   -webkit-transition: 0.1s ease-in-out;
   transition: 0.1s ease-in-out;
-  background: #55efc4;
+  background: antiquewhite;
   border-radius: 2px;
 }
 
@@ -77,7 +77,6 @@ exports[`<Home /> renders properly 1`] = `
   >
     <div
       className="c1"
-      color="#55efc4"
       height={300}
       width={300}
     >

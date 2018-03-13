@@ -15,7 +15,7 @@ exports[`<Tile /> mark a gif as favorite before rendering 1`] = `
   margin: 5px;
   -webkit-transition: 0.1s ease-in-out;
   transition: 0.1s ease-in-out;
-  background: red;
+  background: antiquewhite;
   border-radius: 2px;
 }
 
@@ -59,7 +59,6 @@ exports[`<Tile /> mark a gif as favorite before rendering 1`] = `
 >
   <div
     className="c0"
-    color="red"
     height={300}
     width={300}
   >
@@ -94,7 +93,7 @@ exports[`<Tile /> render the original image 1`] = `
   margin: 5px;
   -webkit-transition: 0.1s ease-in-out;
   transition: 0.1s ease-in-out;
-  background: red;
+  background: antiquewhite;
   border-radius: 2px;
 }
 
@@ -138,7 +137,6 @@ exports[`<Tile /> render the original image 1`] = `
 >
   <div
     className="c0"
-    color="red"
     height={400}
     width={400}
   >
@@ -173,7 +171,7 @@ exports[`<Tile /> render the small image 1`] = `
   margin: 5px;
   -webkit-transition: 0.1s ease-in-out;
   transition: 0.1s ease-in-out;
-  background: red;
+  background: antiquewhite;
   border-radius: 2px;
 }
 
@@ -217,7 +215,6 @@ exports[`<Tile /> render the small image 1`] = `
 >
   <div
     className="c0"
-    color="red"
     height={300}
     width={300}
   >
@@ -245,7 +242,7 @@ exports[`<Tile /> renders properly 1`] = `
   margin: 5px;
   -webkit-transition: 0.1s ease-in-out;
   transition: 0.1s ease-in-out;
-  background: red;
+  background: antiquewhite;
   border-radius: 2px;
 }
 
@@ -261,7 +258,6 @@ exports[`<Tile /> renders properly 1`] = `
 >
   <div
     className="c0"
-    color="red"
     height={400}
     width={400}
   />
@@ -283,7 +279,7 @@ exports[`<Tile /> renders the heart mark 1`] = `
   margin: 5px;
   -webkit-transition: 0.1s ease-in-out;
   transition: 0.1s ease-in-out;
-  background: red;
+  background: antiquewhite;
   border-radius: 2px;
 }
 
@@ -327,7 +323,6 @@ exports[`<Tile /> renders the heart mark 1`] = `
 >
   <div
     className="c0"
-    color="red"
     height={400}
     width={400}
   >

@@ -5,11 +5,10 @@ import { bindActionCreators } from "redux";
 
 import constants from "./TileConstants";
 import ImageLoader from "../ImageLoader";
-import { getColor } from "../../../utils";
 import actions from "../../Favs/FavsActions";
 import { TileWrapperStyled, FavoriteMarkStyled } from "./Tile.styled";
 
-const Tile = ({ gif, original, favs, loaded, color, toggleFavorite }) => {
+const Tile = ({ gif, original, favs, loaded, toggleFavorite }) => {
   const dimensions = original ? gif.images.original : constants;
   const { width, height } = dimensions;
 
@@ -22,11 +21,7 @@ const Tile = ({ gif, original, favs, loaded, color, toggleFavorite }) => {
 
   return (
     <Link to={`/details/${gif.id}`}>
-      <TileWrapperStyled
-        color={color || getColor()}
-        width={width}
-        height={height}
-      >
+      <TileWrapperStyled width={width} height={height}>
         {loaded[gif.id] && (
           <FavoriteMarkStyled marked={gif.favorite} onClick={handleClick}>
             ❤
