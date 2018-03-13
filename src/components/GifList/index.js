@@ -40,9 +40,11 @@ class GifList extends Component {
     }
   }
   render() {
+    const { location } = this.props
+    const fav = location.pathname.split('/')[1];
     return(
       <GifWrapper>
-        <SearchBar />
+        <SearchBar searchGifs={(fav !== 'favorites') ? this.props.searchGifs : null}/>
         <Menu location={this.props.location.pathname} />
         {this.renderGifsIfExist()}
       </GifWrapper>
