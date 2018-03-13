@@ -36,4 +36,19 @@ describe("<SearchResults />", () => {
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it("renders a message when empty", () => {
+    const init = Object.assign(initialState);
+    init.searchReducer.gifs = [];
+    init.searchReducer.loaded = true;
+    const store = mockStore(init);
+    ReactDOM.createPortal = node => node;
+    const component = renderer.create(
+      <Provider store={store}>
+        <SearchResults />
+      </Provider>
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

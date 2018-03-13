@@ -1,5 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<SearchResults /> renders a message when empty 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+<div
+  className="c0"
+>
+  <p>
+    no gif matched your query, search again
+  </p>
+</div>
+`;
+
 exports[`<SearchResults /> renders properly 1`] = `
 .c0 {
   position: absolute;
