@@ -1,11 +1,10 @@
 import React from "react";
 
-import image from "./404.gif";
 import { NotFoundWrapperStyled } from "./NotFound.styled";
 
 const NotFound = () => (
   <NotFoundWrapperStyled>
-    <img src={image} alt="Not Found" />
+    <p>Awesome, you've earned a 404. Tell your friends...</p>
   </NotFoundWrapperStyled>
 );
 
