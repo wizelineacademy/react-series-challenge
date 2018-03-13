@@ -16,15 +16,33 @@ const defaultOptions = {
  *   paremeter2: value2
  * }
  */
-const buildQueryParamsString = params => Object.keys(params)
+export const buildQueryParamsString = params => Object.keys(params)
   .map(key => `${window.encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
   .join('&');
 
-export const fetcher = (path, options) => {
+export const fetcher = async (path, options = { queryParams: {} }) => {
   // spreading to separate queryParams from required fetch options
-  const { queryParams, ...finalOptions } = { ...defaultOptions, ...options };
-  return window.fetch(
-    `${baseUrl}${path}?${buildQueryParamsString(queryParams)}`,
-    finalOptions
-  ).then(res => res.json());
+  const { queryParams, ...finalOptions } = {
+    ...defaultOptions,
+    ...options,
+    queryParams: {
+      ...defaultOptions.queryParams,
+      ...options.queryParams
+    }
+  };
+
+  try {
+    const response = await window.fetch(
+      `${baseUrl}${path}?${buildQueryParamsString(queryParams)}`,
+      finalOptions
+    );
+
+    if (response.status >= 200 && response.status < 300) {
+      return (await response.json());
+    }
+
+    throw new Error(`Response with status code: ${response.status}`);
+  } catch(e) {
+    throw new Error(e);
+  }
 };
