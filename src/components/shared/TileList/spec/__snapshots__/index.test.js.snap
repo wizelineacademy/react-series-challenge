@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TileList /> renders properly 1`] = `
+.c1 {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  margin: 5px;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
+  background: #dfe6e9;
+  border-radius: 2px;
+}
+
+.c1:hover {
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+.c2 {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  margin: 5px;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
+  background: #74b9ff;
+  border-radius: 2px;
+}
+
+.c2:hover {
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100vw;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+<div
+  className="c0"
+>
+  <a
+    href="/details/1"
+    onClick={[Function]}
+  >
+    <div
+      className="c1"
+      color="#dfe6e9"
+      height={300}
+      width={300}
+    />
+  </a>
+  <a
+    href="/details/2"
+    onClick={[Function]}
+  >
+    <div
+      className="c2"
+      color="#74b9ff"
+      height={300}
+      width={300}
+    />
+  </a>
+</div>
+`;
+
+exports[`<TileList /> renders the loader 1`] = `
+.c0 {
+  position: absolute;
+  top: 0;
+  right: 18px;
+  width: 25px;
+  height: 25px;
+  border: 3px solid white;
+  border-left-color: deepskyblue;
+  border-radius: 50%;
+  -webkit-animation: 1s linear iVXCSc infinite;
+  animation: 1s linear iVXCSc infinite;
+}
+
+<div
+  className="c0"
+/>
+`;
