@@ -13,6 +13,7 @@ import {
 import TrendingContainer from './containers/Trending'
 import FavoritesContainer from './containers/Favorites'
 import SearchContainer from './containers/Search'
+import GifDetailContainer from './containers/GifDetail'
 
 class App extends Component {
   render() {
@@ -21,6 +22,7 @@ class App extends Component {
         <div className="App">
           <StyledTitle>Awesome Gif App</StyledTitle>
           <Switch>
+            <Route path="/gif/:id" component={GifDetailContainer} />
             <Route path="/favorites/search/:term" component={SearchContainer} />
             <Route path="/search/:term" component={SearchContainer} />
             <Route path="/favorites" component={FavoritesContainer} />
