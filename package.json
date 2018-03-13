@@ -21,25 +21,12 @@
     "build": "react-scripts build",
     "eject": "react-scripts eject",
     "lint": "eslint ./",
-    "test": "yarn run lint && react-scripts test --env=jsdom ",
-    "jest": "jest --coverage --maxWorkers=6"
+    "test": "yarn run lint && yarn run jest",
+    "jest": "NODE_ENV=testing jest --coverage --maxWorkers=6"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
     "enzyme": "^3.3.0",
-    "enzyme-adapter-react-16": "^1.1.1",
-    "enzyme-to-json": "^3.3.1",
-    "eslint-config-react-app": "^2.1.0",
-    "eslint-plugin-flowtype": "^2.46.1",
-    "eslint-plugin-import": "^2.9.0",
-    "eslint-plugin-jest": "^21.14.0",
-    "eslint-plugin-jsx-a11y": "^5.1.1",
-    "eslint-plugin-react": "^7.7.0",
-    "jest": "^20.0.4"
-  },
-  "jest": {
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ]
+    "enzyme-adapter-react-16": "^1.1.1"
   }
 }
