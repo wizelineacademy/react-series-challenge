@@ -16,7 +16,7 @@ exports[`<NotFound /> renders properly 1`] = `
   className="c0"
 >
   <p>
-    Awesome, you've earned a 404. Tell your friends...
+    awesome, you've earned a 404
   </p>
 </div>
 `;
