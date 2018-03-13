@@ -8,7 +8,7 @@ export const StyledInput = styled.input`
   margin-bottom: 14px;
   font-family: sans-serif;
   font-weight: 400;
-  margin-right: 35px;
+  margin-left: 24%;
 
   :focus {
     outline: none;
