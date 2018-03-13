@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const StyledImg = styled.img`
   :hover {
-    box-shadow: 10px 10px 5px grey;
+    opacity: 0.6;
   }
 `
 export const LoveItem = styled.div`
@@ -18,9 +18,6 @@ export const GifWrapper = styled.div`
   position: relative;
 
   :hover {
-    img {
-      opacity: 0.6;
-    }
     div {
       display: block;
     }

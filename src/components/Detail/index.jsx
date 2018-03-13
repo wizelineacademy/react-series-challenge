@@ -38,7 +38,10 @@ class Detail extends React.Component {
 }
 
 Detail.propTypes = {
-  giph: object.isRequired,
+  giph: object,
   initialSetup: func.isRequired
+}
+Detail.defaultProps = {
+  giph: null
 }
 export default Detail
