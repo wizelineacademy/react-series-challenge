@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Btn, BtnsWrapper, GifCardWrapper} from "./GifCard.style";
-import eyeIcon from './eye.png';
-import heartBorder from './heart-border.svg';
-import heartFilled from './heart-filled.svg';
+import eyeIcon from './assets/eye.png';
+import heartBorder from './assets/heart-border.svg';
+import heartFilled from './assets/heart-filled.svg';
 
 const GifCard = ({gif, isFavorite, imageSize, toggleFavorite}) => {
   const image = imageSize === 'small' ? gif.images.small : gif.images.original;
