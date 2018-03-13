@@ -1,12 +1,17 @@
 import React, {Component} from 'react'
 import styled from 'styled-components'
 
+const Div = styled.div`
+  text-align: center;
+`
+
 const Input = styled.input`
   padding: 0.5em;
   margin: 0.5em;
   border: 1px solid #ccc;
   color: gray
   border-radius: 3px;
+  width: 50%;
 `
 
 class SearchBar extends Component {
@@ -19,18 +24,22 @@ class SearchBar extends Component {
   }
 
   handleOnchange(event) {
-    this.setState({searchValue: event.target.value})
+    this.setState(
+      {searchValue: event.target.value},
+      () => {this.props.searchFunction(this.state.searchValue)}
+    )
   }
 
   render () {
     return (
-      <div>
+      <Div>
         <Input
           type="text"
           value={this.state.searchValue}
           onChange={(event) => this.handleOnchange(event)}
+          placeholder={this.props.placeholder}
         />
-      </div>
+      </Div>
     )
   }
 }
