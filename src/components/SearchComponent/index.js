@@ -23,12 +23,6 @@ export class SearchComponent extends Component {
 
   }
   componentWillReceiveProps(nextProps) {
-    const {
-      params
-    } = this.props.match
-    if (nextProps.match.params.searchTerm !== params.searchTerm) {
-      this.props.searchRequest(nextProps.match.params.searchTerm);
-    }
   }
 
   handleOnChange = (e) =>{

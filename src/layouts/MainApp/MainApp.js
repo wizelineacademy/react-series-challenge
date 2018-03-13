@@ -28,8 +28,9 @@ export class MainAppLayout extends Component {
     return (
       <div style={{ background: '#000' }}>
         <Switch>
-            <Route path={ `/:view` } component={ GridLayout } />
-            <Route path={ `/:view/:searchTerm` } component={ GridLayout } />
+            <Route exact path={ `/` } component={ GridLayout } />
+            <Route exact path={ `/:view` } component={ GridLayout } />
+            <Route exact path={ `/:view/:searchTerm` } component={ GridLayout } />
         </Switch>
       </div>
     );

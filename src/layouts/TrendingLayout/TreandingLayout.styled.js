@@ -48,11 +48,10 @@ export class SearchLayout extends Component {
 
   render () {
     const {
-      search
+      trending
     } = this.props;
     return (
       <Container>
-
         <div >
           <GiphyGrid 
             onSelect={ (e) => { console.log(e)} }

@@ -6,12 +6,13 @@ import {
 } from './Preview.styled';
 
 
-const GiphyPreview = ({ preview_gif, onSelect, title, id }) => {
+const GiphyPreview = (props) => {
+  const { preview_gif, onSelect, title, } = props;
   const {
     url
   } = preview_gif;
   return (
-    <PreviewCard onClick={() => onSelect(id)}>
+    <PreviewCard onClick={() => onSelect(props)} >
     <Image src={url} />
       <Data>
       <span>{title}</span>

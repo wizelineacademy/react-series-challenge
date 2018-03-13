@@ -3,8 +3,13 @@ module.exports = {
   setupFiles: ['./jest.setup.js'],
   testPathIgnorePatterns: [
     '/node_modules/',
+    '/coverage/'
   ],
   testMatch: ['**/test/*Test.js'],
+  collectCoverageFrom: [
+    "**/src/**/*.{js,jsx}",
+    "!**/src/registerServiceWorker.{js,jsx}"
+  ],
   coverageThreshold: {
     global: {
       statements: 75,
@@ -13,4 +18,4 @@ module.exports = {
       lines: 75,
     },
   },
-};
+}

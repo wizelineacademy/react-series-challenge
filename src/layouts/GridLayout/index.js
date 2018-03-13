@@ -22,15 +22,32 @@ export class SearchLayout extends Component {
     const {
       params
     } = this.props.match
-    if (params.searchTerm){
-      this.props.searchRequest(params.searchTerm);
+    switch (params.view){
+      case pathNames.TRENDING_PATH: {
+        this.props.trendingRequest();
+        break;
+      }
+      case pathNames.SEARCH_PATH: {
+        if (params.searchTerm){
+          this.props.searchRequest(params.searchTerm);
+        }
+        break;
+      }
+      default :{
+        this.props.trendingRequest();
+        break;
+      }
     }
-    if (params.view === pathNames.TRENDING_PATH){
-      this.props.trendingRequest();
-    }
-
   }
   componentWillReceiveProps(nextProps) {
+    const {
+      params
+    } = this.props.match
+    if (nextProps.match.params.searchTerm 
+      !== params.searchTerm 
+      && nextProps.match.params.view === pathNames.SEARCH_PATH ) {
+      this.props.searchRequest(nextProps.match.params.searchTerm);
+    }
 
   }
 
@@ -48,7 +65,7 @@ export class SearchLayout extends Component {
         return search.giphyArray
       }
       default:
-        return [];
+        return trending.giphyArray;
     }
   }
 
