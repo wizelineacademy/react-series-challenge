@@ -23,6 +23,7 @@ const composedEnhancers = compose(applyMiddleware(...middleware), ...enhancers);
 const mockAxios = new MockAdapter(axios);
 
 describe('trending actions', () => {
+  const error = { code: -1, title: 'bad things happened' };
   let store;
 
   beforeEach(() => {
@@ -40,25 +41,25 @@ describe('trending actions', () => {
       expect(store.getState().trending.data).toBeUndefined();
     });
 
-    it('should dispatch started and return error on failure', () => {
-      const error = { code: -1, title: 'bad things happened' };
+    it('should dispatch and return error on failure', () => {
       mockAxios.onGet(`${url}/trending`).replyOnce(500, error);
       store.dispatch(trendingActions.creators.loadingTrending());
     });
   });
 
   describe('requestGIF', () => {
+    const gifId = 'testId';
+
     it('should ', () => {
-      mockAxios.onGet(`${url}/:id`).replyOnce(200, { data: {} });
-      store.dispatch(gifActions.creators.requestGIF('asdf'));
+      mockAxios.onGet(`${url}/${gifId}`).replyOnce(200, { data: {} });
+      store.dispatch(gifActions.creators.requestGIF(gifId));
       expect(store.getState().gif.loading).toBe(true);
       expect(store.getState().gif.data).toBeUndefined();
     });
 
-    it('should dispatch started and return error on failure', () => {
-      const error = { code: -1, title: 'bad things happened' };
-      mockAxios.onGet(`${url}/:id`).replyOnce(500, error);
-      store.dispatch(gifActions.creators.requestGIF('asdf'));
+    it('should dispatch and return error on failure', () => {
+      mockAxios.onGet(`${url}/${gifId}`).replyOnce(500, error);
+      store.dispatch(gifActions.creators.requestGIF(gifId));
     });
   });
 
@@ -68,16 +69,16 @@ describe('trending actions', () => {
       store.dispatch(searchActions.creators.requestSearch('wizeline'));
     });
 
-    it('should dispatch started and return error on failure', () => {
-      const error = { code: -1, title: 'bad things happened' };
+    it('should dispatch and return error on failure', () => {
       mockAxios.onGet(`${url}/search`).replyOnce(500, error);
       store.dispatch(searchActions.creators.requestSearch('wizeline'));
     });
   });
 
   describe('requestToggle', () => {
-    it('should ', () => {
-      store.dispatch(favoritesActions.creators.requestToggle());
+    it('should toggle favorites ', () => {
+      store.dispatch(favoritesActions.creators.requestToggle('test'));
+      store.dispatch(favoritesActions.creators.requestToggle('test'));
     });
   });
 });
