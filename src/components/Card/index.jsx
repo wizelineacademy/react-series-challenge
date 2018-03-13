@@ -1,26 +1,18 @@
 import React from 'react'
 import { func, object, string } from 'prop-types'
-import { Link } from 'react-router-dom'
 
-import { paths } from '../../utils'
-import { CardWrapper, StyledImg } from './Card.style'
+import { CardWrapper } from './Card.style'
+import { GifItem } from '../'
 
-const Card = ({ images, title, onClick, id }) => (
+const Card = ({ images, title, id }) => (
   <CardWrapper>
-    <Link to={`${paths.DETAIL}/${id}`}>
-      <StyledImg src={images.fixed_height.url} alt={title} onClick={onClick} />
-    </Link>
+    <GifItem imageUrl={images.fixed_height.url} alt={title} isFavorite={false} id={id}  />
   </CardWrapper>
 )
 
 Card.propTypes = {
   images: object.isRequired,
-  title: string.isRequired,
-  onClick: func,
-  onHover: func,
+  title: string.isRequired
 }
-Card.defaultProps = {
-  onClick: () => {},
-  onHover: () => {}
-}
+
 export default Card

@@ -5,7 +5,3 @@ export const CardWrapper = styled.div`
   text-align: center;
   padding: 5px;
 `
-
-export const StyledImg = styled.img`
-  cursor: pointer;
-`

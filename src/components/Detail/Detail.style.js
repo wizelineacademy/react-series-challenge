@@ -3,10 +3,15 @@ import styled from 'styled-components'
 export const DetailWrapper = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 120px;
+  padding-top: 100px;
 `
 
-export const DetailInfo = styled.div`
+export const GifWrapper = styled.div`
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+`
+
+export const TitleWrapper = styled.div`
+  display: flex;
+  justify-content: center;
 `

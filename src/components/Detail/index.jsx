@@ -1,8 +1,8 @@
 import React from 'react'
 import { func, object } from 'prop-types'
 
-import { Header } from '../'
-import { DetailWrapper, DetailInfo } from './Detail.style'
+import { Header, GifItem } from '../'
+import { DetailWrapper, GifWrapper, TitleWrapper } from './Detail.style'
 
 class Detail extends React.Component {
   componentWillMount() {
@@ -18,8 +18,12 @@ class Detail extends React.Component {
         <DetailWrapper>
         { giph !== null &&
           <div>
-            <img src={giph.images.original.url} alt={giph.title}></img>
-            <h1>{giph.title}</h1>
+            <GifWrapper>
+              <GifItem imageUrl={giph.images.original.url} alt={giph.title} isDetail={true}/>
+            </GifWrapper>
+            <TitleWrapper>
+              <h1>{giph.title}</h1>
+            </TitleWrapper>
           </div>
         }
         {
