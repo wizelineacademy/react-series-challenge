@@ -4,7 +4,7 @@ import { NotFoundWrapperStyled } from "./NotFound.styled";
 
 const NotFound = () => (
   <NotFoundWrapperStyled>
-    <p>Awesome, you've earned a 404. Tell your friends...</p>
+    <p>awesome, you've earned a 404</p>
   </NotFoundWrapperStyled>
 );
 
