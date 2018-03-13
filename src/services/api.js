@@ -6,3 +6,6 @@ export const getTrending = () => fetch(`${BASE_URL}trending?api_key=${API_KEY}&l
 
 export const getSearch = payload => fetch(`${BASE_URL}search?api_key=${API_KEY}&q=${payload}&limit=50`)
 .then(res => res.json())
+
+export const getGif = payload => fetch(`${BASE_URL}${payload}?api_key=${API_KEY}`)
+.then(res => res.json())
