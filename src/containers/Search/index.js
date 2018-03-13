@@ -10,6 +10,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = dispatch => ({
   searchGifs: (payload) => dispatch(searchActions.creators.requestSearchGifs(payload)),
+  searchFavs: (payload) => dispatch(searchActions.creators.searchFavs(payload)),
   setFavorite: (gif) => dispatch(favoritesActions.creators.setFavorite(gif))
 })
 
