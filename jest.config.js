@@ -5,7 +5,8 @@ module.exports = {
   testMatch: ["**/*.test.js"],
   collectCoverageFrom: [
     "**/src/**/*.{js,jsx}",
-    "!**/src/registerServiceWorker.{js,jsx}"
+    "!**/src/registerServiceWorker.{js,jsx}",
+    "!**/src/index.js"
   ],
   coverageThreshold: {
     global: {
