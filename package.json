@@ -38,6 +38,7 @@
     "deploy": "yarn build && firebase deploy"
   },
   "devDependencies": {
+    "babel-plugin-transform-es2015-computed-properties": "^6.24.1",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "enzyme": "^3.3.0",
