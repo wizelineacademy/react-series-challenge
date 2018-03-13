@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import {
   GifItemWrapper,
   StyledButton
-} from '../Trending/Trending.style'
+} from '../GifList/GifList.style'
 
 class GifItem extends Component {
   render() {
