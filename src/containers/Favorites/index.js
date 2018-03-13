@@ -1,5 +1,6 @@
 import { connect } from 'react-redux'
 import favoritesActions from '../../actions/favorites'
+import searchActions from '../../actions/search'
 import GifList from '../../components/GifList'
 
 const mapStateToProps = (state) => ({
@@ -8,7 +9,8 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  setFavorite: (gif) => dispatch(favoritesActions.creators.setFavorite(gif))
+  setFavorite: (gif) => dispatch(favoritesActions.creators.setFavorite(gif)),
+  searchFavs: (payload) => dispatch(searchActions.creators.searchFavs(payload)),
 })
 
 const FavoritesContainer = connect(
