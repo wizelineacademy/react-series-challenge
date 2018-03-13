@@ -11,6 +11,7 @@ const favsReducer = (state = initialState, action) => {
   switch (type) {
     case actions.types.TOGGLE_FAVORITE: {
       const { payload: gif } = action;
+
       const favs = gif.favorite
         ? state.favs.filter(fav => fav.id !== gif.id)
         : [{ ...gif, favorite: true }, ...state.favs];
