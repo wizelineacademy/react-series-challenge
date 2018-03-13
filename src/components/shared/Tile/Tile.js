@@ -9,7 +9,7 @@ import { getColor } from "../../../utils";
 import actions from "../../Favs/FavsActions";
 import { TileWrapperStyled, FavoriteMarkStyled } from "./Tile.styled";
 
-const Tile = ({ gif, original, favs, loaded, toggleFavorite }) => {
+const Tile = ({ gif, original, favs, loaded, color, toggleFavorite }) => {
   const dimensions = original ? gif.images.original : constants;
   const { width, height } = dimensions;
 
@@ -22,7 +22,11 @@ const Tile = ({ gif, original, favs, loaded, toggleFavorite }) => {
 
   return (
     <Link to={`/details/${gif.id}`}>
-      <TileWrapperStyled color={getColor()} width={width} height={height}>
+      <TileWrapperStyled
+        color={color || getColor()}
+        width={width}
+        height={height}
+      >
         {loaded[gif.id] && (
           <FavoriteMarkStyled marked={gif.favorite} onClick={handleClick}>
             ❤

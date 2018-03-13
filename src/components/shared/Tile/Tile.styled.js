@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 const TileWrapperStyled = styled.div`
-  width: ${props => props.width || 300}px;
-  height: ${props => props.height || 300}px;
+  width: ${props => props.width}px;
+  height: ${props => props.height}px;
   position: relative;
   margin: 5px;
   transition: 0.1s ease-in-out;
