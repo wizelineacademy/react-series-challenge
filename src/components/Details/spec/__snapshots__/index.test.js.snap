@@ -1,0 +1,151 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Details /> renders properly 1`] = `
+.c3 {
+  width: 400px;
+  height: 400px;
+  border-radius: 2px;
+  object-fit: cover;
+}
+
+.c1 {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  margin: 5px;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
+  background: #fab1a0;
+  border-radius: 2px;
+}
+
+.c1:hover {
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+.c2 {
+  z-index: 1;
+  position: absolute;
+  right: 14px;
+  top: 8px;
+  font-size: 2em;
+  color: red;
+  opacity: 1;
+  -webkit-transition: 0.1s ease-in;
+  transition: 0.1s ease-in;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c2:hover {
+  color: "red";
+  cursor: pointer;
+}
+
+.c2:active {
+  opacity: 1;
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c5 {
+  text-align: left;
+  margin: 0 0 0.4em;
+}
+
+.c4 {
+  margin-top: 1em;
+  text-align: center;
+}
+
+<div
+  className="c0"
+>
+  <a
+    href="/details/1"
+    onClick={[Function]}
+  >
+    <div
+      className="c1"
+      color="#fab1a0"
+      height={400}
+      width={400}
+    >
+      <label
+        className="c2"
+        onClick={[Function]}
+      >
+        ❤
+      </label>
+      <img
+        className="c3"
+        height={400}
+        src={undefined}
+        width={400}
+      />
+    </div>
+  </a>
+  <div
+    className="c4"
+  >
+    <p
+      className="c5"
+    >
+      hello
+    </p>
+    <p
+      className="c5"
+    >
+      uploaded by 
+      self
+    </p>
+    <p
+      className="c5"
+    >
+      <a
+        href="http://dummy"
+      >
+        view on Giphy 
+      </a>
+    </p>
+  </div>
+</div>
+`;
+
+exports[`<Details /> renders the loader 1`] = `
+.c0 {
+  position: absolute;
+  top: 0;
+  right: 18px;
+  width: 25px;
+  height: 25px;
+  border: 3px solid white;
+  border-left-color: deepskyblue;
+  border-radius: 50%;
+  -webkit-animation: 1s linear iVXCSc infinite;
+  animation: 1s linear iVXCSc infinite;
+}
+
+<div
+  className="c0"
+/>
+`;
