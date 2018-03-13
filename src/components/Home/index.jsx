@@ -11,6 +11,7 @@ class Home extends React.Component {
   render() {
     const {
       giphies,
+      keywordFilter,
       onFavoriteClick,
       onSearchChange,
       onSearchSubmit,
@@ -20,9 +21,16 @@ class Home extends React.Component {
     return (
       <div>
         <Header>
-          <SearchBar value={searchValue} onChange={onSearchChange} onSubmit={onSearchSubmit} />
+          <SearchBar
+            value={searchValue}
+            onChange={onSearchChange}
+            onSubmit={onSearchSubmit}
+            />
         </Header>
-        <Grid giphies={giphies} onFavoriteClick={onFavoriteClick} />
+        <Grid
+          giphies={giphies.filter(giph => giph.title.includes(keywordFilter))}
+          onFavoriteClick={onFavoriteClick}
+          />
       </div>
     )
   }
@@ -31,6 +39,7 @@ class Home extends React.Component {
 Home.propTypes = {
   giphies: arrayOf(object),
   initialSetup: func,
+  keywordFilter: string,
   onSearchChange: func.isRequired,
   onSearchSubmit: func.isRequired,
   searchValue: string
@@ -38,6 +47,7 @@ Home.propTypes = {
 Home.defaultProps = {
   giphies: [],
   initialSetup: () => {},
+  keywordFilter: '',
   searchValue: ''
 }
 export default Home

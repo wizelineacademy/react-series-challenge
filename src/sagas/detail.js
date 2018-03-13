@@ -11,7 +11,6 @@ function * onFetchById (action) {
   try {
     const response = yield call(giphy.byId.get, action.payload.id)
     const body = yield response.json()
-    console.log(body.data)
     yield put(detailFetchGiphSuccess(body.data))
   } catch (error) {
     yield put(detailFetchGiphFailed())
