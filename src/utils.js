@@ -1,5 +1,3 @@
-const partial = (fn, first) => second => fn(first, second);
-
 const db = {
   get(key) {
     const encoded = window.localStorage.getItem(key);
@@ -28,4 +26,4 @@ const getColor = () => {
   return colors[index];
 };
 
-export { partial, db, getColor };
+export { db, getColor };
