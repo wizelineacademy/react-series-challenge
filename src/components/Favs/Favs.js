@@ -14,7 +14,7 @@ const Favs = ({ favs }) => {
       <EmptyFavsContainerStyled>
         <EmptyFavsMessageStyled>
           empty favs collection, go <Link to="">home</Link> and click some
-          hearts.
+          hearts
         </EmptyFavsMessageStyled>
       </EmptyFavsContainerStyled>
     );
