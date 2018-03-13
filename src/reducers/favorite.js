@@ -1,20 +1,15 @@
 import { FAVORITE_CLICK } from '../actions'
+import { updateFavoritesArray, getFavsFromStorage } from '../utils'
 
 const initialState = {
-  favorites: []
+  favorites:  getFavsFromStorage()
 }
 
 const favorite = (state = initialState, action) => {
   switch (action.type) {
     case FAVORITE_CLICK:
-      const favorites = state.favorites.slice()
-      const newFavorite = action.payload.id
-      const index = favorites.indexOf(newFavorite)
-      if (index > -1) {
-        favorites.splice(index, 1)
-      } else {
-        favorites.push(newFavorite)
-      }
+      const favorites = updateFavoritesArray(action.payload.id, state.favorites.slice())
+
       return {
         ...state,
         favorites
