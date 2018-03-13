@@ -5,7 +5,7 @@ import ListGiphy from './ListGimphy'
 
 import {fetchTrend, addFavorite, deleteFavorite, searchOnWeb} from '../actions'
 
-class Home extends Component {
+export class Home extends Component {
 
   handleOnclick (giphy) {
     if (giphy.id in this.props.favorites) {
@@ -47,7 +47,7 @@ class Home extends Component {
   }
 
   render () {
-    if (this.props.giphys.lenght === 0) {
+    if (this.props.giphys.length === 0) {
       return <div>Loading...........</div>
     }
     return (
