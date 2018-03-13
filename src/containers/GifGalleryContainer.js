@@ -1,4 +1,4 @@
-import Home from "../components/Home";
+import GifGallery from "../components/GifGallery";
 import {fetchTrendingGifs} from "../actions/trending";
 import {connect} from "react-redux";
 import {toggleFavorite} from "../actions/favorite";
@@ -13,9 +13,9 @@ const mapDispatchToProps = (dispatch) => ({
   toggleFavorite: (gif) => dispatch(toggleFavorite(gif))
 });
 
-const HomeContainer = connect(
+const GifGalleryContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(Home);
+)(GifGallery);
 
-export default HomeContainer;
+export default GifGalleryContainer;

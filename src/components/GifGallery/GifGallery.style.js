@@ -51,4 +51,4 @@ export const TrendingGifCards = styled.div`
   height: 100vh;
   margin: 0 160px;
   overflow: auto;
- `;
+`;

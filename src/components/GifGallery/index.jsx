@@ -1,26 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {FavoriteBtn, HomeWrapper, SearchBtn, SearchInput, SearchWrapper, TrendingGifCards} from './Home.style';
+import { withRouter } from 'react-router-dom';
+import {FavoriteBtn, HomeWrapper, SearchBtn, SearchInput, SearchWrapper, TrendingGifCards} from './GifGallery.style';
 import searchIcon from './search.png';
 import favoriteIcon from './heart-filled-white.png'
 import GifCard from "../GifCard";
 
-class Home extends React.Component {
+class GifGallery extends React.Component {
   componentWillMount() {
-    this.props.fetchTrendingGifs();
+    if (this.props.dataSource === 'GIPHY') {
+      this.props.fetchTrendingGifs();
+    }
   }
 
   render() {
+    const dataSource = this.props.dataSource === 'GIPHY' ? this.props.trending: this.props.favorites;
     return (
       <HomeWrapper>
         <SearchWrapper>
           <SearchInput placeholder={'Type to search cool GIFs'} />
           <SearchBtn src={searchIcon} />
-          <FavoriteBtn src={favoriteIcon} />
+          <FavoriteBtn src={favoriteIcon} onClick={() => this.props.history.push('/favorites')} />
         </SearchWrapper>
         <TrendingGifCards>
           {
-            this.props.trending.map((gif) => {
+            dataSource.map((gif) => {
               const isFavorite = !!this.props.favorites.find((favorite) => favorite.id === gif.id);
               return (
                 <GifCard
@@ -39,10 +43,10 @@ class Home extends React.Component {
   }
 }
 
-Home.propTypes = {
-  fetchTrendingGifs: PropTypes.func.isRequired,
+GifGallery.propTypes = {
+  fetchTrendingGifs: PropTypes.func,
   toggleFavorite: PropTypes.func.isRequired,
   trending: PropTypes.array.isRequired
 };
 
-export default Home;
+export default withRouter(GifGallery);
