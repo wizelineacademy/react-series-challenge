@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Routes from '../Routes';
 import Layout from '../../components/Layout';
 import './styles.css';
 
@@ -7,7 +8,7 @@ class App extends Component {
     return (
       <div className="App">
         <Layout>
-          hola
+          <Routes />
         </Layout>
       </div>
     );
