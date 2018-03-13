@@ -1,6 +1,7 @@
 import { connect } from 'react-redux'
 import trendingActions from '../../actions/trending'
 import favoritesActions from '../../actions/favorites'
+import searchActions from '../../actions/search'
 import GifList from '../../components/GifList'
 
 const mapStateToProps = (state) => ({
@@ -10,7 +11,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = dispatch => ({
   requestGifs: () => dispatch(trendingActions.creators.requestTrendingGifs()),
-  setFavorite: (gif) => dispatch(favoritesActions.creators.setFavorite(gif))
+  setFavorite: (gif) => dispatch(favoritesActions.creators.setFavorite(gif)),
+  searchGifs: (payload) => dispatch(searchActions.creators.requestSearchGifs(payload)),
 })
 
 const TrendingContainer = connect(
