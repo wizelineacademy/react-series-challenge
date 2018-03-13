@@ -10,8 +10,17 @@ import SearchBar from '../SearchBar'
 class GifList extends Component {
 
   componentWillMount() {
+    const { location, match, gifs } = this.props
+    const isSearchApi = location.pathname.split('/')[1] === 'search';
+    const isSearchFavs = location.pathname.split('/')[2] ==='search'
     if (this.props.requestGifs){
       this.props.requestGifs()
+    }
+    if (isSearchApi && gifs.length === 0) {
+      this.props.searchGifs(match.params.term)
+    }
+    if (isSearchFavs && gifs.length === 0) {
+      this.props.searchFavs(match.params.term)
     }
   }
 
@@ -44,7 +53,7 @@ class GifList extends Component {
     const fav = location.pathname.split('/')[1];
     return(
       <GifWrapper>
-        <SearchBar searchGifs={(fav !== 'favorites') ? this.props.searchGifs : null}/>
+        <SearchBar searchGifs={(fav !== 'favorites') ? this.props.searchGifs : this.props.searchFavs}/>
         <Menu location={this.props.location.pathname} />
         {this.renderGifsIfExist()}
       </GifWrapper>

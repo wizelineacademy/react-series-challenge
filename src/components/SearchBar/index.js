@@ -9,14 +9,19 @@ class SearchBar extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      query:''
+      query: this.props.match.params.term || ''
     }
   }
 
   onSubmit (event) {
-  event.preventDefault();
-  this.props.searchGifs(this.state.query)
-  this.props.history.push(`/search/${this.state.query}`)
+    event.preventDefault();
+    const isFavorite = this.props.location.pathname.split('/')[1] === 'favorites';
+    this.props.searchGifs(this.state.query)
+    if(isFavorite) {
+      this.props.history.push(`/favorites/search/${this.state.query}`)
+    } else {
+      this.props.history.push(`/search/${this.state.query}`)
+    }
   }
 
   render() {
