@@ -29,7 +29,7 @@ class Detail extends React.Component {
         }
         {
           giph === null &&
-          <h1>Loading</h1>
+          <h1>Loading...</h1>
         }
         </DetailWrapper>
       </div>
@@ -38,11 +38,7 @@ class Detail extends React.Component {
 }
 
 Detail.propTypes = {
-  giph: object,
-  initialSetup: func
-}
-Detail.defaultProps = {
-  giph: null,
-  initialSetup: () => {}
+  giph: object.isRequired,
+  initialSetup: func.isRequired
 }
 export default Detail

@@ -2,6 +2,7 @@ import React from 'react'
 import Icon from 'react-icons-kit'
 import { heart } from 'react-icons-kit/icomoon/heart'
 import { Link } from 'react-router-dom'
+import { arrayOf, bool, func, string } from 'prop-types'
 
 import { paths } from '../../utils'
 import { StyledImg, LoveItem, GifWrapper } from './GifItem.style'
@@ -19,7 +20,13 @@ class GifItem extends React.Component {
     return onFavoriteClick(id)
   }
   render() {
-    const { imageUrl, alt, id, isDetail, favorites } = this.props
+    const {
+      alt,
+      favorites,
+      id,
+      imageUrl,
+      isDetail,
+    } = this.props
     const isFavorite = favorites.indexOf(id) > -1
 
     return (
@@ -42,5 +49,16 @@ class GifItem extends React.Component {
   }
 }
 
-
+GifItem.propTypes = {
+  alt: string.isRequired,
+  favorites: arrayOf(string),
+  id: string.isRequired,
+  imageUrl: string.isRequired,
+  isDetail: bool,
+  onFavoriteClick: func.isRequired
+}
+GifItem.defaultProps = {
+  favorites: [],
+  isDetail: false
+}
 export default GifItem

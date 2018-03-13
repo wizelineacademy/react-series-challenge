@@ -4,7 +4,7 @@ import { object, string } from 'prop-types'
 import { CardWrapper } from './Card.style'
 import GifItem from '../../containers/GifItem'
 
-const Card = ({ images, title, id, onFavoriteClick }) => (
+const Card = ({ images, title, id }) => (
   <CardWrapper>
     <GifItem imageUrl={images.fixed_height.url} alt={title} id={id}  />
   </CardWrapper>
@@ -12,7 +12,7 @@ const Card = ({ images, title, id, onFavoriteClick }) => (
 
 Card.propTypes = {
   images: object.isRequired,
-  title: string.isRequired
+  title: string.isRequired,
+  id: string.isRequired
 }
-
 export default Card

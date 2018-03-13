@@ -1,17 +1,19 @@
 import React from 'react'
-import { arrayOf, func, object } from 'prop-types'
+import { arrayOf, object } from 'prop-types'
 
 import { GridWrapper } from './Grid.style'
 import Card from '../Card'
 
-const Grid = ({ giphies, onFavoriteClick }) => (
+const Grid = ({ giphies }) => (
   <GridWrapper>
-    {giphies.map(giph => <Card {...giph} key={giph.id} onFavoriteClick={onFavoriteClick} />)}
+    {giphies.map(giph => <Card {...giph} key={giph.id} />)}
   </GridWrapper>
 )
 
 Grid.propTypes = {
-  giphies: arrayOf(object),
-  onFavoriteClick: func
+  giphies: arrayOf(object)
+}
+Grid.defaultProps = {
+  giphies: []
 }
 export default Grid

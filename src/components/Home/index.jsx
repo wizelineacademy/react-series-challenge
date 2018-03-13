@@ -9,7 +9,13 @@ class Home extends React.Component {
   }
 
   render() {
-    const { giphies, onSearchChange, onSearchSubmit, searchValue, onFavoriteClick } = this.props
+    const {
+      giphies,
+      onFavoriteClick,
+      onSearchChange,
+      onSearchSubmit,
+      searchValue,
+    } = this.props
 
     return (
       <div>
@@ -25,13 +31,11 @@ class Home extends React.Component {
 Home.propTypes = {
   giphies: arrayOf(object),
   initialSetup: func,
-  onFavoriteClick: func,
   onSearchChange: func.isRequired,
   onSearchSubmit: func.isRequired,
   searchValue: string
 }
 Home.defaultProps = {
-  onFavoriteClick: () => {},
   giphies: [],
   initialSetup: () => {},
   searchValue: ''
