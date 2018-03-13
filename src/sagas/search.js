@@ -1,6 +1,6 @@
 import { call, takeEvery, put, select } from 'redux-saga/effects';
 import search from '../actions/search';
-import { getSearch } from '../services/api'
+import { getSearch, getGif} from '../services/api'
 
 
 export function* loadSearchGifs(action) {
@@ -25,7 +25,17 @@ export function* loadSearchFavorites(action) {
   }
 }
 
+export function* loadSearchGif(action) {
+  try {
+    const searchResponse = yield call(getGif, action.payload);
+    yield put(search.creators.searchGifSuccess(searchResponse.data))
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 export default function* searchSaga() {
   yield takeEvery(search.types.REQUEST_SEARCH_GIFS, loadSearchGifs)
   yield takeEvery(search.types.SEARCH_FAVS, loadSearchFavorites)
+  yield takeEvery(search.types.SEARCH_GIF, loadSearchGif )
 }
