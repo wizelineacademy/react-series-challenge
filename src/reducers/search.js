@@ -9,6 +9,9 @@ const searchGifs = (state = initialState, action) => {
     case searchAction.types.REQUEST_SEARCH_GIFS_SUCCESS: {
       return payload;
     }
+    case searchAction.types.SEARCH_FAVS_SUCCESS: {
+      return payload
+    }
     default:
       return state;
   }
