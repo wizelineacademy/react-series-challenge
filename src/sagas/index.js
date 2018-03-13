@@ -21,7 +21,7 @@ function* helloSaga() {
   yield console.log('Hello Sagas!')
 }
 
-function* fetchTrend() {
+export function* fetchTrend() {
   const PATH = '/v1/stickers/trending'
   const response = yield axios.get(
     `${BASE_URL}${PATH}`,
@@ -37,21 +37,21 @@ function* fetchTrend() {
   })
 }
 
-function* AddingToFavorites(action) {
+export function* AddingToFavorites(action) {
   yield put({
     type: ADDED_FAVORITE,
     payload: action.favorite
   })
 }
 
-function* deletingFromFavorites(action) {
+export function* deletingFromFavorites(action) {
   yield put({
     type: DELETED_FAVORITE,
     payload: action.favorite
   })
 }
 
-function* fetchDetail(action) {
+export function* fetchDetail(action) {
   const PATH = `/v1/gifs/${action.gimphyId}`
   let actionCreator
   try{
@@ -77,7 +77,7 @@ function* fetchDetail(action) {
   yield put(actionCreator)
 }
 
-function* searchOnWeb(action) {
+export function* searchOnWeb(action) {
   const PATH = '/v1/gifs/search'
   const response = yield axios.get(
     `${BASE_URL}${PATH}`,
@@ -94,23 +94,23 @@ function* searchOnWeb(action) {
   })
 }
 
-function* watchFetchTrend() {
+export function* watchFetchTrend() {
   yield takeEvery(FETCH_TREND, fetchTrend)
 }
 
-function* watchAddFavorite() {
+export function* watchAddFavorite() {
   yield takeEvery(ADD_FAVORITE, AddingToFavorites)
 }
 
-function* watchDeleteFavorite() {
+export function* watchDeleteFavorite() {
   yield takeEvery(DELETE_FAVORITE, deletingFromFavorites)
 }
 
-function* watchFetchDetails() {
+export function* watchFetchDetails() {
   yield takeEvery(FETCH_DETAILS, fetchDetail)
 }
 
-function* watchSearchOnWeb() {
+export function* watchSearchOnWeb() {
   yield takeLatest (SEARCH_ON_WEB, searchOnWeb)
 }
 
