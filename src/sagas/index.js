@@ -24,10 +24,10 @@ export function* loadGifSaga(action) {
   }
 }
 
-export function* loadSearchSaga() {
+export function* loadSearchSaga(action) {
   try {
     yield put(search.creators.loadingSearching());
-    const response = yield call(searchGif);
+    const response = yield call(searchGif, action.payload);
     yield put(search.creators.loadSearching(response.data));
   } catch (error) {
     yield put(search.creators.setError(error));
