@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Grid /> renders data correctly with verified user 1`] = `
+exports[`<Details /> renders data correctly  1`] = `
 <div
   className="sc-iwsKbI fTCFhU"
 >
@@ -49,3 +49,77 @@ exports[`<Grid /> renders data correctly with verified user 1`] = `
   </div>
 </div>
 `;
+
+exports[`<Details /> renders error message 1`] = `
+<div>
+  Something went wrong
+</div>
+`;
+
+exports[`<Details /> renders loader 1`] = `
+<div
+  className="sc-iwsKbI fTCFhU"
+>
+  <div
+    className="sc-gZMcBi kKhxDV"
+  >
+    <div
+      className="sc-bwzfXH kmXviU"
+    >
+      <div
+        animation-delay={0}
+        className="sc-htpNat gLLNR"
+      />
+      <div
+        animation-delay="-1.1s"
+        className="sc-htpNat gteQUn"
+      />
+      <div
+        animation-delay="-1.0s"
+        className="sc-htpNat dnZQtX"
+      />
+      <div
+        animation-delay="-0.9s"
+        className="sc-htpNat fqexcQ"
+      />
+      <div
+        animation-delay="-0.8s"
+        className="sc-htpNat gcoKLq"
+      />
+    </div>
+  </div>
+  <div
+    className="sc-VigVT iNWrre"
+  >
+    <div
+      className="sc-bwzfXH kmXviU"
+    >
+      <div
+        animation-delay={0}
+        className="sc-htpNat gLLNR"
+      />
+      <div
+        animation-delay="-1.1s"
+        className="sc-htpNat gteQUn"
+      />
+      <div
+        animation-delay="-1.0s"
+        className="sc-htpNat dnZQtX"
+      />
+      <div
+        animation-delay="-0.9s"
+        className="sc-htpNat fqexcQ"
+      />
+      <div
+        animation-delay="-0.8s"
+        className="sc-htpNat gcoKLq"
+      />
+    </div>
+  </div>
+  <div
+    className="sc-gqjmRU fgXrhE"
+  />
+</div>
+`;
+
+exports[`<Details /> renders null if no data and not loading 1`] = `null`;
