@@ -6,10 +6,11 @@ import {
 
 const Menu = (props) => {
   const { location } = props
+  const fav = location.split('/')[1];
   return(
     <MenuWrapper>
-      <MenuOption href="/" isActive={location === '/'}>Home</MenuOption>
-      <MenuOption href="/favorites" isActive={location === '/favorites'}>Favorites</MenuOption>
+      <MenuOption href="/" isActive={fav !== 'favorites'}>Home</MenuOption>
+      <MenuOption href="/favorites" isActive={fav === 'favorites'}>Favorites</MenuOption>
     </MenuWrapper>
   )
 }
