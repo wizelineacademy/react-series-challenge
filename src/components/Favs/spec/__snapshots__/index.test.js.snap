@@ -135,7 +135,7 @@ exports[`<Favs /> renders the empty message 1`] = `
     >
       home
     </a>
-     and click some hearts.
+     and click some hearts
   </p>
 </div>
 `;

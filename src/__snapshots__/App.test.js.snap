@@ -102,7 +102,7 @@ exports[`<App /> renders properly 1`] = `
     className="c3"
   >
     <p>
-      Awesome, you've earned a 404. Tell your friends...
+      awesome, you've earned a 404
     </p>
   </div>
 </div>
