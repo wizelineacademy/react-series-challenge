@@ -9,6 +9,7 @@ import {
   TextStyled,
   TextDetailsWrapperStyled
 } from "./Details.styled";
+import { Loader } from "../shared";
 
 class Details extends React.Component {
   componentDidMount() {
@@ -19,7 +20,7 @@ class Details extends React.Component {
   render() {
     const { gif, loaded } = this.props;
 
-    if (!loaded) return <div>loading ...</div>;
+    if (!loaded) return <Loader />;
     return (
       <DetailsWrapperStyled>
         <Tile gif={gif} original={true} />
