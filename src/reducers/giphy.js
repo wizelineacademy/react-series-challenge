@@ -2,18 +2,16 @@
 
 const initialState = {
   data: [],
-  searchTerm: null,
+  searchTerm: '',
   pagination: {},
   filteredFavorites: [],
 };
 
 const giphyReducer = (state = initialState, action) => {
   const { type, payload } = action;
-
   switch (type) {
     case giphyActions.types.GET_FAVORITE_GIFS_COMPLETED: {
       const { data } = payload;
-
       const newState = { 
         ...state,
         data,

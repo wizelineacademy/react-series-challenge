@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import { SearchBox, Container } from './style';
 
 class SearchBar extends Component {
@@ -25,7 +24,6 @@ class SearchBar extends Component {
   }
 
   render () {
-    const { handleSubmit } = this.props;
     return (
       <Container>
         <SearchBox>

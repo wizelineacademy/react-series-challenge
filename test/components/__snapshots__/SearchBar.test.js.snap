@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchBar should render correctly 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-bottom: 70px;
+}
+
+.c1 {
+  position: absolute;
+}
+
+.c1 input {
+  border: none;
+  background: none;
+  z-index: 1;
+  width: 50px;
+  height: 50px;
+  -webkit-transition: all .25s ease-in .25s;
+  transition: all .25s ease-in .25s;
+  color: transparent;
+  font-size: 1.25rem;
+  line-height: 50px;
+}
+
+.c1 input:hover {
+  cursor: pointer;
+}
+
+.c1 input:hover:focus {
+  cursor: text;
+}
+
+.c1 input:hover + span {
+  background: rgba(255,255,255,0.2);
+}
+
+.c1 input:focus {
+  width: 200px;
+  padding: 0 10px;
+  outline: none;
+  color: black;
+  background: none;
+  color: white;
+}
+
+.c1 input:focus + span {
+  width: 200px;
+}
+
+.c1 input:focus + span::before {
+  width: 2px;
+  opacity: 0;
+  -webkit-transition: all .25s ease-in;
+  transition: all .25s ease-in;
+}
+
+.c1 input + span {
+  z-index: -1;
+  position: absolute;
+  border: 2px solid white;
+  top: 0;
+  width: 50px;
+  height: 50px;
+  -webkit-transition: all .25s ease-in .25s;
+  transition: all .25s ease-in .25s;
+  border-radius: 50px;
+  left: 0;
+}
+
+.c1 input + span::before {
+  -webkit-transition: all .25s ease-in .5s;
+  transition: all .25s ease-in .5s;
+  -webkit-transform-origin: left top;
+  -ms-transform-origin: left top;
+  transform-origin: left top;
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 7px;
+  border-radius: 5px;
+  background: white;
+  -webkit-transform: rotate(45deg) translate(43px,10px);
+  -ms-transform: rotate(45deg) translate(43px,10px);
+  transform: rotate(45deg) translate(43px,10px);
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <input
+      id="search-bar"
+      onKeyUp={[Function]}
+      type="search"
+    />
+    <span />
+  </div>
+</div>
+`;

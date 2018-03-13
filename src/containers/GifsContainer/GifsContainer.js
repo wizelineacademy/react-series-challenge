@@ -20,7 +20,6 @@ class GifsContainer extends Component {
       getFavoriteGifs,
       getTrendingGifs,
       getGif,
-      getFavorites,
     } = this.props;
 
     const { params } = match;
@@ -51,7 +50,6 @@ class GifsContainer extends Component {
       gifArray,
       favoriteGif,
       favorites,
-      getFavorites,
       filteredFavorites,
       getGif,
       match,
@@ -65,13 +63,14 @@ class GifsContainer extends Component {
     const gifs = isFavorite && filteredFavorites.length ? filteredFavorites : gifArray;
     return (
       <div>
-        <SquareLink to={`/home`} home />
-        <SquareLink to={`/favorites`} favorites />
-        <SearchBar handleSubmit={searchGifs} history={history} />
-        { !isSingleView && <Title>{ titleText }</Title> }
-        <PolaroidContainer isSingleView={isSingleView}>
+        <SquareLink className="home-button" to={`/home`} home />
+        <SquareLink className="fav-button" to={`/favorites`} favorites />
+        <SearchBar className="search-bar"  handleSubmit={searchGifs} history={history} />
+        { !isSingleView && <Title className="title" >{ titleText }</Title> }
+        <PolaroidContainer className="container" isSingleView={isSingleView}>
           { gifs.map(gif =>
             <PolaroidPicture
+              className="gif-img"
               key={gif.id}
               gif={gif}
               favorites={favorites}
@@ -81,7 +80,7 @@ class GifsContainer extends Component {
             />
           )}
         </PolaroidContainer>
-        <Pagination {...this.props}/>
+        <Pagination className="pagination" {...this.props}/>
       </div>
     );
   }

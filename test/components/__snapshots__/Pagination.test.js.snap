@@ -1,0 +1,197 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pagination should not render if there is no pagination object 1`] = `null`;
+
+exports[`Pagination should not render if there is only one page in pagination 1`] = `null`;
+
+exports[`Pagination should render four diferent pagination buttons if in first page 1`] = `
+.c1 {
+  color: black;
+  background-color: white;
+  padding: 8px 16px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: background-color .3s;
+  transition: background-color .3s;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+.c0 {
+  color: black;
+  background-color: white;
+  padding: 8px 16px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: background-color .3s;
+  transition: background-color .3s;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  margin-top: 30px;
+  background-color: #4CAF50;
+  color: white;
+  border: 1px solid #4CAF50;
+  cursor: default;
+}
+
+<div>
+  <span
+    className="c0"
+  >
+    1
+  </span>
+  <span
+    className="c1"
+    onClick={[Function]}
+  >
+    2
+  </span>
+  <span
+    className="c1"
+    onClick={[Function]}
+  >
+    3
+  </span>
+  <span
+    className="c1"
+    onClick={[Function]}
+  >
+    4
+  </span>
+</div>
+`;
+
+exports[`Pagination should render four diferent pagination buttons if in last page 1`] = `
+.c0 {
+  color: black;
+  background-color: white;
+  padding: 8px 16px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: background-color .3s;
+  transition: background-color .3s;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+.c1 {
+  color: black;
+  background-color: white;
+  padding: 8px 16px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: background-color .3s;
+  transition: background-color .3s;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  margin-top: 30px;
+  background-color: #4CAF50;
+  color: white;
+  border: 1px solid #4CAF50;
+  cursor: default;
+}
+
+<div>
+  <span
+    className="c0"
+    onClick={[Function]}
+  >
+    17
+  </span>
+  <span
+    className="c0"
+    onClick={[Function]}
+  >
+    18
+  </span>
+  <span
+    className="c0"
+    onClick={[Function]}
+  >
+    19
+  </span>
+  <span
+    className="c1"
+  >
+    20
+  </span>
+</div>
+`;
+
+exports[`Pagination should render seven diferent pagination buttons 1`] = `
+.c0 {
+  color: black;
+  background-color: white;
+  padding: 8px 16px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: background-color .3s;
+  transition: background-color .3s;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+.c1 {
+  color: black;
+  background-color: white;
+  padding: 8px 16px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: background-color .3s;
+  transition: background-color .3s;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  margin-top: 30px;
+  background-color: #4CAF50;
+  color: white;
+  border: 1px solid #4CAF50;
+  cursor: default;
+}
+
+<div>
+  <span
+    className="c0"
+    onClick={[Function]}
+  >
+    1
+  </span>
+  <span
+    className="c0"
+    onClick={[Function]}
+  >
+    2
+  </span>
+  <span
+    className="c0"
+    onClick={[Function]}
+  >
+    3
+  </span>
+  <span
+    className="c1"
+  >
+    4
+  </span>
+  <span
+    className="c0"
+    onClick={[Function]}
+  >
+    5
+  </span>
+  <span
+    className="c0"
+    onClick={[Function]}
+  >
+    6
+  </span>
+  <span
+    className="c0"
+    onClick={[Function]}
+  >
+    7
+  </span>
+</div>
+`;

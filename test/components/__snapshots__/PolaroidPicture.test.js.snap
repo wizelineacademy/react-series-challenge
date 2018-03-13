@@ -1,0 +1,127 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PolaroidPicture should have easter egg if gif rating is r and isSingleView 1`] = `null`;
+
+exports[`PolaroidPicture should not render if gif is null 1`] = `null`;
+
+exports[`PolaroidPicture should render appropiately if isSingleView 1`] = `null`;
+
+exports[`PolaroidPicture should render correctly 1`] = `
+.c0 {
+  position: relative;
+  width: 200px;
+  height: 250px;
+  display: inline-block;
+  padding: 10px;
+  margin: 10px;
+  background-color: white;
+  box-shadow: 7px 7px 4px black;
+  border: 1px solid #000;
+}
+
+.c0 img {
+  max-width: 100%;
+  height: 80%;
+}
+
+.c3 {
+  color: white;
+}
+
+.c2 {
+  margin: 5px;
+  padding: 10px 19px;
+  margin: 0px 10px -10px 0px;
+  border-radius: 10px;
+  font-family: 'Pacifico',cursive;
+  font-size: 17px;
+  color: #FFF;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: none;
+  background-color: #82BF56;
+  text-shadow: 0px -2px #669644;
+  float: right;
+}
+
+.c2:active {
+  -webkit-transform: translate(0px,5px);
+  -ms-transform: translate(0px,5px);
+  transform: translate(0px,5px);
+  -webkit-transform: translate(0px,5px);
+  border-bottom: 1px solid;
+}
+
+.c4 {
+  margin: 5px;
+  padding: 10px 19px;
+  margin: 0px 10px -10px 0px;
+  border-radius: 10px;
+  font-family: 'Pacifico',cursive;
+  font-size: 17px;
+  color: #FFF;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: none;
+  background-color: #3498DB;
+  text-shadow: 0px -2px #2980B9;
+}
+
+.c4:active {
+  -webkit-transform: translate(0px,5px);
+  -ms-transform: translate(0px,5px);
+  transform: translate(0px,5px);
+  -webkit-transform: translate(0px,5px);
+  border-bottom: 1px solid;
+}
+
+.c1 {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  left: 10px;
+  background-image: url("/loader.svg");
+  background-size: contain;
+  background-color: black;
+}
+
+<li
+  className="c0"
+>
+  <img
+    alt="some_title"
+    onLoad={[Function]}
+    src="https://i.ytimg.com/vi/m5d1FlSeF-M/maxresdefault.jpg"
+  />
+  <span
+    className="c1"
+  />
+  <br />
+  <button
+    className="like-button c2"
+    color="red"
+    onClick={[Function]}
+  >
+    Like
+  </button>
+  <a
+    className="c3"
+    href="/gifs/some_id"
+    onClick={[Function]}
+  >
+    <button
+      className="view-button c4"
+      color="blue"
+      onClick={[Function]}
+    >
+      View
+    </button>
+  </a>
+</li>
+`;

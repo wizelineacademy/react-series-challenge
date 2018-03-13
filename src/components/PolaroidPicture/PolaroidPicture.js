@@ -16,31 +16,35 @@ class PolaroidPicture extends Component {
     };
   }
 
-  handleImageChange = () => {
-    this.setState({
-      loading: false
-    });
-  };
-
   render () {
     const { gif, favorites, favoriteGif, isSingleView, getGif } = this.props;
     if (!gif) {
       return null;
     }
+
+    const handleImageChange = () => {
+      this.setState({
+        loading: false
+      });
+    };
+
     const isFavorite = favorites.includes(gif.id)
+    
     return (
       <PolaroidListItem isSingleView={isSingleView}>
-        <img src={gif.images.original.url} alt={gif.title} onLoad={this.handleImageChange} />
+        <img src={gif.images.original.url} alt={gif.title} onLoad={handleImageChange.bind(this)} />
         { this.state.loading && <PolaroidLoading /> }
         <br />
         { !isSingleView && 
-          <PolaroidButton onClick={() => favoriteGif(gif.id)} color={'red'}>
+          <PolaroidButton className='like-button' onClick={() => favoriteGif(gif.id)} color={'red'}>
             { !isFavorite ? 'Like' : 'Unlike' }
           </PolaroidButton>
         }
         { !isSingleView && 
           <PolaroidLink to={`/gifs/${gif.id}`}>
-            <PolaroidButton onClick={() => getGif(gif.id)} color={'blue'}>View</PolaroidButton>
+            <PolaroidButton className='view-button' onClick={() => getGif(gif.id)} color={'blue'}>
+              View
+            </PolaroidButton>
           </PolaroidLink>
         }
         { isFavorite && <PolaroidStar /> }

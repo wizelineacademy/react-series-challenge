@@ -7,7 +7,7 @@ const DEFAULT = 'Trending';
 const Title = ({ searchTerm, children }) => {
   const content = children || `Displaying results for ${searchTerm || DEFAULT }`;
   return (
-    <BurningEffect>
+    <BurningEffect className='title-class'>
       { content }
     </BurningEffect>
   )
