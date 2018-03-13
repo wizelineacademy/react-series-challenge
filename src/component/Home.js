@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import SearchBar from './SearchBar'
 import ListGiphy from './ListGimphy'
 
-import {fetchTrend, addFavorite, deleteFavorite} from '../actions'
+import {fetchTrend, addFavorite, deleteFavorite, searchOnWeb} from '../actions'
 
 class Home extends Component {
 
@@ -37,13 +37,24 @@ class Home extends Component {
     this.props.fetchTrend()
   }
 
+  handleSearch (query) {
+    if (query) {
+      this.props.searchOnWeb(query)
+    } else {
+      this.props.fetchTrend()
+    }
+  }
+
   render () {
     if (this.props.giphys.lenght === 0) {
       return <div>Loading...........</div>
     }
     return (
       <div>
-        <SearchBar />
+        <SearchBar
+          searchFunction={(query) => this.handleSearch(query)}
+          placeholder="Search on the web"
+        />
         {this.listGiphy(this.props.giphys)}
       </div>
     )
@@ -57,4 +68,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps,{fetchTrend, addFavorite, deleteFavorite})(Home)
+export default connect(mapStateToProps,{fetchTrend, addFavorite, deleteFavorite, searchOnWeb})(Home)
