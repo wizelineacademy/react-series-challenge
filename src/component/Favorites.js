@@ -34,7 +34,7 @@ class Favorites extends Component {
     } else {
       return (
         <div>
-          <SearchBar />
+          <SearchBar placeholder="Search on favorites"/>
           {this.listGiphy(this.props.favorites)}
         </div>
       )
