@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Search /> renders properly 1`] = `
+.c0 {
+  width: 50%;
+  padding: 6px;
+  border: 1px solid;
+  width: 400px;
+  text-align: center;
+  border-radius: 4px;
+  font-size: 1.1em;
+  font-family: monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.c0:focus,
+.c0:active {
+  outline: none;
+}
+
+<form
+  className=""
+  onSubmit={[Function]}
+>
+  <input
+    className="c0"
+    type="search"
+  />
+</form>
+`;

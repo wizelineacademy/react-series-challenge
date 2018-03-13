@@ -8,7 +8,11 @@ import actions from "./SearchActions";
 import { SearchBarStyled, SearchFormStyled } from "./Search.styled";
 
 class Search extends React.Component {
-  handleSubmit = event => {
+  constructor() {
+    super();
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  handleSubmit(event) {
     event.preventDefault();
 
     const query = findDOMNode(this.refs.input).value;
@@ -27,8 +31,7 @@ class Search extends React.Component {
       const { searchRequested } = this.props;
       searchRequested({ q: query });
     }
-
-  };
+  }
   render() {
     return (
       <SearchFormStyled onSubmit={this.handleSubmit}>
