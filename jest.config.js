@@ -5,7 +5,7 @@ module.exports = {
     '/node_modules/',
     '/coverage/'
   ],
-  testMatch: ['**/test/*Test.js'],
+  testMatch: ['**/test/*.test.js'],
   collectCoverageFrom: [
     "**/src/**/*.{js,jsx}",
     "!**/src/registerServiceWorker.{js,jsx}"
