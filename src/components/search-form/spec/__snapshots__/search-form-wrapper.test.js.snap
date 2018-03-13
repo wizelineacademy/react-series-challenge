@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SearchFormWrapper /> renders data correctly 1`] = `
+<form
+  className="sc-htpNat invigS"
+/>
+`;

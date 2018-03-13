@@ -26,6 +26,7 @@ export function* loadGifSaga(action) {
 
 export function* loadSearchSaga() {
   try {
+    yield put(gif.creators.loadingSearching());
     const response = yield call(searchGif);
     yield put(search.creators.loadSearching(response.data));
   } catch (error) {

@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Loader /> renders data correctly 1`] = `
+<div
+  className="sc-bwzfXH kmXviU"
+>
+  <div
+    animation-delay={0}
+    className="sc-htpNat gLLNR"
+  />
+  <div
+    animation-delay="-1.1s"
+    className="sc-htpNat gteQUn"
+  />
+  <div
+    animation-delay="-1.0s"
+    className="sc-htpNat dnZQtX"
+  />
+  <div
+    animation-delay="-0.9s"
+    className="sc-htpNat fqexcQ"
+  />
+  <div
+    animation-delay="-0.8s"
+    className="sc-htpNat gcoKLq"
+  />
+</div>
+`;

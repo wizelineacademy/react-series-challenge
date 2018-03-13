@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<UserCard /> renders data correctly with non verified user 1`] = `
+<div
+  className="sc-dnqmqq cWEUzS"
+>
+  <a
+    href="http://www.example.com"
+  >
+    <img
+      alt="Alfer"
+      className="sc-htoDjs iOyEEs"
+      src="http://www.example.com/avatar.jpg"
+    />
+  </a>
+  <div>
+    Alfer
+  </div>
+  <div>
+    @krilbert
+     
+    
+  </div>
+</div>
+`;
+
+exports[`<UserCard /> renders data correctly with verified user 1`] = `
+<div
+  className="sc-dnqmqq cWEUzS"
+>
+  <a
+    href="http://www.example.com"
+  >
+    <img
+      alt="Alfer"
+      className="sc-htoDjs iOyEEs"
+      src="http://www.example.com/avatar.jpg"
+    />
+  </a>
+  <div>
+    Alfer
+  </div>
+  <div>
+    @krilbert
+     
+    Verified
+  </div>
+</div>
+`;

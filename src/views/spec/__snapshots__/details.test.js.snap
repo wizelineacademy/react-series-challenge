@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Grid /> renders data correctly with verified user 1`] = `
+<div
+  className="sc-iwsKbI fTCFhU"
+>
+  <div
+    className="sc-gZMcBi kKhxDV"
+  >
+    <div
+      className="sc-dnqmqq cWEUzS"
+    >
+      <a
+        href="http://www.example.com"
+      >
+        <img
+          alt="Alfer"
+          className="sc-htoDjs iOyEEs"
+          src="http://www.example.com/avatar.jpg"
+        />
+      </a>
+      <div>
+        Alfer
+      </div>
+      <div>
+        @krilbert
+         
+        
+      </div>
+    </div>
+  </div>
+  <div
+    className="sc-VigVT iNWrre"
+  >
+    <img
+      alt="Example image"
+      className="sc-jTzLTM hlKdJp"
+      src="http://www.example.com/image.jpg"
+    />
+  </div>
+  <div
+    className="sc-gqjmRU fgXrhE"
+  >
+    <button
+      onClick={[Function]}
+    >
+      Add to Favorites
+    </button>
+  </div>
+</div>
+`;
