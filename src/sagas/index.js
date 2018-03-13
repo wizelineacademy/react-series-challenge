@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { put, takeEvery, all } from 'redux-saga/effects'
+import { put, takeEvery, takeLatest, all } from 'redux-saga/effects'
 
 import {
   FETCHED_TREND,
@@ -9,7 +9,9 @@ import {
   DELETE_FAVORITE,
   DELETED_FAVORITE,
   FETCH_DETAILS,
-  FETCHED_DETAILS
+  FETCHED_DETAILS,
+  SEARCH_ON_WEB,
+  SEARCHED_ON_WEB
 } from '../actions/types'
 
 const API_KEY = 'rqQsxVnE0vVW4UVFNqfjHpgjMijSundV'
@@ -75,6 +77,23 @@ function* fetchDetail(action) {
   yield put(actionCreator)
 }
 
+function* searchOnWeb(action) {
+  const PATH = '/v1/gifs/search'
+  const response = yield axios.get(
+    `${BASE_URL}${PATH}`,
+    {
+      params: {
+        api_key: API_KEY,
+        q: action.query
+      }
+    }
+  )
+  yield put({
+    type: SEARCHED_ON_WEB,
+    payload: response.data.data
+  })
+}
+
 function* watchFetchTrend() {
   yield takeEvery(FETCH_TREND, fetchTrend)
 }
@@ -91,12 +110,17 @@ function* watchFetchDetails() {
   yield takeEvery(FETCH_DETAILS, fetchDetail)
 }
 
+function* watchSearchOnWeb() {
+  yield takeLatest (SEARCH_ON_WEB, searchOnWeb)
+}
+
 export default function* rootSaga() {
   yield all([
     helloSaga(),
     watchFetchTrend(),
     watchAddFavorite(),
     watchDeleteFavorite(),
-    watchFetchDetails()
+    watchFetchDetails(),
+    watchSearchOnWeb()
   ])
 }
