@@ -1,11 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const ThumbnailWrapper = styled.section`
-  position: absolute;
+  position: relative;
+  background: white;
+  padding: 5px;
+  margin: 5px;
+
+  a { height: 100%; display: inline-block; }
+  img { object-fit: cover; }
 
   :hover a {
     opacity: 1;
@@ -53,40 +58,24 @@ const FavIcon = Icon.extend`
   }
 `;
 
-export default class Thumbnail extends Component {
-  static propTypes = {
-    id: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    url: PropTypes.string.isRequired,
-    width: PropTypes.string.isRequired,
-    height: PropTypes.string.isRequired,
-    toggleFavorite: PropTypes.func.isRequired,
-    isFav: PropTypes.bool.isRequired,
-  }
+const Thumbnail = ({ id, title, url, toggleFavorite, isFav }) => {
+  const DisplayIcon = isFav ? FavIcon : Icon;
+  return (
+    <ThumbnailWrapper>
+      <Link to={`/gifs/${id}`}><img src={url} alt={title} width={200} height={120} /></Link>
+      <IconsDiv isFav={isFav}>
+        <DisplayIcon alt="Fav" onClick={() => toggleFavorite(id)}><i className="far fa-thumbs-up" /></DisplayIcon>
+      </IconsDiv>
+    </ThumbnailWrapper>
+  );
+};
 
-  setPosition = (top, column) => {
-    const element = ReactDOM.findDOMNode(this);
-    element.style.top = `${top}px`;
-    element.style.left = `${(column * 25)}%`;
-  }
+Thumbnail.propTypes = {
+  id: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
+  toggleFavorite: PropTypes.func.isRequired,
+  isFav: PropTypes.bool.isRequired,
+};
 
-  getHeight = () => {
-    const element = ReactDOM.findDOMNode(this);
-    const computedStyle = window.getComputedStyle(element);
-    const height = computedStyle.getPropertyValue('height');
-    return parseInt(height, 10) + 10;
-  }
-
-  render() {
-    const { id, title, url, width, height, toggleFavorite, isFav } = this.props;
-    const DisplayIcon = isFav ? FavIcon : Icon;
-    return (
-      <ThumbnailWrapper>
-        <Link to={`/gifs/${id}`}><img src={url} alt={title} width={width} height={height} /></Link>
-        <IconsDiv isFav={isFav}>
-          <DisplayIcon alt="Fav" onClick={() => toggleFavorite(id)}><i className="far fa-thumbs-up" /></DisplayIcon>
-        </IconsDiv>
-      </ThumbnailWrapper>
-    );
-  }
-}
+export default Thumbnail;

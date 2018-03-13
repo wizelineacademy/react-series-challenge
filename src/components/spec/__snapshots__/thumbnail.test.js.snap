@@ -2,7 +2,7 @@
 
 exports[`<Thumbnail /> renders data correctly with non verified user 1`] = `
 <section
-  className="sc-bxivhb cjWlAe"
+  className="sc-bxivhb jDMTmg"
 >
   <a
     href="/gifs/asdfljlk3-ffgfg"
@@ -10,9 +10,9 @@ exports[`<Thumbnail /> renders data correctly with non verified user 1`] = `
   >
     <img
       alt="Example image"
-      height="200"
+      height={120}
       src="http://www.example.com/image.jpg"
-      width="200"
+      width={200}
     />
   </a>
   <div
@@ -33,7 +33,7 @@ exports[`<Thumbnail /> renders data correctly with non verified user 1`] = `
 
 exports[`<Thumbnail /> renders data correctly with verified user 1`] = `
 <section
-  className="sc-bxivhb cjWlAe"
+  className="sc-bxivhb jDMTmg"
 >
   <a
     href="/gifs/asdfljlk3-ffgfg"
@@ -41,9 +41,9 @@ exports[`<Thumbnail /> renders data correctly with verified user 1`] = `
   >
     <img
       alt="Example image"
-      height="200"
+      height={120}
       src="http://www.example.com/image.jpg"
-      width="200"
+      width={200}
     />
   </a>
   <div

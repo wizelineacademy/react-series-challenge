@@ -9,8 +9,6 @@ describe('<Thumbnail />', () => {
     id: 'asdfljlk3-ffgfg',
     title: 'Example image',
     url: 'http://www.example.com/image.jpg',
-    width: '200',
-    height: '200',
     toggleFavorite: jest.fn(),
   };
 
