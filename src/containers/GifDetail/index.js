@@ -5,7 +5,7 @@ import GifDetail from '../../components/GifDetail'
 
 const mapStateToProps = (state) => ({
   gif: state.activeGif,
-  favoriteGifs: state.favoriteGifs
+  isFavorite: (state.favoriteGifs.filter(gif => gif.id === state.activeGif.id).length > 0) ? true : false
 })
 
 const mapDispatchToProps = dispatch => ({

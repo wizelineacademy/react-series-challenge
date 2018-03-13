@@ -6,7 +6,7 @@ import {
   BackButton
 } from './GifDetail.style'
 import { withRouter } from "react-router-dom";
-
+import FavoriteButton from '../FavoriteButton'
 
 class GifDetail extends Component {
   componentWillMount() {
@@ -14,10 +14,11 @@ class GifDetail extends Component {
   }
 
   renderGifIfExist() {
-    const { gif } = this.props
+    const { gif, isFavorite, setFavorite} = this.props
     if(this.props.gif.title) {
       return(
         <GifDetailWrapper>
+          <FavoriteButton gif={gif} isFavorite={isFavorite} setFavorite={setFavorite} />
           <img alt={gif.title} src={gif.images.downsized_large.url} />
           <StyledP>{gif.title}</StyledP>
         </GifDetailWrapper>
