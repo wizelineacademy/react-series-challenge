@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import { fetchGifs } from '../reducers/search';
+import search from '../actions/search';
 import { Grid, Loader } from '../components';
 
 class Search extends Component {
@@ -47,5 +47,5 @@ class Search extends Component {
 
 export default connect(
   ({ search: { data, error, loading } }) => ({ data, error, loading }),
-  { fetchGifs },
+  { fetchGifs: search.creators.requestSearch },
 )(Search);

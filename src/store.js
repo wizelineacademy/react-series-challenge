@@ -1,9 +1,27 @@
-import { createStore, applyMiddleware, combineReducers } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
-import thunk from 'redux-thunk';
+import { createStore, applyMiddleware, combineReducers, compose } from 'redux';
+import createSagaMiddleware from 'redux-saga';
+import rootSaga from './sagas';
 
 import { gif, search, favorites, trending } from './reducers';
 
+const sagaMiddleware = createSagaMiddleware();
+
+const initialState = {};
+const enhancers = [];
+const middleware = [sagaMiddleware];
 const reducer = combineReducers({ gif, search, favorites, trending });
 
-export default createStore(reducer, composeWithDevTools(applyMiddleware(thunk)));
+const composedEnhancers = compose(
+  applyMiddleware(...middleware),
+  ...enhancers,
+);
+
+const store = createStore(
+  reducer,
+  initialState,
+  composedEnhancers,
+);
+
+sagaMiddleware.run(rootSaga);
+
+export default store;

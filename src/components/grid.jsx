@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import { toggleFavorite } from '../reducers/favorites';
+import fav from '../actions/favorites';
 import { Thumbnail } from '../components';
 
 const GridWrapper = styled.div`
@@ -66,5 +66,5 @@ class Grid extends Component {
 
 export default connect(
   ({ favorites }) => ({ favorites }),
-  { toggleFavorite },
+  { toggleFavorite: fav.creators.requestToggle },
 )(Grid);

@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 
-import { toggleFavorite } from '../reducers/favorites';
-import { fetchGif } from '../reducers/gif';
+import fav from '../actions/favorites';
+import gif from '../actions/gif';
 import { UserCard, Loader } from '../components';
 
 const DetailsWrapper = styled.div`
@@ -77,7 +77,7 @@ class Details extends Component {
           { !loading && <Gif src={data.data.images.original.url} alt={data.data.title} /> }
         </DetailsContent>
         <DetailsRightSidebar>
-          { !loading && <button onClick={e => toggleFavorite(data.data.id)}>{this.isFavorite(data.data.id) ? 'Remove from favorites!' : 'Add to Favorites'}</button>}
+          { !loading && <button onClick={() => toggleFavorite(data.data.id)}>{this.isFavorite(data.data.id) ? 'Remove from favorites!' : 'Add to Favorites'}</button>}
         </DetailsRightSidebar>
       </DetailsWrapper>
     );
@@ -86,5 +86,5 @@ class Details extends Component {
 
 export default connect(
   ({ gif: { data, error, loading }, favorites }) => ({ data, error, loading, favorites }),
-  { fetchGif, toggleFavorite },
+  { fetchGif: gif.creators.requestGIF, toggleFavorite: fav.creators.requestToggle },
 )(Details);

@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import { fetchTrending } from '../reducers/trending';
+import trending from '../actions/trending';
 import { Grid, Loader } from '../components';
 
 class Home extends Component {
   static propTypes = {
-    fetchTrending: PropTypes.func.isRequired,
+    loadingTrending: PropTypes.func.isRequired,
     data: PropTypes.object,
     loading: PropTypes.bool,
   };
@@ -17,7 +17,7 @@ class Home extends Component {
     loading: false,
   };
 
-  componentDidMount = () => this.props.fetchTrending();
+  componentDidMount = () => this.props.loadingTrending();
 
   render() {
     const { data, loading } = this.props;
@@ -33,5 +33,5 @@ class Home extends Component {
 
 export default connect(
   ({ trending: { data, error, loading } }) => ({ data, error, loading }),
-  { fetchTrending },
+  { loadingTrending: trending.creators.loadingTrending },
 )(Home);
