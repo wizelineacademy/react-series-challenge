@@ -1,12 +1,11 @@
-import React, { Component } from "react";
+import React from "react";
 import { connect } from "react-redux";
 
 import TileList from "../shared/TileList";
 
-const SearchResults = ({ gifs, loaded }) => {
-  if (!loaded) return <div>loading dfklgjlksfj...</div>;
-  return <TileList gifs={gifs} />;
-};
+const SearchResults = ({ gifs, loaded }) => (
+  <TileList gifs={gifs} loading={!loaded} />
+);
 
 const mapStateToProps = state => {
   const { gifs, loaded } = state.searchReducer;

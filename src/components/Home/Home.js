@@ -20,7 +20,7 @@ class Home extends React.Component {
   render() {
     const { fetching, gifs, favs } = this.props;
     const marked = this.markFavorite(gifs, favs);
-    return <TileList fetching={fetching} gifs={marked} />;
+    return <TileList loading={fetching} gifs={marked} />;
   }
 }
 

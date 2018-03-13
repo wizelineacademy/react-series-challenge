@@ -25,9 +25,7 @@ class Details extends React.Component {
         <Tile gif={gif} original={true} />
         <TextDetailsWrapperStyled>
           <TextStyled>{gif.title}</TextStyled>
-          <TextStyled>
-            uploaded by <a href={gif.user.profile_url}>{gif.username}</a>
-          </TextStyled>
+          {gif.username && <TextStyled>uploaded by {gif.username}</TextStyled>}
           <TextStyled>
             <a href={gif.url}>view on Giphy </a>
           </TextStyled>

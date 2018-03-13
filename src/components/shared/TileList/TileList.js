@@ -1,16 +1,15 @@
 import React from "react";
 
 import Tile from "../Tile";
+import { Loader } from "../../shared";
 import { TilesWrapperStyled } from "./TileList.styled";
 
-const Placeholder = () => "loading...";
-
-const TileList = ({ gifs, fetching }) => {
-  if (fetching) return <Placeholder />;
+const TileList = ({ gifs, loading }) => {
+  if (loading) return <Loader />;
 
   return (
     <TilesWrapperStyled>
-      {gifs.length ? gifs.map(gif => <Tile key={gif.id} gif={gif} />) : "nope"}
+      {gifs.map(gif => <Tile key={gif.id} gif={gif} />)}
     </TilesWrapperStyled>
   );
 };
