@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 
+import { toggleFavorite } from '../reducers/favorites';
 import { fetchGif } from '../reducers/gif';
 import { UserCard, Loader } from '../components';
 
@@ -43,6 +44,8 @@ class Details extends Component {
     error: PropTypes.object,
     match: PropTypes.object,
     fetchGif: PropTypes.func.isRequired,
+    toggleFavorite: PropTypes.func.isRequired,
+    favorites: PropTypes.array.isRequired,
   }
   static defaultProps = {
     data: undefined,
@@ -56,8 +59,10 @@ class Details extends Component {
     this.props.fetchGif(id);
   }
 
+  isFavorite = id => this.props.favorites.includes(id);
+
   render() {
-    const { data, loading, error } = this.props;
+    const { data, loading, error, toggleFavorite } = this.props;
     if (error) return (<div>{error.message}</div>);
     if (!data && !loading) return null;
 
@@ -72,7 +77,7 @@ class Details extends Component {
           { !loading && <Gif src={data.data.images.original.url} alt={data.data.title} /> }
         </DetailsContent>
         <DetailsRightSidebar>
-          Favorites
+          { !loading && <button onClick={e => toggleFavorite(data.data.id)}>{this.isFavorite(data.data.id) ? 'Remove from favorites!' : 'Add to Favorites'}</button>}
         </DetailsRightSidebar>
       </DetailsWrapper>
     );
@@ -80,6 +85,6 @@ class Details extends Component {
 }
 
 export default connect(
-  ({ gif: { data, error, loading } }) => ({ data, error, loading }),
-  { fetchGif },
+  ({ gif: { data, error, loading }, favorites }) => ({ data, error, loading, favorites }),
+  { fetchGif, toggleFavorite },
 )(Details);

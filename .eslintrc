@@ -22,6 +22,7 @@
     "no-plusplus": 0,
     "no-continue": 0,
     "object-curly-newline": 0,
+    "object-property-newline": 0,
     "react/no-find-dom-node": 0,
   },
   "env": {

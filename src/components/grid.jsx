@@ -1,13 +1,21 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
+import { toggleFavorite } from '../reducers/favorites';
 import { Thumbnail } from '../components';
 
 const GridWrapper = styled.div`
   position: relative;
 `;
 
-export default class Grid extends Component {
+class Grid extends Component {
+  static propTypes = {
+    toggleFavorite: PropTypes.func.isRequired,
+    favorites: PropTypes.array.isRequired,
+  }
+
   componentDidMount = () => this.calculatePositions();
   componentDidUpdate = () => this.calculatePositions();
 
@@ -33,14 +41,30 @@ export default class Grid extends Component {
     }
   }
 
+  isFavorite = id => this.props.favorites.includes(id);
+
   render() {
-    const { data } = this.props;
+    const { data, toggleFavorite } = this.props;
     if (!data) return null;
 
     return (
       <GridWrapper>
-        { data.map(({ id, title, images: { fixed_width_downsampled: { url, width, height } } }) => (<Thumbnail key={id} id={id} title={title} url={url} width={width} height={height} ref={(c) => { this[`gif-${id}`] = c; }} />)) }
+        { data.map((item) => {
+          const { id, title } = item;
+          const { images: { fixed_width_downsampled: { url, width, height } } } = item;
+          const props = {
+            id, title, url, width, height, toggleFavorite,
+            ref: (c) => { this[`gif-${id}`] = c; },
+            isFav: this.isFavorite(id),
+          };
+          return <Thumbnail key={`thumb-${id}`} {...props} />;
+        }) }
       </GridWrapper>
     );
   }
 }
+
+export default connect(
+  ({ favorites }) => ({ favorites }),
+  { toggleFavorite },
+)(Grid);

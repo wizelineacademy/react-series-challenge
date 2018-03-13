@@ -6,23 +6,22 @@ import styled from 'styled-components';
 
 const ThumbnailWrapper = styled.section`
   position: absolute;
+
+  :hover a {
+    opacity: 1;
+    transform: translateX(0);
+  }
 `;
 
 const IconsDiv = styled.div`
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 0;
-  right: 0;
   padding: 10px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-
-  :hover a {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  z-index: 2;
 `;
 
 const Icon = styled.a`
@@ -47,6 +46,13 @@ const Icon = styled.a`
   }
 `;
 
+const FavIcon = Icon.extend`
+  > i {
+    color: #fff;
+    background-color: #4da3e2;
+  }
+`;
+
 export default class Thumbnail extends Component {
   static propTypes = {
     id: PropTypes.string.isRequired,
@@ -54,6 +60,8 @@ export default class Thumbnail extends Component {
     url: PropTypes.string.isRequired,
     width: PropTypes.string.isRequired,
     height: PropTypes.string.isRequired,
+    toggleFavorite: PropTypes.func.isRequired,
+    isFav: PropTypes.bool.isRequired,
   }
 
   setPosition = (top, column) => {
@@ -70,12 +78,13 @@ export default class Thumbnail extends Component {
   }
 
   render() {
-    const { id, title, url, width, height } = this.props;
+    const { id, title, url, width, height, toggleFavorite, isFav } = this.props;
+    const DisplayIcon = isFav ? FavIcon : Icon;
     return (
       <ThumbnailWrapper>
         <Link to={`/gifs/${id}`}><img src={url} alt={title} width={width} height={height} /></Link>
-        <IconsDiv>
-          <Icon alt="Fav"><i className="far fa-thumbs-up" /></Icon>
+        <IconsDiv isFav={isFav}>
+          <DisplayIcon alt="Fav" onClick={() => toggleFavorite(id)}><i className="far fa-thumbs-up" /></DisplayIcon>
         </IconsDiv>
       </ThumbnailWrapper>
     );

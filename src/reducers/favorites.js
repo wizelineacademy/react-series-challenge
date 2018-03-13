@@ -1,23 +1,20 @@
-const initialState = { data: [] };
+const initialState = [];
 
-const ADD_FAVORITE = 'ADD_FAVORITE';
-const DELETE_FAVORITE = 'DELETE_FAVORITE';
+const TOGGLE_FAVORITE = 'TOGGLE_FAVORITE';
 
-const addFavoriteAction = payload => ({ type: ADD_FAVORITE, payload });
-const deleteFavoriteAction = payload => ({ type: DELETE_FAVORITE, payload });
+const favoriteAction = payload => ({ type: TOGGLE_FAVORITE, payload });
 
-export const addFavorite = id => (dispatch) => {
-  dispatch(addFavoriteAction(id));
-};
-
-export const removeFavorite = id => (dispatch) => {
-  dispatch(deleteFavoriteAction(id));
+export const toggleFavorite = id => (dispatch) => {
+  dispatch(favoriteAction(id));
 };
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case ADD_FAVORITE: return [...initialState, ...action.payload];
-    case DELETE_FAVORITE: return state.filter(item => item !== action.payload);
+    case TOGGLE_FAVORITE: {
+      const { payload: id } = action;
+      if (state.indexOf(id) === -1) return [...state, action.payload];
+      return state.filter(item => item !== id);
+    }
     default: return state;
   }
 };
