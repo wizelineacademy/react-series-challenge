@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ImageLoader /> renders properly 1`] = `null`;
+
+exports[`<ImageLoader /> returns a downsized image 1`] = `
+.c0 {
+  width: 300px;
+  height: 300px;
+  border-radius: 2px;
+  object-fit: cover;
+}
+
+<img
+  className="c0"
+  height={300}
+  src={undefined}
+  width={300}
+/>
+`;
+
+exports[`<ImageLoader /> returns an image when loaded 1`] = `
+.c0 {
+  width: 300px;
+  height: 300px;
+  border-radius: 2px;
+  object-fit: cover;
+}
+
+<img
+  className="c0"
+  height={300}
+  src={undefined}
+  width={300}
+/>
+`;
+
+exports[`<ImageLoader /> returns null when the image has not loaded 1`] = `null`;
