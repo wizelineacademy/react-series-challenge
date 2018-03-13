@@ -12,8 +12,16 @@ const middleware = [
   sagaMiddleware
 ];
 
+const getPreloadedState = () => {
+  const favorites = localStorage.getItem('favorites');
+  return favorites !== null
+    ? { favorites: JSON.parse(favorites) }
+    : {};
+};
+
 const store = createStore(
   rootReducer,
+  getPreloadedState(),
   composeEnhancers(applyMiddleware(...middleware))
 );
 
