@@ -1,13 +1,22 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const animation = ({ width }) => keyframes`
+  0% { background-position: -${width}px 0; }
+  100% { background-position: ${width}px 0; }
+`;
 
 const TileWrapperStyled = styled.div`
   width: ${props => props.width}px;
   height: ${props => props.height}px;
   position: relative;
   margin: 5px;
-  transition: 0.1s ease-in-out;
-  background: antiquewhite;
+  transition: 0.1s ease-in-out transform;
   border-radius: 2px;
+  background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+  animation: 1.5s ${props => animation(props)} linear infinite;
+  animation-fill-mode: forwards;
+  background-size: 800px 104px;
+  position: relative;
 
   &:hover {
     transform: scale(1.05);
