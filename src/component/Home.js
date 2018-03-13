@@ -23,6 +23,7 @@ class Home extends Component {
         <ListGiphy
           key={giphy.id}
           gimphyId={giphy.id}
+          title={giphy.title}
           url={giphy.images.fixed_width.url}
           selected={giphy.id in this.props.favorites}
           handleOnclick={() => this.handleOnclick(giphy)}

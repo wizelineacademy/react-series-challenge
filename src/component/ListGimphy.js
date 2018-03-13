@@ -61,6 +61,7 @@ class ListGimphy extends Component {
     return(
       <ItemWrapper selected={this.props.selected} >
         <GroupWrapper>
+          <Span>{this.props.title}</Span>
           <Image src={this.props.url} alt="" onClick={() => this.props.handleOnclick()}/>
           {this.renderInfoMessage()}
           {this.renderDetailButton()}

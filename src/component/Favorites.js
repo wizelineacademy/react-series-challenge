@@ -24,6 +24,7 @@ class Favorites extends Component {
         <ListGiphy
           key={giphys[key].id}
           gimphyId={giphys[key].id}
+          title={giphys[key].title}
           url={giphys[key].images.fixed_width.url}
           selected
           handleOnclick={() => this.handleOnclick(giphys[key])}
