@@ -1,12 +1,12 @@
 import React from 'react'
-import { func, object, string } from 'prop-types'
+import { object, string } from 'prop-types'
 
 import { CardWrapper } from './Card.style'
-import { GifItem } from '../'
+import GifItem from '../../containers/GifItem'
 
-const Card = ({ images, title, id }) => (
+const Card = ({ images, title, id, onFavoriteClick }) => (
   <CardWrapper>
-    <GifItem imageUrl={images.fixed_height.url} alt={title} isFavorite={false} id={id}  />
+    <GifItem imageUrl={images.fixed_height.url} alt={title} id={id}  />
   </CardWrapper>
 )
 

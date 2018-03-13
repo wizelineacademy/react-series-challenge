@@ -9,14 +9,14 @@ class Home extends React.Component {
   }
 
   render() {
-    const { giphies, onSearchChange, onSearchSubmit, searchValue } = this.props
+    const { giphies, onSearchChange, onSearchSubmit, searchValue, onFavoriteClick } = this.props
 
     return (
       <div>
         <Header>
           <SearchBar value={searchValue} onChange={onSearchChange} onSubmit={onSearchSubmit} />
         </Header>
-        <Grid giphies={giphies} />
+        <Grid giphies={giphies} onFavoriteClick={onFavoriteClick} />
       </div>
     )
   }
@@ -25,11 +25,13 @@ class Home extends React.Component {
 Home.propTypes = {
   giphies: arrayOf(object),
   initialSetup: func,
+  onFavoriteClick: func,
   onSearchChange: func.isRequired,
   onSearchSubmit: func.isRequired,
   searchValue: string
 }
 Home.defaultProps = {
+  onFavoriteClick: () => {},
   giphies: [],
   initialSetup: () => {},
   searchValue: ''
