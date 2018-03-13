@@ -12,10 +12,10 @@ const COLORS = [
   "#6ab04c"
 ];
 
-const getRandomColor = (r = Math.floor(Math.random() * 7)) => COLORS[r];
+const getRandomColor = index => COLORS[index || Math.floor(Math.random() * 7)];
 
-const ImagePlaceholder = ({ height, width }) => (
-  <ColorBoxStyled color={getRandomColor()} height={height} width={width} />
+const ImagePlaceholder = ({ height, width, index }) => (
+  <ColorBoxStyled color={getRandomColor(index)} height={height} width={width} />
 );
 
 export default ImagePlaceholder;
