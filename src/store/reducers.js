@@ -1,14 +1,30 @@
-const counter = (state = 0, action) => {
+const defaultState = {
+  trendingGifs: [],
+  error: '',
+  count: 0,
+  loading: false
+}
+
+const counter = (state = defaultState, action) => {
+  let count = state.count
+
   switch(action.type) {
-     case 'INCREMENT':
-       return state = state + action.payload.amount;
-     case 'DECREMENT':
-      return state = state - 1;
+    case 'LOADING_START':
+      return { ...state, loading: true }
+    case 'LOADING_END':
+      return { ...state, loading: false }
+    case 'INCREMENT':
+      count += action.payload.amount
+      return { ...state, count }
+    case 'DECREMENT':
+      count -= 1
+      return { ...state, count }
     case 'FETCH_SUCCEEDED':
-      return state = 100;
+      const trendingGifs = action.trendingGifs.data
+      return {...state, trendingGifs};
     case 'FETCH_FAILED':
-      return state = -200;
-     default:
+      return { ...state, error: action.payload.message }
+    default:
        return state;
    }
 };

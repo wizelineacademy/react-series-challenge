@@ -1,10 +1,15 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
+import GifGrid from '../components/GifGrid'
+
 class Home extends Component {
   render () {
     return (
-      <h1>Home</h1>
+      <div>
+        <h1>Home</h1>
+        <GifGrid gifs={this.props.trendingGifs} />
+      </div>
     )
   }
 
@@ -15,7 +20,7 @@ class Home extends Component {
 
 function mapStateToProps(state) {
   return {
-    count: state
+    trendingGifs: state.trendingGifs
   };
 }
 

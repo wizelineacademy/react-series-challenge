@@ -1,28 +1,19 @@
 import { call, put, takeLatest } from 'redux-saga/effects'
-
-const Api = {
-  fetchUser: () => {
-    return new Promise( (resolve, reject) => {
-      console.log('fetching user')
-      setTimeout(() => {
-        console.log('fetched user')
-        resolve(5)
-      }, 2000)
-    })
-  }
-}
+import giphy from '../api/giphy'
 
 function* fetchTrending (action) {
   console.log('fetch trending')
+  yield put({ type: "LOADING_START" });
   try {
-    const user = yield call(Api.fetchUser);
+    const response = yield call(giphy.fetchTrending);
     // const user = yield call(Api.fetchUser, action.payload.userId);
-    console.log('success')
-    yield put({type: "FETCH_SUCCEEDED", user: user});
+    console.log('success', response)
+    yield put({type: "FETCH_SUCCEEDED", trendingGifs: response});
   } catch (e) {
     console.log('fail', e)
     yield put({type: "FETCH_FAILED", message: e.message});
   }
+  yield put({ type: "LOADING_END" });
 }
 
 function* fetchSaga() {
