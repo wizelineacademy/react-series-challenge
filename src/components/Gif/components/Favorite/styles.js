@@ -15,10 +15,11 @@ const Star = styled.div`
   }
 
   &:hover:after {
-    content: '☆';
-    font-size: 30px;
-    color: ${ props => props.starred ? "silver" : "yellow" };
-    top: 3px;
+    color: yellow;
+  }
+
+  &:active:after {
+    color: silver;
   }
 
 `;

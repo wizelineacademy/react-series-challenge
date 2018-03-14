@@ -1,15 +1,24 @@
 import {
-  TOGGLE_GIF_FAVORITE,
+  TOGGLE_FAVORITE,
 } from './actions';
 
-const initialState = {};
+const initialState = {
+  list: {}
+};
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case TOGGLE_GIF_FAVORITE:
+    case TOGGLE_FAVORITE:
+      const element = action.payload.element;
+      const newFavorites = state.list;
+      if(newFavorites[element.id]){
+        delete newFavorites[element.id];
+      } else {
+        newFavorites[element.id]={...element};
+      }
       return {
         ...state,
-        searching: true,
+        list: newFavorites,
       };
     default:
       return state;

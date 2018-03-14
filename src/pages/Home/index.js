@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import GifList from '../../components/GifList';
 import { Message, Page } from '../../styledComponents';
-import { fetchTrendingGifs } from '../data/home/actions';
+import {
+  fetchTrendingGifs,
+} from '../data/home/actions';
+import {
+  toggleFavorite,
+} from '../data/favorites/actions';
 
 class Home extends Component {
   componentWillMount(){
@@ -16,6 +21,10 @@ class Home extends Component {
       searching,
       error,
     } = this.props.home;
+
+    const {
+      list,
+    } = this.props.favorites;
 
     return (
       <Page>
@@ -43,7 +52,11 @@ class Home extends Component {
             <p> There was an error </p>
           }
           { (!error && !searching && gifs) &&
-            <GifList elements={gifs.data}/>
+            <GifList
+              elements={gifs.data}
+              starred={list}
+              handleToggleFav={this.props.handleToggleFav}
+            />
           }
         </div>
       </Page>
@@ -53,16 +66,19 @@ class Home extends Component {
 
 const mapStateToProps = state => {
   const {
-    home
+    home,
+    favorites,
   } = state.pages;
 
   return {
     home,
+    favorites,
   };
 };
 
 const mapDispatchToProps = dispatch => ({
   getTrending: () => dispatch(fetchTrendingGifs()),
+  handleToggleFav: (element) => dispatch(toggleFavorite(element)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

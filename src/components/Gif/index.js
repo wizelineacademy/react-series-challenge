@@ -3,22 +3,23 @@ import { Link } from 'react-router-dom';
 import Favorite from './components/Favorite';
 import StyledGif from './styles';
 
-const Gif = ({ id, images, onToggleFavorite }) => {
+const Gif = ({ gif, onToggleFavorite, starred }) => {
   return (
     <StyledGif>
-      <Link
-        to={`/view/${id}`}
-      >
         <div className="container">
           <Favorite
-            onToggleFavorite={onToggleFavorite}
+            starred={starred}
+            onToggleFavorite={() => onToggleFavorite(gif) }
           />
-          <img
-            alt="gif"
-            src={images.original.url}
-          />
+          <Link
+            to={`/view/${gif.id}`}
+          >
+            <img
+              alt="gif"
+              src={gif.images.original.url}
+            />
+          </Link>
         </div>
-      </Link>
     </StyledGif>
   )
 }

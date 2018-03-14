@@ -2,7 +2,10 @@ import {
   FETCH_TRENDING_GIFS,
 } from './actions';
 
-const initialState = {};
+const initialState = {
+  searching: false,
+  error: false,
+};
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {

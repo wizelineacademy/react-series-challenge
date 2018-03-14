@@ -4,7 +4,7 @@ import Star from './styles';
 const Favorite = ({onToggleFavorite, starred}) => {
   return (
     <Star
-      starred
+      starred={starred}
       onClick={onToggleFavorite}
     />
   )
