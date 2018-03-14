@@ -1,7 +1,6 @@
 import { asyncActionType } from '../utils';
 
 export const FETCH_TRENDING_GIFS = asyncActionType("FETCH_TRENDING_GIFS");
-
 export const fetchTrendingGifs = () => (
   { type: FETCH_TRENDING_GIFS.PENDING }
 );

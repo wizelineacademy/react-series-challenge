@@ -2,7 +2,12 @@ import React from 'react';
 import { Row, Col } from '../Grid';
 import Gif from '../Gif';
 
-const GifList = ({ elements, starred, handleToggleFav }) => {
+const GifList = ({
+  elements,
+  starred,
+  handleSetGif,
+  handleToggleFav,
+}) => {
   const gifs = elements.map(element => {
     const isStarred = Object.keys(starred).some(key => element.id === key);
     return (
@@ -10,6 +15,7 @@ const GifList = ({ elements, starred, handleToggleFav }) => {
         <Gif
           gif={element}
           starred={isStarred}
+          onClickImage={handleSetGif}
           onToggleFavorite={handleToggleFav}
         />
       </Col>

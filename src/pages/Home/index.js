@@ -9,6 +9,9 @@ import {
 import {
   toggleFavorite,
 } from '../data/favorites/actions';
+import {
+  setCurrentGif,
+} from '../data/view/actions';
 
 class Home extends Component {
   componentWillMount(){
@@ -55,6 +58,7 @@ class Home extends Component {
             <GifList
               elements={gifs.data}
               starred={list}
+              handleSetGif={this.props.handleSetGif}
               handleToggleFav={this.props.handleToggleFav}
             />
           }
@@ -79,6 +83,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => ({
   getTrending: () => dispatch(fetchTrendingGifs()),
   handleToggleFav: (element) => dispatch(toggleFavorite(element)),
+  handleSetGif: (element) => dispatch(setCurrentGif(element)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

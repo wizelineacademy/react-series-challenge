@@ -6,6 +6,9 @@ import { Message, Page } from '../../styledComponents';
 import {
   toggleFavorite,
 } from '../data/favorites/actions';
+import {
+  setCurrentGif,
+} from '../data/view/actions';
 
 const Favorites = (props) => {
   const {
@@ -34,6 +37,7 @@ const Favorites = (props) => {
           <GifList
             elements={Object.values(list)}
             starred={list}
+            handleSetGif={props.handleSetGif}
             handleToggleFav={props.handleToggleFav}
           />
         }
@@ -60,6 +64,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
   handleToggleFav: (element) => dispatch(toggleFavorite(element)),
+  handleSetGif: (element) => dispatch(setCurrentGif(element)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Favorites);

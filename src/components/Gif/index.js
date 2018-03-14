@@ -3,7 +3,12 @@ import { Link } from 'react-router-dom';
 import Favorite from './components/Favorite';
 import StyledGif from './styles';
 
-const Gif = ({ gif, onToggleFavorite, starred }) => {
+const Gif = ({
+  gif,
+  onClickImage,
+  onToggleFavorite,
+  starred,
+}) => {
   return (
     <StyledGif>
         <div className="container">
@@ -16,6 +21,7 @@ const Gif = ({ gif, onToggleFavorite, starred }) => {
           >
             <img
               alt="gif"
+              onClick={() => onClickImage(gif) }
               src={gif.images.original.url}
             />
           </Link>
