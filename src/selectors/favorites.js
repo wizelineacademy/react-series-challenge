@@ -10,7 +10,10 @@ export const getFilteredFavorites = (state) => {
   const favorites = getFavoritesArray(state);
   const query = getQuery(state);
 
-  return favorites.filter(favorite => {
-    return query.length < 0 || favorite.title.includes(query);
-  });
+  return {
+    favorites: favorites.filter(favorite => {
+      return query.length === 0 || favorite.title.includes(query);
+    }),
+    anyFavorite: favorites.length > 0
+  };
 };
