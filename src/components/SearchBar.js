@@ -9,7 +9,7 @@ const StyledTopBar = styled.div`
   top: 0;
   height: 70px;
   width: 100%;
-  background-color: ${({ theme }) => theme.colors.background};
+  background-color: ${({ theme }) => theme.colors.searchBar};
   box-shadow: 0px 10px 40px -15px rgba(0,0,0,0.75);
   z-index: ${({ theme }) => theme.zMap.searchBar};
 `;
@@ -23,11 +23,23 @@ const StyledTopBarContent = styled.div`
   align-items: center;
 `;
 
+const StyledLogo = styled.p`
+  font-family: 'Pacifico', cursive;
+  font-size: 2rem;
+  text-shadow: -1px 0px 2px rgba(20, 20, 20, 1);
+  color: ${({ theme }) => theme.colors.text};
+`;
+
+const StyledSearchInput = styled.input`
+  border: 5px solid ${({ theme }) => theme.colors.background};
+  border-radius: 6px;
+`;
+
 const SearchBar = ({ query, searchGifsChangeQuery }) => (
   <StyledTopBar>
     <StyledTopBarContent>
-      <span>Giffr</span>
-      <input
+      <StyledLogo>Giffr</StyledLogo>
+      <StyledSearchInput
         placeholder="search gifs"
         type="text"
         value={query}
