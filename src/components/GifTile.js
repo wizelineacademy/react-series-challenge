@@ -18,11 +18,15 @@ class GifTile extends Component {
   render () {
     return (
       <Tile onMouseOver={this.showControls} onMouseLeave={this.hideControls}>
+        {
+          this.props.isFavorite(this.props.data.id) &&
+          <IconFavorite>⭐</IconFavorite>
+        }
         <NavLink to={'/details/' + this.props.data.id}>
           <ImageStyled src={this.props.data.images.fixed_width.url} alt={this.props.data.slug}/>
         </NavLink>
         {
-          this.state.showControls && !this.props.data.isFavorite &&
+          this.state.showControls && !this.props.isFavorite(this.props.data.id) &&
           <Controls>
             <ButtonStyled onClick={this.save}>Save to favorites</ButtonStyled>
           </Controls>
@@ -116,4 +120,9 @@ const ButtonStyled = styled.button `
 
 const ButtonStyledRed = ButtonStyled.extend`
   background-color: rgba(255, 0, 0, 0.5);
+`
+const IconFavorite = styled.div`
+  position: absolute;
+  top: 0;
+  right: 20px;
 `

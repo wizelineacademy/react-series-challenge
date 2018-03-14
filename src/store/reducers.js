@@ -38,13 +38,14 @@ const counter = (state = defaultState, action) => {
         id: action.gifData.id,
         slug: action.gifData.slug,
         images: {
-          fixed_width: action.gifData.fixed_width
+          fixed_width: action.gifData.images.fixed_width
         }
       })
       localStorage.setItem("favorites", JSON.stringify(favoriteGifs))
       return { ...state, favoriteGifs }
     case 'REMOVE_FAVORITE':
       const newFavoriteGifs = state.favoriteGifs.filter(gif => gif.id !== action.gifId)
+      localStorage.setItem("favorites", JSON.stringify(newFavoriteGifs))
       return { ...state, favoriteGifs: newFavoriteGifs }
 
     default:
