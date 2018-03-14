@@ -11,3 +11,7 @@ export const searchGifs = (query) => {
     }
   });
 }
+
+export const fetchGif = (gifId) => {
+  return fetcher(`/gifs/${gifId}`);
+};
