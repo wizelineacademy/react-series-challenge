@@ -51,7 +51,7 @@ exports[`<Thumbnail /> renders data correctly with verified user 1`] = `
   >
     <a
       alt="Fav"
-      className="sc-bZQynM bCJawC"
+      className="sc-bZQynM fnuMSO"
       onClick={[Function]}
     >
       <i

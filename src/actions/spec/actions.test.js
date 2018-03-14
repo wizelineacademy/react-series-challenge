@@ -5,10 +5,7 @@ import axios from 'axios';
 
 import rootSaga from '../../sagas';
 import { gif, search, favorites, trending } from '../../reducers';
-import trendingActions from '../trending';
-import favoritesActions from '../favorites';
-import gifActions from '../gif';
-import searchActions from '../search';
+import { trendingActions, searchActions, gifActions, favoritesActions } from '../';
 import config from '../../app.config';
 
 const sagaMiddleware = createSagaMiddleware();
@@ -79,6 +76,12 @@ describe('trending actions', () => {
     it('should toggle favorites ', () => {
       store.dispatch(favoritesActions.creators.requestToggle('test'));
       store.dispatch(favoritesActions.creators.requestToggle('test'));
+    });
+  });
+
+  describe('fetchFavorites', () => {
+    it('should toggle favorites ', () => {
+      store.dispatch(favoritesActions.creators.fetchFavorites());
     });
   });
 });

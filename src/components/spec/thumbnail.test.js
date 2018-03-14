@@ -6,9 +6,13 @@ import { Thumbnail } from '../';
 
 describe('<Thumbnail />', () => {
   const props = {
-    id: 'asdfljlk3-ffgfg',
-    title: 'Example image',
-    url: 'http://www.example.com/image.jpg',
+    gif: {
+      id: 'asdfljlk3-ffgfg',
+      title: 'Example image',
+      images: {
+        fixed_width_downsampled: { url: 'http://www.example.com/image.jpg' },
+      },
+    },
     toggleFavorite: jest.fn(),
   };
 
