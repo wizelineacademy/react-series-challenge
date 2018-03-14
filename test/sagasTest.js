@@ -71,7 +71,7 @@ describe('Test for sagas middleware', () => {
     expect(gen.next().value.PUT.action).to.be.deep.equal(expectedAction)
   })
 
-  it('should handle fetchDetail', () => {
+  it('should handle fetchDetail 200', () => {
     const dummyAction = {
       type: FETCH_DETAILS,
       gimphyId: 'dummyID'
@@ -88,6 +88,25 @@ describe('Test for sagas middleware', () => {
     const gen = fetchDetail(dummyAction)
     gen.next() // Axios call
     expect(gen.next(dummyAxiosResponse).value.PUT.action).to.be.deep.equal(expectedAction)
+  })
+
+  it('should handle fetchDetail 400', () => {
+    const dummyAction = {
+      type: FETCH_DETAILS,
+      gimphyId: 'dummyID'
+    }
+    const dummyAxiosResponse = {
+      data: {
+        data: {dummyDetailId: 'dummyDetailId', dummyDetailTitle: 'dummyDetailTitle'}
+      } 
+    }
+    const expectedAction = {
+      type: FETCHED_DETAILS,
+      payload: {}
+    }
+    const gen = fetchDetail(dummyAction)
+    gen.next() // Axios call
+    expect(gen.throw(dummyAxiosResponse).value.PUT.action).to.be.deep.equal(expectedAction)
   })
 
   it('should handle searchOnWeb', () => {
