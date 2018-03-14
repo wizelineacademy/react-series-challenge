@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
+import { connect } from 'react-redux'
 
 import Trending from './pages/Trending'
 import Favorites from './pages/Favorites'
@@ -22,6 +23,16 @@ class App extends Component {
       </BrowserRouter>
     );
   }
+
+  componentDidMount () {
+    this.props.fetchFavorites()
+  }
 }
 
-export default App;
+function mapDispatchToProps (dispatch) {
+  return {
+    fetchFavorites: () => dispatch({ type: 'FETCH_FAVORITES' }),
+  };
+}
+
+export default connect(null, mapDispatchToProps)(App);

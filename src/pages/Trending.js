@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import SearchInput from '../components/SearchInput'
 import GifGrid from '../components/GifGrid'
 
-class Home extends Component {
+class Trending extends Component {
   render () {
     return (
       <div>
@@ -31,5 +31,5 @@ function mapDispatchToProps (dispatch) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Trending);
 
