@@ -19,7 +19,7 @@ class Search extends Component {
 }
 
 const mapStateToProps = state => ({
-  loading: state.search.loading,
+  loading: state.search.searching,
   gifs: state.search.gifs
 });
 
