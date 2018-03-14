@@ -5,7 +5,7 @@ import ListGiphy from './ListGimphy'
 
 import {deleteFavorite} from '../actions'
 
-class Favorites extends Component {
+export class Favorites extends Component {
   constructor(props) {
     super(props)
     this.state = {
