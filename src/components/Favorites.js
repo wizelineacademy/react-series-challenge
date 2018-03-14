@@ -6,6 +6,7 @@ class Favorites extends Component {
   render() {
     return (
       <div>
+        Favorites
         <Search />
         <ItemList />
       </div>

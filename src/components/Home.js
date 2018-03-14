@@ -6,6 +6,7 @@ class Home extends Component {
   render() {
     return (
       <div>
+        Home
         <Search />
         <ItemList />
       </div>

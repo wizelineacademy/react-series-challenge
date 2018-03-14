@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
-import Navigation from './components/Navigation';
+import {
+  NavLink,
+  Redirect,
+  Route,
+  Switch
+} from 'react-router-dom';
 import Home from './components/Home';
+import Favorites from './components/Favorites';
 import './App.css';
 
 class App extends Component {
@@ -9,9 +15,17 @@ class App extends Component {
       <div>
         <header>
           GIPHY challenge
-          <Navigation />
+          <ul>
+            <li><NavLink to="/Home" activeClass="active">Home</NavLink></li>
+            <li><NavLink to="/Favorites" activeClass="active">Favorites</NavLink></li>
+          </ul>
         </header>
-        <Home />
+
+        <Switch>
+          <Route path="/Home" component={Home} />
+          <Route path="/Favorites" component={Favorites} />
+          <Redirect to="/Home" />
+        </Switch>
       </div>
     );
   }
