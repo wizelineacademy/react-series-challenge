@@ -4,6 +4,7 @@ import {
   Route,
   Switch,
 } from 'react-router-dom';
+import { Menu } from '../../components/Menu';
 import GridLayout from '../GridLayout';
 
 export class MainAppLayout extends Component {
@@ -22,15 +23,16 @@ export class MainAppLayout extends Component {
   }
 
   componentDidMount(){
-  
+    
   }
   render () {
     return (
-      <div style={{ background: '#000' }}>
+      <div>
+        <Menu />
         <Switch>
             <Route exact path={ `/` } component={ GridLayout } />
-            <Route exact path={ `/:view` } component={ GridLayout } />
-            <Route exact path={ `/:view/:searchTerm` } component={ GridLayout } />
+            <Route exact path={ `/view/:view` } component={ GridLayout } />
+            <Route exact path={ `/view/:view/:searchTerm` } component={ GridLayout } />
         </Switch>
       </div>
     );

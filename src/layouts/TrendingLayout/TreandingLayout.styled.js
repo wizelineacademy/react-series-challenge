@@ -19,12 +19,8 @@ export class SearchLayout extends Component {
   static propTypes = {
     children: PropTypes.node,
   };
-  constructor (props) {
-    super(props);
-  }
-
+  
   componentDidMount() {
-    console.log(this.props);
     const {
       params
     } = this.props.match

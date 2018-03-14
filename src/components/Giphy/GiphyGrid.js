@@ -19,11 +19,24 @@ export class GiphyGrid extends Component {
     this.state = (() => {
     })();
   }
+  
+  values(obj) {
+    var willReturn = [];
+  
+    for (var key in obj) {
+      willReturn.push(obj[key]);
+    }
+  
+    return willReturn;
+  }
 
   renderPreviews = () => (
-    this.props.data.map(( giphy, index ) => (
+    this.values(this.props.data).map(( giphy, index ) => (
       <GiphyPreview
-        onSelect={ this.props.onSelect } 
+        onSelect={ this.props.onSelect }
+        onFavClick={ this.props.onFavClick}
+        allData={ giphy }
+        isFav={ giphy.isFav }
         key={ index }
         preview_gif={ giphy.images.preview_gif } 
         title={ giphy.title }

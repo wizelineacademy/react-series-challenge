@@ -1,6 +1,7 @@
 
 import { all, takeLatest, put, call } from 'redux-saga/effects';
 import searchActions from '../actions/search';
+import favoriteActions from '../actions/favorites';
 import giphyApi from '../apis/giphy';
 //import { getErrorMessage } from '../utils/errors';
 
@@ -19,6 +20,8 @@ export function* searchSaga (action) {
       throw new Error(response);
     }
     yield put (searchActions.creators.searchSuccess(response.data));
+    yield put (favoriteActions.creators.updateIsFav());
+
   } catch (e) {
     // let message = getErrorMessage(e);
     yield put (searchActions.creators.searchFail(e));

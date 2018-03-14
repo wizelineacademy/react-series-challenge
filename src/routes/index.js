@@ -1,7 +1,7 @@
 const HOME_PATH = '/';
-const TRENDING_PATH = 'trending';
-const SEARCH_PATH = 'search';
-const FAVORITE_PATH = 'favorite'
+const TRENDING_PATH = '/view/trending';
+const SEARCH_PATH = '/view/search';
+const FAVORITE_PATH = '/view/favorites'
 
 
 export default {

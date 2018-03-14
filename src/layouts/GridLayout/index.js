@@ -5,8 +5,8 @@ import { GiphyGrid } from '../../components/Giphy';
 import { bindActionCreators } from 'redux';
 import searchActions from '../../actions/search';
 import trendingActions from '../../actions/trending';
+import favActions from '../../actions/favorites';
 import SearchComponentInput from '../../components/SearchComponent';
-import pathNames from '../../routes';
 import {
   Container
 } from './GridLayout.styled';
@@ -22,12 +22,13 @@ export class SearchLayout extends Component {
     const {
       params
     } = this.props.match
+    this.props.loadFavorites();
     switch (params.view){
-      case pathNames.TRENDING_PATH: {
+      case 'trending': {
         this.props.trendingRequest();
         break;
       }
-      case pathNames.SEARCH_PATH: {
+      case 'search': {
         if (params.searchTerm){
           this.props.searchRequest(params.searchTerm);
         }
@@ -41,34 +42,49 @@ export class SearchLayout extends Component {
   }
   componentWillReceiveProps(nextProps) {
     const {
-      params
-    } = this.props.match
-    if (nextProps.match.params.searchTerm 
-      !== params.searchTerm 
-      && nextProps.match.params.view === pathNames.SEARCH_PATH ) {
-      this.props.searchRequest(nextProps.match.params.searchTerm);
+      match
+    } = this.props
+    if ( nextProps.match.url !==  match.url ) {
+      switch( nextProps.match.params.view ) {
+        case 'search':{
+          if (nextProps.match.params.searchTerm 
+            !== match.params.searchTerm ) {
+            this.props.searchRequest(nextProps.match.params.searchTerm);
+          }
+          break;
+        }
+        default: {
+          this.props.trendingRequest();
+          break;
+        }
+      }
     }
-
   }
 
   getGridData = () =>{
     const {
       match,
       trending,
-      search
+      search,
+      favorites
     } = this.props;
     switch(match.params.view){
-      case pathNames.TRENDING_PATH:{
+      case 'trending' :{
         return trending.giphyArray
       }
-      case pathNames.SEARCH_PATH:{
+      case 'search':{
         return search.giphyArray
+      }
+      case 'favorite':{
+        return favorites.favorites;
       }
       default:
         return trending.giphyArray;
     }
   }
-
+  handleFavClick = data =>{
+    this.props.toggleFavoritesReq(data)
+  }
   render () {
     const {
       match
@@ -80,6 +96,7 @@ export class SearchLayout extends Component {
         <div >
           <GiphyGrid 
             onSelect={ (e) => { console.log(e)} }
+            onFavClick= { this.handleFavClick }
             data={ gridData } 
           />
         </div>
@@ -88,20 +105,25 @@ export class SearchLayout extends Component {
   }
 }
 export const mapStateToProps = state => {
-  const { search, trending } = state;
+  const { search, trending, favorites } = state;
 
   return {
     search,
-    trending
+    trending,
+    favorites
   };
 };
 
 export const mapDispatchToProps = dispatch => {
   const searchRequest = searchActions.creators.searchRequest;
-  const trendingRequest = trendingActions.creators.trendingRequest
+  const trendingRequest = trendingActions.creators.trendingRequest;
+  const toggleFavoritesReq = favActions.creators.toggleFavoritesReq;
+  const loadFavorites = favActions.creators.loadFavorites;
   return bindActionCreators({
     searchRequest,
-    trendingRequest
+    trendingRequest,
+    toggleFavoritesReq,
+    loadFavorites
   }, dispatch);
 };
 

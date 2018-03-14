@@ -1,8 +1,8 @@
 import favActions from '../actions/favorites';
 const initialState = {
   searchTerm: '',
-  filtered: [],
-  favorites: []
+  filtered: {},
+  favorites: {}
 };
 
 const trendingReducer = (state = initialState, action) => {
@@ -10,9 +10,10 @@ const trendingReducer = (state = initialState, action) => {
 
   switch (type) {
     case favActions.types.FAVORITES_UPDATE:{
+      let data = (payload) ? payload : {}
       return {
         ...state,
-        favorites: payload
+        favorites: data
       }
     }
 

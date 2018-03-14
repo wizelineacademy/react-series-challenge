@@ -4,16 +4,17 @@ import {
   Image,
   Data
 } from './Preview.styled';
-
+import { FavBox } from '../FavBox';
 
 const GiphyPreview = (props) => {
-  const { preview_gif, onSelect, title, } = props;
+  const { preview_gif, onSelect, title, id, isFav, onFavClick, allData } = props;
   const {
     url
   } = preview_gif;
   return (
-    <PreviewCard onClick={() => onSelect(props)} >
-    <Image src={url} />
+    <PreviewCard  >
+    <Image src={url} onClick={() => onSelect(props)} />
+      <FavBox checked={ isFav } id={id } onClick={() => onFavClick(allData)} />
       <Data>
       <span>{title}</span>
       </Data>

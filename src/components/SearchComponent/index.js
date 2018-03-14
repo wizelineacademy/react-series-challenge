@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import searchActions from '../../actions/search';
 import searchImage from '../../assets/search.gif'
+import pathNames from '../../routes'
 import {
   SearchInput,
   SearchButton,
@@ -34,13 +35,12 @@ export class SearchComponent extends Component {
     const {
       search
     } = this.props;
-    console.log('Sarc',this.props.match)
     return (
       <div>
       <TitleStyled>Search Giphy for any gif!</TitleStyled>
       <InputContainer >
         <SearchInput value={unescape(search.currentTerm)} onChange={this.handleOnChange} />
-        <SearchLink to={`/search/${search.currentTerm}`}>
+        <SearchLink to={`${pathNames.SEARCH_PATH}/${search.currentTerm}`}>
           <SearchButton  src={ searchImage } />
         </SearchLink>
       </InputContainer>
