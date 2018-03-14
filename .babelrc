@@ -8,7 +8,8 @@
       "plugins": [
         "transform-es2015-modules-commonjs",
         "transform-object-rest-spread",
-        "transform-es2015-computed-properties"
+        "transform-es2015-computed-properties",
+        "transform-class-properties"
       ]
     }
   }
