@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Item from './Item';
 
 class ItemList extends Component {
@@ -13,4 +14,7 @@ class ItemList extends Component {
   }
 }
 
-export default ItemList;
+const mapStateToProps = state => ({});
+const mapDispatchToProps = state => ({});
+
+export default connect(mapStateToProps, mapDispatchToProps)(ItemList);

@@ -5,6 +5,8 @@ import {
   Route,
   Switch
 } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from './store';
 import Home from './components/Home';
 import Favorites from './components/Favorites';
 import './App.css';
@@ -12,21 +14,23 @@ import './App.css';
 class App extends Component {
   render() {
     return (
-      <div>
-        <header>
-          GIPHY challenge
-          <ul>
-            <li><NavLink to="/Home" activeClass="active">Home</NavLink></li>
-            <li><NavLink to="/Favorites" activeClass="active">Favorites</NavLink></li>
-          </ul>
-        </header>
+      <Provider store={store}>
+        <div>
+          <header>
+            GIPHY challenge
+            <ul>
+              <li><NavLink to="/Home" activeClass="active">Home</NavLink></li>
+              <li><NavLink to="/Favorites" activeClass="active">Favorites</NavLink></li>
+            </ul>
+          </header>
 
-        <Switch>
-          <Route path="/Home" component={Home} />
-          <Route path="/Favorites" component={Favorites} />
-          <Redirect to="/Home" />
-        </Switch>
-      </div>
+          <Switch>
+            <Route path="/Home" component={Home} />
+            <Route path="/Favorites" component={Favorites} />
+            <Redirect to="/Home" />
+          </Switch>
+        </div>
+      </Provider>
     );
   }
 }

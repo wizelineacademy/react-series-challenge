@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class Search extends Component {
   render() {
@@ -11,4 +12,7 @@ class Search extends Component {
   }
 }
 
-export default Search;
+const mapStateToProps = state => ({});
+const mapDispatchToProps = state => ({});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Search);
