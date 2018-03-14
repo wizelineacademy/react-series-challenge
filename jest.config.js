@@ -1,6 +1,6 @@
 module.exports = {
   browser: true,
-  setupFiles: ['./jest.setup.js'],
+  setupFiles: ['./jest.setup.js', "jest-localstorage-mock"],
   testPathIgnorePatterns: [
     '/node_modules/',
     '/coverage/'
@@ -10,7 +10,10 @@ module.exports = {
   },
   testMatch: ['**/__tests__/*.test.js'],
   collectCoverageFrom: [
-    "**/src/**/*.{js,jsx}",
+    "**/src/pages/data/**/*.{js,jsx}",
+    "**/src/styledComponents/**/*.{js,jsx}",
+    "**/src/components/**/*.{js,jsx}",
+    "**/src/appComponents/**/*.{js,jsx}",
     "!**/src/registerServiceWorker.{js,jsx}"
   ],
   coverageThreshold: {

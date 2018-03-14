@@ -4,7 +4,6 @@ import logo from '../../../assets/icons/logo.jpg';
 import { Row, Col } from '../../Grid';
 import StyledHeader from './styles';
 
-
 const Header = ({ children }) => {
   return (
     <StyledHeader>

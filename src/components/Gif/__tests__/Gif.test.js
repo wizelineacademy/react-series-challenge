@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { MemoryRouter } from 'react-router';
 import Gif from '../../Gif';
 
 describe('<Gif />', () => {
@@ -35,7 +36,6 @@ describe('<Gif />', () => {
 
     const wrapper = shallow(<Gif {...props} />);
     wrapper.find('img').simulate('click');
-    expect(wrapper).toMatchSnapshot();
   });
 
   it('Click to set up current gif', () => {
@@ -49,11 +49,15 @@ describe('<Gif />', () => {
         }
       },
       starred: false,
-      onToggleFavorite: () => {},
+      onToggleFavorite: jest.fn(),
     };
 
-    const wrapper = shallow(<Gif {...props} />);
+    const wrapper = mount(
+      <MemoryRouter>
+        <Gif {...props} />
+      </MemoryRouter>
+    );
     wrapper.find('Favorite').simulate('click');
-    expect(wrapper).toMatchSnapshot();
+    expect(props.onToggleFavorite).toHaveBeenCalledTimes(1);
   });
 });

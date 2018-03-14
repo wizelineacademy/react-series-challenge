@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home - Reducer Must add error state for the search 1`] = `
+Object {
+  "error": true,
+  "searching": false,
+}
+`;
+
+exports[`Home - Reducer Must add searching prev state for the search 1`] = `
+Object {
+  "error": false,
+  "searching": true,
+}
+`;
+
+exports[`Home - Reducer Must remove searching state and return list of gifs 1`] = `
+Object {
+  "error": false,
+  "gifs": Object {
+    "a": Object {
+      "id": "a",
+    },
+    "b": Object {
+      "id": "b",
+    },
+    "c": Object {
+      "id": "c",
+    },
+  },
+  "searching": false,
+}
+`;

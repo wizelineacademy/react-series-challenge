@@ -22,9 +22,11 @@
     "jest": "NODE_ENV=testing jest --coverage --maxWorkers=6"
   },
   "devDependencies": {
+    "deep-freeze": "0.0.1",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "identity-obj-proxy": "^3.0.0",
-    "jest": "^22.4.2"
+    "jest": "^22.4.2",
+    "jest-localstorage-mock": "^2.2.0"
   }
 }
