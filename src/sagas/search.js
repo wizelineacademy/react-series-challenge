@@ -12,6 +12,12 @@ import history from '../history';
 const SEARCH_DEBOUNCE_MS = 1000;
 
 function* searchGifsSaga() {
+  // if the path is favorites, dont handle the search as it'll be handled
+  // at the component level to filter redux state
+  if (history.location.pathname.includes('favorites')) {
+    yield cancel();
+  }
+
   // debounce handling the search
   yield call(delay, SEARCH_DEBOUNCE_MS);
 
