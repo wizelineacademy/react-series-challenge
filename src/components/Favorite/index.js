@@ -1,5 +1,5 @@
 import React from 'react';
-import Star from './styles';
+import { Star } from '../../styledComponents';
 
 const Favorite = ({onToggleFavorite, starred}) => {
   return (

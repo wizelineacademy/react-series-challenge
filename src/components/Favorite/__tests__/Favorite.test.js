@@ -1,7 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import Favorite from '../../Favorite';
-import Star from '../../Favorite/styles';
 
 describe('<Favorite />', () => {
   it('Favorite Star renders correctly', () => {
@@ -11,24 +10,6 @@ describe('<Favorite />', () => {
     };
 
     const wrapper = shallow(<Favorite {...props} />);
-    expect(wrapper).toMatchSnapshot();
-  });
-
-  it('Styled Component must render as not favorite', () => {
-    const props = {
-      starred: false,
-    };
-
-    const wrapper = shallow(<Star {...props} />);
-    expect(wrapper).toMatchSnapshot();
-  });
-
-  it('Styled Component must render as favorite', () => {
-    const props = {
-      starred: true,
-    };
-
-    const wrapper = shallow(<Star {...props} />);
     expect(wrapper).toMatchSnapshot();
   });
 });

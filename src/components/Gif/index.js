@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Favorite from '../Favorite';
-import StyledGif from './styles';
+import { StyledGif } from '../../styledComponents';
 
 const Gif = ({
   gif,

@@ -27,6 +27,8 @@ const View = (props) => {
     let message = '';
     if (currentGif.user) {
       message = currentGif.id ? currentGif.user.display_name : 'Not Found';
+    } else {
+      message = 'GIF';
     }
 
     const isStarred = Object.keys(list).some(key => currentGif.id === key);
