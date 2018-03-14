@@ -24,7 +24,7 @@ ShallowWrapper {
       "children": <p>
         Hello Test!
       </p>,
-      "className": "sc-bdVaJa gOHnSR",
+      "className": "sc-bdVaJa cceXlJ",
     },
     "ref": null,
     "rendered": Object {
@@ -49,7 +49,7 @@ ShallowWrapper {
         "children": <p>
           Hello Test!
         </p>,
-        "className": "sc-bdVaJa gOHnSR",
+        "className": "sc-bdVaJa cceXlJ",
       },
       "ref": null,
       "rendered": Object {
