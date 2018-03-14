@@ -5,6 +5,7 @@ import Navbar from './components/Navbar'
 import Trending from './pages/Trending'
 import Favorites from './pages/Favorites'
 import Details from './pages/Details'
+import Search from './pages/Search'
 import './App.css';
 
 class App extends Component {
@@ -16,6 +17,7 @@ class App extends Component {
           <Route exact path="/" component={Trending}/>
           <Route path="/favs" component={Favorites} />
           <Route path="/details/:id" component={Details} />
+          <Route path="/search/:query" component={Search} />
         </div>
       </BrowserRouter>
     );

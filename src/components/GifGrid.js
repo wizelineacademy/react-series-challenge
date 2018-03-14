@@ -25,7 +25,6 @@ const GridStyled = styled.div`
   grid-template-columns: repeat(5, 1fr);
   grid-column-gap: 15px;
   grid-row-gap: 15px;
-  position: absolute;
   width: 100%;
   overflow: hidden;
   align-items: center;

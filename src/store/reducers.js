@@ -26,7 +26,9 @@ const counter = (state = defaultState, action) => {
     case 'FETCH_FAILED':
       return { ...state, error: action.payload.message }
     case 'FETCHED_SINGLE':
-      return {...state, singleGif: action.singleGif.data};
+      return { ...state, singleGif: action.singleGif.data };
+    case 'FETCHED_SEARCH':
+      return {...state, trendingGifs: action.searchGifs.data};
 
     default:
        return state;

@@ -4,32 +4,32 @@ import { connect } from 'react-redux'
 import SearchInput from '../components/SearchInput'
 import GifGrid from '../components/GifGrid'
 
-class Home extends Component {
+class Search extends Component {
   render () {
     return (
       <div>
         <SearchInput />
-        <GifGrid gifs={this.props.trendingGifs} />
+        <GifGrid gifs={this.props.gifs} />
       </div>
     )
   }
 
   componentDidMount () {
-    this.props.fetch()
+    this.props.search(this.props.match.params.query)
   }
 }
 
 function mapStateToProps(state) {
   return {
-    trendingGifs: state.trendingGifs
+    gifs: state.trendingGifs
   };
 }
 
 function mapDispatchToProps (dispatch) {
   return {
-    fetch: () => dispatch({ type: 'FETCH_TRENDING' }),
+    search: (query) => dispatch({ type: 'FETCH_SEARCH', query }),
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Search);
 
