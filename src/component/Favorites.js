@@ -48,9 +48,7 @@ export class Favorites extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.favorites !== this.props.favorites) {
-      this.setState({favorites: nextProps.favorites})
-    }
+    this.setState({favorites: nextProps.favorites})
   }
 
   render () {
@@ -70,7 +68,7 @@ export class Favorites extends Component {
   }
 }
 
-function mapStateToProps(state) {
+export function mapStateToProps(state) {
   return {
     favorites: state.favorites
   }
