@@ -14,6 +14,7 @@ const ContainerStyled = styled.div`
   flex-grow: 1;
   padding: 0 20px;
   color: #6f6f6f;
+  text-align: center;
 `;
 
 class Container extends Component {

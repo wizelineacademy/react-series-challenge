@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 const Favorite = styled.div`
@@ -7,27 +7,15 @@ const Favorite = styled.div`
   cursor: pointer;
 `;
 
-class FavSection extends Component {
-  addToFavorites() {
-    alert("Added to favorites");
-  }
+const FavSection = ({ inFavs, clickHandler }) => {
+  const img = (inFavs) ? '/favOn.png' : '/favOff.png';
+  const text = (inFavs) ? 'Remove from favorites' : 'Add to favorites';
 
-  render() {
-    if (!this.props.inFavs) {
-      return (
-        <Favorite>
-          <img src='/favOff.png' height="15" alt="Add to favorites" />
-          <span>Add to favorites</span>
-        </Favorite>
-      );
-    }
-
-    return (
-      <Favorite onClick={this.addToFavorites} >
-        <img src='/favOn.png' height="15" alt="Remove from favorites" />  Remove from favorites
-      </Favorite>
-    );
-  }
+  return (
+    <Favorite onClick={clickHandler} >
+      <img src={img} height="15" alt={text} /> {text}
+    </Favorite>
+  );
 }
 
-  export default FavSection;
+export default FavSection;

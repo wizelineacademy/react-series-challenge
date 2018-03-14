@@ -23,3 +23,20 @@ export const fetchSearchedGiphysFromWS = (term) => {
     .then(statusHelper)
     .then(response => response.json());
 };
+
+export const fetchGiphysByIdsFromWS = (ids) => {
+  const apiUrl = 'http://api.giphy.com/v1/gifs';
+  const stringIds = ids.join();
+
+  return fetch(apiUrl + `?ids=${stringIds}&api_key=${apiKey}`)
+    .then(statusHelper)
+    .then(response => response.json());
+};
+
+export const fetchGiphyDetailFromWS = (id) => {
+  const apiUrl = 'http://api.giphy.com/v1/gifs/' + id;
+
+  return fetch(apiUrl + `?api_key=${apiKey}`)
+    .then(statusHelper)
+    .then(response => response.json());
+};

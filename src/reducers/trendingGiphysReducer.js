@@ -4,7 +4,7 @@ const DEFAULT_STATE = {
   giphys: []
 };
 
-export default function TrendingGiphysReducer(state = DEFAULT_STATE, action) {
+export default function trendingGiphysReducer(state = DEFAULT_STATE, action) {
   switch (action.type) {
     case FETCH_TRENDING_GIPHYS_SUCCESS: {
       return {
