@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Grid renders when no giphies 1`] = `<styled.div />`;
+
+exports[`Grid renders with giphies 1`] = `
+<styled.div>
+  <Card
+    id="123"
+    images={Object {}}
+    key="123"
+    title="a title"
+  />
+  <Card
+    id="124"
+    images={Object {}}
+    key="124"
+    title="a title"
+  />
+</styled.div>
+`;

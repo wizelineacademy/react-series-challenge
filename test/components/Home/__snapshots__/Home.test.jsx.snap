@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home renders correctly 1`] = `
+<div>
+  <Header>
+    <SearchBar
+      onChange={[Function]}
+      onSubmit={[Function]}
+      value=""
+    />
+  </Header>
+  <Grid
+    giphies={
+      Array [
+        Object {
+          "id": "123",
+          "images": Object {
+            "fixed_height": Object {
+              "url": "someUrl.com",
+            },
+          },
+          "title": "First title",
+        },
+        Object {
+          "id": "1234",
+          "images": Object {
+            "fixed_height": Object {
+              "url": "someOtherUrl.com",
+            },
+          },
+          "title": "Second Title",
+        },
+      ]
+    }
+  />
+</div>
+`;

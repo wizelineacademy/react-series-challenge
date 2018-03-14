@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Detail renders correctly when giph is not null 1`] = `
+<div>
+  <Header />
+  <styled.div>
+    <div>
+      <styled.div>
+        <Connect(GifItem)
+          alt="this is a gif"
+          id="123"
+          imageUrl="someUrl"
+          isDetail={true}
+        />
+      </styled.div>
+      <styled.div>
+        <h1>
+          this is a gif
+        </h1>
+      </styled.div>
+    </div>
+  </styled.div>
+</div>
+`;
+
+exports[`Detail renders correctly when giph is null 1`] = `
+<div>
+  <Header />
+  <styled.div>
+    <h1>
+      Loading...
+    </h1>
+  </styled.div>
+</div>
+`;
