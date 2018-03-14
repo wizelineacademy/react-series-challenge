@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom'
+import { connect } from 'react-redux'
 
 import Navbar from './Navbar'
 import Home from './Home'
@@ -8,7 +9,7 @@ import Details from './Details'
 import './App.css';
 
 class App extends Component {
-  render() {
+  render () {
     return (
       <BrowserRouter>
         <div className="App">
@@ -18,11 +19,28 @@ class App extends Component {
           </p>
           <Route exact path="/" component={Home}/>
           <Route path="/favs" component={Favorites} />
-          <Route path="/details/:id" component={Details}/>
+          <Route path="/details/:id" component={Details} />
+
+          <p>{this.props.count}</p>
+          <button onClick={this.props.increment}>+</button>
+          <button  onClick={this.props.decrement}>-</button>
         </div>
       </BrowserRouter>
     );
   }
 }
 
-export default App;
+function mapStateToProps(state) {
+  return {
+    count: state
+  };
+}
+
+function mapDispatchToProps (dispatch) {
+  return {
+    increment: () => dispatch({ type: 'INCREMENT', payload: {amount: 2} }),
+    decrement: () => dispatch({ type: 'DECREMENT' })
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
