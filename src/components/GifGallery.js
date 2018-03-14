@@ -17,9 +17,8 @@ const StyledGifContainer = styled.div`
 const GifGallery = ({ gifs }) => (
   <GifList>
     {gifs.map(gif =>
-      <StyledGifContainer>
+      <StyledGifContainer key={gif.id}>
         <Gif
-          key={gif.id}
           gif={gif}
           imageSrc={gif.images.fixed_width.url}
         />
