@@ -10,6 +10,10 @@ module.exports = {
     "**/src/**/*.{js,jsx}",
     "!**/src/registerServiceWorker.{js,jsx}"
   ],
+  moduleNameMapper: {
+   '\\.(svg)$': '<rootDir>/assetsTransformer.js',
+   "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
+ },
   coverageThreshold: {
     global: {
       statements: 75,
