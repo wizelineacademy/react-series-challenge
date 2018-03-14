@@ -7,7 +7,7 @@ const Image = styled.img`
   height: 100%;
   display: inline-block;
 `
-const ItemWrapper = styled.div`
+export const ItemWrapper = styled.div`
   border: ${props => props.selected ? '1px solid blue;' : ''}  }
   border-radius: 3px;
   display: inline-block;
@@ -53,7 +53,7 @@ class ListGimphy extends Component {
       : 'Click on the Gimphy to save it as favorite'
 
     return (
-      <Span>{message}</Span>
+      <div className='info-message'><Span>{message}</Span></div>
     )
   }
 
@@ -61,7 +61,7 @@ class ListGimphy extends Component {
     return(
       <ItemWrapper selected={this.props.selected} >
         <GroupWrapper>
-          <Span>{this.props.title}</Span>
+          <Span >{this.props.title}</Span>
           <Image className='img' src={this.props.url} alt="" onClick={() => this.props.handleOnclick()}/>
           {this.renderInfoMessage()}
           {this.renderDetailButton()}

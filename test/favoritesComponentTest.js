@@ -1,7 +1,7 @@
 import React from 'react'
 import {expect} from 'chai'
 import { shallow } from 'enzyme'
-import {Favorites} from '../src/component/Favorites'
+import {Favorites, mapStateToProps} from '../src/component/Favorites'
 
 describe('Test Favorites component', () => {
   const shallowOptions = {
@@ -129,6 +129,16 @@ describe('Test Favorites component', () => {
     const component = shallow(<Favorites {...props}/>, shallowOptions)
     component.setProps(nextPros)
     expect(component.state('favorites')).to.be.deep.equal(nextPros.favorites)
+  })
+
+  it('evaluates mapStateToProps', () => {
+    const state = {
+      favorites: 'favorites',
+    }
+    const expectedMap = {
+      favorites: 'favorites',
+    }
+    expect(mapStateToProps(state)).to.be.deep.equal(expectedMap)
   })
 
 })
