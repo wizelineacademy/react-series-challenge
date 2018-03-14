@@ -11,7 +11,7 @@ describe('Test for Home Component', () => {
   it('show loading message', () => {
     const props = {
       giphys: [],
-      favorites: []
+      favorites: {}
     }
     const component = shallow(<Home {...props}/>, shallowOptions)
     expect(component.text()).to.be.equal('Loading...........')
@@ -28,7 +28,7 @@ describe('Test for Home Component', () => {
         },
         title: "dummyTitle"
       }],
-      favorites : []
+      favorites : {}
     }
     const component = shallow(<Home {...props}/>, shallowOptions)
     expect(component.find('SearchBar')).lengthOf(1)
@@ -45,7 +45,7 @@ describe('Test for Home Component', () => {
         },
         title: "dummyTitle"
       }],
-      favorites : []
+      favorites : {}
     }
     const component = shallow(<Home {...props}/>, shallowOptions)
     expect(component.find('ListGimphy')).lengthOf(1)
@@ -73,7 +73,7 @@ describe('Test for Home Component', () => {
           title: "dummyTitle"
         }
       ],
-      favorites : []
+      favorites : {}
     }
     const component = shallow(<Home {...props}/>, shallowOptions)
     expect(component.find('ListGimphy')).lengthOf(2)
@@ -92,7 +92,7 @@ describe('Test for Home Component', () => {
           title: "dummyTitle"
         }
       ],
-      favorites : []
+      favorites : {}
     }
     const component = shallow(<Home {...props}/>, shallowOptions)
     expect(component.find('SearchBar').props()).to.have.all.keys('searchFunction','placeholder')
@@ -111,7 +111,7 @@ describe('Test for Home Component', () => {
           title: "dummyTitle"
         }
       ],
-      favorites : []
+      favorites : {}
     }
     const expectedProps = [
       'gimphyId', 'title', 'url', 'selected', 'handleOnclick', 'showDetailButton'
@@ -120,4 +120,115 @@ describe('Test for Home Component', () => {
     expect(component.find('ListGimphy').props()).to.have.all.keys(expectedProps)
   })
 
+  it('evaluates call to searchOnWeb Onchange event from Searchbar', () => {
+    const props = {
+      giphys: [
+        {
+          id: "dummyId",
+          images: {
+            fixed_width: {
+              url: "https://dummyUrl.com",
+            }
+          },
+          title: "dummyTitle"
+        }
+      ],
+      favorites : {},
+      searchOnWeb: (query) => query,
+      fetchTrend: () => null
+    }
+    const dummyEvent = {
+      target:{
+        value: 'dummyQuery'
+      }
+    }
+    const component = shallow(<Home {...props}/>, shallowOptions)
+    expect(
+      component.find('SearchBar').shallow().find('.input').simulate('change', dummyEvent)
+    ).to.be.equal(undefined)
+  })
+
+  it('evaluates call to fetchTrend Onchange event from Searchbar', () => {
+    const props = {
+      giphys: [
+        {
+          id: "dummyId",
+          images: {
+            fixed_width: {
+              url: "https://dummyUrl.com",
+            }
+          },
+          title: "dummyTitle"
+        }
+      ],
+      favorites : {},
+      searchOnWeb: (query) => query,
+      fetchTrend: () => null
+    }
+    const dummyEvent = {
+      target:{
+        value: ''
+      }
+    }
+    const component = shallow(<Home {...props}/>, shallowOptions)
+    expect(
+      component.find('SearchBar').shallow().find('.input').simulate('change', dummyEvent)
+    ).to.be.equal(undefined)
+  })
+
+  it('evaluates call to addFavorite Onclick event from ListGimphy', () => {
+    const props = {
+      giphys: [
+        {
+          id: "dummyId",
+          images: {
+            fixed_width: {
+              url: "https://dummyUrl.com",
+            }
+          },
+          title: "dummyTitle"
+        }
+      ],
+      favorites : {},
+      addFavorite: giphy => giphy,
+      deleteFavorite: giphy => giphy
+    }
+    const component = shallow(<Home {...props}/>, shallowOptions)
+    expect(
+      component.find('ListGimphy').shallow().find('.img').simulate('click','dummyId')
+    ).to.be.equal(undefined)
+  })
+
+  it('evaluates call to deleteFavorite Onclick event from ListGimphy', () => {
+    const props = {
+      giphys: [
+        {
+          id: "dummyId",
+          images: {
+            fixed_width: {
+              url: "https://dummyUrl.com",
+            }
+          },
+          title: "dummyTitle"
+        }
+      ],
+      favorites : {dummyId: {}},
+      addFavorite: giphy => giphy,
+      deleteFavorite: giphy => giphy
+    }
+    const component = shallow(<Home {...props}/>, shallowOptions)
+    expect(
+      component.find('ListGimphy').shallow().find('.img').simulate('click','dummyId')
+    ).to.be.equal(undefined)
+  })
+
+  it('evaluates call to fetchTrend on componentDidMount', () => {
+    const props = {
+      giphys: [],
+      favorites : {},
+      fetchTrend: () => null,
+    }
+    const component = shallow(<Home {...props} />)
+    expect(component).lengthOf(1)
+  })
 })
