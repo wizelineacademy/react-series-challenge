@@ -20,7 +20,9 @@ class GifTile extends Component {
       <Tile onMouseOver={this.showControls} onMouseLeave={this.hideControls}>
         {
           this.props.isFavorite(this.props.data.id) &&
-          <IconFavorite>⭐</IconFavorite>
+          <IconFavorite>
+            <span role="img" aria-label="favorite">⭐</span>
+          </IconFavorite>
         }
         <NavLink to={'/details/' + this.props.data.id}>
           <ImageStyled src={this.props.data.images.fixed_width.url} alt={this.props.data.slug}/>
