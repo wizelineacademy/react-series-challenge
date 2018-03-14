@@ -3,7 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "babel-eslint": "^7.2.3",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2015": "^6.24.1",
     "history": "^4.7.2",
+    "jest-styled-components": "^5.0.0",
+    "query-string": "^6.0.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.7",
@@ -20,9 +26,11 @@
     "eject": "react-scripts eject",
     "lint": "eslint ./",
     "test": "yarn run lint && yarn run jest",
-    "jest": "NODE_ENV=testing jest --coverage --maxWorkers=6"
+    "jest": "NODE_ENV=test jest --coverage --maxWorkers=6 --env=jsdom"
   },
   "devDependencies": {
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-preset-stage-1": "^6.24.1",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1"
   }

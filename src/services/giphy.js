@@ -14,7 +14,7 @@ export default {
     const options = {}
     options['method'] = 'GET';
     options['headers'] = {
-      'content-type': 'application/json'
+      'content-type': 'text/plain'
     }
     
     return fetch(reqUrl.url,options);

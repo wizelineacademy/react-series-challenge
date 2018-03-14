@@ -3,11 +3,13 @@ import { all, takeLatest, put, select } from 'redux-saga/effects';
 import favoritesActions from '../actions/favorites';
 import trendingActions from '../actions/trending';
 import searchActions from '../actions/search';
+import detailsActions from '../actions/details';
 import favApi from '../apis/favories';
 import { 
   getFavoritesState, 
   getTrendingState,
-  getSearchState
+  getSearchState,
+  getDetailsState
 } from '../selectors/index'
 
 
@@ -43,6 +45,7 @@ export function* updateIsFavSagas (action) {
       newTrendState.giphyArray[index].isFav = true;
     }
   })
+  //Update Search State based on what we have in localstorage as Favorites
   const searchState = yield select(getSearchState);
   let newSearchState = { ...searchState }
   newSearchState.giphyArray.forEach (( giphy, index ) =>{
@@ -51,6 +54,18 @@ export function* updateIsFavSagas (action) {
       newSearchState.giphyArray[index].isFav = true;
     }
   })
+
+  //Update Details State based on what we have in localstorage as Favorites
+  const detailState = yield select(getDetailsState);
+  let newDetailState = { ...detailState }
+  if(newDetailState.giphy.id){
+    newDetailState.giphy.isFav = false
+    if(newDetailState.giphy.id in favState.favorites ){
+      newDetailState.giphy.isFav = true;
+    }
+    yield put (detailsActions.creators.fetchDetailsSuccess(newDetailState.giphy));
+  }
+
   yield put (trendingActions.creators.trendingSuccess(newTrendState.giphyArray));
   yield put (searchActions.creators.searchSuccess(newSearchState.giphyArray));
 }

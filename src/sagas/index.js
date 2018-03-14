@@ -2,11 +2,13 @@ import { all, fork } from 'redux-saga/effects';
 import searchSagas from './searchSagas';
 import trendingSagas from './trendingSagas';
 import favoriteSagas from './favoritesSagas';
+import detailsSagas from './detailsSagas';
 
 const sagas = [
   searchSagas,
   trendingSagas,
-  favoriteSagas
+  favoriteSagas,
+  detailsSagas
 ];
 
 export default function* root () {

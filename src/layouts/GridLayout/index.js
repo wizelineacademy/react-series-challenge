@@ -6,7 +6,11 @@ import { bindActionCreators } from 'redux';
 import searchActions from '../../actions/search';
 import trendingActions from '../../actions/trending';
 import favActions from '../../actions/favorites';
+import modalActions from '../../actions/modal';
 import SearchComponentInput from '../../components/SearchComponent';
+import Modal from '../../components/Modal';
+import detailsActions from '../../actions/details';
+import queryString from 'query-string';
 import {
   Container
 } from './GridLayout.styled';
@@ -39,6 +43,11 @@ export class SearchLayout extends Component {
         break;
       }
     }
+    let query = queryString.parse(this.props.location.search);
+    if (query.details) {
+      this.props.fetchDetails(query.details);
+      this.props.showModal(query.details);
+    }
   }
   componentWillReceiveProps(nextProps) {
     const {
@@ -61,6 +70,8 @@ export class SearchLayout extends Component {
     }
   }
 
+  
+
   getGridData = () =>{
     const {
       match,
@@ -75,42 +86,70 @@ export class SearchLayout extends Component {
       case 'search':{
         return search.giphyArray
       }
-      case 'favorite':{
+      case 'favorites':{
         return favorites.favorites;
       }
       default:
         return trending.giphyArray;
     }
   }
+
   handleFavClick = data =>{
     this.props.toggleFavoritesReq(data)
   }
+
+  closeModal = () => {
+    this.props.hideModal();
+    const {
+      history
+    } = this.props;
+    history.replace({...history.location, search: ``});
+  }
+
+  handleOnSelect = ghipy => {
+    this.props.showModal(ghipy);
+    const {
+      history
+    } = this.props;
+    history.replace({...history.location, search: `?details=${ghipy}`});
+    this.props.fetchDetails(ghipy);
+  } 
+
   render () {
     const {
       match
     } = this.props;
+    console.log('props', this.props);
     let gridData = this.getGridData()
     return (
       <Container>
         <SearchComponentInput match={ match }/>
         <div >
           <GiphyGrid 
-            onSelect={ (e) => { console.log(e)} }
+            onSelect={ this.handleOnSelect }
             onFavClick= { this.handleFavClick }
             data={ gridData } 
           />
         </div>
+        <Modal
+          open={ this.props.modal.isModalOpen }
+          selectedGiphy={ this.props.details }
+          onFavClick= { this.handleFavClick }
+          onCloseModal={this.closeModal}
+        />
       </Container>
     );
   }
 }
 export const mapStateToProps = state => {
-  const { search, trending, favorites } = state;
+  const { search, trending, favorites, modal, details } = state;
 
   return {
     search,
     trending,
-    favorites
+    favorites,
+    modal,
+    details
   };
 };
 
@@ -119,11 +158,17 @@ export const mapDispatchToProps = dispatch => {
   const trendingRequest = trendingActions.creators.trendingRequest;
   const toggleFavoritesReq = favActions.creators.toggleFavoritesReq;
   const loadFavorites = favActions.creators.loadFavorites;
+  const hideModal = modalActions.creators.hideModal;
+  const showModal = modalActions.creators.showModal;
+  const fetchDetails = detailsActions.creators.fetchDetails;
   return bindActionCreators({
     searchRequest,
     trendingRequest,
     toggleFavoritesReq,
-    loadFavorites
+    loadFavorites,
+    hideModal,
+    showModal,
+    fetchDetails
   }, dispatch);
 };
 

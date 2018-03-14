@@ -13,7 +13,7 @@ const GiphyPreview = (props) => {
   } = preview_gif;
   return (
     <PreviewCard  >
-    <Image src={url} onClick={() => onSelect(props)} />
+    <Image src={url} onClick={() => onSelect(id)} />
       <FavBox checked={ isFav } id={id } onClick={() => onFavClick(allData)} />
       <Data>
       <span>{title}</span>

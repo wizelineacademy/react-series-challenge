@@ -30,9 +30,9 @@ export class MainAppLayout extends Component {
       <div>
         <Menu />
         <Switch>
-            <Route exact path={ `/` } component={ GridLayout } />
             <Route exact path={ `/view/:view` } component={ GridLayout } />
             <Route exact path={ `/view/:view/:searchTerm` } component={ GridLayout } />
+            <Route exact path={ `/` } component={ GridLayout } />
         </Switch>
       </div>
     );
