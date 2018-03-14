@@ -6,7 +6,7 @@ import heartBorder from './assets/heart-border.svg';
 import heartFilled from './assets/heart-filled.svg';
 import {withRouter} from "react-router-dom";
 
-const GifCard = ({gif, history, isFavorite, isDetailBtnVisible, imageSize, toggleFavorite}) => {
+export const GifCard = ({gif, history, isFavorite, isDetailBtnVisible, imageSize, toggleFavorite}) => {
   const image = imageSize === 'small' ? gif.images.small : gif.images.original;
   const heartIcon = isFavorite ? heartFilled : heartBorder;
   const openDetailView = () => history.push(`/detail/${gif.id}`);
