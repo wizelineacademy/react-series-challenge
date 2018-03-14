@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FavoriteButton should render correctly 1`] = `
+<styled.img
+  alt="favorite"
+  className="favorite"
+  isFavorite={true}
+  onClick={[Function]}
+  src={
+    Object {
+      "process": [Function],
+    }
+  }
+/>
+`;
