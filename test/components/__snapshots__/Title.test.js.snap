@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Title should render correctly 1`] = `
+.c0 {
+  color: #fff;
+  text-shadow: 0px -1px 4px white,0px -2px 10px yellow,0px -10px 20px #ff8000,0px -18px 40px red;
+  font: 2em 'BlackJackRegular';
+}
+
+<h1
+  className="title-class c0"
+>
+  Displaying results for some_term
+</h1>
+`;
+
+exports[`Title should render correctly if sent children 1`] = `
+.c0 {
+  color: #fff;
+  text-shadow: 0px -1px 4px white,0px -2px 10px yellow,0px -10px 20px #ff8000,0px -18px 40px red;
+  font: 2em 'BlackJackRegular';
+}
+
+<h1
+  className="title-class c0"
+>
+  <p>
+    HELLO
+  </p>
+</h1>
+`;

@@ -1,15 +1,19 @@
 module.exports = {
   browser: true,
-  setupFiles: ['./jest.setup.js'],
+  setupFiles: ['./jest.setup.js', './test/__mocks__/browserMocks.js'],
+  verbose: true,
   testPathIgnorePatterns: [
     '/node_modules/',
     '/coverage/'
   ],
-  testMatch: ['**/test/*Test.js'],
   collectCoverageFrom: [
-    "**/src/**/*.{js,jsx}",
-    "!**/src/registerServiceWorker.{js,jsx}"
+    '**/src/**/*.{js,jsx}',
+    '!**/src/registerServiceWorker.{js,jsx}',
   ],
+  moduleNameMapper: {
+    '\\.(css|scss)$': '<rootDir>/test/__mocks__/styleMocks.js',
+  },
+  testMatch: ['**/test/**/*.test.js'],
   coverageThreshold: {
     global: {
       statements: 75,

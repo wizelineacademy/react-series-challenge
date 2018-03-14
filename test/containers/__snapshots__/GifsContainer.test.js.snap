@@ -1,0 +1,642 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GifsContainer should render correctly 1`] = `
+.c5 li:nth-child(even) {
+  -webkit-transform: rotate(2deg);
+  -ms-transform: rotate(2deg);
+  transform: rotate(2deg);
+  -webkit-transform: rotate(2deg);
+  -moz-transform: rotate(2deg);
+}
+
+.c5 li:nth-child(3n) {
+  -webkit-transform: rotate(none);
+  -ms-transform: rotate(none);
+  transform: rotate(none);
+  -webkit-transform: none;
+  -moz-transform: none;
+  position: relative;
+  top: -5px;
+}
+
+.c5 li:nth-child(5n) {
+  -webkit-transform: rotate(5deg);
+  -ms-transform: rotate(5deg);
+  transform: rotate(5deg);
+  -webkit-transform: rotate(5deg);
+  -moz-transform: rotate(5deg);
+  position: relative;
+  right: 5px;
+}
+
+.c5 li:nth-child(7n) {
+  -webkit-transform: rotate(-3deg);
+  -ms-transform: rotate(-3deg);
+  transform: rotate(-3deg);
+  -webkit-transform: rotate(-3deg);
+  -moz-transform: rotate(-3deg);
+  position: relative;
+  right: -5px;
+}
+
+.c5 li:nth-child(8n) {
+  position: relative;
+  top: 8px;
+  right: 5px;
+}
+
+.c5 li:nth-child(11n) {
+  position: relative;
+  top: 3px;
+  left: -5px;
+}
+
+.c5 li:hover {
+  -webkit-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  transform: scale(1.25);
+  -webkit-transform: scale(1.25);
+  -moz-transform: scale(1.25);
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  position: relative;
+  z-index: 5;
+  display: inline-table;
+}
+
+.c5 li:hover button {
+  display: inline-block;
+}
+
+.c0 {
+  background-color: #00c08b;
+  color: #127a5d;
+  height: 50px;
+  width: 50px;
+  box-shadow: 0 0 10px rgba(100,100,100,0.2) inset,1px 1px 1px #CCC;
+  display: inline-block;
+  line-height: 1;
+  margin: 5px;
+  border-radius: 5px;
+  position: relative;
+  background-image: url('/home.svg');
+  background-size: contain;
+}
+
+.c0.active {
+  display: none;
+}
+
+.c1 {
+  background-color: #00c08b;
+  color: #127a5d;
+  height: 50px;
+  width: 50px;
+  box-shadow: 0 0 10px rgba(100,100,100,0.2) inset,1px 1px 1px #CCC;
+  display: inline-block;
+  line-height: 1;
+  margin: 5px;
+  border-radius: 5px;
+  position: relative;
+  background-image: url('/home.svg');
+  background-image: url('/star.svg');
+  background-color: #53bfe2;
+  background-size: contain;
+}
+
+.c1.active {
+  display: none;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-bottom: 70px;
+}
+
+.c3 {
+  position: absolute;
+}
+
+.c3 input {
+  border: none;
+  background: none;
+  z-index: 1;
+  width: 50px;
+  height: 50px;
+  -webkit-transition: all .25s ease-in .25s;
+  transition: all .25s ease-in .25s;
+  color: transparent;
+  font-size: 1.25rem;
+  line-height: 50px;
+}
+
+.c3 input:hover {
+  cursor: pointer;
+}
+
+.c3 input:hover:focus {
+  cursor: text;
+}
+
+.c3 input:hover + span {
+  background: rgba(255,255,255,0.2);
+}
+
+.c3 input:focus {
+  width: 200px;
+  padding: 0 10px;
+  outline: none;
+  color: black;
+  background: none;
+  color: white;
+}
+
+.c3 input:focus + span {
+  width: 200px;
+}
+
+.c3 input:focus + span::before {
+  width: 2px;
+  opacity: 0;
+  -webkit-transition: all .25s ease-in;
+  transition: all .25s ease-in;
+}
+
+.c3 input + span {
+  z-index: -1;
+  position: absolute;
+  border: 2px solid white;
+  top: 0;
+  width: 50px;
+  height: 50px;
+  -webkit-transition: all .25s ease-in .25s;
+  transition: all .25s ease-in .25s;
+  border-radius: 50px;
+  left: 0;
+}
+
+.c3 input + span::before {
+  -webkit-transition: all .25s ease-in .5s;
+  transition: all .25s ease-in .5s;
+  -webkit-transform-origin: left top;
+  -ms-transform-origin: left top;
+  transform-origin: left top;
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 7px;
+  border-radius: 5px;
+  background: white;
+  -webkit-transform: rotate(45deg) translate(43px,10px);
+  -ms-transform: rotate(45deg) translate(43px,10px);
+  transform: rotate(45deg) translate(43px,10px);
+}
+
+.c4 {
+  color: #fff;
+  text-shadow: 0px -1px 4px white,0px -2px 10px yellow,0px -10px 20px #ff8000,0px -18px 40px red;
+  font: 2em 'BlackJackRegular';
+}
+
+.c6 {
+  position: relative;
+  width: 200px;
+  height: 250px;
+  display: inline-block;
+  padding: 10px;
+  margin: 10px;
+  background-color: white;
+  box-shadow: 7px 7px 4px black;
+  border: 1px solid #000;
+}
+
+.c6 img {
+  max-width: 100%;
+  height: 80%;
+}
+
+.c9 {
+  color: white;
+}
+
+.c8 {
+  margin: 5px;
+  padding: 10px 19px;
+  margin: 0px 10px -10px 0px;
+  border-radius: 10px;
+  font-family: 'Pacifico',cursive;
+  font-size: 17px;
+  color: #FFF;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: none;
+  background-color: #82BF56;
+  text-shadow: 0px -2px #669644;
+  float: right;
+}
+
+.c8:active {
+  -webkit-transform: translate(0px,5px);
+  -ms-transform: translate(0px,5px);
+  transform: translate(0px,5px);
+  -webkit-transform: translate(0px,5px);
+  border-bottom: 1px solid;
+}
+
+.c10 {
+  margin: 5px;
+  padding: 10px 19px;
+  margin: 0px 10px -10px 0px;
+  border-radius: 10px;
+  font-family: 'Pacifico',cursive;
+  font-size: 17px;
+  color: #FFF;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: none;
+  background-color: #3498DB;
+  text-shadow: 0px -2px #2980B9;
+}
+
+.c10:active {
+  -webkit-transform: translate(0px,5px);
+  -ms-transform: translate(0px,5px);
+  transform: translate(0px,5px);
+  -webkit-transform: translate(0px,5px);
+  border-bottom: 1px solid;
+}
+
+.c7 {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  left: 10px;
+  background-image: url("/loader.svg");
+  background-size: contain;
+  background-color: black;
+}
+
+<div>
+  <a
+    aria-current={false}
+    className="home-button c0"
+    home={true}
+    href="/home"
+    onClick={[Function]}
+    style={undefined}
+  />
+  <a
+    aria-current={false}
+    className="fav-button c1"
+    favorites={true}
+    href="/favorites"
+    onClick={[Function]}
+    style={undefined}
+  />
+  <div
+    className="c2"
+  >
+    <div
+      className="c3"
+    >
+      <input
+        id="search-bar"
+        onKeyUp={[Function]}
+        type="search"
+      />
+      <span />
+    </div>
+  </div>
+  <h1
+    className="title-class c4"
+  >
+    Displaying results for Trending
+  </h1>
+  <ul
+    className="container c5"
+  >
+    <li
+      className="c6"
+    >
+      <img
+        alt="some_title"
+        onLoad={[Function]}
+        src="https://i.ytimg.com/vi/m5d1FlSeF-M/maxresdefault.jpg"
+      />
+      <span
+        className="c7"
+      />
+      <br />
+      <button
+        className="like-button c8"
+        color="red"
+        onClick={[Function]}
+      >
+        Like
+      </button>
+      <a
+        className="c9"
+        href="/gifs/some_id"
+        onClick={[Function]}
+      >
+        <button
+          className="view-button c10"
+          color="blue"
+          onClick={[Function]}
+        >
+          View
+        </button>
+      </a>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`GifsContainer should render correctly when isSingleView 1`] = `
+.c4 li:nth-child(even) {
+  -webkit-transform: rotate(2deg);
+  -ms-transform: rotate(2deg);
+  transform: rotate(2deg);
+  -webkit-transform: rotate(2deg);
+  -moz-transform: rotate(2deg);
+}
+
+.c4 li:nth-child(3n) {
+  -webkit-transform: rotate(none);
+  -ms-transform: rotate(none);
+  transform: rotate(none);
+  -webkit-transform: none;
+  -moz-transform: none;
+  position: relative;
+  top: -5px;
+}
+
+.c4 li:nth-child(5n) {
+  -webkit-transform: rotate(5deg);
+  -ms-transform: rotate(5deg);
+  transform: rotate(5deg);
+  -webkit-transform: rotate(5deg);
+  -moz-transform: rotate(5deg);
+  position: relative;
+  right: 5px;
+}
+
+.c4 li:nth-child(7n) {
+  -webkit-transform: rotate(-3deg);
+  -ms-transform: rotate(-3deg);
+  transform: rotate(-3deg);
+  -webkit-transform: rotate(-3deg);
+  -moz-transform: rotate(-3deg);
+  position: relative;
+  right: -5px;
+}
+
+.c4 li:nth-child(8n) {
+  position: relative;
+  top: 8px;
+  right: 5px;
+}
+
+.c4 li:nth-child(11n) {
+  position: relative;
+  top: 3px;
+  left: -5px;
+}
+
+.c0 {
+  background-color: #00c08b;
+  color: #127a5d;
+  height: 50px;
+  width: 50px;
+  box-shadow: 0 0 10px rgba(100,100,100,0.2) inset,1px 1px 1px #CCC;
+  display: inline-block;
+  line-height: 1;
+  margin: 5px;
+  border-radius: 5px;
+  position: relative;
+  background-image: url('/home.svg');
+  background-size: contain;
+}
+
+.c0.active {
+  display: none;
+}
+
+.c1 {
+  background-color: #00c08b;
+  color: #127a5d;
+  height: 50px;
+  width: 50px;
+  box-shadow: 0 0 10px rgba(100,100,100,0.2) inset,1px 1px 1px #CCC;
+  display: inline-block;
+  line-height: 1;
+  margin: 5px;
+  border-radius: 5px;
+  position: relative;
+  background-image: url('/home.svg');
+  background-image: url('/star.svg');
+  background-color: #53bfe2;
+  background-size: contain;
+}
+
+.c1.active {
+  display: none;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-bottom: 70px;
+}
+
+.c3 {
+  position: absolute;
+}
+
+.c3 input {
+  border: none;
+  background: none;
+  z-index: 1;
+  width: 50px;
+  height: 50px;
+  -webkit-transition: all .25s ease-in .25s;
+  transition: all .25s ease-in .25s;
+  color: transparent;
+  font-size: 1.25rem;
+  line-height: 50px;
+}
+
+.c3 input:hover {
+  cursor: pointer;
+}
+
+.c3 input:hover:focus {
+  cursor: text;
+}
+
+.c3 input:hover + span {
+  background: rgba(255,255,255,0.2);
+}
+
+.c3 input:focus {
+  width: 200px;
+  padding: 0 10px;
+  outline: none;
+  color: black;
+  background: none;
+  color: white;
+}
+
+.c3 input:focus + span {
+  width: 200px;
+}
+
+.c3 input:focus + span::before {
+  width: 2px;
+  opacity: 0;
+  -webkit-transition: all .25s ease-in;
+  transition: all .25s ease-in;
+}
+
+.c3 input + span {
+  z-index: -1;
+  position: absolute;
+  border: 2px solid white;
+  top: 0;
+  width: 50px;
+  height: 50px;
+  -webkit-transition: all .25s ease-in .25s;
+  transition: all .25s ease-in .25s;
+  border-radius: 50px;
+  left: 0;
+}
+
+.c3 input + span::before {
+  -webkit-transition: all .25s ease-in .5s;
+  transition: all .25s ease-in .5s;
+  -webkit-transform-origin: left top;
+  -ms-transform-origin: left top;
+  transform-origin: left top;
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 7px;
+  border-radius: 5px;
+  background: white;
+  -webkit-transform: rotate(45deg) translate(43px,10px);
+  -ms-transform: rotate(45deg) translate(43px,10px);
+  transform: rotate(45deg) translate(43px,10px);
+}
+
+.c5 {
+  position: relative;
+  width: 500px;
+  height: 650px;
+  display: inline-block;
+  padding: 10px;
+  margin: 10px;
+  background-color: white;
+  box-shadow: 7px 7px 4px black;
+  border: 1px solid #000;
+}
+
+.c5 img {
+  max-width: 100%;
+  height: 80%;
+}
+
+.c6 {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  left: 10px;
+  background-image: url("/loader.svg");
+  background-size: contain;
+  background-color: black;
+}
+
+<div>
+  <a
+    aria-current={false}
+    className="home-button c0"
+    home={true}
+    href="/home"
+    onClick={[Function]}
+    style={undefined}
+  />
+  <a
+    aria-current={false}
+    className="fav-button c1"
+    favorites={true}
+    href="/favorites"
+    onClick={[Function]}
+    style={undefined}
+  />
+  <div
+    className="c2"
+  >
+    <div
+      className="c3"
+    >
+      <input
+        id="search-bar"
+        onKeyUp={[Function]}
+        type="search"
+      />
+      <span />
+    </div>
+  </div>
+  <ul
+    className="container c4"
+  >
+    <li
+      className="c5"
+    >
+      <img
+        alt="some_title"
+        onLoad={[Function]}
+        src="https://i.ytimg.com/vi/m5d1FlSeF-M/maxresdefault.jpg"
+      />
+      <span
+        className="c6"
+      />
+      <br />
+      <p>
+        Title: 
+        some_title
+         
+        <br />
+        Created on: 
+         
+        <br />
+        Short url: 
+         
+        <br />
+        SFW?: 
+        Yes!
+         
+        <br />
+      </p>
+    </li>
+  </ul>
+</div>
+`;

@@ -2,4 +2,10 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background-image: url('/wood_texture.jpg');
+  margin-bottom: 50px;
+}
+
+h1, h2, h3, h4, h5 {
+  color: white;
 }
