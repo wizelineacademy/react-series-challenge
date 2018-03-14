@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import GifList from '../../components/GifList';
+import { Row, Col } from '../../components/Grid';
+import SearchGif from '../../components/SearchGif';
 import { Message, Page } from '../../styledComponents';
 import {
   fetchTrendingGifs,
@@ -44,6 +46,15 @@ class Home extends Component {
               here!
             </Link>
           </p>
+          <hr />
+          <p>
+            Search for more here
+          </p>
+          <Row>
+            <Col span={12}>
+              <SearchGif />
+            </Col>
+          </Row>
         </Message>
         <div>
           {

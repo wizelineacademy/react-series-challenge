@@ -11,7 +11,7 @@ const Giphy = {
     const initObject = {
       method: 'GET',
     };
-    const query = `api_key=${API_KEY_GIPHY}&limit=18`;
+    const query = `api_key=${API_KEY_GIPHY}&limit=36`;
     return fetch(`http://api.giphy.com/v1/gifs/trending?${query}`, initObject);
   }
 }

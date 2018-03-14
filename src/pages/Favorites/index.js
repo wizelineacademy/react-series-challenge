@@ -2,6 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import GifList from '../../components/GifList';
+import { Row, Col } from '../../components/Grid';
+import SearchGif from '../../components/SearchGif';
 import { Message, Page } from '../../styledComponents';
 import {
   toggleFavorite,
@@ -30,6 +32,15 @@ const Favorites = (props) => {
             here!
           </Link>
         </p>
+        <hr />
+        <p>
+          Search within your favorite here
+        </p>
+        <Row>
+          <Col span={12}>
+            <SearchGif />
+          </Col>
+        </Row>
       </Message>
       <div>
         {

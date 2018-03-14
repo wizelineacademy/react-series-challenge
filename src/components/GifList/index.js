@@ -11,7 +11,7 @@ const GifList = ({
   const gifs = elements.map(element => {
     const isStarred = Object.keys(starred).some(key => element.id === key);
     return (
-      <Col span={4} key={`gif_id_${element.id}`}>
+      <Col span={2} key={`gif_id_${element.id}`}>
         <Gif
           gif={element}
           starred={isStarred}

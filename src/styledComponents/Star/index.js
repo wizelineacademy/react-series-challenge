@@ -8,7 +8,7 @@ const Star = styled.div`
   z-index: 21;
 
   &:after {
-    content: '☆';
+    content: '★';
     font-size: 30px;
     color: ${ props => props.starred ? "yellow" : "silver" };
     top: 3px;
