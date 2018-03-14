@@ -3,8 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 import {Provider} from "react-redux";
-import GifGalleryContainer from "./containers/GifGalleryContainer";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import GifGalleryContainer from "./containers/GifGalleryContainer";
+import DetailContainer from "./containers/DetailContainer";
+import NotFound from "./components/NotFound";
 import store from "./store";
 
 const Home = (props) => <GifGalleryContainer dataSource={'GIPHY'} {...props} />;
@@ -16,8 +18,8 @@ ReactDOM.render(
       <Switch>
         <Route exact path={'/'} render={Home} />
         <Route path={'/favorites'} render={Favorites} />
-        <Route path={'/detail/:id'} render={() => (<h2>DETAILS</h2>)} />
-        <Route render={() => (<h2>NOT FOUND</h2>)} />
+        <Route path={'/detail/:id'} component={DetailContainer} />
+        <Route component={NotFound} />
       </Switch>
     </Router>
   </Provider>,
