@@ -5,7 +5,8 @@ const defaultOptions = {
   method: 'get',
   queryParams: {
     api_key: giphyApiKey,
-    rating: 'R'
+    rating: 'R',
+    limit: 20
   }
 }
 
