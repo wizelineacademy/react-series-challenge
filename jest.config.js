@@ -5,7 +5,10 @@ module.exports = {
     '/node_modules/',
     '/coverage/'
   ],
-  testMatch: ['**/test/*Test.js'],
+  moduleNameMapper: {
+    "\\.(css|scss|svg|gif|jpg|png|jpeg)$": "identity-obj-proxy"
+  },
+  testMatch: ['**/__tests__/*.test.js'],
   collectCoverageFrom: [
     "**/src/**/*.{js,jsx}",
     "!**/src/registerServiceWorker.{js,jsx}"
