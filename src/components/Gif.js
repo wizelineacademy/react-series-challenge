@@ -22,18 +22,27 @@ const StyledFavoritedIcon = styled.a`
   bottom: 10px;
   right: 10px;
   ${({ active }) => active ? '' : `filter: grayscale(100%);`}
+
+  &:hover: {
+    text-shadow: -1px 0px 4px rgba(20, 20, 20, 1);
+  }
 `;
 
-const Gif = ({ gif, imageSrc, favorited, toggleFavorite, selectedGifChange }) => (
-  <div>
-    <StyledFavoritedIcon onClick={() => toggleFavorite(gif)} active={favorited}>
-      {FAVORITE_ICON}
-    </StyledFavoritedIcon>
-    <Link to={`?gifId=${gif.id}`}>
-      <StyledGif src={imageSrc} onClick={() => selectedGifChange(gif)} />
-    </Link>
-  </div>
-);
+const Gif = ({ big, gif, favorited, selectedGifChange, toggleFavorite }) => {
+  const src = !big
+    ? gif.images.fixed_width_downsampled.url
+    : gif.images.original.url;
+  return (
+    <React.Fragment>
+      <StyledFavoritedIcon onClick={() => toggleFavorite(gif)} active={favorited}>
+        {FAVORITE_ICON}
+      </StyledFavoritedIcon>
+      <Link to={`?gifId=${gif.id}`}>
+        <StyledGif src={src} onClick={() => selectedGifChange(gif)} />
+      </Link>
+    </React.Fragment>
+  );
+};
 
 const mapStateToProps = (state, { gif }) => ({
   favorited: isFavorited(gif.id, state)

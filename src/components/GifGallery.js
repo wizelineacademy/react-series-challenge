@@ -1,6 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+import { connect } from 'react-redux';
 import Gif from './Gif';
+import { toggleFavorite } from '../actions/favorites';
+import { isFavorited } from '../selectors/favorites';
+import { selectedGifChange } from '../actions/selected';
 
 const GifList = styled.div`
   display: flex;
@@ -18,10 +22,7 @@ const GifGallery = ({ gifs }) => (
   <GifList>
     {gifs.map(gif =>
       <StyledGifContainer key={gif.id}>
-        <Gif
-          gif={gif}
-          imageSrc={gif.images.fixed_width.url}
-        />
+        <Gif gif={gif} />
       </StyledGifContainer>
     )}
   </GifList>

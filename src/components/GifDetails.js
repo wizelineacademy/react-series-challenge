@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
 import styled from 'styled-components';
 import Gif from './Gif';
 import Modal from './Modal';
@@ -25,7 +24,8 @@ const StyledTextInfo = styled.p`
 
 class GifDetails extends Component {
   componentDidMount() {
-    const { location, selectedGifRequestInfo } = this.props;
+    const { selectedGifRequestInfo } = this.props;
+    const { location } = history;
 
     if (location.search.length === 0) {
       return;
@@ -57,20 +57,19 @@ class GifDetails extends Component {
       return null;
     }
 
-    if (gif.loading) {
-      return <div>Loading 🌀</div>;
-    }
-
     return (
       <Modal open onCloseClick={this.closeHandler}>
         {gif.loading
           ? <div>Loading 🌀</div>
           : (
-            <StyledGifContainer>
-              <Gif
-                gif={gif}
-                imageSrc={gif && gif.images.fixed_width.url}
-              />
+            <div>
+              <StyledGifContainer>
+                <Gif
+                  gif={gif}
+                  imageSrc={gif && gif.images.fixed_width.url}
+                  big
+                />
+              </StyledGifContainer>
               <StyledInfoContainer>
                 <StyledTextInfo>{gif.title}</StyledTextInfo>
                 {gif.user && gif.user.twitter && (
@@ -79,7 +78,7 @@ class GifDetails extends Component {
                   </StyledTextInfo>
                 )}
               </StyledInfoContainer>
-            </StyledGifContainer>
+            </div>
           )
         }
       </Modal>
@@ -96,6 +95,4 @@ const mapDispatchToProps = {
   selectedGifRequestInfo
 };
 
-export default withRouter(
-  connect(mapStateToProps, mapDispatchToProps)(GifDetails)
-);
+export default connect(mapStateToProps, mapDispatchToProps)(GifDetails);
