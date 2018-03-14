@@ -62,7 +62,7 @@ export class Home extends Component {
   }
 }
 
-function mapStateToProps(state) {
+export function mapStateToProps(state) {
   return {
     giphys : state.gimphyList.giphys,
     favorites: state.favorites
