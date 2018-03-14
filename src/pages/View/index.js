@@ -1,6 +1,5 @@
 import React from 'react';
 import { Image, Message, Page } from '../../styledComponents';
-import notFoundImage from '../../assets/images/notFound.gif';
 
 const View = (props) => {
   return (
