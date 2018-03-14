@@ -1,9 +1,12 @@
 import React from 'react';
 import Star from './styles';
 
-const Favorite = ({starred}) => {
+const Favorite = ({onToggleFavorite, starred}) => {
   return (
-    <Star starred={false} />
+    <Star
+      starred
+      onClick={onToggleFavorite}
+    />
   )
 }
 

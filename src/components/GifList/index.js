@@ -2,18 +2,17 @@ import React from 'react';
 import { Row, Col } from '../Grid';
 import Gif from '../Gif';
 
-const GifList = () => {
+const GifList = ({ elements }) => {
+  console.log(elements);
+  const gifs = elements.map(element => (
+    <Col span={4} key={`gif_id_${element.id}`}>
+      <Gif {...element} />
+    </Col>
+  ));
+
   return (
     <Row>
-      <Col span={4}>
-        <Gif />
-      </Col>
-      <Col span={4}>
-        <Gif />
-      </Col>
-      <Col span={4}>
-        <Gif />
-      </Col>
+      {gifs}
     </Row>
   )
 }

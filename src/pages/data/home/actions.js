@@ -5,9 +5,9 @@ export const FETCH_TRENDING_GIFS = asyncActionType("FETCH_TRENDING_GIFS");
 export const fetchTrendingGifs = () => (
   { type: FETCH_TRENDING_GIFS.PENDING }
 );
-export const fetchTrendingGifsSuccess = () => (
-  { type: FETCH_TRENDING_GIFS.SUCCESS }
+export const fetchTrendingGifsSuccess = (gifs) => (
+  { type: FETCH_TRENDING_GIFS.SUCCESS, data: { gifs }}
 );
-export const fetchTrendingGifsError = () => (
-  { type: FETCH_TRENDING_GIFS.ERROR }
+export const fetchTrendingGifsError = (message) => (
+  { type: FETCH_TRENDING_GIFS.ERROR, data: { message } }
 );
