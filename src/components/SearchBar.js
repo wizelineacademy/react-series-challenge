@@ -38,8 +38,9 @@ const StyledSearchInput = styled.input`
 
 const StyledLink = styled(NavLink)`
   cursor: pointer;
-  vertical-align: center;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
   width: 30px;
   height: 30px;

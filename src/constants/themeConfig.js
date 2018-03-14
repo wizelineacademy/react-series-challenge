@@ -7,7 +7,9 @@ export default {
   },
 
   zMap: {
-    searchBar: 100
+    searchBar: 100,
+    modal: 200,
+    modalContent: 210
   },
 
   dimensions: {

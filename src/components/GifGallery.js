@@ -9,14 +9,21 @@ const GifList = styled.div`
   flex-wrap: wrap;
 `;
 
+const StyledGifContainer = styled.div`
+  width: 200px;
+  position: relative;
+`;
+
 const GifGallery = ({ gifs }) => (
   <GifList>
     {gifs.map(gif =>
-      <Gif
-        key={gif.id}
-        gif={gif}
-        imageSrc={gif.images.fixed_width.url}
-      />
+      <StyledGifContainer>
+        <Gif
+          key={gif.id}
+          gif={gif}
+          imageSrc={gif.images.fixed_width.url}
+        />
+      </StyledGifContainer>
     )}
   </GifList>
 );
