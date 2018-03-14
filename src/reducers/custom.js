@@ -11,7 +11,7 @@ const giphyReducer = (state = initialState, action) => {
 
   switch (type) {
     case customActions.types.FAVORITE_GIF: {
-      const  { favorites } = Object.assign({}, state);
+      const favorites = state.favorites.splice(0);
       
       const index = favorites.indexOf(payload);
       if (index > -1) {

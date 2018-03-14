@@ -7,11 +7,11 @@ const mockFavoriteData = [
   'qwer'
 ]
 
-describe('giphy reducer', () => {
+describe.only('custom reducer', () => {
   let initialState;
   beforeEach(() => {
     initialState = {
-      favorites: mockFavoriteData
+      favorites: [...mockFavoriteData]
     };
   });
 
@@ -20,18 +20,18 @@ describe('giphy reducer', () => {
   });
 
   it('should handle FAVORITE_GIF when favoriting gif', () => {
-    const payload = 'asdf';
+    const payload = 'tyui';
     const favoriteGif = actions.creators.favoriteGif(payload)
-    let newState = Object.assign({}, initialState);
-    newState.favorites.splice(0, 1)
+    let newState = { favorites: [...mockFavoriteData] }
+    newState.favorites.push(payload)
     expect(reducer(initialState, favoriteGif)).toEqual(newState);
   });
 
   it('should handle FAVORITE_GIF when unfavoriting gif', () => {
-    const payload = 'tyui';
+    const payload = 'asdf';
     const favoriteGif = actions.creators.favoriteGif(payload)
-    let newState = Object.assign({}, initialState);
-    newState.favorites.push(payload)
+    let newState = { favorites: [...mockFavoriteData] }
+    newState.favorites.splice(0, 1);
     expect(reducer(initialState, favoriteGif)).toEqual(newState);
   });
 });

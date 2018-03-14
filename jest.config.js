@@ -4,6 +4,7 @@ module.exports = {
   verbose: true,
   testPathIgnorePatterns: [
     '/node_modules/',
+    '/coverage/'
   ],
   collectCoverageFrom: [
     '**/src/**/*.{js,jsx}',
