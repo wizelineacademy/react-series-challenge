@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Router, Switch, Route } from 'react-router-dom';
 import styled from 'styled-components';
-import { Home, Favorites, SearchBar, Search } from './components';
+import { Home, Favorites, SearchBar, Search, GifDetails } from './components';
 import history from './history';
 
 const StyledAppContent = styled.div`
@@ -16,6 +16,7 @@ class App extends Component {
       <Router history={history}>
         <React.Fragment>
           <SearchBar />
+          <GifDetails />
           <StyledAppContent>
             <Switch>
               <Route exact path="/" component={Home} />
