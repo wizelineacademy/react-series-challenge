@@ -1,21 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { ThemeProvider } from 'styled-components';
 import App from './App';
-import store from './store';
 import registerServiceWorker from './registerServiceWorker';
 import injectGlobalStyles from './GlobalStyles.js'
-import theme from './constants/themeConfig';
+import AppWrapper from './AppWrapper';
 
 injectGlobalStyles();
 
 ReactDOM.render(
-  <ThemeProvider theme={theme}>
-    <Provider store={store}>
-      <App />
-    </Provider>
-  </ThemeProvider>,
+  <AppWrapper>
+    <App />
+  </AppWrapper>,
   document.getElementById('root')
 );
 
