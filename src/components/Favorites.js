@@ -1,25 +1,22 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import GifGallery from './GifGallery';
-import { getFavorites } from '../selectors/favorites';
+import { getFilteredFavorites } from '../selectors/favorites';
 
 const Favorites = ({ favorites }) => {
-  const keys = Object.keys(favorites);
-  const gifs = keys.map(key => favorites[key]);
-
-  if (gifs.length < 1) {
+  if (favorites.length < 1) {
     return <div>No favorites have been selected so far 😿</div>;
   }
 
   return (
     <div>
-      <GifGallery gifs={gifs} />
+      <GifGallery gifs={favorites} />
     </div>
   );
 }
 
 const mapStateToProps = state => ({
-  favorites: getFavorites(state)
+  favorites: getFilteredFavorites(state)
 });
 
 export default connect(mapStateToProps)(Favorites);
