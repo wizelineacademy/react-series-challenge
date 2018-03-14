@@ -6,10 +6,7 @@ import GifGrid from '../components/GifGrid'
 class Home extends Component {
   render () {
     return (
-      <div>
-        <h1>Home</h1>
-        <GifGrid gifs={this.props.trendingGifs} />
-      </div>
+      <GifGrid gifs={this.props.trendingGifs} />
     )
   }
 

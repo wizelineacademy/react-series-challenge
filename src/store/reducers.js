@@ -2,7 +2,8 @@ const defaultState = {
   trendingGifs: [],
   error: '',
   count: 0,
-  loading: false
+  loading: false,
+  singleGif: null
 }
 
 const counter = (state = defaultState, action) => {
@@ -24,6 +25,9 @@ const counter = (state = defaultState, action) => {
       return {...state, trendingGifs};
     case 'FETCH_FAILED':
       return { ...state, error: action.payload.message }
+    case 'FETCHED_SINGLE':
+      return {...state, singleGif: action.singleGif.data};
+
     default:
        return state;
    }

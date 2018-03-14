@@ -11,7 +11,8 @@ const getJson = (url) => {
 
 const giphy = {
   fetchTrending: () => getJson(`${baseUrl}/v1/gifs/trending?api_key=${apiKey}`),
-  fetchSearch: (q) => getJson(`${baseUrl}/v1/gifs/search?api_key=${apiKey}&q=${q}`)
+  fetchSearch: (q) => getJson(`${baseUrl}/v1/gifs/search?api_key=${apiKey}&q=${q}`),
+  fetchById: (id) => getJson(`${baseUrl}/v1/gifs/${id}?api_key=${apiKey}`)
 }
 
 export default giphy

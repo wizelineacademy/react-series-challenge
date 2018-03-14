@@ -11,7 +11,7 @@ class Navbar extends Component {
         <LogoStyled src={logo} alt="logo" />
         <TitleStyled>Gif Viewer</TitleStyled>
         <NavStyled>
-          <NavLinkStyled exact to="/">Home</NavLinkStyled>
+          <NavLinkStyled exact to="/">Trending</NavLinkStyled>
           <NavLinkStyled to="/favs">Favorites</NavLinkStyled>
         </NavStyled>
       </NavbarStyled>
