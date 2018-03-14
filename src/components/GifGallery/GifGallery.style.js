@@ -39,7 +39,7 @@ export const SearchBtn = Btn.extend`
   margin-top: 50px;
 `;
 
-export const FavoriteBtn = Btn.extend`
+export const NavigationBtn = Btn.extend`
   background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
   margin-top: 50px;
   margin-left: 10px;

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
-import {FavoriteBtn, HomeWrapper, SearchBtn, SearchInput, SearchWrapper, TrendingGifCards} from './GifGallery.style';
+import {NavigationBtn, HomeWrapper, SearchBtn, SearchInput, SearchWrapper, TrendingGifCards} from './GifGallery.style';
 import searchIcon from './assets/search.png';
 import favoriteIcon from './assets/heart-filled-white.png'
 import homeIcon from './assets/home.png';
@@ -21,8 +21,8 @@ class GifGallery extends React.Component {
         <SearchWrapper>
           <SearchBtn src={searchIcon} />
           <SearchInput placeholder={'Type to search cool GIFs'} />
-          <FavoriteBtn src={homeIcon} onClick={() => this.props.history.push('/')} />
-          <FavoriteBtn src={favoriteIcon} onClick={() => this.props.history.push('/favorites')} />
+          <NavigationBtn src={homeIcon} onClick={() => this.props.history.push('/')} />
+          <NavigationBtn src={favoriteIcon} onClick={() => this.props.history.push('/favorites')} />
         </SearchWrapper>
         <TrendingGifCards>
           {
