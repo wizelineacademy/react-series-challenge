@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Navigation /> renders data correctly 1`] = `
+<div
+  className="sc-iwsKbI cvKTwe"
+>
+  <span
+    className="sc-gZMcBi gmKSS"
+  >
+    <a
+      href="/"
+      onClick={[Function]}
+    >
+      ALPHY
+    </a>
+  </span>
+  <ul
+    className="sc-gqjmRU gfjRRZ"
+  >
+    <li
+      className="sc-VigVT gqCkdK"
+    >
+      <a
+        href="/favorites"
+        onClick={[Function]}
+      >
+        Favorites
+      </a>
+    </li>
+  </ul>
+</div>
+`;

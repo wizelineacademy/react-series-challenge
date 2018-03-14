@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import { PageWrapper } from './components';
+import { Navigation, PageWrapper } from './components';
 import { Home, Favorites, Details, Search, NotFound } from './views';
 import { SearchFormWrapper, SearchInput, SearchButton } from './components/search-form';
 
@@ -11,9 +11,10 @@ const onSearch = (e, history) => {
   history.push(`/search/${encodeURI(value)}`);
 };
 
-const RouteWithSearch = ({ component: Component, ...rest }) => (
+const RouteWithTopNav = ({ component: Component, ...rest }) => (
   <Route {...rest} render={props => (
     <div>
+      <Navigation />
       <SearchFormWrapper onSubmit={e => onSearch(e, props.history)}>
         <SearchInput type="text" placeholder="Search all the GIFs" />
         <SearchButton><i className="fas fa-search" /></SearchButton>
@@ -28,10 +29,10 @@ export default () => (
   <PageWrapper>
     <Router>
       <Switch>
-        <RouteWithSearch exact path="/" component={Home} />
-        <RouteWithSearch exact path="/favorites" component={Favorites} />
-        <RouteWithSearch exact path="/gifs/:id" component={Details} />
-        <RouteWithSearch exact path="/search/:text" component={Search} />
+        <RouteWithTopNav exact path="/" component={Home} />
+        <RouteWithTopNav exact path="/favorites" component={Favorites} />
+        <RouteWithTopNav exact path="/gifs/:id" component={Details} />
+        <RouteWithTopNav exact path="/search/:text" component={Search} />
         <Route component={NotFound} />
       </Switch>
     </Router>

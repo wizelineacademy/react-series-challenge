@@ -2,10 +2,10 @@
 
 exports[`<Details /> renders data correctly  1`] = `
 <div
-  className="sc-iwsKbI fTCFhU"
+  className="sc-jTzLTM bRoPow"
 >
   <div
-    className="sc-gZMcBi kKhxDV"
+    className="sc-fjdhpX kbMDXR"
   >
     <div
       className="sc-dnqmqq cWEUzS"
@@ -30,16 +30,16 @@ exports[`<Details /> renders data correctly  1`] = `
     </div>
   </div>
   <div
-    className="sc-VigVT iNWrre"
+    className="sc-cSHVUG ffcNiE"
   >
     <img
       alt="Example image"
-      className="sc-jTzLTM hlKdJp"
+      className="sc-kAzzGY bYEREJ"
       src="http://www.example.com/image.jpg"
     />
   </div>
   <div
-    className="sc-gqjmRU fgXrhE"
+    className="sc-jzJRlG NGNYY"
   >
     <button
       onClick={[Function]}
@@ -58,10 +58,10 @@ exports[`<Details /> renders error message 1`] = `
 
 exports[`<Details /> renders loader 1`] = `
 <div
-  className="sc-iwsKbI fTCFhU"
+  className="sc-jTzLTM bRoPow"
 >
   <div
-    className="sc-gZMcBi kKhxDV"
+    className="sc-fjdhpX kbMDXR"
   >
     <div
       className="sc-bwzfXH kmXviU"
@@ -89,7 +89,7 @@ exports[`<Details /> renders loader 1`] = `
     </div>
   </div>
   <div
-    className="sc-VigVT iNWrre"
+    className="sc-cSHVUG ffcNiE"
   >
     <div
       className="sc-bwzfXH kmXviU"
@@ -117,7 +117,7 @@ exports[`<Details /> renders loader 1`] = `
     </div>
   </div>
   <div
-    className="sc-gqjmRU fgXrhE"
+    className="sc-jzJRlG NGNYY"
   />
 </div>
 `;
