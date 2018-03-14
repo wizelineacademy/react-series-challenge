@@ -1,4 +1,5 @@
 import React from 'react';
+import { shallow } from 'enzyme';
 import { MemoryRouter } from 'react-router';
 import Layout from '../../Layout';
 

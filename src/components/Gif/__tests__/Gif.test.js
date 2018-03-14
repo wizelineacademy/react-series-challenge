@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { shallow, mount } from 'enzyme';
 import { MemoryRouter } from 'react-router';
 import Gif from '../../Gif';
 

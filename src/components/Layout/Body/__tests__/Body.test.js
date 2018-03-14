@@ -1,5 +1,5 @@
 import React from 'react';
-import { MemoryRouter } from 'react-router';
+import { shallow } from 'enzyme';
 import Body from '../../Body';
 
 describe('<Body />', () => {

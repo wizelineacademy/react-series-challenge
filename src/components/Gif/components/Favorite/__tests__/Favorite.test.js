@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { shallow } from 'enzyme';
 import Favorite from '../../Favorite';
 import Star from '../../Favorite/styles';
 
