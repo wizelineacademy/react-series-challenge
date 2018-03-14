@@ -1,7 +1,7 @@
 import React from 'react'
 import {expect} from 'chai'
 import { shallow } from 'enzyme'
-import {Home} from '../src/component/Home'
+import {Home, mapStateToProps} from '../src/component/Home'
 
 describe('Test for Home Component', () => {
   const shallowOptions = {
@@ -230,5 +230,17 @@ describe('Test for Home Component', () => {
     }
     const component = shallow(<Home {...props} />)
     expect(component).lengthOf(1)
+  })
+
+  it('evaluates mapStateToProps', () => {
+    const state = {
+      gimphyList: {giphys: 'gimphyList'},
+      favorites: 'favorites',
+    }
+    const expectedMap = {
+      giphys: 'gimphyList',
+      favorites: 'favorites',
+    }
+    expect(mapStateToProps(state)).to.be.deep.equal(expectedMap)
   })
 })
