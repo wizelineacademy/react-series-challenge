@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import search from '../actions/search';
+import { searchActions, favoritesActions } from '../actions';
 import { Grid, Loader } from '../components';
 
 class Search extends Component {
@@ -12,6 +12,7 @@ class Search extends Component {
     error: PropTypes.object,
     match: PropTypes.object,
     fetchGifs: PropTypes.func.isRequired,
+    fetchFavorites: PropTypes.func.isRequired,
   }
   static defaultProps = {
     data: undefined,
@@ -22,6 +23,7 @@ class Search extends Component {
 
   componentDidMount = () => {
     const { match: { params: { text } } } = this.props;
+    this.props.fetchFavorites();
     this.props.fetchGifs(text);
   }
 
@@ -47,5 +49,5 @@ class Search extends Component {
 
 export default connect(
   ({ search: { data, error, loading } }) => ({ data, error, loading }),
-  { fetchGifs: search.creators.requestSearch },
+  { fetchGifs: searchActions.creators.requestSearch, fetchFavorites: favoritesActions.creators.fetchFavorites },
 )(Search);

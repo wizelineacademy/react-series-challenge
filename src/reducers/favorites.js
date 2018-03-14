@@ -5,10 +5,19 @@ const initialState = [];
 export default (state = initialState, action) => {
   switch (action.type) {
     case favorites.types.TOGGLE_FAVORITE: {
-      const { payload: id } = action;
-      if (!state.includes(id)) return [...state, action.payload];
-      return state.filter(item => item !== id);
+      const { payload } = action;
+      const newState = !state.find(item => item.id === payload.id)
+        ? [...state, payload]
+        : state.filter(item => item.id !== payload.id);
+      localStorage.setItem('alphyFavs', JSON.stringify(newState));
+      return newState;
     }
-    default: return state;
+    case favorites.types.FETCH_FAVORITES: {
+      return JSON.parse(localStorage.getItem('alphyFavs'));
+    }
+    default: {
+      localStorage.setItem('alphyFavs', JSON.stringify(state));
+      return state;
+    }
   }
 };

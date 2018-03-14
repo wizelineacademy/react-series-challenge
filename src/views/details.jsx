@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 
-import fav from '../actions/favorites';
-import gif from '../actions/gif';
+import { gifActions, favoritesActions } from '../actions';
 import { UserCard, Loader } from '../components';
 
 const DetailsWrapper = styled.div`
@@ -46,6 +45,7 @@ class Details extends Component {
     fetchGif: PropTypes.func.isRequired,
     toggleFavorite: PropTypes.func.isRequired,
     favorites: PropTypes.array.isRequired,
+    fetchFavorites: PropTypes.func.isRequired,
   }
   static defaultProps = {
     data: undefined,
@@ -56,10 +56,11 @@ class Details extends Component {
 
   componentDidMount = () => {
     const { match: { params: { id } } } = this.props;
+    this.props.fetchFavorites();
     this.props.fetchGif(id);
   }
 
-  isFavorite = id => this.props.favorites.includes(id);
+  isFavorite = image => this.props.favorites.some(item => item.id === image.id);
 
   render() {
     const { data, loading, error, toggleFavorite } = this.props;
@@ -77,7 +78,7 @@ class Details extends Component {
           { !loading && <Gif src={data.data.images.original.url} alt={data.data.title} /> }
         </DetailsContent>
         <DetailsRightSidebar>
-          { !loading && <button onClick={() => toggleFavorite(data.data.id)}>{this.isFavorite(data.data.id) ? 'Remove from favorites!' : 'Add to Favorites'}</button>}
+          { !loading && <button onClick={() => toggleFavorite(data.data)}>{this.isFavorite(data.data) ? 'Remove from favorites!' : 'Add to Favorites'}</button>}
         </DetailsRightSidebar>
       </DetailsWrapper>
     );
@@ -86,5 +87,5 @@ class Details extends Component {
 
 export default connect(
   ({ gif: { data, error, loading }, favorites }) => ({ data, error, loading, favorites }),
-  { fetchGif: gif.creators.requestGIF, toggleFavorite: fav.creators.requestToggle },
+  { fetchGif: gifActions.creators.requestGIF, toggleFavorite: favoritesActions.creators.requestToggle, fetchFavorites: favoritesActions.creators.fetchFavorites },
 )(Details);

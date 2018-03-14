@@ -52,28 +52,31 @@ const Icon = styled.a`
 `;
 
 const FavIcon = Icon.extend`
+  opacity: 1;
+  transform: translateX(0);
+
   > i {
     color: #fff;
     background-color: #4da3e2;
   }
 `;
 
-const Thumbnail = ({ id, title, url, toggleFavorite, isFav }) => {
+const Thumbnail = ({ gif, toggleFavorite, isFav }) => {
+  const { id, title, images } = gif;
+  const { url } = images.fixed_width_downsampled;
   const DisplayIcon = isFav ? FavIcon : Icon;
   return (
     <ThumbnailWrapper>
       <Link to={`/gifs/${id}`}><img src={url} alt={title} width={200} height={120} /></Link>
       <IconsDiv isFav={isFav}>
-        <DisplayIcon alt="Fav" onClick={() => toggleFavorite(id)}><i className="far fa-thumbs-up" /></DisplayIcon>
+        <DisplayIcon alt="Fav" onClick={() => toggleFavorite(gif)}><i className="far fa-thumbs-up" /></DisplayIcon>
       </IconsDiv>
     </ThumbnailWrapper>
   );
 };
 
 Thumbnail.propTypes = {
-  id: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired,
+  gif: PropTypes.object.isRequired,
   toggleFavorite: PropTypes.func.isRequired,
   isFav: PropTypes.bool.isRequired,
 };

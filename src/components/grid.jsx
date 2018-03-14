@@ -20,7 +20,7 @@ class Grid extends Component {
     favorites: PropTypes.array.isRequired,
   }
 
-  isFavorite = id => this.props.favorites.includes(id);
+  isFavorite = gif => this.props.favorites.some(item => item.id === gif.id);
 
   render() {
     const { data, toggleFavorite } = this.props;
@@ -28,15 +28,7 @@ class Grid extends Component {
 
     return (
       <GridWrapper>
-        { data.map((item) => {
-          const { id, title } = item;
-          const { images: { fixed_width_downsampled: { url, width, height } } } = item;
-          const props = {
-            id, title, url, width, height, toggleFavorite,
-            isFav: this.isFavorite(id),
-          };
-          return <Thumbnail key={`thumb-${id}`} {...props} />;
-        }) }
+        { data.map(gif => <Thumbnail key={`thumb-${gif.id}`} gif={gif} toggleFavorite={toggleFavorite} isFav={this.isFavorite(gif)} />) }
       </GridWrapper>
     );
   }
