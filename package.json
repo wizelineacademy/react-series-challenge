@@ -19,11 +19,10 @@
     "eject": "react-scripts eject",
     "lint": "eslint ./",
     "test": "yarn run lint && yarn run jest",
-    "jest": "jest --coverage --maxWorkers=6"
+    "jest": "NODE_ENV=testing jest --coverage --maxWorkers=6"
   },
   "devDependencies": {
     "enzyme": "^3.3.0",
-    "enzyme-adapter-react-16": "^1.1.1",
-    "jest": "^22.4.2"
+    "enzyme-adapter-react-16": "^1.1.1"
   }
 }
