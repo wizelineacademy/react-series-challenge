@@ -10,7 +10,7 @@ import {
 } from '../actions'
 import giphy from '../services/GIPHY'
 
-function * onFavoriteClick (action) {
+export function * onFavoriteClick (action) {
   try {
     const favorites = getFavsFromStorage()
     const newFavorites = updateFavoritesArray(action.payload.id, favorites)
@@ -22,7 +22,7 @@ function * onFavoriteClick (action) {
   }
 }
 
-function * fetchFavoritesIds (action) {
+export function * fetchFavoritesIds (action) {
   try{
     const favorites = getFavsFromStorage()
     if (favorites.length > 0) {

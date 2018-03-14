@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "enzyme-to-json": "^3.3.1",
     "prop-types": "^15.6.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
@@ -16,15 +17,17 @@
     "styled-components": "^3.2.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts styarn art",
     "build": "react-scripts build",
     "eject": "react-scripts eject",
     "lint": "eslint ./",
     "test": "yarn run lint && yarn run jest",
-    "jest": "NODE_ENV=testing jest --coverage --maxWorkers=6"
+    "jest": "NODE_ENV=testing jest --coverage --maxWorkers=6",
+    "test:watch": "NODE_ENV=testing jest --watch"
   },
   "devDependencies": {
     "enzyme": "^3.3.0",
-    "enzyme-adapter-react-16": "^1.1.1"
+    "enzyme-adapter-react-16": "^1.1.1",
+    "jest-fetch-mock": "^1.4.2"
   }
 }

@@ -7,7 +7,7 @@ import {
 } from '../actions'
 import giphy from '../services/GIPHY'
 
-function * onFetchById (action) {
+export function * onFetchById (action) {
   try {
     const response = yield call(giphy.byId.get, action.payload.id)
     const body = yield response.json()

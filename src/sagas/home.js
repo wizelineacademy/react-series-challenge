@@ -10,7 +10,7 @@ import {
 } from '../actions'
 import giphy from '../services/GIPHY'
 
-function * onFetchTrendingGiphies (action) {
+export function * onFetchTrendingGiphies (action) {
   try {
     const response = yield call(giphy.trending.get)
     const body = yield response.json()
@@ -20,7 +20,7 @@ function * onFetchTrendingGiphies (action) {
   }
 }
 
-function * onFetchSearchGiphies (action) {
+export function * onFetchSearchGiphies (action) {
   try {
     const response = yield call(giphy.search.get, action.payload.query)
     const body = yield response.json()

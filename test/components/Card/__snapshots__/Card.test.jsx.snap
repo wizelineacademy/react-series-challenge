@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card should render correctly 1`] = `
+<styled.div>
+  <Connect(GifItem)
+    alt="This is a gif"
+    id="123"
+    imageUrl="someUrl.com"
+  />
+</styled.div>
+`;
