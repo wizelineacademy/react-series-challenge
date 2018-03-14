@@ -1,10 +1,13 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import {DetailWrapper} from "./Detail.style";
+import {withRouter} from 'react-router-dom';
+import {DetailWrapper, NavigationBtn, Title} from "./Detail.style";
 import GifCardContainer from "../../containers/GifCard";
 import NotFound from "../NotFound";
+import homeIcon from './assets/home.png';
+import favoriteIcon from './assets/heart-filled-white.png';
 
-const Detail = ({favorites, match, trending}) => {
+const Detail = ({favorites, history, match, trending}) => {
   const obtainGifById = (id) => {
     let gif = favorites.find((favorite) => favorite.id === id);
     if (gif) {
@@ -29,9 +32,16 @@ const Detail = ({favorites, match, trending}) => {
 
   return (
     <DetailWrapper>
-      {
-        gif ? gifCard(gif) : <NotFound />
-      }
+      <div style={{}}>
+        <Title>Detail</Title>
+        <NavigationBtn src={homeIcon} onClick={() => history.push('/')} />
+        <NavigationBtn src={favoriteIcon} onClick={() => history.push('/favorites')} />
+      </div>
+      <div style={{display: 'inline-flex', marginTop: '15px'}}>
+        {
+          gif ? gifCard(gif) : <NotFound />
+        }
+      </div>
     </DetailWrapper>
   )
 };
@@ -41,4 +51,4 @@ Detail.propTypes = {
   favorites: PropTypes.array.isRequired
 };
 
-export default Detail;
+export default withRouter(Detail);

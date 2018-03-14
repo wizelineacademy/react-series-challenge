@@ -5,13 +5,13 @@ export const HoldMessageWrapper = styled.div`
 `;
 
 export const Message = styled.p`
-  text-align: center;
-  font-weight: 800;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
   color: white;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 800;
+  letter-spacing: normal;
+  line-height: normal;
+  text-align: center;
 `;
 
 export const HTTPError = Message.extend`
