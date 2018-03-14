@@ -5,7 +5,7 @@ import {FavoriteBtn, HomeWrapper, SearchBtn, SearchInput, SearchWrapper, Trendin
 import searchIcon from './assets/search.png';
 import favoriteIcon from './assets/heart-filled-white.png'
 import homeIcon from './assets/home.png';
-import GifCard from "../GifCard";
+import GifCardContainer from "../../containers/GifCard";
 
 class GifGallery extends React.Component {
   componentWillMount() {
@@ -29,12 +29,12 @@ class GifGallery extends React.Component {
             dataSource.map((gif) => {
               const isFavorite = !!this.props.favorites.find((favorite) => favorite.id === gif.id);
               return (
-                <GifCard
+                <GifCardContainer
                   gif={gif}
                   isFavorite={isFavorite}
+                  isDetailBtnVisible
                   imageSize={'small'}
                   key={gif.id}
-                  toggleFavorite={this.props.toggleFavorite}
                  />
               )
             })
@@ -49,7 +49,6 @@ GifGallery.propTypes = {
   dataSource: PropTypes.oneOf(['GIPHY', 'favorites']).isRequired,
   favorites: PropTypes.array.isRequired,
   fetchTrendingGifs: PropTypes.func.isRequired,
-  toggleFavorite: PropTypes.func.isRequired,
   trending: PropTypes.array.isRequired
 };
 

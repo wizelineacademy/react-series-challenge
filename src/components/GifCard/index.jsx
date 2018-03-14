@@ -4,15 +4,19 @@ import {Btn, BtnsWrapper, GifCardWrapper} from "./GifCard.style";
 import eyeIcon from './assets/eye.png';
 import heartBorder from './assets/heart-border.svg';
 import heartFilled from './assets/heart-filled.svg';
+import {withRouter} from "react-router-dom";
 
-const GifCard = ({gif, isFavorite, imageSize, toggleFavorite}) => {
+const GifCard = ({gif, history, isFavorite, isDetailBtnVisible, imageSize, toggleFavorite}) => {
   const image = imageSize === 'small' ? gif.images.small : gif.images.original;
   const heartIcon = isFavorite ? heartFilled : heartBorder;
+  const openDetailView = () => history.push(`/detail/${gif.id}`);
   return (
     <GifCardWrapper>
       <img alt={'gif'} src={image} />
       <BtnsWrapper>
-        <Btn alt={'open'} src={eyeIcon} />
+        {
+          isDetailBtnVisible ? <Btn alt={'detail'} src={eyeIcon} onClick={openDetailView.bind(this)} /> : null
+        }
         <Btn alt={'favorite'} src={heartIcon} onClick={toggleFavorite.bind(this, gif)} />
       </BtnsWrapper>
     </GifCardWrapper>
@@ -28,8 +32,9 @@ GifCard.propTypes = {
     })
   }).isRequired,
   isFavorite: PropTypes.bool.isRequired,
+  isDetailBtnVisible: PropTypes.bool.isRequired,
   imageSize: PropTypes.oneOf(['small', 'original']).isRequired,
   toggleFavorite: PropTypes.func.isRequired
 };
 
-export default GifCard
+export default withRouter(GifCard);
