@@ -43,7 +43,7 @@ export class Detail extends Component {
   }
 }
 
-function mapStateToProps(state) {
+export function mapStateToProps(state) {
   return {
     giphyDetails : state.gimphyList.details,
     favorites: state.favorites
