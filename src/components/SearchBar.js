@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 import { searchGifsChangeQuery } from '../actions/search';
 
 const StyledTopBar = styled.div`
@@ -35,10 +36,28 @@ const StyledSearchInput = styled.input`
   border-radius: 6px;
 `;
 
+const StyledLink = styled(NavLink)`
+  cursor: pointer;
+`;
+
+const StyledLogoContainer = styled.div`
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  ${StyledLink} {
+    margin-left: 30px;
+  }
+`;
+
 const SearchBar = ({ query, searchGifsChangeQuery }) => (
   <StyledTopBar>
     <StyledTopBarContent>
-      <StyledLogo>Giffr</StyledLogo>
+      <StyledLogoContainer>
+        <StyledLogo>Giffr</StyledLogo>
+        <StyledLink to="/">🏠</StyledLink>
+      </StyledLogoContainer>
       <StyledSearchInput
         placeholder="search gifs"
         type="text"
