@@ -6,6 +6,7 @@ const Message = styled.div`
   width: 50%;
   margin: 30px auto;
   font-size: 30px;
+  position: relative;
 
   & p {
     font-size: 18px;

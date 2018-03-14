@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Favorite from './components/Favorite';
+import Favorite from '../Favorite';
 import StyledGif from './styles';
 
 const Gif = ({
