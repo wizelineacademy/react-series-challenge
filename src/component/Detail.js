@@ -9,7 +9,7 @@ const Div = styled.div`
   text-align: center;
 `
 
-class Detail extends Component {
+export class Detail extends Component {
 
   handleOnclick (giphy) {
     if (giphy.id in this.props.favorites) {
