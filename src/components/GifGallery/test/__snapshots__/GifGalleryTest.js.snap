@@ -1,0 +1,859 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GifCard component should render 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <GifGallery
+    dataSource="favorites"
+    favorites={
+        Array [
+            Object {
+              "id": "p3n7NWvfz3u0c1meay",
+              "images": Object {
+                "original": "https://media3.giphy.com/media/p3n7NWvfz3u0c1meay/giphy.gif",
+                "small": "https://media3.giphy.com/media/p3n7NWvfz3u0c1meay/200w_d.gif",
+              },
+            },
+          ]
+    }
+    fetchTrendingGifs={[Function]}
+    trending={Array []}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": Array [
+        <styled.div>
+          <styled.img
+                    src={
+                              Object {
+                                        "process": [Function],
+                                      }
+                    }
+          />
+          <styled.input
+                    placeholder="Type to search cool GIFs"
+          />
+          <styled.img
+                    onClick={[Function]}
+                    src={
+                              Object {
+                                        "process": [Function],
+                                      }
+                    }
+          />
+          <styled.img
+                    onClick={[Function]}
+                    src={
+                              Object {
+                                        "process": [Function],
+                                      }
+                    }
+          />
+</styled.div>,
+        <styled.div>
+          <Connect(withRouter(GifCard))
+                    gif={
+                              Object {
+                                        "id": "p3n7NWvfz3u0c1meay",
+                                        "images": Object {
+                                          "original": "https://media3.giphy.com/media/p3n7NWvfz3u0c1meay/giphy.gif",
+                                          "small": "https://media3.giphy.com/media/p3n7NWvfz3u0c1meay/200w_d.gif",
+                                        },
+                                      }
+                    }
+                    imageSize="small"
+                    isDetailBtnVisible={true}
+                    isFavorite={true}
+          />
+</styled.div>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <styled.img
+              src={
+                            Object {
+                                          "process": [Function],
+                                        }
+              }
+/>,
+            <styled.input
+              placeholder="Type to search cool GIFs"
+/>,
+            <styled.img
+              onClick={[Function]}
+              src={
+                            Object {
+                                          "process": [Function],
+                                        }
+              }
+/>,
+            <styled.img
+              onClick={[Function]}
+              src={
+                            Object {
+                                          "process": [Function],
+                                        }
+              }
+/>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "src": Object {
+                "process": [Function],
+              },
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "placeholder": "Type to search cool GIFs",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "onClick": [Function],
+              "src": Object {
+                "process": [Function],
+              },
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "onClick": [Function],
+              "src": Object {
+                "process": [Function],
+              },
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <Connect(withRouter(GifCard))
+              gif={
+                            Object {
+                                          "id": "p3n7NWvfz3u0c1meay",
+                                          "images": Object {
+                                            "original": "https://media3.giphy.com/media/p3n7NWvfz3u0c1meay/giphy.gif",
+                                            "small": "https://media3.giphy.com/media/p3n7NWvfz3u0c1meay/200w_d.gif",
+                                          },
+                                        }
+              }
+              imageSize="small"
+              isDetailBtnVisible={true}
+              isFavorite={true}
+/>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": "p3n7NWvfz3u0c1meay",
+            "nodeType": "class",
+            "props": Object {
+              "gif": Object {
+                "id": "p3n7NWvfz3u0c1meay",
+                "images": Object {
+                  "original": "https://media3.giphy.com/media/p3n7NWvfz3u0c1meay/giphy.gif",
+                  "small": "https://media3.giphy.com/media/p3n7NWvfz3u0c1meay/200w_d.gif",
+                },
+              },
+              "imageSize": "small",
+              "isDetailBtnVisible": true,
+              "isFavorite": true,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <styled.div>
+            <styled.img
+                        src={
+                                    Object {
+                                                "process": [Function],
+                                              }
+                        }
+            />
+            <styled.input
+                        placeholder="Type to search cool GIFs"
+            />
+            <styled.img
+                        onClick={[Function]}
+                        src={
+                                    Object {
+                                                "process": [Function],
+                                              }
+                        }
+            />
+            <styled.img
+                        onClick={[Function]}
+                        src={
+                                    Object {
+                                                "process": [Function],
+                                              }
+                        }
+            />
+</styled.div>,
+          <styled.div>
+            <Connect(withRouter(GifCard))
+                        gif={
+                                    Object {
+                                                "id": "p3n7NWvfz3u0c1meay",
+                                                "images": Object {
+                                                  "original": "https://media3.giphy.com/media/p3n7NWvfz3u0c1meay/giphy.gif",
+                                                  "small": "https://media3.giphy.com/media/p3n7NWvfz3u0c1meay/200w_d.gif",
+                                                },
+                                              }
+                        }
+                        imageSize="small"
+                        isDetailBtnVisible={true}
+                        isFavorite={true}
+            />
+</styled.div>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <styled.img
+                src={
+                                Object {
+                                                "process": [Function],
+                                              }
+                }
+/>,
+              <styled.input
+                placeholder="Type to search cool GIFs"
+/>,
+              <styled.img
+                onClick={[Function]}
+                src={
+                                Object {
+                                                "process": [Function],
+                                              }
+                }
+/>,
+              <styled.img
+                onClick={[Function]}
+                src={
+                                Object {
+                                                "process": [Function],
+                                              }
+                }
+/>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "src": Object {
+                  "process": [Function],
+                },
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "placeholder": "Type to search cool GIFs",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "onClick": [Function],
+                "src": Object {
+                  "process": [Function],
+                },
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "onClick": [Function],
+                "src": Object {
+                  "process": [Function],
+                },
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <Connect(withRouter(GifCard))
+                gif={
+                                Object {
+                                                "id": "p3n7NWvfz3u0c1meay",
+                                                "images": Object {
+                                                  "original": "https://media3.giphy.com/media/p3n7NWvfz3u0c1meay/giphy.gif",
+                                                  "small": "https://media3.giphy.com/media/p3n7NWvfz3u0c1meay/200w_d.gif",
+                                                },
+                                              }
+                }
+                imageSize="small"
+                isDetailBtnVisible={true}
+                isFavorite={true}
+/>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": "p3n7NWvfz3u0c1meay",
+              "nodeType": "class",
+              "props": Object {
+                "gif": Object {
+                  "id": "p3n7NWvfz3u0c1meay",
+                  "images": Object {
+                    "original": "https://media3.giphy.com/media/p3n7NWvfz3u0c1meay/giphy.gif",
+                    "small": "https://media3.giphy.com/media/p3n7NWvfz3u0c1meay/200w_d.gif",
+                  },
+                },
+                "imageSize": "small",
+                "isDetailBtnVisible": true,
+                "isFavorite": true,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`GifCard component should render 2`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <GifGallery
+    dataSource="GIPHY"
+    favorites={Array []}
+    fetchTrendingGifs={[Function]}
+    trending={
+        Array [
+            Object {
+              "id": "p3n7NWvfz3u0c1meay",
+              "images": Object {
+                "original": "https://media3.giphy.com/media/p3n7NWvfz3u0c1meay/giphy.gif",
+                "small": "https://media3.giphy.com/media/p3n7NWvfz3u0c1meay/200w_d.gif",
+              },
+            },
+          ]
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": Array [
+        <styled.div>
+          <styled.img
+                    src={
+                              Object {
+                                        "process": [Function],
+                                      }
+                    }
+          />
+          <styled.input
+                    placeholder="Type to search cool GIFs"
+          />
+          <styled.img
+                    onClick={[Function]}
+                    src={
+                              Object {
+                                        "process": [Function],
+                                      }
+                    }
+          />
+          <styled.img
+                    onClick={[Function]}
+                    src={
+                              Object {
+                                        "process": [Function],
+                                      }
+                    }
+          />
+</styled.div>,
+        <styled.div>
+          <Connect(withRouter(GifCard))
+                    gif={
+                              Object {
+                                        "id": "p3n7NWvfz3u0c1meay",
+                                        "images": Object {
+                                          "original": "https://media3.giphy.com/media/p3n7NWvfz3u0c1meay/giphy.gif",
+                                          "small": "https://media3.giphy.com/media/p3n7NWvfz3u0c1meay/200w_d.gif",
+                                        },
+                                      }
+                    }
+                    imageSize="small"
+                    isDetailBtnVisible={true}
+                    isFavorite={false}
+          />
+</styled.div>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <styled.img
+              src={
+                            Object {
+                                          "process": [Function],
+                                        }
+              }
+/>,
+            <styled.input
+              placeholder="Type to search cool GIFs"
+/>,
+            <styled.img
+              onClick={[Function]}
+              src={
+                            Object {
+                                          "process": [Function],
+                                        }
+              }
+/>,
+            <styled.img
+              onClick={[Function]}
+              src={
+                            Object {
+                                          "process": [Function],
+                                        }
+              }
+/>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "src": Object {
+                "process": [Function],
+              },
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "placeholder": "Type to search cool GIFs",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "onClick": [Function],
+              "src": Object {
+                "process": [Function],
+              },
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "onClick": [Function],
+              "src": Object {
+                "process": [Function],
+              },
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <Connect(withRouter(GifCard))
+              gif={
+                            Object {
+                                          "id": "p3n7NWvfz3u0c1meay",
+                                          "images": Object {
+                                            "original": "https://media3.giphy.com/media/p3n7NWvfz3u0c1meay/giphy.gif",
+                                            "small": "https://media3.giphy.com/media/p3n7NWvfz3u0c1meay/200w_d.gif",
+                                          },
+                                        }
+              }
+              imageSize="small"
+              isDetailBtnVisible={true}
+              isFavorite={false}
+/>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": "p3n7NWvfz3u0c1meay",
+            "nodeType": "class",
+            "props": Object {
+              "gif": Object {
+                "id": "p3n7NWvfz3u0c1meay",
+                "images": Object {
+                  "original": "https://media3.giphy.com/media/p3n7NWvfz3u0c1meay/giphy.gif",
+                  "small": "https://media3.giphy.com/media/p3n7NWvfz3u0c1meay/200w_d.gif",
+                },
+              },
+              "imageSize": "small",
+              "isDetailBtnVisible": true,
+              "isFavorite": false,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <styled.div>
+            <styled.img
+                        src={
+                                    Object {
+                                                "process": [Function],
+                                              }
+                        }
+            />
+            <styled.input
+                        placeholder="Type to search cool GIFs"
+            />
+            <styled.img
+                        onClick={[Function]}
+                        src={
+                                    Object {
+                                                "process": [Function],
+                                              }
+                        }
+            />
+            <styled.img
+                        onClick={[Function]}
+                        src={
+                                    Object {
+                                                "process": [Function],
+                                              }
+                        }
+            />
+</styled.div>,
+          <styled.div>
+            <Connect(withRouter(GifCard))
+                        gif={
+                                    Object {
+                                                "id": "p3n7NWvfz3u0c1meay",
+                                                "images": Object {
+                                                  "original": "https://media3.giphy.com/media/p3n7NWvfz3u0c1meay/giphy.gif",
+                                                  "small": "https://media3.giphy.com/media/p3n7NWvfz3u0c1meay/200w_d.gif",
+                                                },
+                                              }
+                        }
+                        imageSize="small"
+                        isDetailBtnVisible={true}
+                        isFavorite={false}
+            />
+</styled.div>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <styled.img
+                src={
+                                Object {
+                                                "process": [Function],
+                                              }
+                }
+/>,
+              <styled.input
+                placeholder="Type to search cool GIFs"
+/>,
+              <styled.img
+                onClick={[Function]}
+                src={
+                                Object {
+                                                "process": [Function],
+                                              }
+                }
+/>,
+              <styled.img
+                onClick={[Function]}
+                src={
+                                Object {
+                                                "process": [Function],
+                                              }
+                }
+/>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "src": Object {
+                  "process": [Function],
+                },
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "placeholder": "Type to search cool GIFs",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "onClick": [Function],
+                "src": Object {
+                  "process": [Function],
+                },
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "onClick": [Function],
+                "src": Object {
+                  "process": [Function],
+                },
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <Connect(withRouter(GifCard))
+                gif={
+                                Object {
+                                                "id": "p3n7NWvfz3u0c1meay",
+                                                "images": Object {
+                                                  "original": "https://media3.giphy.com/media/p3n7NWvfz3u0c1meay/giphy.gif",
+                                                  "small": "https://media3.giphy.com/media/p3n7NWvfz3u0c1meay/200w_d.gif",
+                                                },
+                                              }
+                }
+                imageSize="small"
+                isDetailBtnVisible={true}
+                isFavorite={false}
+/>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": "p3n7NWvfz3u0c1meay",
+              "nodeType": "class",
+              "props": Object {
+                "gif": Object {
+                  "id": "p3n7NWvfz3u0c1meay",
+                  "images": Object {
+                    "original": "https://media3.giphy.com/media/p3n7NWvfz3u0c1meay/giphy.gif",
+                    "small": "https://media3.giphy.com/media/p3n7NWvfz3u0c1meay/200w_d.gif",
+                  },
+                },
+                "imageSize": "small",
+                "isDetailBtnVisible": true,
+                "isFavorite": false,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
