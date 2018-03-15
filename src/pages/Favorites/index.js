@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import GifList from '../../components/GifList';
@@ -12,55 +12,87 @@ import {
   setCurrentGif,
 } from '../data/view/actions';
 
-const Favorites = (props) => {
-  const {
-    list,
-  } = props.favorites;
+class Favorites extends Component {
+  state = {
+    filteredElements: {},
+    filtered: false,
+  }
 
-  return (
-    <Page>
-      <Message>
-        The best of the best!
-        <p>
-          These are the most popular GIFs!
-        </p>
-        <p>
-          Go back to trend GIFs&ensp;
-          <Link
-            to="/"
-          >
-            here!
-          </Link>
-        </p>
-        <hr />
-        <p>
-          Search within your favorite here
-        </p>
-        <Row>
-          <Col span={12}>
-            <SearchGif />
-          </Col>
-        </Row>
-      </Message>
-      <div>
-        {
-          (list && Object.keys(list).length > 0) &&
-          <GifList
-            elements={Object.values(list)}
-            starred={list}
-            handleSetGif={props.handleSetGif}
-            handleToggleFav={props.handleToggleFav}
-          />
-        }
-        {
-          (!list || Object.keys(list).length === 0) &&
+  handleSearch = (event) => {
+    const text = event.target.value;
+    if(text !== '') {
+      const currentElements = this.props.favorites.list;
+      const myRe = new RegExp(text, 'g');
+      const newList = Object.values(currentElements).filter(value => {
+        return value.title.match(myRe);
+      })
+      this.setState({
+        filteredElements: newList,
+        filtered: true,
+      });
+      console.log(newList);
+    } else {
+      this.setState({
+        filteredElements: {},
+        filtered: false,
+      });
+    }
+  }
+
+  render(){
+    const {
+      list,
+    } = this.props.favorites;
+
+    const listElements = this.state.filtered ? this.state.filteredElements : list;
+
+    return (
+      <Page>
+        <Message>
+          The best of the best!
           <p>
-            There are not favorites yet :/
+            These are the most popular GIFs!
           </p>
-        }
-      </div>
-    </Page>
-  );
+          <p>
+            Go back to trend GIFs&ensp;
+            <Link
+              to="/"
+            >
+              here!
+            </Link>
+          </p>
+          <hr />
+          <p>
+            Search within your favorite here
+          </p>
+          <Row>
+            <Col span={12}>
+              <SearchGif
+                handleSearch={this.handleSearch}
+              />
+            </Col>
+          </Row>
+        </Message>
+        <div>
+          {
+            (listElements && Object.keys(listElements).length > 0) &&
+            <GifList
+              elements={Object.values(listElements)}
+              starred={listElements}
+              handleSetGif={this.props.handleSetGif}
+              handleToggleFav={this.props.handleToggleFav}
+            />
+          }
+          {
+            (!listElements || Object.keys(listElements).length === 0) &&
+            <p>
+              There are not favorites yet :/
+            </p>
+          }
+        </div>
+      </Page>
+    );
+  }
 };
 
 const mapStateToProps = state => {

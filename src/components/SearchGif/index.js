@@ -7,7 +7,7 @@ const SearchGif = ({
   return (
     <Input
       type="text"
-      onKeyPress={handleSearch}
+      onKeyUp={handleSearch}
     />
   );
 }
