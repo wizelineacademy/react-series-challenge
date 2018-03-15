@@ -8,6 +8,7 @@ import {
 import { Provider } from 'react-redux';
 import store from './store';
 import { Home, Favorites } from './components';
+import { Header } from './components/styled';
 import './App.css';
 
 class App extends Component {
@@ -15,13 +16,13 @@ class App extends Component {
     return (
       <Provider store={store}>
         <div>
-          <header>
-            GIPHY challenge
+          <Header>
+            <h1>Giphy Challenge</h1>
             <ul>
-              <li><NavLink to="/Home">Home</NavLink></li>
-              <li><NavLink to="/Favorites">Favorites</NavLink></li>
+              <li><NavLink to="/Home" activeClass="active">Home</NavLink></li>
+              <li><NavLink to="/Favorites" activeClass="active">Favorites</NavLink></li>
             </ul>
-          </header>
+          </Header>
 
           <Switch>
             <Route path="/Home" component={Home} />
