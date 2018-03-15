@@ -8,7 +8,8 @@ module.exports = {
   testMatch: ['**/test/*Test.js'],
   collectCoverageFrom: [
     "**/src/**/*.{js,jsx}",
-    "!**/src/registerServiceWorker.{js,jsx}"
+    "!**/src/registerServiceWorker.{js,jsx}",
+    "!src/index.js"
   ],
   moduleNameMapper: {
     '\\.(png|svg)$': '<rootDir>/assetsTransformer.js'
