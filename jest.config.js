@@ -1,6 +1,6 @@
 module.exports = {
   browser: true,
-  setupFiles: ['./jest.setup.js'],
+  setupFiles: ['./src/setupTests.js', "jest-localstorage-mock"],
   testPathIgnorePatterns: [
     '/node_modules/',
     '/coverage/'
