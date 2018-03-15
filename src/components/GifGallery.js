@@ -1,10 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { connect } from 'react-redux';
 import Gif from './Gif';
-import { toggleFavorite } from '../actions/favorites';
-import { isFavorited } from '../selectors/favorites';
-import { selectedGifChange } from '../actions/selected';
 
 const GifList = styled.div`
   display: flex;

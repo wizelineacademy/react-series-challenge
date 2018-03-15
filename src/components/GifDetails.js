@@ -60,7 +60,7 @@ export class GifDetails extends Component {
     return (
       <Modal open onCloseClick={this.closeHandler}>
         {gif.loading
-          ? <div>Loading 🌀</div>
+          ? <div>Loading <span role="img" aria-label="spiral emoji">🌀</span></div>
           : (
             <div>
               <StyledGifContainer>

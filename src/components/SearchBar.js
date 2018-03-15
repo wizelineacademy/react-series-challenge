@@ -70,8 +70,12 @@ export const SearchBar = ({ query, searchGifsChangeQuery }) => (
     <StyledTopBarContent>
       <StyledLogoContainer>
         <StyledLogo>Giffr</StyledLogo>
-        <StyledLink exact to="/">🏠</StyledLink>
-        <StyledLink to="/favorites">⭐️</StyledLink>
+        <StyledLink exact to="/">
+          <span role="img" aria-label="house emoji">🏠</span>
+        </StyledLink>
+        <StyledLink to="/favorites">
+          <span role="img" aria-label="star emoji">⭐️</span>
+        </StyledLink>
       </StyledLogoContainer>
       <StyledSearchInput
         placeholder="search gifs"

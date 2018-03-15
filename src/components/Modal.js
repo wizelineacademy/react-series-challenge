@@ -84,7 +84,9 @@ const Modal = ({ children, open, onCloseClick }) => (
   <StyledPortal open={open}>
     <StyledBackdrop onClick={onCloseClick} />
     <StyledModalContainer>
-      <StyledCloseIcon onClick={onCloseClick}>❌</StyledCloseIcon>
+      <StyledCloseIcon onClick={onCloseClick}>
+        <span role="img" aria-label="close icon emoji">❌</span>
+      </StyledCloseIcon>
       {children}
     </StyledModalContainer>
   </StyledPortal>

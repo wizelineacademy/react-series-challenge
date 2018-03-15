@@ -1,7 +1,6 @@
 import {
   LOAD_TRENDING_REQUEST,
-  LOAD_TRENDING_SUCCESS,
-  LOAD_TRENDING_FAIL
+  LOAD_TRENDING_SUCCESS
 } from '../actions/trending';
 
 export const defaultState = { loading: false, gifs: [] };
