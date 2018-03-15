@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Home /> renders data correctly 1`] = `
+<div>
+  <div>
+    Home
+  </div>
+  <div
+    className="sc-bdVaJa kEWmmQ"
+  >
+    <section
+      className="sc-bxivhb jDMTmg"
+    >
+      <a
+        href="/gifs/asdfljlk3-ffgfg"
+        onClick={[Function]}
+      >
+        <img
+          alt="Example image"
+          height={120}
+          src="http://www.example.com/image.jpg"
+          width={200}
+        />
+      </a>
+      <div
+        className="sc-ifAKCX drTRiD"
+      >
+        <a
+          alt="Fav"
+          className="sc-EHOje laSDVF"
+          onClick={[Function]}
+        >
+          <i
+            className="far fa-thumbs-up"
+          />
+        </a>
+      </div>
+    </section>
+  </div>
+</div>
+`;
+
+exports[`<Home /> renders loader 1`] = `
+<div>
+  <div>
+    Home
+  </div>
+  <div
+    className="sc-bwzfXH kmXviU"
+  >
+    <div
+      animation-delay={0}
+      className="sc-htpNat gLLNR"
+    />
+    <div
+      animation-delay="-1.1s"
+      className="sc-htpNat gteQUn"
+    />
+    <div
+      animation-delay="-1.0s"
+      className="sc-htpNat dnZQtX"
+    />
+    <div
+      animation-delay="-0.9s"
+      className="sc-htpNat fqexcQ"
+    />
+    <div
+      animation-delay="-0.8s"
+      className="sc-htpNat gcoKLq"
+    />
+  </div>
+</div>
+`;

@@ -1,14 +1,15 @@
 module.exports = {
   browser: true,
-  setupFiles: ['./jest.setup.js'],
+  setupFiles: ['./jest.setup.js', './browserMocks.js'],
   testPathIgnorePatterns: [
     '/node_modules/',
-    '/coverage/'
+    '/coverage/',
   ],
-  testMatch: ['**/test/*Test.js'],
+  testMatch: ['**/*.test.js'],
   collectCoverageFrom: [
-    "**/src/**/*.{js,jsx}",
-    "!**/src/registerServiceWorker.{js,jsx}"
+    '**/src/**/*.{js,jsx}',
+    '!**/src/registerServiceWorker.{js,jsx}',
+    '!**/src/index.js',
   ],
   coverageThreshold: {
     global: {

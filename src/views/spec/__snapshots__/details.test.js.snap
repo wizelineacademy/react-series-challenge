@@ -1,0 +1,125 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Details /> renders data correctly  1`] = `
+<div
+  className="sc-jTzLTM bRoPow"
+>
+  <div
+    className="sc-fjdhpX kbMDXR"
+  >
+    <div
+      className="sc-dnqmqq cWEUzS"
+    >
+      <a
+        href="http://www.example.com"
+      >
+        <img
+          alt="Alfer"
+          className="sc-htoDjs iOyEEs"
+          src="http://www.example.com/avatar.jpg"
+        />
+      </a>
+      <div>
+        Alfer
+      </div>
+      <div>
+        @krilbert
+         
+        
+      </div>
+    </div>
+  </div>
+  <div
+    className="sc-cSHVUG ffcNiE"
+  >
+    <img
+      alt="Example image"
+      className="sc-kAzzGY bYEREJ"
+      src="http://www.example.com/image.jpg"
+    />
+  </div>
+  <div
+    className="sc-jzJRlG NGNYY"
+  >
+    <button
+      onClick={[Function]}
+    >
+      Add to Favorites
+    </button>
+  </div>
+</div>
+`;
+
+exports[`<Details /> renders error message 1`] = `
+<div>
+  Something went wrong
+</div>
+`;
+
+exports[`<Details /> renders loader 1`] = `
+<div
+  className="sc-jTzLTM bRoPow"
+>
+  <div
+    className="sc-fjdhpX kbMDXR"
+  >
+    <div
+      className="sc-bwzfXH kmXviU"
+    >
+      <div
+        animation-delay={0}
+        className="sc-htpNat gLLNR"
+      />
+      <div
+        animation-delay="-1.1s"
+        className="sc-htpNat gteQUn"
+      />
+      <div
+        animation-delay="-1.0s"
+        className="sc-htpNat dnZQtX"
+      />
+      <div
+        animation-delay="-0.9s"
+        className="sc-htpNat fqexcQ"
+      />
+      <div
+        animation-delay="-0.8s"
+        className="sc-htpNat gcoKLq"
+      />
+    </div>
+  </div>
+  <div
+    className="sc-cSHVUG ffcNiE"
+  >
+    <div
+      className="sc-bwzfXH kmXviU"
+    >
+      <div
+        animation-delay={0}
+        className="sc-htpNat gLLNR"
+      />
+      <div
+        animation-delay="-1.1s"
+        className="sc-htpNat gteQUn"
+      />
+      <div
+        animation-delay="-1.0s"
+        className="sc-htpNat dnZQtX"
+      />
+      <div
+        animation-delay="-0.9s"
+        className="sc-htpNat fqexcQ"
+      />
+      <div
+        animation-delay="-0.8s"
+        className="sc-htpNat gcoKLq"
+      />
+    </div>
+  </div>
+  <div
+    className="sc-jzJRlG NGNYY"
+  />
+</div>
+`;
+
+exports[`<Details /> renders null if no data and not loading 1`] = `null`;

@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Thumbnail /> renders data correctly with non verified user 1`] = `
+<section
+  className="sc-bxivhb jDMTmg"
+>
+  <a
+    href="/gifs/asdfljlk3-ffgfg"
+    onClick={[Function]}
+  >
+    <img
+      alt="Example image"
+      height={120}
+      src="http://www.example.com/image.jpg"
+      width={200}
+    />
+  </a>
+  <div
+    className="sc-ifAKCX drTRiD"
+  >
+    <a
+      alt="Fav"
+      className="sc-EHOje laSDVF"
+      onClick={[Function]}
+    >
+      <i
+        className="far fa-thumbs-up"
+      />
+    </a>
+  </div>
+</section>
+`;
+
+exports[`<Thumbnail /> renders data correctly with verified user 1`] = `
+<section
+  className="sc-bxivhb jDMTmg"
+>
+  <a
+    href="/gifs/asdfljlk3-ffgfg"
+    onClick={[Function]}
+  >
+    <img
+      alt="Example image"
+      height={120}
+      src="http://www.example.com/image.jpg"
+      width={200}
+    />
+  </a>
+  <div
+    className="sc-ifAKCX drTRiD"
+  >
+    <a
+      alt="Fav"
+      className="sc-bZQynM fnuMSO"
+      onClick={[Function]}
+    >
+      <i
+        className="far fa-thumbs-up"
+      />
+    </a>
+  </div>
+</section>
+`;
