@@ -30,3 +30,4 @@ export const NavigationBtn = Btn.extend`
   background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
   margin-left: 10px;
 `;
+NavigationBtn.displayName = 'NavigationBtn';
