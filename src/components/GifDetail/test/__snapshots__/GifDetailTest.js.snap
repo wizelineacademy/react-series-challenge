@@ -1,7 +1,34 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`GifDetail should render correctly 1`] = `
-<Route
-  render={[Function]}
-/>
+<styled.div>
+  <BackButton
+    onClick={[Function]}
+  >
+    Back
+  </BackButton>
+  <styled.div>
+    <FavoriteButton
+      gif={
+        Object {
+          "images": Object {
+            "downsized_large": Object {
+              "url": "test",
+            },
+          },
+          "title": "title",
+        }
+      }
+      isFavorite={true}
+      setFavorite={[MockFunction]}
+    />
+    <img
+      alt="title"
+      src="test"
+    />
+    <styled.p>
+      title
+    </styled.p>
+  </styled.div>
+</styled.div>
 `;

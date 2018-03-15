@@ -25,3 +25,4 @@ export const BackButton = styled.span`
     opacity: 0.85;
   }
 `
+BackButton.displayName = 'BackButton';
