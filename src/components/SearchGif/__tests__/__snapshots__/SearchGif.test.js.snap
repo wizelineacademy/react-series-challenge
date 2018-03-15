@@ -17,7 +17,7 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "class",
     "props": Object {
-      "onKeyPress": undefined,
+      "onKeyUp": undefined,
       "type": "text",
     },
     "ref": null,
@@ -30,7 +30,7 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "class",
       "props": Object {
-        "onKeyPress": undefined,
+        "onKeyUp": undefined,
         "type": "text",
       },
       "ref": null,

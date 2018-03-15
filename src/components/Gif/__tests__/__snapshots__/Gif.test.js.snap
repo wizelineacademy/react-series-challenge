@@ -9,7 +9,7 @@ ShallowWrapper {
       Object {
         "id": "XDXDXDXD",
         "images": Object {
-          "original": Object {
+          "preview_gif": Object {
             "url": "http://gif.com",
           },
         },

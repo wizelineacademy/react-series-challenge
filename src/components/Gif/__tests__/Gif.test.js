@@ -9,7 +9,7 @@ describe('<Gif />', () => {
       gif: {
         id: 'XDXDXDXD',
         images: {
-          original: {
+          preview_gif: {
             url: 'http://gif.com',
           }
         }
@@ -25,7 +25,7 @@ describe('<Gif />', () => {
       gif: {
         id: 'XDXDXDXD',
         images: {
-          original: {
+          preview_gif: {
             url: 'http://gif.com',
           }
         }
@@ -43,7 +43,7 @@ describe('<Gif />', () => {
       gif: {
         id: 'XDXDXDXD',
         images: {
-          original: {
+          preview_gif: {
             url: 'http://gif.com',
           }
         }

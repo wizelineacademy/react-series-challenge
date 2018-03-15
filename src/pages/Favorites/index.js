@@ -13,12 +13,15 @@ import {
 } from '../data/view/actions';
 
 class Favorites extends Component {
-  state = {
-    filteredElements: {},
-    filtered: false,
+  constructor(props) {
+    super(props);
+    this.state = {
+      filteredElements: {},
+      filtered: false,
+    }
   }
 
-  handleSearch = (event) => {
+  handleSearch(event){
     const text = event.target.value;
     if(text !== '') {
       const currentElements = this.props.favorites.list;
