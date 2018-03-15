@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`GifCard component should render 1`] = `
+exports[`GifCard component should render no GIFS 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
@@ -53,13 +53,13 @@ ShallowWrapper {
                                       }
                     }
           />
-          <styled.input
+          <SearchInput
                     id="toSearch"
                     onChange={[Function]}
                     placeholder="Search inside your favorites"
                     type="text"
           />
-          <styled.img
+          <NavigationBtn
                     onClick={[Function]}
                     src={
                               Object {
@@ -67,7 +67,7 @@ ShallowWrapper {
                                       }
                     }
           />
-          <styled.img
+          <NavigationBtn
                     onClick={[Function]}
                     src={
                               Object {
@@ -109,13 +109,13 @@ ShallowWrapper {
                                         }
               }
 />,
-            <styled.input
+            <SearchInput
               id="toSearch"
               onChange={[Function]}
               placeholder="Search inside your favorites"
               type="text"
 />,
-            <styled.img
+            <NavigationBtn
               onClick={[Function]}
               src={
                             Object {
@@ -123,7 +123,7 @@ ShallowWrapper {
                                         }
               }
 />,
-            <styled.img
+            <NavigationBtn
               onClick={[Function]}
               src={
                             Object {
@@ -258,13 +258,13 @@ ShallowWrapper {
                                               }
                         }
             />
-            <styled.input
+            <SearchInput
                         id="toSearch"
                         onChange={[Function]}
                         placeholder="Search inside your favorites"
                         type="text"
             />
-            <styled.img
+            <NavigationBtn
                         onClick={[Function]}
                         src={
                                     Object {
@@ -272,7 +272,7 @@ ShallowWrapper {
                                               }
                         }
             />
-            <styled.img
+            <NavigationBtn
                         onClick={[Function]}
                         src={
                                     Object {
@@ -314,13 +314,13 @@ ShallowWrapper {
                                               }
                 }
 />,
-              <styled.input
+              <SearchInput
                 id="toSearch"
                 onChange={[Function]}
                 placeholder="Search inside your favorites"
                 type="text"
 />,
-              <styled.img
+              <NavigationBtn
                 onClick={[Function]}
                 src={
                                 Object {
@@ -328,7 +328,7 @@ ShallowWrapper {
                                               }
                 }
 />,
-              <styled.img
+              <NavigationBtn
                 onClick={[Function]}
                 src={
                                 Object {
@@ -459,7 +459,7 @@ ShallowWrapper {
 }
 `;
 
-exports[`GifCard component should render 2`] = `
+exports[`GifCard component should render one GIF 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
@@ -506,13 +506,13 @@ ShallowWrapper {
                                       }
                     }
           />
-          <styled.input
+          <SearchInput
                     id="toSearch"
                     onChange={[Function]}
                     placeholder="Type to search cool GIFs on GIPHY"
                     type="text"
           />
-          <styled.img
+          <NavigationBtn
                     onClick={[Function]}
                     src={
                               Object {
@@ -520,7 +520,7 @@ ShallowWrapper {
                                       }
                     }
           />
-          <styled.img
+          <NavigationBtn
                     onClick={[Function]}
                     src={
                               Object {
@@ -562,13 +562,13 @@ ShallowWrapper {
                                         }
               }
 />,
-            <styled.input
+            <SearchInput
               id="toSearch"
               onChange={[Function]}
               placeholder="Type to search cool GIFs on GIPHY"
               type="text"
 />,
-            <styled.img
+            <NavigationBtn
               onClick={[Function]}
               src={
                             Object {
@@ -576,7 +576,7 @@ ShallowWrapper {
                                         }
               }
 />,
-            <styled.img
+            <NavigationBtn
               onClick={[Function]}
               src={
                             Object {
@@ -711,13 +711,13 @@ ShallowWrapper {
                                               }
                         }
             />
-            <styled.input
+            <SearchInput
                         id="toSearch"
                         onChange={[Function]}
                         placeholder="Type to search cool GIFs on GIPHY"
                         type="text"
             />
-            <styled.img
+            <NavigationBtn
                         onClick={[Function]}
                         src={
                                     Object {
@@ -725,7 +725,7 @@ ShallowWrapper {
                                               }
                         }
             />
-            <styled.img
+            <NavigationBtn
                         onClick={[Function]}
                         src={
                                     Object {
@@ -767,13 +767,13 @@ ShallowWrapper {
                                               }
                 }
 />,
-              <styled.input
+              <SearchInput
                 id="toSearch"
                 onChange={[Function]}
                 placeholder="Type to search cool GIFs on GIPHY"
                 type="text"
 />,
-              <styled.img
+              <NavigationBtn
                 onClick={[Function]}
                 src={
                                 Object {
@@ -781,7 +781,7 @@ ShallowWrapper {
                                               }
                 }
 />,
-              <styled.img
+              <NavigationBtn
                 onClick={[Function]}
                 src={
                                 Object {

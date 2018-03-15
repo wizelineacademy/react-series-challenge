@@ -28,6 +28,7 @@ export const SearchInput = styled.input`
     outline: none;
   }
 `;
+SearchInput.displayName = 'SearchInput';
 
 const Btn = styled.img`
   cursor: pointer;
@@ -44,6 +45,7 @@ export const NavigationBtn = Btn.extend`
   margin-top: 50px;
   margin-left: 10px;
 `;
+NavigationBtn.displayName = 'NavigationBtn';
 
 export const TrendingGifCards = styled.div`
   display: flex;
