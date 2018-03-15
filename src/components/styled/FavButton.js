@@ -9,6 +9,7 @@ const FavButton = styled.button`
   outline: none;
   color: #999;
   transform: scale(.88, 1);
+  cursor: pointer;
 
 
   &.fav {

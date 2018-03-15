@@ -1,20 +1,21 @@
 import styled from 'styled-components'
 
-const SearchButton = styled.button`
+const ClearButton = styled.button`
   font-family: 'Font Awesome 5 Free';
   font-size: 20px;
   padding: 8px;
   border: none;
   background-color: transparent;
   outline: none;
+  cursor: pointer;
 
   :before {
-    content: '\f002';
+    content: '\f00d';
   }
 
-  :not(:disabled) {
-    cursor: pointer;
+  &.hidden {
+    display: none;
   }
 `
 
-export default SearchButton;
+export default ClearButton;

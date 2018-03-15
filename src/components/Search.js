@@ -8,6 +8,7 @@ import {
   clearQuery
 } from '../actions';
 import {
+  ClearButton,
   SearchText,
   SearchButton,
   SearchDiv
@@ -21,6 +22,8 @@ class Search extends Component {
       query,
       isFavorites
     } = this.props;
+
+    if (!query) return;
 
     if (isFavorites) {
       searchFavorites(query);
@@ -38,7 +41,8 @@ class Search extends Component {
   }
 
   render() {
-    const { query } = this.props;
+    const { query, clearQuery } = this.props;
+    const isHidden = query ? '' : 'hidden';
     return (
       <SearchDiv>
         <SearchText
@@ -46,7 +50,8 @@ class Search extends Component {
           value={query}
           onChange={this.onUpdateQuery.bind(this)}
         />
-        <SearchButton className='fa' onClick={this.onClick.bind(this)} />
+        <ClearButton className={`fa ${isHidden}`} onClick={clearQuery} />
+        <SearchButton className='fa' disabled={!!isHidden} onClick={this.onClick.bind(this)} />
       </SearchDiv>
     );
   }
