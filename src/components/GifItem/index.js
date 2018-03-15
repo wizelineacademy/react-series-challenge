@@ -5,7 +5,7 @@ import {
 import { withRouter } from "react-router-dom";
 import FavoriteButton from '../FavoriteButton'
 
-class GifItem extends Component {
+export class GifItem extends Component {
   render() {
     const { gif, isFavorite, setFavorite } = this.props
     return(
