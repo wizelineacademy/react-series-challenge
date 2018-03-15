@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Menu Item should render without crashing 1`] = `
+<Styled(NavLink)
+  key="/test"
+  to="//test"
+/>
+`;

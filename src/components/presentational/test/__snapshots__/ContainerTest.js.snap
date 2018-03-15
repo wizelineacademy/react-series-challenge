@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Container should render without crashing 1`] = `
+<styled.div>
+  <styled.h3>
+    test
+  </styled.h3>
+  <span>
+    Test
+  </span>
+</styled.div>
+`;

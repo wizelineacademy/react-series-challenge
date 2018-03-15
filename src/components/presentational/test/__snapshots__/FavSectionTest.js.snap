@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Favorite section should render without crashing 1`] = `
+<styled.div>
+  <img
+    alt="Remove from favorites"
+    height="15"
+    src="/favOn.png"
+  />
+  <span>
+    Remove from favorites
+  </span>
+</styled.div>
+`;
