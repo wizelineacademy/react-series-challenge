@@ -1,6 +1,6 @@
 module.exports = {
   browser: true,
-  setupFiles: ['./jest.setup.js'],
+  setupFiles: ['./src/setupTests.js'],
   testPathIgnorePatterns: [
     '/node_modules/',
     '/coverage/'
