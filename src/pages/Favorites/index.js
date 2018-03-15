@@ -21,32 +21,33 @@ class Favorites extends Component {
     }
   }
 
-  handleSearch(event){
-    const text = event.target.value;
-    if(text !== '') {
-      const currentElements = this.props.favorites.list;
-      const myRe = new RegExp(text, 'g');
-      const newList = Object.values(currentElements).filter(value => {
-        return value.title.match(myRe);
-      })
-      this.setState({
-        filteredElements: newList,
-        filtered: true,
-      });
-    } else {
-      this.setState({
-        filteredElements: {},
-        filtered: false,
-      });
-    }
-  }
-
   render(){
     const {
       list,
     } = this.props.favorites;
 
     const listElements = this.state.filtered ? this.state.filteredElements : list;
+
+    const handleSearch = (event) => {
+      const text = event.target.value;
+      if(text !== '') {
+        const currentElements = this.props.favorites.list;
+        const myRe = new RegExp(text, 'g');
+        const newList = Object.values(currentElements).filter(value => {
+          return value.title.match(myRe);
+        })
+        this.setState({
+          filteredElements: newList,
+          filtered: true,
+        });
+      } else {
+        this.setState({
+          filteredElements: {},
+          filtered: false,
+        });
+      }
+    }
+
 
     return (
       <Page>
@@ -70,7 +71,7 @@ class Favorites extends Component {
           <Row>
             <Col span={12}>
               <SearchGif
-                handleSearch={this.handleSearch}
+                handleSearch={handleSearch}
               />
             </Col>
           </Row>
