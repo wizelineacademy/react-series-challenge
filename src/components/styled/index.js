@@ -1,4 +1,5 @@
 import ClearButton from './ClearButton';
+import DetailsDiv from './DetailsDiv';
 import FavButton from './FavButton';
 import Header from './Header';
 import ItemDiv from './ItemDiv';
@@ -9,6 +10,7 @@ import SearchText from './SearchText';
 
 export {
   ClearButton,
+  DetailsDiv,
   FavButton,
   Header,
   ItemDiv,

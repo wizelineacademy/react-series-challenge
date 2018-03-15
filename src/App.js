@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './store';
-import { Home, Favorites } from './components';
+import { Home, Favorites, Details } from './components';
 import { Header } from './components/styled';
 import './App.css';
 
@@ -27,6 +27,7 @@ class App extends Component {
           <Switch>
             <Route path="/Home" component={Home} />
             <Route path="/Favorites" component={Favorites} />
+            <Route path="/Details/:id" component={Details} />
             <Redirect to="/Home" />
           </Switch>
         </div>

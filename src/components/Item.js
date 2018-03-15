@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import { addFavorite, removeFavorite } from '../actions';
 import { FavButton, ItemDiv } from './styled';
 
@@ -21,12 +22,12 @@ class Item extends Component {
   }
 
   render() {
-    const { item, isFav } = this.props;
-    const { images, title } = item;
-    const url = (images && images.fixed_width && images.fixed_width.url) || '';
+    const { item, isFav, imgUrl } = this.props;
     return (
       <ItemDiv>
-        <img src={url} alt={title}/>
+        <NavLink to={`/Details/${item.id}`}>
+          <img src={imgUrl} alt={item.title}/>
+        </NavLink>
         <FavButton
           className={isFav ? 'fav' : ''}
           onClick={this.onClick.bind(this)}

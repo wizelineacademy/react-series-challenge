@@ -3,13 +3,22 @@ import { Item } from './';
 import { ItemListDiv } from './styled';
 
 class ItemList extends Component {
+  getItems(items) {
+    return Object
+      .getOwnPropertyNames(items)
+      .map(prop => {
+        const { images } = items[prop];
+        const url = (images && images.fixed_width && images.fixed_width.url) || '';
+
+        return <Item item={items[prop]} imgUrl={url} id={prop} key={prop} />;
+      });
+  }
+
   render() {
     const { items } = this.props;
     return (
       <ItemListDiv>
-        { items && Object.getOwnPropertyNames(items)
-            .map(prop => <Item item={items[prop]} id={prop} key={prop} />)
-        }
+        { items && this.getItems(items) }
       </ItemListDiv>
     );
   }

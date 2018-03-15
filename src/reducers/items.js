@@ -1,6 +1,6 @@
 import { GET_ITEMS_SUCCESS, GET_ITEMS_ERROR } from '../actions/types';
 
-const initialState = {};
+const initialState = { list: {} };
 
 const items = (state = initialState, action) => {
   const { type, payload } = action;

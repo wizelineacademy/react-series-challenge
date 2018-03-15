@@ -1,11 +1,13 @@
 import styled from 'styled-components'
 
-const ItemDiv = styled.div`
+const DetailsDiv = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
-  padding: 20px 15px;
+
+  h2 {
+    margin: 40px 0 0 0;
+  }
 `
 
-export default ItemDiv;
+export default DetailsDiv;
