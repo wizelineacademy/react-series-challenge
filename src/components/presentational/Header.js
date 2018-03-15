@@ -13,7 +13,7 @@ const HeaderStyled = styled.div`
 
 const Header = () => (
   <HeaderStyled>
-    <h1> Giphy Collection </h1>
+    <h1>Giphy Collection</h1>
   </HeaderStyled>
 );
 

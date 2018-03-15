@@ -13,7 +13,8 @@ const FavSection = ({ inFavs, clickHandler }) => {
 
   return (
     <Favorite onClick={clickHandler} >
-      <img src={img} height="15" alt={text} /> {text}
+      <img src={img} height="15" alt={text} />
+      <span>{text}</span>
     </Favorite>
   );
 }

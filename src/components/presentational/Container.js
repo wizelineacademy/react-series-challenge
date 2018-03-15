@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 const H3 = styled.h3`
@@ -17,16 +17,14 @@ const ContainerStyled = styled.div`
   text-align: center;
 `;
 
-class Container extends Component {
-  render() {
-    const { title, children } = this.props;
-    return (
-      <ContainerStyled>
-        <H3>{title}</H3>
-        {children}
-      </ContainerStyled>
-    );
-  }
+const Container = (props) => {
+  const { title, children } = props;
+  return (
+    <ContainerStyled>
+      <H3>{title}</H3>
+      {children}
+    </ContainerStyled>
+  );
 }
 
 export default Container;

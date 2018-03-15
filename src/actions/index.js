@@ -7,12 +7,9 @@ import {
   FETCH_GIPHY_DETAIL
 } from './action_types';
 
-export const fetchTrendingGiphys = (page = 0) => {
+export const fetchTrendingGiphys = () => {
   return {
     type: FETCH_TRENDING_GIPHYS,
-    payload: {
-      page
-    }
   };
 }
 
