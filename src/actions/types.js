@@ -8,3 +8,5 @@ export const GET_SEARCH_ITEMS = 'getSearchItems';
 
 export const GET_ITEMS_SUCCESS = 'getItemsSuccess';
 export const GET_ITEMS_ERROR = 'getItemsError';
+
+export const UPDATE_QUERY = 'updateQuery';

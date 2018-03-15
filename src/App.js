@@ -19,8 +19,8 @@ class App extends Component {
           <header>
             GIPHY challenge
             <ul>
-              <li><NavLink to="/Home" activeClass="active">Home</NavLink></li>
-              <li><NavLink to="/Favorites" activeClass="active">Favorites</NavLink></li>
+              <li><NavLink to="/Home">Home</NavLink></li>
+              <li><NavLink to="/Favorites">Favorites</NavLink></li>
             </ul>
           </header>
 
