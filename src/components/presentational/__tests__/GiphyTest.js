@@ -11,6 +11,18 @@ describe('Giphy', () => {
 
     expect(shallowToJson(testGiphy)).toMatchSnapshot()
   })
+
+  it('should include Link', () => {
+    const testGiphy = shallow(<Giphy.WrappedComponent giphy={giphyMock.data} favorites={[]} />);    
+
+    expect(testGiphy.find('Link')).toBeDefined()
+  })
+
+  it('should include FavSection', () => {
+    const testGiphy = shallow(<Giphy.WrappedComponent giphy={giphyMock.data} favorites={[]} />);    
+
+    expect(testGiphy.find('FavSection')).toBeDefined()
+  })
 })
 
 
