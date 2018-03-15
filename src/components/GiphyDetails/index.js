@@ -12,12 +12,11 @@ const GiphyDetails = props => {
     return <Loader />
   } 
   const { title, id, isFav, images } = props.giphy;
-  console.log('what I got',props);
   return (
     <Card>
         <Image src={ images.downsized_large.url } />
         <Name>{title}</Name>
-        <FavBox checked={ isFav } id={id } onChange={() => props.onFavClick(props.giphy)} />
+        <FavBox checked={ isFav } id={id } onClick={() => props.onFavClick(props.giphy)} />
     </Card>
   );
 };

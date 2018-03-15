@@ -32,6 +32,8 @@
     "babel-preset-stage-0": "^6.24.1",
     "babel-preset-stage-1": "^6.24.1",
     "enzyme": "^3.3.0",
-    "enzyme-adapter-react-16": "^1.1.1"
+    "enzyme-adapter-react-16": "^1.1.1",
+    "jest-localstorage-mock": "^2.2.0",
+    "react-mock-router": "^1.0.11"
   }
 }

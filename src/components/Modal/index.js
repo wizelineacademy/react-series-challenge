@@ -8,7 +8,6 @@ const Modal = props => {
   if (!open) {
     return null;
   }
-  console.log('whats here',props)
   return (
     <Container>
       <GiphyDetails onFavClick={ onFavClick } { ...selectedGiphy } />

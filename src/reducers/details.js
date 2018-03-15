@@ -30,7 +30,7 @@ const detailsReducer = (state = initialState, action) => {
       return {
         ...state,
         isLoading: false,
-        giphyArray: [],
+        giphy: {},
         errorMessage: payload
       }
     }

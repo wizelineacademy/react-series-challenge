@@ -20,12 +20,6 @@ export class SearchComponent extends Component {
     children: PropTypes.node,
   };
 
-  componentDidMount() {
-
-  }
-  componentWillReceiveProps(nextProps) {
-  }
-
   handleOnChange = (e) =>{
     this.props.updateSearchTerm(e.target.value);
   }
@@ -48,9 +42,9 @@ export class SearchComponent extends Component {
     );
   }
 }
+
 export const mapStateToProps = state => {
   const { search } = state;
-
   return {
     search,
   };

@@ -15,7 +15,7 @@ import {
   Container
 } from './GridLayout.styled';
 
-export class SearchLayout extends Component {
+export class GridLayout extends Component {
   static defaultProps = {
   };
   static propTypes = {
@@ -119,7 +119,6 @@ export class SearchLayout extends Component {
     const {
       match
     } = this.props;
-    console.log('props', this.props);
     let gridData = this.getGridData()
     return (
       <Container>
@@ -172,4 +171,4 @@ export const mapDispatchToProps = dispatch => {
   }, dispatch);
 };
 
-export default connect(mapStateToProps,mapDispatchToProps)(SearchLayout);
+export default connect(mapStateToProps,mapDispatchToProps)(GridLayout);
