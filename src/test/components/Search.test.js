@@ -21,13 +21,21 @@ describe('<Search />', () => {
     }
   ];
 
+  const match = {
+    params: {
+      query: 'foo'
+    }
+  };
+
   it('should return a loading message if loading is true', () => {
-    const wrapper = shallow(<Search loading />);
+    const mockFn = jest.fn();
+    const wrapper = shallow(<Search loading match={match} searchGifsChangeQuery={mockFn} />);
     expect(wrapper.text()).toEqual('Loading...');
   });
 
   it('should render a GifGallery with gifs if not loading', () => {
-    const wrapper = shallow(<Search gifs={gifs} />);
+    const mockFn = jest.fn();
+    const wrapper = shallow(<Search gifs={gifs} match={match} searchGifsChangeQuery={mockFn} />);
     expect(wrapper.find(GifGallery).first().props().gifs).toEqual(gifs);
   });
 });
