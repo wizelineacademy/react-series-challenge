@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { addFavorite, removeFavorite } from '../actions';
-import FavButton from './styled/FavButton';
+import { FavButton } from './styled';
 
 class Item extends Component {
   onClick() {

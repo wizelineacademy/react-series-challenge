@@ -7,9 +7,11 @@ import {
   updateQuery,
   clearQuery
 } from '../actions';
-import SearchText from './styled/SearchText';
-import SearchButton from './styled/SearchButton';
-import SearchDiv from './styled/SearchDiv';
+import {
+  SearchText,
+  SearchButton,
+  SearchDiv
+} from './styled';
 
 class Search extends Component {
   onClick() {

@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import ItemList from './ItemList';
-import Search from './Search';
+import { ItemList, Search } from './';
 import { getTrendingItems } from '../actions';
 
 class Home extends Component {

@@ -7,8 +7,7 @@ import {
 } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './store';
-import Home from './components/Home';
-import Favorites from './components/Favorites';
+import { Home, Favorites } from './components';
 import './App.css';
 
 class App extends Component {
