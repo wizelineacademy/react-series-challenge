@@ -1,5 +1,58 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<RouteWithTopNav /> renders data correctly 1`] = `
+<div>
+  <div
+    className="sc-iwsKbI cvKTwe"
+  >
+    <span
+      className="sc-gZMcBi gmKSS"
+    >
+      <a
+        href="/"
+        onClick={[Function]}
+      >
+        ALPHY
+      </a>
+    </span>
+    <ul
+      className="sc-gqjmRU gfjRRZ"
+    >
+      <li
+        className="sc-VigVT gqCkdK"
+      >
+        <a
+          href="/favorites"
+          onClick={[Function]}
+        >
+          Favorites
+        </a>
+      </li>
+    </ul>
+  </div>
+  <form
+    className="sc-kGXeez kBAbiO"
+    onSubmit={[Function]}
+  >
+    <input
+      className="sc-kgoBCf lbjvDT"
+      placeholder="Search all the GIFs"
+      type="text"
+    />
+    <button
+      className="sc-chPdSV xONZJ"
+    >
+      <i
+        className="fas fa-search"
+      />
+    </button>
+  </form>
+  <div>
+    404 Not Found
+  </div>
+</div>
+`;
+
 exports[`<Routes /> renders data correctly 1`] = `
 <section
   className="sc-gzVnrw cDSWnA"

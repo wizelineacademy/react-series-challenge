@@ -11,7 +11,7 @@ const onSearch = (e, history) => {
   history.push(`/search/${encodeURI(value)}`);
 };
 
-const RouteWithTopNav = ({ component: Component, ...rest }) => (
+export const RouteWithTopNav = ({ component: Component, ...rest }) => (
   <Route {...rest} render={props => (
     <div>
       <Navigation />
