@@ -3,7 +3,7 @@ import {
   LOAD_TRENDING_REQUEST,
   loadTrendingSuccess,
   LOAD_TRENDING_SUCCESS
-} from '../../src/actions/trending';
+} from '../../actions/trending';
 
 describe('trending action creators', () => {
   describe('loadTrendingRequest', () => {

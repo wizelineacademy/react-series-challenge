@@ -1,8 +1,8 @@
-import favorites, { defaultState } from '../../src/reducers/favorites';
+import favorites, { defaultState } from '../../reducers/favorites';
 import {
   toggleFavorite,
   TOGGLE_FAVORITE
-} from '../../src/actions/favorites';
+} from '../../actions/favorites';
 
 describe('favorites reducer', () => {
   it('should return default state when given an unknown action', () => {

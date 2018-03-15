@@ -5,7 +5,7 @@ import {
   REMOVE_FAVORITE,
   toggleFavorite,
   TOGGLE_FAVORITE
-} from '../../src/actions/favorites';
+} from '../../actions/favorites';
 
 describe('favorites action creators', () => {
   describe('addFavorite', () => {

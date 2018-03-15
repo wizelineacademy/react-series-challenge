@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import GifGallery from '../../src/components/GifGallery';
-import Gif from '../../src/components/Gif';
+import GifGallery from '../../components/GifGallery';
+import Gif from '../../components/Gif';
 
 describe('<GifGallery />', () => {
   const gifs = [

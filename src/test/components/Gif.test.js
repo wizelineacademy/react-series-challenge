@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { Gif, StyledGif, StyledFavoritedIcon } from '../../src/components/Gif';
+import { Gif, StyledGif, StyledFavoritedIcon } from '../../components/Gif';
 
 describe('<Gif />', () => {
   const gif = {

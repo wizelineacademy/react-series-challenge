@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import App from '../../src/App';
-import AppWrapper from '../../src/AppWrapper';
+import App from '../../App';
+import AppWrapper from '../../AppWrapper';
 
 describe('<App />', () => {
   const renderComponent = () => (

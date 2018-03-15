@@ -5,7 +5,7 @@ import {
   SELECTED_GIF_REMOVE,
   selectedGifRequestInfo,
   SELECTED_GIF_REQUEST_INFO
-} from '../../src/actions/selected';
+} from '../../actions/selected';
 
 describe('selected action creators', () => {
   describe('selectedGifChange', () => {

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import styled from 'styled-components';
 import { NavLink, withRouter } from 'react-router-dom';
 import { searchGifsChangeQuery } from '../actions/search';
+import { getQuery } from '../selectors/search';
 
 const StyledTopBar = styled.div`
   position: fixed;
@@ -31,7 +32,7 @@ const StyledLogo = styled.p`
   color: ${({ theme }) => theme.colors.text};
 `;
 
-const StyledSearchInput = styled.input`
+export const StyledSearchInput = styled.input`
   border: 5px solid ${({ theme }) => theme.colors.background};
   border-radius: 6px;
 `;
@@ -64,7 +65,7 @@ const StyledLogoContainer = styled.div`
   }
 `;
 
-const SearchBar = ({ query, searchGifsChangeQuery }) => (
+export const SearchBar = ({ query, searchGifsChangeQuery }) => (
   <StyledTopBar>
     <StyledTopBarContent>
       <StyledLogoContainer>
@@ -82,8 +83,8 @@ const SearchBar = ({ query, searchGifsChangeQuery }) => (
   </StyledTopBar>
 );
 
-const mapStateToProps = ({ search }) => ({
-  query: search.query
+const mapStateToProps = (state) => ({
+  query: getQuery(state)
 });
 
 const mapDispatchToProps = {

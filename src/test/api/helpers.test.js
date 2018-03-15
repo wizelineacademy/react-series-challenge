@@ -1,4 +1,4 @@
-import { buildQueryParamsString } from '../../src/api/helpers';
+import { buildQueryParamsString } from '../../api/helpers';
 
 describe('API helpers', () => {
   describe('buildQueryParamsString', () => {

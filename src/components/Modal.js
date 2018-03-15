@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const mountingElement = document.body;
 
-class Portal extends Component {
+export class Portal extends Component {
   constructor(props) {
     super(props);
     this.modalDiv = document.createElement('div');

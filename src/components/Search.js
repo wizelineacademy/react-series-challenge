@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import GifGallery from './GifGallery';
+import { isSearching, getSearchGifs } from '../selectors/search';
 
 export class Search extends Component {
   render() {
@@ -17,8 +18,8 @@ export class Search extends Component {
 }
 
 const mapStateToProps = state => ({
-  loading: state.search.searching,
-  gifs: state.search.gifs
+  loading: isSearching(state),
+  gifs: getSearchGifs(state)
 });
 
 export default connect(mapStateToProps)(Search);

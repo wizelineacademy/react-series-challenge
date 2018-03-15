@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { Favorites } from '../../src/components/Favorites';
-import GifGallery from '../../src/components/GifGallery';
+import { Favorites } from '../../components/Favorites';
+import GifGallery from '../../components/GifGallery';
 
 describe('<Favorites />', () => {
   const favorites = [

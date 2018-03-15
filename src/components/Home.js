@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { loadTrendingRequest } from '../actions/trending';
 import GifGallery from './GifGallery';
+import { isTrendingLoading, getTrendingGifs } from '../selectors/trending';
 
 export class Home extends Component {
   componentDidMount() {
@@ -23,8 +24,8 @@ export class Home extends Component {
 }
 
 const mapStateToProps = state => ({
-  loading: state.trending.loading,
-  gifs: state.trending.gifs
+  loading: isTrendingLoading(state),
+  gifs: getTrendingGifs(state)
 });
 
 const mapDispatchToProps = {

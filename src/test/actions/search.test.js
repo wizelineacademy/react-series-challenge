@@ -5,7 +5,7 @@ import {
   SEARCH_GIFS_SUCCESS,
   searchGifsChangeQuery,
   SEARCH_GIFS_CHANGE_QUERY
-} from '../../src/actions/search';
+} from '../../actions/search';
 
 describe('search action creators', () => {
   describe('searchGifsRequest', () => {

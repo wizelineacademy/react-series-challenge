@@ -1,10 +1,10 @@
-import search, { defaultState } from '../../src/reducers/search';
+import search, { defaultState } from '../../reducers/search';
 import {
   searchGifsRequest,
   searchGifsSuccess,
   searchGifsChangeQuery,
   SEARCH_GIFS_CHANGE_QUERY
-} from '../../src/actions/search';
+} from '../../actions/search';
 
 describe('search reducer', () => {
   it('should return default state when given an unknown action', () => {

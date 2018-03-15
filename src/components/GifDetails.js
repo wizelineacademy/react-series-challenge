@@ -19,7 +19,7 @@ const StyledInfoContainer = styled.div`
   flex-direction:  column;
 `;
 
-const StyledTextInfo = styled.p`
+export const StyledTextInfo = styled.p`
   margin: 0;
 `;
 
@@ -66,7 +66,6 @@ export class GifDetails extends Component {
               <StyledGifContainer>
                 <Gif
                   gif={gif}
-                  imageSrc={gif && gif.images.fixed_width.url}
                   big
                 />
               </StyledGifContainer>
