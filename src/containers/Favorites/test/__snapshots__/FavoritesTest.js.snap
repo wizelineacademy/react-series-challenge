@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FavoritesContainer should render correctly 1`] = `
+<styled.div>
+  <withRouter(SearchBar)
+    searchGifs={[MockFunction]}
+  />
+  <Menu
+    location="test"
+  />
+  <GifStyledList />
+</styled.div>
+`;
