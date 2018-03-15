@@ -11,17 +11,18 @@ class Favorites extends Component {
   }
 
   render() {
+    const { items, searchResults } = this.props;
     return (
       <div>
-        <Search />
-        <ItemList items={this.props.items} />
+        <Search isFavorites={true} />
+        <ItemList items={searchResults || items} />
       </div>
     )
   }
 }
 
 const mapStateToProps = ({ favorites }) =>
-  ({ items: favorites.items });
+  ({ items: favorites.items, searchResults: favorites.filtered });
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators({ getFavoriteItems }, dispatch);

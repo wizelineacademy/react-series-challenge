@@ -11,6 +11,7 @@ const items = (state = initialState, action) => {
         obj[item.id] = item;
         return obj;
       }, {});
+
       return { ...state, list };
 
     case GET_ITEMS_ERROR:

@@ -23,13 +23,14 @@ class Item extends Component {
   render() {
     const { item, isFav } = this.props;
     const { images, title } = item;
+    const url = (images && images.fixed_width && images.fixed_width.url) || '';
     return (
       <div>
         <FavButton
           className={isFav ? 'fav' : ''}
           onClick={this.onClick.bind(this)}
-        ></FavButton>
-        <img src={images.fixed_width.url} alt={title}/>
+        />
+        <img src={url} alt={title}/>
       </div>
     );
   }

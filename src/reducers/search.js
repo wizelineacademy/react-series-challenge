@@ -1,6 +1,6 @@
 import {
   UPDATE_QUERY,
-  SEARCH_FAVORITE
+  CLEAR_QUERY
 } from '../actions/types';
 
 const initialState = { query: '' };
@@ -12,8 +12,8 @@ const search = (state = initialState, action) => {
     case UPDATE_QUERY:
       return { ...state, query: payload };
 
-    case SEARCH_FAVORITE:
-      return { ...state };
+    case CLEAR_QUERY:
+      return { ...state, query: '' };
 
     default:
       return state;
