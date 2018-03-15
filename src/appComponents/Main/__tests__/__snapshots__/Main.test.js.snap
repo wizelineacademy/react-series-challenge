@@ -19,11 +19,11 @@ ShallowWrapper {
     "props": Object {
       "children": <div
         className="App"
-      >
+>
         <Layout>
-          <Routes />
+                <Routes />
         </Layout>
-      </div>,
+</div>,
       "store": Object {
         "dispatch": [Function],
         "getState": [Function],
@@ -40,7 +40,7 @@ ShallowWrapper {
       "props": Object {
         "children": <Layout>
           <Routes />
-        </Layout>,
+</Layout>,
         "className": "App",
       },
       "ref": null,
@@ -75,11 +75,11 @@ ShallowWrapper {
       "props": Object {
         "children": <div
           className="App"
-        >
+>
           <Layout>
-            <Routes />
+                    <Routes />
           </Layout>
-        </div>,
+</div>,
         "store": Object {
           "dispatch": [Function],
           "getState": [Function],
@@ -96,7 +96,7 @@ ShallowWrapper {
         "props": Object {
           "children": <Layout>
             <Routes />
-          </Layout>,
+</Layout>,
           "className": "App",
         },
         "ref": null,

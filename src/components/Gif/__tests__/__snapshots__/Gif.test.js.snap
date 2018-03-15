@@ -6,16 +6,16 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Gif
     gif={
-      Object {
-        "id": "XDXDXDXD",
-        "images": Object {
-          "preview_gif": Object {
-            "url": "http://gif.com",
-          },
-        },
-      }
+        Object {
+            "id": "XDXDXDXD",
+            "images": Object {
+              "preview_gif": Object {
+                "url": "http://gif.com",
+              },
+            },
+          }
     }
-  />,
+/>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -30,22 +30,22 @@ ShallowWrapper {
     "props": Object {
       "children": <div
         className="container"
-      >
+>
         <Favorite
-          onToggleFavorite={[Function]}
-          starred={undefined}
+                onToggleFavorite={[Function]}
+                starred={undefined}
         />
         <Link
-          replace={false}
-          to="/view/XDXDXDXD"
+                replace={false}
+                to="/view/XDXDXDXD"
         >
-          <img
-            alt="gif"
-            onClick={[Function]}
-            src="http://gif.com"
-          />
+                <img
+                        alt="gif"
+                        onClick={[Function]}
+                        src="http://gif.com"
+                />
         </Link>
-      </div>,
+</div>,
     },
     "ref": null,
     "rendered": Object {
@@ -57,17 +57,17 @@ ShallowWrapper {
           <Favorite
             onToggleFavorite={[Function]}
             starred={undefined}
-          />,
+/>,
           <Link
             replace={false}
             to="/view/XDXDXDXD"
-          >
+>
             <img
-              alt="gif"
-              onClick={[Function]}
-              src="http://gif.com"
+                        alt="gif"
+                        onClick={[Function]}
+                        src="http://gif.com"
             />
-          </Link>,
+</Link>,
         ],
         "className": "container",
       },
@@ -94,7 +94,7 @@ ShallowWrapper {
               alt="gif"
               onClick={[Function]}
               src="http://gif.com"
-            />,
+/>,
             "replace": false,
             "to": "/view/XDXDXDXD",
           },
@@ -127,22 +127,22 @@ ShallowWrapper {
       "props": Object {
         "children": <div
           className="container"
-        >
+>
           <Favorite
-            onToggleFavorite={[Function]}
-            starred={undefined}
+                    onToggleFavorite={[Function]}
+                    starred={undefined}
           />
           <Link
-            replace={false}
-            to="/view/XDXDXDXD"
+                    replace={false}
+                    to="/view/XDXDXDXD"
           >
-            <img
-              alt="gif"
-              onClick={[Function]}
-              src="http://gif.com"
-            />
+                    <img
+                              alt="gif"
+                              onClick={[Function]}
+                              src="http://gif.com"
+                    />
           </Link>
-        </div>,
+</div>,
       },
       "ref": null,
       "rendered": Object {
@@ -154,17 +154,17 @@ ShallowWrapper {
             <Favorite
               onToggleFavorite={[Function]}
               starred={undefined}
-            />,
+/>,
             <Link
               replace={false}
               to="/view/XDXDXDXD"
-            >
+>
               <img
-                alt="gif"
-                onClick={[Function]}
-                src="http://gif.com"
+                            alt="gif"
+                            onClick={[Function]}
+                            src="http://gif.com"
               />
-            </Link>,
+</Link>,
           ],
           "className": "container",
         },
@@ -191,7 +191,7 @@ ShallowWrapper {
                 alt="gif"
                 onClick={[Function]}
                 src="http://gif.com"
-              />,
+/>,
               "replace": false,
               "to": "/view/XDXDXDXD",
             },

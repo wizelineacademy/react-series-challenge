@@ -6,22 +6,22 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <GifList
     elements={
-      Array [
-        Object {
-          "id": "XDXDXD1",
-        },
-        Object {
-          "id": "XDXDXD2",
-        },
-        Object {
-          "id": "XDXDXD3",
-        },
-      ]
+        Array [
+            Object {
+              "id": "XDXDXD1",
+            },
+            Object {
+              "id": "XDXDXD2",
+            },
+            Object {
+              "id": "XDXDXD3",
+            },
+          ]
     }
     handleSetGif={[Function]}
     handleToggleFav={[Function]}
     starred={Object {}}
-  />,
+/>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -37,46 +37,46 @@ ShallowWrapper {
       "children": Array [
         <styled.div
           span={2}
-        >
+>
           <Gif
-            gif={
-              Object {
-                "id": "XDXDXD1",
-              }
-            }
-            onClickImage={[Function]}
-            onToggleFavorite={[Function]}
-            starred={false}
+                    gif={
+                              Object {
+                                        "id": "XDXDXD1",
+                                      }
+                    }
+                    onClickImage={[Function]}
+                    onToggleFavorite={[Function]}
+                    starred={false}
           />
-        </styled.div>,
+</styled.div>,
         <styled.div
           span={2}
-        >
+>
           <Gif
-            gif={
-              Object {
-                "id": "XDXDXD2",
-              }
-            }
-            onClickImage={[Function]}
-            onToggleFavorite={[Function]}
-            starred={false}
+                    gif={
+                              Object {
+                                        "id": "XDXDXD2",
+                                      }
+                    }
+                    onClickImage={[Function]}
+                    onToggleFavorite={[Function]}
+                    starred={false}
           />
-        </styled.div>,
+</styled.div>,
         <styled.div
           span={2}
-        >
+>
           <Gif
-            gif={
-              Object {
-                "id": "XDXDXD3",
-              }
-            }
-            onClickImage={[Function]}
-            onToggleFavorite={[Function]}
-            starred={false}
+                    gif={
+                              Object {
+                                        "id": "XDXDXD3",
+                                      }
+                    }
+                    onClickImage={[Function]}
+                    onToggleFavorite={[Function]}
+                    starred={false}
           />
-        </styled.div>,
+</styled.div>,
       ],
     },
     "ref": null,
@@ -88,14 +88,14 @@ ShallowWrapper {
         "props": Object {
           "children": <Gif
             gif={
-              Object {
-                "id": "XDXDXD1",
-              }
+                        Object {
+                                    "id": "XDXDXD1",
+                                  }
             }
             onClickImage={[Function]}
             onToggleFavorite={[Function]}
             starred={false}
-          />,
+/>,
           "span": 2,
         },
         "ref": null,
@@ -124,14 +124,14 @@ ShallowWrapper {
         "props": Object {
           "children": <Gif
             gif={
-              Object {
-                "id": "XDXDXD2",
-              }
+                        Object {
+                                    "id": "XDXDXD2",
+                                  }
             }
             onClickImage={[Function]}
             onToggleFavorite={[Function]}
             starred={false}
-          />,
+/>,
           "span": 2,
         },
         "ref": null,
@@ -160,14 +160,14 @@ ShallowWrapper {
         "props": Object {
           "children": <Gif
             gif={
-              Object {
-                "id": "XDXDXD3",
-              }
+                        Object {
+                                    "id": "XDXDXD3",
+                                  }
             }
             onClickImage={[Function]}
             onToggleFavorite={[Function]}
             starred={false}
-          />,
+/>,
           "span": 2,
         },
         "ref": null,
@@ -201,46 +201,46 @@ ShallowWrapper {
         "children": Array [
           <styled.div
             span={2}
-          >
+>
             <Gif
-              gif={
-                Object {
-                  "id": "XDXDXD1",
-                }
-              }
-              onClickImage={[Function]}
-              onToggleFavorite={[Function]}
-              starred={false}
+                        gif={
+                                    Object {
+                                                "id": "XDXDXD1",
+                                              }
+                        }
+                        onClickImage={[Function]}
+                        onToggleFavorite={[Function]}
+                        starred={false}
             />
-          </styled.div>,
+</styled.div>,
           <styled.div
             span={2}
-          >
+>
             <Gif
-              gif={
-                Object {
-                  "id": "XDXDXD2",
-                }
-              }
-              onClickImage={[Function]}
-              onToggleFavorite={[Function]}
-              starred={false}
+                        gif={
+                                    Object {
+                                                "id": "XDXDXD2",
+                                              }
+                        }
+                        onClickImage={[Function]}
+                        onToggleFavorite={[Function]}
+                        starred={false}
             />
-          </styled.div>,
+</styled.div>,
           <styled.div
             span={2}
-          >
+>
             <Gif
-              gif={
-                Object {
-                  "id": "XDXDXD3",
-                }
-              }
-              onClickImage={[Function]}
-              onToggleFavorite={[Function]}
-              starred={false}
+                        gif={
+                                    Object {
+                                                "id": "XDXDXD3",
+                                              }
+                        }
+                        onClickImage={[Function]}
+                        onToggleFavorite={[Function]}
+                        starred={false}
             />
-          </styled.div>,
+</styled.div>,
         ],
       },
       "ref": null,
@@ -252,14 +252,14 @@ ShallowWrapper {
           "props": Object {
             "children": <Gif
               gif={
-                Object {
-                  "id": "XDXDXD1",
-                }
+                            Object {
+                                          "id": "XDXDXD1",
+                                        }
               }
               onClickImage={[Function]}
               onToggleFavorite={[Function]}
               starred={false}
-            />,
+/>,
             "span": 2,
           },
           "ref": null,
@@ -288,14 +288,14 @@ ShallowWrapper {
           "props": Object {
             "children": <Gif
               gif={
-                Object {
-                  "id": "XDXDXD2",
-                }
+                            Object {
+                                          "id": "XDXDXD2",
+                                        }
               }
               onClickImage={[Function]}
               onToggleFavorite={[Function]}
               starred={false}
-            />,
+/>,
             "span": 2,
           },
           "ref": null,
@@ -324,14 +324,14 @@ ShallowWrapper {
           "props": Object {
             "children": <Gif
               gif={
-                Object {
-                  "id": "XDXDXD3",
-                }
+                            Object {
+                                          "id": "XDXDXD3",
+                                        }
               }
               onClickImage={[Function]}
               onToggleFavorite={[Function]}
               starred={false}
-            />,
+/>,
             "span": 2,
           },
           "ref": null,
@@ -376,7 +376,7 @@ ShallowWrapper {
     handleSetGif={[Function]}
     handleToggleFav={[Function]}
     starred={Object {}}
-  />,
+/>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],

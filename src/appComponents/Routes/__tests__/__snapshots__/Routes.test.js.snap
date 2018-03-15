@@ -22,19 +22,19 @@ ShallowWrapper {
           component={[Function]}
           exact={true}
           path="/"
-        />,
+/>,
         <Route
           component={[Function]}
           path="/favorites"
-        />,
+/>,
         <Route
           component={[Function]}
           path="/view/:gif"
-        />,
+/>,
         <Route
           component={[Function]}
           path="*"
-        />,
+/>,
       ],
     },
     "ref": null,
@@ -102,19 +102,19 @@ ShallowWrapper {
             component={[Function]}
             exact={true}
             path="/"
-          />,
+/>,
           <Route
             component={[Function]}
             path="/favorites"
-          />,
+/>,
           <Route
             component={[Function]}
             path="/view/:gif"
-          />,
+/>,
           <Route
             component={[Function]}
             path="*"
-          />,
+/>,
         ],
       },
       "ref": null,

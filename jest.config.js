@@ -14,7 +14,8 @@ module.exports = {
     "**/src/styledComponents/**/*.{js,jsx}",
     "**/src/components/**/*.{js,jsx}",
     "**/src/appComponents/**/*.{js,jsx}",
-    "!**/src/registerServiceWorker.{js,jsx}"
+    "!**/src/registerServiceWorker.{js,jsx}",
+    '!**/**/saga.js'
   ],
   coverageThreshold: {
     global: {
