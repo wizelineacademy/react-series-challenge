@@ -1,18 +1,27 @@
 import {
+  GET_FAVORITE_ITEMS,
   ADD_FAVORITE,
   REMOVE_FAVORITE
 } from '../actions/types';
 
-const initialState = {};
+const initialState = { items: {} };
 
 const favorites = (state = initialState, action) => {
   const { type, payload } = action;
 
   switch (type) {
+    case GET_FAVORITE_ITEMS:
+      return { ...state };
+
     case ADD_FAVORITE:
-      return { ...state }
+      const { items } = state;
+      items[payload.id] = payload;
+      return { ...state };
+
     case REMOVE_FAVORITE:
-      return { ...state }
+      delete state.items[payload];
+      return { ...state };
+
     default:
       return state;
   }

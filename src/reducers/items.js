@@ -7,9 +7,15 @@ const items = (state = initialState, action) => {
 
   switch (type) {
     case GET_ITEMS_SUCCESS:
-      return { ...state, list: payload.items };
+      const list = payload.items.reduce((obj, item) => {
+        obj[item.id] = item;
+        return obj;
+      }, {});
+      return { ...state, list };
+
     case GET_ITEMS_ERROR:
       return { ...state, error: true };
+
     default:
       return state;
   }

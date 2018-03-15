@@ -5,9 +5,11 @@ class ItemList extends Component {
   render() {
     const { items } = this.props;
     return (
-      <ul>
-        { items && items.map(item => <Item {...item} key={item.id} />) }
-      </ul>
+      <div>
+        { items && Object.getOwnPropertyNames(items)
+            .map(prop => <Item item={items[prop]} id={prop} key={prop} />)
+        }
+      </div>
     );
   }
 }

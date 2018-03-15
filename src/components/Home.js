@@ -20,7 +20,10 @@ class Home extends Component {
   }
 }
 
-const mapStateToProps = ({ items }) => ({ items: items.list });
-const mapDispatchToProps = dispatch => bindActionCreators({ getTrendingItems }, dispatch);
+const mapStateToProps = ({ items }) =>
+  ({ items: items.list });
+
+const mapDispatchToProps = dispatch =>
+  bindActionCreators({ getTrendingItems }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
