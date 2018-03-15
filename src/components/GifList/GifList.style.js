@@ -38,3 +38,4 @@ export const FavoriteButton = styled.img`
   cursor: pointer;
   margin: 5px 0 0 5px;
 `
+GifStyledList.displayName = 'GifStyledList'

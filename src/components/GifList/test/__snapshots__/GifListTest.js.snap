@@ -8,6 +8,6 @@ exports[`GifList should render correctly 1`] = `
   <Menu
     location="test"
   />
-  <styled.ul />
+  <GifStyledList />
 </styled.div>
 `;
