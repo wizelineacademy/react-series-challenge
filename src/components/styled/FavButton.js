@@ -8,11 +8,12 @@ const FavButton = styled.button`
   background-color: transparent;
   outline: none;
   color: #999;
-  transform: scale(.85, 1);
+  transform: scale(.88, 1);
 
 
   &.fav {
     color: #de5971;
+    font-weight: bold;
   }
 
   :before {
