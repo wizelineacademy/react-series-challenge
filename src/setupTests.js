@@ -1,7 +1,7 @@
 import Adapter from 'enzyme-adapter-react-16';
 import Enzyme from 'enzyme';
 
-// global.fetch = require('jest-fetch-mock');
+global.fetch = require('jest-fetch-mock');
 
 var localStorageMock = (function() {
   var store = {};
