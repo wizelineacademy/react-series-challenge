@@ -1,7 +1,7 @@
 import React from 'react';
 import { Menu } from '../../src/components/Menu';
 import { NavLink }  from '../../src/components/Menu/Menu.Styled';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 // import sinon from 'sinon';
 
 describe('Menu --',() => {

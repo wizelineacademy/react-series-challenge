@@ -1,7 +1,7 @@
 import React from 'react';
 import Modal from '../../src/components/Modal';
 import GiphyDetails from '../../src/components/GiphyDetails';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 // import sinon from 'sinon';
 
 describe('Modal --',() => {

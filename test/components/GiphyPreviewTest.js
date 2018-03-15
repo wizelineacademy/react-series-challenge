@@ -1,6 +1,5 @@
 import React from 'react';
 import { GiphyPreview } from '../../src/components/Giphy';
-import { FavBox } from '../../src/components/FavBox';
 import { shallow, mount } from 'enzyme';
 // import sinon from 'sinon';
 
