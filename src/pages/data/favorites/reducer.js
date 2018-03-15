@@ -1,9 +1,12 @@
 import {
   TOGGLE_FAVORITE,
+  FILTER_FAVORITE,
 } from './actions';
 
 const initialState = {
-  list: {}
+  list: {},
+  filteredElements: [],
+  filtered: false,
 };
 
 const reducer = (state = initialState, action) => {
@@ -20,6 +23,18 @@ const reducer = (state = initialState, action) => {
         ...state,
         list: newFavorites,
       };
+    case FILTER_FAVORITE: {
+      const text = action.payload.text;
+      const myRe = new RegExp(text, 'g');
+      const newList = Object.values(state.list).filter(value => {
+        return value.title.match(myRe);
+      })
+      return {
+        ...state,
+        filteredElements: newList,
+        filtered: text !== '',
+      };
+    }
     default:
       return state;
   }

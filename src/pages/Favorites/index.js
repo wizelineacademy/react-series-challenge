@@ -7,47 +7,29 @@ import SearchGif from '../../components/SearchGif';
 import { Message, Page } from '../../styledComponents';
 import {
   toggleFavorite,
+  filterFavorites,
 } from '../data/favorites/actions';
 import {
   setCurrentGif,
 } from '../data/view/actions';
 
 class Favorites extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      filteredElements: {},
-      filtered: false,
-    }
-  }
-
   render(){
     const {
       list,
+      filtered,
+      filteredElements,
     } = this.props.favorites;
-
-    const listElements = this.state.filtered ? this.state.filteredElements : list;
 
     const handleSearch = (event) => {
       const text = event.target.value;
-      if(text !== '') {
-        const currentElements = this.props.favorites.list;
-        const myRe = new RegExp(text, 'g');
-        const newList = Object.values(currentElements).filter(value => {
-          return value.title.match(myRe);
-        })
-        this.setState({
-          filteredElements: newList,
-          filtered: true,
-        });
-      } else {
-        this.setState({
-          filteredElements: {},
-          filtered: false,
-        });
-      }
+      this.props.handleFilterGifs(text);
     }
 
+    let listElements = list;
+    if(filtered) {
+      listElements = filteredElements;
+    }
 
     return (
       <Page>
@@ -111,6 +93,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => ({
   handleToggleFav: (element) => dispatch(toggleFavorite(element)),
   handleSetGif: (element) => dispatch(setCurrentGif(element)),
+  handleFilterGifs: (text) => dispatch(filterFavorites(text)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Favorites);

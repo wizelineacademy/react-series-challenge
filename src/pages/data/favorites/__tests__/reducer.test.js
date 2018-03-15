@@ -25,4 +25,23 @@ describe('Favorites - Reducer', () => {
       actions.toggleFavorite(gitToBeRemoved),
     )).toMatchSnapshot();
   });
+
+
+  it('Must filter the elements according to the text', () => {
+    const initialState = reducer(undefined, {
+      list: {
+        a: { title: 'I love cats'},
+        b: { title: 'I love dogs'},
+      },
+      filtered: false,
+      filteredElements: [],
+    });
+
+    const text = 'cat';
+
+    expect(reducer(
+      initialState,
+      actions.filterFavorites(text),
+    )).toMatchSnapshot();
+  });
 });

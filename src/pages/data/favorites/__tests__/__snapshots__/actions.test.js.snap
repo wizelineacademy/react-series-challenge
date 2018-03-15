@@ -10,3 +10,12 @@ Object {
   "type": "TOGGLE_FAVORITE",
 }
 `;
+
+exports[`Actions - Favorites Set a text to filtered the favorite list 1`] = `
+Object {
+  "payload": Object {
+    "text": "cat",
+  },
+  "type": "FILTER_FAVORITE",
+}
+`;
