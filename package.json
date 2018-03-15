@@ -10,7 +10,7 @@
     "react-scripts": "1.1.1",
     "redux": "^3.7.2",
     "redux-saga": "^0.16.0",
-    "styled-components": "^3.2.2"
+    "styled-components": "3.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -22,9 +22,23 @@
     "jest": "NODE_ENV=testing jest --coverage --maxWorkers=6"
   },
   "devDependencies": {
-    "enzyme": "3.2.0",
-    "enzyme-adapter-react-16": "1.1.0",
+    "babel-plugin-istanbul": "^4.1.5",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "enzyme-to-json": "^3.3.1",
     "redux-mock-store": "^1.5.1"
+  },
+  "jest": {
+    "coverageThreshold": {
+      "global": {
+        "branches": 75,
+        "functions": 75,
+        "lines": 75,
+        "statements": 75
+      }
+    },
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
   }
 }

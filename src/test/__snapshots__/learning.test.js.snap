@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Image should render correctly 1`] = `
+<styled.img
+  alt="mockTitle"
+  src="mockUrl"
+/>
+`;
