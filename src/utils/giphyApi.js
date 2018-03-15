@@ -8,7 +8,7 @@ function statusHelper (response) {
   }
 }
 
-export const fetchTrendingGiphysFromWS = (page = 0) => {
+export const fetchTrendingGiphysFromWS = () => {
   const apiUrl = 'http://api.giphy.com/v1/gifs/trending';
 
   return fetch(apiUrl + `?api_key=${apiKey}`)
