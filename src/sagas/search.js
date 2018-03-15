@@ -23,7 +23,11 @@ function* searchGifsSaga() {
 
   const query = yield select(getQuery);
 
-  // TODO: Maybe cancel search (this saga) if query is empty?
+  // cancel this saga if search is empty
+  if (query.length === 0) {
+    yield call(history.push, `/`);
+    yield cancel();
+  }
 
   yield put(searchGifsRequest());
 
