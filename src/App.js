@@ -10,24 +10,20 @@ const StyledAppContent = styled.div`
   margin-top: ${({ theme }) => theme.dimensions.searchBar.height};
 `;
 
-class App extends Component {
-  render() {
-    return (
-      <Router history={history}>
-        <React.Fragment>
-          <SearchBar />
-          <GifDetails />
-          <StyledAppContent>
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route path="/search/:query" component={Search} />
-              <Route path="/favorites" component={Favorites} />
-            </Switch>
-          </StyledAppContent>
-        </React.Fragment>
-      </Router>
-    );
-  }
-}
+const App = () => (
+  <Router history={history}>
+    <React.Fragment>
+      <SearchBar />
+      <GifDetails />
+      <StyledAppContent>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/search/:query" component={Search} />
+          <Route path="/favorites" component={Favorites} />
+        </Switch>
+      </StyledAppContent>
+    </React.Fragment>
+  </Router>
+);
 
 export default App;

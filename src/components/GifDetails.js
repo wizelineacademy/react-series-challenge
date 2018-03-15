@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
+import { withRouter } from 'react-router-dom';
 import Gif from './Gif';
 import Modal from './Modal';
 import history from '../history';
@@ -22,10 +23,9 @@ const StyledTextInfo = styled.p`
   margin: 0;
 `;
 
-class GifDetails extends Component {
+export class GifDetails extends Component {
   componentDidMount() {
-    const { selectedGifRequestInfo } = this.props;
-    const { location } = history;
+    const { location, selectedGifRequestInfo } = this.props;
 
     if (location.search.length === 0) {
       return;
@@ -95,4 +95,6 @@ const mapDispatchToProps = {
   selectedGifRequestInfo
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(GifDetails);
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(GifDetails)
+);

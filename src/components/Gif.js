@@ -8,13 +8,13 @@ import { selectedGifChange } from '../actions/selected';
 
 const FAVORITE_ICON = '⭐';
 
-const StyledGif = styled.img`
+export const StyledGif = styled.img`
   width: 100%;
   height: auto;
   display: block;
 `;
 
-const StyledFavoritedIcon = styled.a`
+export const StyledFavoritedIcon = styled.a`
   cursor: pointer;
   transition: filter .15s ease;
   content: '${FAVORITE_ICON}';
@@ -28,7 +28,7 @@ const StyledFavoritedIcon = styled.a`
   }
 `;
 
-const Gif = ({ big, gif, favorited, selectedGifChange, toggleFavorite }) => {
+export const Gif = ({ big, gif, favorited, selectedGifChange, toggleFavorite }) => {
   const src = !big
     ? gif.images.fixed_width_downsampled.url
     : gif.images.original.url;

@@ -8,13 +8,15 @@ describe('<GifGallery />', () => {
     {
       id: 1,
       images: {
-        fixed_width: { url: 'foo.png' }
+        fixed_width_downsampled: { url: 'foo.png' },
+        original: { url: 'big_foo.png' }
       }
     },
     {
       id: 2,
       images: {
-        fixed_width: { url: 'bar.png' }
+        fixed_width_downsampled: { url: 'bar.png' },
+        original: { url: 'bar_foo.png' }
       }
     }
   ];

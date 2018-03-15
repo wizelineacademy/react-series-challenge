@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { loadTrendingRequest } from '../actions/trending';
 import GifGallery from './GifGallery';
 
-class Home extends Component {
+export class Home extends Component {
   componentDidMount() {
     const { loadTrendingRequest } = this.props;
     loadTrendingRequest();
@@ -17,9 +17,7 @@ class Home extends Component {
     }
 
     return (
-      <div>
-        <GifGallery gifs={gifs} />
-      </div>
+      <GifGallery gifs={gifs} />
     );
   }
 }

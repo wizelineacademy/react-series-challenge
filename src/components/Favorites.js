@@ -3,19 +3,17 @@ import { connect } from 'react-redux';
 import GifGallery from './GifGallery';
 import { getFilteredFavorites } from '../selectors/favorites';
 
-const Favorites = ({ favorites, anyFavorite }) => {
+export const Favorites = ({ favorites, anyFavorite }) => {
   if (!anyFavorite) {
-    return <div>No favorites have been selected so far 😿</div>;
+    return 'No favorites have been selected so far 😿';
   }
 
   if (favorites.length < 1) {
-    return <div>No favorites matches the search 🔍</div>;
+    return 'No favorites matches the search 🔍';
   }
 
   return (
-    <div>
-      <GifGallery gifs={favorites} />
-    </div>
+    <GifGallery gifs={favorites} />
   );
 }
 

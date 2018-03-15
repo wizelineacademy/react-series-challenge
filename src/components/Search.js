@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import GifGallery from './GifGallery';
 
-class Search extends Component {
+export class Search extends Component {
   render() {
     const { loading, gifs } = this.props;
 
@@ -11,9 +11,7 @@ class Search extends Component {
     };
 
     return (
-      <div>
-        <GifGallery gifs={gifs} />
-      </div>
+      <GifGallery gifs={gifs} />
     );
   }
 }

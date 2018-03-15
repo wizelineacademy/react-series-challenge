@@ -5,11 +5,11 @@ import store from './store';
 import theme from './constants/themeConfig';
 
 const AppWrapper = ({ children }) => (
-  <ThemeProvider theme={theme}>
-    <Provider store={store}>
+  <Provider store={store}>
+    <ThemeProvider theme={theme}>
       {children}
-    </Provider>
-  </ThemeProvider>
+    </ThemeProvider>
+  </Provider>
 );
 
 export default AppWrapper;
