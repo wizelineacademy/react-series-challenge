@@ -8,9 +8,13 @@ export const StyledInput = styled.input`
   margin-bottom: 14px;
   font-family: sans-serif;
   font-weight: 400;
-  margin-left: 24%;
 
   :focus {
     outline: none;
   }
 `
+export const StyledForm = styled.form`
+  display: flex;
+  justify-content: center;
+`
+StyledForm.displayName = 'form'

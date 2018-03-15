@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {
-  StyledInput
+  StyledInput,
+  StyledForm
 } from './SearchBar.style'
 import { withRouter } from "react-router-dom";
 
@@ -26,13 +27,13 @@ class SearchBar extends Component {
 
   render() {
     return(
-      <form onSubmit={this.onSubmit.bind(this)}>
+      <StyledForm onSubmit={this.onSubmit.bind(this)}>
         <StyledInput
           placeholder="Search all the GIFs"
           value={this.state.query}
           onChange={event => this.setState({ query: event.target.value })}
         />
-      </form>
+      </StyledForm>
     )
   }
 
