@@ -5,8 +5,10 @@ import GifList from '../../components/GifList';
 import { Row, Col } from '../../components/Grid';
 import SearchGif from '../../components/SearchGif';
 import { Message, Page } from '../../styledComponents';
+import { debounce } from '../../utils/utils';
 import {
   fetchTrendingGifs,
+  searchGifs,
 } from '../data/home/actions';
 import {
   toggleFavorite,
@@ -31,6 +33,8 @@ class Home extends Component {
       list,
     } = this.props.favorites;
 
+    const searchForGif = debounce((text) => {this.props.handleGifSearch(text)}, 1000);
+
     return (
       <Page>
         <Message>
@@ -52,7 +56,9 @@ class Home extends Component {
           </p>
           <Row>
             <Col span={12}>
-              <SearchGif />
+              <SearchGif
+                handleSearch={event => searchForGif(event.target.value)}
+              />
             </Col>
           </Row>
         </Message>
@@ -93,6 +99,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
   getTrending: () => dispatch(fetchTrendingGifs()),
+  handleGifSearch: (text) => dispatch(searchGifs(text)),
   handleToggleFav: (element) => dispatch(toggleFavorite(element)),
   handleSetGif: (element) => dispatch(setCurrentGif(element)),
 });

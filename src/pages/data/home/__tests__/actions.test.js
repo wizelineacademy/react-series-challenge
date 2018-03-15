@@ -12,4 +12,17 @@ describe('Actions - Home', () => {
   it('Fetch Trending Error', () => {
     expect(actions.fetchTrendingGifsError('Message')).toMatchSnapshot();
   });
+
+
+  it('Search Gifts Pending', () => {
+    expect(actions.searchGifs('text')).toMatchSnapshot();
+  });
+
+  it('Fetch Trending Success', () => {
+    expect(actions.searchGifsSuccess({})).toMatchSnapshot();
+  });
+
+  it('Fetch Trending Error', () => {
+    expect(actions.searchGifsError('Message')).toMatchSnapshot();
+  });
 });
