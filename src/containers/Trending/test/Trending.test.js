@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 import TrendingContainer from '..';
+import { createMockStore } from 'redux-test-utils';
 
 const props = {
   isFavorite: true,
@@ -38,5 +39,14 @@ describe('TrendingContainer', () => {
 
   it('should be defined', () => {
    expect(TrendingContainer).toBeDefined();
+  });
+  it("should render successfully ", () => {
+  const testState = {
+    gifs: [],
+    favoriteGifs: []
+  };
+  const store = createMockStore(testState)
+  const component = shallow(<TrendingContainer store={store} />);
+  expect(component).toBeDefined();
   });
 });

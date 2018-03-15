@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Routes should render correctly 1`] = `
+<BrowserRouter>
+  <Switch>
+    <Route
+      component={[Function]}
+      path="/gif/:id"
+    />
+    <Route
+      component={[Function]}
+      path="/favorites/search/:term"
+    />
+    <Route
+      component={[Function]}
+      path="/search/:term"
+    />
+    <Route
+      component={[Function]}
+      path="/favorites"
+    />
+    <Route
+      component={[Function]}
+      path="/"
+    />
+    <Redirect
+      push={false}
+      to={
+        Object {
+          "pathname": "/",
+          "state": Object {
+            "from": "PAGE NOT FOUND",
+          },
+        }
+      }
+    />
+  </Switch>
+</BrowserRouter>
+`;

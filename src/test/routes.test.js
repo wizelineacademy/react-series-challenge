@@ -1,5 +1,4 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 import Routes from '../Routes'
 import { shallowToJson } from 'enzyme-to-json';
 import { shallow } from 'enzyme';
