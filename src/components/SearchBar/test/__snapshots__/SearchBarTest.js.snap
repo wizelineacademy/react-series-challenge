@@ -1,7 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SearchBar should render correctly 1`] = `
-<Route
-  render={[Function]}
-/>
+<form
+  onSubmit={[Function]}
+>
+  <styled.input
+    onChange={[Function]}
+    placeholder="Search all the GIFs"
+    value=""
+  />
+</form>
 `;
