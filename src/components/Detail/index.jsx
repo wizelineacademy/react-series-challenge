@@ -9,7 +9,7 @@ import favoriteIcon from './assets/heart-filled-white.png';
 
 export const Detail = ({favorites, history, match, trending}) => {
   const obtainGifById = (id) => {
-    let gif = favorites.find((favorite) => favorite.id === id);
+    let gif = favorites.original.find((favorite) => favorite.id === id);
     if (gif) {
       return {data: gif, isFavorite: true}
     }

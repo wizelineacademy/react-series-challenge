@@ -3,5 +3,6 @@ export const simplifyGIFObject = (gif) => ({
   images: {
     original: gif.images.downsized_large.url,
     small: gif.images.fixed_width_downsampled.url
-  }
+  },
+  title: gif.title.toUpperCase()
 });
