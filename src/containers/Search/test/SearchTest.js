@@ -25,6 +25,9 @@ const props = {
     params: {
       id: 1
     }
+  },
+  location: {
+    pathname: 'test'
   }
 }
 
