@@ -8,19 +8,25 @@ const mockGif = {
     small: 'https://media3.giphy.com/media/p3n7NWvfz3u0c1meay/200w_d.gif'
   }
 };
-const emptyFavorites = [];
-const withFavorites = [mockGif];
+const initialState = {
+  filtered: [],
+  original: []
+};
+const withFavorites = {
+  filtered: [mockGif],
+  original: [mockGif]
+};
 
 describe('favorites reducer', () => {
   it('should return initial state', () => {
-    expect(favorites(undefined, {})).toEqual([]);
+    expect(favorites(undefined, {})).toEqual(initialState);
   });
 
   it('should add gif to favorites', function () {
-    expect(favorites(emptyFavorites, toggleFavorite(mockGif))).toEqual(withFavorites);
+    expect(favorites(initialState, toggleFavorite(mockGif))).toEqual(withFavorites);
   });
 
   it('should remove gif from favorites', function () {
-    expect(favorites(withFavorites, toggleFavorite(mockGif))).toEqual(emptyFavorites);
+    expect(favorites(withFavorites, toggleFavorite(mockGif))).toEqual(initialState);
   });
 });

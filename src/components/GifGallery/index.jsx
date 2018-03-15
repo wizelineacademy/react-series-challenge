@@ -68,7 +68,7 @@ class GifGallery extends React.Component {
 
 GifGallery.propTypes = {
   dataSource: PropTypes.oneOf(['GIPHY', 'favorites']).isRequired,
-  favorites: PropTypes.array.isRequired,
+  favorites: PropTypes.object.isRequired,
   fetchTrendingGifs: PropTypes.func.isRequired,
   trending: PropTypes.array.isRequired
 };

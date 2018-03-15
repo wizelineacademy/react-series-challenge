@@ -7,18 +7,30 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <GifGallery
     dataSource="favorites"
     favorites={
-        Array [
-            Object {
-              "id": "p3n7NWvfz3u0c1meay",
-              "images": Object {
-                "original": "https://media3.giphy.com/media/p3n7NWvfz3u0c1meay/giphy.gif",
-                "small": "https://media3.giphy.com/media/p3n7NWvfz3u0c1meay/200w_d.gif",
+        Object {
+            "filtered": Array [
+              Object {
+                "id": "p3n7NWvfz3u0c1meay",
+                "images": Object {
+                  "original": "https://media3.giphy.com/media/p3n7NWvfz3u0c1meay/giphy.gif",
+                  "small": "https://media3.giphy.com/media/p3n7NWvfz3u0c1meay/200w_d.gif",
+                },
               },
-            },
-          ]
+            ],
+            "original": Array [
+              Object {
+                "id": "p3n7NWvfz3u0c1meay",
+                "images": Object {
+                  "original": "https://media3.giphy.com/media/p3n7NWvfz3u0c1meay/giphy.gif",
+                  "small": "https://media3.giphy.com/media/p3n7NWvfz3u0c1meay/200w_d.gif",
+                },
+              },
+            ],
+          }
     }
     fetchTrendingGifs={[Function]}
     trending={Array []}
+    updateFilteredFavorites={[Function]}
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -42,7 +54,10 @@ ShallowWrapper {
                     }
           />
           <styled.input
-                    placeholder="Type to search cool GIFs"
+                    id="toSearch"
+                    onChange={[Function]}
+                    placeholder="Search inside your favorites"
+                    type="text"
           />
           <styled.img
                     onClick={[Function]}
@@ -95,7 +110,10 @@ ShallowWrapper {
               }
 />,
             <styled.input
-              placeholder="Type to search cool GIFs"
+              id="toSearch"
+              onChange={[Function]}
+              placeholder="Search inside your favorites"
+              type="text"
 />,
             <styled.img
               onClick={[Function]}
@@ -135,7 +153,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
-              "placeholder": "Type to search cool GIFs",
+              "id": "toSearch",
+              "onChange": [Function],
+              "placeholder": "Search inside your favorites",
+              "type": "text",
             },
             "ref": null,
             "rendered": null,
@@ -238,7 +259,10 @@ ShallowWrapper {
                         }
             />
             <styled.input
-                        placeholder="Type to search cool GIFs"
+                        id="toSearch"
+                        onChange={[Function]}
+                        placeholder="Search inside your favorites"
+                        type="text"
             />
             <styled.img
                         onClick={[Function]}
@@ -291,7 +315,10 @@ ShallowWrapper {
                 }
 />,
               <styled.input
-                placeholder="Type to search cool GIFs"
+                id="toSearch"
+                onChange={[Function]}
+                placeholder="Search inside your favorites"
+                type="text"
 />,
               <styled.img
                 onClick={[Function]}
@@ -331,7 +358,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
-                "placeholder": "Type to search cool GIFs",
+                "id": "toSearch",
+                "onChange": [Function],
+                "placeholder": "Search inside your favorites",
+                "type": "text",
               },
               "ref": null,
               "rendered": null,
@@ -435,7 +465,12 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <GifGallery
     dataSource="GIPHY"
-    favorites={Array []}
+    favorites={
+        Object {
+            "filtered": Array [],
+            "original": Array [],
+          }
+    }
     fetchTrendingGifs={[Function]}
     trending={
         Array [
@@ -448,6 +483,7 @@ ShallowWrapper {
             },
           ]
     }
+    updateFilteredFavorites={[Function]}
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -471,7 +507,10 @@ ShallowWrapper {
                     }
           />
           <styled.input
-                    placeholder="Type to search cool GIFs"
+                    id="toSearch"
+                    onChange={[Function]}
+                    placeholder="Type to search cool GIFs on GIPHY"
+                    type="text"
           />
           <styled.img
                     onClick={[Function]}
@@ -524,7 +563,10 @@ ShallowWrapper {
               }
 />,
             <styled.input
-              placeholder="Type to search cool GIFs"
+              id="toSearch"
+              onChange={[Function]}
+              placeholder="Type to search cool GIFs on GIPHY"
+              type="text"
 />,
             <styled.img
               onClick={[Function]}
@@ -564,7 +606,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
-              "placeholder": "Type to search cool GIFs",
+              "id": "toSearch",
+              "onChange": [Function],
+              "placeholder": "Type to search cool GIFs on GIPHY",
+              "type": "text",
             },
             "ref": null,
             "rendered": null,
@@ -667,7 +712,10 @@ ShallowWrapper {
                         }
             />
             <styled.input
-                        placeholder="Type to search cool GIFs"
+                        id="toSearch"
+                        onChange={[Function]}
+                        placeholder="Type to search cool GIFs on GIPHY"
+                        type="text"
             />
             <styled.img
                         onClick={[Function]}
@@ -720,7 +768,10 @@ ShallowWrapper {
                 }
 />,
               <styled.input
-                placeholder="Type to search cool GIFs"
+                id="toSearch"
+                onChange={[Function]}
+                placeholder="Type to search cool GIFs on GIPHY"
+                type="text"
 />,
               <styled.img
                 onClick={[Function]}
@@ -760,7 +811,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
-                "placeholder": "Type to search cool GIFs",
+                "id": "toSearch",
+                "onChange": [Function],
+                "placeholder": "Type to search cool GIFs on GIPHY",
+                "type": "text",
               },
               "ref": null,
               "rendered": null,

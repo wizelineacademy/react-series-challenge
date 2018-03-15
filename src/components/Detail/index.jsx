@@ -48,7 +48,7 @@ export const Detail = ({favorites, history, match, trending}) => {
 
 Detail.propTypes = {
   trending: PropTypes.array.isRequired,
-  favorites: PropTypes.array.isRequired
+  favorites: PropTypes.object.isRequired
 };
 
 export default withRouter(Detail);

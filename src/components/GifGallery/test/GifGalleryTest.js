@@ -2,7 +2,21 @@ import React from 'react';
 import GifGallery from "../index";
 import {shallow} from "enzyme";
 
-const emptyDataSource = [];
+// const emptyDataSource = [];
+// const mockGif = {
+//   id: 'p3n7NWvfz3u0c1meay',
+//   images: {
+//     original: 'https://media3.giphy.com/media/p3n7NWvfz3u0c1meay/giphy.gif',
+//     small: 'https://media3.giphy.com/media/p3n7NWvfz3u0c1meay/200w_d.gif'
+//   }
+// };
+// const mockDataSource = [mockGif];
+
+const emptyFavorites = {
+  original: [],
+  filtered: []
+};
+const emptyTrending = [];
 const mockGif = {
   id: 'p3n7NWvfz3u0c1meay',
   images: {
@@ -10,16 +24,21 @@ const mockGif = {
     small: 'https://media3.giphy.com/media/p3n7NWvfz3u0c1meay/200w_d.gif'
   }
 };
-const mockDataSource = [mockGif];
+const mockFavorites = {
+  original: [mockGif],
+  filtered: [mockGif]
+};
+const mockTrending = [mockGif];
 
 describe('GifCard component', () => {
   it('should render', () => {
     const component = shallow(
       <GifGallery.WrappedComponent
         dataSource={'favorites'}
-        favorites={mockDataSource}
+        favorites={mockFavorites}
         fetchTrendingGifs={jest.fn()}
-        trending={emptyDataSource}
+        trending={emptyTrending}
+        updateFilteredFavorites={jest.fn()}
       />
     );
     expect(component).toMatchSnapshot();
@@ -29,9 +48,10 @@ describe('GifCard component', () => {
     const component = shallow(
       <GifGallery.WrappedComponent
         dataSource={'GIPHY'}
-        favorites={emptyDataSource}
+        favorites={emptyFavorites}
         fetchTrendingGifs={jest.fn()}
-        trending={mockDataSource}
+        trending={mockTrending}
+        updateFilteredFavorites={jest.fn()}
       />
     );
     expect(component).toMatchSnapshot();
