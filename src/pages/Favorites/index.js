@@ -30,7 +30,6 @@ class Favorites extends Component {
         filteredElements: newList,
         filtered: true,
       });
-      console.log(newList);
     } else {
       this.setState({
         filteredElements: {},
@@ -78,7 +77,7 @@ class Favorites extends Component {
             (listElements && Object.keys(listElements).length > 0) &&
             <GifList
               elements={Object.values(listElements)}
-              starred={listElements}
+              starred={list}
               handleSetGif={this.props.handleSetGif}
               handleToggleFav={this.props.handleToggleFav}
             />
