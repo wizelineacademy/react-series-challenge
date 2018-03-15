@@ -10,7 +10,7 @@ import rootSaga, {
   watchDeleteFavorite,
   watchFetchDetails,
   watchSearchOnWeb
-} from '../src/sagas'
+} from '../sagas'
 
 import {
   FETCHED_TREND,
@@ -23,7 +23,7 @@ import {
   FETCHED_DETAILS,
   SEARCH_ON_WEB,
   SEARCHED_ON_WEB
-} from '../src/actions/types'
+} from '../actions/types'
 
 describe('Test for sagas middleware', () => {
 

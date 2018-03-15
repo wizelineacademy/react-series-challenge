@@ -1,7 +1,7 @@
 import React from 'react'
 import {expect} from 'chai'
 import { shallow } from 'enzyme'
-import ListGimphy from '../src/component/ListGimphy'
+import ListGimphy from '../component/ListGimphy'
 
 describe('Test ListGimphy component', () => {
   it('shows component', () => {

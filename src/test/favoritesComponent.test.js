@@ -1,7 +1,7 @@
 import React from 'react'
 import {expect} from 'chai'
 import { shallow } from 'enzyme'
-import {Favorites, mapStateToProps} from '../src/component/Favorites'
+import {Favorites, mapStateToProps} from '../component/Favorites'
 
 describe('Test Favorites component', () => {
   const shallowOptions = {

@@ -1,9 +1,9 @@
 import React from 'react'
 import {expect} from 'chai'
 import { shallow } from 'enzyme'
-import SearchBar from '../src/component/Searchbar'
+import SearchBar from '../component/SearchBar'
 
-describe('Test for Searchbar component', () => {
+describe('Test for SearchBar component', () => {
   let component
   beforeEach(() => {
     let props = {

@@ -1,6 +1,6 @@
 import {expect} from 'chai'
 import { createStore } from 'redux';
-import rootReducer from '../src/reducers';
+import rootReducer from '../reducers';
 
 describe('Test root reducer', () => {
   it('show initial state', () => {

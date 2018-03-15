@@ -9,3 +9,5 @@ const localStorageMock = {
   setItem: () => ''
 };
 global.localStorage = localStorageMock
+
+global.XMLHttpRequest = undefined;

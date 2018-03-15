@@ -1,7 +1,7 @@
 import React from 'react'
 import {expect} from 'chai'
 import { shallow } from 'enzyme'
-import {Detail, mapStateToProps} from '../src/component/Detail'
+import {Detail, mapStateToProps} from '../component/Detail'
 
 describe('Test Detail component', () => {
   const shallowOptions = {

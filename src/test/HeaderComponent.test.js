@@ -1,7 +1,7 @@
 import React from 'react'
 import {expect} from 'chai'
 import { shallow } from 'enzyme'
-import Header from '../src/component/Header'
+import Header from '../component/Header'
 
 describe('Test Header component', () => {
   let component

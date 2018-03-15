@@ -1,6 +1,6 @@
 import {expect} from 'chai'
-import favoritesReducer from '../src/reducers/favorites-reducer'
-import {ADDED_FAVORITE, DELETED_FAVORITE} from '../src/actions/types'
+import favoritesReducer from '../reducers/favorites-reducer'
+import {ADDED_FAVORITE, DELETED_FAVORITE} from '../actions/types'
 
 describe('Test Favorites reducer', () => {
 

@@ -6,7 +6,7 @@ import {
   deleteFavorite,
   fetchDetails,
   searchOnWeb
-} from '../src/actions'
+} from '../actions'
 
 import {
   FETCH_TREND,
@@ -14,7 +14,7 @@ import {
   DELETE_FAVORITE,
   FETCH_DETAILS,
   SEARCH_ON_WEB
-} from '../src/actions/types'
+} from '../actions/types'
 
 describe('Test for Actions creators', () => {
   it('evalutes fetchTrend type', () => {

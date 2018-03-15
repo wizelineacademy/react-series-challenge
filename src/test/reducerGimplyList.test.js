@@ -1,6 +1,6 @@
 import {expect} from 'chai'
-import gimphyListReducer from '../src/reducers/gimphyList-reducer';
-import {FETCHED_TREND, FETCHED_DETAILS, SEARCHED_ON_WEB} from '../src/actions/types'
+import gimphyListReducer from '../reducers/gimphyList-reducer';
+import {FETCHED_TREND, FETCHED_DETAILS, SEARCHED_ON_WEB} from '../actions/types'
 
 describe('Test Gimphy reducer', () => {
   it('should return initial state', () => {

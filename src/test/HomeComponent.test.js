@@ -1,7 +1,7 @@
 import React from 'react'
 import {expect} from 'chai'
 import { shallow } from 'enzyme'
-import {Home, mapStateToProps} from '../src/component/Home'
+import {Home, mapStateToProps} from '../component/Home'
 
 describe('Test for Home Component', () => {
   const shallowOptions = {
@@ -120,7 +120,7 @@ describe('Test for Home Component', () => {
     expect(component.find('ListGimphy').props()).to.have.all.keys(expectedProps)
   })
 
-  it('evaluates call to searchOnWeb Onchange event from Searchbar', () => {
+  it('evaluates call to searchOnWeb Onchange event from SearchBar', () => {
     const props = {
       giphys: [
         {
@@ -148,7 +148,7 @@ describe('Test for Home Component', () => {
     ).to.be.equal(undefined)
   })
 
-  it('evaluates call to fetchTrend Onchange event from Searchbar', () => {
+  it('evaluates call to fetchTrend Onchange event from SearchBar', () => {
     const props = {
       giphys: [
         {
