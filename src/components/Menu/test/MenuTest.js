@@ -14,6 +14,7 @@ describe('Menu', () => {
     );
     expect(shallowToJson(output)).toMatchSnapshot();
   });
+
   it('should be defined', () => {
    expect(Menu).toBeDefined();
   });
