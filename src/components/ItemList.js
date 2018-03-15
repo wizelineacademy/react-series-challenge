@@ -1,20 +1,15 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import Item from './Item';
 
 class ItemList extends Component {
   render() {
+    const { items } = this.props;
     return (
       <ul>
-        <Item />
-        <Item />
-        <Item />
+        { items && items.map(item => <Item {...item} key={item.id} />) }
       </ul>
     );
   }
 }
 
-const mapStateToProps = state => ({});
-const mapDispatchToProps = state => ({});
-
-export default connect(mapStateToProps, mapDispatchToProps)(ItemList);
+export default ItemList;

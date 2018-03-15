@@ -1,6 +1,5 @@
 import {
-  SEARCH_FAVORITE,
-  SEARCH
+  SEARCH_FAVORITE
 } from '../actions/types';
 
 const initialState = {};
@@ -10,8 +9,6 @@ const search = (state = initialState, action) => {
 
   switch (type) {
     case SEARCH_FAVORITE:
-      return { ...state }
-    case SEARCH:
       return { ...state }
     default:
       return state;

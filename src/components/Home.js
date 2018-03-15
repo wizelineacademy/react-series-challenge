@@ -1,17 +1,26 @@
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import ItemList from './ItemList';
 import Search from './Search';
+import { getTrendingItems } from '../actions';
 
 class Home extends Component {
+  componentWillMount() {
+    this.props.getTrendingItems();
+  }
+
   render() {
     return (
       <div>
-        Home
         <Search />
-        <ItemList />
+        <ItemList items={this.props.items} />
       </div>
     )
   }
 }
 
-export default Home;
+const mapStateToProps = ({ items }) => ({ items: items.list });
+const mapDispatchToProps = dispatch => bindActionCreators({ getTrendingItems }, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
