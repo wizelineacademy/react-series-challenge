@@ -7,7 +7,7 @@ import NotFound from "../NotFound";
 import homeIcon from './assets/home.png';
 import favoriteIcon from './assets/heart-filled-white.png';
 
-const Detail = ({favorites, history, match, trending}) => {
+export const Detail = ({favorites, history, match, trending}) => {
   const obtainGifById = (id) => {
     let gif = favorites.find((favorite) => favorite.id === id);
     if (gif) {
