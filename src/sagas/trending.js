@@ -1,14 +1,7 @@
 import {FETCH_TRENDING_GIFS, fetchTrendingGifsFail, fetchTrendingGifsOk} from "../actions/trending";
 import {call, put, takeEvery} from "redux-saga/effects";
 import get from './giphyAPI';
-
-const simplifyGIFObject = (gif) => ({
-  id: gif.id,
-  images: {
-    original: gif.images.downsized_large.url,
-    small: gif.images.fixed_width_downsampled.url
-  }
-});
+import {simplifyGIFObject} from "./utils";
 
 function * onFetchTrendingGifs () {
   let response;
