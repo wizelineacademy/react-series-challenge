@@ -22,7 +22,7 @@ const Gif = ({
             <img
               alt="gif"
               onClick={() => onClickImage(gif) }
-              src={gif.images.original.url}
+              src={gif.images.preview_gif.url}
             />
           </Link>
         </div>
