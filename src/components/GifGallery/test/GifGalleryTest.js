@@ -83,7 +83,6 @@ describe('GifCard component', () => {
     );
     jest.spyOn(component.instance(), "handleInputOnChange");
     component.update();
-    console.log(component.debug());
     component.find('SearchInput').simulate('change', event1);
     component.find('SearchInput').simulate('change', event2);
   })
