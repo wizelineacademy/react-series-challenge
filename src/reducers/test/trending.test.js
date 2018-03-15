@@ -1,7 +1,3 @@
-/**
- * @jest-environment node
- */
-
 import trending from '../trending'
 import trendingActions from '../../actions/trending'
 

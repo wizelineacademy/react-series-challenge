@@ -1,7 +1,3 @@
-/**
- * @jest-environment node
- */
-
 import search from '../search'
 import searchActions from '../../actions/search'
 

@@ -1,6 +1,3 @@
-/**
- * @jest-environment node
- */
 import { cloneableGenerator } from 'redux-saga/utils'
 import { loadSearchGif, loadSearchFavorites, loadSearchGifs} from '../search'
 import searchActions from '../../actions/search'

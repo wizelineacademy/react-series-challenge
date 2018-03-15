@@ -1,6 +1,3 @@
-/**
- * @jest-environment node
- */
 import reducers from '..'
 import { createStore } from 'redux';
 

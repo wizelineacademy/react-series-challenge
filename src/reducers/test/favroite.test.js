@@ -1,7 +1,3 @@
-/**
- * @jest-environment node
- */
-
 import favorites from '../favorites'
 import favoritesActions from '../../actions/favorites'
 

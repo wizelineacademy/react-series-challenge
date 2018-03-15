@@ -1,6 +1,3 @@
-/**
- * @jest-environment node
- */
 import { loadState, saveState } from '../localStorage'
 
  describe('localStorage', () => {

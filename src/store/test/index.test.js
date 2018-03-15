@@ -1,6 +1,3 @@
-/**
- * @jest-environment node
- */
 import store from '..'
 
  describe('localStorage', () => {

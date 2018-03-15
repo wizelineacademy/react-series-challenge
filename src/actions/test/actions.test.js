@@ -1,7 +1,3 @@
-
-/**
- * @jest-environment node
- */
 import favorites from '../favorites'
 import search from '../search'
 import trending from '../trending'

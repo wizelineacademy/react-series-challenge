@@ -1,6 +1,3 @@
-/**
- * @jest-environment node
- */
 import { cloneableGenerator } from 'redux-saga/utils'
 import { loadTrendingGifs } from '../trending'
 import trendingActions from '../../actions/trending'

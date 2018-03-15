@@ -1,7 +1,3 @@
-/**
- * @jest-environment node
- */
-
 import activeGif from '../activeGif'
 import searchActions from '../../actions/search'
 
