@@ -15,7 +15,7 @@ import {
 } from './styled';
 
 class Search extends Component {
-  onClick() {
+  handleSearchClick() {
     const {
       getSearchItems,
       searchFavorites,
@@ -32,7 +32,7 @@ class Search extends Component {
     }
   }
 
-  onUpdateQuery({ target }) {
+  handleUpdateQuery({ target }) {
     this.props.updateQuery(target.value);
   }
 
@@ -48,10 +48,10 @@ class Search extends Component {
         <SearchText
           type='text'
           value={query}
-          onChange={this.onUpdateQuery.bind(this)}
+          onChange={this.handleUpdateQuery.bind(this)}
         />
         <ClearButton className={`fa ${isHidden}`} onClick={clearQuery} />
-        <SearchButton className='fa' disabled={!!isHidden} onClick={this.onClick.bind(this)} />
+        <SearchButton className='fa' disabled={!!isHidden} onClick={this.handleSearchClick.bind(this)} />
       </SearchDiv>
     );
   }

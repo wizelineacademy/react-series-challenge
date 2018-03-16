@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Item will load correctly 1`] = `
+<div
+  className="sc-ifAKCX eevgov"
+>
+  <a
+    aria-current={false}
+    className={undefined}
+    href="/Details/someId"
+    onClick={[Function]}
+    style={undefined}
+  >
+    <img
+      alt="Some fake title"
+      src="someUrl"
+    />
+  </a>
+  <button
+    className="sc-htpNat jYNqmm"
+    onClick={[Function]}
+  />
+</div>
+`;

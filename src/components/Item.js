@@ -6,7 +6,7 @@ import { addFavorite, removeFavorite } from '../actions';
 import { FavButton, ItemDiv } from './styled';
 
 class Item extends Component {
-  onClick() {
+  handleClick() {
     const {
       addFavorite,
       removeFavorite,
@@ -30,7 +30,7 @@ class Item extends Component {
         </NavLink>
         <FavButton
           className={isFav ? 'fav' : ''}
-          onClick={this.onClick.bind(this)}
+          onClick={this.handleClick.bind(this)}
         />
       </ItemDiv>
     );

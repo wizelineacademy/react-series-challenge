@@ -3,6 +3,11 @@ import { Item } from './';
 import { ItemListDiv } from './styled';
 
 class ItemList extends Component {
+  constructor() {
+    super();
+    this.state = {};
+  }
+
   getItems(items) {
     return Object
       .getOwnPropertyNames(items)
@@ -14,8 +19,17 @@ class ItemList extends Component {
       });
   }
 
+  componentDidCatch(err, info) {
+    this.setState({ hasError: true });
+    // console.log(err, info);
+  }
+
   render() {
     const { items } = this.props;
+    if (this.state.hasError) {
+      return <div>Oops!, something went wrong</div>;
+    }
+
     return (
       <ItemListDiv>
         { items && this.getItems(items) }

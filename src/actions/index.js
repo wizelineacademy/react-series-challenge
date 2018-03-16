@@ -9,7 +9,8 @@ import {
   REMOVE_FAVORITE,
   SEARCH_FAVORITES,
   UPDATE_QUERY,
-  CLEAR_QUERY
+  CLEAR_QUERY,
+  SET_ERROR
 } from './types';
 
 const getTrendingItems = createAction(GET_TRENDING_ITEMS);
@@ -26,6 +27,8 @@ const searchFavorites = createAction(SEARCH_FAVORITES);
 const updateQuery = createAction(UPDATE_QUERY);
 const clearQuery = createAction(CLEAR_QUERY);
 
+const setError = createAction(SET_ERROR);
+
 export {
   getTrendingItems,
   getFavoriteItems,
@@ -36,5 +39,6 @@ export {
   removeFavorite,
   searchFavorites,
   updateQuery,
-  clearQuery
+  clearQuery,
+  setError
 }

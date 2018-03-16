@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home will load correctly 1`] = `
+<div>
+  <div
+    className="sc-gzVnrw ftvBpr"
+  >
+    <input
+      className="sc-htoDjs lapkje"
+      onChange={[Function]}
+      type="text"
+      value=""
+    />
+    <button
+      className="fa hidden sc-bdVaJa imtKYc"
+      onClick={[Function]}
+    />
+    <button
+      className="fa sc-bZQynM fMmVwx"
+      disabled={true}
+      onClick={[Function]}
+    />
+  </div>
+  <div
+    className="sc-EHOje gWvVGC"
+  />
+</div>
+`;
