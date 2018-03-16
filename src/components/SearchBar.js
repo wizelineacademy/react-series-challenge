@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { NavLink, withRouter } from 'react-router-dom';
 import { searchGifsChangeQuery } from '../actions/search';
 import { getQuery } from '../selectors/search';
+import { styleGetter } from './helpers';
 
 const StyledTopBar = styled.div`
   position: fixed;
@@ -11,9 +12,9 @@ const StyledTopBar = styled.div`
   top: 0;
   height: 70px;
   width: 100%;
-  background-color: ${({ theme }) => theme.colors.searchBar};
+  background-color: ${styleGetter('theme.colors.searchBar')};
   box-shadow: 0px 10px 40px -15px rgba(0,0,0,0.75);
-  z-index: ${({ theme }) => theme.zMap.searchBar};
+  z-index: ${styleGetter('theme.zMap.searchBar')};
 `;
 
 const StyledTopBarContent = styled.div`
@@ -29,11 +30,11 @@ const StyledLogo = styled.p`
   font-family: 'Pacifico', cursive;
   font-size: 2rem;
   text-shadow: -1px 0px 2px rgba(20, 20, 20, 1);
-  color: ${({ theme }) => theme.colors.text};
+  color: ${styleGetter('theme.colors.text')};
 `;
 
 export const StyledSearchInput = styled.input`
-  border: 5px solid ${({ theme }) => theme.colors.background};
+  border: 5px solid ${styleGetter('theme.colors.background')};
   border-radius: 6px;
 `;
 
@@ -49,7 +50,7 @@ const StyledLink = styled(NavLink)`
   text-shadow: -1px 0px 2px rgba(20, 20, 20, 1);
 
   &.active {
-    background-color: ${({ theme }) => theme.colors.background};
+    background-color: ${styleGetter('theme.colors.background')};
     box-shadow: -1px 2px 6px 0px rgba(0,0,0,0.75);
   }
 `;

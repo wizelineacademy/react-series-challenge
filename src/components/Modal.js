@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { createPortal } from 'react-dom';
 import styled from 'styled-components';
+import { styleGetter } from './helpers';
 
 const mountingElement = document.body;
 
@@ -41,17 +42,17 @@ const StyledPortal = styled(Portal)`
   z-index: -1;
 
   &.open {
-    z-index: ${({ theme }) => theme.zMap.modal};
+    z-index: ${styleGetter('theme.zMap.modal')};
   }
 `;
 
 const StyledModalContainer = styled.div`
   position: relative;
   max-width: 400px;
-  background-color: ${({ theme }) => theme.colors.buttons};
+  background-color: ${styleGetter('theme.colors.buttons')};
   border-radius: 30px;
   padding: 20px;
-  z-index: ${({ theme }) => theme.zMap.modalContent};
+  z-index: ${styleGetter('theme.zMap.modalContent')};
 `;
 
 const StyledBackdrop = styled.div`
@@ -61,7 +62,7 @@ const StyledBackdrop = styled.div`
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, .5);
-  z-index: ${({ theme }) => theme.zMap.modal};
+  z-index: ${styleGetter('theme.zMap.modal')};
 `;
 
 const StyledCloseIcon = styled.span`
@@ -76,8 +77,8 @@ const StyledCloseIcon = styled.span`
   align-items: center;
   justify-content: center;
   text-shadow: -1px 0px 2px rgba(20, 20, 20, 1);
-  background-color: ${({ theme }) => theme.colors.background};
-  z-index: ${({ theme }) => theme.zMap.modalContent};
+  background-color: ${styleGetter('theme.colors.background')};
+  z-index: ${styleGetter('theme.zMap.modalContent')};
 `;
 
 const Modal = ({ children, open, onCloseClick }) => (
