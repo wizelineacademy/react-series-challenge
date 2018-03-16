@@ -1,5 +1,5 @@
 import favorites from "../favorites";
-import {toggleFavorite} from "../../actions/favorite";
+import {toggleFavorite, updateFilteredFavorites} from "../../actions/favorite";
 
 const mockGif = {
   id: 'p3n7NWvfz3u0c1meay',
@@ -16,6 +16,10 @@ const withFavorites = {
   filtered: [mockGif],
   original: [mockGif]
 };
+const withOriginals = {
+  filtered: [],
+  original: [mockGif]
+};
 
 describe('favorites reducer', () => {
   it('should return initial state', () => {
@@ -28,5 +32,9 @@ describe('favorites reducer', () => {
 
   it('should remove gif from favorites', function () {
     expect(favorites(withFavorites, toggleFavorite(mockGif))).toEqual(initialState);
+  });
+
+  it('should return filtered favorites', function () {
+    expect(favorites(withOriginals, updateFilteredFavorites([mockGif]))).toEqual(withFavorites);
   });
 });

@@ -21,6 +21,7 @@ const mockFavorites = {
   original: [mockGif],
   filtered: [mockGif]
 };
+const mockTrending = [mockGif];
 
 describe('Detail component', () => {
   const func = jest.fn();
@@ -42,6 +43,13 @@ describe('Detail component', () => {
   it('should render component', () => {
     const component = shallow(
       <Detail trending={emptyTrending} favorites={mockFavorites} match={paramGifId}/>
+    );
+    expect(component).toHaveLength(1);
+  });
+
+  it('should render component', () => {
+    const component = shallow(
+      <Detail trending={mockTrending} favorites={emptyFavorites} match={paramGifId}/>
     );
     expect(component).toHaveLength(1);
   });

@@ -6,8 +6,6 @@ import searchIcon from './assets/search.png';
 import favoriteIcon from './assets/heart-filled-white.png'
 import homeIcon from './assets/home.png';
 import GifCardContainer from "../../containers/GifCard";
-import {fetchTrendingGifsOk} from "../../actions/trending";
-import favorites from "../../reducers/favorites";
 
 class GifGallery extends React.Component {
   componentWillMount() {

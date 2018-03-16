@@ -33,3 +33,5 @@ export const Btn = styled.img`
   padding: 0 15px;
   width: 45px;
 `;
+
+Btn.displayName = 'Btn';

@@ -1,6 +1,6 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
-import {GifCard} from "../../../components/GifCard";
+import GifCard from "../../../components/GifCard";
+import {mount, shallow} from "enzyme";
 
 const mockGif = {
   id: 'p3n7NWvfz3u0c1meay',
@@ -12,8 +12,8 @@ const mockGif = {
 
 describe('GifCard component', () => {
   it('should render', () => {
-    const component = renderer.create(
-      <GifCard
+    const component = shallow(
+      <GifCard.WrappedComponent
         gif={mockGif}
         isFavorite={false}
         isDetailBtnVisible={false}
@@ -25,8 +25,8 @@ describe('GifCard component', () => {
   });
 
   it('should not render visible btn', () => {
-    const component = renderer.create(
-      <GifCard
+    const component = shallow(
+      <GifCard.WrappedComponent
         gif={mockGif}
         isFavorite={false}
         isDetailBtnVisible
@@ -37,9 +37,31 @@ describe('GifCard component', () => {
     expect(component).toMatchSnapshot();
   });
 
+  it('should render visible btn and click it', () => {
+    const toggleFavorite = jest.fn();
+    const push = jest.fn();
+    const component = shallow(
+      <GifCard.WrappedComponent
+        gif={mockGif}
+        isFavorite={false}
+        isDetailBtnVisible
+        imageSize={'small'}
+        toggleFavorite={toggleFavorite}
+        history={{push}}
+      />
+    );
+    const detailBtn = component.find('Btn').get(0);
+    mount(detailBtn).simulate('click');
+    expect(mount(detailBtn).prop('alt')).toEqual('detail');
+
+    const favoriteBtn = component.find('Btn').get(1);
+    mount(favoriteBtn).simulate('click');
+    expect(mount(favoriteBtn).prop('alt')).toEqual('favorite');
+  });
+
   it('should render filled heart', () => {
-    const component = renderer.create(
-      <GifCard
+    const component = shallow(
+      <GifCard.WrappedComponent
         gif={mockGif}
         isFavorite
         isDetailBtnVisible
@@ -51,8 +73,8 @@ describe('GifCard component', () => {
   });
 
   it('should render the big image', () => {
-    const component = renderer.create(
-      <GifCard
+    const component = shallow(
+      <GifCard.WrappedComponent
         gif={mockGif}
         isFavorite
         isDetailBtnVisible

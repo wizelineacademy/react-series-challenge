@@ -47,11 +47,7 @@ ShallowWrapper {
       "children": Array [
         <styled.div>
           <styled.img
-                    src={
-                              Object {
-                                        "process": [Function],
-                                      }
-                    }
+                    src="search.png"
           />
           <SearchInput
                     id="toSearch"
@@ -61,23 +57,15 @@ ShallowWrapper {
           />
           <NavigationBtn
                     onClick={[Function]}
-                    src={
-                              Object {
-                                        "process": [Function],
-                                      }
-                    }
+                    src="home.png"
           />
           <NavigationBtn
                     onClick={[Function]}
-                    src={
-                              Object {
-                                        "process": [Function],
-                                      }
-                    }
+                    src="heart-filled-white.png"
           />
 </styled.div>,
         <styled.div>
-          <Connect(withRouter(GifCard))
+          <Connect(withRouter())
                     gif={
                               Object {
                                         "id": "p3n7NWvfz3u0c1meay",
@@ -103,11 +91,7 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <styled.img
-              src={
-                            Object {
-                                          "process": [Function],
-                                        }
-              }
+              src="search.png"
 />,
             <SearchInput
               id="toSearch"
@@ -117,19 +101,11 @@ ShallowWrapper {
 />,
             <NavigationBtn
               onClick={[Function]}
-              src={
-                            Object {
-                                          "process": [Function],
-                                        }
-              }
+              src="home.png"
 />,
             <NavigationBtn
               onClick={[Function]}
-              src={
-                            Object {
-                                          "process": [Function],
-                                        }
-              }
+              src="heart-filled-white.png"
 />,
           ],
         },
@@ -140,9 +116,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
-              "src": Object {
-                "process": [Function],
-              },
+              "src": "search.png",
             },
             "ref": null,
             "rendered": null,
@@ -168,9 +142,7 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "onClick": [Function],
-              "src": Object {
-                "process": [Function],
-              },
+              "src": "home.png",
             },
             "ref": null,
             "rendered": null,
@@ -182,9 +154,7 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "onClick": [Function],
-              "src": Object {
-                "process": [Function],
-              },
+              "src": "heart-filled-white.png",
             },
             "ref": null,
             "rendered": null,
@@ -199,7 +169,7 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "children": Array [
-            <Connect(withRouter(GifCard))
+            <Connect(withRouter())
               gif={
                             Object {
                                           "id": "p3n7NWvfz3u0c1meay",
@@ -252,11 +222,7 @@ ShallowWrapper {
         "children": Array [
           <styled.div>
             <styled.img
-                        src={
-                                    Object {
-                                                "process": [Function],
-                                              }
-                        }
+                        src="search.png"
             />
             <SearchInput
                         id="toSearch"
@@ -266,23 +232,15 @@ ShallowWrapper {
             />
             <NavigationBtn
                         onClick={[Function]}
-                        src={
-                                    Object {
-                                                "process": [Function],
-                                              }
-                        }
+                        src="home.png"
             />
             <NavigationBtn
                         onClick={[Function]}
-                        src={
-                                    Object {
-                                                "process": [Function],
-                                              }
-                        }
+                        src="heart-filled-white.png"
             />
 </styled.div>,
           <styled.div>
-            <Connect(withRouter(GifCard))
+            <Connect(withRouter())
                         gif={
                                     Object {
                                                 "id": "p3n7NWvfz3u0c1meay",
@@ -308,11 +266,7 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <styled.img
-                src={
-                                Object {
-                                                "process": [Function],
-                                              }
-                }
+                src="search.png"
 />,
               <SearchInput
                 id="toSearch"
@@ -322,19 +276,11 @@ ShallowWrapper {
 />,
               <NavigationBtn
                 onClick={[Function]}
-                src={
-                                Object {
-                                                "process": [Function],
-                                              }
-                }
+                src="home.png"
 />,
               <NavigationBtn
                 onClick={[Function]}
-                src={
-                                Object {
-                                                "process": [Function],
-                                              }
-                }
+                src="heart-filled-white.png"
 />,
             ],
           },
@@ -345,9 +291,7 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
-                "src": Object {
-                  "process": [Function],
-                },
+                "src": "search.png",
               },
               "ref": null,
               "rendered": null,
@@ -373,9 +317,7 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "onClick": [Function],
-                "src": Object {
-                  "process": [Function],
-                },
+                "src": "home.png",
               },
               "ref": null,
               "rendered": null,
@@ -387,9 +329,7 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "onClick": [Function],
-                "src": Object {
-                  "process": [Function],
-                },
+                "src": "heart-filled-white.png",
               },
               "ref": null,
               "rendered": null,
@@ -404,7 +344,7 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "children": Array [
-              <Connect(withRouter(GifCard))
+              <Connect(withRouter())
                 gif={
                                 Object {
                                                 "id": "p3n7NWvfz3u0c1meay",
@@ -500,11 +440,7 @@ ShallowWrapper {
       "children": Array [
         <styled.div>
           <styled.img
-                    src={
-                              Object {
-                                        "process": [Function],
-                                      }
-                    }
+                    src="search.png"
           />
           <SearchInput
                     id="toSearch"
@@ -514,23 +450,15 @@ ShallowWrapper {
           />
           <NavigationBtn
                     onClick={[Function]}
-                    src={
-                              Object {
-                                        "process": [Function],
-                                      }
-                    }
+                    src="home.png"
           />
           <NavigationBtn
                     onClick={[Function]}
-                    src={
-                              Object {
-                                        "process": [Function],
-                                      }
-                    }
+                    src="heart-filled-white.png"
           />
 </styled.div>,
         <styled.div>
-          <Connect(withRouter(GifCard))
+          <Connect(withRouter())
                     gif={
                               Object {
                                         "id": "p3n7NWvfz3u0c1meay",
@@ -556,11 +484,7 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <styled.img
-              src={
-                            Object {
-                                          "process": [Function],
-                                        }
-              }
+              src="search.png"
 />,
             <SearchInput
               id="toSearch"
@@ -570,19 +494,11 @@ ShallowWrapper {
 />,
             <NavigationBtn
               onClick={[Function]}
-              src={
-                            Object {
-                                          "process": [Function],
-                                        }
-              }
+              src="home.png"
 />,
             <NavigationBtn
               onClick={[Function]}
-              src={
-                            Object {
-                                          "process": [Function],
-                                        }
-              }
+              src="heart-filled-white.png"
 />,
           ],
         },
@@ -593,9 +509,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
-              "src": Object {
-                "process": [Function],
-              },
+              "src": "search.png",
             },
             "ref": null,
             "rendered": null,
@@ -621,9 +535,7 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "onClick": [Function],
-              "src": Object {
-                "process": [Function],
-              },
+              "src": "home.png",
             },
             "ref": null,
             "rendered": null,
@@ -635,9 +547,7 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "onClick": [Function],
-              "src": Object {
-                "process": [Function],
-              },
+              "src": "heart-filled-white.png",
             },
             "ref": null,
             "rendered": null,
@@ -652,7 +562,7 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "children": Array [
-            <Connect(withRouter(GifCard))
+            <Connect(withRouter())
               gif={
                             Object {
                                           "id": "p3n7NWvfz3u0c1meay",
@@ -705,11 +615,7 @@ ShallowWrapper {
         "children": Array [
           <styled.div>
             <styled.img
-                        src={
-                                    Object {
-                                                "process": [Function],
-                                              }
-                        }
+                        src="search.png"
             />
             <SearchInput
                         id="toSearch"
@@ -719,23 +625,15 @@ ShallowWrapper {
             />
             <NavigationBtn
                         onClick={[Function]}
-                        src={
-                                    Object {
-                                                "process": [Function],
-                                              }
-                        }
+                        src="home.png"
             />
             <NavigationBtn
                         onClick={[Function]}
-                        src={
-                                    Object {
-                                                "process": [Function],
-                                              }
-                        }
+                        src="heart-filled-white.png"
             />
 </styled.div>,
           <styled.div>
-            <Connect(withRouter(GifCard))
+            <Connect(withRouter())
                         gif={
                                     Object {
                                                 "id": "p3n7NWvfz3u0c1meay",
@@ -761,11 +659,7 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <styled.img
-                src={
-                                Object {
-                                                "process": [Function],
-                                              }
-                }
+                src="search.png"
 />,
               <SearchInput
                 id="toSearch"
@@ -775,19 +669,11 @@ ShallowWrapper {
 />,
               <NavigationBtn
                 onClick={[Function]}
-                src={
-                                Object {
-                                                "process": [Function],
-                                              }
-                }
+                src="home.png"
 />,
               <NavigationBtn
                 onClick={[Function]}
-                src={
-                                Object {
-                                                "process": [Function],
-                                              }
-                }
+                src="heart-filled-white.png"
 />,
             ],
           },
@@ -798,9 +684,7 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
-                "src": Object {
-                  "process": [Function],
-                },
+                "src": "search.png",
               },
               "ref": null,
               "rendered": null,
@@ -826,9 +710,7 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "onClick": [Function],
-                "src": Object {
-                  "process": [Function],
-                },
+                "src": "home.png",
               },
               "ref": null,
               "rendered": null,
@@ -840,9 +722,7 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "onClick": [Function],
-                "src": Object {
-                  "process": [Function],
-                },
+                "src": "heart-filled-white.png",
               },
               "ref": null,
               "rendered": null,
@@ -857,7 +737,7 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "children": Array [
-              <Connect(withRouter(GifCard))
+              <Connect(withRouter())
                 gif={
                                 Object {
                                                 "id": "p3n7NWvfz3u0c1meay",

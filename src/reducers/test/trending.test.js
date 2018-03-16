@@ -1,5 +1,6 @@
 import trending from "../trending";
 import {fetchTrendingGifsOk} from "../../actions/trending";
+import {fetchSearchGifsOk} from "../../actions/search";
 
 const mockFetchedGifs = [
   {
@@ -18,5 +19,9 @@ describe('trending reducer', () => {
 
   it('should return fetched gifs', () => {
     expect(trending([], fetchTrendingGifsOk(mockFetchedGifs))).toEqual(mockFetchedGifs);
+  });
+
+  it('should return searched gifs', () => {
+    expect(trending([], fetchSearchGifsOk(mockFetchedGifs))).toEqual(mockFetchedGifs);
   });
 });
