@@ -1,0 +1,9 @@
+export const FETCH_TRENDING_GIPHYS = 'fetch_trending_giphys';
+export const FETCH_TRENDING_GIPHYS_SUCCESS = 'fetch_trending_giphys_success';
+export const FETCH_GIPHYS_SEARCH = 'fetch_giphys_search';
+export const FETCH_GIPHYS_BY_IDS = 'fetch_giphys_by_ids';
+export const FETCH_FAVORITE_GIPHYS_SUCCESS = 'fetch_favorite_giphys_success';
+export const TOGGLE_FAVORITE_GIPHY = 'toggle_favorite_giphy';
+export const UPDATE_FAVORITES_FILTER = 'update_favorites_filter';
+export const FETCH_GIPHY_DETAIL= 'fetch_giphy_detail';
+export const FETCH_GIPHY_DETAIL_SUCCESS = 'fetch_giphy_detail_success';

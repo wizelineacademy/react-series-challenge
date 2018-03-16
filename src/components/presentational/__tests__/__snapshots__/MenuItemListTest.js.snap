@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Menu Item List should render without crashing 1`] = `
+Array [
+  <MenuItem
+    key="test"
+    section={
+        Object {
+            "component": [Function],
+            "route": "test",
+            "title": "Test",
+          }
+    }
+/>,
+]
+`;

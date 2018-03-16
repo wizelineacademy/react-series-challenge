@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Giphy should render without crashing 1`] = `
+<div>
+  <Link
+    replace={false}
+    to="/giphy/HmTLatwLWpTQk"
+  >
+    <img
+      alt="palm trees storm GIF"
+      src="https://media3.giphy.com/media/HmTLatwLWpTQk/200w.gif"
+    />
+  </Link>
+  <FavSection
+    clickHandler={[Function]}
+    inFavs={false}
+  />
+</div>
+`;

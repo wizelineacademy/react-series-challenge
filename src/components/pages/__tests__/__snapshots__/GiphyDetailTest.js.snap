@@ -1,0 +1,195 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Giphy Detail should render without crashing 1`] = `
+<Container
+  title="palm trees storm GIF"
+>
+  <Connect(Giphy)
+    giphy={
+      Object {
+        "bitly_gif_url": "https://gph.is/10LeO6M",
+        "bitly_url": "https://gph.is/10LeO6M",
+        "content_url": "",
+        "embed_url": "https://giphy.com/embed/HmTLatwLWpTQk",
+        "id": "HmTLatwLWpTQk",
+        "images": Object {
+          "480w_still": Object {
+            "height": "324",
+            "url": "https://media3.giphy.com/media/HmTLatwLWpTQk/480w_s.jpg",
+            "width": "480",
+          },
+          "downsized": Object {
+            "height": "337",
+            "size": "1460927",
+            "url": "https://media3.giphy.com/media/HmTLatwLWpTQk/giphy-tumblr.gif",
+            "width": "500",
+          },
+          "downsized_large": Object {
+            "height": "815",
+            "size": "7832558",
+            "url": "https://media3.giphy.com/media/HmTLatwLWpTQk/giphy-downsized-large.gif",
+            "width": "1207",
+          },
+          "downsized_medium": Object {
+            "height": "646",
+            "size": "4549398",
+            "url": "https://media3.giphy.com/media/HmTLatwLWpTQk/giphy-downsized-medium.gif",
+            "width": "956",
+          },
+          "downsized_small": Object {
+            "height": "718",
+            "mp4": "https://media3.giphy.com/media/HmTLatwLWpTQk/giphy-downsized-small.mp4",
+            "mp4_size": "111029",
+            "width": "1062",
+          },
+          "downsized_still": Object {
+            "height": "337",
+            "url": "https://media3.giphy.com/media/HmTLatwLWpTQk/giphy-tumblr_s.gif",
+            "width": "500",
+          },
+          "fixed_height": Object {
+            "height": "200",
+            "mp4": "https://media3.giphy.com/media/HmTLatwLWpTQk/200.mp4",
+            "mp4_size": "17933",
+            "size": "612979",
+            "url": "https://media3.giphy.com/media/HmTLatwLWpTQk/200.gif",
+            "webp": "https://media3.giphy.com/media/HmTLatwLWpTQk/200.webp",
+            "webp_size": "144442",
+            "width": "296",
+          },
+          "fixed_height_downsampled": Object {
+            "height": "200",
+            "size": "166567",
+            "url": "https://media3.giphy.com/media/HmTLatwLWpTQk/200_d.gif",
+            "webp": "https://media3.giphy.com/media/HmTLatwLWpTQk/200_d.webp",
+            "webp_size": "30472",
+            "width": "296",
+          },
+          "fixed_height_small": Object {
+            "height": "100",
+            "mp4": "https://media3.giphy.com/media/HmTLatwLWpTQk/100.mp4",
+            "mp4_size": "7332",
+            "size": "200404",
+            "url": "https://media3.giphy.com/media/HmTLatwLWpTQk/100.gif",
+            "webp": "https://media3.giphy.com/media/HmTLatwLWpTQk/100.webp",
+            "webp_size": "59576",
+            "width": "148",
+          },
+          "fixed_height_small_still": Object {
+            "height": "100",
+            "url": "https://media3.giphy.com/media/HmTLatwLWpTQk/100_s.gif",
+            "width": "148",
+          },
+          "fixed_height_still": Object {
+            "height": "200",
+            "url": "https://media3.giphy.com/media/HmTLatwLWpTQk/200_s.gif",
+            "width": "296",
+          },
+          "fixed_width": Object {
+            "height": "135",
+            "mp4": "https://media3.giphy.com/media/HmTLatwLWpTQk/200w.mp4",
+            "mp4_size": "11174",
+            "size": "316997",
+            "url": "https://media3.giphy.com/media/HmTLatwLWpTQk/200w.gif",
+            "webp": "https://media3.giphy.com/media/HmTLatwLWpTQk/200w.webp",
+            "webp_size": "87192",
+            "width": "200",
+          },
+          "fixed_width_downsampled": Object {
+            "height": "135",
+            "size": "89042",
+            "url": "https://media3.giphy.com/media/HmTLatwLWpTQk/200w_d.gif",
+            "webp": "https://media3.giphy.com/media/HmTLatwLWpTQk/200w_d.webp",
+            "webp_size": "18524",
+            "width": "200",
+          },
+          "fixed_width_small": Object {
+            "height": "68",
+            "mp4": "https://media3.giphy.com/media/HmTLatwLWpTQk/100w.mp4",
+            "mp4_size": "4871",
+            "size": "104469",
+            "url": "https://media3.giphy.com/media/HmTLatwLWpTQk/100w.gif",
+            "webp": "https://media3.giphy.com/media/HmTLatwLWpTQk/100w.webp",
+            "webp_size": "35148",
+            "width": "100",
+          },
+          "fixed_width_small_still": Object {
+            "height": "68",
+            "url": "https://media3.giphy.com/media/HmTLatwLWpTQk/100w_s.gif",
+            "width": "100",
+          },
+          "fixed_width_still": Object {
+            "height": "135",
+            "url": "https://media3.giphy.com/media/HmTLatwLWpTQk/200w_s.gif",
+            "width": "200",
+          },
+          "hd": Object {
+            "height": "1292",
+            "mp4": "https://media3.giphy.com/media/HmTLatwLWpTQk/giphy-hd.mp4",
+            "mp4_size": "341252",
+            "width": "1912",
+          },
+          "looping": Object {
+            "mp4": "https://media3.giphy.com/media/HmTLatwLWpTQk/giphy-loop.mp4",
+            "mp4_size": "1004277",
+          },
+          "original": Object {
+            "frames": "29",
+            "height": "1292",
+            "mp4": "https://media3.giphy.com/media/HmTLatwLWpTQk/giphy.mp4",
+            "mp4_size": "39007",
+            "size": "19885958",
+            "url": "https://media3.giphy.com/media/HmTLatwLWpTQk/giphy.gif",
+            "webp": "https://media3.giphy.com/media/HmTLatwLWpTQk/giphy.webp",
+            "webp_size": "2404080",
+            "width": "1912",
+          },
+          "original_mp4": Object {
+            "height": "324",
+            "mp4": "https://media3.giphy.com/media/HmTLatwLWpTQk/giphy.mp4",
+            "mp4_size": "39007",
+            "width": "480",
+          },
+          "original_still": Object {
+            "height": "1292",
+            "url": "https://media3.giphy.com/media/HmTLatwLWpTQk/giphy_s.gif",
+            "width": "1912",
+          },
+          "preview": Object {
+            "height": "328",
+            "mp4": "https://media3.giphy.com/media/HmTLatwLWpTQk/giphy-preview.mp4",
+            "mp4_size": "42488",
+            "width": "488",
+          },
+          "preview_gif": Object {
+            "height": "93",
+            "size": "49387",
+            "url": "https://media3.giphy.com/media/HmTLatwLWpTQk/giphy-preview.gif",
+            "width": "138",
+          },
+          "preview_webp": Object {
+            "height": "302",
+            "size": "48804",
+            "url": "https://media3.giphy.com/media/HmTLatwLWpTQk/giphy-preview.webp",
+            "width": "447",
+          },
+        },
+        "import_datetime": "2013-07-09 14:13:41",
+        "is_indexable": 1,
+        "is_sticker": 0,
+        "rating": "pg",
+        "slug": "wind-weather-miami-HmTLatwLWpTQk",
+        "source": "https://www.rollingstone.com/politics/news/why-the-city-of-miami-is-doomed-to-drown-20130620",
+        "source_post_url": "https://www.rollingstone.com/politics/news/why-the-city-of-miami-is-doomed-to-drown-20130620",
+        "source_tld": "blog.giphy.com",
+        "title": "palm trees storm GIF",
+        "trending_datetime": "2016-07-09 03:15:02",
+        "type": "gif",
+        "url": "https://giphy.com/gifs/wind-weather-miami-HmTLatwLWpTQk",
+        "username": "",
+      }
+    }
+    size="original"
+  />
+</Container>
+`;
