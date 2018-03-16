@@ -11,5 +11,3 @@ export const GET_ITEMS_ERROR = 'getItemsError';
 
 export const UPDATE_QUERY = 'updateQuery';
 export const CLEAR_QUERY = 'clearQuery';
-
-export const SET_ERROR = 'setError';

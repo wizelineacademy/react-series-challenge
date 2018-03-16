@@ -1,5 +1,4 @@
 import React from 'react';
-import { mount, shallow } from 'enzyme';
 import renderer from 'react-test-renderer';
 import { Favorites } from '../../components';
 import wrap from '../wrapper';
