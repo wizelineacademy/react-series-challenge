@@ -12,6 +12,20 @@
     "redux-saga": "^0.16.0",
     "styled-components": "3.1.4"
   },
+  "jest": {
+    "collectCoverageFrom": [
+      "**/src/**/*.{js,jsx}",
+      "!**/src/registerServiceWorker.{js,jsx}"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 75,
+        "functions": 75,
+        "lines": 75,
+        "statements": 75
+      }
+    }
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
