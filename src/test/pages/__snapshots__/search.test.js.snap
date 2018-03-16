@@ -1,15 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`GifTile matches GifTile snapshot 1`] = `
-<Trending
-  dispatch={[Function]}
-  favoriteGifs={
+exports[`SearchPage matches GifTile snapshot 1`] = `
+<Search
+  gifs={
     Array [
       Object {
         "id": "FiGiRei2ICzzG",
       },
     ]
   }
+  search={[Function]}
   store={
     Object {
       "clearActions": [Function],

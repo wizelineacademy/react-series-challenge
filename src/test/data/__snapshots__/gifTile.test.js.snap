@@ -2,7 +2,7 @@
 
 exports[`GifTile matches GifTile snapshot 1`] = `
 <GifTile
-  gif={
+  data={
     Object {
       "bitly_gif_url": "http://gph.is/1fIdLOl",
       "bitly_url": "http://gph.is/1fIdLOl",

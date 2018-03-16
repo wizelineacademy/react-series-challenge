@@ -67,10 +67,7 @@ class GifTile extends Component {
 function mapStateToProps(state) {
   return {
     isFavorite: (id) => {
-      if (state.favoriteGifs) {
-        return !!state.favoriteGifs.find(gif => gif.id === id)
-      }
-      return false
+      return !!state.favoriteGifs.find(gif => gif.id === id)
     }
   };
 }

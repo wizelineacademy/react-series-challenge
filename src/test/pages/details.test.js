@@ -1,22 +1,20 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Favorites from '../pages/Favorites'
-import gifData from './data/gifTestData'
 import configureStore from 'redux-mock-store'
+import Details from '../../pages/Details'
+import gifData from '../data/gifTestData'
 
 const mockStore = configureStore()
 const initialState = {
-  favoriteGifs: [
-    { id: gifData.id }
-  ]
+  singleGif: gifData
 }
 
-describe('GifTile', () => {
+describe('Details', () => {
   let wrapper
 
   beforeAll(() => {
     wrapper = shallow(
-      <Favorites store={mockStore(initialState)}/>
+      <Details store={mockStore(initialState)}/>
     );
   })
 

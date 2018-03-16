@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Search from '../pages/Search'
-import gifData from './data/gifTestData'
+import Search from '../../pages/Search'
+import gifData from '../data/gifTestData'
 import configureStore from 'redux-mock-store'
 
 const mockStore = configureStore()
@@ -11,7 +11,7 @@ const initialState = {
   ]
 }
 
-describe('GifTile', () => {
+describe('SearchPage', () => {
   let wrapper
 
   beforeAll(() => {
