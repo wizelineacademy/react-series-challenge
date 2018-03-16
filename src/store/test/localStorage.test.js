@@ -2,17 +2,17 @@ import { loadState, saveState } from '../localStorage'
 
 describe('localStorage', () => {
   it('will return undefined', () => {
-    expect(loadState()).toBe(undefined)
-  })
+    expect(loadState()).toBe(undefined);
+  });
 
-  it('wont serialize', () => {
-    saveState(() => {})
-    expect(loadState()).toEqual(undefined)
-  })
+  it('will return undefined cause serialization issue', () => {
+    saveState(() => {});
+    expect(loadState()).toEqual(undefined);
+  });
 
-  it('will saveState', () => {
-    const state = {item: "test" }
-    saveState(state)
-    expect(loadState()).toEqual(state)
+  it('will save the state', () => {
+    const newState = {gif: "dog"};
+    saveState(newState);
+    expect(loadState()).toEqual(newState);
   });
 });
