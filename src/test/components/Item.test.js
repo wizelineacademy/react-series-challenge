@@ -8,7 +8,7 @@ import wrap from '../wrapper';
 
 let props, context, spyAdd, spyRemove, self;
 
-describe('Item', () => {
+describe('Component: Item', () => {
   beforeEach(() => {
     props = { ...Props };
     context = { ...Context };

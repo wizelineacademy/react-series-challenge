@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Favorites will load correctly 1`] = `
+exports[`Component: Favorites will load correctly 1`] = `
 <div>
   <div
     className="sc-gzVnrw ftvBpr"

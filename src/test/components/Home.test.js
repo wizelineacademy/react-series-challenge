@@ -5,7 +5,7 @@ import { Home } from '../../components';
 import wrap from '../wrapper';
 
 
-describe('Home', () => {
+describe('Component: Home', () => {
   it('will load correctly', () => {
     const component = renderer.create(wrap(<Home />)).toJSON();
     expect(component).toMatchSnapshot();

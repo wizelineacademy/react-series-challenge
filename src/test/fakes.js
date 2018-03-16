@@ -39,7 +39,6 @@ const This = (spy1, spy2) => ({
 
 export {
   Context,
-  Item,
   Props,
   Store,
   This

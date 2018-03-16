@@ -7,7 +7,7 @@ import wrap from '../wrapper';
 
 let props;
 
-describe('ItemList', () => {
+describe('Component: ItemList', () => {
   beforeEach(() => {
     props = { ...Props };
   });

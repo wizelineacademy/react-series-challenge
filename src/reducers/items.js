@@ -12,7 +12,7 @@ const items = (state = initialState, action) => {
         return obj;
       }, {});
 
-      return { ...state, list };
+      return { ...state, list, error: false };
 
     case GET_ITEMS_ERROR:
       return { ...state, error: true };

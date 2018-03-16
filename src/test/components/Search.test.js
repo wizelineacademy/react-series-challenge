@@ -7,7 +7,7 @@ import wrap from '../wrapper';
 
 let context, spyHome, spyFavorites, self;
 
-describe('Search', () => {
+describe('Component: Search', () => {
   beforeEach(() => {
     context = { ...Context };
     spyHome = jest.fn();

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Search will load correctly 1`] = `
+exports[`Component: Search will load correctly 1`] = `
 <div
   className="sc-gzVnrw ftvBpr"
 >

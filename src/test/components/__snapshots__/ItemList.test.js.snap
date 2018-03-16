@@ -1,18 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ItemList will load correctly when fixed_width is a blank object 1`] = `
+exports[`Component: ItemList will load correctly when fixed_width is a blank object 1`] = `
 <div>
   Oops!, something went wrong
 </div>
 `;
 
-exports[`ItemList will load correctly when images is a blank object 1`] = `
+exports[`Component: ItemList will load correctly when images is a blank object 1`] = `
 <div>
   Oops!, something went wrong
 </div>
 `;
 
-exports[`ItemList will load correctly when url exists 1`] = `
+exports[`Component: ItemList will load correctly when url exists 1`] = `
 <div>
   Oops!, something went wrong
 </div>
