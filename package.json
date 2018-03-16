@@ -5,7 +5,13 @@
   "dependencies": {
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-scripts": "1.1.1"
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.1.1",
+    "redux": "^3.7.2",
+    "redux-devtools-extension": "^2.13.2",
+    "redux-saga": "^0.16.0",
+    "styled-components": "^3.2.1"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -26,10 +32,15 @@
     "build": "react-scripts build",
     "eject": "react-scripts eject",
     "lint": "eslint ./",
-    "test": "yarn lint && yarn jest",
-    "jest": "react-scripts test --env=jsdom --coverage"
+    "test": "react-scripts test --env=jsdom --coverage",
+    "test-watch": "react-scripts test --env=jsdom",
+    "deploy": "yarn build && firebase deploy"
   },
   "devDependencies": {
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-es2015-computed-properties": "^6.24.1",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1"
   }
