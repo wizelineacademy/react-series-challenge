@@ -32,7 +32,8 @@
     "build": "react-scripts build",
     "eject": "react-scripts eject",
     "lint": "eslint ./",
-    "test": "react-scripts test --env=jsdom",
+    "test": "react-scripts test --env=jsdom --coverage",
+    "test-watch": "react-scripts test --env=jsdom",
     "deploy": "yarn build && firebase deploy"
   },
   "devDependencies": {
