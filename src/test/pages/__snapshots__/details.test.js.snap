@@ -3,6 +3,7 @@
 exports[`Details matches GifTile snapshot 1`] = `
 <Details
   fetchById={[Function]}
+  loading={false}
   singleGif={
     Object {
       "bitly_gif_url": "http://gph.is/1fIdLOl",

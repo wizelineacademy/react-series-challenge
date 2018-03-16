@@ -6,7 +6,7 @@ const defaultState = {
   singleGif: null
 }
 
-const counter = (state = defaultState, action) => {
+const reducers = (state = defaultState, action) => {
   switch(action.type) {
     case 'LOADING_START':
       return { ...state, loading: true }
@@ -28,7 +28,7 @@ const counter = (state = defaultState, action) => {
       let fetchedGifsFromStorage = JSON.parse(localStorage.getItem("favorites"))
       if (!fetchedGifsFromStorage) {
         // no favorites found
-        return {...state}
+        return {...state, favoriteGifs: []}
       }
       return { ...state, favoriteGifs: fetchedGifsFromStorage }
     case 'SAVE_FAVORITE':
@@ -52,4 +52,4 @@ const counter = (state = defaultState, action) => {
        return state;
    }
 };
-export default counter
+export default reducers
