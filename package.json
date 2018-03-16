@@ -17,8 +17,8 @@
     "build": "react-scripts build",
     "eject": "react-scripts eject",
     "lint": "eslint ./",
-    "test": "react-scripts test --env=jsdom",
-    "coverage": "react-scripts test --env=jsdom --coverage",
+    "test-watch": "react-scripts test --env=jsdom",
+    "test": "react-scripts test --env=jsdom --coverage",
     "jest": "NODE_ENV=testing jest --coverage --maxWorkers=6"
   },
   "devDependencies": {
