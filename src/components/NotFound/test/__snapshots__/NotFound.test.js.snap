@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NotFound component should render 1`] = `
+<div
+  className="sc-bdVaJa gwaFKK"
+>
+  <p
+    className="sc-htpNat kcKMWU"
+  >
+    404
+  </p>
+  <p
+    className="sc-bxivhb kEXzdc"
+  >
+    The requested url was not found
+  </p>
+</div>
+`;

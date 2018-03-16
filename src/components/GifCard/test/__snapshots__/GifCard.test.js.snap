@@ -1,0 +1,831 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GifCard component should not render visible btn 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Unknown
+    gif={
+        Object {
+            "id": "p3n7NWvfz3u0c1meay",
+            "images": Object {
+              "original": "https://media3.giphy.com/media/p3n7NWvfz3u0c1meay/giphy.gif",
+              "small": "https://media3.giphy.com/media/p3n7NWvfz3u0c1meay/200w_d.gif",
+            },
+          }
+    }
+    imageSize="small"
+    isDetailBtnVisible={true}
+    isFavorite={false}
+    toggleFavorite={[Function]}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": Array [
+        <img
+          alt="gif"
+          src="https://media3.giphy.com/media/p3n7NWvfz3u0c1meay/200w_d.gif"
+/>,
+        <styled.div>
+          <Btn
+                    alt="detail"
+                    onClick={[Function]}
+                    src="eye.png"
+          />
+          <Btn
+                    alt="favorite"
+                    onClick={[Function]}
+                    src="heart-border.svg"
+          />
+</styled.div>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "alt": "gif",
+          "src": "https://media3.giphy.com/media/p3n7NWvfz3u0c1meay/200w_d.gif",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "img",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <Btn
+              alt="detail"
+              onClick={[Function]}
+              src="eye.png"
+/>,
+            <Btn
+              alt="favorite"
+              onClick={[Function]}
+              src="heart-border.svg"
+/>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "alt": "detail",
+              "onClick": [Function],
+              "src": "eye.png",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "alt": "favorite",
+              "onClick": [Function],
+              "src": "heart-border.svg",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <img
+            alt="gif"
+            src="https://media3.giphy.com/media/p3n7NWvfz3u0c1meay/200w_d.gif"
+/>,
+          <styled.div>
+            <Btn
+                        alt="detail"
+                        onClick={[Function]}
+                        src="eye.png"
+            />
+            <Btn
+                        alt="favorite"
+                        onClick={[Function]}
+                        src="heart-border.svg"
+            />
+</styled.div>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "alt": "gif",
+            "src": "https://media3.giphy.com/media/p3n7NWvfz3u0c1meay/200w_d.gif",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "img",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <Btn
+                alt="detail"
+                onClick={[Function]}
+                src="eye.png"
+/>,
+              <Btn
+                alt="favorite"
+                onClick={[Function]}
+                src="heart-border.svg"
+/>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "alt": "detail",
+                "onClick": [Function],
+                "src": "eye.png",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "alt": "favorite",
+                "onClick": [Function],
+                "src": "heart-border.svg",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`GifCard component should render 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Unknown
+    gif={
+        Object {
+            "id": "p3n7NWvfz3u0c1meay",
+            "images": Object {
+              "original": "https://media3.giphy.com/media/p3n7NWvfz3u0c1meay/giphy.gif",
+              "small": "https://media3.giphy.com/media/p3n7NWvfz3u0c1meay/200w_d.gif",
+            },
+          }
+    }
+    imageSize="small"
+    isDetailBtnVisible={false}
+    isFavorite={false}
+    toggleFavorite={[Function]}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": Array [
+        <img
+          alt="gif"
+          src="https://media3.giphy.com/media/p3n7NWvfz3u0c1meay/200w_d.gif"
+/>,
+        <styled.div>
+          <Btn
+                    alt="favorite"
+                    onClick={[Function]}
+                    src="heart-border.svg"
+          />
+</styled.div>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "alt": "gif",
+          "src": "https://media3.giphy.com/media/p3n7NWvfz3u0c1meay/200w_d.gif",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "img",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            null,
+            <Btn
+              alt="favorite"
+              onClick={[Function]}
+              src="heart-border.svg"
+/>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          null,
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "alt": "favorite",
+              "onClick": [Function],
+              "src": "heart-border.svg",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <img
+            alt="gif"
+            src="https://media3.giphy.com/media/p3n7NWvfz3u0c1meay/200w_d.gif"
+/>,
+          <styled.div>
+            <Btn
+                        alt="favorite"
+                        onClick={[Function]}
+                        src="heart-border.svg"
+            />
+</styled.div>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "alt": "gif",
+            "src": "https://media3.giphy.com/media/p3n7NWvfz3u0c1meay/200w_d.gif",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "img",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              null,
+              <Btn
+                alt="favorite"
+                onClick={[Function]}
+                src="heart-border.svg"
+/>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            null,
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "alt": "favorite",
+                "onClick": [Function],
+                "src": "heart-border.svg",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`GifCard component should render filled heart 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Unknown
+    gif={
+        Object {
+            "id": "p3n7NWvfz3u0c1meay",
+            "images": Object {
+              "original": "https://media3.giphy.com/media/p3n7NWvfz3u0c1meay/giphy.gif",
+              "small": "https://media3.giphy.com/media/p3n7NWvfz3u0c1meay/200w_d.gif",
+            },
+          }
+    }
+    imageSize="small"
+    isDetailBtnVisible={true}
+    isFavorite={true}
+    toggleFavorite={[Function]}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": Array [
+        <img
+          alt="gif"
+          src="https://media3.giphy.com/media/p3n7NWvfz3u0c1meay/200w_d.gif"
+/>,
+        <styled.div>
+          <Btn
+                    alt="detail"
+                    onClick={[Function]}
+                    src="eye.png"
+          />
+          <Btn
+                    alt="favorite"
+                    onClick={[Function]}
+                    src="heart-filled.svg"
+          />
+</styled.div>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "alt": "gif",
+          "src": "https://media3.giphy.com/media/p3n7NWvfz3u0c1meay/200w_d.gif",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "img",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <Btn
+              alt="detail"
+              onClick={[Function]}
+              src="eye.png"
+/>,
+            <Btn
+              alt="favorite"
+              onClick={[Function]}
+              src="heart-filled.svg"
+/>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "alt": "detail",
+              "onClick": [Function],
+              "src": "eye.png",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "alt": "favorite",
+              "onClick": [Function],
+              "src": "heart-filled.svg",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <img
+            alt="gif"
+            src="https://media3.giphy.com/media/p3n7NWvfz3u0c1meay/200w_d.gif"
+/>,
+          <styled.div>
+            <Btn
+                        alt="detail"
+                        onClick={[Function]}
+                        src="eye.png"
+            />
+            <Btn
+                        alt="favorite"
+                        onClick={[Function]}
+                        src="heart-filled.svg"
+            />
+</styled.div>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "alt": "gif",
+            "src": "https://media3.giphy.com/media/p3n7NWvfz3u0c1meay/200w_d.gif",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "img",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <Btn
+                alt="detail"
+                onClick={[Function]}
+                src="eye.png"
+/>,
+              <Btn
+                alt="favorite"
+                onClick={[Function]}
+                src="heart-filled.svg"
+/>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "alt": "detail",
+                "onClick": [Function],
+                "src": "eye.png",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "alt": "favorite",
+                "onClick": [Function],
+                "src": "heart-filled.svg",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`GifCard component should render the big image 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Unknown
+    gif={
+        Object {
+            "id": "p3n7NWvfz3u0c1meay",
+            "images": Object {
+              "original": "https://media3.giphy.com/media/p3n7NWvfz3u0c1meay/giphy.gif",
+              "small": "https://media3.giphy.com/media/p3n7NWvfz3u0c1meay/200w_d.gif",
+            },
+          }
+    }
+    imageSize="original"
+    isDetailBtnVisible={true}
+    isFavorite={true}
+    toggleFavorite={[Function]}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": Array [
+        <img
+          alt="gif"
+          src="https://media3.giphy.com/media/p3n7NWvfz3u0c1meay/giphy.gif"
+/>,
+        <styled.div>
+          <Btn
+                    alt="detail"
+                    onClick={[Function]}
+                    src="eye.png"
+          />
+          <Btn
+                    alt="favorite"
+                    onClick={[Function]}
+                    src="heart-filled.svg"
+          />
+</styled.div>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "alt": "gif",
+          "src": "https://media3.giphy.com/media/p3n7NWvfz3u0c1meay/giphy.gif",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "img",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <Btn
+              alt="detail"
+              onClick={[Function]}
+              src="eye.png"
+/>,
+            <Btn
+              alt="favorite"
+              onClick={[Function]}
+              src="heart-filled.svg"
+/>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "alt": "detail",
+              "onClick": [Function],
+              "src": "eye.png",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "alt": "favorite",
+              "onClick": [Function],
+              "src": "heart-filled.svg",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <img
+            alt="gif"
+            src="https://media3.giphy.com/media/p3n7NWvfz3u0c1meay/giphy.gif"
+/>,
+          <styled.div>
+            <Btn
+                        alt="detail"
+                        onClick={[Function]}
+                        src="eye.png"
+            />
+            <Btn
+                        alt="favorite"
+                        onClick={[Function]}
+                        src="heart-filled.svg"
+            />
+</styled.div>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "alt": "gif",
+            "src": "https://media3.giphy.com/media/p3n7NWvfz3u0c1meay/giphy.gif",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "img",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <Btn
+                alt="detail"
+                onClick={[Function]}
+                src="eye.png"
+/>,
+              <Btn
+                alt="favorite"
+                onClick={[Function]}
+                src="heart-filled.svg"
+/>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "alt": "detail",
+                "onClick": [Function],
+                "src": "eye.png",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "alt": "favorite",
+                "onClick": [Function],
+                "src": "heart-filled.svg",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
