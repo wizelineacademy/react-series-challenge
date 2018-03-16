@@ -22,6 +22,7 @@ describe('Favorites', () => {
         list={[giphyMock.data.id]}
         giphys={[giphyMock.data]}
         filter=""
+        fetchGiphysByIds={() => {return;}}
       />);    
 
     expect(shallowToJson(testFavorites)).toMatchSnapshot();

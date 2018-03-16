@@ -9,7 +9,7 @@ import { fetchGiphysByIds, updateFavoritesFilter } from '../../actions';
 
 class Favorites extends Component {
   componentWillMount() {
-    if (this.props.list.length > 1) {
+    if (this.props.list.length > 0) {
       this.props.fetchGiphysByIds(this.props.list);
     }
     this.searchFavoriteGiphys = this.searchFavoriteGiphys.bind(this);

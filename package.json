@@ -32,8 +32,7 @@
     "eject": "react-scripts eject",
     "lint": "eslint ./",
     "test": "yarn lint && yarn jest",
-    "jest": "react-scripts test --env=jsdom --coverage",
-    "test:watch": "NODE_ENV=testing jest --watch"
+    "jest": "react-scripts test --env=jsdom --coverage"
   },
   "devDependencies": {
     "enzyme": "^3.3.0",
