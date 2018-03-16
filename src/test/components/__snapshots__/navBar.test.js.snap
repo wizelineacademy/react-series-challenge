@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navbar matches Navbar snapshot 1`] = `
+<styled.header>
+  <styled.img
+    alt="logo"
+    src="logo.svg"
+  />
+  <styled.h1>
+    Gif Viewer
+  </styled.h1>
+  <styled.nav>
+    <Styled(NavLink)
+      exact={true}
+      to="/"
+    >
+      Trending
+    </Styled(NavLink)>
+    <Styled(NavLink)
+      to="/favs"
+    >
+      Favorites
+    </Styled(NavLink)>
+  </styled.nav>
+</styled.header>
+`;
