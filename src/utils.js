@@ -1,11 +1,19 @@
 const db = {
   get(key) {
-    const encoded = window.localStorage.getItem(key);
-    return JSON.parse(encoded);
+    try {
+      const encoded = window.localStorage.getItem(key);
+      return encoded ? JSON.parse(encoded) : undefined;
+    } catch (err) {
+      return undefined;
+    }
   },
   set(key, value) {
-    const encoded = JSON.stringify(value);
-    window.localStorage.setItem(key, encoded);
+    try {
+      const encoded = JSON.stringify(value);
+      window.localStorage.setItem(key, encoded);
+    } catch (err) {
+      return console.log(err);
+    }
   }
 };
 
