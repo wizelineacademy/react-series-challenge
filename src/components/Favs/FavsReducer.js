@@ -16,7 +16,6 @@ const favsReducer = (state = initialState, action) => {
         ? state.favs.filter(fav => fav.id !== gif.id)
         : [{ ...gif, favorite: true }, ...state.favs];
 
-      db.set("favs", favs);
       return { favs };
     }
 

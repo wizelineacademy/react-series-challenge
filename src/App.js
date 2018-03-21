@@ -3,6 +3,7 @@ import { Provider } from "react-redux";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import store from "./state/store";
+import { db } from "./utils";
 import { AppWrapperStyled } from "./App.styled";
 import {
   Home,
@@ -12,6 +13,11 @@ import {
   SearchResults,
   NotFound
 } from "./components";
+
+store.subscribe(() => {
+  const { favsReducer: { favs } } = store.getState();
+  db.set("favs", favs);
+});
 
 const App = () => (
   <Provider store={store}>
