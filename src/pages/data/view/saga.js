@@ -27,7 +27,7 @@ function* getGif(params) {
 /*
  * Watchers
  */
-export function* watchers() {
+function* watchers() {
   yield takeLatest(getGifId().type, getGif);
 }
 

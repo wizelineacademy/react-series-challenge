@@ -46,7 +46,7 @@ function* getGifsByFreeText(params) {
 /*
  * Watchers
  */
-export function* watchers() {
+function* watchers() {
   yield takeLatest(fetchTrendingGifs().type, getTrendingGifs);
   yield takeLatest(searchGifs().type, getGifsByFreeText);
 }
