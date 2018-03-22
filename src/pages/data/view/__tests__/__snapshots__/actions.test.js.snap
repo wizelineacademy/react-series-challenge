@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Actions - View Get Gif By Id Error 1`] = `
+Object {
+  "data": Object {
+    "message": "Message",
+  },
+  "type": "GET_GIF_ERROR",
+}
+`;
+
+exports[`Actions - View Get Gif By Id Pending 1`] = `
+Object {
+  "payload": Object {
+    "id": Object {},
+  },
+  "type": "GET_GIF_PENDING",
+}
+`;
+
+exports[`Actions - View Get Gif By Id Success 1`] = `
+Object {
+  "data": Object {
+    "gif": Object {},
+  },
+  "type": "GET_GIF_SUCCESS",
+}
+`;
+
+exports[`Actions - View Set Current Gif 1`] = `
+Object {
+  "payload": Object {
+    "element": undefined,
+  },
+  "type": "SET_CURRENT_GIF",
+}
+`;

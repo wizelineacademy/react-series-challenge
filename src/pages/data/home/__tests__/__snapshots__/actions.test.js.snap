@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Actions - Home Fetch Trending Error 1`] = `
+Object {
+  "data": Object {
+    "message": "Message",
+  },
+  "type": "FETCH_TRENDING_GIFS_ERROR",
+}
+`;
+
+exports[`Actions - Home Fetch Trending Error 2`] = `
+Object {
+  "data": Object {
+    "message": "Message",
+  },
+  "type": "SEARCH_GIFS_ERROR",
+}
+`;
+
+exports[`Actions - Home Fetch Trending Pending 1`] = `
+Object {
+  "type": "FETCH_TRENDING_GIFS_PENDING",
+}
+`;
+
+exports[`Actions - Home Fetch Trending Success 1`] = `
+Object {
+  "data": Object {
+    "gifs": Object {},
+  },
+  "type": "FETCH_TRENDING_GIFS_SUCCESS",
+}
+`;
+
+exports[`Actions - Home Fetch Trending Success 2`] = `
+Object {
+  "data": Object {
+    "gifs": Object {},
+  },
+  "type": "SEARCH_GIFS_SUCCESS",
+}
+`;
+
+exports[`Actions - Home Search Gifts Pending 1`] = `
+Object {
+  "payload": Object {
+    "text": "text",
+  },
+  "type": "SEARCH_GIFS_PENDING",
+}
+`;

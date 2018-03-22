@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`View - Reducer Get Gif By Id Error 1`] = `
+Object {
+  "currentGif": Object {},
+  "error": true,
+  "searched": true,
+}
+`;
+
+exports[`View - Reducer Get Gif By Id Success 1`] = `
+Object {
+  "currentGif": undefined,
+  "error": false,
+  "searched": true,
+}
+`;
+
+exports[`View - Reducer Must set a selected gif as current 1`] = `
+Object {
+  "currentGif": Object {
+    "id": "a",
+  },
+  "error": false,
+  "searched": false,
+}
+`;

@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Favorites - Reducer Must add an element to the favorites list 1`] = `
+Object {
+  "filtered": false,
+  "filteredElements": Array [],
+  "list": Object {
+    "a": Object {
+      "id": "a",
+    },
+  },
+}
+`;
+
+exports[`Favorites - Reducer Must filter the elements according to the text 1`] = `
+Object {
+  "filtered": true,
+  "filteredElements": Array [],
+  "list": Object {},
+}
+`;
+
+exports[`Favorites - Reducer Must remove an existent element from the favorites list 1`] = `
+Object {
+  "filtered": false,
+  "filteredElements": Array [],
+  "list": Object {},
+}
+`;

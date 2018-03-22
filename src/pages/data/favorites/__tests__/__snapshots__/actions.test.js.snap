@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Actions - Favorites Send an object to toggle favorite state 1`] = `
+Object {
+  "payload": Object {
+    "element": Object {
+      "id": "a",
+    },
+  },
+  "type": "TOGGLE_FAVORITE",
+}
+`;
+
+exports[`Actions - Favorites Set a text to filtered the favorite list 1`] = `
+Object {
+  "payload": Object {
+    "text": "cat",
+  },
+  "type": "FILTER_FAVORITE",
+}
+`;
