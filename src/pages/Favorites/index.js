@@ -1,17 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators} from 'redux';
 import { Link } from 'react-router-dom';
 import GifList from '../../components/GifList';
 import { Row, Col } from '../../components/Grid';
 import SearchGif from '../../components/SearchGif';
 import { Message, Page } from '../../styledComponents';
-import {
-  toggleFavorite,
-  filterFavorites,
-} from '../data/favorites/actions';
-import {
-  setCurrentGif,
-} from '../data/view/actions';
+import * as Actions from '../actionCreators/favorites';
 
 class Favorites extends Component {
   render(){
@@ -23,7 +18,7 @@ class Favorites extends Component {
 
     const handleSearch = (event) => {
       const text = event.target.value;
-      this.props.handleFilterGifs(text);
+      this.props.filterFavorites(text);
     }
 
     let listElements = list;
@@ -64,8 +59,8 @@ class Favorites extends Component {
             <GifList
               elements={Object.values(listElements)}
               starred={list}
-              handleSetGif={this.props.handleSetGif}
-              handleToggleFav={this.props.handleToggleFav}
+              handleSetGif={this.props.setCurrentGif}
+              handleToggleFav={this.props.toggleFavorite}
             />
           }
           {
@@ -90,10 +85,6 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = dispatch => ({
-  handleToggleFav: (element) => dispatch(toggleFavorite(element)),
-  handleSetGif: (element) => dispatch(setCurrentGif(element)),
-  handleFilterGifs: (text) => dispatch(filterFavorites(text)),
-});
+const mapDispatchToProps = dispatch => bindActionCreators(Actions, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Favorites);

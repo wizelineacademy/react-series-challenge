@@ -1,14 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import Favorite from '../../components/Favorite';
 import { Image, Message, Page } from '../../styledComponents';
 import notFoundImage from '../../assets/images/notFound.gif';
-import {
-  getGifId,
-} from '../data/view/actions';
-import {
-  toggleFavorite,
-} from '../data/favorites/actions';
+import * as Actions from '../actionCreators/view';
 
 const View = (props) => {
   const {
@@ -39,7 +35,7 @@ const View = (props) => {
           <p>{message}</p>
           <Favorite
             starred={isStarred}
-            onToggleFavorite={() => { props.handleToggleFav(currentGif) }}
+            onToggleFavorite={() => { props.toggleFavorite(currentGif) }}
           />
         </Message>
         <Image
@@ -50,7 +46,7 @@ const View = (props) => {
       </div>
     );
   } else {
-    props.handleGetGif(expectedId);
+    props.getGifId(expectedId);
   }
 
   return (
@@ -72,9 +68,6 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = dispatch => ({
-  handleGetGif: id => dispatch(getGifId(id)),
-  handleToggleFav: (element) => dispatch(toggleFavorite(element)),
-});
+const mapDispatchToProps = dispatch => bindActionCreators(Actions, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(View);

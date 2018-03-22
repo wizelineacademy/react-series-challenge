@@ -1,25 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { Link } from 'react-router-dom';
 import GifList from '../../components/GifList';
 import { Row, Col } from '../../components/Grid';
 import SearchGif from '../../components/SearchGif';
 import { Message, Page } from '../../styledComponents';
 import { debounce } from '../../utils/utils';
-import {
-  fetchTrendingGifs,
-  searchGifs,
-} from '../data/home/actions';
-import {
-  toggleFavorite,
-} from '../data/favorites/actions';
-import {
-  setCurrentGif,
-} from '../data/view/actions';
+import * as Actions from '../actionCreators/home';
 
 class Home extends Component {
   componentWillMount(){
-    this.props.getTrending();
+    this.props.fetchTrendingGifs();
   }
 
   render(){
@@ -33,7 +25,7 @@ class Home extends Component {
       list,
     } = this.props.favorites;
 
-    const searchForGif = debounce((text) => {this.props.handleGifSearch(text)}, 1000);
+    const searchForGif = debounce((text) => {this.props.searchGifs(text)}, 1000);
 
     return (
       <Page>
@@ -75,8 +67,8 @@ class Home extends Component {
             <GifList
               elements={gifs.data}
               starred={list}
-              handleSetGif={this.props.handleSetGif}
-              handleToggleFav={this.props.handleToggleFav}
+              handleSetGif={this.props.setCurrentGif}
+              handleToggleFav={this.props.toggleFavorite}
             />
           }
         </div>
@@ -97,11 +89,6 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = dispatch => ({
-  getTrending: () => dispatch(fetchTrendingGifs()),
-  handleGifSearch: (text) => dispatch(searchGifs(text)),
-  handleToggleFav: (element) => dispatch(toggleFavorite(element)),
-  handleSetGif: (element) => dispatch(setCurrentGif(element)),
-});
+const mapDispatchToProps = dispatch => bindActionCreators(Actions, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
