@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+const maxCols= 12;
+const minWidth = 100 / maxCols;
 
 export const Row = styled.div`
   display: flex;
@@ -6,5 +8,5 @@ export const Row = styled.div`
 `;
 
 export const Col = styled.div`
-  flex-basis: ${props => (props.span ? props.span / 12 * 100 : 8.33)}%;
+  flex-basis: ${props => (props.span ? props.span / maxCols * 100 : minWidth)}%;
 `;

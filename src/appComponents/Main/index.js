@@ -1,22 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Provider } from 'react-redux';
 import store from '../../utils/store';
 import Routes from '../Routes';
 import Layout from '../../components/Layout';
-import './styles.css';
+import StyledApp from './styles.js';
 
-class App extends Component {
-  render() {
-    return (
-      <Provider store={store}>
-        <div className="App">
-          <Layout>
-            <Routes />
-          </Layout>
-        </div>
-      </Provider>
-    );
-  }
-}
+const App = () => (
+  <Provider store={store}>
+    <StyledApp className="App">
+      <Layout>
+        <Routes />
+      </Layout>
+    </StyledApp>
+  </Provider>
+);
 
 export default App;

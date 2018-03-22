@@ -26,6 +26,8 @@ class Favorites extends Component {
       listElements = filteredElements;
     }
 
+    const hasElements = (listElements && Object.keys(listElements).length > 0);
+
     return (
       <Page>
         <Message>
@@ -55,19 +57,17 @@ class Favorites extends Component {
         </Message>
         <div>
           {
-            (listElements && Object.keys(listElements).length > 0) &&
-            <GifList
-              elements={Object.values(listElements)}
-              starred={list}
-              handleSetGif={this.props.setCurrentGif}
-              handleToggleFav={this.props.toggleFavorite}
-            />
-          }
-          {
-            (!listElements || Object.keys(listElements).length === 0) &&
-            <p>
-              There are not favorites yet :/
-            </p>
+            hasElements ?
+              <GifList
+                elements={Object.values(listElements)}
+                starred={list}
+                handleSetGif={this.props.setCurrentGif}
+                handleToggleFav={this.props.toggleFavorite}
+              />
+            :
+              <p>
+                There are not favorites yet :/
+              </p>
           }
         </div>
       </Page>

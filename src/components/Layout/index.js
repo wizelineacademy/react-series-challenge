@@ -1,15 +1,16 @@
 import React from 'react';
 import Header from './Header';
 import Body from './Body';
+import StyledLayout from './styles.js';
 
 const Layout = ({ children }) => {
   return (
-    <div className="Layout">
+    <StyledLayout>
       <Header />
       <Body>
         { children }
       </Body>
-    </div>
+    </StyledLayout>
   );
 };
 

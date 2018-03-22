@@ -17,8 +17,8 @@ class Home extends Component {
   render(){
     const {
       gifs,
-      searching,
-      error,
+      searching: isSearching,
+      error: hasError,
     } = this.props.home;
 
     const {
@@ -26,6 +26,7 @@ class Home extends Component {
     } = this.props.favorites;
 
     const searchForGif = debounce((text) => {this.props.searchGifs(text)}, 1000);
+    const fetchCorrectly = (!isSearching && !hasError && gifs);
 
     return (
       <Page>
@@ -56,14 +57,14 @@ class Home extends Component {
         </Message>
         <div>
           {
-            searching &&
+            isSearching &&
             <p> Searching ... </p>
           }
           {
-            error &&
+            hasError &&
             <p> There was an error </p>
           }
-          { (!error && !searching && gifs) &&
+          { fetchCorrectly &&
             <GifList
               elements={gifs.data}
               starred={list}
