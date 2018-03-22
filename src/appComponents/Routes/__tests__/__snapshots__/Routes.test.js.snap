@@ -33,7 +33,6 @@ ShallowWrapper {
 />,
         <Route
           component={[Function]}
-          path="*"
 />,
       ],
     },
@@ -82,7 +81,6 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "component": [Function],
-          "path": "*",
         },
         "ref": null,
         "rendered": null,
@@ -113,7 +111,6 @@ ShallowWrapper {
 />,
           <Route
             component={[Function]}
-            path="*"
 />,
         ],
       },
@@ -162,7 +159,6 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "component": [Function],
-            "path": "*",
           },
           "ref": null,
           "rendered": null,
