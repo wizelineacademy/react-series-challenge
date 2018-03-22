@@ -1,0 +1,105 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Home /> renders properly 1`] = `
+.c3 {
+  width: 300px;
+  height: 300px;
+  border-radius: 2px;
+  object-fit: cover;
+}
+
+.c1 {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  margin: 5px;
+  -webkit-transition: 0.1s ease-in-out -webkit-transform;
+  -webkit-transition: 0.1s ease-in-out transform;
+  transition: 0.1s ease-in-out transform;
+  border-radius: 2px;
+  background: linear-gradient(to right,#eeeeee 8%,#dddddd 18%,#eeeeee 33%);
+  -webkit-animation: 1.5s eNVqyK linear infinite;
+  animation: 1.5s eNVqyK linear infinite;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  background-size: 800px 104px;
+  position: relative;
+}
+
+.c1:hover {
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+.c2 {
+  z-index: 1;
+  position: absolute;
+  right: 14px;
+  top: 8px;
+  font-size: 2em;
+  color: red;
+  opacity: 1;
+  -webkit-transition: 0.1s ease-in;
+  transition: 0.1s ease-in;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c2:hover {
+  color: "red";
+  cursor: pointer;
+}
+
+.c2:active {
+  opacity: 1;
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100vw;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+<div
+  className="c0"
+>
+  <a
+    href="/details/1"
+    onClick={[Function]}
+  >
+    <div
+      className="c1"
+      height={300}
+      width={300}
+    >
+      <label
+        className="c2"
+        onClick={[Function]}
+      >
+        ❤
+      </label>
+      <img
+        className="c3"
+        height={300}
+        src={undefined}
+        width={300}
+      />
+    </div>
+  </a>
+</div>
+`;

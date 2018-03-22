@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> renders properly 1`] = `
+.c2 {
+  width: 50%;
+  padding: 6px;
+  border: 1px solid;
+  width: 400px;
+  text-align: center;
+  border-radius: 4px;
+  font-size: 1.1em;
+  font-family: monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.c2:focus,
+.c2:active {
+  outline: none;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c0 {
+  margin: 0 auto;
+  margin: 1em 0 2em;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c1 {
+  margin-bottom: 1em;
+}
+
+.c1 > a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: black;
+}
+
+.c1 > a:first-child {
+  margin-right: 20px;
+}
+
+<div
+  className=""
+>
+  <div
+    className="c0"
+  >
+    <div
+      className="c1"
+    >
+      <a
+        aria-current={false}
+        className={undefined}
+        href="/"
+        onClick={[Function]}
+        style={undefined}
+      >
+        home
+      </a>
+      <a
+        aria-current={false}
+        className={undefined}
+        href="/favs"
+        onClick={[Function]}
+        style={undefined}
+      >
+        favs
+      </a>
+    </div>
+    <form
+      className=""
+      onSubmit={[Function]}
+    >
+      <input
+        className="c2"
+        type="search"
+      />
+    </form>
+  </div>
+  <div
+    className="c3"
+  >
+    <p>
+      awesome, you've earned a 404
+    </p>
+  </div>
+</div>
+`;
