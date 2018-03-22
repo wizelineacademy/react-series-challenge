@@ -30,7 +30,6 @@ const App = () => (
           <Route exact path="/details/:id" component={Details} />
           <Route exact path="/search/:query" component={SearchResults} />
           <Route component={NotFound} />
-          <Route />
         </Switch>
       </AppWrapperStyled>
     </Router>
