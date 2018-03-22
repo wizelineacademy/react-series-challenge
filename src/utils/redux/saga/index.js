@@ -1,4 +1,4 @@
-import { all, fork } from 'redux-saga/effects';
+import { all, call } from 'redux-saga/effects';
 
 import pages from '../../../pages/data/sagas';
 
@@ -7,5 +7,5 @@ const sagas = [
 ];
 
 export default function* rootSaga() {
-  yield all(sagas.map(saga => fork(saga)));
+  yield all(sagas.map(saga => saga()));
 }

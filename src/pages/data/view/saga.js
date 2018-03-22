@@ -1,20 +1,10 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
+import Giphy from '../giphy';
 import {
   getGifId,
   getGifIdSuccess,
   getGifIdError,
 } from './actions';
-
-const API_KEY_GIPHY = 'FalKCfLXRYrRZUEJD8lkMlgBT8i3AHEO';
-const Giphy = {
-  getById(id) {
-    const initObject = {
-      method: 'GET',
-    };
-    const query = `api_key=${API_KEY_GIPHY}`;
-    return fetch(`http://api.giphy.com/v1/gifs/${id}?${query}`, initObject);
-  }
-}
 
 function* getGif(params) {
   try {
