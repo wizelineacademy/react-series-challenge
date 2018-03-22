@@ -11,6 +11,10 @@ const NavigationWrapperStyled = styled.div`
 const LinkWrapperStyled = styled.div`
   margin-bottom: 1em;
 
+  & > a.selected {
+    color: red;
+  }
+
   & > a {
     text-decoration: none;
     color: black;

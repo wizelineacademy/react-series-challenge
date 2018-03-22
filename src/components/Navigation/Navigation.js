@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { withRouter, NavLink } from "react-router-dom";
 
 import Search from "../Search";
 import {
@@ -10,11 +10,15 @@ import {
 const Navigation = () => (
   <NavigationWrapperStyled>
     <LinkWrapperStyled>
-      <NavLink to="/">home</NavLink>
-      <NavLink to="/favs">favs</NavLink>
+      <NavLink to="/" exact={true} activeClassName="selected">
+        home
+      </NavLink>
+      <NavLink to="/favs" exact={true} activeClassName="selected">
+        favs
+      </NavLink>
     </LinkWrapperStyled>
     <Search />
   </NavigationWrapperStyled>
 );
 
-export default Navigation;
+export default withRouter(Navigation);
