@@ -1,21 +1,34 @@
 import React, { Component } from 'react';
+import { Provider } from 'react-redux';
 import logo from './logo.svg';
+import store from './store';
 import './App.css';
 
+import TrendingList from './components/TrendingList';
+
 class App extends Component {
+  constructor(props)
+  {
+    super(props);
+
+  }
+  componentDidMount()
+  {
+    fetch('http://api.giphy.com/v1/gifs/trending?api_key=kLIQQQN3aix9cb3YOKkP6kXlVIWjmsBI').then((resp) => resp.json()).then(
+      response => console.log(response),
+      error => console.log(error)
+    )
+    /*
+    search: http://api.giphy.com/v1/gifs/search?api_key=kLIQQQN3aix9cb3YOKkP6kXlVIWjmsBI&q=food
+    */
+  }
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <Provider store={store}>
+        <TrendingList/>
+      </Provider>
     );
-  }
+  } 
 }
 
 export default App;
