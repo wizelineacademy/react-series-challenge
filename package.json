@@ -3,14 +3,24 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "enzyme-to-json": "^3.3.3",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-scripts": "1.1.1"
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.1.1",
+    "redux": "^3.7.2",
+    "redux-actions": "^2.3.0",
+    "redux-saga": "^0.16.0",
+    "styled-components": "^3.2.3"
   },
   "jest": {
     "collectCoverageFrom": [
       "**/src/**/*.{js,jsx}",
       "!**/src/registerServiceWorker.{js,jsx}"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
     ],
     "coverageThreshold": {
       "global": {
@@ -18,7 +28,8 @@
         "functions": 75,
         "lines": 75,
         "statements": 75
-      }
+      },
+      "setupTestFrameworkScriptFile": "<rootDir>src/setupTests.js"
     }
   },
   "scripts": {

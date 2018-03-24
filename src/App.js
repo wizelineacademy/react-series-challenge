@@ -1,18 +1,25 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {
+  Route,
+  Redirect,
+  Link,
+  NavLink,
+  Switch,
+  withRouter,
+} from 'react-router-dom';
+
+import MainNav from './components/NavMain';
+
+import ViewHome from './views/Home';
+import ViewFavorites from './views/Favorites';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div>
+        <MainNav />
+        <Route exact path="/your-favorites" component={ViewFavorites} />
+        <Route exact path="/" component={ViewHome} />
       </div>
     );
   }
