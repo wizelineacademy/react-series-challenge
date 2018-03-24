@@ -1,4 +1,4 @@
-const logger = (store) => (next) => (action) => {
+const logger = (store) => ((next) => ((action) => {
   const { type } = action;
 
   const currentState = store.getState();
@@ -12,6 +12,6 @@ const logger = (store) => (next) => (action) => {
   console.groupEnd();
 
   return continueAction;
-}
+}));
 
 export default logger;
