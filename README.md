@@ -13,8 +13,8 @@ Use React Router and React 16 (already included - in the boilerplate)
 
 ## Delivery
 - Home View
-  - It displays the trending GIFs using Giphy Trending API
-  - It has a search bar, which uses Giphy Search API
+  - <strike>It displays the trending GIFs using Giphy Trending API</strike>
+  - <strike>It has a search bar, which uses Giphy Search API</strike>
   - Each gif may be saved as favorite in the redux state, and also can be removed from the same call to action
   - Each gif should display if it is already marked as favorite
 

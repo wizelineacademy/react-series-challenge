@@ -2,10 +2,13 @@ import styled from 'styled-components';
 
 const ListGifStyled = styled.ul`
 display: grid;
-grid-template-columns: 1fr 1fr 1fr 1fr;
+grid-template-columns: repeat(5, 1fr);
 list-style: none;
 padding: 0;
 margin: 0;
+@media only screen and (max-width: 64em) {
+    grid-template-columns: repeat(4, 1fr);
+}
 li{
     background-color: #000;
     transition: transform .15s ease-in;

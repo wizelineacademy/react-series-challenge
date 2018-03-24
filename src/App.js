@@ -1,14 +1,9 @@
 import React, { Component } from 'react';
 import {
-  Route,
-  Redirect,
-  Link,
-  NavLink,
-  Switch,
-  withRouter,
+  Route
 } from 'react-router-dom';
 
-import MainNav from './components/NavMain';
+import MainHeader from './components/MainHeader';
 
 import ViewHome from './views/Home';
 import ViewFavorites from './views/Favorites';
@@ -17,7 +12,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <MainNav />
+        <MainHeader />
         <Route exact path="/your-favorites" component={ViewFavorites} />
         <Route exact path="/" component={ViewHome} />
       </div>

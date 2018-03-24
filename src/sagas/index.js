@@ -1,9 +1,9 @@
 import { all } from 'redux-saga/effects';
 
-import trengingSaga from '../sagas/trending';
+import giphySaga from '../sagas/giphy';
 
 export default function* rootSagas() {
     yield all([
-        trengingSaga()
+        giphySaga()
     ]);
 };

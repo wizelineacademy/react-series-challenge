@@ -2,41 +2,75 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import trendingActions from '../actions/trending';
+import Utils from '../utils/Utils';
+
+
+import giphyActions from '../actions/giphy';
 import ListGifs from '../components/ListGifs';
 
 class ViewHome extends Component {
-    componentWillMount() {
-        this.props.getTrendingList();
+    constructor(props) {
+        super(props);
+        this.callAction = Utils.debounce(this.callAction, 500);
+    }
+    callAction(val) {
+        if (!/^\s*$/.test(val)) {
+            this.props.getSearchList(val);
+        } else {
+            this.props.getTrendingList();
+        }
+    }
+    componentDidMount() {
+        if (this.props.giphy.query && !/^\s*$/.test(this.props.giphy.query)) {
+            this.props.getSearchList(this.props.giphy.query);
+        } else {
+            this.props.getTrendingList();
+        }
+
     }
     render() {
-        const { list, fetching, success } = this.props.trending;
+        const { list, fetching, success, query } = this.props.giphy;
+        let listView = <ListGifs />;
         if (!list) {
-            return null;
+            listView = null;
         }
         if (list && fetching && success) {
-            return <div>Cargando...</div>
+            listView = <div>Cargando...</div>
         }
         if (list && !fetching && !success) {
-            return <div>Algo salió mal...</div>
+            listView = <div>Algo salió mal...</div>
         }
         return (
-            <ListGifs />
+            <div>
+                <input
+                    defaultValue={query}
+                    type="text"
+                    style={{
+                        width: '10em'
+                    }}
+                    onChange={event => {
+                        this.callAction(event.target.value, 1500);
+                    }}
+                />
+                {listView}
+            </div>
+
         )
     }
 }
 
 const mapStateToProps = (state) => {
     return {
-        trending: state.trending
+        giphy: state.giphy
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
-    const { getTrendingList } = trendingActions.creators;
+    const { getTrendingList, getSearchList } = giphyActions.creators;
     return bindActionCreators({
-        getTrendingList
-    }, dispatch)
+        getTrendingList,
+        getSearchList
+    }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ViewHome);
