@@ -6,7 +6,6 @@ export function* loadTrendingSaga() {
 	console.log('[SAGA] loadTrendingSaga...');
 	try {
 		const giphyResponse = yield call(loadTrending);
-		console.log(giphyResponse);
 		yield put(requests.creators.trendingLoaded(giphyResponse));
 	} catch (error) {
 		yield put(requests.creators.trendingLoadError(error));
@@ -14,5 +13,5 @@ export function* loadTrendingSaga() {
 }
 
 export default function* giphySaga() {
-	yield loadTrendingSaga();
+	yield takeEvery(requests.types.TRENDING_REQUEST, loadTrendingSaga);
 }

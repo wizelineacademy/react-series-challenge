@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Home from './containers/Home/Home';
 import { Provider } from 'react-redux';
 import store from './store';
+import global from './style/global';
+import { Border, Title } from './style/style';
 
 class App extends Component {
 	render() {
@@ -9,9 +11,11 @@ class App extends Component {
 			<Provider store={store}>
 				<div className="App">
 					<header>
-						<h1>Let's start</h1>
+						<Title>Gif Madness</Title>
 					</header>
-					<Home />
+					<Border home>
+						<Home />
+					</Border>
 				</div>
 			</Provider>
 		);

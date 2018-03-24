@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import GifCard from '../../components/GifCard/GifCard';
 
 class GifList extends Component {
 	render() {
 		let images = null;
 		if (this.props.gifsFetch) {
 			images = this.props.gifsFetch.gifsList.map(gif => {
-				return <img key={gif.id} src={gif.images.fixed_height.url} />;
+				return (
+					<GifCard key={gif.id} id={gif.id} src={gif.images.fixed_height.url} />
+				);
 			});
 		}
 		return <div>{images}</div>;
