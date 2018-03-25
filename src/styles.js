@@ -7,4 +7,8 @@ injectGlobal`
       font-family: 'Roboto', sans-serif;
       background-color: #222;
     }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 `;
