@@ -1,5 +1,5 @@
 import React from 'react';
-import {MasonryItem, Overlay, ImageWrapper, LinkStyled} from "./Gif.styled";
+import {MasonryItem, Overlay, ImageWrapper, LinkStyled, GifImg} from "./Gif.styled";
 
 const getPreviewGifUrl = (gif) => {
   if (gif.images && gif.images.original) {
@@ -20,7 +20,7 @@ const handleFavButton = (gif, addGif, removeGif, isFavorited) => {
 export const Gif = ({ gif, fullWidth, addGif, removeGif, isFavorited }) => (
   <MasonryItem fullWidth={fullWidth}>
       <ImageWrapper>
-        <img src={getPreviewGifUrl(gif)} alt={gif.title} />
+        <GifImg isFavorited={isFavorited} src={getPreviewGifUrl(gif)} alt={gif.title} />
         <Overlay>
           <button onClick={() => handleFavButton(gif, addGif, removeGif, isFavorited)}>
             {!isFavorited ? 'Add to Favorites': 'Remove from favorites'}

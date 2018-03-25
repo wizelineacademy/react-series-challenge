@@ -51,3 +51,7 @@ export const ImageWrapper = styled.div`
 export const LinkStyled = styled(Link)`
   color: #ffc800;
 `;
+
+export const GifImg = styled.img`
+  border: ${props => props.isFavorited ? '1px solid #ffc800': 'initial'};
+`
