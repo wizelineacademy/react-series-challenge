@@ -3,12 +3,12 @@ const REMOVE_GIF = 'REMOVE_GIF';
 
 const addGif = gif => ({
   type: ADD_GIF,
-  gif,
+  payload: gif,
 });
 
 const removeGif = gifId => ({
   type: REMOVE_GIF,
-  gifId,
+  payload: gifId,
 });
 
 export default {
