@@ -5,6 +5,7 @@ import store from './store';
 import Header from "./components/Header/Header";
 import DetailView from "./components/DetailView/DetailView";
 import HomeView from "./components/HomeView/HomeView";
+import FavoritesView from "./components/FavoritesView/FavoritesView";
 
 
 class App extends Component {
@@ -15,6 +16,7 @@ class App extends Component {
           <Header />
           <Switch>
             <Route path="/detail/:gifId" component={DetailView}/>
+            <Route path="/favorites" component={FavoritesView} />
             <Route path="/home" component={HomeView}/>
             <Redirect to="/home" />
           </Switch>
