@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {bindActionCreators} from "redux";
 import { connect } from 'react-redux';
 import trendingGifs from '../../actions/trendingGifs';
+import searchingGifs from '../../actions/searchingGifs';
 import {Container} from "../../App.styled";
 import SearchBar from "../SearchBar/SearchBar";
 import GifList from "../GifList/GifList";
@@ -23,14 +24,17 @@ class HomeView extends Component {
 }
 
 const mapStateToProps = (state) => {
-  const { trendingGifs } = state;
-
-  return { trendingGifs };
+  const { trendingGifs, searchingGifs } = state;
+  return { trendingGifs, searchingGifs };
 };
 const mapDispatchToProps = (dispatch) => {
   const { getTrendingGifsRequested } = trendingGifs.creators;
+  const { searchGifsRequested } = searchingGifs.creators;
 
-  return bindActionCreators({ getTrendingGifsRequested }, dispatch);
+  return bindActionCreators({
+    getTrendingGifsRequested,
+    searchGifsRequested
+  }, dispatch);
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomeView)
