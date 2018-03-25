@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {SearchButton, SearchInput} from "./SearchBar.styled";
 import {FlexContainer} from "../../shared/components.styled";
 
-export class SearchBar extends Component {
+export default class SearchBar extends Component {
   searchGifs = (e) => {
     e.preventDefault();
     console.log(this.searchInput.value);
