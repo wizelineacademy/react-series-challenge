@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import GifCard from '../../components/GifCard/GifCard';
 
-class GifList extends Component {
+export class GifList extends Component {
 	render() {
 		let images = null;
 		if (this.props.gifsFetch) {

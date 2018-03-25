@@ -1,16 +1,31 @@
 import styled from 'styled-components';
 
-const ImageCard = styled.img`
-	font-size: 1em;
-	border: 4px solid black;
-	border-radius: 10px;
-	margin-right: 13px;
-	margin-bottom: 8px;
+const Image = styled.img`
+	border: 2px solid black;
+	border-radius: 50px;
 `;
 
+const ImageDetails = styled.div`
+	border: 2px solid red;
+	border-radius: 20px;
+`;
+
+const ImageCard = styled.div`
+	width: 30%;
+	float: left;
+	text-align: center;
+	display: block;
+
+	:hover {
+		box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2);
+	}
+`;
 const Border = styled.div`
 	width: ${props => (props.home ? '80%' : '100%')};
-	margin-left: ${props => (props.home ? '10%' : '')};
+	margin: 0;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, -50%) }
 `;
 
 const Title = styled.h1`
@@ -26,4 +41,4 @@ const SubTitle = styled.h3`
 	text-align: left;
 `;
 
-export { ImageCard, Border, Title, SubTitle };
+export { ImageDetails, Border, Title, SubTitle, ImageCard, Image };

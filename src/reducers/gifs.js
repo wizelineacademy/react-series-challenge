@@ -18,7 +18,7 @@ const gifsReducer = (state = initialState, action) => {
 			return {
 				...state,
 				fetching: false,
-				...{ gifsList: action.gifsList }
+				gifsList: action.gifsList
 			};
 		case requests.types.TRENDING_LOAD_ERROR:
 			return {
