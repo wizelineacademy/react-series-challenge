@@ -11,7 +11,7 @@ const favoritesGifReducer = (state = initialState, action) => {
       };
     case actions.types.REMOVE_GIF:
       const newState = {...state};
-      delete newState[payload.id];
+      delete newState[payload];
       return newState;
     default:
       return state;
