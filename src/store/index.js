@@ -8,8 +8,8 @@ const sagaMiddleware = createSagaMiddleWare();
 
 // const initialState = {};
 const middlewares = [
-  sagaMiddleware,
-  logger
+  logger,
+  sagaMiddleware
 ];
 
 const appliedMiddleware = applyMiddleware(...middlewares);

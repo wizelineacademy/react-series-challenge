@@ -8,6 +8,7 @@ import {
 } from 'react-router-dom';
 import store from './store';
 import Navbar from './components/navbar'
+import Wrapper from './components/wrapper'
 // import logo from './logo.svg';
 // import './App.css';
 
@@ -16,13 +17,15 @@ class App extends Component {
     return (
       <Provider store={store}>
         <Router>
-          <Navbar />
-          <Switch>
-            <Route path='/image/:id' />
-            <Route path='/favorites' />
-            <Route path='/' exact/>
-            <Redirect to= '/not-found' />
-          </Switch>
+          <Wrapper>
+            <Navbar />
+            <Switch>
+              <Route path='/image/:id' />
+              <Route path='/favorites' />
+              <Route path='/' exact/>
+              <Redirect to= '/not-found' />
+            </Switch>
+          </Wrapper>
         </Router>
       </Provider>
     );
