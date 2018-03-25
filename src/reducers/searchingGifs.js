@@ -2,7 +2,8 @@ import actions from '../actions/searchingGifs';
 const initialState = {
   data: [],
   isLoading: false,
-  error: null
+  error: null,
+  term: '',
 };
 
 const searchingGifsReducer = (state = initialState, action) => {
@@ -11,6 +12,7 @@ const searchingGifsReducer = (state = initialState, action) => {
     case actions.types.SEARCH_GIFS_REQUESTED:
       return {
         ...state,
+        term: payload,
         isLoading: true,
       };
 

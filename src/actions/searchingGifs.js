@@ -2,13 +2,14 @@ const SEARCH_GIFS_REQUESTED = 'SEARCH_GIFS_REQUESTED';
 const SEARCH_GIFS_COMPLETED = 'SEARCH_GIFS_COMPLETED';
 const SEARCH_GIFS_FAILED = 'SEARCH_GIFS_FAILED';
 
-const searchGifsRequested = () => ({
+const searchGifsRequested = term => ({
   type: SEARCH_GIFS_REQUESTED,
+  payload: term,
 });
 
-const searchGifsCompleted = prices => ({
+const searchGifsCompleted = gifs => ({
   type: SEARCH_GIFS_COMPLETED,
-  payload: prices,
+  payload: gifs,
 });
 
 const searchGifsFailed = error => ({
