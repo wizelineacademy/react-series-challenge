@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import  { Provider } from 'react-redux';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { 
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect
+} from 'react-router-dom';
 import store from './store';
 import Navbar from './components/navbar'
 // import logo from './logo.svg';
@@ -12,6 +17,11 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <Navbar />
+          <Switch>
+            <Route path='/favorites' />
+            <Route path='/' exact/>
+            <Redirect to= '/not-found' />
+          </Switch>
         </Router>
       </Provider>
     );
