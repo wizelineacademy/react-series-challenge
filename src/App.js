@@ -18,6 +18,7 @@ class App extends Component {
         <Router>
           <Navbar />
           <Switch>
+            <Route path='/image/:id' />
             <Route path='/favorites' />
             <Route path='/' exact/>
             <Redirect to= '/not-found' />
