@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
+import {Container} from "./App.styled";
+import {SearchBar} from "./components/SearchBar/SearchBar";
 
 class App extends Component {
   render() {
     return (
-      <div className="container">
-        <header>
-          <div>SearchBar</div>
-        </header>
+      <Container>
+        <SearchBar />
         <div>
             <p>ListOfGifs</p>
         </div>
-      </div>
+      </Container>
     );
   }
 }
