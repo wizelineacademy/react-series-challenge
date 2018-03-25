@@ -13,10 +13,16 @@ class HomeView extends Component {
     props.getTrendingGifsRequested();
   }
   render() {
-    const {data} = this.props.trendingGifs;
+    const {trendingGifs, searchingGifs} = this.props;
+    let data = null;
+    if (searchingGifs.data.length > 0) {
+      data = searchingGifs.data;
+    } else {
+      data = trendingGifs.data;
+    }
     return (
       <Container>
-        <SearchBar />
+        <SearchBar searchGifsRequested={this.props.searchGifsRequested}/>
         <GifList gifs={data}/>
       </Container>
     )

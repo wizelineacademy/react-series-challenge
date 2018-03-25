@@ -5,7 +5,8 @@ import {FlexContainer} from "../../shared/components.styled";
 export default class SearchBar extends Component {
   searchGifs = (e) => {
     e.preventDefault();
-    console.log(this.searchInput.value);
+    const term = this.searchInput.value;
+    this.props.searchGifsRequested(term);
   };
   render() {
     return (
