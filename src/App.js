@@ -1,18 +1,24 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import {Provider} from 'react-redux';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import store from './store';
-import {Container} from "./App.styled";
-import {SearchBar} from "./components/SearchBar/SearchBar";
-import GifList from "./components/GifList/GifList";
+import Header from "./components/Header/Header";
+import DetailView from "./components/DetailView/DetailView";
+import HomeView from "./components/HomeView/HomeView";
+
 
 class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <Container>
-          <SearchBar />
-          <GifList/>
-        </Container>
+        <Fragment>
+          <Header />
+          <Switch>
+            <Route path="/detail/:gifId" component={DetailView}/>
+            <Route path="/home" component={HomeView}/>
+            <Redirect to="/home" />
+          </Switch>
+        </Fragment>
       </Provider>
     );
   }
