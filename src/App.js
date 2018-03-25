@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import  { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import store from './store';
+import Navbar from './components/navbar'
 // import logo from './logo.svg';
 // import './App.css';
 
@@ -10,7 +11,7 @@ class App extends Component {
     return (
       <Provider store={store}>
         <Router>
-          <h3>Hello World!</h3>
+          <Navbar />
         </Router>
       </Provider>
     );
