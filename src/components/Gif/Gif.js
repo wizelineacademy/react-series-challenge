@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import {MasonryItem} from "./Gif.styled";
+import {MasonryItem, Overlay, ImageWrapper, LinkStyled} from "./Gif.styled";
 
 const getPreviewGifUrl = (gif) => {
   if (gif.images && gif.images.original) {
@@ -10,12 +9,18 @@ const getPreviewGifUrl = (gif) => {
   }
 };
 
-export const Gif = ({ gif, fullWidth }) => (
+export const Gif = ({ gif, fullWidth, addGif }) => (
   <MasonryItem fullWidth={fullWidth}>
-    <Link to={{
-      pathname: `/detail/${gif.id}`,
-    }}>
-      <img src={getPreviewGifUrl(gif)} alt={gif.title} />
-    </Link>
+      <ImageWrapper>
+        <img src={getPreviewGifUrl(gif)} alt={gif.title} />
+        <Overlay>
+          <button onClick={() => addGif(gif)}>
+            Add to Favorites
+          </button>
+          <LinkStyled to={{pathname: `/detail/${gif.id}`}}>
+            View detail
+          </LinkStyled>
+        </Overlay>
+      </ImageWrapper>
   </MasonryItem>
 )
