@@ -13,3 +13,10 @@ export const searchGifs = (term) => {
     .then(res => res.json())
     .then(parsedResp => parsedResp.data);
 };
+
+export const searchSingleGif = id => {
+  const path = '/v1/gifs';
+  return fetch(`${ENDPOINT}${path}/${id}?q=&api_key=${API_KEY}`)
+    .then(res => res.json())
+    .then(parsedResp => parsedResp.data);
+};
