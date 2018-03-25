@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {MasonryItem} from "./Gif.styled";
 
 const getPreviewGifUrl = (gif) => {
@@ -9,8 +10,12 @@ const getPreviewGifUrl = (gif) => {
   }
 };
 
-export const Gif = ({ gif }) => (
-  <MasonryItem>
-    <img src={getPreviewGifUrl(gif)} alt={gif.title} />
+export const Gif = ({ gif, fullWidth }) => (
+  <MasonryItem fullWidth={fullWidth}>
+    <Link to={{
+      pathname: `/detail/${gif.id}`,
+    }}>
+      <img src={getPreviewGifUrl(gif)} alt={gif.title} />
+    </Link>
   </MasonryItem>
 )

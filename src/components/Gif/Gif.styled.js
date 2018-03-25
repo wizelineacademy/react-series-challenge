@@ -6,6 +6,8 @@ export const MasonryItem = styled.div`
   flex: auto;
   min-width: 150px;
   margin: 0 8px 8px 0;
+  width: ${(props) => props.fullWidth ? '100% !important' : 'initial'};
+  justify-content: ${(props) => props.fullWidth ? 'center' : 'initial'};
   &:nth-child(4n+1){
      width: 250px;
   }
