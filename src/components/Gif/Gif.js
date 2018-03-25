@@ -9,13 +9,21 @@ const getPreviewGifUrl = (gif) => {
   }
 };
 
-export const Gif = ({ gif, fullWidth, addGif }) => (
+const handleFavButton = (gif, addGif, removeGif, isFavorited) => {
+  if (!isFavorited) {
+    addGif(gif);
+  } else {
+    removeGif(gif.id);
+  }
+};
+
+export const Gif = ({ gif, fullWidth, addGif, removeGif, isFavorited }) => (
   <MasonryItem fullWidth={fullWidth}>
       <ImageWrapper>
         <img src={getPreviewGifUrl(gif)} alt={gif.title} />
         <Overlay>
-          <button onClick={() => addGif(gif)}>
-            Add to Favorites
+          <button onClick={() => handleFavButton(gif, addGif, removeGif, isFavorited)}>
+            {!isFavorited ? 'Add to Favorites': 'Remove from favorites'}
           </button>
           <LinkStyled to={{pathname: `/detail/${gif.id}`}}>
             View detail
