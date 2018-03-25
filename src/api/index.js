@@ -9,6 +9,7 @@ export const getTrendingGifs = () => {
 };
 export const searchGifs = (term) => {
   const path = '/v1/gifs/search';
-  return fetch(`${ENDPOINT}${path}?q=${term}&api_key=${API_KEY}`)
-    .then(res => res.json());
+  return fetch(`${ENDPOINT}${path}?q=${term}&api_key=${API_KEY}&limit=26`)
+    .then(res => res.json())
+    .then(parsedResp => parsedResp.data);
 };
