@@ -3,7 +3,7 @@ const ENDPOINT = 'http://api.giphy.com';
 
 export const getTrendingGifs = () => {
   const path = '/v1/gifs/trending';
-  return fetch(`${ENDPOINT}${path}?api_key=${API_KEY}`)
+  return fetch(`${ENDPOINT}${path}?api_key=${API_KEY}&limit=26`)
     .then(res => res.json())
     .then(parsedResp => parsedResp.data);
 };
