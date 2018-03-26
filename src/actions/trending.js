@@ -1,8 +1,8 @@
 
 
-const TRENDING_REQUEST = 'search_request';
-const TRENDING_FAILED = 'search_failed';
-const TRENDING_COMPLETED = 'search_completed'
+const TRENDING_REQUEST = 'trending_request';
+const TRENDING_FAILED = 'trending_failed';
+const TRENDING_COMPLETED = 'trending_completed'
 
 const getTrendingRequested = () => ({
     type: TRENDING_REQUEST,

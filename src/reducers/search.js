@@ -2,7 +2,7 @@ import searchActions from '../actions/search';
 
 const initalState = {
   q: '',
-  results: '',
+  gifs: [],
   isLoading: false
 };
 
@@ -10,12 +10,24 @@ const searchReducer = (state = initalState, action) => {
   const { type } = action;
 
   switch (type) {
-    case transactionModalActions.types.TRANSACTION_MODAL_SHOW:
-      return { isModalOpen: true };
-
-    case transactionModalActions.types.TRANSACTION_MODAL_HIDE:
-      return { isModalOpen: false };
-
+    case searchActions.types.SEARCH_REQUEST:
+      return {
+        ...state,
+        q: action.payload,
+        fetching: true,
+      };
+    case searchActions.types.SEARCH_COMPLETED:
+      return {
+        ...state,
+        fetching: false,
+        gifs: action.gifs.concat(),
+      };
+    case searchActions.types.SEARCH_FAILED:
+      return {
+        ...state,
+        fetching: false,
+        error: action.error,
+      }
     default:
       return state;
   }

@@ -18,7 +18,7 @@ const trendingReducer = (state = initialState, action) => {
       return {
         ...state,
         fetching: false,
-        ...action.gifs,
+        gifs: action.gifs.concat(),
       };
     case trending.types.TRENDING_FAILED:
       return {

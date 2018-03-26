@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
 
-//import favorites from './favorites'
+import favorites from './favorites'
 import trending from './trending';
-//import search from './search';
+import search from './search';
 
 export default combineReducers({
-  //favorites,
+  favorites,
   trending,
-  //search,
+  search,
 });

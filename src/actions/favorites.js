@@ -1,23 +1,13 @@
-import { createAction } from 'redux-actions';
+const FAVORITE_TOGGLE = 'favorite_toggle';
 
-const SEARCH_REQUEST = 'search_request';
-const SEARCH_FAILED = 'search_failed';
-const SEARCH_COMPLETED = 'search_completed'
-
-const search = (payload = '') => ({ type: SEARCH_REQUEST, payload });
-const searchCompleted = (payload = '') => ({ type: SEARCH_REQUEST, payload });
-const searchFailed = (payload = '') => ({ type: SEARCH_REQUEST, payload });
+const toggleFavorite = (payload = '') => ({ type: FAVORITE_TOGGLE, payload });
 
 
 export default {
   types: {
-    SEARCH_REQUEST,
-    SEARCH_FAILED,
-    SEARCH_COMPLETED,
+    FAVORITE_TOGGLE
   },
   creators: {
-    search,
-    searchCompleted,
-    searchFailed,
+    toggleFavorite
   },
 };

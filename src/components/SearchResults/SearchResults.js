@@ -1,28 +1,29 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { AddTransactionButtonContainerStyled, GifPreview } from "./TrendingList.styled"
-import trending from '../../actions/trending';
+import { AddTransactionButtonContainerStyled, GifPreview } from "./SearchResults.styled"
+import search from '../../actions/search';
 import SVG from "../SVG";
 import GifThumb from "../GifThumb";
 
-class TrendingList extends React.Component {
+class SearchResults extends React.Component {
   constructor(props) {
     super(props);
   }
   componentDidMount()
   {
-    this.props.getTrendingRequested();
+    
   }
 
   render() {
-    var trendingItems = this.props.trending.gifs.map(function(item, index){
+    console.log(this.props.search);
+    var trendingItems = this.props.search.gifs.map(function(item, index){
       return (<GifThumb key={item.id} id={item.id} image={item.images.preview_gif.url}/>);
     });
-    var loader = (this.props.trending.fetching ? SVG.Loader : null);
+    var loader = (this.props.search.fetching ? SVG.Loader : null);
     return (
       <div>
-          <h1>Trending</h1>
+          <h1>Search Results</h1>
           <div>{loader}</div>
           <div>{trendingItems}</div>
       </div>
@@ -32,15 +33,16 @@ class TrendingList extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    trending: state.trending
+    search: state.search
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
-  const { getTrendingRequested } = trending.creators;
+  const { getTrendingRequested } = search.creators;
+
   return bindActionCreators({
     getTrendingRequested
   }, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(TrendingList);
+export default connect(mapStateToProps, null)(SearchResults);

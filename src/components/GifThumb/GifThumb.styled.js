@@ -1,19 +1,9 @@
 import styled from 'styled-components';
 
-const AddTransactionButtonContainerStyled = styled.div`
-  padding: 20px 0 0 0;
-`;
-
-const TransactionsListContainerStyled = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 20px 40px;
-`;
 const GifPreview = styled.div`
   display: block;
   width: 100px;
   height: 100px;
-  border: 1px solid #e5e5e5;
   position: relative;
   float: left;
   overflow:hidden;
@@ -27,8 +17,18 @@ const GifPreview = styled.div`
     transform: translate(-50%,-50%);
     max-height: 100px;
   }
+`;
+
+const Heart = styled.div`
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  svg
+  {
+    width: 20px;
+    fill: rgb(233, 61, 68);
+  }
 `
 export {
-  AddTransactionButtonContainerStyled,
-  TransactionsListContainerStyled,GifPreview
+  GifPreview, Heart
 };
