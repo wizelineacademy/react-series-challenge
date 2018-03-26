@@ -3,7 +3,8 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import ImagesList from '../imagesList';
 import SearchBar from '../searchBar';
-import actions from '../../actions'
+import actions from '../../actions';
+import Wrapper from '../wrapper'
 
 
 class Home extends Component {
@@ -22,10 +23,10 @@ class Home extends Component {
       return <div>Loading...</div>
     }
     return (
-      <div>
+      <Wrapper>
         <SearchBar handleChange={this.props.changeSearchType} handleSearch={this.props.changeSearch} value={this.props.search} />
         <ImagesList list={this.props.elements} />
-      </div>
+      </Wrapper>
     )
   }
 }
