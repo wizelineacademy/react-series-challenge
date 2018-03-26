@@ -53,13 +53,13 @@ text-align: center;
 `;
 const Header = styled.header`
 	background: salmon;
-	margin-bottom: 5em;
+	margin-bottom: 0.5em;
 `;
 
 const FavButton = styled.button`
 	background-color: #f44336;
 	color: white;
-	font-size: 3vw;
+	font-size: 2vw;
 `;
 
 const FavIcon = styled.img`
