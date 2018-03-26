@@ -13,7 +13,7 @@ class Home extends Component {
   }
 
   componentDidMount(){
-    this.props.getContent(1);
+    this.props.getNextPage();
   }
 
   render() {
@@ -32,18 +32,30 @@ class Home extends Component {
 
 const mapDispatchToProps = (dispatch) => {
   const {
-    getContent,
+    getNextPage,
+    getPrevPage
   } = actions
 
   return bindActionCreators({
-    getContent
+    getNextPage,
+    getPrevPage
   }, dispatch);
 }
 
-const mapStateToProps = (state) => {
-  const { loading } = state.home;
+const mapStateToProps = ({ home }) => {
+  const {
+    loading,
+    elements,
+    search,
+    paginator
+  } = home;
 
-  return { loading };
+  return {
+    loading,
+    elements,
+    search,
+    paginator
+  };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

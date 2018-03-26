@@ -21,9 +21,6 @@ const initialState = {
 export default function (state = initialState, {type, payload}) {
   switch(type){
     case GET_CONTENT_COMPLETE:
-      console.log('--------')
-      console.log(payload.json())
-      console.log('--------')
       const {
         data,
         paginator,

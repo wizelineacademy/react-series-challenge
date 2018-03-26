@@ -1,21 +1,41 @@
 import { call, takeEvery, put, select } from 'redux-saga/effects';
 import actions from '../actions/index';
-import { GET_CONTENT_REQUEST } from '../actions/types';
+import {
+  GET_CONTENT_REQUEST,
+  GET_NEXT_CONTENT_PAGE,
+  GET_PREV_CONTENT_PAGE
+} from '../actions/types';
 
 const API_KEY = 'api_key=OKx61MhM7wizGoKbk4z3GuDlN1LOAJxu';
 const lim = 15;
 const limit = 'limit=15';
-const url = 'http://api.giphy.com/v1/gifs/';
+const url = `http://api.giphy.com/v1/gifs/`;
+const get = uri => fetch(uri).then(resp => resp.json());
 
 export function* setLoadingContentSaga(action) {
   try{
-    const page = action.payload
+    const page = yield select(({ home }) => home.paginator.currentPage)
     const offset = `offset=${lim * (page - 1)}`;
-    const search = select(({home}) => home.search)
+    const search = yield select(({ home }) => home.search)
     const fetchUrl = `${url}${search !== '' ? 'search' : 'trending'}?${API_KEY}&${limit}&${offset}${search !== '' ? `q=${search}` : ''}`
 
-    const resp = yield call(fetch, fetchUrl);
-    yield put(actions.contentComplete(resp));
+    const resp = yield call(get, fetchUrl);
+    
+    const { data, pagination } = resp;
+    const totalElements = pagination.total_count;
+    const totalPages = Math.ceil(totalElements / lim);
+
+    const paginator = {
+      totalPages,
+      currentPage: page,
+      nextPage: (page + 1) < totalPages ? (page + 1) : totalPages,
+      prevPage: (page - 1) > 1 ? (page - 1) : 1,
+    }
+
+    // TODO check if the item is in favorites
+    // const list = data.map((item))
+
+    yield put(actions.contentComplete({ data, paginator }));
 
   }catch (error){
     console.group('Error: contentSaga');
@@ -26,6 +46,18 @@ export function* setLoadingContentSaga(action) {
   }
 }
 
+export function* getNextContentPage() {
+  const page = yield select(({home}) => home.paginator.nextPage)
+  yield put(actions.getContent(page))
+}
+
+export function* getPrevContentPage() {
+  const page = yield select(({home}) => home.paginator.prevPage)
+  yield put(actions.getContent(page))
+}
+
 export default function* homeSaga () {
   yield takeEvery(GET_CONTENT_REQUEST, setLoadingContentSaga);
+  yield takeEvery(GET_NEXT_CONTENT_PAGE, getNextContentPage);
+  yield takeEvery(GET_PREV_CONTENT_PAGE, getPrevContentPage);
 }
