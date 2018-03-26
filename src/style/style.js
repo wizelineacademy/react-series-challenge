@@ -15,8 +15,8 @@ const ImageDetails = styled.div`
 
 const ImageCard = styled.div`
 	display: inline-block;
-	padding: 1em;
-	margin-right: 5%;
+	flex-basis: 25%;
+	margin-top: 3em
 	text-align: center;
 	:hover {
 		box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2);
@@ -25,6 +25,14 @@ const ImageCard = styled.div`
 const Border = styled.div`
 	width: ${props => (props.home ? '80%' : '100%')};
 	margin: 0 auto;
+`;
+
+const FlexBox = styled.div`
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+	justify-content: space-between;
+	align-content: center;
 `;
 
 const Title = styled.h1`
@@ -36,9 +44,10 @@ const Title = styled.h1`
 `;
 
 const SubTitle = styled.h3`
-	font-size: 6vw;
+	font-size: 5vw;
 	color: Chocolate;
 	text-align: left;
+	margin: 1em 0 0 0;
 `;
 
 const SearchBar = styled.input`
@@ -48,22 +57,23 @@ text-align: center;
 	padding: 0.5em;
 	margin: 0 auto
 	background: WhiteSmoke;
-	border: none;
+	border: 2px solid black;
 	border-radius: 3px;
 `;
 const Header = styled.header`
-	background: salmon;
+	background: PeachPuff;
 	margin-bottom: 0.5em;
 `;
 
 const FavButton = styled.button`
 	background-color: #f44336;
 	color: white;
-	font-size: 2vw;
+	font-size: 100%;
 `;
 
 const FavIcon = styled.img`
-	width: 30px;
+	width: 2.5vw;
+	min-width: 30px;
 	margin: 0;
 	float: right;
 	z-index: 100;
@@ -79,5 +89,6 @@ export {
 	SearchBar,
 	Header,
 	FavButton,
-	FavIcon
+	FavIcon,
+	FlexBox
 };

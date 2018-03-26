@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import GifCard from '../../components/GifCard/GifCard';
 import actions from '../../actions/favorites';
+import { FlexBox } from '../../style/style';
 
 export class GifList extends Component {
 	render() {
@@ -30,7 +31,7 @@ export class GifList extends Component {
 				);
 			});
 		}
-		return <div>{images}</div>;
+		return <FlexBox>{images}</FlexBox>;
 	}
 }
 
