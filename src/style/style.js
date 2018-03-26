@@ -28,15 +28,15 @@ const Border = styled.div`
 `;
 
 const Title = styled.h1`
-	font-size: 8em;
+	font-size: 8vw;
 	color: Crimson;
 	font-weight: bold;
 	text-align: center;
-	margin-bottom: 2px;
+	margin-bottom: 1%;
 `;
 
 const SubTitle = styled.h3`
-	font-size: 3em;
+	font-size: 6vw;
 	color: Chocolate;
 	text-align: left;
 `;
@@ -59,7 +59,7 @@ const Header = styled.header`
 const FavButton = styled.button`
 	background-color: #f44336;
 	color: white;
-	font-size: 1em;
+	font-size: 3vw;
 `;
 
 const FavIcon = styled.img`
