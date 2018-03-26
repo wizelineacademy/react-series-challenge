@@ -19,7 +19,6 @@ const favoritesGifReducer = (state = initialState, action) => {
       const newState = {...state};
       delete newState.allGifs[payload];
       return newState;
-
     case actions.types.FILTER_GIFS:
       const currentGifs =
         Object
@@ -33,6 +32,11 @@ const favoritesGifReducer = (state = initialState, action) => {
       return {
         ...state,
         filtered: result
+      };
+    case actions.types.FILTER_GIFS_CLEAR:
+      return {
+        ...state,
+        filtered: {}
       };
     default:
       return state;

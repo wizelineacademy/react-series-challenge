@@ -1,6 +1,7 @@
 const ADD_GIF = 'ADD_GIF';
 const REMOVE_GIF = 'REMOVE_GIF';
 const FILTER_GIFS = 'FILTER_GIFS';
+const FILTER_GIFS_CLEAR = 'FILTER_GIFS_CLEAR';
 
 const addGif = gif => ({
   type: ADD_GIF,
@@ -17,15 +18,21 @@ const filterGifs = filterWord => ({
   payload: filterWord,
 });
 
+const filterGifsClear = () => ({
+  type: FILTER_GIFS_CLEAR,
+});
+
 export default {
   types: {
     ADD_GIF,
     REMOVE_GIF,
-    FILTER_GIFS
+    FILTER_GIFS,
+    FILTER_GIFS_CLEAR
   },
   creators: {
     addGif,
     removeGif,
-    filterGifs
+    filterGifs,
+    filterGifsClear
   },
 };

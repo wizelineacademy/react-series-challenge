@@ -8,6 +8,9 @@ import favoritesGif from '../../actions/favoritesGifs';
 
 class FavoritesView extends Component {
 
+  componentDidMount() {
+    this.props.filterGifsClear();
+  }
   render() {
     const {allGifs, filtered} = this.props.favoritesGifs;
     let data = null;
@@ -31,10 +34,11 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-  const { filterGifs } = favoritesGif.creators;
+  const { filterGifs, filterGifsClear } = favoritesGif.creators;
 
   return bindActionCreators({
     filterGifs,
+    filterGifsClear
   }, dispatch);
 };
 
