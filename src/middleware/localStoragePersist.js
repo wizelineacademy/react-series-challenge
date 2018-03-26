@@ -7,7 +7,7 @@ const persistance = (store) => (next) => (action) => {
   ) {
     const nextMiddlewares = next(action);
     const stateAfter = store.getState();
-    localStorage.setItem('favoritesGifs', JSON.stringify(stateAfter.favoritesGifs));
+    localStorage.setItem('favoritesGifs', JSON.stringify(stateAfter.favoritesGifs.allGifs));
     return nextMiddlewares;
   } else {
     return next(action);

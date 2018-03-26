@@ -19,7 +19,7 @@ const GifList = ({ gifs, addGif, removeGif, favoritesGifs }) => {
           removeGif={removeGif}
           key={gif.id}
           gif={gif}
-          isFavorited={isFavorited(favoritesGifs, gif.id)}
+          isFavorited={isFavorited(favoritesGifs.allGifs, gif.id)}
         />
       )}
     </MasonryContainer>

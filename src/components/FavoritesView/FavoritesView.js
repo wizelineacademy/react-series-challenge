@@ -7,8 +7,8 @@ import GifList from "../GifList/GifList";
 class FavoritesView extends Component {
 
   render() {
-    const {favoritesGifs} = this.props;
-    const data = Object.keys(favoritesGifs).map(key => favoritesGifs[key]);
+    const {allGifs} = this.props.favoritesGifs;
+    const data = Object.keys(allGifs).map(key => allGifs[key]);
     return (
       <Container>
         <SearchBar />
