@@ -21,7 +21,7 @@ class FavoritesView extends Component {
     }
     return (
       <Container>
-        <SearchBar onSearch={this.props.filterGifs}/>
+        <SearchBar onSearch={this.props.filterGifs} textButton={'Filter'}/>
         <GifList gifs={data}/>
       </Container>
     )

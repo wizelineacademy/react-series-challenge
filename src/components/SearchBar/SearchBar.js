@@ -17,7 +17,7 @@ export default class SearchBar extends Component {
               placeholder="Enter something"
               innerRef={(input) => { this.searchInput = input }}
             />
-            <SearchButton type="submit">Search</SearchButton>
+            <SearchButton type="submit">{this.props.textButton || 'Search'}</SearchButton>
         </FlexContainer>
       </form>
     )
