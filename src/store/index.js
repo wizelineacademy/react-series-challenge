@@ -19,7 +19,9 @@ const composedEnhancers = compose(
 );
 const favoritesGifsData = localStorage.getItem('favoritesGifs');
 if (favoritesGifsData) {
-  initialState.favoritesGifs = JSON.parse(favoritesGifsData);
+  initialState.favoritesGifs = {};
+  initialState.favoritesGifs.allGifs = JSON.parse(favoritesGifsData);
+  initialState.favoritesGifs.filtered = {};
 }
 const store = createStore(
   rootReducer,
