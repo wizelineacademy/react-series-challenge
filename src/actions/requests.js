@@ -1,22 +1,27 @@
 const TRENDING_REQUEST = 'TRENDING_REQUEST';
 const SEARCH_REQUEST = 'SEARCH_REQUEST';
-const TRENDING_LOADED = 'TRENDING_LOADED';
-const TRENDING_LOAD_ERROR = 'TRENDING_LOAD_ERROR';
+const GIFS_LOADED = 'GIFS_LOADED';
+const GIFS_LOAD_ERROR = 'GIFS_LOAD_ERROR';
 
 const trendingRequest = () => ({ type: TRENDING_REQUEST });
+const searchRequest = text => ({ type: SEARCH_REQUEST, text });
 
-const trendingLoaded = gifsList => ({ type: TRENDING_LOADED, gifsList });
-const trendingLoadError = error => ({ type: TRENDING_LOAD_ERROR, error });
+const gifsLoaded = gifsList => {
+	return { type: GIFS_LOADED, gifsList };
+};
+const gifsLoadError = error => ({ type: GIFS_LOAD_ERROR, error });
 
 export default {
 	types: {
 		TRENDING_REQUEST,
-		TRENDING_LOADED,
-		TRENDING_LOAD_ERROR
+		GIFS_LOADED,
+		GIFS_LOAD_ERROR,
+		SEARCH_REQUEST
 	},
 	creators: {
 		trendingRequest,
-		trendingLoaded,
-		trendingLoadError
+		gifsLoaded,
+		gifsLoadError,
+		searchRequest
 	}
 };

@@ -5,7 +5,7 @@ import GifCard from '../../components/GifCard/GifCard';
 export class GifList extends Component {
 	render() {
 		let images = null;
-		if (this.props.gifsFetch) {
+		if (this.props.gifsFetch.gifsList.length > 0) {
 			images = this.props.gifsFetch.gifsList.map(gif => {
 				return (
 					<GifCard key={gif.id} id={gif.id} src={gif.images.fixed_height.url} />

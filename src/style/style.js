@@ -33,6 +33,7 @@ const Title = styled.h1`
 	color: Crimson;
 	font-weight: bold;
 	text-align: center;
+	margin-bottom: 2px;
 `;
 
 const SubTitle = styled.h3`
@@ -41,4 +42,28 @@ const SubTitle = styled.h3`
 	text-align: left;
 `;
 
-export { ImageDetails, Border, Title, SubTitle, ImageCard, Image };
+const SearchBar = styled.input`
+width: 30%;
+display:block;
+text-align: center;
+	padding: 0.5em;
+	margin: 0 auto
+	background: WhiteSmoke;
+	border: none;
+	border-radius: 3px;
+`;
+const Header = styled.header`
+	background: salmon;
+	margin-bottom: 5em;
+`;
+
+export {
+	ImageDetails,
+	Border,
+	Title,
+	SubTitle,
+	ImageCard,
+	Image,
+	SearchBar,
+	Header
+};

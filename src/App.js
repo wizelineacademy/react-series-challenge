@@ -1,18 +1,22 @@
 import React, { Component } from 'react';
-import Home from './containers/Home/Home';
 import { Provider } from 'react-redux';
+
+import Home from './containers/Home/Home';
+import SearchGif from './components/SearchGif/SearchGif';
 import store from './store';
 import global from './style/global';
-import { Border, Title } from './style/style';
+import { Border, Title, Header } from './style/style';
 
 class App extends Component {
 	render() {
 		return (
 			<Provider store={store}>
 				<div>
-					<header>
+					<Header>
 						<Title>Gif Madness</Title>
-					</header>
+						<SearchGif />
+					</Header>
+					<br />
 					<Border home>
 						<Home />
 					</Border>

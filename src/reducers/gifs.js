@@ -14,13 +14,13 @@ const gifsReducer = (state = initialState, action) => {
 				...state,
 				fetching: true
 			};
-		case requests.types.TRENDING_LOADED:
+		case requests.types.GIFS_LOADED:
 			return {
 				...state,
 				fetching: false,
 				gifsList: action.gifsList
 			};
-		case requests.types.TRENDING_LOAD_ERROR:
+		case requests.types.GIFS_LOAD_ERROR:
 			return {
 				...state,
 				fetching: false,
