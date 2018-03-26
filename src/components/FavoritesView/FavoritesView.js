@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import {bindActionCreators} from "redux";
 import {Container} from "../../App.styled";
 import SearchBar from "../SearchBar/SearchBar";
 import GifList from "../GifList/GifList";
+import favoritesGif from '../../actions/favoritesGifs';
 
 class FavoritesView extends Component {
 
@@ -11,7 +13,7 @@ class FavoritesView extends Component {
     const data = Object.keys(allGifs).map(key => allGifs[key]);
     return (
       <Container>
-        <SearchBar />
+        <SearchBar onSearch={this.props.filterGifs}/>
         <GifList gifs={data}/>
       </Container>
     )
@@ -23,5 +25,13 @@ const mapStateToProps = (state) => {
   return { favoritesGifs };
 };
 
+const mapDispatchToProps = (dispatch) => {
+  const { filterGifs } = favoritesGif.creators;
 
-export default connect(mapStateToProps)(FavoritesView)
+  return bindActionCreators({
+    filterGifs,
+  }, dispatch);
+};
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(FavoritesView)
