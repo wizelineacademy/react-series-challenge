@@ -12,6 +12,9 @@ class HomeView extends Component {
     super();
     props.getTrendingGifsRequested();
   }
+  componentDidMount() {
+    this.props.searchGifsClear();
+  }
   render() {
     const {trendingGifs, searchingGifs} = this.props;
     let data = null;
@@ -35,11 +38,12 @@ const mapStateToProps = (state) => {
 };
 const mapDispatchToProps = (dispatch) => {
   const { getTrendingGifsRequested } = trendingGifs.creators;
-  const { searchGifsRequested } = searchingGifs.creators;
+  const { searchGifsRequested, searchGifsClear } = searchingGifs.creators;
 
   return bindActionCreators({
     getTrendingGifsRequested,
-    searchGifsRequested
+    searchGifsRequested,
+    searchGifsClear
   }, dispatch);
 };
 
