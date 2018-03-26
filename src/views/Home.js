@@ -22,16 +22,14 @@ class ViewHome extends Component {
             this.props.getTrendingList();
         }
     }
-    componentWillMount() {
-        this.props.getFavoritesList();
-    }
 
-    componentDidMount() {
+    componentWillMount() {
         if (this.props.giphy.query && !/^\s*$/.test(this.props.giphy.query)) {
             this.props.getSearchList(this.props.giphy.query);
         } else {
             this.props.getTrendingList();
         }
+        this.props.getFavoritesList();
     }
     render() {
         const { list, fetching, success, query } = this.props.giphy;

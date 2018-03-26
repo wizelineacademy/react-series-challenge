@@ -9,22 +9,27 @@ import { GifDetailViewStyled } from './GifDetailView.styled';
 
 const GifDetailView = props => {
     const { list } = props.giphy;
-    const favList = props.favorites.list.data;
+    const favList = props.favorites.originalList.data;
+
+    if(!list || !favList || list.data.length > 1) {
+        return null;
+    }
+    const tgtGif = list.data[0];
     let isFav = false
     if (favList) {
-        isFav = favList.filter(fav => fav.id === list.list.data.id).length === 1 ? true : false;
+        isFav = favList.filter(fav => fav.id === tgtGif.id).length === 1 ? true : false;
     }
     return (<GifDetailViewStyled>
         <FavButton
             faved={isFav}
             onClick={event => {
                 if (!isFav) {
-                    props.addFavorite(list.list.data);
+                    props.addFavorite(tgtGif);
                 } else {
-                    props.removeFavorite(list.list.data.id);
+                    props.removeFavorite(tgtGif.id);
                 }
             }}>FavMe</FavButton>
-        <img src={list.list.data.images.original.url} title={list.list.data.title} alt={list.list.data.title} />
+        <img src={tgtGif.images.original.url} title={tgtGif.title} alt={tgtGif.title} />
     </GifDetailViewStyled>)
 };
 

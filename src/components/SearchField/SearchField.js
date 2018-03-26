@@ -5,7 +5,7 @@ import {SearchFieldStyled, SearchFieldStyledContainer} from './SearchField.style
 const SearchField = props => (
 <SearchFieldStyledContainer>
     <SearchFieldStyled
-        defaultValue={props.query}
+        defaultValue={props.defaultValue}
         type={props.type}
         placeholder={props.placeholder}
         onChange={event => props.onChange(event)}

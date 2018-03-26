@@ -2,6 +2,7 @@ import favoritesActions from '../actions/favorites';
 
 const initialState = {
     list: null,
+    filterList: null,
     fetching: false,
     success: false
 }
@@ -21,15 +22,31 @@ const favorites = (state = initialState, action) => {
         case favoritesActions.types.REMOVE_FAVORITE_COMPLETE:
             newState = { ...state };
             newState.fetching = false;
-            newState.list = {
+            newState.originalList = {
                 data: action.payload
             };
+            newState.list = { ...newState.originalList };
             newState.success = true;
             return newState;
         case favoritesActions.types.GET_FAVORITE_ERROR:
         case favoritesActions.types.ADD_FAVORITE_ERROR:
         case favoritesActions.types.REMOVE_FAVORITE_ERROR:
+        case favoritesActions.types.FILTER_FAVORITE_ERROR:
             newState = { ...initialState }
+            return newState;
+        case favoritesActions.types.FILTER_FAVORITE_COMPLETE:
+            newState = { ...state };
+            newState.list = {
+                data: action.payload.data
+            };
+            newState.query = action.payload.query;
+            newState.fetching = false;
+            newState.success = true;
+            return newState;
+        case favoritesActions.types.FILTER_FAVORITE_START:
+            newState = { ...state };
+            newState.fetching = true;
+            newState.success = true;
             return newState;
         default:
             return state;

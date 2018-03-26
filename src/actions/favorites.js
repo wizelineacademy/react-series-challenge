@@ -9,6 +9,9 @@ const ADD_FAVORITE_ERROR = 'ADD_FAVORITE_ERROR';
 const REMOVE_FAVORITE_START = 'REMOVE_FAVORITE_START';
 const REMOVE_FAVORITE_COMPLETE = 'REMOVE_FAVORITE_COMPLETE';
 const REMOVE_FAVORITE_ERROR = 'REMOVE_FAVORITE_ERROR';
+const FILTER_FAVORITE_START = 'FILTER_FAVORITE_START';
+const FILTER_FAVORITE_COMPLETE = 'FILTER_FAVORITE_COMPLETE';
+const FILTER_FAVORITE_ERROR = 'FILTER_FAVORITE_ERROR';
 
 const getFavoritesList = createAction(GET_FAVORITE_START);
 const getFavoritesListComplete = createAction(GET_FAVORITE_COMPLETE);
@@ -19,6 +22,10 @@ const addFavoriteError = createAction(ADD_FAVORITE_ERROR);
 const removeFavorite = createAction(REMOVE_FAVORITE_START);
 const removeFavoriteComplete = createAction(REMOVE_FAVORITE_COMPLETE);
 const removeFavoriteError = createAction(REMOVE_FAVORITE_ERROR);
+const filterFavorite = createAction(FILTER_FAVORITE_START);
+const filterFavoriteComplete = createAction(FILTER_FAVORITE_COMPLETE);
+const filterFavoriteError = createAction(FILTER_FAVORITE_ERROR);
+
 
 export default {
     types: {
@@ -30,7 +37,10 @@ export default {
         ADD_FAVORITE_ERROR,
         REMOVE_FAVORITE_START,
         REMOVE_FAVORITE_COMPLETE,
-        REMOVE_FAVORITE_ERROR
+        REMOVE_FAVORITE_ERROR,
+        FILTER_FAVORITE_START,
+        FILTER_FAVORITE_COMPLETE,
+        FILTER_FAVORITE_ERROR,
     },
     creators: {
         getFavoritesList,
@@ -42,5 +52,8 @@ export default {
         removeFavorite,
         removeFavoriteComplete,
         removeFavoriteError,
+        filterFavorite,
+        filterFavoriteComplete,
+        filterFavoriteError,
     }
 }

@@ -2,7 +2,7 @@ import giphyActions from '../actions/giphy';
 
 const initialState = {
     list: null,
-    query: null, 
+    query: null,
     fetching: false,
     success: false
 }
@@ -11,7 +11,6 @@ const giphy = (state = initialState, action) => {
     switch (action.type) {
         case giphyActions.types.GET_TRENDING_START:
         case giphyActions.types.GET_SEARCH_START:
-        case giphyActions.types.GET_BY_ID_START:
             newState = { ...initialState };
             newState.fetching = true;
             newState.success = true;
@@ -27,6 +26,11 @@ const giphy = (state = initialState, action) => {
         case giphyActions.types.GET_SEARCH_ERROR:
         case giphyActions.types.GET_BY_ID_ERROR:
             newState = { ...initialState }
+            return newState;
+        case giphyActions.types.GET_BY_ID_START:
+            newState = { ...state };
+            newState.fetching = true;
+            newState.success = true;
             return newState;
         case giphyActions.types.GET_SEARCH_COMPLETE:
             newState = { ...state };

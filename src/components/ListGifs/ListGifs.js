@@ -10,7 +10,8 @@ import { ListGifStyled, FavButton } from './ListGifs.styled';
 class ListGifs extends Component {
     render() {
         const { dataSource } = this.props;
-        const favList = this.props.favorites.list.data;
+        const favList = this.props.favorites.originalList.data;
+        const filterFav = this.props.favorites.list.data;
         let dataSourceObj = null;
 
         switch (dataSource) {
@@ -20,7 +21,7 @@ class ListGifs extends Component {
             default:
                 dataSourceObj = this.props.giphy;
         }
-        if (!dataSourceObj) {
+        if (!dataSourceObj || !dataSourceObj.list) {
             return null;
         }
         if (dataSourceObj.list && dataSourceObj.fetching && dataSourceObj.success) {

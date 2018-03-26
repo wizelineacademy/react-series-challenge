@@ -10,17 +10,16 @@ import GifDetailView from '../components/GifDetailView';
 class Details extends Component {
 
     componentWillMount() {
-        this.props.getFavoritesList();
         this.props.getById(this.props.match.params.gifId);
+        this.props.getFavoritesList();
     }
 
     render() {
         const { list, fetching, success } = this.props.giphy;
-        if (!list) {
+        if (!list || list.data.length > 1) {
             return null;
         }
         if (!list && fetching && success) {
-            console.log('Cargando...')
             return <div>Cargando...</div>
         }
         if (list && !fetching && !success) {
@@ -28,7 +27,7 @@ class Details extends Component {
         }
         return (
             <div>
-                <h2>{list.list.data.title}</h2>
+                <h2>{list.data[0].title}</h2>
                 <GifDetailView />
             </div>
         );
