@@ -13,6 +13,16 @@ import Home from './components/home'
 // import logo from './logo.svg';
 // import './App.css';
 
+import { injectGlobal } from 'styled-components';
+
+injectGlobal`
+  body{
+    background-color: #000;
+    overflow-x:hidden;
+    padding-bottom: 20px;
+  }
+`
+
 class App extends Component {
   render() {
     return (
