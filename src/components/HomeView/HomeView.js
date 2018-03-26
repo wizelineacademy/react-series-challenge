@@ -22,7 +22,7 @@ class HomeView extends Component {
     }
     return (
       <Container>
-        <SearchBar searchGifsRequested={this.props.searchGifsRequested}/>
+        <SearchBar onSearch={this.props.searchGifsRequested}/>
         <GifList gifs={data}/>
       </Container>
     )

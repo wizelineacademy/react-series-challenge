@@ -6,7 +6,7 @@ export default class SearchBar extends Component {
   searchGifs = (e) => {
     e.preventDefault();
     const term = this.searchInput.value;
-    this.props.searchGifsRequested(term);
+    this.props.onSearch(term);
   };
   render() {
     return (
