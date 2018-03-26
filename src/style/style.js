@@ -6,8 +6,11 @@ const Image = styled.img`
 `;
 
 const ImageDetails = styled.div`
-	border: 2px solid red;
+	border: 2px solid transparent;
 	border-radius: 20px;
+	:hover {
+		border: 2px solid red;
+	}
 `;
 
 const ImageCard = styled.div`
@@ -57,6 +60,19 @@ const Header = styled.header`
 	margin-bottom: 5em;
 `;
 
+const FavButton = styled.button`
+	background-color: #f44336;
+	color: white;
+	font-size: 1em;
+`;
+
+const FavIcon = styled.img`
+	width: 30px;
+	margin: 0;
+	float: right;
+	z-index: 100;
+`;
+
 export {
 	ImageDetails,
 	Border,
@@ -65,5 +81,7 @@ export {
 	ImageCard,
 	Image,
 	SearchBar,
-	Header
+	Header,
+	FavButton,
+	FavIcon
 };
