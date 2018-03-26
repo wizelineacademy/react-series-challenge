@@ -55,3 +55,7 @@ export const LinkStyled = styled(Link)`
 export const GifImg = styled.img`
   border: ${props => props.isFavorited ? '1px solid #ffc800': 'initial'};
 `
+export const GifTitle = styled.span`
+  color: #ffc800;
+  text-align:center;
+`;
