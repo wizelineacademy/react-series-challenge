@@ -9,8 +9,13 @@ import favoritesGif from '../../actions/favoritesGifs';
 class FavoritesView extends Component {
 
   render() {
-    const {allGifs} = this.props.favoritesGifs;
-    const data = Object.keys(allGifs).map(key => allGifs[key]);
+    const {allGifs, filtered} = this.props.favoritesGifs;
+    let data = null;
+    if (Object.keys(filtered).length > 0) {
+      data = Object.keys(filtered).map(key => filtered[key]);
+    } else {
+      data = Object.keys(allGifs).map(key => allGifs[key]);
+    }
     return (
       <Container>
         <SearchBar onSearch={this.props.filterGifs}/>
