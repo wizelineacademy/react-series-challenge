@@ -14,21 +14,17 @@ const ImageDetails = styled.div`
 `;
 
 const ImageCard = styled.div`
-	width: 30%;
-	float: left;
+	display: inline-block;
+	padding: 1em;
+	margin-right: 5%;
 	text-align: center;
-	display: block;
-
 	:hover {
 		box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2);
 	}
 `;
 const Border = styled.div`
 	width: ${props => (props.home ? '80%' : '100%')};
-	margin: 0;
-  position: relative;
-  left: 50%;
-  transform: translate(-50%, -50%) }
+	margin: 0 auto;
 `;
 
 const Title = styled.h1`
