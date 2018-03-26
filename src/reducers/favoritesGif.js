@@ -1,5 +1,8 @@
 import actions from '../actions/favoritesGifs';
-const initialState = {};
+const initialState = {
+  allGifs: {},
+  filtered: {}
+};
 
 const favoritesGifReducer = (state = initialState, action) => {
   const { type, payload } = action;
@@ -7,11 +10,14 @@ const favoritesGifReducer = (state = initialState, action) => {
     case actions.types.ADD_GIF:
       return {
         ...state,
-        [payload.id]: {...payload}
+        allGifs : {
+          ...state.allGifs,
+          [payload.id]: {...payload}
+        }
       };
     case actions.types.REMOVE_GIF:
       const newState = {...state};
-      delete newState[payload];
+      delete newState.allGifs[payload];
       return newState;
     default:
       return state;
