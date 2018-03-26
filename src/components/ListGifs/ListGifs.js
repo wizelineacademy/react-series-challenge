@@ -9,29 +9,36 @@ import { ListGifStyled, FavButton } from './ListGifs.styled';
 class ListGifs extends Component {
     render() {
         const { dataSource } = this.props;
-        const { list } = this.props.giphy;
-        const favList = this.props.favorites.list;
+        const favList = this.props.favorites.list.data;
+        let dataSourceObj = null;
 
-        if (!list) {
+        switch (dataSource) {
+            case 'favorites':
+                dataSourceObj = this.props.favorites;
+                break
+            default:
+                dataSourceObj = this.props.giphy;
+        }
+        if (!dataSourceObj) {
             return null;
         }
-        switch (dataSource) {
-            default:
+        if (dataSourceObj.list && dataSourceObj.fetching && dataSourceObj.success) {
+            return <div>Cargando...</div>
         }
         return (
             <ListGifStyled>
-                {list.data.map(item => {
+                {dataSourceObj.list.data.map(item => {
                     let isFav = false
-                    if(favList) {
+                    if (favList) {
                         isFav = favList.filter(fav => fav.id === item.id).length === 1 ? true : false;
                     }
                     return <li key={item.id}>
                         <FavButton
                             faved={isFav}
                             onClick={event => {
-                                if(!isFav) {
+                                if (!isFav) {
                                     this.props.addFavorite(item);
-                                }else{
+                                } else {
                                     this.props.removeFavorite(item.id);
                                 }
                             }}>FavMe</FavButton>

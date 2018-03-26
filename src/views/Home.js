@@ -8,6 +8,7 @@ import Utils from '../utils/Utils';
 import giphyActions from '../actions/giphy';
 import favoritesActions from '../actions/favorites';
 import ListGifs from '../components/ListGifs';
+import SearchField from '../components/SearchField';
 
 class ViewHome extends Component {
     constructor(props) {
@@ -43,12 +44,10 @@ class ViewHome extends Component {
         }
         return (
             <div>
-                <input
+                <SearchField
                     defaultValue={query}
                     type="text"
-                    style={{
-                        width: '10em'
-                    }}
+                    placeholder="Search gifs"
                     onChange={event => {
                         this.callAction(event.target.value, 1500);
                     }}

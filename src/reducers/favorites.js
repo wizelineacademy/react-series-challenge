@@ -21,7 +21,9 @@ const favorites = (state = initialState, action) => {
         case favoritesActions.types.REMOVE_FAVORITE_COMPLETE:
             newState = { ...state };
             newState.fetching = false;
-            newState.list = action.payload;
+            newState.list = {
+                data: action.payload
+            };
             newState.success = true;
             return newState;
         case favoritesActions.types.GET_FAVORITE_ERROR:

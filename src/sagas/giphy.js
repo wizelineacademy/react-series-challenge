@@ -1,5 +1,5 @@
-import { call, takeEvery, takeLatest, put } from 'redux-saga/effects';
-import { getTrendingList, searchGifs } from '../api/giphy';
+import { call, takeEvery, put } from 'redux-saga/effects';
+import { getTrendingList, searchGifs, getById } from '../api/giphy';
 import giphyActions from '../actions/giphy';
 
 export function* getTopTrending(records) {
@@ -20,7 +20,16 @@ export function* toSearchGifs(query, offset = 0) {
     }
 }
 
+export function* getGifById(id) {
+    try{
+        const getResults = yield call(getById, id);
+    }catch(error) {
+        yield put(giphyActions.creators.getByIdError(error))
+    }
+}
+
 export default function* trendingSaga() {
     yield takeEvery(giphyActions.types.GET_TRENDING_START, getTopTrending);
     yield takeEvery(giphyActions.types.GET_SEARCH_START, toSearchGifs);
+    yield takeEvery(giphyActions.types.GET_BY_ID_START, getGifById);
 }
