@@ -23,8 +23,8 @@ class Home extends Component {
     }
     return (
       <div>
-        <SearchBar handleChange={this.props.handleSearch} />
-        
+        <SearchBar handleChange={this.props.changeSearchType} handleSearch={this.props.changeSearch} value={this.props.search} />
+        <ImagesList list={this.props.elements} />
       </div>
     )
   }
@@ -33,12 +33,16 @@ class Home extends Component {
 const mapDispatchToProps = (dispatch) => {
   const {
     getNextPage,
-    getPrevPage
+    getPrevPage,
+    changeSearch,
+    changeSearchType
   } = actions
 
   return bindActionCreators({
     getNextPage,
-    getPrevPage
+    getPrevPage,
+    changeSearch,
+    changeSearchType
   }, dispatch);
 }
 

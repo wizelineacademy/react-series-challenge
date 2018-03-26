@@ -1,13 +1,20 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import Wrapper from '../wrapper'
 
 const SearchBar = (props) => {
   const {
-    searchString,
-    handleChange
+    value,
+    handleChange,
+    handleSearch
   } = props
   return (
-    <input type='text' onChange={handleChange} value={searchString} />
+    <Wrapper>
+      <form onSubmit={(e)=>{e.preventDefault()}}>
+        <input type='text' onChange={handleChange} value={value} />
+        <button onClick={handleSearch} >Buscar</button>
+      </form>
+    </Wrapper>
   )
 }
 

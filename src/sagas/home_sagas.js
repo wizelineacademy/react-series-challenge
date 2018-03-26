@@ -1,9 +1,10 @@
-import { call, takeEvery, put, select } from 'redux-saga/effects';
+import { call, takeEvery, put, select, takeLatest } from 'redux-saga/effects';
 import actions from '../actions/index';
 import {
   GET_CONTENT_REQUEST,
   GET_NEXT_CONTENT_PAGE,
-  GET_PREV_CONTENT_PAGE
+  GET_PREV_CONTENT_PAGE,
+  CHANGE_CONTENT_SEARCH
 } from '../actions/types';
 
 const API_KEY = 'api_key=OKx61MhM7wizGoKbk4z3GuDlN1LOAJxu';
@@ -14,10 +15,10 @@ const get = uri => fetch(uri).then(resp => resp.json());
 
 export function* setLoadingContentSaga(action) {
   try{
-    const page = yield select(({ home }) => home.paginator.currentPage)
+    const page = action.payload
     const offset = `offset=${lim * (page - 1)}`;
     const search = yield select(({ home }) => home.search)
-    const fetchUrl = `${url}${search !== '' ? 'search' : 'trending'}?${API_KEY}&${limit}&${offset}${search !== '' ? `q=${search}` : ''}`
+    const fetchUrl = `${url}${search !== '' ? 'search' : 'trending'}?${API_KEY}&${limit}&${offset}${search !== '' ? `&q=${search}` : ''}`
 
     const resp = yield call(get, fetchUrl);
     
@@ -56,8 +57,13 @@ export function* getPrevContentPage() {
   yield put(actions.getContent(page))
 }
 
+export function* changeSearch(action){
+  yield put(actions.getContent(1))
+}
+
 export default function* homeSaga () {
-  yield takeEvery(GET_CONTENT_REQUEST, setLoadingContentSaga);
+  yield takeLatest(GET_CONTENT_REQUEST, setLoadingContentSaga);
   yield takeEvery(GET_NEXT_CONTENT_PAGE, getNextContentPage);
   yield takeEvery(GET_PREV_CONTENT_PAGE, getPrevContentPage);
+  yield takeEvery(CHANGE_CONTENT_SEARCH, changeSearch);
 }

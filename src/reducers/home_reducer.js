@@ -2,10 +2,11 @@ import {
   GET_CONTENT_COMPLETE,
   GET_CONTENT_REQUEST,
   GET_CONTENT_ERROR,
-  CHANGE_CONTENT_SEARCH
+  CHANGE_CONTENT_SEARCH_TYPE
 } from '../actions/types';
 
 const initialState = {
+  loading: true,
   elements: [],
   search: '',
   paginator: {
@@ -32,7 +33,7 @@ export default function (state = initialState, {type, payload}) {
         paginator
       };
     case GET_CONTENT_REQUEST:
-      const newState = { ...state, loading: true };
+      const newState = { ...state, loading: false };
       return newState;
     case GET_CONTENT_ERROR:
       const { er, errorInfo } = payload;
@@ -42,8 +43,8 @@ export default function (state = initialState, {type, payload}) {
         errInfo : { er, errorInfo }
       }
       return errorState;
-    case CHANGE_CONTENT_SEARCH:
-      const { search } = payload
+    case CHANGE_CONTENT_SEARCH_TYPE:
+      const search = payload.target.value
       const searchState = { ...state, search };
       return searchState;
     default:
