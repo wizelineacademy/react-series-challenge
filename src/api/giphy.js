@@ -9,7 +9,7 @@ export const getTrendingList = (records) => {
 }
 
 export const searchGifs = (query, offset = 0) => {
-    const uri = GIPHY.api.search + '?api_key=' + GIPHY.key + '&q=' + query.query.payload;
+    const uri = GIPHY.api.search + '/' + query.query.payload + '?api_key=' + GIPHY.key;
     return fetch(uri)
         .then(res => res.json())
         .then(json => ({
@@ -20,8 +20,11 @@ export const searchGifs = (query, offset = 0) => {
 }
 
 export const getById = req => {
-    const uri = GIPHY.api.searchId+'/'+ req.id.payload;
-    console.log(uri);
-    return {};
-
+    const uri = GIPHY.api.searchId + req.payload + '?api_key=' + GIPHY.key;
+    return fetch(uri)
+        .then(res => res.json())
+        .then(json => ({
+            list: json
+        }))
+        .catch(err => err);
 }

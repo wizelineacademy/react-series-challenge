@@ -11,11 +11,13 @@ const giphy = (state = initialState, action) => {
     switch (action.type) {
         case giphyActions.types.GET_TRENDING_START:
         case giphyActions.types.GET_SEARCH_START:
+        case giphyActions.types.GET_BY_ID_START:
             newState = { ...initialState };
             newState.fetching = true;
             newState.success = true;
             return newState;
         case giphyActions.types.GET_TRENDING_COMPLETE:
+        case giphyActions.types.GET_BY_ID_COMPLETE:
             newState = { ...state };
             newState.fetching = false;
             newState.list = action.payload;
@@ -23,6 +25,7 @@ const giphy = (state = initialState, action) => {
             return newState;
         case giphyActions.types.GET_TRENDING_ERROR:
         case giphyActions.types.GET_SEARCH_ERROR:
+        case giphyActions.types.GET_BY_ID_ERROR:
             newState = { ...initialState }
             return newState;
         case giphyActions.types.GET_SEARCH_COMPLETE:

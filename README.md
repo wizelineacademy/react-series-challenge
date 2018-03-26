@@ -25,10 +25,10 @@ The output of this challenge is to create a Giphy Client.
   - [x] Each gif should display if it is already marked as favorite
 
 - Details View
-  - [] It displays the selected gif in a bigger size
-  - [] It must show if it is already marked as favorite
-  - [] It may be saved as favorite in the redux state, and also can be removed from the same call to action
-  - [] Route Path must display the id of the gif
+  - [x] It displays the selected gif in a bigger size
+  - [x] It must show if it is already marked as favorite
+  - [x] It may be saved as favorite in the redux state, and also can be removed from the same call to action
+  - [x] Route Path must display the id of the gif
 
 - Unit Testing
   - Coverage at least 75%

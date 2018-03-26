@@ -9,7 +9,7 @@ import ListGifs from '../components/ListGifs';
 
 class ViewFavorites extends Component {
 
-    componentDidMount() {
+    componentWillMount() {
         this.props.getFavoritesList();
     }
 

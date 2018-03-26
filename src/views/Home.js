@@ -22,8 +22,11 @@ class ViewHome extends Component {
             this.props.getTrendingList();
         }
     }
-    componentDidMount() {
+    componentWillMount() {
         this.props.getFavoritesList();
+    }
+
+    componentDidMount() {
         if (this.props.giphy.query && !/^\s*$/.test(this.props.giphy.query)) {
             this.props.getSearchList(this.props.giphy.query);
         } else {
@@ -36,7 +39,7 @@ class ViewHome extends Component {
         if (!list) {
             listView = null;
         }
-        if (list && fetching && success) {
+        if (!list && fetching && success) {
             listView = <div>Cargando...</div>
         }
         if (list && !fetching && !success) {

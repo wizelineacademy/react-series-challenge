@@ -23,8 +23,9 @@ export function* toSearchGifs(query, offset = 0) {
 export function* getGifById(id) {
     try{
         const getResults = yield call(getById, id);
+        yield put(giphyActions.creators.getByIdComplete(getResults));
     }catch(error) {
-        yield put(giphyActions.creators.getByIdError(error))
+        yield put(giphyActions.creators.getByIdError(error));
     }
 }
 

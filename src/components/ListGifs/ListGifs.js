@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { Link } from 'react-router-dom';
 
 import favoritesActions from '../../actions/favorites';
 
@@ -42,7 +43,9 @@ class ListGifs extends Component {
                                     this.props.removeFavorite(item.id);
                                 }
                             }}>FavMe</FavButton>
-                        <img src={item.images.preview_gif.url} alt={item.title} />
+                            <Link to={'/gif/'+item.id}>
+                                <img src={item.images.preview_gif.url} alt={item.title} />
+                            </Link>
                     </li>;
                 })}
             </ListGifStyled>

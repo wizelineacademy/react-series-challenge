@@ -1,31 +1,48 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import giphyActions from '../actions/giphy';
 import favoritesActions from '../actions/favorites';
 
+import GifDetailView from '../components/GifDetailView';
+
 class Details extends Component {
 
-    componentDidMount() {
-        
+    componentWillMount() {
+        this.props.getFavoritesList();
+        this.props.getById(this.props.match.params.gifId);
     }
 
     render() {
-        return(
-            'Gif details'
+        const { list, fetching, success } = this.props.giphy;
+        if (!list) {
+            return null;
+        }
+        if (!list && fetching && success) {
+            console.log('Cargando...')
+            return <div>Cargando...</div>
+        }
+        if (list && !fetching && !success) {
+            return <div>Algo salió mal...</div>
+        }
+        return (
+            <div>
+                <h2>{list.list.data.title}</h2>
+                <GifDetailView />
+            </div>
         );
     }
 }
 
 const mapStateToProps = (state) => {
     return {
-        favorites: state.favorites
+        giphy: state.giphy
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
-    const {  getById } = giphyActions.creators;
+    const { getById } = giphyActions.creators;
     const { getFavoritesList } = favoritesActions.creators;
 
     return bindActionCreators({
