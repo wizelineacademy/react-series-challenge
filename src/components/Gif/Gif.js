@@ -17,7 +17,7 @@ const handleFavButton = (gif, addGif, removeGif, isFavorited) => {
   }
 };
 
-export const Gif = ({ gif, fullWidth, addGif, removeGif, isFavorited }) => (
+export const Gif = ({ gif, fullWidth, addGif, removeGif, isFavorited, isInDetail }) => (
   <MasonryItem fullWidth={fullWidth}>
       <ImageWrapper>
         <GifImg isFavorited={isFavorited} src={getPreviewGifUrl(gif)} alt={gif.title} />
@@ -26,9 +26,11 @@ export const Gif = ({ gif, fullWidth, addGif, removeGif, isFavorited }) => (
           <button onClick={() => handleFavButton(gif, addGif, removeGif, isFavorited)}>
             {!isFavorited ? 'Add to Favorites': 'Remove from favorites'}
           </button>
-          <LinkStyled to={{pathname: `/detail/${gif.id}`}}>
-            View detail
-          </LinkStyled>
+          { !isInDetail ? (
+            <LinkStyled to={{pathname: `/detail/${gif.id}`}}>
+              View detail
+            </LinkStyled>) : ''
+          }
         </Overlay>
       </ImageWrapper>
   </MasonryItem>

@@ -14,7 +14,7 @@ class DetailView extends Component {
     const { gif } = this.props.detailGif;
     return (
       <Container>
-        <Gif gif={gif} fullWidth={true}/>
+        <Gif gif={gif} fullWidth={true} isInDetail={true}/>
       </Container>
     )
   }

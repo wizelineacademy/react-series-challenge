@@ -28,7 +28,7 @@ export const MasonryItem = styled.div`
 
 export const Overlay = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   flex-direction: column;
   position:absolute;
@@ -58,4 +58,5 @@ export const GifImg = styled.img`
 export const GifTitle = styled.span`
   color: #ffc800;
   text-align:center;
+  visibility: ${props => props.isInDetail ? 'hidden': 'visible'};
 `;
