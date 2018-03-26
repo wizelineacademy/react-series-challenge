@@ -13,7 +13,7 @@ class Home extends Component {
   }
 
   componentDidMount(){
-    this.props.getTrending(0);
+    this.props.getContent(1);
   }
 
   render() {
@@ -24,7 +24,7 @@ class Home extends Component {
     return (
       <div>
         <SearchBar handleChange={this.props.handleSearch} />
-        <ImagesList />
+        
       </div>
     )
   }
@@ -32,18 +32,16 @@ class Home extends Component {
 
 const mapDispatchToProps = (dispatch) => {
   const {
-    getTrending,
-    handleSearch
+    getContent,
   } = actions
 
   return bindActionCreators({
-    getTrending,
-    handleSearch
+    getContent
   }, dispatch);
 }
 
 const mapStateToProps = (state) => {
-  const { loading } = state;
+  const { loading } = state.home;
 
   return { loading };
 }

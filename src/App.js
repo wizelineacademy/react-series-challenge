@@ -9,6 +9,7 @@ import {
 import store from './store';
 import Navbar from './components/navbar'
 import Wrapper from './components/wrapper'
+import Home from './components/home'
 // import logo from './logo.svg';
 // import './App.css';
 
@@ -22,7 +23,7 @@ class App extends Component {
             <Switch>
               <Route path='/image/:id' />
               <Route path='/favorites' />
-              <Route path='/' exact/>
+              <Route path='/' exact component={Home} />
               <Redirect to= '/not-found' />
             </Switch>
           </Wrapper>

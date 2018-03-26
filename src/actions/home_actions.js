@@ -1,13 +1,19 @@
 import { createAction } from 'redux-actions';
 import {
-  GET_TRENDING_REQUEST,
-  GET_SEARCH_REQUEST,
+  GET_CONTENT_COMPLETE,
+  GET_CONTENT_REQUEST,
+  GET_CONTENT_ERROR,
+  CHANGE_CONTENT_SEARCH
 } from './types'
 
-const getTrending = createAction(GET_TRENDING_REQUEST);
-const getSearch = createAction(GET_SEARCH_REQUEST);
+export const getContent = createAction(GET_CONTENT_REQUEST);
+export const contentComplete = createAction(GET_CONTENT_COMPLETE)
+export const contentError = createAction(GET_CONTENT_ERROR)
+export const changeSearch = createAction(CHANGE_CONTENT_SEARCH)
 
 export default {
-  getTrending,
-  getSearch
+  getContent,
+  contentComplete,
+  contentError,
+  changeSearch
 }
