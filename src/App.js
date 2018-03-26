@@ -13,7 +13,7 @@ class App extends Component {
 			<Provider store={store}>
 				<div>
 					<Header>
-						<Title>Gif Madness</Title>
+						<Title>Pug Madness</Title>
 						<SearchGif />
 					</Header>
 					<br />
