@@ -21,8 +21,19 @@ const favoritesGifReducer = (state = initialState, action) => {
       return newState;
 
     case actions.types.FILTER_GIFS:
-      console.log('PAYLOAD: ', payload);
-      return state;
+      const currentGifs =
+        Object
+          .keys(state.allGifs)
+          .map(key => state.allGifs[key])
+          .filter(gif => gif.title.includes(payload));
+      const result = {};
+      currentGifs.forEach(gif => {
+        result[gif.id] = gif;
+      });
+      return {
+        ...state,
+        filtered: result
+      };
     default:
       return state;
   }
