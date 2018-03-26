@@ -29,7 +29,12 @@ const searchingGifsReducer = (state = initialState, action) => {
         isLoading: false,
         error: {...payload}
       };
-
+    case actions.types.SEARCH_GIFS_CLEAR:
+      return {
+        ...state,
+        data: [],
+        isLoading: false,
+      };
     default:
       return state;
   }
