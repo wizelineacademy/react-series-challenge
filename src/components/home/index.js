@@ -29,7 +29,10 @@ class Home extends Component {
           handleSearch={this.props.changeSearch}
           value={this.props.search}
         />
-        <ImagesList list={this.props.elements} />
+        <ImagesList
+          list={this.props.elements}
+          buttonClick={this.props.contentFavoriteButton}
+        />
       </Wrapper>
     )
   }
@@ -40,14 +43,16 @@ const mapDispatchToProps = (dispatch) => {
     getNextPage,
     getPrevPage,
     changeSearch,
-    changeSearchType
+    changeSearchType,
+    contentFavoriteButton
   } = actions
 
   return bindActionCreators({
     getNextPage,
     getPrevPage,
     changeSearch,
-    changeSearchType
+    changeSearchType,
+    contentFavoriteButton
   }, dispatch);
 }
 

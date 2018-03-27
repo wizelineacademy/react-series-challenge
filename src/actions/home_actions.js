@@ -6,7 +6,8 @@ import {
   GET_NEXT_CONTENT_PAGE,
   GET_PREV_CONTENT_PAGE,
   CHANGE_CONTENT_SEARCH,
-  CHANGE_CONTENT_SEARCH_TYPE
+  CHANGE_CONTENT_SEARCH_TYPE,
+  CONTENT_FAVORITE_BUTTON_CLICKED
 } from './types'
 
 export const getContent = createAction(GET_CONTENT_REQUEST);
@@ -16,6 +17,7 @@ export const contentComplete = createAction(GET_CONTENT_COMPLETE);
 export const contentError = createAction(GET_CONTENT_ERROR);
 export const changeSearch = createAction(CHANGE_CONTENT_SEARCH);
 export const changeSearchType = createAction(CHANGE_CONTENT_SEARCH_TYPE);
+export const contentFavoriteButton = createAction(CONTENT_FAVORITE_BUTTON_CLICKED);
 
 export default {
   getContent,
@@ -24,5 +26,6 @@ export default {
   contentComplete,
   contentError,
   changeSearch,
-  changeSearchType
+  changeSearchType,
+  contentFavoriteButton
 }

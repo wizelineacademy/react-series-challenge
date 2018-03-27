@@ -4,7 +4,8 @@ import {
   GET_CONTENT_REQUEST,
   GET_NEXT_CONTENT_PAGE,
   GET_PREV_CONTENT_PAGE,
-  CHANGE_CONTENT_SEARCH
+  CHANGE_CONTENT_SEARCH,
+  CONTENT_FAVORITE_BUTTON_CLICKED
 } from '../actions/types';
 
 const API_KEY = 'api_key=OKx61MhM7wizGoKbk4z3GuDlN1LOAJxu';
@@ -67,9 +68,16 @@ export function* changeSearch(action){
   yield put(actions.getContent(1))
 }
 
+export function* favoriteButtonSaga({ payload }){
+  yield put(actions.addRemoveFavorites({ ...payload }))
+  const page = yield select(({ home }) => home.paginator.currentPage);
+  yield put(actions.getContent(page))
+}
+
 export default function* homeSaga () {
   yield takeLatest(GET_CONTENT_REQUEST, setLoadingContentSaga);
   yield takeEvery(GET_NEXT_CONTENT_PAGE, getNextContentPage);
   yield takeEvery(GET_PREV_CONTENT_PAGE, getPrevContentPage);
   yield takeEvery(CHANGE_CONTENT_SEARCH, changeSearch);
+  yield takeEvery(CONTENT_FAVORITE_BUTTON_CLICKED, favoriteButtonSaga);
 }

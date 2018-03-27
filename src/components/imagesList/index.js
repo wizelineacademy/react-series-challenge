@@ -7,16 +7,15 @@ import ImageStyled from './ImageStyled';
 import actions from '../../actions'
 
 const ImagesList = (props) => {
-  const { list, addRemoveFavorites } = props
+  const { list, buttonClick } = props
   const items = list.map((image) => {
-    console.log(image)
     return (
       <ListItemStyled key={image.id}>
         <ImageStyled
           src={image.images.original.url}
           alt={`hi`}
         />
-        <button onClick={addRemoveFavorites.bind(this,{ image })}>Add to Favorites</button>
+        <button onClick={buttonClick.bind(this,{ image })}>Add to Favorites</button>
         {image.favorite ? 'soy favorito!' : null}
       </ListItemStyled>
     );
@@ -28,9 +27,4 @@ const ImagesList = (props) => {
   )
 }
 
-const mapDispatchToProps = (dispatch) => {
-  const { addRemoveFavorites } = actions;
-  return bindActionCreators({ addRemoveFavorites }, dispatch);
-}
-
-export default connect(null, mapDispatchToProps)(ImagesList);
+export default ImagesList;

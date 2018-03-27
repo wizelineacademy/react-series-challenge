@@ -29,7 +29,10 @@ class Favorites extends Component {
           handleSearch={this.props.filterFavorites}
           value={this.props.search}
         />
-        <ImagesList list={this.props.finalList}/>
+        <ImagesList
+          list={this.props.finalList}
+          buttonClick={this.props.addRemoveFavorites}
+        />
       </Wrapper>
     )
   }
@@ -41,7 +44,8 @@ const mapDispatchToProps = (dispatch) => {
     getNextFavoritesPage,
     getPrevFavoritesPage,
     filterFavorites,
-    changeFavoritesFilter
+    changeFavoritesFilter,
+    addRemoveFavorites
   } = actions
 
   return bindActionCreators({
@@ -49,7 +53,8 @@ const mapDispatchToProps = (dispatch) => {
     getNextFavoritesPage,
     getPrevFavoritesPage,
     filterFavorites,
-    changeFavoritesFilter
+    changeFavoritesFilter,
+    addRemoveFavorites
   }, dispatch);
 }
 
