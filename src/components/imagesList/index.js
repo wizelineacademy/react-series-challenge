@@ -1,9 +1,13 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import ListStyled from './ListStyled';
-import ListItemStyled from './ListItemStyled'
-import ImageStyled from './ImageStyled'
+import ListItemStyled from './ListItemStyled';
+import ImageStyled from './ImageStyled';
+import actions from '../../actions'
 
-const ImagesList = ({ list }) => {
+const ImagesList = (props) => {
+  const { list, addRemoveFavorites } = props
   const items = list.map((image) => {
   return (
     <ListItemStyled key={image.id}>
@@ -11,6 +15,7 @@ const ImagesList = ({ list }) => {
         src={image.images.original.url}
         alt={`hi`}
       />
+      <button onClick={addRemoveFavorites.bind(this,{ image })}>Add to Favorites</button>
     </ListItemStyled>
   )});
   return (
@@ -20,4 +25,9 @@ const ImagesList = ({ list }) => {
   )
 }
 
-export default ImagesList;
+const mapDispatchToProps = (dispatch) => {
+  const { addRemoveFavorites } = actions;
+  return bindActionCreators({ addRemoveFavorites }, dispatch);
+}
+
+export default connect(null, mapDispatchToProps)(ImagesList);

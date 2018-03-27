@@ -9,8 +9,12 @@ import {
 } from '../actions/types';
 
 const lim = 15;
-const get = uri => fetch(uri).then(resp => resp.json());
-
+const getFromStorage = (item) => window.localStorage.getItem(item);
+const deleteFromArray = (arr, ind) => {
+  const partOne = arr.slice(0, ind);
+  const partTwo = arr.slice((ind + 1), arr.length);
+  return [ ...partOne, ...partTwo]
+}
 export function* loadFavoritesSaga(){
   yield put(actions.getFavorites(1))
 }
@@ -27,23 +31,36 @@ export function* getPrevFavoritesPage() {
 
 export function* getFavoritesSaga(action){
   try{
+
     const page = action.payload
-    const storedFavoritesString = yield call(localStorage.getItem, 'reactFavorites');
-    const storedFavorites = JSON.parse(storedFavoritesString);
-    const elements = storedFavorites || [];
-    const search = yield select(({ favorites }) => favorites.filter);
-    const auxList = search === '' ? [ ...elements ] : [];
+    
+    const storedFavoritesString = yield call(getFromStorage, 'reactFavorites');
+    
+    const storedFavorites = storedFavoritesString ? JSON.parse(storedFavoritesString) : [];
+    
+    const elements = storedFavorites !== null ? [...storedFavorites] : [];
+
+    const filter = yield select(({ favorites }) => favorites.filter);
+    
+    const auxList = filter === '' ? [ ...elements ] : [];
+    
     const totalElements = auxList.length;
+    
     const totalPages = Math.ceil(totalElements / lim);
+    
     const paginator = {
       totalPages,
       currentPage: page,
       nextPage: (page + 1) < totalPages ? (page + 1) : totalPages,
       prevPage: (page - 1) > 1 ? (page - 1) : 1,
     }
+    
     const startSlice = lim * (page - 1);
+    
     const finalList = auxList.slice(startSlice, (startSlice + lim));
+    
     const payload = { paginator, finalList, elements };
+    
     yield put(actions.completeFavorites(payload));
   }catch (error){
     console.group('Error: favoriteSaga');
@@ -55,21 +72,32 @@ export function* getFavoritesSaga(action){
 }
 
 export function* addRemoveSaga({ payload }){
-  const { item } = payload;
-  const oldElements = yield select(({ favorites }) => favorites.elements);
-  const index = oldElements.findIndex((image) => item.id === image.id);
+  const item = payload;
   
-  const newElements = index === -1 ? [ ...oldElements, item] : [ ...(oldElements.slice(0,index)), ...(oldElements.slice((index + 1), oldElements.length))];
+  const oldElements = yield select(({ favorites }) => favorites.elements);
+  
 
-  yield call(localStorage.setItem, 'reactFavorites', JSON.stringify(newElements));
+  const index = oldElements.findIndex(({image}) => item.image.id === image.id)
+
+  
+
+  const elements = index === -1 ? [...oldElements, item] : yield call(deleteFromArray, oldElements, index);
+
+  
+
+  const newElementsString = JSON.stringify(elements);
+  
+  yield call([localStorage, 'setItem'], 'reactFavorites', newElementsString);
 
   const page = yield select(({ favorites }) => favorites.paginator.currentPage );
+  
   yield put(actions.getFavorites(page));
+  
 
 }
 
 export default function* homeSaga () {
-  yield takeEvery(LOAD_FAVORITES, loadFavoritesSaga);
+  yield takeLatest(LOAD_FAVORITES, loadFavoritesSaga);
   yield takeEvery(GET_NEXT_FAVORITES_PAGE, getNextFavoritesPage);
   yield takeEvery(GET_PREV_FAVORITES_PAGE, getPrevFavoritesPage);
   yield takeEvery(GET_FAVORITES_REQUEST, getFavoritesSaga);
