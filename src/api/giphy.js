@@ -31,7 +31,7 @@ export const getTrendingList = (records) => {
  * @param offset: offset to start
  */
 export const searchGifs = (query, offset = 0) => {
-    const uri = constructUri(GIPHY.api.search, '&q=' + query.query.payload, '&limit='+offset);
+    const uri = constructUri(GIPHY.api.search, '?q=' + query.query.payload, '&limit='+offset);
     return fetch(uri)
         .then(res => res.json())
         .then(json => ({
