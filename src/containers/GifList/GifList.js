@@ -6,6 +6,17 @@ import actions from '../../actions/favorites';
 import { FlexBox } from '../../style/style';
 
 export class GifList extends Component {
+	componentDidMount() {
+		if (
+			Object.keys(this.props.favorites).length == 0 &&
+			JSON.parse(sessionStorage.getItem('myFavs'))
+		) {
+			//console.log('load');
+			this.props.loadFavorites(JSON.parse(sessionStorage.getItem('myFavs')));
+		} else {
+			//console.log('no load');
+		}
+	}
 	render() {
 		let images = [];
 		if (this.props.home) {
@@ -67,11 +78,12 @@ const mapStateToProps = ({ gifsFetch, user }) => {
 };
 
 const mapDispatchToProps = dispatch => {
-	const { addFavorite, removeFavorite } = actions.creators;
+	const { addFavorite, removeFavorite, loadFavorites } = actions.creators;
 	return bindActionCreators(
 		{
 			addFavorite,
-			removeFavorite
+			removeFavorite,
+			loadFavorites
 		},
 		dispatch
 	);

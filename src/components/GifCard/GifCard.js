@@ -14,6 +14,20 @@ const gifCard = ({ src, id, action, favorite, gifTitle, search }) => {
 	const text = favorite ? 'Remove Favorite' : 'Add Favorite';
 
 	const handleFavoriteClick = () => {
+		const currentFavs = sessionStorage.getItem('myFavs')
+			? JSON.parse(sessionStorage.getItem('myFavs'))
+			: {};
+
+		if (favorite) {
+			delete currentFavs[id];
+		} else {
+			currentFavs[id] = {
+				src: src,
+				title: gifTitle,
+				search: search
+			};
+		}
+		sessionStorage.setItem('myFavs', JSON.stringify(currentFavs));
 		action(id, src, gifTitle, search);
 	};
 

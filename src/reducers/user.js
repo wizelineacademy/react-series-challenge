@@ -24,6 +24,11 @@ const userReducer = (state = initialState, action) => {
 				...state,
 				favorites
 			};
+		case actions.types.LOAD_FAVORITES:
+			return {
+				...state,
+				favorites: action.favorites
+			};
 		default:
 			return state;
 	}
