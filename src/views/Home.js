@@ -1,3 +1,7 @@
+/**
+ * Home view.
+ * Here you can see a list of trending gifs and serch for those who fit in the query
+ */
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -15,6 +19,7 @@ class ViewHome extends Component {
         super(props);
         this.callAction = Utils.debounce(this.callAction, 500);
     }
+
     callAction(val) {
         if (!/^\s*$/.test(val)) {
             this.props.getSearchList(val);

@@ -5,9 +5,19 @@
 import ReactDOM from 'react-dom';
 
 const Utils = {
+    /**
+     * Convert a number to string and add a comma every 3rd digit
+     * @param tgNumber: Numbert to be converted
+     */
     numberWithCommas: function (tgNum) {
         return tgNum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
     },
+    /**
+     * Debounce a function
+     * @param func: Funtion to be debounced
+     * @param wait: Time to wait before call func
+     * @param immediate: If true, func is called immediately
+     */
     debounce: function (func, wait, immediate) {
         let timeout;
         return function () {
@@ -23,6 +33,10 @@ const Utils = {
             if (callNow) func.apply(context, args);
         };
     },
+    /**
+     * Animate the window scroll to target element's position (in position Y)
+     * @param element: Target element to be used as animation's finish point
+     */
     smoothScrollTo: function (element) {
         let headerHeight = document.getElementById('headerFixed').offsetHeight;
         let rect = ReactDOM.findDOMNode(element).getBoundingClientRect();
@@ -37,6 +51,10 @@ const Utils = {
             };
         }, 20);
     },
+    /**
+     * Convert an JSON object to url vars string
+     * @param srcjson: JSON object to be converted
+     */
     jsonToURL: function (srcjson) {
         if (typeof srcjson !== "object") {
             if (typeof console !== "undefined") {
@@ -58,6 +76,10 @@ const Utils = {
         }
         return urljson;
     },
+    /**
+     * Replace spaces for dashes and normalize a string
+     * @param str: String to be converted
+     */
     slugfiy: function (str) {
         str = str.replace(/^\s+|\s+$/g, ''); // trim
         str = str.toLowerCase();
