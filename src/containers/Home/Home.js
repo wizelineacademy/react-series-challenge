@@ -14,7 +14,7 @@ class Home extends Component {
 		}
 		return [
 			<SubTitle key="TrendSub">{section}</SubTitle>,
-			<GifList key="TrendList" />
+			<GifList home key="TrendList" />
 		];
 	}
 }

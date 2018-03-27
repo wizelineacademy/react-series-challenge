@@ -8,12 +8,13 @@ import {
 	FavIcon
 } from '../../style/style';
 
-const gifCard = ({ src, id, action, favorite }) => {
+const gifCard = ({ src, id, action, favorite, gifTitle, search }) => {
 	let mark = null;
 	if (favorite) mark = <FavIcon src={pugWink} alt="Favorite" />;
 	const text = favorite ? 'Remove Favorite' : 'Add Favorite';
-	const handleFavoriteClick = event => {
-		action(event.target.value);
+
+	const handleFavoriteClick = () => {
+		action(id, src, gifTitle, search);
 	};
 
 	return (
@@ -21,9 +22,7 @@ const gifCard = ({ src, id, action, favorite }) => {
 			{mark}
 			<Image key={id} src={src} />
 			<ImageDetails>
-				<FavButton value={id} onClick={handleFavoriteClick}>
-					{text}
-				</FavButton>
+				<FavButton onClick={handleFavoriteClick}>{text}</FavButton>
 			</ImageDetails>
 		</ImageCard>
 	);

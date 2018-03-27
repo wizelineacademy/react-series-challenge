@@ -19,7 +19,7 @@ const ImageCard = styled.div`
 	margin-top: 3em
 	text-align: center;
 	:hover {
-		box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2);
+		box-shadow: 16px 16px 16px 16px rgba(0, 0, 0, 0.2);
 	}
 `;
 const Border = styled.div`

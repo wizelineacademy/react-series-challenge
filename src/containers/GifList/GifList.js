@@ -7,12 +7,12 @@ import { FlexBox } from '../../style/style';
 
 export class GifList extends Component {
 	render() {
-		let images = null;
-		if (this.props.gifsList.length > 0) {
+		let images = [];
+		if (this.props.home) {
 			images = this.props.gifsList.map(gif => {
 				let favorite = null;
 				let action = null;
-				if (this.props.favorites.indexOf(gif.id) > -1) {
+				if (this.props.favorites[gif.id]) {
 					favorite = true;
 					action = this.props.removeFavorite;
 				} else {
@@ -20,17 +20,40 @@ export class GifList extends Component {
 					action = this.props.addFavorite;
 				}
 
-				return (
-					<GifCard
-						key={gif.id}
-						id={gif.id}
-						favorite={favorite}
-						src={gif.images.fixed_height.url}
-						action={action}
-					/>
-				);
+				return {
+					id: gif.id,
+					title: gif.title,
+					src: gif.images.fixed_height.url,
+					favorite: favorite,
+					action: action
+				};
 			});
 		}
+
+		if (this.props.favorite) {
+			images = Object.keys(this.props.favorites).map(key => {
+				return {
+					id: key,
+					title: this.props.favorites[key].title,
+					src: this.props.favorites[key].src,
+					favorite: true,
+					action: this.props.removeFavorite
+				};
+			});
+		}
+
+		images = images.map(gif => (
+			<GifCard
+				key={gif.id}
+				id={gif.id}
+				gifTitle={gif.title}
+				favorite={gif.favorite}
+				search={this.props.search}
+				src={gif.src}
+				action={gif.action}
+			/>
+		));
+
 		return <FlexBox>{images}</FlexBox>;
 	}
 }
@@ -38,7 +61,8 @@ export class GifList extends Component {
 const mapStateToProps = ({ gifsFetch, user }) => {
 	return {
 		gifsList: gifsFetch.gifsList,
-		favorites: user.favorites
+		favorites: user.favorites,
+		search: gifsFetch.search
 	};
 };
 

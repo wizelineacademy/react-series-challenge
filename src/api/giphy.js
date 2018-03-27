@@ -16,7 +16,7 @@ export const loadSearch = text => {
 	return fetch(
 		'https://api.giphy.com/v1/gifs/search?q=' +
 			text +
-			' pug' +
+			'' +
 			'&api_key=1PwdD3bS9JHQDGug0JKcOcvRG7KgovDn&limit=24'
 	)
 		.then(res => res.json())

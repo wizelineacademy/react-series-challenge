@@ -1,22 +1,25 @@
 import actions from '../actions/favorites';
 
 const initialState = {
-	favorites: []
+	favorites: {}
 };
 
 const userReducer = (state = initialState, action) => {
 	const { type } = action;
-	const favorites = [...state.favorites];
+	const favorites = { ...state.favorites };
 	switch (type) {
 		case actions.types.ADD_FAVORITE:
-			favorites.push(action.id);
+			favorites[action.id] = {
+				src: action.src,
+				title: action.title,
+				search: action.search
+			};
 			return {
 				...state,
 				favorites
 			};
 		case actions.types.REMOVE_FAVORITE:
-			const index = favorites.indexOf(action.id);
-			favorites.splice(index, 1);
+			delete favorites[action.id];
 			return {
 				...state,
 				favorites

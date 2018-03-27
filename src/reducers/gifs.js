@@ -2,6 +2,7 @@ import requests from '../actions/requests';
 
 const initialState = {
 	gifsList: [],
+	search: '',
 	fetching: false,
 	trending: true,
 	searching: false
@@ -23,7 +24,8 @@ const gifsReducer = (state = initialState, action) => {
 				...state,
 				fetching: true,
 				trending: false,
-				searching: true
+				searching: true,
+				search: action.text
 			};
 		case requests.types.GIFS_LOADED:
 			return {
