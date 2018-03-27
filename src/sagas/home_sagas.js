@@ -18,7 +18,7 @@ export function* setLoadingContentSaga(action) {
     const page = action.payload
     const offset = `offset=${lim * (page - 1)}`;
     const search = yield select(({ home }) => home.search)
-    const fetchUrl = `${url}${search !== '' ? 'search' : 'trending'}?${API_KEY}&${limit}&${offset}${search !== '' ? `&q=${search}` : ''}`
+    const fetchUrl = `${url}${search !== '' ? 'search' : 'trending'}?${API_KEY}&${limit}&${offset}${search !== '' ? `&q=${search.replace(/ /g, '+')}` : ''}`
 
     const resp = yield call(get, fetchUrl);
     
@@ -34,7 +34,6 @@ export function* setLoadingContentSaga(action) {
     }
 
     // TODO check if the item is in favorites
-    // const list = data.map((item))
 
     yield put(actions.contentComplete({ data, paginator }));
 
