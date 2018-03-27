@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
-import  { Provider } from 'react-redux';
+import  { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { 
   BrowserRouter as Router,
   Route,
   Switch,
   Redirect
 } from 'react-router-dom';
-import store from './store';
-import Navbar from './components/navbar'
-import Wrapper from './components/wrapper'
-import Home from './components/home'
+import Navbar from './components/navbar';
+import Wrapper from './components/wrapper';
+import Home from './components/home';
+import actions from './actions'
 // import logo from './logo.svg';
 // import './App.css';
 
@@ -24,23 +25,30 @@ injectGlobal`
 `
 
 class App extends Component {
+  componentWillMount(){
+    this.props.loadFavorites()
+  }
   render() {
     return (
-      <Provider store={store}>
-        <Router>
-          <Wrapper>
-            <Navbar />
-            <Switch>
-              <Route path='/image/:id' />
-              <Route path='/favorites' />
-              <Route path='/' exact component={Home} />
-              <Redirect to= '/not-found' />
-            </Switch>
-          </Wrapper>
-        </Router>
-      </Provider>
+      <Router>
+        <Wrapper>
+          <Navbar />
+          <Switch>
+            <Route path='/image/:id' />
+            <Route path='/favorites' />
+            <Route path='/' exact component={Home} />
+            <Redirect to= '/not-found' />
+          </Switch>
+        </Wrapper>
+      </Router>
     );
   }
 }
 
-export default App;
+const mapDispatchToProps = (dispatch) => {
+  const { loadFavorites } = actions;
+
+  return bindActionCreators({ loadFavorites }, dispatch);
+}
+
+export default connect(null,mapDispatchToProps)(App);
