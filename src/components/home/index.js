@@ -24,7 +24,11 @@ class Home extends Component {
     }
     return (
       <Wrapper>
-        <SearchBar handleChange={this.props.changeSearchType} handleSearch={this.props.changeSearch} value={this.props.search} />
+        <SearchBar
+          handleChange={this.props.changeSearchType}
+          handleSearch={this.props.changeSearch}
+          value={this.props.search}
+        />
         <ImagesList list={this.props.elements} />
       </Wrapper>
     )

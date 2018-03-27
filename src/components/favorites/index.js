@@ -3,7 +3,8 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import ImagesList from '../imagesList';
 import SearchBar from '../searchBar';
-import actions from '../../actions'
+import actions from '../../actions';
+import Wrapper from '../wrapper';
 
 
 class Favorites extends Component {
@@ -13,7 +14,7 @@ class Favorites extends Component {
   }
 
   componentDidMount(){
-    this.props.getFavorites(0);
+    this.props.getFavorites(1);
   }
 
   render() {
@@ -22,10 +23,14 @@ class Favorites extends Component {
       return <div>Loading...</div>
     }
     return (
-      <div>
-        <SearchBar handleChange={this.props.handleFilter} />
-        <ImagesList />
-      </div>
+      <Wrapper>
+        <SearchBar
+          handleChange={this.props.changeFavoritesFilter}
+          handleSearch={this.props.filterFavorites}
+          value={this.props.search}
+        />
+        <ImagesList list={this.props.finalList}/>
+      </Wrapper>
     )
   }
 }
@@ -33,19 +38,35 @@ class Favorites extends Component {
 const mapDispatchToProps = (dispatch) => {
   const {
     getFavorites,
-    handleFilter
+    getNextFavoritesPage,
+    getPrevFavoritesPage,
+    filterFavorites,
+    changeFavoritesFilter
   } = actions
 
   return bindActionCreators({
     getFavorites,
-    handleFilter
+    getNextFavoritesPage,
+    getPrevFavoritesPage,
+    filterFavorites,
+    changeFavoritesFilter
   }, dispatch);
 }
 
-const mapStateToProps = (state) => {
-  const { loading } = state;
+const mapStateToProps = ({ favorites }) => {
+  const {
+    loading,
+    finalList,
+    search,
+    paginator
+  } = favorites;
 
-  return { loading };
+  return { 
+    loading,
+    finalList,
+    search,
+    paginator
+  };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Favorites);

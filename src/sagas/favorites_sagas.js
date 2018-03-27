@@ -6,6 +6,8 @@ import {
   GET_PREV_FAVORITES_PAGE,
   GET_FAVORITES_REQUEST,
   ADD_REMOVE_FAVORITES,
+  CHANGE_FAVORITES_FILTER,
+  FILTER_FAVORITES
 } from '../actions/types';
 
 const lim = 15;
@@ -15,6 +17,15 @@ const deleteFromArray = (arr, ind) => {
   const partTwo = arr.slice((ind + 1), arr.length);
   return [ ...partOne, ...partTwo]
 }
+
+const filterArray = (str, elements) => {
+  return elements.filter(({ title }) => {
+    const lowTitle = title.toLowerCase();
+    const lowStr = str.toLowerCase();
+    return lowTitle.includes(lowStr);
+  })
+}
+
 export function* loadFavoritesSaga(){
   yield put(actions.getFavorites(1))
 }
@@ -38,11 +49,11 @@ export function* getFavoritesSaga(action){
     
     const storedFavorites = storedFavoritesString ? JSON.parse(storedFavoritesString) : [];
     
-    const elements = storedFavorites !== null ? [...storedFavorites] : [];
+    const elements = storedFavorites !== null ? [...storedFavorites] : storedFavorites.find()
 
     const filter = yield select(({ favorites }) => favorites.filter);
     
-    const auxList = filter === '' ? [ ...elements ] : [];
+    const auxList = filter === '' ? [ ...elements ] : yield call(filterArray, filter, elements);
     
     const totalElements = auxList.length;
     
@@ -72,18 +83,13 @@ export function* getFavoritesSaga(action){
 }
 
 export function* addRemoveSaga({ payload }){
-  const item = payload;
+  const item = { ...payload.image };
   
   const oldElements = yield select(({ favorites }) => favorites.elements);
-  
 
-  const index = oldElements.findIndex(({image}) => item.image.id === image.id)
-
-  
+  const index = oldElements.findIndex((image) => item.id === image.id)
 
   const elements = index === -1 ? [...oldElements, item] : yield call(deleteFromArray, oldElements, index);
-
-  
 
   const newElementsString = JSON.stringify(elements);
   
@@ -92,8 +98,10 @@ export function* addRemoveSaga({ payload }){
   const page = yield select(({ favorites }) => favorites.paginator.currentPage );
   
   yield put(actions.getFavorites(page));
-  
+}
 
+export function* filterSaga() {
+  yield put(actions.getFavorites(1));
 }
 
 export default function* homeSaga () {
@@ -102,4 +110,6 @@ export default function* homeSaga () {
   yield takeEvery(GET_PREV_FAVORITES_PAGE, getPrevFavoritesPage);
   yield takeEvery(GET_FAVORITES_REQUEST, getFavoritesSaga);
   yield takeEvery(ADD_REMOVE_FAVORITES, addRemoveSaga);
+  yield takeEvery(FILTER_FAVORITES, filterSaga);
+  yield takeEvery(CHANGE_FAVORITES_FILTER, filterSaga);
 }

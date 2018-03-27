@@ -7,7 +7,9 @@ import {
   ADD_REMOVE_FAVORITES,
   GET_NEXT_FAVORITES_PAGE,
   GET_PREV_FAVORITES_PAGE,
-  // FILTER_FAVORITES
+  CHANGE_FAVORITES_FILTER,
+  FILTER_FAVORITES
+  // CHANGE_FAVORITES_FILTER_TYPE,
 } from './types'
 
 const getFavorites = createAction(GET_FAVORITES_REQUEST);
@@ -17,7 +19,8 @@ const errorFavorites = createAction(GET_FAVORITES_ERROR);
 const addRemoveFavorites = createAction(ADD_REMOVE_FAVORITES);
 const getNextFavoritesPage = createAction(GET_NEXT_FAVORITES_PAGE);
 const getPrevFavoritesPage = createAction(GET_PREV_FAVORITES_PAGE);
-// const filterFavorites = createAction(FILTER_FAVORITES);
+const changeFavoritesFilter = createAction(CHANGE_FAVORITES_FILTER);
+const filterFavorites = createAction(FILTER_FAVORITES);
 
 export default {
   getFavorites,
@@ -26,6 +29,7 @@ export default {
   errorFavorites,
   addRemoveFavorites,
   getNextFavoritesPage,
-  getPrevFavoritesPage
-  // filterFavorites
+  getPrevFavoritesPage,
+  changeFavoritesFilter,
+  filterFavorites
 }

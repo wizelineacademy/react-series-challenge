@@ -9,15 +9,18 @@ import actions from '../../actions'
 const ImagesList = (props) => {
   const { list, addRemoveFavorites } = props
   const items = list.map((image) => {
-  return (
-    <ListItemStyled key={image.id}>
-      <ImageStyled
-        src={image.images.original.url}
-        alt={`hi`}
-      />
-      <button onClick={addRemoveFavorites.bind(this,{ image })}>Add to Favorites</button>
-    </ListItemStyled>
-  )});
+    console.log(image)
+    return (
+      <ListItemStyled key={image.id}>
+        <ImageStyled
+          src={image.images.original.url}
+          alt={`hi`}
+        />
+        <button onClick={addRemoveFavorites.bind(this,{ image })}>Add to Favorites</button>
+        {image.favorite ? 'soy favorito!' : null}
+      </ListItemStyled>
+    );
+  });
   return (
     <ListStyled>
       {items}

@@ -2,7 +2,7 @@ import {
   GET_FAVORITES_REQUEST,
   GET_FAVORITES_COMPLETE,
   GET_FAVORITES_ERROR,
-  // CHANGE_FAVORITES_FILTER,
+  CHANGE_FAVORITES_FILTER,
   // ADD_REMOVE_FAVORITES,
 } from '../actions/types';
 
@@ -44,17 +44,10 @@ export default function (state = initialState, { type, payload }) {
         errInfo : { er, errorInfo }
       }
       return errorState;
-    // case CHANGE_FAVORITES_FILTER:
-    //   const { filter } = payload
-    //   const filterState = { ...state, filter };
-    //   return filterState;
-    // case ADD_REMOVE_FAVORITES:
-    //   const { elements } = payload;
-    //   const newFavorites = {
-    //     ...state,
-    //     elements
-    //   }
-    //   return newFavorites;
+    case CHANGE_FAVORITES_FILTER:
+      const filter = payload.target.value
+      const filterState = { ...state, filter };
+      return filterState;
     default:
       return state;
   }

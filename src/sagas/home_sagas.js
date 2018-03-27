@@ -12,6 +12,11 @@ const lim = 15;
 const limit = 'limit=15';
 const url = `http://api.giphy.com/v1/gifs/`;
 const get = uri => fetch(uri).then(resp => resp.json());
+const markFavorites = (elems, favs) => {
+  return elems.map((item) => {
+    return favs.findIndex((fav) => fav.id === item.id) > -1 ? { ...item, favorite: true } : { ...item, favorite: false };
+  })
+}
 
 export function* setLoadingContentSaga(action) {
   try{
@@ -33,9 +38,11 @@ export function* setLoadingContentSaga(action) {
       prevPage: (page - 1) > 1 ? (page - 1) : 1,
     }
 
-    // TODO check if the item is in favorites
+    const favorites = yield select(({ favorites }) => favorites.elements);
+    const pageElements = yield call(markFavorites, data, favorites);
+    console.log(pageElements)
 
-    yield put(actions.contentComplete({ data, paginator }));
+    yield put(actions.contentComplete({ data: pageElements, paginator }));
 
   }catch (error){
     console.group('Error: contentSaga');
