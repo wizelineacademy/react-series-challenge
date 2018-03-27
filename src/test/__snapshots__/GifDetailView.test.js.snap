@@ -8,6 +8,7 @@ exports[`test GifDetailView Render render structure 1`] = `
       "fetching": false,
       "filterList": null,
       "list": null,
+      "originalList": null,
       "success": false,
     }
   }

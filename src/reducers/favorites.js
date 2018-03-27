@@ -2,6 +2,7 @@ import favoritesActions from '../actions/favorites';
 
 const initialState = {
     list: null,
+    originalList: null,
     filterList: null,
     fetching: false,
     success: false

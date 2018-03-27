@@ -8,6 +8,7 @@ describe('test reducer', ()=>{
             payloads: []
         })).toEqual({
             list: null,
+            originalList: null,
             filterList: null,
             fetching: true,
             success: true
@@ -22,6 +23,7 @@ describe('test reducer', ()=>{
             payloads: []
         })).toEqual({
             list: null,
+            originalList: null,
             filterList: null,
             fetching: true,
             success: true
@@ -36,6 +38,7 @@ describe('test reducer', ()=>{
             payloads: []
         })).toEqual({
             list: null,
+            originalList: null,
             filterList: null,
             fetching: true,
             success: true
@@ -50,6 +53,7 @@ describe('test reducer', ()=>{
             payloads: []
         })).toEqual({
             list: null,
+            originalList: null,
             filterList: null,
             fetching: false,
             success: false
@@ -64,6 +68,7 @@ describe('test reducer', ()=>{
             payloads: []
         })).toEqual({
             list: null,
+            originalList: null,
             filterList: null,
             fetching: false,
             success: false
@@ -78,6 +83,7 @@ describe('test reducer', ()=>{
             payloads: []
         })).toEqual({
             list: null,
+            originalList: null,
             filterList: null,
             fetching: false,
             success: false
