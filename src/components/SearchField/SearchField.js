@@ -1,3 +1,7 @@
+/**
+ * Component for any search like input text
+*/
+
 import React from 'react';
 
 import {SearchFieldStyled, SearchFieldStyledContainer} from './SearchField.styled'

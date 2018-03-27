@@ -1,3 +1,7 @@
+/**
+ * Print actions/events in console
+ */
+
 const logger = (store) => (next) => (action) => {
     const { type } = action;
 

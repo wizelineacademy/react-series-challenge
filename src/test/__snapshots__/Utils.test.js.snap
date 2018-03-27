@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test debounce Debounce must be called 1`] = `[Function]`;

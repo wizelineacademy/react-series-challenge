@@ -1,8 +1,5 @@
 /*
-#300032//Morado
-#06000a//Negro
-#c43235//Rojo
-#e6e6e8//Gris
+Little object to store the most used colors
 */
 
 export const COLORS = {

@@ -1,3 +1,7 @@
+/*
+File intended to create several objects with different data to connect to apis
+*/
+
 export const GIPHY = {
     key: 'FqKH6aurLWR6z1I1yndlDLDh3vrUJmnM',
     api: {

@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test SearchField Render render structure 1`] = `
+<styled.div>
+  <styled.input
+    onChange={[Function]}
+  />
+</styled.div>
+`;

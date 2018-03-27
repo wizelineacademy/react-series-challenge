@@ -1,3 +1,7 @@
+/**
+ * A little helpers
+ */
+
 import ReactDOM from 'react-dom';
 
 const Utils = {

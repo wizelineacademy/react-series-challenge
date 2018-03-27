@@ -1,3 +1,6 @@
+/**
+ * Component to show target gif's original file
+ */
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';

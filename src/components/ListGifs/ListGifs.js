@@ -1,3 +1,6 @@
+/**
+ * List component to show favorites or trending gifs according to the request
+ */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';

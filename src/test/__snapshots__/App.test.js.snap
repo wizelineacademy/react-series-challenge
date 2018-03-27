@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test App Render render structure 1`] = `
+<div>
+  <MainHeader />
+  <Route
+    component={[Function]}
+    path="/gif/:gifId"
+  />
+  <Route
+    component={[Function]}
+    exact={true}
+    path="/your-favorites"
+  />
+  <Route
+    component={[Function]}
+    exact={true}
+    path="/"
+  />
+</div>
+`;
