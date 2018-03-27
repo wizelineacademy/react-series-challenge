@@ -10,10 +10,26 @@ injectGlobal`
     .app-root
     {
         max-width: 320px;
-        max-height: 480px;
+        height: 480px;
         border: 1px solid #ccc;
+        margin: 50px auto;
+        position: relative;
+    }
+    .app-root .app
+    {
+        position:absolute;
+        top: 52px;
+        left: 0;
+        bottom: 0;
+        right: 0;
         overflow:scroll;
         overflow-x: hidden;
-        margin: 50px auto;
+        background-color: #f5f5f5;
     }
+    .app-root content
+    {
+        position: absolute;
+        top: 60px;
+    }
+
 `;

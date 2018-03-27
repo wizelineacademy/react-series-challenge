@@ -1,6 +1,6 @@
 const FAVORITE_TOGGLE = 'favorite_toggle';
-
-const toggleFavorite = (payload = '') => ({ type: FAVORITE_TOGGLE, payload });
+/* Toggle Favorite */
+const toggleFavorite = (payload) => ({ type: FAVORITE_TOGGLE, payload });
 
 
 export default {
@@ -9,5 +9,5 @@ export default {
   },
   creators: {
     toggleFavorite
-  },
+  }
 };

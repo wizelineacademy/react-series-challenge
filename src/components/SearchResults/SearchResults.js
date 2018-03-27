@@ -6,20 +6,17 @@ import search from '../../actions/search';
 import SVG from "../SVG";
 import GifThumb from "../GifThumb";
 
-class SearchResults extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  componentDidMount()
-  {
-    
-  }
-
+export class SearchResultsComponent extends React.Component {
   render() {
-    console.log(this.props.search);
-    var trendingItems = this.props.search.gifs.map(function(item, index){
-      return (<GifThumb key={item.id} id={item.id} image={item.images.preview_gif.url}/>);
-    });
+    var trendingItems = null;
+    if (!this.props.search.fetching)
+    {
+      trendingItems = this.props.search.gifs.map(function(item, index){
+        
+        return (<GifThumb key={item.id} id={item.id} image={item.images.preview_gif.url}/>);
+      });
+    }
+    
     var loader = (this.props.search.fetching ? SVG.Loader : null);
     return (
       <div>
@@ -37,12 +34,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
-  const { getTrendingRequested } = search.creators;
-
-  return bindActionCreators({
-    getTrendingRequested
-  }, dispatch);
-}
-
-export default connect(mapStateToProps, null)(SearchResults);
+export default connect(mapStateToProps, null)(SearchResultsComponent);

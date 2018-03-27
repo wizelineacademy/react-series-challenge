@@ -1,5 +1,3 @@
-
-
 const TRENDING_REQUEST = 'trending_request';
 const TRENDING_FAILED = 'trending_failed';
 const TRENDING_COMPLETED = 'trending_completed'
@@ -28,6 +26,7 @@ export default {
   creators: {
     getTrendingRequested,
     getTrendingCompleted,
-    getTrendingFailed,
-  },
+    getTrendingFailed
+  }
+  
 };

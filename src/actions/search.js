@@ -2,11 +2,15 @@ const SEARCH_REQUEST = 'search_request';
 const SEARCH_FAILED = 'search_failed';
 const SEARCH_COMPLETED = 'search_completed'
 
-const search = (payload = '') => {
-  return { type: SEARCH_REQUEST, payload }
-};
-const searchCompleted = (payload = '') => ({ type: SEARCH_REQUEST, payload });
-const searchFailed = (payload = '') => ({ type: SEARCH_REQUEST, payload });
+const search = (q) => ({
+  type: SEARCH_REQUEST,
+  q: q
+});
+const searchCompleted = (gifs) => ({
+  type: SEARCH_COMPLETED,
+  gifs,
+});
+const searchFailed = (error) => ({ type: SEARCH_FAILED, error });
 
 
 export default {
@@ -21,3 +25,5 @@ export default {
     searchFailed,
   },
 };
+
+

@@ -1,12 +1,12 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { AddTransactionButtonContainerStyled, GifPreview } from "./TrendingList.styled"
+import { Title } from "./TrendingList.styled"
 import trending from '../../actions/trending';
 import SVG from "../SVG";
 import GifThumb from "../GifThumb";
 
-class TrendingList extends React.Component {
+export class TrendingListComponent extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -22,7 +22,7 @@ class TrendingList extends React.Component {
     var loader = (this.props.trending.fetching ? SVG.Loader : null);
     return (
       <div>
-          <h1>Trending</h1>
+          <Title>Trending</Title>
           <div>{loader}</div>
           <div>{trendingItems}</div>
       </div>
@@ -43,4 +43,4 @@ const mapDispatchToProps = (dispatch) => {
   }, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(TrendingList);
+export default connect(mapStateToProps, mapDispatchToProps)(TrendingListComponent);

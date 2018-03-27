@@ -4,23 +4,23 @@ import { connect } from 'react-redux';
 import { GifPreview, Heart } from "./GifThumb.styled";
 import favorites from '../../actions/favorites';
 import SVG from "../SVG";
+import { Route, Link, Redirect } from 'react-router-dom';
 
-class GifThumb extends React.Component {
+export class GifThumb extends React.Component {
   constructor(props) {
     super(props);
     this.addFavorite = this.addFavorite.bind(this);
-    this.loadDetails = this.loadDetails.bind(this);
-  }
-  loadDetails() {
-    
   }
   addFavorite() {
     this.props.toggleFavorite({id:this.props.id, image: this.props.image});
   }
   render() {
     var isFavorite = this.props.favorites.gifs[this.props.id];
-    return (<GifPreview onClick={this.loadDetails()}>
-      <img src={this.props.image}/>
+    return (<GifPreview>
+      <Link to={'/gif/' + this.props.id}>
+        <img src={this.props.image}/>
+      </Link>
+      
       <Heart onClick={this.addFavorite}>{isFavorite ? SVG.HeartFill : SVG.HeartEmpty}</Heart>
     </GifPreview>);
   }

@@ -6,18 +6,9 @@ import search from '../../actions/search';
 import SVG from "../SVG";
 import GifThumb from "../GifThumb";
 
-class FavoriteList extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  componentDidMount()
-  {
-    
-  }
-
+export class FavoriteListComponent extends React.Component {
   render() {
     var self = this;
-    console.log(this.props.favorites.gifs);
     var favoriteItems = Object.keys(this.props.favorites.gifs).map(function(property){
       var item = self.props.favorites.gifs[property];
       return (<GifThumb key={item.id} id={item.id} image={item.image}/>);
@@ -37,12 +28,5 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
-  const { getTrendingRequested } = search.creators;
 
-  return bindActionCreators({
-    getTrendingRequested
-  }, dispatch);
-}
-
-export default connect(mapStateToProps, null)(FavoriteList);
+export default connect(mapStateToProps, null)(FavoriteListComponent);

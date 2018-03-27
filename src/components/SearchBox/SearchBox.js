@@ -1,26 +1,38 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import search from '../../actions/search';
+import { SearchBoxDiv } from "./SearchBox.styled";
+import SVG from '../SVG';
 
-class SearchBox extends React.Component {
+export class SearchBox extends React.Component {
   constructor(props) {
     super(props);
     this.input = null;
+    this.search = this.search.bind(this);
     this.onKeyDown = this.onKeyDown.bind(this);
   }
-  onKeyDown = function(event)
+  search()
   {
-    if (event.keyCode == 13)
+    this.props.search(this.input.value);
+    this.props.history.push('/search?q=' + this.input.value);
+    return this.input.value;
+  }
+  onKeyDown(event)
+  {
+    if (event.keyCode === 13)
     {
-      this.props.search(this.input.value);
+      this.search();
     }
   }
   render() {
     return (
-      <div>
-          <input type="text" onKeyDown={this.onKeyDown} ref={input => {this.input = input;}}/>
-      </div>
+      <SearchBoxDiv>
+        
+        <input placeholder="Search" type="text" onKeyDown={this.onKeyDown} ref={input => {this.input = input;}}/>
+        <span className="search-icon" onClick={this.search}>{SVG.Search}</span>
+      </SearchBoxDiv>
     );
   }
 };
@@ -38,4 +50,4 @@ const mapDispatchToProps = (dispatch) => {
   }, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(SearchBox);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SearchBox));

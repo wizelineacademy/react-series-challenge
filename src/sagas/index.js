@@ -1,49 +1,29 @@
-import { all, takeEvery, takeLatest, call, put, select } from 'redux-saga/effects';
+import { all, takeEvery, call, put } from 'redux-saga/effects';
 import trending from "../actions/trending";
 import search from "../actions/search";
+import giphy from "../actions/giphy";
 
 import API from '../api/Giphy';
 
 
-function* gretting() {
-  console.log("Hello World");
-}
-/*
-function* userSaga(action) {
-  console.log(action);
-  
-}
-function* cryptoSaga() {
-  const response = yield call(loadTrending);
-  yield put({type:trending.types.TRENDING_COMPLETED, prices:{...response}});
-  console.log(response);
-}*/
-
-function* getTrending() {
+export function* getTrending() {
   const response = yield call(API.loadTrending);
-  yield put({type:trending.types.TRENDING_COMPLETED, gifs:response.data});
+  yield put(trending.creators.getTrendingCompleted(response.data));
+  return response.data;
 }
 
-function* getSearch(action) {
-  console.log("action", action)
-  const response = yield call(API.loadSearch, action.payload);
-  yield put({type:search.types.SEARCH_COMPLETED, gifs:response.data});
+export function* getSearch(action) {
+  const response = yield call(API.loadSearch, action.q);
+  yield put(search.creators.searchCompleted(response.data));
 }
-/*
-function* selectSaga() {
-  const value = yield select(selector);
-  console.log("value", value);
+export function* getGiphy(action) {
+  const response = yield call(API.loadSingleGiphy, action.id);
+  yield put(giphy.creators.giphyCompleted(response.data));
 }
-*/
-
 export default function* rootSaga() {
-  console.log('redux saga setup ok');
   yield all([
-    //add your sagas here:
-    //yield gretting(),
     yield takeEvery(trending.types.TRENDING_REQUEST, getTrending),
     yield takeEvery(search.types.SEARCH_REQUEST, getSearch),
-    //yield takeLatest('GET_PRICES_REQUESTED', cryptoSaga),
-    //yield selectSaga(),
+    yield takeEvery(giphy.types.GIPHY_REQUEST, getGiphy)
   ]);
 };

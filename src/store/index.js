@@ -13,17 +13,17 @@ const middleware = [
   sagaMiddleware,
 ];
 
-const composedEnhancers = compose(
+const composedEnhancers = compose (
   applyMiddleware(...middleware),
   ...enhancers,
 );
 
-const store = createStore(
+const store = createStore (
   rootReducer,
   initialState,
   composedEnhancers,
 );
 
-sagaMiddleware.run(rootSaga);
+sagaMiddleware.run( rootSaga );
 
 export default store;

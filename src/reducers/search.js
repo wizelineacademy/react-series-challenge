@@ -13,7 +13,7 @@ const searchReducer = (state = initalState, action) => {
     case searchActions.types.SEARCH_REQUEST:
       return {
         ...state,
-        q: action.payload,
+        q: action.q,
         fetching: true,
       };
     case searchActions.types.SEARCH_COMPLETED:
