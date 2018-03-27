@@ -17,7 +17,8 @@ const gifsReducer = (state = initialState, action) => {
 				...state,
 				fetching: true,
 				trending: true,
-				searching: false
+				searching: false,
+				search: action.text
 			};
 		case requests.types.SEARCH_REQUEST:
 			return {

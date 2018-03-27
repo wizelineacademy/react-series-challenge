@@ -3,7 +3,7 @@ const SEARCH_REQUEST = 'SEARCH_REQUEST';
 const GIFS_LOADED = 'GIFS_LOADED';
 const GIFS_LOAD_ERROR = 'GIFS_LOAD_ERROR';
 
-const trendingRequest = () => ({ type: TRENDING_REQUEST });
+const trendingRequest = text => ({ type: TRENDING_REQUEST, text });
 const searchRequest = text => ({ type: SEARCH_REQUEST, text });
 
 const gifsLoaded = gifsList => {

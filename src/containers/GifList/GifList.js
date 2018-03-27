@@ -8,7 +8,7 @@ import { FlexBox } from '../../style/style';
 export class GifList extends Component {
 	componentDidMount() {
 		if (
-			Object.keys(this.props.favorites).length == 0 &&
+			Object.keys(this.props.favorites).length === 0 &&
 			JSON.parse(sessionStorage.getItem('myFavs'))
 		) {
 			//console.log('load');
@@ -48,9 +48,21 @@ export class GifList extends Component {
 					title: this.props.favorites[key].title,
 					src: this.props.favorites[key].src,
 					favorite: true,
-					action: this.props.removeFavorite
+					action: this.props.removeFavorite,
+					searched: this.props.favorites[key].search
 				};
 			});
+
+			if (this.props.search.length > 0) {
+				images = images.filter(img => {
+					return (
+						img.title.toLowerCase().search(this.props.search.toLowerCase()) >
+							-1 ||
+						img.searched.toLowerCase().search(this.props.search.toLowerCase()) >
+							-1
+					);
+				});
+			}
 		}
 
 		images = images.map(gif => (

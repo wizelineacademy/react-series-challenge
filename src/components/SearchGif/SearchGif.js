@@ -12,7 +12,7 @@ const searchGif = props => {
 		if (event.target.value.length > 0) {
 			searchRequest(event.target.value);
 		} else {
-			trendingRequest();
+			trendingRequest(event.target.value);
 		}
 	};
 

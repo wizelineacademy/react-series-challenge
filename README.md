@@ -20,7 +20,7 @@ The output of this challenge is to create a Giphy Client.
 
 ## Your Favorites Gifs View
   - It displays the Gifs that you previously selected, which comes from the redux state
-  * It has a search bar, which filters from the redux state
+  - It has a search bar, which filters from the redux state
   - Each gif may be removed from favorite in the redux state, and
   - Each gif should display if it is already marked as favorite
 
