@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 const Image = styled.img`
 
-width:100%;
+max-width:100%;
 height:auto;
 `
 
@@ -28,12 +28,15 @@ const LikeIcon = styled.i`
 
 const Box = styled.div`
 cursor:pointer;
-width:10%;
+text-align:center;
+vertical-align:top;
+width:20%;
 height:auto;
+margin:0;
 border: 1px solid #ddd;
 border-radius: 4px;
 padding: 5px;
-display:flex;
+display:inline-block;
 flex-direction:column;
 justify-content:center;
 align-items:center;

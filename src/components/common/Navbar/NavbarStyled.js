@@ -14,7 +14,9 @@ height: 56px;
 line-height: 56px;
 display:flex;
 justify-content:center;
-align-items:center
+align-items:center;
+
+margin:0;
 `
 
 

@@ -1,5 +1,7 @@
 import React from 'react'
-import Gif from './../common/Gif/index';
+
+
+import GifBox from './../common/GifBox/index';
 
 
 
@@ -7,7 +9,7 @@ const Home = ()=>{
     return(<section>
                 
               
-                <Gif src="https://media.giphy.com/media/fxzFlt3pp8kpMvHhGV/giphy.gif"/>
+                <GifBox/>
             </section>)
 }
 export default Home
