@@ -21,6 +21,7 @@ class TrendingList extends React.Component {
 
     return (
       <div>
+        <h1>Trending Gifs</h1>
         {
           fetching ?
          'Loading...' :

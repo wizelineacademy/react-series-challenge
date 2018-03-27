@@ -3,6 +3,7 @@ import { Provider } from 'react-redux';
 import './App.css';
 import store from './store';
 import TrendingList from './components/TrendingList/TrendingList';
+import Search from './components/Search/Search';
 
 class App extends Component {
   render() {
@@ -12,6 +13,7 @@ class App extends Component {
           <header className="App-header">
 ¡            <h1 className="App-title">Welcome to React</h1>
           </header>
+          <Search />
           <TrendingList />
         </div>
       </Provider>

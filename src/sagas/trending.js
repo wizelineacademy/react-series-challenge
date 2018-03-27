@@ -1,6 +1,5 @@
 import { call, takeEvery, put } from 'redux-saga/effects';
 import { loadTrending } from '../api/giphy';
-//import giphySearch from '../actions/giphySearch';
 import trending from '../actions/trending';
 
 export function* loadTrendingSaga() {
