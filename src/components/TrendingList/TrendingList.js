@@ -2,6 +2,10 @@ import React from 'react';
 import { bindActionCreators } from "redux";
 import { connect } from 'react-redux';
 import trending from '../../actions/trending';
+import {
+  TrendingListContainerStyled,
+  ImageTrendingContainerStyled,
+} from './TrendingList.styled';
 
 class TrendingList extends React.Component {
   constructor (props){
@@ -20,19 +24,19 @@ class TrendingList extends React.Component {
     } = trending;
 
     return (
-      <div>
+      <TrendingListContainerStyled>
         <h1>Trending Gifs</h1>
         {
           fetching ?
          'Loading...' :
           resTrending.data && resTrending.data.length > 0 ?
             resTrending.data.map((key, idx) => (
-            <div key={key.id}>
+            <ImageTrendingContainerStyled key={key.id}>
                 <img src={key.images.fixed_height_still.url} />
-              </div>
+              </ImageTrendingContainerStyled>
             )) : <span></span>
         }
-      </div>
+      </TrendingListContainerStyled>
     );
   }
 };

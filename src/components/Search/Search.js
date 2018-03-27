@@ -2,6 +2,11 @@ import React from 'react';
 import { bindActionCreators } from "redux";
 import { connect } from 'react-redux';
 import search from '../../actions/search';
+import {
+  SearchFormStyled,
+  SearchListContainerStyled,
+  ImageContainerStyled,
+} from './Search.styled';
 
 class Search extends React.Component {
   constructor(props) {
@@ -45,22 +50,22 @@ class Search extends React.Component {
 
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
+        <SearchFormStyled onSubmit={this.handleSubmit}>
           <input type="text" placeholder="Search for a gif..." name="qry_str" onChange={this.setQueryStr} />
           <input type="submit" value="Submit" />
-        </form>
-        <div>
+        </SearchFormStyled>
+        <SearchListContainerStyled>
           {
             searchFetching ?
            'Loading search...' :
             resSearch.data && resSearch.data.length > 0 ?
               resSearch.data.map((key, idx) => (
-              <div key={key.id}>
+                <ImageContainerStyled key={key.id}>
                   <img src={key.images.fixed_height_still.url} />
-                </div>
+                </ImageContainerStyled>
               )) : <span></span>
           }
-        </div>
+        </SearchListContainerStyled>
       </div>
     );
   }
