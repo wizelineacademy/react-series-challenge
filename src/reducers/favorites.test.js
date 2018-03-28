@@ -9,6 +9,7 @@ let q = 'anime';
 let error = {message: 'invalid api key'}
 const initialState = {
     gifs: {},
+    filter: ''
   };
 describe('Favorite Reducer', () => {
     it('No action', ()=>{
@@ -18,6 +19,13 @@ describe('Favorite Reducer', () => {
       expect(favoritesReducer(undefined, {type: 'no-action'})).toEqual(initialState);  
     })
     
+    it('Filter Favorite List', ()=>{
+      var result = {
+          ...data,
+          filter: 'anime'
+      }
+      expect(favoritesReducer(data, creators.filterFavorite('anime'))).toEqual(result);
+    });
     it('Adding Favorite', ()=>{
       var result = {
           ...data,

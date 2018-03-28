@@ -14,7 +14,6 @@ describe('Test Giphy Detail Component', () => {
         const componentDidMount = jest.fn();
         FavoriteList.prototype.componentDidMount = componentDidMount;
         const wrapper = mount(<BrowserRouter><Provider store={store}><FavoriteList /></Provider></BrowserRouter>);
-        wrapper.instance().componentDidMount = componentDidMount;
         expect(componentDidMount).toHaveBeenCalledTimes(1);
     });
     
@@ -36,6 +35,35 @@ describe('Test Giphy Detail Component', () => {
         }
         
         const wrapper = mount(<BrowserRouter><Provider store={store}><FavoriteListComponent favorites={favorites}/></Provider></BrowserRouter>);
-        expect(wrapper.find('GifThumb').length).toBe(1);
+        expect(wrapper.find('GifThumbComponent').length).toBe(1);
+    });
+    it('calls filter from props when filtering is perform', () => {
+        var props = {
+            filter: jest.fn(),
+        }
+        const favorites = {
+            gifs: []
+        }
+        const wrapper = mount(<FavoriteListComponent filterFavorite={props.filter} favorites={favorites}/>);
+        expect(props.filter).toHaveBeenCalledTimes(0);
+        wrapper.instance().filter();
+        expect(props.filter).toHaveBeenCalledTimes(1);
+    });
+    it('dont call search when user types a not enter char', () => {
+        const favorites = {
+            gifs: []
+        }
+        const wrapper = mount(<FavoriteListComponent  favorites={favorites}/>);
+        const filter = jest.fn();
+        wrapper.instance().filter = filter;
+        wrapper.instance().onKeyDown({keyCode: 23});
+        expect(filter).toHaveBeenCalledTimes(0);
+    });
+    it('calls unmount', () => {
+        const componentWillUnmount = jest.fn();
+        FavoriteList.prototype.componentWillUnmount = componentWillUnmount;
+        const wrapper = mount(<BrowserRouter><Provider store={store}><FavoriteList /></Provider></BrowserRouter>);
+        wrapper.unmount();
+        expect(componentWillUnmount).toHaveBeenCalledTimes(1);
     });
 });

@@ -1,20 +1,41 @@
 import React from 'react';
+import { bindActionCreators } from 'redux';
 import { Link } from 'react-router-dom';
 import SVG from "../SVG";
-import { MenuButton } from "./Menu.styled"
+import { connect } from 'react-redux';
+import { MenuButton } from "./Menu.styled";
+import menu from '../../actions/menu';
 
-class Menu extends React.Component {
-  
+export class MenuComponent extends React.Component {
   render() {
+    var items = null;
+    if (this.props.menu.show)
+    {
+      items = [
+        <Link to="/favorites" className="favorite" key="favorite">{SVG.HeartFill}</Link>,
+        <Link to="/" className="trending" key="trending">{SVG.Fire}</Link>
+      ];
+    }
     return (
       <MenuButton>
-        <b>+</b>
-        <Link to="/favorites" className="favorite">{SVG.HeartFill}</Link>
-        <Link to="/" className="trending">{SVG.Fire}</Link>
+        <b onClick={()=>{this.props.menuToggle()}}>+</b>
+        {items}
       </MenuButton>
     );
   }
 };
 
 
-export default Menu;
+const mapStateToProps = (state) => {
+  return {
+    menu: state.menu
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  
+  return bindActionCreators({
+    menuToggle: menu.creators.menuToggle
+  }, dispatch);
+}
+export default connect(mapStateToProps, mapDispatchToProps)(MenuComponent);

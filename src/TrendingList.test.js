@@ -36,7 +36,7 @@ describe('Test Giphy Detail Component', () => {
         
         const getTrendingRequested=function(){}
         const wrapper = mount(<BrowserRouter><Provider store={store}><TrendingListComponent trending={trending} getTrendingRequested={getTrendingRequested}/></Provider></BrowserRouter>);
-        expect(wrapper.find('GifThumb').length).toBe(1);
+        expect(wrapper.find('GifThumbComponent').length).toBe(1);
     });
     it('Renders Loader', () => {
         const trending = {
@@ -48,4 +48,5 @@ describe('Test Giphy Detail Component', () => {
         const wrapper = mount(<BrowserRouter><Provider store={store}><TrendingListComponent trending={trending} getTrendingRequested={getTrendingRequested}/></Provider></BrowserRouter>);
         expect(wrapper.find('svg').length).toBe(1);
     });
+    
 });

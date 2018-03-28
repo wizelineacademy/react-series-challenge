@@ -1,9 +1,7 @@
 import React from 'react';
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { AddTransactionButtonContainerStyled, GifPreview } from "./SearchResults.styled"
-import search from '../../actions/search';
 import SVG from "../SVG";
+import { Title } from "./SearchResults.styled"
 import GifThumb from "../GifThumb";
 
 export class SearchResultsComponent extends React.Component {
@@ -13,14 +11,14 @@ export class SearchResultsComponent extends React.Component {
     {
       trendingItems = this.props.search.gifs.map(function(item, index){
         
-        return (<GifThumb key={item.id} id={item.id} image={item.images.preview_gif.url}/>);
+        return (<GifThumb key={item.id} id={item.id} image={item.images.preview_gif.url} title={item.title}/>);
       });
     }
     
     var loader = (this.props.search.fetching ? SVG.Loader : null);
     return (
       <div>
-          <h1>Search Results</h1>
+          <Title>Search Results</Title>
           <div>{loader}</div>
           <div>{trendingItems}</div>
       </div>

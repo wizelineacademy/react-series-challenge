@@ -17,12 +17,28 @@ const GifPreview = styled.div`
     transform: translate(-50%,-50%);
     max-height: 100px;
   }
+  span
+  {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    line-height: 20px;
+    padding: 0 10px;
+    color: #fff;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    text-overflow:ellipsis;
+    overflow:hidden;
+    white-space:nowrap;
+    font-size: 10px;
+  }
 `;
 
 const Heart = styled.div`
   position: absolute;
-  top: 10px;
-  left: 10px;
+  bottom: 10px;
+  right: 10px;
   svg
   {
     width: 20px;

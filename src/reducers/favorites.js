@@ -2,6 +2,7 @@ import favoriteActions from '../actions/favorites';
 
 const initalState = {
   gifs: {},
+  filter: ''
 };
 
 const favoriteReducer = (state = initalState, action) => {
@@ -24,6 +25,12 @@ const favoriteReducer = (state = initalState, action) => {
             return {
                 ...state,
                 gifs: gifs
+            };
+        case favoriteActions.types.FAVORITE_FILTER:
+            var filter = action.filter;
+            return {
+                ...state,
+                filter
             };
         default:
             return state;

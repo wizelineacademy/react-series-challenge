@@ -1,5 +1,4 @@
 import {injectGlobal} from 'styled-components';
-
 injectGlobal`
     body {
         margin: 0;
@@ -22,7 +21,7 @@ injectGlobal`
         left: 0;
         bottom: 0;
         right: 0;
-        overflow:scroll;
+        overflow:auto;
         overflow-x: hidden;
         background-color: #f5f5f5;
     }

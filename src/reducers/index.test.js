@@ -1,7 +1,10 @@
 import { createStore } from 'redux';
 import rootReducer from './index';
 const initialState = {
-    favorites:{ gifs:{}},
+    favorites:{ 
+        gifs:{},
+        filter: ''
+    },
     giphy:{
         fetching: false,
         gif: {}
@@ -16,8 +19,10 @@ const initialState = {
     {
         fetching: false,
         gifs:[]
+    },
+    menu:{
+        show:false
     }
-
 };
 const store = createStore (
     rootReducer

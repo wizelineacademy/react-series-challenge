@@ -14,7 +14,6 @@ describe('Test Giphy Detail Component', () => {
         const componentDidMount = jest.fn();
         SearchResults.prototype.componentDidMount = componentDidMount;
         const wrapper = mount(<BrowserRouter><Provider store={store}><SearchResults /></Provider></BrowserRouter>);
-        wrapper.instance().componentDidMount = componentDidMount;
         expect(componentDidMount).toHaveBeenCalledTimes(1);
     });
     
@@ -35,7 +34,7 @@ describe('Test Giphy Detail Component', () => {
         }
         
         const wrapper = mount(<BrowserRouter><Provider store={store}><SearchResultsComponent search={search}/></Provider></BrowserRouter>);
-        expect(wrapper.find('GifThumb').length).toBe(1);
+        expect(wrapper.find('GifThumbComponent').length).toBe(1);
     });
     it('Renders Loader', () => {
         const search = {

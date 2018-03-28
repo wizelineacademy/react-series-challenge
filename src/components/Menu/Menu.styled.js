@@ -1,20 +1,9 @@
 import styled from 'styled-components';
 
 
-const Giphy = styled.div`
-
-  .image{
-    position:relative
-  }
-  img{
-    display: block;
-    max-width: 100%;
-    margin: 0 auto;
-  }
-`;
 const MenuButton = styled.div`
   position: absolute;
-  bottom: 15px;
+  bottom: 65px;
   right: 15px;
   display: block;
   
@@ -68,5 +57,5 @@ const MenuButton = styled.div`
   }
 `
 export {
-  Giphy, MenuButton
+  MenuButton
 };

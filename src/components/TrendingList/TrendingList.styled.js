@@ -1,7 +1,10 @@
 import styled from 'styled-components';
 
 const Title = styled.div`
-  color: #000
+  display: block;
+  font-size: 20px;
+  text-align: center;
+  padding: 10px;
 `
 export {
   Title

@@ -14,7 +14,6 @@ describe('Test Giphy Detail Component', () => {
         const componentDidMount = jest.fn();
         GiphyDetail.prototype.componentDidMount = componentDidMount;
         const wrapper = mount(<BrowserRouter><Provider store={store}><GiphyDetail /></Provider></BrowserRouter>);
-        wrapper.instance().componentDidMount = componentDidMount;
         expect(componentDidMount).toHaveBeenCalledTimes(1);
     });
     it('Test Renders Details', () => {
@@ -79,6 +78,30 @@ describe('Test Giphy Detail Component', () => {
         const wrapper = mount(<GiphyDetailComponent giphy={giphy} favorites={{gifs: {}}} toggleFavorite={toggleFavorite}/>);
         wrapper.instance().addFavorite();
         expect(toggleFavorite).toHaveBeenCalledTimes(1);
+    });
+    it('Call to request giphy on load when you have a match giphy id', () => {
+        const giphy = {
+            fetching: false,
+            gif: {
+                id: "qaqsqQOyzV1m0",
+                images: {
+                    original: {
+                        url: "https://media2.giphy.com/media/qaqsqQOyzV1m0/giphy.gif"
+                    }
+                },
+                title: "paris GIF",
+                import_datetime: "2014-03-26 12:04:49"
+            }
+        }
+        const match = {
+            params: {
+                giphy_id: "qaqsqQOyzV1m0"
+            }
+        }
+        const giphyRequest = jest.fn();
+
+        const wrapper = mount(<GiphyDetailComponent giphy={giphy} favorites={{gifs: {"qaqsqQOyzV1m0":true}}} giphyRequest={giphyRequest} match={match}/>);
+        expect(giphyRequest).toHaveBeenCalledTimes(1);
     });
     
 });

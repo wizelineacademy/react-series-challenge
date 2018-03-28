@@ -7,9 +7,7 @@ import SVG from "../SVG";
 import GifThumb from "../GifThumb";
 
 export class TrendingListComponent extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+  
   componentDidMount()
   {
     this.props.getTrendingRequested();
@@ -17,7 +15,7 @@ export class TrendingListComponent extends React.Component {
 
   render() {
     var trendingItems = this.props.trending.gifs.map(function(item, index){
-      return (<GifThumb key={item.id} id={item.id} image={item.images.preview_gif.url}/>);
+      return (<GifThumb key={item.id} id={item.id} image={item.images.preview_gif.url} title={item.title}/>);
     });
     var loader = (this.props.trending.fetching ? SVG.Loader : null);
     return (
