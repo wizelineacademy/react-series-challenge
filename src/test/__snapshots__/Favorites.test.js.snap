@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`test Home Render render structure 1`] = `
+exports[`test Favorites Render render structure 1`] = `
 <ViewFavorites
   favorites={
     Object {

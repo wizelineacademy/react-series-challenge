@@ -14,7 +14,6 @@ class ListGifs extends Component {
     render() {
         const { dataSource } = this.props;
         const favList = this.props.favorites.originalList.data;
-        const filterFav = this.props.favorites.list.data;
         let dataSourceObj = null;
 
         switch (dataSource) {
@@ -71,6 +70,10 @@ const mapDispatchToProps = (dispatch) => {
         addFavorite,
         removeFavorite
     }, dispatch);
+}
+
+export {
+    ListGifs
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ListGifs);

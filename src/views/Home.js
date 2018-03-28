@@ -82,4 +82,8 @@ const mapDispatchToProps = (dispatch) => {
     }, dispatch);
 }
 
+export {
+    ViewHome
+}
+
 export default connect(mapStateToProps, mapDispatchToProps)(ViewHome);

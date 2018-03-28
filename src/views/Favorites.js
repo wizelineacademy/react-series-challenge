@@ -62,4 +62,8 @@ const mapDispatchToProps = (dispatch) => {
     }, dispatch);
 }
 
+export {
+    ViewFavorites
+}
+
 export default connect(mapStateToProps, mapDispatchToProps)(ViewFavorites);

@@ -54,4 +54,8 @@ const mapDispatchToProps = (dispatch) => {
     }, dispatch);
 }
 
+export {
+    GifDetailView
+}
+
 export default connect(mapStateToProps, mapDispatchToProps)(GifDetailView);

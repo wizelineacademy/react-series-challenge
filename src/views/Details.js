@@ -19,9 +19,6 @@ class Details extends Component {
         if (!list || list.data.length > 1) {
             return null;
         }
-        if (!list && fetching && success) {
-            return <div>Cargando...</div>
-        }
         if (list && !fetching && !success) {
             return <div>Algo salió mal...</div>
         }
@@ -49,5 +46,9 @@ const mapDispatchToProps = (dispatch) => {
         getFavoritesList
     }, dispatch);
 }
+
+export {
+    Details
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Details);
