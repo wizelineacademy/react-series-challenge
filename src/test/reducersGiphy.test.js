@@ -81,3 +81,24 @@ describe('test reducer', () => {
         })).toEqual(errorState);
     })
 });
+
+describe('test reducer', () => {
+    it('Action get sby id start', () => {
+        expect(giphy({}, {
+            type: actions.types.GET_BY_ID_START,
+            payloads: []
+        })).toEqual( {"fetching": true, "success": true});
+    })
+});
+
+describe('test reducer', () => {
+    it('Action get search complete', () => {
+        expect(giphy({}, {
+            type: actions.types.GET_SEARCH_COMPLETE,
+            payloads: {
+                list: [],
+                query: ''
+            }
+        })).toEqual(startState);
+    })
+});

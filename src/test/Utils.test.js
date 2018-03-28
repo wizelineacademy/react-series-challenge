@@ -16,6 +16,13 @@ describe('test debounce', ()=> {
     })
 });
 
+describe('test debounce timer', () => {
+    it('debounce', () => {
+        const callback = jest.fn(() => ('test'));
+        expect(Utils.debounce(callback, 100)).resolves.toBe('function');
+    });
+})
+
 describe('test slugfy', ()=>{
     it('String to slug', ()=>{
         expect(Utils.slugfiy('Slug Test')).toBe('slug-test');
