@@ -1,44 +1,32 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
 import styled from 'styled-components'
-import gifs from '../../../actions/gifs'
 import Gif from '../Gif'
 
 
 const Box = styled.section`
-width:80%;
+width:99%;
 margin:0 auto;
 box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 border-radius: 5px;
 
 `
 
-const gifsSelector = state => {
-    return state.giphyReducer.gifs
-}
-
-const fetchingSelector = state =>{
-    return state.giphyReducer.fetching
-}
 class GifBox extends Component{
-   componentDidMount(){
-       this.props.getGifsRequested()
-
-   }
+  
     render(){
-        const { gifs, fetching } = this.props
+        const { gifs, fetching, likeGif, unlikeGif } = this.props
         return( 
             <Box>
                 {
                     fetching ? 
                     'loading':
-                    gifs.map((g)=>{
-                        console.log(g)
-                        const {  id, images } = g
+                    gifs.map((g, index)=>{
+                        const gif = {...g,index}
+                        const {  id, images } = gif
                         const { downsized_large} = images
                         const { url } = downsized_large
                         const isFavorite = g.isFavorite ? true : false
-                        return <Gif src={ url } key={id} isFavorite={isFavorite} />
+                        return <Gif src={ url } key={id} data={gif} isFavorite={isFavorite} onClickIcon={isFavorite ? unlikeGif : likeGif} />
                     })
                 }
             </Box>
@@ -46,14 +34,6 @@ class GifBox extends Component{
     }
 }
 
-const mapStateTopProps = state =>({
-    gifs: gifsSelector(state),
-    fetching: fetchingSelector(state),
-})
-const mapDispatchToProps = dispatch =>({
-    getGifsRequested(){
-        dispatch(gifs.creators.getGifsRequested())
-    }
-})
 
-export default connect(mapStateTopProps,mapDispatchToProps)(GifBox)
+
+export default GifBox

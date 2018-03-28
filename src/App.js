@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 import './components/common/Theme/Global'
 
 import Home from './components/Home'
-import Navbar from './components/common/Navbar/index';
+import Favorites from './components/Favorites'
+import Navbar from './components/common/Navbar';
+import Detail from './components/Deatail';
+
 
 
 class App extends Component {
@@ -14,11 +17,14 @@ class App extends Component {
       <div>
         <header>
           <Navbar />
+          
         </header>
-        <Switch>
-          <Route path="/" component={Home} />
+        <div>
+          <Route exact path="/" component={Home} /> 
+          <Route exact path="/favorites" component={Favorites} />
+          <Route exact path="/detail/:id" component={Detail} />
 
-        </Switch>
+        </div>
       </div>
 
 

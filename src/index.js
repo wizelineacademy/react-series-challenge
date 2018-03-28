@@ -7,10 +7,12 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
+    <Router>
     <Provider store={ store }>
-        <Router>
+       
             <App />
-        </Router>
+      
     </Provider>
-, document.getElementById('root'));
+    </Router>
+, document.getElementById('root')|| document.createElement('div'));
 registerServiceWorker();

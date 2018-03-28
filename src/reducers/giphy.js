@@ -2,97 +2,135 @@ import gifs from '../actions/gifs'
 
 
 const initialState = {
-    fetching:false,
-    gifs:[],
+    fetching: true,
+    gifs: [],
+    query: "",
     error: null,
-    likeGifs:[]
+    likeGifs: []
 }
 
 
-const giphyReducer = (state = initialState, action)=>{
+const giphyReducer = (state = initialState, action) => {
     const { type } = action
     const { types } = gifs
-    const { GET_GIFS_COMPLETED, GET_GIFS_FAILED, GET_GIFS_REQUESTED,LIKE_GIF, UNLIKE_GIF,
-    SEARCH_GIF_COMPLETED, SEARCH_GIF_FAILED, SEARCH_GIF_REQUESTED } = types
+    const { GET_GIFS_COMPLETED, GET_GIFS_FAILED, GET_GIFS_REQUESTED, LIKE_GIF, UNLIKE_GIF,
+        
+        SEARCH_GIF_REQUESTED,
+        GET_GIFS_LOCAL_REQUESTED,
+         SET_QUERY, GET_ONE_GIF } = types
 
 
-    switch(type){
+    switch (type) {
         case GET_GIFS_REQUESTED:
             return {
                 ...state,
                 fetching: true
             }
         case GET_GIFS_COMPLETED:
-        let gifsT = []
-        const actual_like_gifs = window.sessionStorage.getItem("likeGifs") || []
-        if(actual_like_gifs.length!==0){
-             gifsT =  actual_like_gifs.map((g)=>{
-                return action.gifs.find((f)=>{
-                    return f.id === g.id
-                }).isFavorite = true
-            })
-        }
-        else{
-            gifsT = action.gifs
-        }
-      
-        console.log(gifsT)
-      
-        
+            let gifsT = []
+            
+            let actual_like_gifs = window.sessionStorage.getItem("likeGifs")
+            if(actual_like_gifs === undefined || actual_like_gifs === null) actual_like_gifs = []
+            else {
+                actual_like_gifs = JSON.parse(actual_like_gifs)
+            }
+            
+            
+            if (actual_like_gifs.length !== 0) {
+                action.gifs.forEach((g) => {
+                    actual_like_gifs.forEach((a) => {
+                        if (g.id === a.id) {
+                            gifsT = [...gifsT.filter((f) => { return f.id !== g.id }),
+                            Object.assign({}, g, { isFavorite: true })]
+
+                        }
+                        else if (gifsT.filter((f) => { return f.id === g.id }).length === 0) {
+                            gifsT = [...gifsT,
+                            Object.assign({}, g, { isFavorite: false })]
+                        }
+
+
+
+                    })
+
+                })
+
+            }
+            else {
+                gifsT = action.gifs
+            }
             return {
                 ...state,
-                fetching:false,
-                gifs:gifsT
+                fetching: false,
+                gifs: gifsT
             }
         case GET_GIFS_FAILED:
-        return {
-            ...state,
-            fetching:false,
-            error:action.error
-        }
+            return {
+                ...state,
+                fetching: false,
+                gifs:[],
+                error: action.error
+            }
         case SEARCH_GIF_REQUESTED:
             return {
                 ...state,
-                fetching:true,
+                fetching: true,
 
             }
-        case SEARCH_GIF_COMPLETED:
-        const actual_like_gifs_search = window.sessionStorage.getItem("likeGifs")
-        const gifs_search = Object.entries(Object.assign({}, ...action.gifss,...actual_like_gifs_search)).map(([key, value]) => ({[key]:value}));
-            return {
-                ...state,
-                fetching:false,
-                gifs: gifs_search,
-            }
-        case SEARCH_GIF_FAILED:
-            return {
-                ...state,
-                fetching:false,
-                error: action.error
-            }
+        
         case LIKE_GIF:
-            const gif = {...action.gif,isFavorite:true}
+            const gif = { ...action.gif, isFavorite: true }
+            let local_favs = window.sessionStorage.getItem("likeGifs")
+            if(local_favs === undefined || local_favs === null) local_favs = []
+            else{
+                local_favs = JSON.parse(local_favs)
+            }
             let like_gifs = [
-                ...state.likeGifs,
+                ...local_favs,
                 gif
             ];
-            window.sessionStorage.setItem("likeGifs",like_gifs)
-            const gifsFinal = Object.entries(Object.assign({}, ...state.gifs,...like_gifs)).map(([key, value]) => ({[key]:value}));
+
+            window.sessionStorage.setItem("likeGifs", JSON.stringify(like_gifs))
+            const fgifs = [...state.gifs]
+            fgifs[action.gif.index] = gif
             return {
                 ...state,
-                likeGifs:like_gifs,
-                gifs:gifsFinal
+                likeGifs: like_gifs,
+                gifs: fgifs
             }
         case UNLIKE_GIF:
-            let actual_like_gifs_final = state.likeGifs.filter((g)=>{
-                return g.id !== action.gif.id
-            })
-            window.sessionStorage.setItem("likeGifs",actual_like_gifs)
-            const Gifs = Object.entries(Object.assign({}, ...state.gifs,...actual_like_gifs_final)).map(([key, value]) => ({[key]:value}));
+            let ssdata = window.sessionStorage.getItem('likeGifs')
+            let unlike_like_gifs_final = []
+            if(ssdata === undefined || ssdata === null) ssdata = []
+            if(ssdata.length>0){
+                 unlike_like_gifs_final = [...JSON.parse(ssdata).filter((g) => {
+                    return g.id !== action.gif.id
+                })]
+            }
+           
+            window.sessionStorage.setItem("likeGifs", JSON.stringify(unlike_like_gifs_final))
+            const ugifs = [...state.gifs]
+            ugifs[action.gif.index] = { ...action.gif, isFavorite: false }
             return {
                 ...state,
-                likeGifs:actual_like_gifs,
-                gifs:Gifs
+                
+                gifs: ugifs
+            }
+        case GET_GIFS_LOCAL_REQUESTED:
+            return {
+                ...state,
+                fetching: true
+            }
+        
+        case SET_QUERY:
+            return {
+                ...state,
+                query: action.query
+            }
+        case GET_ONE_GIF:
+            return {
+                ...state,
+                fetching: true
             }
         default:
             return state
