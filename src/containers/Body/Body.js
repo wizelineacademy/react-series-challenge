@@ -3,18 +3,25 @@ import { connect } from 'react-redux';
 import GifList from '../GifList/GifList';
 import { SubTitle } from '../../style/style';
 
-class Home extends Component {
+class Body extends Component {
 	render() {
 		let section = 'API not found';
-		if (this.props.searching) {
-			section = 'Search results';
-		}
-		if (this.props.trending) {
-			section = 'Trending Hot Gifs';
+		let location = '';
+		if (this.props.FavoriteSection) {
+			section = 'Favorites';
+			location = 'Favorites';
+		} else {
+			location = 'Home';
+			if (this.props.searching) {
+				section = 'Search results';
+			}
+			if (this.props.trending) {
+				section = 'Trending Hot Gifs';
+			}
 		}
 		return [
 			<SubTitle key="TrendSub">{section}</SubTitle>,
-			<GifList home key="TrendList" />
+			<GifList page={location} key="TrendList" />
 		];
 	}
 }
@@ -26,4 +33,4 @@ const mapStateToProps = ({ gifsFetch }) => {
 	};
 };
 
-export default connect(mapStateToProps)(Home);
+export default connect(mapStateToProps)(Body);

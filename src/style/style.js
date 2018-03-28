@@ -3,6 +3,7 @@ import styled from 'styled-components';
 const Image = styled.img`
 	border: 2px solid black;
 	border-radius: 50px;
+	height: ${props => (props.big ? '30vw' : null)};
 `;
 
 const ImageDetails = styled.div`
@@ -16,6 +17,7 @@ const ImageDetails = styled.div`
 const ImageCard = styled.div`
 	display: inline-block;
 	flex-basis: 25%;
+	width: ${props => (props.big ? '80vw' : null)};
 	margin-top: 3em
 	text-align: center;
 	:hover {

@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import { Route, Redirect, NavLink, Switch } from 'react-router-dom';
 
-import Home from './containers/Home/Home';
-import Favorites from './containers/Favorites/Favorites';
+import GifCard from './components/GifCard/GifCard';
+import Body from './containers/Body/Body';
 import SearchGif from './components/SearchGif/SearchGif';
 import store from './store';
 import global from './style/global';
@@ -29,8 +29,29 @@ class App extends Component {
 					<br />
 					<Border home>
 						<Switch>
-							<Route path="/Home" component={Home} />
-							<Route path="/Favorites" component={Favorites} />
+							<Route path="/Home" component={Body} />
+							<Route
+								path="/Favorites"
+								render={() => <Body FavoriteSection />}
+							/>
+							<Route
+								path="/image/:id"
+								render={props => {
+									if (props.location.state) {
+										return (
+											<GifCard
+												src={props.location.state.src}
+												id={props.location.state.id}
+												favorite={props.location.state.favorite}
+												goBack={props.history.goBack}
+												big
+											/>
+										);
+									} else {
+										<div />;
+									}
+								}}
+							/>
 							<Redirect from="/" to="/Home" />
 							<Redirect
 								to={{

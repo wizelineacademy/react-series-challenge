@@ -19,16 +19,20 @@ export class GifList extends Component {
 	}
 	render() {
 		let images = [];
-		if (this.props.home) {
+		if (this.props.page === 'Home') {
+			// if (this.props.gifsList.length > 0) {
+			// 	console.log(this.props.gifsList[0]);
+			// 	console.log('image');
+			// }
 			images = this.props.gifsList.map(gif => {
 				let favorite = null;
-				let action = null;
+				let action = this.props.toogleFavorite;
 				if (this.props.favorites[gif.id]) {
 					favorite = true;
-					action = this.props.removeFavorite;
+					//action = this.props.removeFavorite;
 				} else {
 					favorite = false;
-					action = this.props.addFavorite;
+					//action = this.props.addFavorite;
 				}
 
 				return {
@@ -41,7 +45,7 @@ export class GifList extends Component {
 			});
 		}
 
-		if (this.props.favorite) {
+		if (this.props.page === 'Favorites') {
 			images = Object.keys(this.props.favorites).map(key => {
 				return {
 					id: key,
@@ -90,9 +94,15 @@ const mapStateToProps = ({ gifsFetch, user }) => {
 };
 
 const mapDispatchToProps = dispatch => {
-	const { addFavorite, removeFavorite, loadFavorites } = actions.creators;
+	const {
+		toogleFavorite,
+		addFavorite,
+		removeFavorite,
+		loadFavorites
+	} = actions.creators;
 	return bindActionCreators(
 		{
+			toogleFavorite,
 			addFavorite,
 			removeFavorite,
 			loadFavorites
