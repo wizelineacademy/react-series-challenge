@@ -44,7 +44,7 @@ Use React Router and React 16 (already included - in the boilerplate)
 
 ## Code Review
 - Fork this project
-- You have until March 14th to open a PR against this repo (master branch)
+- You have until March 29th to open a PR against this repo (master branch)
 - If you send a commit after the deadline
 
 ## TL;DR
