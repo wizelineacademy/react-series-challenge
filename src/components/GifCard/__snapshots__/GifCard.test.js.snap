@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GifCard big should be match Snapshot 1`] = `
+<div
+  className="sc-htpNat hLLoSK"
+>
+  <img
+    alt="Favorite"
+    className="sc-iwsKbI bdsDLT"
+    src="Happy-Pug.png"
+  />
+  <div
+    onClick={[Function]}
+  >
+    <img
+      className="sc-bdVaJa kwzEhH"
+      src="src"
+    />
+  </div>
+  <div
+    className="sc-bwzfXH ptlfS"
+  >
+    <button
+      className="sc-dnqmqq bqbCgB"
+      onClick={[Function]}
+    >
+      Remove Favorite
+    </button>
+  </div>
+</div>
+`;
+
+exports[`gifCard should be match Snapshot 1`] = `<gifCard />`;

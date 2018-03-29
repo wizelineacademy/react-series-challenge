@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import requests from '../../actions/requests';
 
-class ErrorBoundary extends Component {
+export class ErrorBoundary extends Component {
 	componentDidCatch(error) {
 		this.props.gifsLoadError(true, error);
 	}

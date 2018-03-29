@@ -13,8 +13,6 @@ import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
 import { Border, Title, Header } from './style/style';
 import App from './App';
 
-const sessionStorage = {};
-
 describe('App', () => {
 	let wrapper;
 	beforeEach(() => {
