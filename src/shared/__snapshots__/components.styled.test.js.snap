@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Shared styled components flex container renders correctly 1`] = `
+<div
+  className="sc-bdVaJa jAaEaL"
+>
+  Child
+</div>
+`;

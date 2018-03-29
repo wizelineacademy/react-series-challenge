@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DetailView component should render correctly 1`] = `
+<styled.div>
+  <SearchBar
+    textButton="Filter"
+  />
+  <Connect(GifList)
+    gifs={Array []}
+  />
+</styled.div>
+`;
+
+exports[`FavoritesView component should render correctly 1`] = `
+<styled.div>
+  <SearchBar
+    textButton="Filter"
+  />
+  <Connect(GifList)
+    gifs={Array []}
+  />
+</styled.div>
+`;

@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DetailView component should render correctly 1`] = `
+<styled.div>
+  <Component
+    addGif={[Function]}
+    fullWidth={true}
+    gif={Object {}}
+    isFavorited={false}
+    isInDetail={true}
+    removeGif={[Function]}
+  />
+</styled.div>
+`;
