@@ -69,6 +69,8 @@ export const SET_DETAILS = 'SET_DETAILS';
 // Just in case.
 export const FILTER_CHANGE = 'FILTER_CHANGE';
 export const SEARCH_CHANGE = 'SEARCH_CHANGE';
+export const FILTER_CLICK = 'FILTER_CLICK';
+export const SEARCH_CLICK = 'SEARCH_CLICK';
 
 export default {
   // GET_CONTENT_REQUEST,
@@ -106,5 +108,7 @@ export default {
   ADD_REMOVE_FAVORITE_HOME,
   ADD_REMOVE_FAVORITE_VIEW,
   LOAD_FAVORITESR,
-  SET_DETAILS
+  SET_DETAILS,
+  FILTER_CLICK,
+  SEARCH_CLICK
 };

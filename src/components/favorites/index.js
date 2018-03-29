@@ -14,7 +14,7 @@ class Favorites extends Component {
   }
 
   componentDidMount(){
-    this.props.getFavorites(1);
+    this.props.getFavoritesR(1);
   }
 
   render() {
@@ -25,13 +25,11 @@ class Favorites extends Component {
     return (
       <Wrapper>
         <SearchBar
-          handleChange={this.props.changeFavoritesFilter}
-          handleSearch={this.props.filterFavorites}
-          value={this.props.search}
+          handleChange={this.props.filterChange}
+          handleSearch={this.props.filterClick}
         />
         <ImagesList
-          list={this.props.finalList}
-          buttonClick={this.props.addRemoveFavorites}
+          favButton={this.props.addRemoveFavoriteView}
         />
       </Wrapper>
     )
@@ -40,37 +38,27 @@ class Favorites extends Component {
 
 const mapDispatchToProps = (dispatch) => {
   const {
-    getFavorites,
-    getNextFavoritesPage,
-    getPrevFavoritesPage,
-    filterFavorites,
-    changeFavoritesFilter,
-    addRemoveFavorites
+    addRemoveFavoriteView,
+    getFavoritesR,
+    filterChange,
+    filterClick
   } = actions
 
   return bindActionCreators({
-    getFavorites,
-    getNextFavoritesPage,
-    getPrevFavoritesPage,
-    filterFavorites,
-    changeFavoritesFilter,
-    addRemoveFavorites
+    addRemoveFavoriteView,
+    getFavoritesR,
+    filterChange,
+    filterClick
   }, dispatch);
 }
 
 const mapStateToProps = ({ favorites }) => {
   const {
     loading,
-    finalList,
-    search,
-    paginator
   } = favorites;
 
   return { 
-    loading,
-    finalList,
-    search,
-    paginator
+    loading
   };
 }
 
