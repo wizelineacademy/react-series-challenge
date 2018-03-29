@@ -112,4 +112,4 @@ it('check', () =>{
       favorites={fav}
     />);
     expect(component.getElement(0).props.children.length).toBe(2);
-})
+});

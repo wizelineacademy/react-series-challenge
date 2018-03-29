@@ -4,7 +4,7 @@ import { COLORS } from '../../utils/ConstantsGraphics';
 const MainHeaderStyled = styled.header`
 background-color: ${COLORS.primary};
 color: #FFF;
-padding: 1em 1em 0;
+padding: 3em 0 0;
 `;
 
 export {

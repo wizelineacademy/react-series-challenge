@@ -1,13 +1,11 @@
 import React  from 'react';
-import {
-    NavLink
-} from 'react-router-dom';
+import { NavMainstyled, NavLinkStyled } from './NavMain.styled'
 
 const NavMain = (props) => (
-    <nav>
-        <NavLink to="/" activeClassName="active">Top Gifs</NavLink>
-        <NavLink to="/your-favorites" activeClassName="active">Your Favorites</NavLink>
-    </nav>
+    <NavMainstyled>
+        <NavLinkStyled exact to="/" activeClassName="active">Top Gifs</NavLinkStyled>
+        <NavLinkStyled exact to="/your-favorites" activeClassName="active">Your Favorites</NavLinkStyled>
+    </NavMainstyled>
 );
 
 export default NavMain;
