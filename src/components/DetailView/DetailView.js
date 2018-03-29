@@ -10,7 +10,7 @@ const isFavorited = (favorites, gifId) => {
   return favorites[gifId] !== undefined;
 };
 
-class DetailView extends Component {
+export class DetailView extends Component {
   constructor(props) {
     super(props);
     const gifId = props.match.params.gifId;
