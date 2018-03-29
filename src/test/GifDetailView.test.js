@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { GifDetailView as PureComp } from '../components/GifDetailView/GifDetailView';
+
 import GifDetailView from '../components/GifDetailView';
 import store from '../store';
 
@@ -15,10 +16,10 @@ const baseProps = {
       data: [{
         title: 'luke skywalker mood GIF',
         id: 'KWhzYRArxnE9U0ioHW',
-        images: [{
-          preview_gif: {url:'https://media2.giphy.com/media/KWhzYRArxnE9U0ioHW/giphy.gif'},
-          original: {url: 'https://media2.giphy.com/media/KWhzYRArxnE9U0ioHW/giphy.gif'},
-        }]
+        images: {
+          preview_gif: { url: 'https://media2.giphy.com/media/KWhzYRArxnE9U0ioHW/giphy.gif' },
+          original: { url: 'https://media2.giphy.com/media/KWhzYRArxnE9U0ioHW/giphy.gif' },
+        }
       }]
     },
     query: '',
@@ -26,25 +27,29 @@ const baseProps = {
     success: true
   },
   favorites: {
-    originalList:{
-      data: [{
-        title: 'luke skywalker mood GIF',
-        id: 'KWhzYRArxnE9U0ioHW',
-        images: [{
-          preview_gif: {url:'https://media2.giphy.com/media/KWhzYRArxnE9U0ioHW/giphy.gif'},
-          original: {url: 'https://media2.giphy.com/media/KWhzYRArxnE9U0ioHW/giphy.gif'},
+    originalList: {
+      data: {
+        data: [{
+          title: 'luke skywalker mood GIF',
+          id: 'KWhzYRArxnE9U0ioHW',
+          images: {
+            preview_gif: { url: 'https://media2.giphy.com/media/KWhzYRArxnE9U0ioHW/giphy.gif' },
+            original: { url: 'https://media2.giphy.com/media/KWhzYRArxnE9U0ioHW/giphy.gif' },
+          }
         }]
-      }]
+      }
     },
     list: {
-      data: [{
-        title: 'luke skywalker mood GIF',
-        id: 'KWhzYRArxnE9U0ioHW',
-        images: [{
-          preview_gif: {url:'https://media2.giphy.com/media/KWhzYRArxnE9U0ioHW/giphy.gif'},
-          original: {url: 'https://media2.giphy.com/media/KWhzYRArxnE9U0ioHW/giphy.gif'},
+      data: {
+        data: [{
+          title: 'luke skywalker mood GIF',
+          id: 'KWhzYRArxnE9U0ioHW',
+          images: {
+            preview_gif: { url: 'https://media2.giphy.com/media/KWhzYRArxnE9U0ioHW/giphy.gif' },
+            original: { url: 'https://media2.giphy.com/media/KWhzYRArxnE9U0ioHW/giphy.gif' },
+          }
         }]
-      }]
+      }
     },
     query: '',
     fetching: false,
@@ -77,12 +82,11 @@ describe('test GifDetailView no data', () => {
 describe('test GifDetailView is Fav', () => {
   it('render structure', () => {
     let customBase = JSON.parse(JSON.stringify(baseProps));
-    console.log(customBase.giphy.list.data[0])
+    customBase.favorites.originalList.data.data[0].id = 'WrongID';
     const component = shallow(<PureComp
       store={store}
       {...customBase}
     />);
-    expect(component.getElement(0)).toBe(null);
+    expect(component.getElement(0).props.children.length).toBe(2);
   });
 });
-

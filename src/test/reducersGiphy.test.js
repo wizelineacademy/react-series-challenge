@@ -19,6 +19,15 @@ const errorState = {
     success: false
 }
 
+const populatedState = {
+    list: {
+        data: []
+    },
+    query: 'red',
+    fetching: false,
+    success: true
+}
+
 describe('test reducer', () => {
     it('Action get start trending', () => {
         expect(giphy({}, {
@@ -87,18 +96,29 @@ describe('test reducer', () => {
         expect(giphy({}, {
             type: actions.types.GET_BY_ID_START,
             payloads: []
-        })).toEqual( {"fetching": true, "success": true});
+        })).toEqual({ "fetching": true, "success": true });
     })
 });
 
 describe('test reducer', () => {
-    it('Action get search complete', () => {
+    it('Action get favorites start', () => {
+        expect(giphy({}, {
+            type: actions.types.FILTER_FAVORITE_START,
+            payloads: []
+        })).toEqual({});
+    })
+});
+
+describe('test reducer', () => {
+    it('Action get by id start', () => {
         expect(giphy({}, {
             type: actions.types.GET_SEARCH_COMPLETE,
-            payloads: {
-                list: [],
-                query: ''
+            payload: {
+                list: {
+                    data: []
+                },
+                query: 'red'
             }
-        })).toEqual(startState);
+        })).toEqual(populatedState);
     })
 });

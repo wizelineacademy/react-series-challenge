@@ -1,55 +1,33 @@
 import Utils from '../utils/Utils'
 
-describe('test Utils', ()=> {
+describe('test Utils', () => {
     it('Utils must have debounce', async () => {
-        await Utils.debounce(()=>{
+        await Utils.debounce(() => {
             expect(Utils).toHaveProperty('debounce');
-        },1);
-        
+        }, 1);
+
     })
 });
 
-describe('test debounce', ()=> {
-    it('Debounce must be called', () => {
-        const callback = jest.fn();
-        expect(Utils.debounce(callback, 100)).toMatchSnapshot()
+describe('test immediate from debounce', () => {
+    it('debounce', async () => {
+        const fkFn = jest.fn();
+        let _dbnc = Utils.debounce(fkFn, 100, true);
+        _dbnc();
+        expect(fkFn).toHaveBeenCalledTimes(1);
     })
 });
 
-describe('test debounce timer', () => {
-    it('debounce', () => {
-        const callback = jest.fn(() => ('test'));
-        expect(Utils.debounce(callback, 100)).resolves.toBe('function');
-    });
-})
+describe('test from debounce', () => {
+    it('debounce', async () => {
+        const fkFn = jest.fn(() => expect(this).toHaveBeenCalledTimes(1));
+        let _dbnc = Utils.debounce(fkFn, 1, false);
+        _dbnc();
+    })
+});
 
-describe('test slugfy', ()=>{
-    it('String to slug', ()=>{
+describe('test slugfy', () => {
+    it('String to slug', () => {
         expect(Utils.slugfiy('Slug Test')).toBe('slug-test');
     })
 });
-
-describe('test json to url', ()=>{
-    it('json in url query format', ()=>{
-        expect(Utils.jsonToURL({test:'a',result: 'b'})).toBe('test=a&result=b');
-    })
-});
-
-describe('test add comma to numbers', () => {
-    it('test numberWithCommas', ()=>{
-        expect(Utils.numberWithCommas(1000)).toBe('1,000');
-    })
-})
-
-describe('test smoothScroll', () => {
-    it('scroll to element', () => {
-        const element = document.createElement('div');
-        const header = document.createElement('header');
-        header.id = 'headerFixed';
-        header.style.heigh = '5em';
-        document.body.appendChild(header);
-        element.id = 'tg';
-        document.body.appendChild(element);
-        Utils.smoothScrollTo(element);
-    })
-})

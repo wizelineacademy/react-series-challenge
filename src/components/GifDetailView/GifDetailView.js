@@ -21,7 +21,12 @@ class GifDetailView extends Component {
         const tgtGif = list.data[0];
         let isFav = false
         if (favList) {
-            isFav = favList.filter(fav => fav.id === tgtGif.id).length === 1 ? true : false;
+            for(let i= 0, len = favList.length; i<len; i++) {
+                if(favList[i].id=== tgtGif.id) {
+                    isFav = true;
+                }
+            }
+            //isFav = favList.filter(fav => fav.id === tgtGif.id).length === 1 ? true : false;
         }
         return (<GifDetailViewStyled>
             <FavButton

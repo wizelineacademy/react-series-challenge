@@ -16,3 +16,11 @@ ReactDOM.render(
     </Provider>,
     document.getElementById('root'));
 registerServiceWorker();
+
+export const TestIndex = () => (
+    <Provider store={store}>
+    <Router>
+        <App />
+    </Router>
+    </Provider>
+);
