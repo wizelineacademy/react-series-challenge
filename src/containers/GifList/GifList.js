@@ -11,36 +11,17 @@ export class GifList extends Component {
 			Object.keys(this.props.favorites).length === 0 &&
 			JSON.parse(sessionStorage.getItem('myFavs'))
 		) {
-			//console.log('load');
 			this.props.loadFavorites(JSON.parse(sessionStorage.getItem('myFavs')));
-		} else {
-			//console.log('no load');
 		}
 	}
 	render() {
 		let images = [];
 		if (this.props.page === 'Home') {
-			// if (this.props.gifsList.length > 0) {
-			// 	console.log(this.props.gifsList[0]);
-			// 	console.log('image');
-			// }
 			images = this.props.gifsList.map(gif => {
-				let favorite = null;
-				let action = this.props.toogleFavorite;
-				if (this.props.favorites[gif.id]) {
-					favorite = true;
-					//action = this.props.removeFavorite;
-				} else {
-					favorite = false;
-					//action = this.props.addFavorite;
-				}
-
 				return {
 					id: gif.id,
 					title: gif.title,
-					src: gif.images.fixed_height.url,
-					favorite: favorite,
-					action: action
+					src: gif.images.fixed_height.url
 				};
 			});
 		}
@@ -51,8 +32,6 @@ export class GifList extends Component {
 					id: key,
 					title: this.props.favorites[key].title,
 					src: this.props.favorites[key].src,
-					favorite: true,
-					action: this.props.removeFavorite,
 					searched: this.props.favorites[key].search
 				};
 			});
@@ -70,15 +49,7 @@ export class GifList extends Component {
 		}
 
 		images = images.map(gif => (
-			<GifCard
-				key={gif.id}
-				id={gif.id}
-				gifTitle={gif.title}
-				favorite={gif.favorite}
-				search={this.props.search}
-				src={gif.src}
-				action={gif.action}
-			/>
+			<GifCard key={gif.id} id={gif.id} gifTitle={gif.title} src={gif.src} />
 		));
 
 		return <FlexBox>{images}</FlexBox>;
@@ -94,17 +65,9 @@ const mapStateToProps = ({ gifsFetch, user }) => {
 };
 
 const mapDispatchToProps = dispatch => {
-	const {
-		toogleFavorite,
-		addFavorite,
-		removeFavorite,
-		loadFavorites
-	} = actions.creators;
+	const { loadFavorites } = actions.creators;
 	return bindActionCreators(
 		{
-			toogleFavorite,
-			addFavorite,
-			removeFavorite,
 			loadFavorites
 		},
 		dispatch

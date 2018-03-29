@@ -13,16 +13,11 @@ import {
 } from '../../style/style';
 
 const gifCard = props => {
-	if (props.big) {
-	} else {
-	}
-
 	let mark = props.favorite ? <FavIcon src={pugWink} alt="Favorite" /> : null;
 	let text = props.favorite ? 'Remove Favorite' : 'Add Favorite';
 
 	const handleFavoriteClick = () => {
 		if (props.big) {
-			console.log('entra');
 			mark = mark === null ? <FavIcon src={pugWink} alt="Favorite" /> : null;
 			text = text === 'ADD_FAVORITE' ? 'Remove Favorite' : 'Add Favorite';
 		}
@@ -55,13 +50,12 @@ const gifCard = props => {
 		<Link
 			to={{
 				pathname: 'image/' + props.id,
-				state: { src: props.src, favorite: props.favorite, id: props.id }
+				state: { src: props.src, gifTitle: props.gifTitle }
 			}}
 		>
 			<Image big={props.big} key={props.id} src={props.src} />
 		</Link>
 	);
-	console.log('text', text);
 	return (
 		<ImageCard big={props.big}>
 			{mark}
@@ -71,6 +65,13 @@ const gifCard = props => {
 			</ImageDetails>
 		</ImageCard>
 	);
+};
+
+const mapStateToProps = ({ user, gifsFetch }, props) => {
+	return {
+		search: gifsFetch.search,
+		favorite: Object.keys(user.favorites).indexOf(props.id) > -1
+	};
 };
 
 const mapDispatchToProps = dispatch => {
@@ -83,4 +84,4 @@ const mapDispatchToProps = dispatch => {
 	);
 };
 
-export default connect(null, mapDispatchToProps)(gifCard);
+export default connect(mapStateToProps, mapDispatchToProps)(gifCard);

@@ -41,8 +41,8 @@ class App extends Component {
 										return (
 											<GifCard
 												src={props.location.state.src}
-												id={props.location.state.id}
-												favorite={props.location.state.favorite}
+												gifTitle={props.location.state.gifTitle}
+												id={props.match.params.id}
 												goBack={props.history.goBack}
 												big
 											/>
