@@ -21,6 +21,7 @@ const detailGifReducer = (state = initialState, action) => {
         ...state,
         isLoading: false,
         gif: {...payload},
+        gifId: null
       };
 
     case actions.types.GET_SINGLE_GIF_FAILED:
