@@ -5,7 +5,7 @@ import App from './App';
 
 describe('Favorites tests',()=>{
     it('render',()=>{
-        const component = shallow(<div></div>);
+        const component = shallow(<App></App>);
         
         expect(component).toEqual(1);
        
