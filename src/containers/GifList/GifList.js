@@ -17,6 +17,9 @@ export class GifList extends Component {
 	render() {
 		let images = [];
 		if (this.props.page === 'Home') {
+			if (this.props.gifsList.length === 0 && this.props.search.length > 0) {
+				throw new Error('No results found');
+			}
 			images = this.props.gifsList.map(gif => {
 				return {
 					id: gif.id,

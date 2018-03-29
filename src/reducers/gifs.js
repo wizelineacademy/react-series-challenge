@@ -5,7 +5,9 @@ const initialState = {
 	search: '',
 	fetching: false,
 	trending: true,
-	searching: false
+	searching: false,
+	error: false,
+	errorInfo: ''
 };
 
 const gifsReducer = (state = initialState, action) => {
@@ -38,7 +40,8 @@ const gifsReducer = (state = initialState, action) => {
 			return {
 				...state,
 				fetching: false,
-				error: action.error
+				error: action.error,
+				errorInfo: action.errorInfo
 			};
 		default:
 			return state;

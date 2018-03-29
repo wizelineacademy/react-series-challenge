@@ -9,7 +9,11 @@ const searchRequest = text => ({ type: SEARCH_REQUEST, text });
 const gifsLoaded = gifsList => {
 	return { type: GIFS_LOADED, gifsList };
 };
-const gifsLoadError = error => ({ type: GIFS_LOAD_ERROR, error });
+const gifsLoadError = (error, errorInfo) => ({
+	type: GIFS_LOAD_ERROR,
+	error,
+	errorInfo
+});
 
 export default {
 	types: {
