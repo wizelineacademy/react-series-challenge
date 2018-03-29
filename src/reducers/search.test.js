@@ -4,7 +4,6 @@ import * as searchActions from '../actions/search';
 let creators = searchActions.default.creators;
 let searchReducer = search.default;
 let data = {a: 1, b: 2}
-let types = search.default.types;
 let gif = {id: 55};
 let q = 'anime';
 let error = {message: 'invalid api key'}
