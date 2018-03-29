@@ -85,7 +85,20 @@ describe('test ListGifs favorites data', () => {
       store={store}
       {...customBase}
     />);
-    console.log(component)
     expect(component.find('ListGifStyled').length).toBeGreaterThanOrEqual(1);
   });
 });
+
+/*describe('test ListGifs favorites data', () => {
+  it('render structure', () => {
+    let customBase = JSON.parse(JSON.stringify(baseProps));
+    customBase.dataSource = 'favorites';
+    const MkComp = jest.mock('../components/ListGifs')
+    const component = shallow(<PureComp
+      store={store}
+      {...customBase}
+    />);
+    console.log(MkComp)
+    expect(MkComp.find('ListGifStyled').length).toBeGreaterThanOrEqual(1);
+  });
+});*/

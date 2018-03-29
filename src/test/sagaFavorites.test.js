@@ -25,6 +25,16 @@ class LocalStorageMock {
   
   global.localStorage = new LocalStorageMock;
   global.Utils = Utils;
+  global.state = {
+    favorites:{
+      originalList: {
+        data:[]
+      },
+      list: {
+        data: []
+      }
+    }
+  }
   localStorage.setItem('favList','[{"id":"testId","data": "Test data"}]');
 describe('sagas Favorites', () => {
     it('getFavoritesList', () => {
@@ -46,8 +56,8 @@ describe('sagas Favorites', () => {
        expect(gen.next().done).toEqual(true);
     });
     it('filterFavorites', () => {
-        const gen = filterFavorites({payload:'test'});
-       gen.next(select(state.favorites.list.data));
+        const gen = filterFavorites();
+       gen.next();
        gen.next();
        expect(gen.next().done).toEqual(true);
     });
