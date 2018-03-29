@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FavoritesView component should render correctly 1`] = `
+exports[`HomeView component should render correctly 1`] = `
 <styled.div>
   <SearchBar
-    textButton="Filter"
+    onSearch={[Function]}
   />
   <Connect(Component)
     gifs={Array []}

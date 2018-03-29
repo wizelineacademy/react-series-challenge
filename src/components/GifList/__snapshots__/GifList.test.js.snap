@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Gif list component should mark one gif as favorited 1`] = `
+<div
+  class="sc-bZQynM UAeAy"
+>
+  <div
+    class="sc-bdVaJa kiwtFJ"
+  >
+    <div
+      class="sc-htpNat dGyvgD"
+    >
+      <img
+        alt="test"
+        class="sc-ifAKCX fPKiWZ"
+        src=""
+      >
+        
+      </img>
+      <div
+        class="sc-bwzfXH heRxYP"
+      >
+        <span
+          class="sc-EHOje gwryyh"
+        >
+          Title: test
+        </span>
+        <button>
+          Remove from favorites
+        </button>
+        <a
+          class="sc-bxivhb iFAgbD"
+          href="/detail/123"
+        >
+          View detail
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Gif list component should render correctly 1`] = `<styled.div />`;

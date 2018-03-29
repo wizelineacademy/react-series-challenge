@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component should render correctly 1`] = `
+<ul
+  class="sc-bdVaJa cwjzYv"
+>
+  <li
+    class="sc-bwzfXH kjIMOy"
+  >
+    Giphy Client
+  </li>
+  <li
+    class="sc-bwzfXH kjIMOy"
+  >
+    <a
+      aria-current="false"
+      href="/home"
+    >
+      Home
+    </a>
+  </li>
+  <li
+    class="sc-bwzfXH kjIMOy"
+  >
+    <a
+      aria-current="false"
+      href="/favorites"
+    >
+      Favorites
+    </a>
+  </li>
+</ul>
+`;

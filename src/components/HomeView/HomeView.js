@@ -7,7 +7,7 @@ import {Container} from "../../App.styled";
 import SearchBar from "../SearchBar/SearchBar";
 import GifList from "../GifList/GifList";
 
-class HomeView extends Component {
+export class HomeView extends Component {
   constructor(props) {
     super();
     props.getTrendingGifsRequested();
