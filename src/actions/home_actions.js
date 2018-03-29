@@ -10,7 +10,6 @@ import {
   // CONTENT_FAVORITE_BUTTON_CLICKED,
   GET_NEW_CONTENT,
   UPDATE_CONTENT,
-  SEARCH_CHANGE
 } from './types'
 
 // export const getContent = createAction(GET_CONTENT_REQUEST);
@@ -24,7 +23,6 @@ import {
 
 // BEGINS: Refactor
 export const getNewContent = createAction(GET_NEW_CONTENT);
-export const searchChange = createAction(SEARCH_CHANGE);
 export const updateContent = createAction(UPDATE_CONTENT);
 
 export default {
@@ -37,6 +35,5 @@ export default {
   // changeSearchType,
   // contentFavoriteButton,
   getNewContent,
-  searchChange,
   updateContent
 }

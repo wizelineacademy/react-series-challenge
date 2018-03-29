@@ -1,27 +1,35 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Wrapper from '../wrapper'
+import { bindActionCreators } from 'redux'
+import actions from '../../actions';
+import { Wrapper } from '../../styled/ContainersStyled';
 
 const SearchBar = (props) => {
   const {
-    value,
-    handleChange,
+    inputString,
+    changeInput,
     handleSearch
   } = props
   return (
     <Wrapper>
       <form onSubmit={(e)=>{e.preventDefault()}}>
-        <input type='text' onChange={handleChange} value={value} />
+        <input type='text' onChange={changeInput} value={inputString} />
         <button onClick={handleSearch} >Buscar</button>
       </form>
     </Wrapper>
   )
 }
 
-const mapStateToProps = (state) => {
-  const { searchString } = state;
+const mapStateToProps = ({ search }) => {
+  const { inputString } = search;
 
-  return { searchString };
+  return { inputString };
 }
 
-export default connect(mapStateToProps)(SearchBar);
+const mapDispatchToProps = (dispatch) => {
+  const { changeInput } = actions
+
+  return bindActionCreators({ changeInput }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SearchBar);

@@ -7,8 +7,8 @@ const initialState = {
 export default function (state = initialState, {type, payload}) {
   switch(type){
     case CHANGE_INPUT:
-      const newSearchString = payload
-      return { inputString: newSearchString };
+      const { value } = payload.target
+      return { inputString: value };
     default:
       return state;
   }

@@ -1,4 +1,4 @@
-import { call, takeEvery, put, select, takeLatest } from 'redux-saga/effects';
+import { call, takeEvery, put, takeLatest } from 'redux-saga/effects';
 import actions from '../actions/index';
 import {
   GET_FAVORITES,

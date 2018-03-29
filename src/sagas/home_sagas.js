@@ -1,4 +1,4 @@
-import { call, takeEvery, put, select, takeLatest } from 'redux-saga/effects';
+import { call, takeEvery, put, takeLatest } from 'redux-saga/effects';
 import actions from '../actions/index';
 import {
   GET_NEW_CONTENT,
@@ -55,12 +55,6 @@ export function* getNewContentSaga ({ payload }) {
 
 }
 
-export function* searchChangeSaga({ payload }){
-  const { value } = payload.target
-  yield put(actions.changeInput(value))
-  yield put(actions.getNewContent(1));
-}
-
 export function* updateContentSaga ({ payload }){
   const listState = yield call(selectors.getPieceOfState, 'list');
   const { currentList } = listState;
@@ -72,6 +66,5 @@ export function* updateContentSaga ({ payload }){
 
 export default function* homeSaga () {
   yield takeLatest(GET_NEW_CONTENT, getNewContentSaga);
-  yield takeEvery(SEARCH_CHANGE, searchChangeSaga);
   yield takeEvery(UPDATE_CONTENT, updateContentSaga);
 }

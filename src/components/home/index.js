@@ -25,7 +25,7 @@ class Home extends Component {
     return (
       <Wrapper>
         <SearchBar
-          handleChange={this.props.searchChange}
+          handleSearch={this.props.getNewContent.bind(this,1)}
         />
         <ImagesList favButton={this.props.addRemoveFavoriteHome}/>
       </Wrapper>
