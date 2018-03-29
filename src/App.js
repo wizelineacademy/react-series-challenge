@@ -28,7 +28,7 @@ injectGlobal`
 
 class App extends Component {
   componentWillMount(){
-    this.props.loadFavorites()
+    this.props.loadFavoritesR()
   }
   render() {
     return (
@@ -48,9 +48,9 @@ class App extends Component {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  const { loadFavorites } = actions;
+  const { loadFavoritesR } = actions;
 
-  return bindActionCreators({ loadFavorites }, dispatch);
+  return bindActionCreators({ loadFavoritesR }, dispatch);
 }
 
 export default connect(null,mapDispatchToProps)(App);

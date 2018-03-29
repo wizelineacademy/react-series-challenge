@@ -1,13 +1,13 @@
 import { call, takeEvery, put, select, takeLatest } from 'redux-saga/effects';
 import actions from '../actions/index';
 import {
-  LOAD_FAVORITES,
-  GET_NEXT_FAVORITES_PAGE,
-  GET_PREV_FAVORITES_PAGE,
-  GET_FAVORITES_REQUEST,
-  ADD_REMOVE_FAVORITES,
-  CHANGE_FAVORITES_FILTER,
-  FILTER_FAVORITES,
+  // LOAD_FAVORITES,
+  // GET_NEXT_FAVORITES_PAGE,
+  // GET_PREV_FAVORITES_PAGE,
+  // GET_FAVORITES_REQUEST,
+  // ADD_REMOVE_FAVORITES,
+  // CHANGE_FAVORITES_FILTER,
+  // FILTER_FAVORITES,
   GET_FAVORITES,
   LOAD_FAVORITESR,
   FILTER_CHANGE,
@@ -171,28 +171,31 @@ export function* filterChangeSaga({payload}) {
 }
 
 export function* addRemoveFavoriteSaga({ payload }) {
-  const img = { ...payload };
+  console.group('AddRemove Favorite');
+  const img = { ...payload.image };
+  console.log(img)
   const oldFavorites = yield call(selectors.getFavorites);
-
+  console.log(oldFavorites);
   // TODO separate this proccess to a function
-  const index = oldFavorites.findIndex((image) => img.id === image.id)
+  const index = oldFavorites.findIndex((image) => img.id === image.id);
 
+  console.log(index);
   const elements = index === -1 ? [...oldFavorites, img] : yield call(deleteFromArrayR, oldFavorites, index);
-
+  console.log(elements);
   const newElementsString = JSON.stringify(elements);
-  
+  console.log(newElementsString);
   // Process Ends
 
   yield call([localStorage, 'setItem'], 'reactFavorites', newElementsString);
 
-  yield call(actions.setFavorites(elements));
+  yield put(actions.setFavorites(elements));
+  console.groupEnd()
 
 }
 
 export function* addRemoveHomeSaga ({ payload }) {
   yield put(actions.addRemoveFavorite(payload));
-  const page = yield call(selectors.getCurrentPage)
-  yield put(actions.getNewContent(page));
+  yield put(actions.updateContent(payload.index));
 }
 
 export function* addRemoveViewSaga ({ payload }) {
@@ -207,13 +210,13 @@ export function* addRemoveDetailsSaga ({ payload }) {
 }
 
 export default function* homeSaga () {
-  yield takeLatest(LOAD_FAVORITES, loadFavoritesSaga);
-  yield takeEvery(GET_NEXT_FAVORITES_PAGE, getNextFavoritesPage);
-  yield takeEvery(GET_PREV_FAVORITES_PAGE, getPrevFavoritesPage);
-  yield takeEvery(GET_FAVORITES_REQUEST, getFavoritesSaga);
-  yield takeEvery(ADD_REMOVE_FAVORITES, addRemoveSaga);
-  yield takeEvery(FILTER_FAVORITES, filterSaga);
-  yield takeEvery(CHANGE_FAVORITES_FILTER, filterSaga);
+  // yield takeLatest(LOAD_FAVORITES, loadFavoritesSaga);
+  // yield takeEvery(GET_NEXT_FAVORITES_PAGE, getNextFavoritesPage);
+  // yield takeEvery(GET_PREV_FAVORITES_PAGE, getPrevFavoritesPage);
+  // yield takeEvery(GET_FAVORITES_REQUEST, getFavoritesSaga);
+  // yield takeEvery(ADD_REMOVE_FAVORITES, addRemoveSaga);
+  // yield takeEvery(FILTER_FAVORITES, filterSaga);
+  // yield takeEvery(CHANGE_FAVORITES_FILTER, filterSaga);
   yield takeLatest(GET_FAVORITES, getFavoritesRSaga);
   yield takeLatest(LOAD_FAVORITESR,loadFavoritesRSaga)
   yield takeEvery(FILTER_CHANGE, filterChangeSaga);

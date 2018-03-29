@@ -14,7 +14,7 @@ class Home extends Component {
   }
 
   componentDidMount(){
-    this.props.getNextPage();
+    this.props.getNewContent(1);
   }
 
   render() {
@@ -25,14 +25,9 @@ class Home extends Component {
     return (
       <Wrapper>
         <SearchBar
-          handleChange={this.props.changeSearchType}
-          handleSearch={this.props.changeSearch}
-          value={this.props.search}
+          handleChange={this.props.searchChange}
         />
-        <ImagesList
-          list={this.props.elements}
-          buttonClick={this.props.contentFavoriteButton}
-        />
+        <ImagesList favButton={this.props.addRemoveFavoriteHome}/>
       </Wrapper>
     )
   }
@@ -40,36 +35,21 @@ class Home extends Component {
 
 const mapDispatchToProps = (dispatch) => {
   const {
-    getNextPage,
-    getPrevPage,
-    changeSearch,
-    changeSearchType,
-    contentFavoriteButton
+    getNewContent,
+    searchChange,
+    addRemoveFavoriteHome
   } = actions
 
   return bindActionCreators({
-    getNextPage,
-    getPrevPage,
-    changeSearch,
-    changeSearchType,
-    contentFavoriteButton
+    getNewContent,
+    searchChange,
+    addRemoveFavoriteHome
   }, dispatch);
 }
 
-const mapStateToProps = ({ home }) => {
-  const {
-    loading,
-    elements,
-    search,
-    paginator
-  } = home;
-
-  return {
-    loading,
-    elements,
-    search,
-    paginator
-  };
+const mapStateToProps = (state) => {
+  const { loading } = state.loading;
+  return { loading };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

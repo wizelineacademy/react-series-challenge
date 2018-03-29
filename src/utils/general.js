@@ -10,7 +10,7 @@ export const getData = (dataParams) => {
   const offset = `offset=${(page - 1) * lim}`
   const query = `${offset}${endpoint === 'search' ? `&q=${search}` : ''}`;
   const fetchUrl = `${url}${endpoint}?${API_KEY}&${query}${limit}`;
-  return fetch(fetchUrl).then(resp => resp.json);
+  return fetch(fetchUrl).then(resp => resp.json());
 }
 
 export const markFavorites = (elems, favs) => {

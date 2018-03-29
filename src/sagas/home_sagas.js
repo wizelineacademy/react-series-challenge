@@ -1,13 +1,14 @@
 import { call, takeEvery, put, select, takeLatest } from 'redux-saga/effects';
 import actions from '../actions/index';
 import {
-  GET_CONTENT_REQUEST,
-  GET_NEXT_CONTENT_PAGE,
-  GET_PREV_CONTENT_PAGE,
-  CHANGE_CONTENT_SEARCH,
-  CONTENT_FAVORITE_BUTTON_CLICKED,
+  // GET_CONTENT_REQUEST,
+  // GET_NEXT_CONTENT_PAGE,
+  // GET_PREV_CONTENT_PAGE,
+  // CHANGE_CONTENT_SEARCH,
+  // CONTENT_FAVORITE_BUTTON_CLICKED,
   GET_NEW_CONTENT,
-  SEARCH_CHANGE
+  SEARCH_CHANGE,
+  UPDATE_CONTENT
 } from '../actions/types';
 import selectors from '../utils/selectors';
 import { getData, getPaginator } from '../utils/general';
@@ -80,7 +81,7 @@ export function* favoriteButtonSaga({ payload }){
 
 export function* getNewContentSaga ({ payload }) {
   // Change loading state
-  yield put(actions.setLoading, true)
+  yield put(actions.setLoading(true))
   
 
   // Check the requiered endpoint (Search / Trending)
@@ -91,17 +92,21 @@ export function* getNewContentSaga ({ payload }) {
 
   // Fetch the data
 
-  const resp = yield call(getData, {search, endpoint, page});
+  const resp = yield call(getData, { search, endpoint, page });
   const { data, pagination } = resp;
 
   // Get the nex paginator state
   
+  console.log('--------')
+  console.log(data)
+  console.log(pagination)
+  console.log('--------')
   const paginator = yield call(getPaginator, page, pagination.total_count);
   
   // Check which ones are part of the favorites.
 
   const favorites = yield call(selectors.getFavorites)
-  const pageElements = yield call(markFavorites,data, favorites);
+  const pageElements = yield call(markFavorites, data, favorites);
 
   // Set the new paginator state
 
@@ -113,7 +118,7 @@ export function* getNewContentSaga ({ payload }) {
 
   // Change the loading
 
-  yield put(actions.setLoading, false)
+  yield put(actions.setLoading(false))
 
 
 }
@@ -124,12 +129,22 @@ export function* searchChangeSaga({ payload }){
   yield put(actions.getNewContent(1));
 }
 
+export function* updateContentSaga ({ payload }){
+  const listState = yield call(selectors.getPieceOfState, 'list');
+  const { currentList } = listState;
+  const favorites = yield call(selectors.getFavorites);
+  const pageElements = yield call(markFavorites, currentList, favorites);
+  yield put(actions.setList(pageElements))
+
+}
+
 export default function* homeSaga () {
-  yield takeLatest(GET_CONTENT_REQUEST, setLoadingContentSaga);
-  yield takeEvery(GET_NEXT_CONTENT_PAGE, getNextContentPage);
-  yield takeEvery(GET_PREV_CONTENT_PAGE, getPrevContentPage);
-  yield takeEvery(CHANGE_CONTENT_SEARCH, changeSearch);
-  yield takeEvery(CONTENT_FAVORITE_BUTTON_CLICKED, favoriteButtonSaga);
+  // yield takeLatest(GET_CONTENT_REQUEST, setLoadingContentSaga);
+  // yield takeEvery(GET_NEXT_CONTENT_PAGE, getNextContentPage);
+  // yield takeEvery(GET_PREV_CONTENT_PAGE, getPrevContentPage);
+  // yield takeEvery(CHANGE_CONTENT_SEARCH, changeSearch);
+  // yield takeEvery(CONTENT_FAVORITE_BUTTON_CLICKED, favoriteButtonSaga);
   yield takeLatest(GET_NEW_CONTENT, getNewContentSaga);
   yield takeEvery(SEARCH_CHANGE, searchChangeSaga);
+  yield takeEvery(UPDATE_CONTENT, updateContentSaga);
 }

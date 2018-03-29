@@ -57,6 +57,7 @@ export const ADD_REMOVE_FAVORITE_DETAILS_R = 'ADD_REMOVE_FAVORITE_DETAILS_R';
 
 // Asks for more content (Home View)
 export const GET_NEW_CONTENT = 'GET_NEW_CONTENT';
+export const UPDATE_CONTENT = 'UPDATE_CONTENT';
 
 // Error Handling
 export const ERROR_STATUS = 'ERROR_STATUS';
@@ -97,6 +98,7 @@ export default {
   SET_FAVORITES,
   ADD_REMOVE_FAVORITE,
   GET_NEW_CONTENT,
+  UPDATE_CONTENT,
   ERROR_STATUS,
   GET_DETAILS,
   FILTER_CHANGE,

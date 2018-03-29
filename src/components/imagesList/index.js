@@ -1,11 +1,14 @@
 import React from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import actions from '../../actions';
 import { ListWrapperStyled, ListItemStyled } from '../../styled/ContainersStyled'
 import { ImgStyled } from '../../styled/ImgStyled';
 import { Link } from 'react-router-dom';
 
 const ImagesList = (props) => {
-  const { list, buttonClick } = props
-  const items = list.map((image) => {
+  const { currentList, favButton } = props
+  const items = currentList.map((image, index) => {
     return (
       <ListItemStyled key={image.id}>
         <Link to={`/image/${image.id}`}>
@@ -14,7 +17,7 @@ const ImagesList = (props) => {
             alt={`hi`}
           />
         </Link>
-        <button onClick={buttonClick.bind(this,{ image })}>Add to Favorites</button>
+        <button onClick={favButton.bind(this,{ image, index })}>Add to Favorites</button>
         {image.favorite ? 'soy favorito!' : null}
       </ListItemStyled>
     );
@@ -26,4 +29,9 @@ const ImagesList = (props) => {
   )
 }
 
-export default ImagesList;
+const mapStateToProps = ({ list }) => {
+  const { currentList } = list;
+  return { currentList };
+}
+
+export default connect(mapStateToProps)(ImagesList);

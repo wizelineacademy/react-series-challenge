@@ -4,8 +4,8 @@ import actions from '../actions/index';
 import {
   // GET_DETAILS_COMPLETE,
   // GET_DETAILS_ERROR,
-  GET_DETAILS_REQUEST,
-  ADD_REMOVE_FAVORITE_DETAILS,
+  // GET_DETAILS_REQUEST,
+  // ADD_REMOVE_FAVORITE_DETAILS,
   GET_DETAILS
 } from '../actions/types';
 import selectors from '../utils/selectors';
@@ -19,21 +19,21 @@ const checkFavorite = (img, favorites) => {
   return { ...img, favorite };
 }
 
-export function* detailsRequestSaga ({ payload }) {
-  try{
-    // console.log('Entra')
-    const id = payload;
-    const fetchUrl = `${url}${id}?${API_KEY}`;
-    const resp = yield call(get, fetchUrl);
+// export function* detailsRequestSaga ({ payload }) {
+//   try{
+//     // console.log('Entra')
+//     const id = payload;
+//     const fetchUrl = `${url}${id}?${API_KEY}`;
+//     const resp = yield call(get, fetchUrl);
 
-    const { data } = resp;
-    const favorites = yield select(({ favorites }) => favorites.elements);
-    const image = yield call(checkFavorite, data, favorites);
-    yield put(actions.detailsComplete({ image }))
-  }catch(e){
-    console.log(e)
-  }
-}
+//     const { data } = resp;
+//     const favorites = yield select(({ favorites }) => favorites.elements);
+//     const image = yield call(checkFavorite, data, favorites);
+//     yield put(actions.detailsComplete({ image }))
+//   }catch(e){
+//     console.log(e)
+//   }
+// }
 
 export function* detailsFavoriteSaga ({ payload }) {
   const image = { ...payload };
@@ -73,7 +73,7 @@ export function* getDetailsSaga({ payload }){
 }
 
 export default function* detailsSaga () {
-  yield takeLatest(GET_DETAILS_REQUEST, detailsRequestSaga);
-  yield takeEvery(ADD_REMOVE_FAVORITE_DETAILS, detailsFavoriteSaga);
+  // yield takeLatest(GET_DETAILS_REQUEST, detailsRequestSaga);
+  // yield takeEvery(ADD_REMOVE_FAVORITE_DETAILS, detailsFavoriteSaga);
   yield takeEvery(GET_DETAILS, getDetailsSaga);
 }
