@@ -22,22 +22,6 @@ const userReducer = (state = initialState, action) => {
 				...state,
 				favorites
 			};
-		case actions.types.ADD_FAVORITE:
-			favorites[action.id] = {
-				src: action.src,
-				title: action.title,
-				search: action.search
-			};
-			return {
-				...state,
-				favorites
-			};
-		case actions.types.REMOVE_FAVORITE:
-			delete favorites[action.id];
-			return {
-				...state,
-				favorites
-			};
 		case actions.types.LOAD_FAVORITES:
 			return {
 				...state,

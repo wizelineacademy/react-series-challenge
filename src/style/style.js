@@ -43,6 +43,43 @@ const Title = styled.h1`
 	font-weight: bold;
 	text-align: center;
 	margin-bottom: 1%;
+	:before {
+		content: 'Gif';
+		animation-name: head;
+		animation-duration: 10s;
+		animation-iteration-count: infinite;
+	}
+
+	@keyframes head {
+		0% {
+			content: 'Gif';
+			opacity: 1;
+		}
+		12.5% {
+			opacity: 0;
+		}
+		25% {
+			content: 'Pug';
+			opacity: 1;
+		}
+		37.5% {
+			opacity: 0;
+		}
+		50% {
+			content: 'Gif';
+			opacity: 1;
+		}
+		62.5% {
+			opacity: 0;
+		}
+		75% {
+			content: 'Pug';
+			opacity: 1;
+		}
+		87.5% {
+			opacity: 0;
+		}
+	}
 `;
 
 const SubTitle = styled.h3`

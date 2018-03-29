@@ -5,7 +5,12 @@ describe('gifs reducer', () => {
 	it('It should return the initial state', () => {
 		expect(reducer(undefined, {})).toEqual({
 			gifsList: [],
-			fetching: false
+			search: '',
+			fetching: false,
+			trending: true,
+			searching: false,
+			error: false,
+			errorInfo: ''
 		});
 	});
 
@@ -17,7 +22,7 @@ describe('gifs reducer', () => {
 					fetching: false
 				},
 				{
-					type: actions.types.TRENDING_LOADED,
+					type: actions.types.GIFS_LOADED,
 					fetching: false,
 					gifsList: [{ img: '1' }, { img: '2' }, { img: '3' }]
 				}

@@ -12,7 +12,7 @@ import {
 	FavIcon
 } from '../../style/style';
 
-const gifCard = props => {
+export const gifCard = props => {
 	let mark = props.favorite ? <FavIcon src={pugWink} alt="Favorite" /> : null;
 	let text = props.favorite ? 'Remove Favorite' : 'Add Favorite';
 

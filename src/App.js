@@ -16,7 +16,7 @@ class App extends Component {
 			<Provider store={store}>
 				<div>
 					<Header>
-						<Title>Gif Madness</Title>
+						<Title>Madness</Title>
 						<ul>
 							<li>
 								<NavLink to="/Home">Home</NavLink>
@@ -49,8 +49,6 @@ class App extends Component {
 													big
 												/>
 											);
-										} else {
-											<div />;
 										}
 									}}
 								/>
