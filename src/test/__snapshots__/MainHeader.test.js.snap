@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test Main Nav Render render nav structure 1`] = `
+<styled.nav>
+  <Styled(NavLink)
+    activeClassName="active"
+    exact={true}
+    to="/"
+  >
+    Top Gifs
+  </Styled(NavLink)>
+  <Styled(NavLink)
+    activeClassName="active"
+    exact={true}
+    to="/your-favorites"
+  >
+    Your Favorites
+  </Styled(NavLink)>
+</styled.nav>
+`;
+
+exports[`test MainHeader Render render structure 1`] = `
+<styled.header>
+  <NavMain />
+</styled.header>
+`;

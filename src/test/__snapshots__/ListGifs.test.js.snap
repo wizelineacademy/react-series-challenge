@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test ListGifs Render render structure 1`] = `
+<ListGifs
+  addFavorite={[Function]}
+  favorites={
+    Object {
+      "fetching": false,
+      "filterList": null,
+      "list": null,
+      "originalList": null,
+      "success": false,
+    }
+  }
+  giphy={
+    Object {
+      "fetching": false,
+      "list": null,
+      "query": null,
+      "success": false,
+    }
+  }
+  removeFavorite={[Function]}
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+      Symbol(observable): [Function],
+    }
+  }
+  storeSubscription={
+    Subscription {
+      "listeners": Object {
+        "clear": [Function],
+        "get": [Function],
+        "notify": [Function],
+        "subscribe": [Function],
+      },
+      "onStateChange": [Function],
+      "parentSub": undefined,
+      "store": Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+        Symbol(observable): [Function],
+      },
+      "unsubscribe": [Function],
+    }
+  }
+/>
+`;
