@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should be match Snapshot 1`] = `
+<div>
+  <header
+    className="sc-htoDjs eTOUA"
+  >
+    <h1
+      className="sc-EHOje gRPmTz"
+    >
+      Madness
+    </h1>
+    <ul>
+      <li>
+        <a
+          aria-current="true"
+          className="active"
+          href="/Home"
+          onClick={[Function]}
+          style={Object {}}
+        >
+          Home
+        </a>
+      </li>
+      <li>
+        <a
+          aria-current={false}
+          className={undefined}
+          href="/Favorites"
+          onClick={[Function]}
+          style={undefined}
+        >
+          Favorites
+        </a>
+      </li>
+    </ul>
+    <input
+      className="sc-gzVnrw dBGxkw"
+      onChange={[Function]}
+      placeholder="Search your gif!"
+    />
+  </header>
+  <br />
+  <div
+    className="sc-bxivhb hvcHvy"
+  >
+    <h3
+      className="sc-bZQynM cPUeGv"
+    >
+      Trending Hot Gifs
+    </h3>
+    <div
+      className="sc-ifAKCX eIKrlZ"
+    />
+  </div>
+</div>
+`;

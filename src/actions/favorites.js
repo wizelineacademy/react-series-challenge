@@ -1,7 +1,7 @@
 const LOAD_FAVORITES = 'LOAD_FAVORITES';
 const TOGGLE_FAVORITE = 'TOGGLE_FAVORITE';
 
-const toogleFavorite = (id, src, title, search) => {
+const toggleFavorite = (id, src, title, search) => {
 	return { type: TOGGLE_FAVORITE, id, src, title, search };
 };
 const loadFavorites = favorites => {
@@ -14,7 +14,7 @@ export default {
 		LOAD_FAVORITES
 	},
 	creators: {
-		toogleFavorite,
+		toggleFavorite,
 		loadFavorites
 	}
 };

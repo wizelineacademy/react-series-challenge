@@ -8,6 +8,7 @@ import { FlexBox } from '../../style/style';
 export class GifList extends Component {
 	componentDidMount() {
 		if (
+			sessionStorage &&
 			Object.keys(this.props.favorites).length === 0 &&
 			JSON.parse(sessionStorage.getItem('myFavs'))
 		) {

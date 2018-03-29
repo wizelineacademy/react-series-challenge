@@ -21,21 +21,23 @@ export const gifCard = props => {
 			mark = mark === null ? <FavIcon src={pugWink} alt="Favorite" /> : null;
 			text = text === 'ADD_FAVORITE' ? 'Remove Favorite' : 'Add Favorite';
 		}
-		const currentFavs = sessionStorage.getItem('myFavs')
-			? JSON.parse(sessionStorage.getItem('myFavs'))
-			: {};
+		if (sessionStorage) {
+			const currentFavs = sessionStorage.getItem('myFavs')
+				? JSON.parse(sessionStorage.getItem('myFavs'))
+				: {};
 
-		if (props.favorite) {
-			delete currentFavs[props.id];
-		} else {
-			currentFavs[props.id] = {
-				src: props.src,
-				title: props.gifTitle,
-				search: props.search
-			};
+			if (props.favorite) {
+				delete currentFavs[props.id];
+			} else {
+				currentFavs[props.id] = {
+					src: props.src,
+					title: props.gifTitle,
+					search: props.search
+				};
+			}
+			sessionStorage.setItem('myFavs', JSON.stringify(currentFavs));
 		}
-		sessionStorage.setItem('myFavs', JSON.stringify(currentFavs));
-		props.toogleFavorite(props.id, props.src, props.gifTitle, props.search);
+		props.toggleFavorite(props.id, props.src, props.gifTitle, props.search);
 	};
 
 	const handleGoBack = () => {
@@ -75,10 +77,10 @@ const mapStateToProps = ({ user, gifsFetch }, props) => {
 };
 
 const mapDispatchToProps = dispatch => {
-	const { toogleFavorite } = actions.creators;
+	const { toggleFavorite } = actions.creators;
 	return bindActionCreators(
 		{
-			toogleFavorite
+			toggleFavorite
 		},
 		dispatch
 	);
