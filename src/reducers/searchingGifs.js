@@ -20,12 +20,14 @@ const searchingGifsReducer = (state = initialState, action) => {
       return {
         ...state,
         isLoading: false,
+        term: '',
         data: [...payload],
       };
 
     case actions.types.SEARCH_GIFS_FAILED:
       return {
         ...state,
+        term: '',
         isLoading: false,
         error: {...payload}
       };
@@ -33,6 +35,7 @@ const searchingGifsReducer = (state = initialState, action) => {
       return {
         ...state,
         data: [],
+        term: '',
         isLoading: false,
       };
     default:

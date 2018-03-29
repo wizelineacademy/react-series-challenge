@@ -28,7 +28,8 @@ const detailGifReducer = (state = initialState, action) => {
       return {
         ...state,
         isLoading: false,
-        error: {...payload}
+        error: {...payload},
+        gifId: null
       };
 
     default:
