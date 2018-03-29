@@ -17,6 +17,10 @@ class Home extends Component {
     this.props.getNewContent(1);
   }
 
+  componentWillUnmount(){
+    this.props.clearInput();
+  }
+
   render() {
 
     if(this.props.loading){

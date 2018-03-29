@@ -17,6 +17,10 @@ class Favorites extends Component {
     this.props.getFavoritesR(1);
   }
 
+  componentWillUnmount(){
+    this.props.clearInput();
+  }
+
   render() {
 
     if(this.props.loading){
@@ -41,14 +45,16 @@ const mapDispatchToProps = (dispatch) => {
     addRemoveFavoriteView,
     getFavoritesR,
     filterChange,
-    filterClick
+    filterClick,
+    clearInput
   } = actions
 
   return bindActionCreators({
     addRemoveFavoriteView,
     getFavoritesR,
     filterChange,
-    filterClick
+    filterClick,
+    clearInput
   }, dispatch);
 }
 

@@ -2,7 +2,6 @@ import { call, takeEvery, put, takeLatest } from 'redux-saga/effects';
 import actions from '../actions/index';
 import {
   GET_NEW_CONTENT,
-  SEARCH_CHANGE,
   UPDATE_CONTENT
 } from '../actions/types';
 import selectors from '../utils/selectors';
