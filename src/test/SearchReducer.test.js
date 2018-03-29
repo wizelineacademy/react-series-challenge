@@ -11,15 +11,22 @@ const cleanState = {
 
 describe('test Search Reducer', () => {
   it('test default case', () => {
-    const result = reducer(state,{ type:'NO_ACTION', payload:'123' });
+    const result = reducer(state, { type:'NO_ACTION', payload:'123' });
     expect(result).toEqual(state);
   })
   it('test clear case', () => {
-    const result = reducer(state,{ type: CLEAR_INPUT, payload:'123' });
+    const result = reducer(state, { type: CLEAR_INPUT, payload:'123' });
     expect(result).toEqual(cleanState);
   })
   it('change input case', () =>{
-    const result = reducer(cleanState,{ type: CHANGE_INPUT, payload: { target: { value: 'Hola Mundo' } } });
+    const result = reducer(cleanState, {
+      type: CHANGE_INPUT,
+      payload: {
+        target: {
+          value: 'Hola Mundo'
+        }
+      }
+    });
     expect(result).toEqual(state);
   })
 })

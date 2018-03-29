@@ -45,7 +45,7 @@ describe('test Search Reducer', () => {
     const result = reducer(dataState,{ type:'NO_ACTION', payload:'123' });
     expect(result).toEqual(dataState);
   })
-  it('test clear case', () => {
+  it('test action case', () => {
     const result = reducer(cleanState,{ type: SET_FAVORITES, payload: dataState.favorites });
     expect(result).toEqual(dataState);
   })
