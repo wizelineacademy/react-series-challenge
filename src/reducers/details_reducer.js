@@ -1,7 +1,8 @@
 import { 
   GET_DETAILS_REQUEST,
   GET_DETAILS_COMPLETE,
-  GET_DETAILS_ERROR
+  GET_DETAILS_ERROR,
+  SET_DETAILS
 } from '../actions/types';
 
 const initialState = {
@@ -32,6 +33,13 @@ export default function (state = initialState, { type, payload }) {
         errInfo : { er, errorInfo }
       }
       return errorState;
+
+      // BEGINS: Refactor.
+    case SET_DETAILS:
+      const detailsImage = { ...payload };
+      return { detailsImage };
+      // ENDS: Refactor.
+      
     default:
       return state;
   }

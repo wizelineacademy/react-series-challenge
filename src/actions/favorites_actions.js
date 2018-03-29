@@ -11,7 +11,9 @@ import {
   FILTER_FAVORITES,
   SET_FAVORITES,
   GET_FAVORITES,
-  ADD_REMOVE_FAVORITE
+  ADD_REMOVE_FAVORITE,
+  ADD_REMOVE_FAVORITE_HOME,
+  ADD_REMOVE_FAVORITE_VIEW
 } from './types'
 
 const getFavorites = createAction(GET_FAVORITES_REQUEST);
@@ -29,6 +31,8 @@ const filterFavorites = createAction(FILTER_FAVORITES);
 export const setFavorites = createAction(SET_FAVORITES);
 export const getFavoritesR = createAction(GET_FAVORITES);
 export const addRemoveFavorite = createAction(ADD_REMOVE_FAVORITE);
+export const addRemoveFavoriteHome = createAction(ADD_REMOVE_FAVORITE_HOME);
+export const addRemoveFavoriteView = createAction(ADD_REMOVE_FAVORITE_VIEW);
 
 export default {
   getFavorites,
@@ -39,5 +43,7 @@ export default {
   getNextFavoritesPage,
   getPrevFavoritesPage,
   changeFavoritesFilter,
-  filterFavorites
+  filterFavorites,
+  addRemoveFavoriteHome,
+  addRemoveFavoriteView
 }

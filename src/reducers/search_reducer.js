@@ -1,15 +1,14 @@
-import { MODIFIED_SEARCH } from '../actions/types';
+import { CHANGE_INPUT } from '../actions/types';
 
 const initialState = {
-  loading: true,
-  elements: [],
-  search: ''
+  inputString: ''
 }
 
 export default function (state = initialState, {type, payload}) {
   switch(type){
-    case MODIFIED_SEARCH:
-      return payload;
+    case CHANGE_INPUT:
+      const newSearchString = payload
+      return { inputString: newSearchString };
     default:
       return state;
   }

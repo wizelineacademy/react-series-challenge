@@ -3,6 +3,7 @@ import {
   GET_FAVORITES_COMPLETE,
   GET_FAVORITES_ERROR,
   CHANGE_FAVORITES_FILTER,
+  SET_FAVORITES,
   // ADD_REMOVE_FAVORITES,
 } from '../actions/types';
 
@@ -48,6 +49,13 @@ export default function (state = initialState, { type, payload }) {
       const filter = payload.target.value
       const filterState = { ...state, filter };
       return filterState;
+
+      // BEGINS: Refactor
+    case SET_FAVORITES:
+      const favorites  = [ ...payload ];
+      return favorites;
+      // ENDS: Refactor
+
     default:
       return state;
   }

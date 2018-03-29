@@ -50,6 +50,8 @@ export const GET_FAVORITES = 'GET_FAVORITES';
 
 // Trigers the Add/Remove Favorite process.
 export const ADD_REMOVE_FAVORITE = 'ADD_REMOVE_FAVORITE';
+export const ADD_REMOVE_FAVORITE_HOME = 'ADD_REMOVE_FAVORITE_HOME';
+export const ADD_REMOVE_FAVORITE_VIEW = 'ADD_REMOVE_FAVORITE_VIEW';
 
 // Asks for more content (Home View)
 export const GET_NEW_CONTENT = 'GET_NEW_CONTENT';
@@ -95,5 +97,7 @@ export default {
   ERROR_STATUS,
   GET_DETAILS,
   FILTER_CLICK,
-  SEARCH_CLICK
+  SEARCH_CLICK,
+  ADD_REMOVE_FAVORITE_HOME,
+  ADD_REMOVE_FAVORITE_VIEW
 };
