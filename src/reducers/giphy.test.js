@@ -38,7 +38,7 @@ import * as giphyActions from '../actions/giphy';
 let creators = giphyActions.default.creators;
 let giphyReducer = giphy.default;
 let data = {a: 1, b: 2, gif:{}}
-let types = giphy.default.types;
+
 let gif = {id: 55};
 let id = 55;
 let error = {message: 'invalid api key'}

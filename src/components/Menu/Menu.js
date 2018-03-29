@@ -63,8 +63,6 @@ export class MenuComponent extends React.Component {
 		this.forceUpdate();
 	}
 	render() {
-		var items = null;
-		
 		var favorite_style = this.timeLine.getEffect('favorite');
 		var trending_style = this.timeLine.getEffect('trending');
 		

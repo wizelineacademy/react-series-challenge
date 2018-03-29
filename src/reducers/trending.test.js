@@ -3,7 +3,7 @@ import * as trendingActions from '../actions/trending';
 let creators = trendingActions.default.creators;
 let trendingReducer = trending.default;
 let data = {a: 1, b: 2}
-let types = trending.default.types;
+
 let gif = {id: 55}
 let error = {message: 'invalid api key'}
 const initialState = {

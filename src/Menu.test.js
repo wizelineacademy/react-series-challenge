@@ -1,19 +1,17 @@
 import React from 'react';
-import { render, shallow, mount } from 'enzyme';
+import { mount } from 'enzyme';
 import { BrowserRouter } from 'react-router-dom';
 import Menu from './components/Menu';
 import { MenuComponent } from './components/Menu/Menu';
 import { Provider } from 'react-redux';
 import store from './store';
 import { delay } from 'redux-saga'
-function mockItem() {
-	// return mocked object
-}
+
 describe('Menu Component', () => {
 	it('Component Mount', () => {
         const componentDidMount = jest.fn();
         Menu.prototype.componentDidMount = componentDidMount;
-        const wrapper = mount(<BrowserRouter><Provider store={store}><Menu /></Provider></BrowserRouter>);
+        mount(<BrowserRouter><Provider store={store}><Menu /></Provider></BrowserRouter>);
         expect(componentDidMount).toHaveBeenCalledTimes(1);
     });
     it('Toggle Menu', () => {

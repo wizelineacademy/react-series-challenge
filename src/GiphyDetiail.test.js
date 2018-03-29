@@ -1,19 +1,16 @@
 import React from 'react';
-import { render, shallow, mount } from 'enzyme';
+import { mount } from 'enzyme';
 import { BrowserRouter } from 'react-router-dom';
 import GiphyDetail from './components/GiphyDetail';
 import { GiphyDetailComponent } from './components/GiphyDetail/GiphyDetail';
 import { Provider } from 'react-redux';
 import store from './store';
 
-function mockItem() {
-	// return mocked object
-}
 describe('Test Giphy Detail Component', () => {
 	it('Component Mount', () => {
         const componentDidMount = jest.fn();
         GiphyDetail.prototype.componentDidMount = componentDidMount;
-        const wrapper = mount(<BrowserRouter><Provider store={store}><GiphyDetail /></Provider></BrowserRouter>);
+        mount(<BrowserRouter><Provider store={store}><GiphyDetail /></Provider></BrowserRouter>);
         expect(componentDidMount).toHaveBeenCalledTimes(1);
     });
     it('Test Renders Details', () => {
@@ -54,7 +51,7 @@ describe('Test Giphy Detail Component', () => {
         }
         const giphyRequest = jest.fn();
 
-        const wrapper = mount(<GiphyDetailComponent giphy={giphy} favorites={{gifs: {}}} giphyRequest={giphyRequest} match={match}/>);
+        mount(<GiphyDetailComponent giphy={giphy} favorites={{gifs: {}}} giphyRequest={giphyRequest} match={match}/>);
         expect(giphyRequest).toHaveBeenCalledTimes(1);
     });
     it('Added Favorite', () => {
@@ -100,7 +97,7 @@ describe('Test Giphy Detail Component', () => {
         }
         const giphyRequest = jest.fn();
 
-        const wrapper = mount(<GiphyDetailComponent giphy={giphy} favorites={{gifs: {"qaqsqQOyzV1m0":true}}} giphyRequest={giphyRequest} match={match}/>);
+        mount(<GiphyDetailComponent giphy={giphy} favorites={{gifs: {"qaqsqQOyzV1m0":true}}} giphyRequest={giphyRequest} match={match}/>);
         expect(giphyRequest).toHaveBeenCalledTimes(1);
     });
     
