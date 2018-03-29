@@ -6,17 +6,32 @@ import {
 
 const initialState = {
   loading: true,
-  img: {}
+  image: {},
+  err: false,
+  errInfo: {}
 };
 
 export default function (state = initialState, { type, payload }) {
   switch(type){
     case GET_DETAILS_REQUEST:
-      return payload;
+      const requestState = { ...state, loading: true };
+      return requestState;
     case GET_DETAILS_COMPLETE:
-      return payload;
+      const { image } = payload
+      const completeState = {
+        ...state,
+        loading: false,
+        image
+      }
+      return completeState;
     case GET_DETAILS_ERROR:
-      return payload;
+      const { er, errorInfo } = payload;
+      const errorState = {
+        ...state,
+        err: true,
+        errInfo : { er, errorInfo }
+      }
+      return errorState;
     default:
       return state;
   }
