@@ -5,8 +5,12 @@ import {
   GET_NEXT_CONTENT_PAGE,
   GET_PREV_CONTENT_PAGE,
   CHANGE_CONTENT_SEARCH,
-  CONTENT_FAVORITE_BUTTON_CLICKED
+  CONTENT_FAVORITE_BUTTON_CLICKED,
+  GET_NEW_CONTENT,
+  SEARCH_CHANGE
 } from '../actions/types';
+import selectors from '../utils/selectors';
+import { getData, getPaginator } from '../utils/general';
 
 const API_KEY = 'api_key=OKx61MhM7wizGoKbk4z3GuDlN1LOAJxu';
 const lim = 15;
@@ -74,10 +78,58 @@ export function* favoriteButtonSaga({ payload }){
   yield put(actions.getContent(page))
 }
 
+export function* getNewContentSaga ({ payload }) {
+  // Change loading state
+  yield put(actions.setLoading, true)
+  
+
+  // Check the requiered endpoint (Search / Trending)
+
+  const search = yield call(selectors.getInputString);
+  const endpoint = search === '' ? 'trending' : 'search';
+  const page = payload;
+
+  // Fetch the data
+
+  const resp = yield call(getData, {search, endpoint, page});
+  const { data, pagination } = resp;
+
+  // Get the nex paginator state
+  
+  const paginator = yield call(getPaginator, page, pagination.total_count);
+  
+  // Check which ones are part of the favorites.
+
+  const favorites = yield call(selectors.getFavorites)
+  const pageElements = yield call(markFavorites,data, favorites);
+
+  // Set the new paginator state
+
+  yield put(actions.setPaginator(paginator))
+
+  // Get and Set the new currentList
+  
+  yield put(actions.setList(pageElements))
+
+  // Change the loading
+
+  yield put(actions.setLoading, false)
+
+
+}
+
+export function* searchChangeSaga({ payload }){
+  const { value } = payload.target
+  yield put(actions.changeInput(value))
+  yield put(actions.getNewContent(1));
+}
+
 export default function* homeSaga () {
   yield takeLatest(GET_CONTENT_REQUEST, setLoadingContentSaga);
   yield takeEvery(GET_NEXT_CONTENT_PAGE, getNextContentPage);
   yield takeEvery(GET_PREV_CONTENT_PAGE, getPrevContentPage);
   yield takeEvery(CHANGE_CONTENT_SEARCH, changeSearch);
   yield takeEvery(CONTENT_FAVORITE_BUTTON_CLICKED, favoriteButtonSaga);
+  yield takeLatest(GET_NEW_CONTENT, getNewContentSaga);
+  yield takeEvery(SEARCH_CHANGE, searchChangeSaga);
 }

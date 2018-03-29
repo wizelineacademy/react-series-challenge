@@ -7,8 +7,13 @@ import {
   GET_FAVORITES_REQUEST,
   ADD_REMOVE_FAVORITES,
   CHANGE_FAVORITES_FILTER,
-  FILTER_FAVORITES
+  FILTER_FAVORITES,
+  GET_FAVORITES,
+  LOAD_FAVORITESR,
+  FILTER_CHANGE
 } from '../actions/types';
+import { getPaginator } from '../utils/general';
+import selectors from '../utils/selectors';
 
 const lim = 15;
 const getFromStorage = (item) => window.localStorage.getItem(item);
@@ -104,6 +109,57 @@ export function* filterSaga() {
   yield put(actions.getFavorites(1));
 }
 
+export function* getFavoritesRSaga ({ payload }) {
+  const page = payload;
+
+  // Change loading state
+  yield put(actions.setLoading, true)
+
+  // Get favorites
+  const favorites = yield call(selectors.getFavorites);
+
+  // Check if it's needed to be filtered
+  const filter = yield call(selectors.getInputString);
+
+  // Filter if needed
+  const auxFavorites = filter === '' ? [ ...favorites ] : yield call(filterArray, filter, favorites);
+
+  // Get Paginator
+  const totalElements = auxFavorites.length;
+    
+  const totalPages = Math.ceil(totalElements / lim);
+  
+  const paginator = yield call(getPaginator, page, totalPages);
+  
+  // Set Paginator
+  yield put(actions.setPaginator(paginator))
+
+  // Get and Set the new currentList
+  
+  const startSlice = lim * (page - 1);
+  const finalList = auxFavorites.slice(startSlice, (startSlice + lim));
+  yield put(actions.setList(finalList));
+
+  // Change the loading
+
+  yield put(actions.setLoading, false)
+
+};
+
+export function* loadFavoritesRSaga () {
+  const storedFavoritesString = yield call(getFromStorage, 'reactFavorites');
+    
+  const storedFavorites = storedFavoritesString ? JSON.parse(storedFavoritesString) : [];
+
+  yield put(actions.setFavorites(storedFavorites));
+};
+
+export function* filterChangeSaga({payload}) {
+  const { value } = payload.target;
+  yield put(actions.changeInput(value));
+  yield put(actions.getFavoritesR(1))
+}
+
 export default function* homeSaga () {
   yield takeLatest(LOAD_FAVORITES, loadFavoritesSaga);
   yield takeEvery(GET_NEXT_FAVORITES_PAGE, getNextFavoritesPage);
@@ -112,4 +168,7 @@ export default function* homeSaga () {
   yield takeEvery(ADD_REMOVE_FAVORITES, addRemoveSaga);
   yield takeEvery(FILTER_FAVORITES, filterSaga);
   yield takeEvery(CHANGE_FAVORITES_FILTER, filterSaga);
+  yield takeLatest(GET_FAVORITES, getFavoritesRSaga);
+  yield takeLatest(LOAD_FAVORITESR,loadFavoritesRSaga)
+  yield takeEvery(FILTER_CHANGE, filterChangeSaga);
 }

@@ -2,11 +2,13 @@ import { call, takeEvery, put, select, takeLatest } from 'redux-saga/effects';
 import actions from '../actions/index';
 
 import {
-  GET_DETAILS_COMPLETE,
-  GET_DETAILS_ERROR,
+  // GET_DETAILS_COMPLETE,
+  // GET_DETAILS_ERROR,
   GET_DETAILS_REQUEST,
-  ADD_REMOVE_FAVORITE_DETAILS
+  ADD_REMOVE_FAVORITE_DETAILS,
+  GET_DETAILS
 } from '../actions/types';
+import selectors from '../utils/selectors';
 
 const API_KEY = 'api_key=OKx61MhM7wizGoKbk4z3GuDlN1LOAJxu';
 const url = `http://api.giphy.com/v1/gifs/`;
@@ -39,7 +41,39 @@ export function* detailsFavoriteSaga ({ payload }) {
   yield put(actions.detailsRequest(image.id));
 }
 
+export function* getDetailsSaga({ payload }){
+  const id = payload;
+  const favorites = yield call(selectors.getFavorites);
+
+  // Check if it is in favorites.
+  const indexFavorites = favorites.findIndex((item) => item.id === id);
+  
+  // Check if it is in currentList
+  const content = yield call(selectors.getPieceOfState, 'list');
+  const indexContent = content.findIndex((item) => item.id === id);
+  
+  if(indexFavorites > -1){
+    const data = { ...favorites[indexFavorites], favorite: true };
+    yield put(actions.setDetails({ data }));
+  }else if(indexContent > -1){
+    const dataContent = { ...content[indexContent], favorite: false };
+    yield put(actions.setDetails({ data: dataContent }));
+  }else{
+    // Fetch It
+    const fetchUrl = `${url}${id}?${API_KEY}`;
+    const response = yield call(get, fetchUrl)
+    const { data } = response;
+    const img = { ...data, favorite: false }
+  
+    yield put(actions.setDetails({ data: img }));
+  }
+
+
+
+}
+
 export default function* detailsSaga () {
   yield takeLatest(GET_DETAILS_REQUEST, detailsRequestSaga);
   yield takeEvery(ADD_REMOVE_FAVORITE_DETAILS, detailsFavoriteSaga);
+  yield takeEvery(GET_DETAILS, getDetailsSaga);
 }

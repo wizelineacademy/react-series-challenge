@@ -53,7 +53,7 @@ export default function (state = initialState, { type, payload }) {
       // BEGINS: Refactor
     case SET_FAVORITES:
       const favorites  = [ ...payload ];
-      return favorites;
+      return { favorites };
       // ENDS: Refactor
 
     default:
