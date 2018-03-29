@@ -2,12 +2,8 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import actions from '../../actions'
-import CardStyled from './CardStyled';
-import BigImageStyled from './BigImageStyled';
-
-const st = { 
-  display: 'block'
-}
+import { BigImageStyled } from '../../styled/ImgStyled';
+import { CardStyled }from '../../styled/ContainersStyled';
 
 class Details extends Component {
   constructor(props) {
@@ -26,7 +22,7 @@ class Details extends Component {
     return (
       <CardStyled>
         <BigImageStyled src={this.props.image.images.original.url} />
-        <a style={st} onClick={this.props.toogleFavoriteDetails.bind(this,this.props.image)} href=''>Agregar a Favoritos</a>
+        <a onClick={this.props.toogleFavoriteDetails.bind(this,this.props.image)} href=''>Agregar a Favoritos</a>
       </CardStyled>
     );
   }

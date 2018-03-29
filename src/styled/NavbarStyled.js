@@ -1,6 +1,13 @@
 import styled from 'styled-components';
 
-const NavItemStyled = styled.li`
+export const NavbarStyled = styled.ul`
+  list-style: none;
+  background-color: #0a094f;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+`
+export const NavItemStyled = styled.li`
   font-family: sans-serif;
   font-size: 1.5em;
   line-height: 40px;
@@ -19,5 +26,7 @@ const NavItemStyled = styled.li`
     background-color: #005f5f
   }
 `
-
-export default NavItemStyled;
+export default {
+  NavbarStyled,
+  NavItemStyled
+}

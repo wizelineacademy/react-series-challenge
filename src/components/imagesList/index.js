@@ -1,7 +1,6 @@
 import React from 'react';
-import ListStyled from './ListStyled';
-import ListItemStyled from './ListItemStyled';
-import ImageStyled from './ImageStyled';
+import { ListWrapperStyled, ListItemStyled } from '../../styled/ContainersStyled'
+import { ImgStyled } from '../../styled/ImgStyled';
 import { Link } from 'react-router-dom';
 
 const ImagesList = (props) => {
@@ -10,7 +9,7 @@ const ImagesList = (props) => {
     return (
       <ListItemStyled key={image.id}>
         <Link to={`/image/${image.id}`}>
-          <ImageStyled
+          <ImgStyled
             src={image.images.original.url}
             alt={`hi`}
           />
@@ -21,9 +20,9 @@ const ImagesList = (props) => {
     );
   });
   return (
-    <ListStyled>
+    <ListWrapperStyled>
       {items}
-    </ListStyled>
+    </ListWrapperStyled>
   )
 }
 

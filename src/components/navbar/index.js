@@ -1,20 +1,20 @@
 import React from 'react';
-import NavbarStyled from './NavbarStyled';
-import NavItemStyled from './NavItemStyled';
-import LinkStyled from './LinkStyled'
+import { NavbarStyled, NavItemStyled } from '../../styled/NavbarStyled';
+// import NavItemStyled from './NavItemStyled';
+import { Link } from 'react-router-dom'
 
 const NavBar = (props) => {
   return (
     <NavbarStyled>
       <NavItemStyled>
-        <LinkStyled to='/'>
+        <Link to='/'>
           Home
-        </LinkStyled>
+        </Link>
       </NavItemStyled>
       <NavItemStyled>
-        <LinkStyled to='/favorites'>
+        <Link to='/favorites'>
           Favorites
-        </LinkStyled>
+        </Link>
       </NavItemStyled>
     </NavbarStyled>
   )
