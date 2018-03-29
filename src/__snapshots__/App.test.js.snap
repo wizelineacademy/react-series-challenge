@@ -15,86 +15,111 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "class",
+    "nodeType": "host",
     "props": Object {
-      "children": <div
-        className="app-root"
->
-        <withRouter(Connect(SearchBox)) />
-        <div
-                className="app"
-        >
-                <Route
-                        component={[Function]}
-                        exact={true}
-                        path="/"
-                />
-                <Route
-                        component={[Function]}
-                        path="/favorites"
-                />
-                <Route
-                        component={[Function]}
-                        path="/search"
-                />
-                <Route
-                        component={[Function]}
-                        path="/gif/:giphy_id"
-                />
-        </div>
-        <Connect(MenuComponent) />
-</div>,
-      "store": Object {
-        "dispatch": [Function],
-        "getState": [Function],
-        "replaceReducer": [Function],
-        "subscribe": [Function],
-        Symbol(observable): [Function],
-      },
+      "children": Array [
+        <h1>
+          Giphy Challenge
+</h1>,
+        <ul>
+          <li>
+                    home
+          </li>
+          <li>
+                    favorites
+          </li>
+</ul>,
+      ],
     },
     "ref": null,
-    "rendered": Object {
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Giphy Challenge",
+        },
+        "ref": null,
+        "rendered": "Giphy Challenge",
+        "type": "h1",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <li>
+              home
+</li>,
+            <li>
+              favorites
+</li>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "home",
+            },
+            "ref": null,
+            "rendered": "home",
+            "type": "li",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "favorites",
+            },
+            "ref": null,
+            "rendered": "favorites",
+            "type": "li",
+          },
+        ],
+        "type": "ul",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
       "instance": null,
       "key": undefined,
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <withRouter(Connect(SearchBox)) />,
-          <div
-            className="app"
->
-            <Route
-                        component={[Function]}
-                        exact={true}
-                        path="/"
-            />
-            <Route
-                        component={[Function]}
-                        path="/favorites"
-            />
-            <Route
-                        component={[Function]}
-                        path="/search"
-            />
-            <Route
-                        component={[Function]}
-                        path="/gif/:giphy_id"
-            />
-</div>,
-          <Connect(MenuComponent) />,
+          <h1>
+            Giphy Challenge
+</h1>,
+          <ul>
+            <li>
+                        home
+            </li>
+            <li>
+                        favorites
+            </li>
+</ul>,
         ],
-        "className": "app-root",
       },
       "ref": null,
       "rendered": Array [
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "function",
-          "props": Object {},
+          "nodeType": "host",
+          "props": Object {
+            "children": "Giphy Challenge",
+          },
           "ref": null,
-          "rendered": null,
-          "type": [Function],
+          "rendered": "Giphy Challenge",
+          "type": "h1",
         },
         Object {
           "instance": null,
@@ -102,272 +127,43 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              <Route
-                component={[Function]}
-                exact={true}
-                path="/"
-/>,
-              <Route
-                component={[Function]}
-                path="/favorites"
-/>,
-              <Route
-                component={[Function]}
-                path="/search"
-/>,
-              <Route
-                component={[Function]}
-                path="/gif/:giphy_id"
-/>,
+              <li>
+                home
+</li>,
+              <li>
+                favorites
+</li>,
             ],
-            "className": "app",
           },
           "ref": null,
           "rendered": Array [
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "class",
+              "nodeType": "host",
               "props": Object {
-                "component": [Function],
-                "exact": true,
-                "path": "/",
+                "children": "home",
               },
               "ref": null,
-              "rendered": null,
-              "type": [Function],
+              "rendered": "home",
+              "type": "li",
             },
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "class",
+              "nodeType": "host",
               "props": Object {
-                "component": [Function],
-                "path": "/favorites",
+                "children": "favorites",
               },
               "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "component": [Function],
-                "path": "/search",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "component": [Function],
-                "path": "/gif/:giphy_id",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
+              "rendered": "favorites",
+              "type": "li",
             },
           ],
-          "type": "div",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {},
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
+          "type": "ul",
         },
       ],
       "type": "div",
-    },
-    "type": [Function],
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "class",
-      "props": Object {
-        "children": <div
-          className="app-root"
->
-          <withRouter(Connect(SearchBox)) />
-          <div
-                    className="app"
-          >
-                    <Route
-                              component={[Function]}
-                              exact={true}
-                              path="/"
-                    />
-                    <Route
-                              component={[Function]}
-                              path="/favorites"
-                    />
-                    <Route
-                              component={[Function]}
-                              path="/search"
-                    />
-                    <Route
-                              component={[Function]}
-                              path="/gif/:giphy_id"
-                    />
-          </div>
-          <Connect(MenuComponent) />
-</div>,
-        "store": Object {
-          "dispatch": [Function],
-          "getState": [Function],
-          "replaceReducer": [Function],
-          "subscribe": [Function],
-          Symbol(observable): [Function],
-        },
-      },
-      "ref": null,
-      "rendered": Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": Array [
-            <withRouter(Connect(SearchBox)) />,
-            <div
-              className="app"
->
-              <Route
-                            component={[Function]}
-                            exact={true}
-                            path="/"
-              />
-              <Route
-                            component={[Function]}
-                            path="/favorites"
-              />
-              <Route
-                            component={[Function]}
-                            path="/search"
-              />
-              <Route
-                            component={[Function]}
-                            path="/gif/:giphy_id"
-              />
-</div>,
-            <Connect(MenuComponent) />,
-          ],
-          "className": "app-root",
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {},
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": Array [
-                <Route
-                  component={[Function]}
-                  exact={true}
-                  path="/"
-/>,
-                <Route
-                  component={[Function]}
-                  path="/favorites"
-/>,
-                <Route
-                  component={[Function]}
-                  path="/search"
-/>,
-                <Route
-                  component={[Function]}
-                  path="/gif/:giphy_id"
-/>,
-              ],
-              "className": "app",
-            },
-            "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "component": [Function],
-                  "exact": true,
-                  "path": "/",
-                },
-                "ref": null,
-                "rendered": null,
-                "type": [Function],
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "component": [Function],
-                  "path": "/favorites",
-                },
-                "ref": null,
-                "rendered": null,
-                "type": [Function],
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "component": [Function],
-                  "path": "/search",
-                },
-                "ref": null,
-                "rendered": null,
-                "type": [Function],
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "component": [Function],
-                  "path": "/gif/:giphy_id",
-                },
-                "ref": null,
-                "rendered": null,
-                "type": [Function],
-              },
-            ],
-            "type": "div",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {},
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-        ],
-        "type": "div",
-      },
-      "type": [Function],
     },
   ],
   Symbol(enzyme.__options__): Object {

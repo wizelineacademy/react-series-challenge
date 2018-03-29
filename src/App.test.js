@@ -1,13 +1,19 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow } from 'enzyme'
+
 import App from './App';
+
+
 
 
 describe('Favorites tests',()=>{
     it('render',()=>{
-        const component = shallow(<App></App>);
+        const component = shallow(
+            <App/>
+                
+           )
         
-        expect(component).toEqual(1);
+        expect(component).toMatchSnapshot()
        
         
     })
