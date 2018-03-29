@@ -149,9 +149,7 @@ export class TimeLine
         }
     }
     play()
-    {
-        var self = this;
-        
+    {   
         if (((this.direction === 1) && (this._position === this.duration)) || ((this.direction === -1) && (this._position === 0)))
         {
         }
