@@ -1,4 +1,4 @@
-import * as menu from './Menu';
+import * as menu from './menu';
 let creators = menu.default.creators;
 let types = menu.default.types;
 
