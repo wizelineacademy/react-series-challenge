@@ -77,28 +77,25 @@ describe('test ListGifs no data', () => {
   });
 });
 
-describe('test ListGifs favorites data', () => {
+describe('test ListGifs favorites', () => {
   it('render structure', () => {
     let customBase = JSON.parse(JSON.stringify(baseProps));
     customBase.dataSource = 'favorites';
+    customBase.favorites.fetching = true;
     const component = shallow(<PureComp
       store={store}
       {...customBase}
     />);
-    expect(component.find('ListGifStyled').length).toBeGreaterThanOrEqual(1);
+    expect(component.containsMatchingElement(<div>Cargando...</div>)).toBe(true);
   });
-});
 
-/*describe('test ListGifs favorites data', () => {
-  it('render structure', () => {
+  it('is Fav?', () => {
     let customBase = JSON.parse(JSON.stringify(baseProps));
     customBase.dataSource = 'favorites';
-    const MkComp = jest.mock('../components/ListGifs')
     const component = shallow(<PureComp
       store={store}
       {...customBase}
     />);
-    console.log(MkComp)
-    expect(MkComp.find('ListGifStyled').length).toBeGreaterThanOrEqual(1);
-  });
-});*/
+    expect(component.instance().checkIsFav('KWhzYRArxnE9U0ioHW')).toBe(false);
+  })
+});

@@ -90,3 +90,26 @@ describe('test GifDetailView is Fav', () => {
     expect(component.getElement(0).props.children.length).toBe(2);
   });
 });
+
+it('check', () =>{
+  const fav = {
+    originalList: {
+      data: [{
+        title: 'luke skywalker mood GIF',
+        id: 'KWhzYRArxnE9U0ioHW',
+        images: {
+          preview_gif: { url: 'https://media2.giphy.com/media/KWhzYRArxnE9U0ioHW/giphy.gif' },
+          original: { url: 'https://media2.giphy.com/media/KWhzYRArxnE9U0ioHW/giphy.gif' },
+        }
+      }]
+    }
+  }
+  let customBase = JSON.parse(JSON.stringify(baseProps));
+    customBase.favorites.originalList.data.data[0].id = 'WrongID';
+    const component = shallow(<PureComp
+      store={store}
+      {...customBase}
+      favorites={fav}
+    />);
+    expect(component.getElement(0).props.children.length).toBe(2);
+})

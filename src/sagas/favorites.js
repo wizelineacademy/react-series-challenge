@@ -1,6 +1,7 @@
 import { takeEvery, put, select } from 'redux-saga/effects';
 import favoriteActions from '../actions/favorites';
 import Utils from '../utils/Utils';
+import selectors from '../selectors';
 
 export function* getFavoritesList() {
     const localFavs = JSON.parse(localStorage.getItem('favList')) || [];
@@ -29,12 +30,12 @@ export function* removeFavorite(id) {
     localStorage.setItem('favList', newLocal);
     yield put(favoriteActions.creators.removeFavoriteComplete(localFavs));
 }
-
+//const emptyString = (str) => !/^\s*$/.test(str)
 export function* filterFavorites(query) {
-    const state = yield select();
-    const favFilterList = state.favorites.list.data;
+    const state = yield select(selectors.favorites);
+    let favFilterList = state.originalList.data;
     let filteredList = [];
-    if (query.payload && !/^\s*$/.test(query.payload)) {
+    if (query.payload) {
         const input = Utils.slugfiy(query.payload);
         for (let i = 0, len = favFilterList.length; i < len; i++) {
             if (favFilterList[i].slug.includes(input)) {
@@ -42,7 +43,7 @@ export function* filterFavorites(query) {
             }
         }
     } else {
-        filteredList = state.favorites.originalList.data;
+        filteredList = favFilterList;
     }
     yield put(favoriteActions.creators.filterFavoriteComplete({
         data: filteredList,

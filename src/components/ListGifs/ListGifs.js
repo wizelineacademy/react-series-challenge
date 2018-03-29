@@ -11,10 +11,20 @@ import favoritesActions from '../../actions/favorites';
 import { ListGifStyled, FavButton } from './ListGifs.styled';
 
 class ListGifs extends Component {
+
+    checkIsFav(tgId){
+        for(let i=0, len = this.props.favorites.originalList.data.length; i<len; i++){
+            if(this.props.favorites.originalList.data[i].id === tgId) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     render() {
         const { dataSource } = this.props;
-        const favList = this.props.favorites.originalList.data;
         let dataSourceObj = null;
+        let listObj = [];
 
         switch (dataSource) {
             case 'favorites':
@@ -26,31 +36,34 @@ class ListGifs extends Component {
         if (!dataSourceObj || !dataSourceObj.list) {
             return null;
         }
-        if (dataSourceObj.list && dataSourceObj.fetching && dataSourceObj.success) {
+        if (dataSourceObj.list && dataSourceObj.fetching) {
             return <div>Cargando...</div>
+        }
+        
+        for(let i = 0, len=dataSourceObj.list.data.length; i<len; i++){
+            const item = dataSourceObj.list.data[i];
+            let isFav = false
+            if (this.props.favorites.originalList.data) {
+                isFav = this.checkIsFav(item.id);
+            }
+            listObj.push(<li key={item.id}>
+                <FavButton
+                    faved={isFav}
+                    onClick={event => {
+                        if (!isFav) {
+                            this.props.addFavorite(item);
+                        } else {
+                            this.props.removeFavorite(item.id);
+                        }
+                    }}>FavMe</FavButton>
+                    <Link to={'/gif/'+item.id}>
+                        <img src={item.images.preview_gif.url} alt={item.title} />
+                    </Link>
+            </li>);
         }
         return (
             <ListGifStyled>
-                {dataSourceObj.list.data.map(item => {
-                    let isFav = false
-                    if (favList) {
-                        isFav = favList.filter(fav => fav.id === item.id).length === 1 ? true : false;
-                    }
-                    return <li key={item.id}>
-                        <FavButton
-                            faved={isFav}
-                            onClick={event => {
-                                if (!isFav) {
-                                    this.props.addFavorite(item);
-                                } else {
-                                    this.props.removeFavorite(item.id);
-                                }
-                            }}>FavMe</FavButton>
-                            <Link to={'/gif/'+item.id}>
-                                <img src={item.images.preview_gif.url} alt={item.title} />
-                            </Link>
-                    </li>;
-                })}
+                {listObj}
             </ListGifStyled>
         );
     }

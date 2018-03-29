@@ -1,5 +1,7 @@
 import  {getFavoritesList, addFavorite, removeFavorite, filterFavorites} from '../sagas/favorites';
+import {select } from 'redux-saga/effects';
 import Utils from '../utils/Utils';
+import selectors from '../selectors';
 
 class LocalStorageMock {
     constructor() {
@@ -23,7 +25,7 @@ class LocalStorageMock {
     }
   };
   
-  global.localStorage = new LocalStorageMock;
+  global.localStorage = new LocalStorageMock();
   global.Utils = Utils;
   global.state = {
     favorites:{
@@ -56,8 +58,13 @@ describe('sagas Favorites', () => {
        expect(gen.next().done).toEqual(true);
     });
     it('filterFavorites', () => {
-        const gen = filterFavorites();
-       gen.next();
+        const gen = filterFavorites('test');
+        expect(gen.next().value).toEqual(select(selectors.favorites))
+       gen.next({
+         originalList: {
+           data: []
+         }
+       });
        gen.next();
        expect(gen.next().done).toEqual(true);
     });
