@@ -1,21 +1,35 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Provider } from 'react-redux';
+import { Route } from 'react-router-dom';
+import store from './store';
+
+
+import TrendingList from './components/TrendingList';
+import SearchResults from './components/SearchResults';
+import SearchBox from './components/SearchBox';
+import FavoriteList from './components/FavoriteList';
+import GiphyDetail from './components/GiphyDetail';
+import Menu from './components/Menu';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <Provider store={store}>
+        <div className="app-root">
+          <SearchBox/>          
+          <div className="app">
+            
+            <Route path='/' exact component={TrendingList}/>
+            <Route path='/favorites' component={FavoriteList}/>
+            <Route path='/search' component={SearchResults}/>
+            <Route path='/gif/:giphy_id' component={GiphyDetail}/>
+            
+          </div>
+          <Menu/>
+        </div>
+      </Provider>
     );
-  }
+  } 
 }
 
 export default App;
