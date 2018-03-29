@@ -75,8 +75,7 @@ export function* loadFavoritesRSaga () {
 };
 
 export function* filterChangeSaga({payload}) {
-  const { value } = payload.target;
-  yield put(actions.changeInput(value));
+  yield put(actions.changeInput(payload));
   yield put(actions.getFavoritesR(1))
 }
 

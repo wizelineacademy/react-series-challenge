@@ -26,7 +26,7 @@ class Favorites extends Component {
       <Wrapper>
         <SearchBar
           handleChange={this.props.filterChange}
-          handleSearch={this.props.filterClick}
+          handleSearch={this.props.getFavoritesR.bind(this,1)}
         />
         <ImagesList
           favButton={this.props.addRemoveFavoriteView}

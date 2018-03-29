@@ -8,12 +8,13 @@ const SearchBar = (props) => {
   const {
     inputString,
     changeInput,
-    handleSearch
+    handleSearch,
+    handleChange
   } = props
   return (
     <Wrapper>
       <form onSubmit={(e)=>{e.preventDefault()}}>
-        <input type='text' onChange={changeInput} value={inputString} />
+        <input type='text' onChange={handleChange || changeInput} value={inputString} />
         <button onClick={handleSearch} >Buscar</button>
       </form>
     </Wrapper>
