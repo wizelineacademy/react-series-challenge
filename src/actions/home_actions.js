@@ -7,7 +7,8 @@ import {
   GET_PREV_CONTENT_PAGE,
   CHANGE_CONTENT_SEARCH,
   CHANGE_CONTENT_SEARCH_TYPE,
-  CONTENT_FAVORITE_BUTTON_CLICKED
+  CONTENT_FAVORITE_BUTTON_CLICKED,
+  GET_NEW_CONTENT
 } from './types'
 
 export const getContent = createAction(GET_CONTENT_REQUEST);
@@ -19,6 +20,9 @@ export const changeSearch = createAction(CHANGE_CONTENT_SEARCH);
 export const changeSearchType = createAction(CHANGE_CONTENT_SEARCH_TYPE);
 export const contentFavoriteButton = createAction(CONTENT_FAVORITE_BUTTON_CLICKED);
 
+// BEGINS: Refactor
+export const getNewContent = createAction(GET_NEW_CONTENT);
+
 export default {
   getContent,
   getNextPage,
@@ -27,5 +31,6 @@ export default {
   contentError,
   changeSearch,
   changeSearchType,
-  contentFavoriteButton
+  contentFavoriteButton,
+  getNewContent
 }
