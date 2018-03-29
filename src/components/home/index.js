@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import ImagesList from '../imagesList';
 import SearchBar from '../searchBar';
 import actions from '../../actions';
-import Wrapper from '../wrapper'
+import { Wrapper } from '../../styled/ContainersStyled';
 
 
 class Home extends Component {
@@ -41,13 +41,15 @@ const mapDispatchToProps = (dispatch) => {
   const {
     getNewContent,
     searchChange,
-    addRemoveFavoriteHome
+    addRemoveFavoriteHome,
+    clearInput
   } = actions
 
   return bindActionCreators({
     getNewContent,
     searchChange,
-    addRemoveFavoriteHome
+    addRemoveFavoriteHome,
+    clearInput
   }, dispatch);
 }
 

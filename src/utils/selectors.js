@@ -8,10 +8,6 @@ export function* getCurrentPage () {
   return yield select(({ paginator }) => paginator.currentPage);
 };
 
-export function* getInputString () {
-  return yield select(({search}) => search.inputString);
-};
-
 export function* getFavorites () {
   return yield select(({ favorites }) => favorites.favorites);
 }
@@ -19,6 +15,5 @@ export function* getFavorites () {
 export default {
   getPieceOfState,
   getCurrentPage,
-  getInputString,
   getFavorites
 }

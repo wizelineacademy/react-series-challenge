@@ -8,7 +8,7 @@ import {
   Redirect
 } from 'react-router-dom';
 import Navbar from './components/navbar';
-import Wrapper from './components/wrapper';
+import { Wrapper } from './styled/ContainersStyled';
 import Home from './components/home';
 import Favorites from './components/favorites';
 import Details from './components/details';

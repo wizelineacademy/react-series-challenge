@@ -1,4 +1,4 @@
-import { call, takeEvery, put, takeLatest } from 'redux-saga/effects';
+import { call, takeEvery, put, takeLatest, select } from 'redux-saga/effects';
 import actions from '../actions/index';
 import {
   GET_FAVORITES,
@@ -39,7 +39,7 @@ export function* getFavoritesRSaga ({ payload }) {
   const favorites = yield call(selectors.getFavorites);
 
   // Check if it's needed to be filtered
-  const filter = yield call(selectors.getInputString);
+  const filter = yield select(({search}) => search.inputString);
 
   // Filter if needed
   const auxFavorites = filter === '' ? [ ...favorites ] : yield call(filterArray, filter, favorites);

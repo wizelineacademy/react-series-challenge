@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import ImagesList from '../imagesList';
 import SearchBar from '../searchBar';
 import actions from '../../actions';
-import Wrapper from '../wrapper';
+import { Wrapper } from '../../styled/ContainersStyled';
 
 
 class Favorites extends Component {
@@ -58,10 +58,10 @@ const mapDispatchToProps = (dispatch) => {
   }, dispatch);
 }
 
-const mapStateToProps = ({ favorites }) => {
+const mapStateToProps = (state) => {
   const {
     loading,
-  } = favorites;
+  } = state.loading;
 
   return { 
     loading

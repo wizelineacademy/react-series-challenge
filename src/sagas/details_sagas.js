@@ -18,7 +18,7 @@ export function* detailsFavoriteSaga ({ payload }) {
 }
 
 export function* getDetailsSaga({ payload }){
-  const id = payload;
+  const id = payload;console.log(id)
   const favorites = yield call(selectors.getFavorites);
 
   // Check if it is in favorites.

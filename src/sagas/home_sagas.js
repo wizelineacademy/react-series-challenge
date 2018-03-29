@@ -1,4 +1,4 @@
-import { call, takeEvery, put, takeLatest } from 'redux-saga/effects';
+import { call, takeEvery, put, takeLatest, select } from 'redux-saga/effects';
 import actions from '../actions/index';
 import {
   GET_NEW_CONTENT,
@@ -21,7 +21,7 @@ export function* getNewContentSaga ({ payload }) {
 
   // Check the requiered endpoint (Search / Trending)
 
-  const search = yield call(selectors.getInputString);
+  const search = yield select(({search}) => search.inputString)
   const endpoint = search === '' ? 'trending' : 'search';
   const page = payload;
 
