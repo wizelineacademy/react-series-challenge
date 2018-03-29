@@ -1,7 +1,7 @@
 import { SET_DETAILS } from '../actions/types';
 
 const initialState = {
-  detailsImage = {}
+  detailsImage: {}
 };
 
 export default function (state = initialState, { type, payload }) {
