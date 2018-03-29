@@ -6,7 +6,7 @@ import SearchBar from "../SearchBar/SearchBar";
 import GifList from "../GifList/GifList";
 import favoritesGif from '../../actions/favoritesGifs';
 
-class FavoritesView extends Component {
+export class FavoritesView extends Component {
 
   componentDidMount() {
     this.props.filterGifsClear();
