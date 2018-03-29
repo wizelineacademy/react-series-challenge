@@ -10,7 +10,7 @@ const isFavorited = (favorites, gifId) => {
   return favorites[gifId] !== undefined;
 }
 
-const GifList = ({ gifs, addGif, removeGif, favoritesGifs }) => {
+export const GifList = ({ gifs, addGif, removeGif, favoritesGifs }) => {
   return (
     <MasonryContainer>
       { gifs.map(gif =>
