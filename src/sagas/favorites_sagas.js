@@ -205,7 +205,8 @@ export function* addRemoveViewSaga ({ payload }) {
 }
 
 export function* addRemoveDetailsSaga ({ payload }) {
-  yield put(actions.addRemoveFavorite(payload));
+  const image = { ...payload };
+  yield put(actions.addRemoveFavorite({ image }));
   yield put(actions.getDetails(payload.id));
 }
 

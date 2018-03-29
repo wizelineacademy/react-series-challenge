@@ -38,7 +38,7 @@ export const getFavoritesR = createAction(GET_FAVORITES);
 export const addRemoveFavorite = createAction(ADD_REMOVE_FAVORITE);
 export const addRemoveFavoriteHome = createAction(ADD_REMOVE_FAVORITE_HOME);
 export const addRemoveFavoriteView = createAction(ADD_REMOVE_FAVORITE_VIEW);
-export const addRemoveFavoriteR = createAction(ADD_REMOVE_FAVORITE_DETAILS_R);
+export const addRemoveFavoriteDetails = createAction(ADD_REMOVE_FAVORITE_DETAILS_R);
 export const filterChange = createAction(FILTER_CHANGE)
 
 
@@ -58,6 +58,6 @@ export default {
   addRemoveFavorite,
   addRemoveFavoriteHome,
   addRemoveFavoriteView,
-  addRemoveFavoriteR,
+  addRemoveFavoriteDetails,
   filterChange
 }

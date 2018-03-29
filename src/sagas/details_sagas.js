@@ -49,26 +49,26 @@ export function* getDetailsSaga({ payload }){
   const indexFavorites = favorites.findIndex((item) => item.id === id);
   
   // Check if it is in currentList
-  const content = yield call(selectors.getPieceOfState, 'list');
+  const listState = yield call(selectors.getPieceOfState, 'list');
+  const content = [ ...listState.currentList ];
   const indexContent = content.findIndex((item) => item.id === id);
   
+  let img = {}
   if(indexFavorites > -1){
-    const data = { ...favorites[indexFavorites], favorite: true };
-    yield put(actions.setDetails({ data }));
+    img = { ...favorites[indexFavorites], favorite: true };
   }else if(indexContent > -1){
-    const dataContent = { ...content[indexContent], favorite: false };
-    yield put(actions.setDetails({ data: dataContent }));
+    img = { ...content[indexContent], favorite: false };
   }else{
     // Fetch It
     const fetchUrl = `${url}${id}?${API_KEY}`;
     const response = yield call(get, fetchUrl)
     const { data } = response;
-    const img = { ...data, favorite: false }
+    img = { ...data, favorite: false }
   
-    yield put(actions.setDetails({ data: img }));
   }
-
-
+  
+  yield put(actions.setDetails({ ...img }));
+  yield put(actions.setLoading(false));
 
 }
 

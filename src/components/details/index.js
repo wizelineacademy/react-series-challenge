@@ -24,7 +24,7 @@ class Details extends Component {
     return (
       <CardStyled>
         <BigImageStyled src={this.props.detailsImage.images.original.url} />
-        <a onClick={this.props.toogleFavoriteDetails.bind(this,this.props.image)} href=''>Agregar a Favoritos</a>
+        <button onClick={this.props.addRemoveFavoriteDetails.bind(this,this.props.detailsImage)} href=''>Agregar a Favoritos</button>
       </CardStyled>
     );
   }
@@ -34,19 +34,22 @@ const mapDispatchToProps = (dispatch) => {
   const {
   //   detailsRequest,
   //   toogleFavoriteDetails
-  getDetails
+  getDetails,
+  addRemoveFavoriteDetails
   } = actions;
 
   return bindActionCreators({
     // detailsRequest,
     // toogleFavoriteDetails
-    getDetails
+    getDetails,
+    addRemoveFavoriteDetails
   }, dispatch);
 }
 
-const mapStateToProps = ({ details }) => {
-  const { detailsImage } = details;
-  return { detailsImage };
+const mapStateToProps = (state) => {
+  const { loading } = state.loading;
+  const { detailsImage } = state.details;
+  return { loading, detailsImage };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Details);
