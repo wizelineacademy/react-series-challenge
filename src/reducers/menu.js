@@ -6,7 +6,6 @@ const initalState = {
 
 const menuReducer = (state = initalState, action) => {
     const { type } = action;
-    
     switch (type) {
         case menuActions.types.MENU_TOGGLE:
             return {...state, show: !state.show};

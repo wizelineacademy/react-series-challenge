@@ -56,6 +56,16 @@ describe('Test Giphy Detail Component', () => {
         const wrapper = mount(<FavoriteListComponent  favorites={favorites}/>);
         const filter = jest.fn();
         wrapper.instance().filter = filter;
+        wrapper.instance().onKeyDown({keyCode: 13});
+        expect(filter).toHaveBeenCalledTimes(1);
+    });
+    it('dont call search when user types a not enter char', () => {
+        const favorites = {
+            gifs: []
+        }
+        const wrapper = mount(<FavoriteListComponent  favorites={favorites}/>);
+        const filter = jest.fn();
+        wrapper.instance().filter = filter;
         wrapper.instance().onKeyDown({keyCode: 23});
         expect(filter).toHaveBeenCalledTimes(0);
     });

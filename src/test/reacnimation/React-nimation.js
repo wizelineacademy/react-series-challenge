@@ -4,21 +4,6 @@ Object.extend = function(destination, source)
         destination[property] = source[property];
     return destination;
 };
-Object.merge = function(obj, src)
-{
-    for (var property in src)
-    {
-        if (obj[property] &&
-            obj[property].constructor === Object && src[property].constructor === Object)
-        {
-            Object.merge(obj[property], src[property]);
-        }
-        else
-        {
-            obj[property] = src[property];
-        }
-    }
-}
 
 
 var Event = {};
@@ -51,11 +36,6 @@ function ADD_EVENT_DISPATCHER(element)
 {
     Object.extend(element, Event_Dispatcher);
 }
-Event_Dispatcher.all = function(array)
-{
-	
-}
-
 Event_Dispatcher.addEventListener = function(type, listener, scope)
 {
     if (!this.events)
@@ -66,7 +46,7 @@ Event_Dispatcher.addEventListener = function(type, listener, scope)
     {
         this.events[type] = [];
     }
-	scope = (scope ? scope : this);
+	
     this.events[type].push(
     {
         listener: listener,
@@ -158,7 +138,6 @@ export class TimeLine
         this.intervalObj = null;
         
         this.data = {};
-        this.events = {}
         this.effects = {};
         
         ADD_EVENT_DISPATCHER(this);
@@ -183,14 +162,11 @@ export class TimeLine
             {
                 var doAnimation = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.oRequestAnimationFrame;
                 
-                if (doAnimation)
-                {
-                    doAnimation(this.REQ_ANIMATION);
-                }
-                else
+                doAnimation(this.REQ_ANIMATION);
+                /*else
                 {
                     this.intervalObj = setInterval(function(){self.update()}, this.interval);
-                }
+                }*/
             }
             this.status = 'PLAY';
         }
@@ -208,13 +184,13 @@ export class TimeLine
     update()
     {
         var doAnimation;
-        if (!Date.now)
+        /*if (!Date.now)
         {
             Date.now = function()
             {
                 return new Date().getTime();
             };
-        }
+        }*/
         if (this.status !== 'PLAY')
         {
             return false;
@@ -229,20 +205,12 @@ export class TimeLine
                 this.status = 'STOP';
                 clearInterval(this.intervalObj);
                 this.dispatchEvent(Event.COMPLETE);
-                
-                if (this.onComplete)
-                {
-                    this.onComplete();
-                }
             }
-            else if (this.status === 'PLAY')
+            else
             {
                 doAnimation = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.oRequestAnimationFrame;
                 
-                if (doAnimation)
-                {
-                    doAnimation(this.REQ_ANIMATION);
-                }
+                doAnimation(this.REQ_ANIMATION);
             }
         }
         else
@@ -254,20 +222,12 @@ export class TimeLine
                 this.status = 'STOP';
                 clearInterval(this.intervalObj);
                 this.dispatchEvent(Event.COMPLETE);
-                
-                if (this.onComplete)
-                {
-                    this.onComplete();
-                }
             }
-            else if (this.status === 'PLAY')
+            else
             {
                 doAnimation = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.oRequestAnimationFrame;
                 
-                if (doAnimation)
-                {
-                    doAnimation(this.REQ_ANIMATION);
-                }
+                doAnimation(this.REQ_ANIMATION);
             }
         }
         
@@ -286,12 +246,6 @@ export class TimeLine
     easeInOut (t, b, c, d)
     {
         return -c / 2 * (Math.cos(Math.PI * t / d) - 1) + b;
-    }
-    
-    
-    easeInOutPos (pos, b, c, d)
-    {
-        return  Math.acos(-(pos - b) * (2 / c)  + 1) * d / Math.PI;
     }
 
     setEffect(id, data)
@@ -343,7 +297,7 @@ export class TimeLine
         }
         return TimeLine.applyMatrix(effects);
     }
-    static easeInSine (t, b, c, d) {
+    /*static easeInSine (t, b, c, d) {
 		return -c * Math.cos(t/d * (Math.PI/2)) + c + b;
 	}
 	static easeOutSine (t, b, c, d) {
@@ -367,7 +321,7 @@ export class TimeLine
 		else s = p/(2*Math.PI) * Math.asin (c/a);
 		return a*Math.pow(2,-10*t) * Math.sin( (t*d-s)*(2*Math.PI)/p ) + c + b;
 	}
-	static easeInOutElastic (t, b, c, d) {
+	/*static easeInOutElastic (t, b, c, d) {
 		var s=1.70158;var p=0;var a=c;
 		if (t===0) return b;  if ((t/=d/2)===2) return b+c;  if (!p) p=d*(.3*1.5);
 		if (a < Math.abs(c)) { a=c; s=p/4; }
@@ -378,12 +332,12 @@ export class TimeLine
 	static easeInBack (t, b, c, d, s) {
 		if (s === undefined) s = 1.70158;
 		return c*(t/=d)*t*((s+1)*t - s) + b;
-	}
+	}*/
 	static easeOutBack (t, b, c, d, s) {
 		if (s === undefined) s = 1.70158;
 		return c*((t=t/d-1)*t*((s+1)*t + s) + 1) + b;
 	}
-	static easeInOutBack (t, b, c, d, s) {
+	/*static easeInOutBack (t, b, c, d, s) {
 		if (s === undefined) s = 1.70158; 
 		if ((t/=d/2) < 1) return c/2*(t*t*(((s*=(1.525))+1)*t - s)) + b;
 		return c/2*((t-=2)*t*(((s*=(1.525))+1)*t + s) + 2) + b;
@@ -398,7 +352,7 @@ export class TimeLine
 		} else {
 			return c*(7.5625*(t-=(2.625/2.75))*t + .984375) + b;
 		}
-    }
+    }*/
     get position()
     {
         return this._position;
@@ -450,4 +404,4 @@ export class TimeLine
     }
 }
 export default TimeLine
-export {Event};
+export {Event, ADD_EVENT_DISPATCHER};

@@ -19,15 +19,39 @@ describe('Menu Component', () => {
     it('Toggle Menu', () => {
         const menuToggle = jest.fn();
         const wrapper = mount(<BrowserRouter><MenuComponent menu={{show: true}} menuToggle={menuToggle}/></BrowserRouter>);
+        wrapper.find('a.favorite').simulate('click');
+        expect(menuToggle).toHaveBeenCalledTimes(1);
+        
+        return delay(600).then(() => {
+
+        });
+        //expect(wrapper.find('a').length).toBe(2);
+    });
+    it('Toggle Menu', () => {
+        const menuToggle = jest.fn();
+        const wrapper = mount(<BrowserRouter><MenuComponent menu={{show: true}} menuToggle={menuToggle}/></BrowserRouter>);
+        wrapper.find('a.trending').simulate('click');
+        expect(menuToggle).toHaveBeenCalledTimes(1);
+        return delay(600).then(() => {
+            
+        });
+        //expect(wrapper.find('a').length).toBe(2);
+    });
+    it('Toggle Menu', () => {
+        const menuToggle = jest.fn();
+        const wrapper = mount(<BrowserRouter><MenuComponent menu={{show: true}} menuToggle={menuToggle}/></BrowserRouter>);
         wrapper.find('b').simulate('click');
         expect(menuToggle).toHaveBeenCalledTimes(1);
-        expect(wrapper.find('a').length).toBe(2);
+        return delay(600).then(() => {
+            
+        });
+        //expect(wrapper.find('a').length).toBe(2);
     });
     it('calls unmount', () => {
         const componentWillUnmount = jest.fn();
         MenuComponent.prototype.componentWillUnmount = componentWillUnmount;
-        const wrapper = mount(<BrowserRouter><MenuComponent /></BrowserRouter>);
-        console.log(wrapper.instance());
+        const wrapper = mount(<BrowserRouter><MenuComponent menu={{show: true}}/></BrowserRouter>);
+        //console.log(wrapper.instance());
         wrapper.unmount();
         expect(componentWillUnmount).toHaveBeenCalledTimes(1);
     });
