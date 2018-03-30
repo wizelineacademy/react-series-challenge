@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Body should match Snapshot 1`] = `
+Array [
+  <styled.h3
+    key="TrendSub"
+  />,
+  <Connect(GifList)
+    key="TrendList"
+    page="Home"
+  />,
+]
+`;
