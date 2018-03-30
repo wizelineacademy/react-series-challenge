@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Gif styled components gif img renders correctly 1`] = `
+<img
+  className="sc-ifAKCX dmTNGl"
+/>
+`;
+
+exports[`Gif styled components gif img renders isFavorited prop correctly 1`] = `
+<img
+  className="sc-ifAKCX fPKiWZ"
+/>
+`;
+
+exports[`Gif styled components gif title renders correctly 1`] = `
+<span
+  className="sc-EHOje gwryyh"
+>
+  Child
+</span>
+`;
+
+exports[`Gif styled components gif title renders correctly 2`] = `
+<span
+  className="sc-EHOje hKXGvb"
+>
+  Child
+</span>
+`;
+
+exports[`Gif styled components image wrapper renders correctly 1`] = `
+<div
+  className="sc-htpNat dGyvgD"
+>
+  Child
+</div>
+`;
+
+exports[`Gif styled components masonry item renders correctly 1`] = `
+<div
+  className="sc-bdVaJa kiwtFJ"
+>
+  Child
+</div>
+`;
+
+exports[`Gif styled components masonry item renders fullWidth prop correctly 1`] = `
+<div
+  className="sc-bdVaJa gRyDWG"
+>
+  Child
+</div>
+`;
+
+exports[`Gif styled components overlay renders correctly 1`] = `
+<div
+  className="sc-bwzfXH heRxYP"
+>
+  Child
+</div>
+`;

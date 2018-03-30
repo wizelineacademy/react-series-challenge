@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HomeView component should render correctly 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <styled.div
+    justifyContent="space-around"
+  >
+    <styled.input
+      innerRef={[Function]}
+      placeholder="Enter something"
+      type="text"
+    />
+    <styled.button
+      type="submit"
+    >
+      Search
+    </styled.button>
+  </styled.div>
+</form>
+`;

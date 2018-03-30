@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DetailView component should render component connected 1`] = `
+<DetailView
+  addGif={[Function]}
+  detailGif={Object {}}
+  favoritesGifs={
+    Object {
+      "allGifs": Object {},
+      "filtered": Object {},
+    }
+  }
+  getSingleGifRequested={[Function]}
+  removeGif={[Function]}
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+  storeSubscription={
+    Subscription {
+      "listeners": Object {
+        "clear": [Function],
+        "get": [Function],
+        "notify": [Function],
+        "subscribe": [Function],
+      },
+      "onStateChange": [Function],
+      "parentSub": undefined,
+      "store": Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "unsubscribe": [Function],
+    }
+  }
+/>
+`;
+
+exports[`DetailView component should render correctly 1`] = `
+<styled.div>
+  <Component
+    addGif={[Function]}
+    fullWidth={true}
+    gif={Object {}}
+    isFavorited={false}
+    isInDetail={true}
+    removeGif={[Function]}
+  />
+</styled.div>
+`;

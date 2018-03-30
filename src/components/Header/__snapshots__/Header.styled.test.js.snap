@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header styled components menu item container renders correctly 1`] = `
+<li
+  className="sc-bwzfXH kjIMOy"
+>
+  Child
+</li>
+`;
+
+exports[`Header styled components menu renders correctly 1`] = `
+<ul
+  className="sc-bdVaJa cwjzYv"
+>
+  Child
+</ul>
+`;

@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Gif component renders with preview image correctly 1`] = `
+<styled.div
+  fullWidth={true}
+>
+  <styled.div>
+    <styled.img
+      alt="gif"
+      isFavorited={true}
+      src=""
+    />
+    <styled.div>
+      <styled.span>
+        Title: 
+        gif
+      </styled.span>
+      <button
+        id="fav-btn"
+        onClick={[Function]}
+      >
+        Remove from favorites
+      </button>
+    </styled.div>
+  </styled.div>
+</styled.div>
+`;
+
+exports[`Gif component should render correctly 1`] = `
+<styled.div
+  fullWidth={false}
+>
+  <styled.div>
+    <styled.img
+      alt="gif"
+      isFavorited={false}
+      src=""
+    />
+    <styled.div>
+      <styled.span>
+        Title: 
+        gif
+      </styled.span>
+      <button
+        id="fav-btn"
+        onClick={[Function]}
+      >
+        Add to Favorites
+      </button>
+      <Styled(Link)
+        to={
+          Object {
+            "pathname": "/detail/123",
+          }
+        }
+      >
+        View detail
+      </Styled(Link)>
+    </styled.div>
+  </styled.div>
+</styled.div>
+`;

@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchBar styled components SearchButton container renders correctly 1`] = `
+<button
+  className="sc-bwzfXH fGXTet"
+>
+  Button
+</button>
+`;
+
+exports[`SearchBar styled components SearchInput renders correctly 1`] = `
+<input
+  className="sc-bdVaJa fGBIDg"
+/>
+`;
