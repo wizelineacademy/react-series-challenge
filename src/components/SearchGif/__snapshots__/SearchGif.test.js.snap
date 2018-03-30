@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`searchGif should match Snapshot 1`] = `
+<searchGif>
+  <div />
+</searchGif>
+`;
+
+exports[`searchGif with store, should match Snapshot 1`] = `
+<Connect(Component)
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Component
+    searchRequest={[Function]}
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+    trendingRequest={[Function]}
+  >
+    <styled.input
+      onChange={[Function]}
+      placeholder="Search your gif!"
+    >
+      <input
+        className="sc-gzVnrw dBGxkw"
+        onChange={[Function]}
+        placeholder="Search your gif!"
+      />
+    </styled.input>
+  </Component>
+</Connect(Component)>
+`;

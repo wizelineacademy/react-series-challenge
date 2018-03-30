@@ -5,7 +5,7 @@ import requests from '../../actions/requests';
 
 import { SearchBar } from '../../style/style';
 
-const searchGif = props => {
+export const searchGif = props => {
 	const { searchRequest, trendingRequest } = props;
 
 	const handleSearchChange = event => {

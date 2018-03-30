@@ -1,8 +1,9 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import renderer from 'react-test-renderer';
+import { shallow, mount } from 'enzyme';
+import { shallowToJson } from 'enzyme-to-json';
 import GifCard, { gifCard } from './GifCard';
 import configureStore from 'redux-mock-store';
+import { FavButton } from '../../style/style';
 
 const initialState = {
 	gifsFetch: {
@@ -25,8 +26,8 @@ describe('gifCard', () => {
 		wrapper = shallow(<gifCard />);
 	});
 	it('should be match Snapshot', () => {
-		const renderedValue = renderer.create(<gifCard />).toJSON();
-		expect(renderedValue).toMatchSnapshot();
+		const wrapper = mount(<gifCard />);
+		expect(shallowToJson(wrapper)).toMatchSnapshot();
 	});
 	it('should render the component', () => {
 		store = mockStore(initialState);
@@ -57,18 +58,30 @@ describe('GifCard big', () => {
 		expect(wrapper.find(gifCard).prop('favorite')).toEqual(true);
 	});
 	it('should be match Snapshot', () => {
-		const renderedValue = renderer
-			.create(
-				<GifCard
-					src={'src'}
-					gifTitle={'gifTitle'}
-					id={'id'}
-					goBack={'pgoBack'}
-					big
-					store={store}
-				/>
-			)
-			.toJSON();
-		expect(renderedValue).toMatchSnapshot();
+		const wrapper = mount(
+			<GifCard
+				src={'src'}
+				gifTitle={'gifTitle'}
+				id={'id'}
+				goBack={'pgoBack'}
+				big
+				store={store}
+			/>
+		);
+		expect(shallowToJson(wrapper)).toMatchSnapshot();
+	});
+	it('should click and match Snapshot', () => {
+		const wrapper = mount(
+			<GifCard
+				src={'src'}
+				gifTitle={'gifTitle'}
+				id={'id'}
+				goBack={'pgoBack'}
+				big
+				store={store}
+			/>
+		);
+		wrapper.find(FavButton).simulate('click');
+		expect(shallowToJson(wrapper)).toMatchSnapshot();
 	});
 });

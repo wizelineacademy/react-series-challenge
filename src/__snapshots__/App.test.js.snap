@@ -1,57 +1,605 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App should be match Snapshot 1`] = `
-<div>
-  <header
-    className="sc-htoDjs eTOUA"
+exports[`App should match Snapshot /favorites 1`] = `
+<MemoryRouter
+  initialEntries={
+    Array [
+      "/favorites",
+    ]
+  }
+>
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "canGo": [Function],
+        "createHref": [Function],
+        "entries": Array [
+          Object {
+            "hash": "",
+            "key": "7hwuim",
+            "pathname": "/favorites",
+            "search": "",
+            "state": undefined,
+          },
+        ],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "index": 0,
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "key": "7hwuim",
+          "pathname": "/favorites",
+          "search": "",
+          "state": undefined,
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
   >
-    <h1
-      className="sc-EHOje gRPmTz"
-    >
-      Madness
-    </h1>
-    <ul>
-      <li>
-        <a
-          aria-current="true"
-          className="active"
-          href="/Home"
-          onClick={[Function]}
-          style={Object {}}
-        >
-          Home
-        </a>
-      </li>
-      <li>
-        <a
-          aria-current={false}
-          className={undefined}
-          href="/Favorites"
-          onClick={[Function]}
-          style={undefined}
-        >
-          Favorites
-        </a>
-      </li>
-    </ul>
-    <input
-      className="sc-gzVnrw dBGxkw"
-      onChange={[Function]}
-      placeholder="Search your gif!"
-    />
-  </header>
-  <br />
-  <div
-    className="sc-bxivhb hvcHvy"
+    <App>
+      <Provider
+        store={
+          Object {
+            "dispatch": [Function],
+            "getState": [Function],
+            "replaceReducer": [Function],
+            "subscribe": [Function],
+            Symbol(observable): [Function],
+          }
+        }
+      >
+        <div>
+          <styled.header>
+            <header
+              className="sc-htoDjs eTOUA"
+            >
+              <styled.h1>
+                <h1
+                  className="sc-EHOje gRPmTz"
+                >
+                  Madness
+                </h1>
+              </styled.h1>
+              <ul>
+                <li>
+                  <NavLink
+                    activeClassName="active"
+                    ariaCurrent="true"
+                    to="/Home"
+                  >
+                    <Route
+                      path="/Home"
+                    >
+                      <Link
+                        aria-current={false}
+                        replace={false}
+                        to="/Home"
+                      >
+                        <a
+                          aria-current={false}
+                          href="/Home"
+                          onClick={[Function]}
+                        >
+                          Home
+                        </a>
+                      </Link>
+                    </Route>
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    activeClassName="active"
+                    ariaCurrent="true"
+                    to="/Favorites"
+                  >
+                    <Route
+                      path="/Favorites"
+                    >
+                      <Link
+                        aria-current="true"
+                        className="active"
+                        replace={false}
+                        style={Object {}}
+                        to="/Favorites"
+                      >
+                        <a
+                          aria-current="true"
+                          className="active"
+                          href="/Favorites"
+                          onClick={[Function]}
+                          style={Object {}}
+                        >
+                          Favorites
+                        </a>
+                      </Link>
+                    </Route>
+                  </NavLink>
+                </li>
+              </ul>
+              <Connect(Component)>
+                <Component
+                  searchRequest={[Function]}
+                  trendingRequest={[Function]}
+                >
+                  <styled.input
+                    onChange={[Function]}
+                    placeholder="Search your gif!"
+                  >
+                    <input
+                      className="sc-gzVnrw dBGxkw"
+                      onChange={[Function]}
+                      placeholder="Search your gif!"
+                    />
+                  </styled.input>
+                </Component>
+              </Connect(Component)>
+            </header>
+          </styled.header>
+          <br />
+          <Connect(ErrorBoundary)>
+            <ErrorBoundary
+              error={false}
+              errorInfo=""
+              gifsLoadError={[Function]}
+            >
+              <styled.div
+                home={true}
+              >
+                <div
+                  className="sc-bxivhb hvcHvy"
+                >
+                  <Switch>
+                    <Route
+                      computedMatch={
+                        Object {
+                          "isExact": true,
+                          "params": Object {},
+                          "path": "/Favorites",
+                          "url": "/favorites",
+                        }
+                      }
+                      location={
+                        Object {
+                          "hash": "",
+                          "key": "7hwuim",
+                          "pathname": "/favorites",
+                          "search": "",
+                          "state": undefined,
+                        }
+                      }
+                      path="/Favorites"
+                      render={[Function]}
+                    >
+                      <Connect(Body)
+                        FavoriteSection={true}
+                      >
+                        <Body
+                          FavoriteSection={true}
+                          dispatch={[Function]}
+                          searching={false}
+                          trending={true}
+                        >
+                          <styled.h3
+                            key="TrendSub"
+                          >
+                            <h3
+                              className="sc-bZQynM cPUeGv"
+                            >
+                              Favorites
+                            </h3>
+                          </styled.h3>
+                          <Connect(GifList)
+                            key="TrendList"
+                            page="Favorites"
+                          >
+                            <GifList
+                              favorites={Object {}}
+                              gifsList={Array []}
+                              loadFavorites={[Function]}
+                              page="Favorites"
+                              search=""
+                            >
+                              <styled.div>
+                                <div
+                                  className="sc-ifAKCX eIKrlZ"
+                                />
+                              </styled.div>
+                            </GifList>
+                          </Connect(GifList)>
+                        </Body>
+                      </Connect(Body)>
+                    </Route>
+                  </Switch>
+                </div>
+              </styled.div>
+            </ErrorBoundary>
+          </Connect(ErrorBoundary)>
+        </div>
+      </Provider>
+    </App>
+  </Router>
+</MemoryRouter>
+`;
+
+exports[`App should match Snapshot /favorites 2`] = `
+<Router
+  history={
+    Object {
+      "action": "POP",
+      "block": [Function],
+      "canGo": [Function],
+      "createHref": [Function],
+      "entries": Array [
+        Object {
+          "hash": "",
+          "key": "pyraqv",
+          "pathname": "/image/123",
+          "search": "",
+          "state": undefined,
+        },
+      ],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "index": 0,
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "key": "pyraqv",
+        "pathname": "/image/123",
+        "search": "",
+        "state": undefined,
+      },
+      "push": [Function],
+      "replace": [Function],
+    }
+  }
+>
+  <App
+    history={
+      Object {
+        "goBack": [Function],
+      }
+    }
+    location={
+      Object {
+        "state": Object {
+          "gifTitle": "gifTitle",
+          "src": "src",
+        },
+      }
+    }
+    match={
+      Object {
+        "params": Object {
+          "id": "123",
+        },
+      }
+    }
+  />
+</Router>
+`;
+
+exports[`App should match Snapshot 1`] = `
+<MemoryRouter>
+  <Router
+    history={
+      Object {
+        "action": "REPLACE",
+        "block": [Function],
+        "canGo": [Function],
+        "createHref": [Function],
+        "entries": Array [
+          Object {
+            "hash": "",
+            "key": "rk3mky",
+            "pathname": "/Home",
+            "search": "",
+            "state": undefined,
+          },
+        ],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "index": 0,
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "key": "rk3mky",
+          "pathname": "/Home",
+          "search": "",
+          "state": undefined,
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
   >
-    <h3
-      className="sc-bZQynM cPUeGv"
-    >
-      Trending Hot Gifs
-    </h3>
-    <div
-      className="sc-ifAKCX eIKrlZ"
-    />
-  </div>
-</div>
+    <App>
+      <Provider
+        store={
+          Object {
+            "dispatch": [Function],
+            "getState": [Function],
+            "replaceReducer": [Function],
+            "subscribe": [Function],
+            Symbol(observable): [Function],
+          }
+        }
+      >
+        <div>
+          <styled.header>
+            <header
+              className="sc-htoDjs eTOUA"
+            >
+              <styled.h1>
+                <h1
+                  className="sc-EHOje gRPmTz"
+                >
+                  Madness
+                </h1>
+              </styled.h1>
+              <ul>
+                <li>
+                  <NavLink
+                    activeClassName="active"
+                    ariaCurrent="true"
+                    to="/Home"
+                  >
+                    <Route
+                      path="/Home"
+                    >
+                      <Link
+                        aria-current="true"
+                        className="active"
+                        replace={false}
+                        style={Object {}}
+                        to="/Home"
+                      >
+                        <a
+                          aria-current="true"
+                          className="active"
+                          href="/Home"
+                          onClick={[Function]}
+                          style={Object {}}
+                        >
+                          Home
+                        </a>
+                      </Link>
+                    </Route>
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    activeClassName="active"
+                    ariaCurrent="true"
+                    to="/Favorites"
+                  >
+                    <Route
+                      path="/Favorites"
+                    >
+                      <Link
+                        aria-current={false}
+                        replace={false}
+                        to="/Favorites"
+                      >
+                        <a
+                          aria-current={false}
+                          href="/Favorites"
+                          onClick={[Function]}
+                        >
+                          Favorites
+                        </a>
+                      </Link>
+                    </Route>
+                  </NavLink>
+                </li>
+              </ul>
+              <Connect(Component)>
+                <Component
+                  searchRequest={[Function]}
+                  trendingRequest={[Function]}
+                >
+                  <styled.input
+                    onChange={[Function]}
+                    placeholder="Search your gif!"
+                  >
+                    <input
+                      className="sc-gzVnrw dBGxkw"
+                      onChange={[Function]}
+                      placeholder="Search your gif!"
+                    />
+                  </styled.input>
+                </Component>
+              </Connect(Component)>
+            </header>
+          </styled.header>
+          <br />
+          <Connect(ErrorBoundary)>
+            <ErrorBoundary
+              error={false}
+              errorInfo=""
+              gifsLoadError={[Function]}
+            >
+              <styled.div
+                home={true}
+              >
+                <div
+                  className="sc-bxivhb hvcHvy"
+                >
+                  <Switch>
+                    <Route
+                      component={[Function]}
+                      computedMatch={
+                        Object {
+                          "isExact": true,
+                          "params": Object {},
+                          "path": "/Home",
+                          "url": "/Home",
+                        }
+                      }
+                      location={
+                        Object {
+                          "hash": "",
+                          "key": "rk3mky",
+                          "pathname": "/Home",
+                          "search": "",
+                          "state": undefined,
+                        }
+                      }
+                      path="/Home"
+                    >
+                      <Connect(Body)
+                        history={
+                          Object {
+                            "action": "REPLACE",
+                            "block": [Function],
+                            "canGo": [Function],
+                            "createHref": [Function],
+                            "entries": Array [
+                              Object {
+                                "hash": "",
+                                "key": "rk3mky",
+                                "pathname": "/Home",
+                                "search": "",
+                                "state": undefined,
+                              },
+                            ],
+                            "go": [Function],
+                            "goBack": [Function],
+                            "goForward": [Function],
+                            "index": 0,
+                            "length": 1,
+                            "listen": [Function],
+                            "location": Object {
+                              "hash": "",
+                              "key": "rk3mky",
+                              "pathname": "/Home",
+                              "search": "",
+                              "state": undefined,
+                            },
+                            "push": [Function],
+                            "replace": [Function],
+                          }
+                        }
+                        location={
+                          Object {
+                            "hash": "",
+                            "key": "rk3mky",
+                            "pathname": "/Home",
+                            "search": "",
+                            "state": undefined,
+                          }
+                        }
+                        match={
+                          Object {
+                            "isExact": true,
+                            "params": Object {},
+                            "path": "/Home",
+                            "url": "/Home",
+                          }
+                        }
+                      >
+                        <Body
+                          dispatch={[Function]}
+                          history={
+                            Object {
+                              "action": "REPLACE",
+                              "block": [Function],
+                              "canGo": [Function],
+                              "createHref": [Function],
+                              "entries": Array [
+                                Object {
+                                  "hash": "",
+                                  "key": "rk3mky",
+                                  "pathname": "/Home",
+                                  "search": "",
+                                  "state": undefined,
+                                },
+                              ],
+                              "go": [Function],
+                              "goBack": [Function],
+                              "goForward": [Function],
+                              "index": 0,
+                              "length": 1,
+                              "listen": [Function],
+                              "location": Object {
+                                "hash": "",
+                                "key": "rk3mky",
+                                "pathname": "/Home",
+                                "search": "",
+                                "state": undefined,
+                              },
+                              "push": [Function],
+                              "replace": [Function],
+                            }
+                          }
+                          location={
+                            Object {
+                              "hash": "",
+                              "key": "rk3mky",
+                              "pathname": "/Home",
+                              "search": "",
+                              "state": undefined,
+                            }
+                          }
+                          match={
+                            Object {
+                              "isExact": true,
+                              "params": Object {},
+                              "path": "/Home",
+                              "url": "/Home",
+                            }
+                          }
+                          searching={false}
+                          trending={true}
+                        >
+                          <styled.h3
+                            key="TrendSub"
+                          >
+                            <h3
+                              className="sc-bZQynM cPUeGv"
+                            >
+                              Trending Hot Gifs
+                            </h3>
+                          </styled.h3>
+                          <Connect(GifList)
+                            key="TrendList"
+                            page="Home"
+                          >
+                            <GifList
+                              favorites={Object {}}
+                              gifsList={Array []}
+                              loadFavorites={[Function]}
+                              page="Home"
+                              search=""
+                            >
+                              <styled.div>
+                                <div
+                                  className="sc-ifAKCX eIKrlZ"
+                                />
+                              </styled.div>
+                            </GifList>
+                          </Connect(GifList)>
+                        </Body>
+                      </Connect(Body)>
+                    </Route>
+                  </Switch>
+                </div>
+              </styled.div>
+            </ErrorBoundary>
+          </Connect(ErrorBoundary)>
+        </div>
+      </Provider>
+    </App>
+  </Router>
+</MemoryRouter>
 `;

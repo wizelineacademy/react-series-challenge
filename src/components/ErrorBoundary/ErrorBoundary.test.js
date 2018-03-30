@@ -1,16 +1,15 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { shallowToJson } from 'enzyme-to-json';
+import { mount } from 'enzyme';
 import { ErrorBoundary } from './ErrorBoundary';
 
 describe('ErrorBoundary', () => {
 	it('should be match Snapshot', () => {
-		const renderedValue = renderer
-			.create(
-				<ErrorBoundary>
-					<div />
-				</ErrorBoundary>
-			)
-			.toJSON();
-		expect(renderedValue).toMatchSnapshot();
+		const wrapper = mount(
+			<ErrorBoundary>
+				<div />
+			</ErrorBoundary>
+		);
+		expect(shallowToJson(wrapper)).toMatchSnapshot();
 	});
 });
