@@ -71,7 +71,7 @@ describe('App', () => {
 		);
 		expect(shallowToJson(wrapper2)).toMatchSnapshot();
 	});
-	it('should match Snapshot /favorites', () => {
+	it('should match Snapshot /images', () => {
 		const wrapper2 = shallow(
 			<MemoryRouter initialEntries={['/image/123']}>
 				<App
@@ -82,6 +82,34 @@ describe('App', () => {
 				/>
 			</MemoryRouter>
 		);
+		expect(shallowToJson(wrapper2)).toMatchSnapshot();
+	});
+	it('should match Snapshot /images', () => {
+		const wrapper2 = mount(
+			<MemoryRouter initialEntries={['/']}>
+				<App />
+			</MemoryRouter>
+		);
+		wrapper2
+			.find(NavLink)
+			.first()
+			.simulate('click');
+		expect(shallowToJson(wrapper2)).toMatchSnapshot();
+	});
+	it('should match Snapshot /images', () => {
+		const wrapper2 = mount(
+			<MemoryRouter initialEntries={['/']}>
+				<App />
+			</MemoryRouter>
+		);
+		wrapper2
+			.find(NavLink)
+			.first()
+			.simulate('click');
+		wrapper2
+			.find(NavLink)
+			.at(1)
+			.simulate('click');
 		expect(shallowToJson(wrapper2)).toMatchSnapshot();
 	});
 });

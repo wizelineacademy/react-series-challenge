@@ -6,7 +6,6 @@ import { BrowserRouter as Router } from 'react-router-dom';
 
 export class Index extends Component {
 	render() {
-		registerServiceWorker();
 		return (
 			<Router>
 				<App />
@@ -16,3 +15,4 @@ export class Index extends Component {
 }
 
 ReactDOM.render(<Index />, document.getElementById('root'));
+registerServiceWorker();

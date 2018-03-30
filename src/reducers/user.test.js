@@ -23,4 +23,51 @@ describe('user reducer', () => {
 			favorites: { id123: { src: 'src', title: 'title', search: 'search' } }
 		});
 	});
+
+	it('It should delete favorite id', () => {
+		expect(
+			reducer(
+				{
+					favorites: {
+						id123: {
+							src: 'action.src',
+							title: 'action.title',
+							search: 'action.search'
+						}
+					}
+				},
+				{
+					type: actions.types.TOGGLE_FAVORITE,
+					id: 'id123'
+				}
+			)
+		).toEqual({
+			favorites: {}
+		});
+	});
+
+	it('It should add id to favorites', () => {
+		expect(
+			reducer(
+				{
+					favorites: {}
+				},
+				{
+					type: actions.types.TOGGLE_FAVORITE,
+					id: 'id123',
+					src: 'action.src',
+					title: 'action.title',
+					search: 'action.search'
+				}
+			)
+		).toEqual({
+			favorites: {
+				id123: {
+					src: 'action.src',
+					title: 'action.title',
+					search: 'action.search'
+				}
+			}
+		});
+	});
 });

@@ -1,9 +1,8 @@
 import React from 'react';
 import { shallowToJson } from 'enzyme-to-json';
-import { mount } from 'enzyme';
-import SearchGif, { searchGif } from './searchGif';
+import { shallow } from 'enzyme';
 import configureStore from 'redux-mock-store';
-import { SearchBar } from '../../style/style';
+import { Body } from './Body';
 
 const initialState = {
 	gifsFetch: {
@@ -17,26 +16,12 @@ const initialState = {
 	},
 	user: { favorites: {} }
 };
-
-describe('searchGif', () => {
+describe('Body', () => {
 	let store;
 	const mockStore = configureStore();
 	it('should match Snapshot', () => {
-		const wrapper = mount(
-			<searchGif>
-				<div />
-			</searchGif>
-		);
-		expect(shallowToJson(wrapper)).toMatchSnapshot();
-	});
-	it('with store, should match Snapshot', () => {
 		store = mockStore(initialState);
-		const wrapper = mount(
-			<SearchGif store={store}>
-				<div />
-			</SearchGif>
-		);
-		wrapper.find(SearchBar).simulate('change');
+		const wrapper = shallow(<Body store={store} />);
 		expect(shallowToJson(wrapper)).toMatchSnapshot();
 	});
 });

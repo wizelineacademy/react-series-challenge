@@ -1,7 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ErrorBoundary should be match Snapshot 1`] = `
+exports[`ErrorBoundary should match Snapshot 1`] = `
 <ErrorBoundary>
   <div />
+</ErrorBoundary>
+`;
+
+exports[`ErrorBoundary should match Snapshot 2`] = `
+<ErrorBoundary
+  error={true}
+>
+  <h1>
+    <br />
+    An error occurred
+  </h1>
 </ErrorBoundary>
 `;

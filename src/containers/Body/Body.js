@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import GifList from '../GifList/GifList';
 import { SubTitle } from '../../style/style';
 
-class Body extends Component {
+export class Body extends Component {
 	render() {
 		let section = 'API not found';
 		let location = '';

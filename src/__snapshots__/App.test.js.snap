@@ -18,7 +18,7 @@ exports[`App should match Snapshot /favorites 1`] = `
         "entries": Array [
           Object {
             "hash": "",
-            "key": "7hwuim",
+            "key": "wc18qi",
             "pathname": "/favorites",
             "search": "",
             "state": undefined,
@@ -32,7 +32,7 @@ exports[`App should match Snapshot /favorites 1`] = `
         "listen": [Function],
         "location": Object {
           "hash": "",
-          "key": "7hwuim",
+          "key": "wc18qi",
           "pathname": "/favorites",
           "search": "",
           "state": undefined,
@@ -167,7 +167,7 @@ exports[`App should match Snapshot /favorites 1`] = `
                       location={
                         Object {
                           "hash": "",
-                          "key": "7hwuim",
+                          "key": "wc18qi",
                           "pathname": "/favorites",
                           "search": "",
                           "state": undefined,
@@ -227,7 +227,7 @@ exports[`App should match Snapshot /favorites 1`] = `
 </MemoryRouter>
 `;
 
-exports[`App should match Snapshot /favorites 2`] = `
+exports[`App should match Snapshot /images 1`] = `
 <Router
   history={
     Object {
@@ -238,7 +238,7 @@ exports[`App should match Snapshot /favorites 2`] = `
       "entries": Array [
         Object {
           "hash": "",
-          "key": "pyraqv",
+          "key": "xpj8y9",
           "pathname": "/image/123",
           "search": "",
           "state": undefined,
@@ -252,7 +252,7 @@ exports[`App should match Snapshot /favorites 2`] = `
       "listen": [Function],
       "location": Object {
         "hash": "",
-        "key": "pyraqv",
+        "key": "xpj8y9",
         "pathname": "/image/123",
         "search": "",
         "state": undefined,
@@ -287,8 +287,14 @@ exports[`App should match Snapshot /favorites 2`] = `
 </Router>
 `;
 
-exports[`App should match Snapshot 1`] = `
-<MemoryRouter>
+exports[`App should match Snapshot /images 2`] = `
+<MemoryRouter
+  initialEntries={
+    Array [
+      "/",
+    ]
+  }
+>
   <Router
     history={
       Object {
@@ -299,7 +305,7 @@ exports[`App should match Snapshot 1`] = `
         "entries": Array [
           Object {
             "hash": "",
-            "key": "rk3mky",
+            "key": "h5bwjr",
             "pathname": "/Home",
             "search": "",
             "state": undefined,
@@ -313,7 +319,7 @@ exports[`App should match Snapshot 1`] = `
         "listen": [Function],
         "location": Object {
           "hash": "",
-          "key": "rk3mky",
+          "key": "h5bwjr",
           "pathname": "/Home",
           "search": "",
           "state": undefined,
@@ -449,7 +455,7 @@ exports[`App should match Snapshot 1`] = `
                       location={
                         Object {
                           "hash": "",
-                          "key": "rk3mky",
+                          "key": "h5bwjr",
                           "pathname": "/Home",
                           "search": "",
                           "state": undefined,
@@ -467,7 +473,7 @@ exports[`App should match Snapshot 1`] = `
                             "entries": Array [
                               Object {
                                 "hash": "",
-                                "key": "rk3mky",
+                                "key": "h5bwjr",
                                 "pathname": "/Home",
                                 "search": "",
                                 "state": undefined,
@@ -481,7 +487,7 @@ exports[`App should match Snapshot 1`] = `
                             "listen": [Function],
                             "location": Object {
                               "hash": "",
-                              "key": "rk3mky",
+                              "key": "h5bwjr",
                               "pathname": "/Home",
                               "search": "",
                               "state": undefined,
@@ -493,7 +499,7 @@ exports[`App should match Snapshot 1`] = `
                         location={
                           Object {
                             "hash": "",
-                            "key": "rk3mky",
+                            "key": "h5bwjr",
                             "pathname": "/Home",
                             "search": "",
                             "state": undefined,
@@ -519,7 +525,7 @@ exports[`App should match Snapshot 1`] = `
                               "entries": Array [
                                 Object {
                                   "hash": "",
-                                  "key": "rk3mky",
+                                  "key": "h5bwjr",
                                   "pathname": "/Home",
                                   "search": "",
                                   "state": undefined,
@@ -533,7 +539,7 @@ exports[`App should match Snapshot 1`] = `
                               "listen": [Function],
                               "location": Object {
                                 "hash": "",
-                                "key": "rk3mky",
+                                "key": "h5bwjr",
                                 "pathname": "/Home",
                                 "search": "",
                                 "state": undefined,
@@ -545,7 +551,647 @@ exports[`App should match Snapshot 1`] = `
                           location={
                             Object {
                               "hash": "",
-                              "key": "rk3mky",
+                              "key": "h5bwjr",
+                              "pathname": "/Home",
+                              "search": "",
+                              "state": undefined,
+                            }
+                          }
+                          match={
+                            Object {
+                              "isExact": true,
+                              "params": Object {},
+                              "path": "/Home",
+                              "url": "/Home",
+                            }
+                          }
+                          searching={false}
+                          trending={true}
+                        >
+                          <styled.h3
+                            key="TrendSub"
+                          >
+                            <h3
+                              className="sc-bZQynM cPUeGv"
+                            >
+                              Trending Hot Gifs
+                            </h3>
+                          </styled.h3>
+                          <Connect(GifList)
+                            key="TrendList"
+                            page="Home"
+                          >
+                            <GifList
+                              favorites={Object {}}
+                              gifsList={Array []}
+                              loadFavorites={[Function]}
+                              page="Home"
+                              search=""
+                            >
+                              <styled.div>
+                                <div
+                                  className="sc-ifAKCX eIKrlZ"
+                                />
+                              </styled.div>
+                            </GifList>
+                          </Connect(GifList)>
+                        </Body>
+                      </Connect(Body)>
+                    </Route>
+                  </Switch>
+                </div>
+              </styled.div>
+            </ErrorBoundary>
+          </Connect(ErrorBoundary)>
+        </div>
+      </Provider>
+    </App>
+  </Router>
+</MemoryRouter>
+`;
+
+exports[`App should match Snapshot /images 3`] = `
+<MemoryRouter
+  initialEntries={
+    Array [
+      "/",
+    ]
+  }
+>
+  <Router
+    history={
+      Object {
+        "action": "REPLACE",
+        "block": [Function],
+        "canGo": [Function],
+        "createHref": [Function],
+        "entries": Array [
+          Object {
+            "hash": "",
+            "key": "s1n4bs",
+            "pathname": "/Home",
+            "search": "",
+            "state": undefined,
+          },
+        ],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "index": 0,
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "key": "s1n4bs",
+          "pathname": "/Home",
+          "search": "",
+          "state": undefined,
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <App>
+      <Provider
+        store={
+          Object {
+            "dispatch": [Function],
+            "getState": [Function],
+            "replaceReducer": [Function],
+            "subscribe": [Function],
+            Symbol(observable): [Function],
+          }
+        }
+      >
+        <div>
+          <styled.header>
+            <header
+              className="sc-htoDjs eTOUA"
+            >
+              <styled.h1>
+                <h1
+                  className="sc-EHOje gRPmTz"
+                >
+                  Madness
+                </h1>
+              </styled.h1>
+              <ul>
+                <li>
+                  <NavLink
+                    activeClassName="active"
+                    ariaCurrent="true"
+                    to="/Home"
+                  >
+                    <Route
+                      path="/Home"
+                    >
+                      <Link
+                        aria-current="true"
+                        className="active"
+                        replace={false}
+                        style={Object {}}
+                        to="/Home"
+                      >
+                        <a
+                          aria-current="true"
+                          className="active"
+                          href="/Home"
+                          onClick={[Function]}
+                          style={Object {}}
+                        >
+                          Home
+                        </a>
+                      </Link>
+                    </Route>
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    activeClassName="active"
+                    ariaCurrent="true"
+                    to="/Favorites"
+                  >
+                    <Route
+                      path="/Favorites"
+                    >
+                      <Link
+                        aria-current={false}
+                        replace={false}
+                        to="/Favorites"
+                      >
+                        <a
+                          aria-current={false}
+                          href="/Favorites"
+                          onClick={[Function]}
+                        >
+                          Favorites
+                        </a>
+                      </Link>
+                    </Route>
+                  </NavLink>
+                </li>
+              </ul>
+              <Connect(Component)>
+                <Component
+                  searchRequest={[Function]}
+                  trendingRequest={[Function]}
+                >
+                  <styled.input
+                    onChange={[Function]}
+                    placeholder="Search your gif!"
+                  >
+                    <input
+                      className="sc-gzVnrw dBGxkw"
+                      onChange={[Function]}
+                      placeholder="Search your gif!"
+                    />
+                  </styled.input>
+                </Component>
+              </Connect(Component)>
+            </header>
+          </styled.header>
+          <br />
+          <Connect(ErrorBoundary)>
+            <ErrorBoundary
+              error={false}
+              errorInfo=""
+              gifsLoadError={[Function]}
+            >
+              <styled.div
+                home={true}
+              >
+                <div
+                  className="sc-bxivhb hvcHvy"
+                >
+                  <Switch>
+                    <Route
+                      component={[Function]}
+                      computedMatch={
+                        Object {
+                          "isExact": true,
+                          "params": Object {},
+                          "path": "/Home",
+                          "url": "/Home",
+                        }
+                      }
+                      location={
+                        Object {
+                          "hash": "",
+                          "key": "s1n4bs",
+                          "pathname": "/Home",
+                          "search": "",
+                          "state": undefined,
+                        }
+                      }
+                      path="/Home"
+                    >
+                      <Connect(Body)
+                        history={
+                          Object {
+                            "action": "REPLACE",
+                            "block": [Function],
+                            "canGo": [Function],
+                            "createHref": [Function],
+                            "entries": Array [
+                              Object {
+                                "hash": "",
+                                "key": "s1n4bs",
+                                "pathname": "/Home",
+                                "search": "",
+                                "state": undefined,
+                              },
+                            ],
+                            "go": [Function],
+                            "goBack": [Function],
+                            "goForward": [Function],
+                            "index": 0,
+                            "length": 1,
+                            "listen": [Function],
+                            "location": Object {
+                              "hash": "",
+                              "key": "s1n4bs",
+                              "pathname": "/Home",
+                              "search": "",
+                              "state": undefined,
+                            },
+                            "push": [Function],
+                            "replace": [Function],
+                          }
+                        }
+                        location={
+                          Object {
+                            "hash": "",
+                            "key": "s1n4bs",
+                            "pathname": "/Home",
+                            "search": "",
+                            "state": undefined,
+                          }
+                        }
+                        match={
+                          Object {
+                            "isExact": true,
+                            "params": Object {},
+                            "path": "/Home",
+                            "url": "/Home",
+                          }
+                        }
+                      >
+                        <Body
+                          dispatch={[Function]}
+                          history={
+                            Object {
+                              "action": "REPLACE",
+                              "block": [Function],
+                              "canGo": [Function],
+                              "createHref": [Function],
+                              "entries": Array [
+                                Object {
+                                  "hash": "",
+                                  "key": "s1n4bs",
+                                  "pathname": "/Home",
+                                  "search": "",
+                                  "state": undefined,
+                                },
+                              ],
+                              "go": [Function],
+                              "goBack": [Function],
+                              "goForward": [Function],
+                              "index": 0,
+                              "length": 1,
+                              "listen": [Function],
+                              "location": Object {
+                                "hash": "",
+                                "key": "s1n4bs",
+                                "pathname": "/Home",
+                                "search": "",
+                                "state": undefined,
+                              },
+                              "push": [Function],
+                              "replace": [Function],
+                            }
+                          }
+                          location={
+                            Object {
+                              "hash": "",
+                              "key": "s1n4bs",
+                              "pathname": "/Home",
+                              "search": "",
+                              "state": undefined,
+                            }
+                          }
+                          match={
+                            Object {
+                              "isExact": true,
+                              "params": Object {},
+                              "path": "/Home",
+                              "url": "/Home",
+                            }
+                          }
+                          searching={false}
+                          trending={true}
+                        >
+                          <styled.h3
+                            key="TrendSub"
+                          >
+                            <h3
+                              className="sc-bZQynM cPUeGv"
+                            >
+                              Trending Hot Gifs
+                            </h3>
+                          </styled.h3>
+                          <Connect(GifList)
+                            key="TrendList"
+                            page="Home"
+                          >
+                            <GifList
+                              favorites={Object {}}
+                              gifsList={Array []}
+                              loadFavorites={[Function]}
+                              page="Home"
+                              search=""
+                            >
+                              <styled.div>
+                                <div
+                                  className="sc-ifAKCX eIKrlZ"
+                                />
+                              </styled.div>
+                            </GifList>
+                          </Connect(GifList)>
+                        </Body>
+                      </Connect(Body)>
+                    </Route>
+                  </Switch>
+                </div>
+              </styled.div>
+            </ErrorBoundary>
+          </Connect(ErrorBoundary)>
+        </div>
+      </Provider>
+    </App>
+  </Router>
+</MemoryRouter>
+`;
+
+exports[`App should match Snapshot 1`] = `
+<MemoryRouter>
+  <Router
+    history={
+      Object {
+        "action": "REPLACE",
+        "block": [Function],
+        "canGo": [Function],
+        "createHref": [Function],
+        "entries": Array [
+          Object {
+            "hash": "",
+            "key": "n8pvpr",
+            "pathname": "/Home",
+            "search": "",
+            "state": undefined,
+          },
+        ],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "index": 0,
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "key": "n8pvpr",
+          "pathname": "/Home",
+          "search": "",
+          "state": undefined,
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <App>
+      <Provider
+        store={
+          Object {
+            "dispatch": [Function],
+            "getState": [Function],
+            "replaceReducer": [Function],
+            "subscribe": [Function],
+            Symbol(observable): [Function],
+          }
+        }
+      >
+        <div>
+          <styled.header>
+            <header
+              className="sc-htoDjs eTOUA"
+            >
+              <styled.h1>
+                <h1
+                  className="sc-EHOje gRPmTz"
+                >
+                  Madness
+                </h1>
+              </styled.h1>
+              <ul>
+                <li>
+                  <NavLink
+                    activeClassName="active"
+                    ariaCurrent="true"
+                    to="/Home"
+                  >
+                    <Route
+                      path="/Home"
+                    >
+                      <Link
+                        aria-current="true"
+                        className="active"
+                        replace={false}
+                        style={Object {}}
+                        to="/Home"
+                      >
+                        <a
+                          aria-current="true"
+                          className="active"
+                          href="/Home"
+                          onClick={[Function]}
+                          style={Object {}}
+                        >
+                          Home
+                        </a>
+                      </Link>
+                    </Route>
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    activeClassName="active"
+                    ariaCurrent="true"
+                    to="/Favorites"
+                  >
+                    <Route
+                      path="/Favorites"
+                    >
+                      <Link
+                        aria-current={false}
+                        replace={false}
+                        to="/Favorites"
+                      >
+                        <a
+                          aria-current={false}
+                          href="/Favorites"
+                          onClick={[Function]}
+                        >
+                          Favorites
+                        </a>
+                      </Link>
+                    </Route>
+                  </NavLink>
+                </li>
+              </ul>
+              <Connect(Component)>
+                <Component
+                  searchRequest={[Function]}
+                  trendingRequest={[Function]}
+                >
+                  <styled.input
+                    onChange={[Function]}
+                    placeholder="Search your gif!"
+                  >
+                    <input
+                      className="sc-gzVnrw dBGxkw"
+                      onChange={[Function]}
+                      placeholder="Search your gif!"
+                    />
+                  </styled.input>
+                </Component>
+              </Connect(Component)>
+            </header>
+          </styled.header>
+          <br />
+          <Connect(ErrorBoundary)>
+            <ErrorBoundary
+              error={false}
+              errorInfo=""
+              gifsLoadError={[Function]}
+            >
+              <styled.div
+                home={true}
+              >
+                <div
+                  className="sc-bxivhb hvcHvy"
+                >
+                  <Switch>
+                    <Route
+                      component={[Function]}
+                      computedMatch={
+                        Object {
+                          "isExact": true,
+                          "params": Object {},
+                          "path": "/Home",
+                          "url": "/Home",
+                        }
+                      }
+                      location={
+                        Object {
+                          "hash": "",
+                          "key": "n8pvpr",
+                          "pathname": "/Home",
+                          "search": "",
+                          "state": undefined,
+                        }
+                      }
+                      path="/Home"
+                    >
+                      <Connect(Body)
+                        history={
+                          Object {
+                            "action": "REPLACE",
+                            "block": [Function],
+                            "canGo": [Function],
+                            "createHref": [Function],
+                            "entries": Array [
+                              Object {
+                                "hash": "",
+                                "key": "n8pvpr",
+                                "pathname": "/Home",
+                                "search": "",
+                                "state": undefined,
+                              },
+                            ],
+                            "go": [Function],
+                            "goBack": [Function],
+                            "goForward": [Function],
+                            "index": 0,
+                            "length": 1,
+                            "listen": [Function],
+                            "location": Object {
+                              "hash": "",
+                              "key": "n8pvpr",
+                              "pathname": "/Home",
+                              "search": "",
+                              "state": undefined,
+                            },
+                            "push": [Function],
+                            "replace": [Function],
+                          }
+                        }
+                        location={
+                          Object {
+                            "hash": "",
+                            "key": "n8pvpr",
+                            "pathname": "/Home",
+                            "search": "",
+                            "state": undefined,
+                          }
+                        }
+                        match={
+                          Object {
+                            "isExact": true,
+                            "params": Object {},
+                            "path": "/Home",
+                            "url": "/Home",
+                          }
+                        }
+                      >
+                        <Body
+                          dispatch={[Function]}
+                          history={
+                            Object {
+                              "action": "REPLACE",
+                              "block": [Function],
+                              "canGo": [Function],
+                              "createHref": [Function],
+                              "entries": Array [
+                                Object {
+                                  "hash": "",
+                                  "key": "n8pvpr",
+                                  "pathname": "/Home",
+                                  "search": "",
+                                  "state": undefined,
+                                },
+                              ],
+                              "go": [Function],
+                              "goBack": [Function],
+                              "goForward": [Function],
+                              "index": 0,
+                              "length": 1,
+                              "listen": [Function],
+                              "location": Object {
+                                "hash": "",
+                                "key": "n8pvpr",
+                                "pathname": "/Home",
+                                "search": "",
+                                "state": undefined,
+                              },
+                              "push": [Function],
+                              "replace": [Function],
+                            }
+                          }
+                          location={
+                            Object {
+                              "hash": "",
+                              "key": "n8pvpr",
                               "pathname": "/Home",
                               "search": "",
                               "state": undefined,
