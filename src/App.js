@@ -1,21 +1,54 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import  { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { 
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect
+} from 'react-router-dom';
+import Navbar from './components/navbar';
+import { Wrapper } from './styled/ContainersStyled';
+import Home from './components/home';
+import Favorites from './components/favorites';
+import Details from './components/details';
+import actions from './actions';
+
+import { injectGlobal } from 'styled-components';
+
+injectGlobal`
+  body{
+    background-color: #000;
+    overflow-x:hidden;
+    padding-bottom: 20px;
+  }
+`
 
 class App extends Component {
+  componentWillMount(){
+    this.props.loadFavoritesR()
+  }
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <Router>
+        <Wrapper>
+          <Navbar />
+          <Switch>
+            <Route path='/image/:id' component={Details} />
+            <Route path='/favorites' component={Favorites} />
+            <Route path='/' exact component={Home} />
+            <Redirect to= '/' />
+          </Switch>
+        </Wrapper>
+      </Router>
     );
   }
 }
 
-export default App;
+const mapDispatchToProps = (dispatch) => {
+  const { loadFavoritesR } = actions;
+
+  return bindActionCreators({ loadFavoritesR }, dispatch);
+}
+
+export default connect(null,mapDispatchToProps)(App);
