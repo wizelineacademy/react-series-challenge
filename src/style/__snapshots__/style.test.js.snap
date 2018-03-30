@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`styled componets Border should match Snapshot 1`] = `
+<styled.div>
+  <div
+    className="sc-bxivhb eVYlhn"
+  />
+</styled.div>
+`;
+
+exports[`styled componets Border should match Snapshot 2`] = `
+<styled.div
+  home={true}
+>
+  <div
+    className="sc-bxivhb hvcHvy"
+  />
+</styled.div>
+`;
+
+exports[`styled componets Image should match Snapshot 1`] = `
+<styled.img>
+  <img
+    className="sc-bdVaJa fBwRHU"
+  />
+</styled.img>
+`;
+
+exports[`styled componets Image should match Snapshot 2`] = `
+<styled.img
+  big={true}
+>
+  <img
+    className="sc-bdVaJa kwzEhH"
+  />
+</styled.img>
+`;
+
+exports[`styled componets ImageCard should match Snapshot 1`] = `
+<styled.div>
+  <div
+    className="sc-htpNat kuIuIV"
+  />
+</styled.div>
+`;
+
+exports[`styled componets ImageCard should match Snapshot 2`] = `
+<styled.div
+  big={true}
+>
+  <div
+    className="sc-htpNat hLLoSK"
+  />
+</styled.div>
+`;
