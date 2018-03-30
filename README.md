@@ -44,7 +44,7 @@ The output of this challenge is to create a Giphy Client.
 
 ## Code Review
 - Fork this project
-- You have until March 14th to open a PR against this repo (master branch)
+- You have until March 29th to open a PR against this repo (master branch)
 - If you send a commit after the deadline
 
 ## TL;DR
