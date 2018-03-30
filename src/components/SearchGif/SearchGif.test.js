@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallowToJson } from 'enzyme-to-json';
 import { mount } from 'enzyme';
-import SearchGif, { searchGif } from './searchGif';
+import SearchGif, { searchGif } from './SearchGif';
 import configureStore from 'redux-mock-store';
 import { SearchBar } from '../../style/style';
 
