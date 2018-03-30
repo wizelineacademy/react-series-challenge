@@ -25,7 +25,9 @@ exports[`Gif list component should mark one gif as favorited 1`] = `
         >
           Title: test
         </span>
-        <button>
+        <button
+          id="fav-btn"
+        >
           Remove from favorites
         </button>
         <a
@@ -38,6 +40,44 @@ exports[`Gif list component should mark one gif as favorited 1`] = `
     </div>
   </div>
 </div>
+`;
+
+exports[`Gif list component should render component connected 1`] = `
+<Component
+  addGif={[Function]}
+  removeGif={[Function]}
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+  storeSubscription={
+    Subscription {
+      "listeners": Object {
+        "clear": [Function],
+        "get": [Function],
+        "notify": [Function],
+        "subscribe": [Function],
+      },
+      "onStateChange": [Function],
+      "parentSub": undefined,
+      "store": Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "unsubscribe": [Function],
+    }
+  }
+/>
 `;
 
 exports[`Gif list component should render correctly 1`] = `<styled.div />`;

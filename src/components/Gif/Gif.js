@@ -23,7 +23,7 @@ export const Gif = ({ gif, fullWidth, addGif, removeGif, isFavorited, isInDetail
         <GifImg isFavorited={isFavorited} src={getPreviewGifUrl(gif)} alt={gif.title} />
         <Overlay>
           <GifTitle>Title: {gif.title}</GifTitle>
-          <button onClick={() => handleFavButton(gif, addGif, removeGif, isFavorited)}>
+          <button id="fav-btn" onClick={() => handleFavButton(gif, addGif, removeGif, isFavorited)}>
             {!isFavorited ? 'Add to Favorites': 'Remove from favorites'}
           </button>
           { !isInDetail ? (

@@ -1,8 +1,9 @@
 import React from 'react';
 import { shallow, render } from 'enzyme';
 import { shallowToJson, renderToJson } from 'enzyme-to-json';
-import { GifList } from "./GifList";
+import GifListConnected, { GifList } from "./GifList";
 import {MemoryRouter} from "react-router-dom";
+import configureStore from "redux-mock-store";
 
 describe('Gif list component', () => {
   it('should render correctly', () => {
@@ -30,5 +31,16 @@ describe('Gif list component', () => {
       </MemoryRouter>
     );
     expect(renderToJson(output)).toMatchSnapshot();
+  });
+  it('should render component connected', () => {
+    const initialState = { allGifs: {}, filtered: {} };
+    const mockStore = configureStore();
+    const store = mockStore(initialState);
+    const output = shallow(
+      <GifListConnected
+        store={store}
+      />
+    );
+    expect(shallowToJson(output)).toMatchSnapshot();
   });
 });
