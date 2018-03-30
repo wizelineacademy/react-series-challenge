@@ -1,11 +1,16 @@
 import React from 'react';
 import { shallowToJson } from 'enzyme-to-json';
-import { mount } from 'enzyme';
+import { shallow } from 'enzyme';
+import Index from './IndexClass';
 
-describe('index', () => {
+describe('Index', () => {
 	it('should match Snapshot', () => {
 		const div = document.createElement('div');
-		const wrapper = mount(<div>require('./index')</div>);
+		const wrapper = shallow(
+			<div>
+				<Index />
+			</div>
+		);
 		expect(shallowToJson(wrapper)).toMatchSnapshot();
 	});
 });
