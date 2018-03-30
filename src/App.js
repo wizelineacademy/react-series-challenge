@@ -13,8 +13,6 @@ import Home from './components/home';
 import Favorites from './components/favorites';
 import Details from './components/details';
 import actions from './actions';
-// import logo from './logo.svg';
-// import './App.css';
 
 import { injectGlobal } from 'styled-components';
 
@@ -39,7 +37,7 @@ class App extends Component {
             <Route path='/image/:id' component={Details} />
             <Route path='/favorites' component={Favorites} />
             <Route path='/' exact component={Home} />
-            <Redirect to= '/not-found' />
+            <Redirect to= '/' />
           </Switch>
         </Wrapper>
       </Router>

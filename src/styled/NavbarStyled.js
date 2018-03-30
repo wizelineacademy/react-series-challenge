@@ -2,10 +2,11 @@ import styled from 'styled-components';
 
 export const NavbarStyled = styled.ul`
   list-style: none;
-  background-color: #0a094f;
-  text-align: center;
-  padding: 0;
+  background-color: #151414;
+  text-align: left;
+  padding: 5px;
   margin: 0;
+  font-size:16px;
 `
 export const NavItemStyled = styled.li`
   font-family: sans-serif;
@@ -19,11 +20,11 @@ export const NavItemStyled = styled.li`
   a {
     text-decoration: none;
     color: #fff;
-    display: block;
+    padding:12px;
   }
 
   a:hover {
-    background-color: #005f5f
+    background-color: #2b2b28;
   }
 `
 export default {

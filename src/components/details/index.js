@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import actions from '../../actions'
 import { BigImageStyled } from '../../styled/ImgStyled';
 import { CardStyled }from '../../styled/ContainersStyled';
+import { FavoriteButton } from '../../styled/ButtonStyled'
 
 class Details extends Component {
   constructor(props) {
@@ -11,8 +12,7 @@ class Details extends Component {
     this.state = {};
   }
 
-  componentDidMount(){
-    // this.props.detailsRequest(this.props.match.params.id);
+  componentWillMount(){
     const { id } = this.props.match.params;
     this.props.getDetails(id);
   }
@@ -24,7 +24,8 @@ class Details extends Component {
     return (
       <CardStyled>
         <BigImageStyled src={this.props.detailsImage.images.original.url} />
-        <button onClick={this.props.addRemoveFavoriteDetails.bind(this,this.props.detailsImage)} href=''>Agregar a Favoritos</button>
+        <br />
+        <FavoriteButton onClick={this.props.addRemoveFavoriteDetails.bind(this,this.props.detailsImage)} href=''>{this.props.detailsImage.favorite ? `I'm one of your favorites! :)` : 'Add To Favorites'}</FavoriteButton>
       </CardStyled>
     );
   }

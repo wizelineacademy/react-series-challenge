@@ -2,10 +2,11 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { ListWrapperStyled, ListItemStyled } from '../../styled/ContainersStyled'
 import { ImgStyled } from '../../styled/ImgStyled';
+import { FavoriteButton } from '../../styled/ButtonStyled';
 import { Link } from 'react-router-dom';
 
 const ImagesList = (props) => {
-  const { currentList, favButton } = props
+  const { currentList, favButton, favorites } = props
   const items = currentList.map((image, index) => {
     return (
       <ListItemStyled key={image.id}>
@@ -15,8 +16,7 @@ const ImagesList = (props) => {
             alt={`hi`}
           />
         </Link>
-        <button onClick={favButton.bind(this,{ image, index })}>Add to Favorites</button>
-        {image.favorite ? 'soy favorito!' : null}
+        <FavoriteButton onClick={favButton.bind(this,{ image, index })}>{favorites ? `I'm one of your favorites! :)` : image.favorite ? `I'm one of your favorites! :)` : 'Add To Favorites' }</FavoriteButton>
       </ListItemStyled>
     );
   });

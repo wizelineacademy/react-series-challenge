@@ -33,6 +33,7 @@ class Favorites extends Component {
           handleSearch={this.props.getFavoritesR.bind(this,1)}
         />
         <ImagesList
+          favorites
           favButton={this.props.addRemoveFavoriteView}
         />
       </Wrapper>

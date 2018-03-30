@@ -3,6 +3,9 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
 import actions from '../../actions';
 import { Wrapper } from '../../styled/ContainersStyled';
+import { FormStyled, InputStyled } from '../../styled/FormStyled'
+import { SearchButton } from '../../styled/ButtonStyled'
+import { ZoomGlass } from '../../styled/IconsStyled'
 
 const SearchBar = (props) => {
   const {
@@ -13,10 +16,10 @@ const SearchBar = (props) => {
   } = props
   return (
     <Wrapper>
-      <form onSubmit={(e)=>{e.preventDefault()}}>
-        <input type='text' onChange={handleChange || changeInput} value={inputString} />
-        <button onClick={handleSearch} >Buscar</button>
-      </form>
+      <FormStyled onSubmit={(e)=>{e.preventDefault()}}>
+        <InputStyled type='text' onChange={handleChange || changeInput} value={inputString} />
+        <SearchButton onClick={handleSearch} ><ZoomGlass /></SearchButton>
+      </FormStyled>
     </Wrapper>
   )
 }

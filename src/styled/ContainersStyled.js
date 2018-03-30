@@ -29,6 +29,7 @@ export const ListItemStyled = Wrapper.extend`
   height: 300px;
   background-color: #fff;
   display: inline-block;
+  border-radius: 10px;
   margin: 5px;
   padding: 7.5px;
 `;

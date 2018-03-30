@@ -12,6 +12,7 @@ const get = uri => fetch(uri).then(resp => resp.json());
 
 
 export function* getDetailsSaga({ payload }, testsParams){
+  yield put(actions.setLoading(true));
   const id = payload;
   const favorites =  testsParams ? testsParams.favorites : yield call(selectors.getFavorites);
 
