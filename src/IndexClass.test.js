@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallowToJson } from 'enzyme-to-json';
 import { shallow } from 'enzyme';
-import Index from './IndexClass';
+import { Index } from './IndexClass';
 
 describe('Index', () => {
 	it('should match Snapshot', () => {
