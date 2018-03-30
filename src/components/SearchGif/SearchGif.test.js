@@ -29,7 +29,7 @@ describe('searchGif', () => {
 		);
 		expect(shallowToJson(wrapper)).toMatchSnapshot();
 	});
-	it('with store, should match Snapshot', () => {
+	it('with store, change when SearchBar empty, should match Snapshot', () => {
 		store = mockStore(initialState);
 		const wrapper = mount(
 			<SearchGif store={store}>
@@ -37,6 +37,16 @@ describe('searchGif', () => {
 			</SearchGif>
 		);
 		wrapper.find(SearchBar).simulate('change');
+		expect(shallowToJson(wrapper)).toMatchSnapshot();
+	});
+	it('with store, change when SearchBar is not empty, should match Snapshot', () => {
+		store = mockStore(initialState);
+		const wrapper = mount(
+			<SearchGif store={store}>
+				<div />
+			</SearchGif>
+		);
+		wrapper.find(SearchBar).simulate('change', { target: { value: 'Hello' } });
 		expect(shallowToJson(wrapper)).toMatchSnapshot();
 	});
 });

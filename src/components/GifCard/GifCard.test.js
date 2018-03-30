@@ -3,7 +3,7 @@ import { shallow, mount } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 import GifCard, { gifCard } from './GifCard';
 import configureStore from 'redux-mock-store';
-import { FavButton } from '../../style/style';
+import { FavButton, Image } from '../../style/style';
 
 const initialState = {
 	gifsFetch: {
@@ -43,16 +43,16 @@ describe('GifCard big', () => {
 	beforeEach(() => {
 		initialState.user.favorites['id'] = {};
 		store = mockStore(initialState);
-		wrapper = shallow(
-			<GifCard
-				src={'src'}
-				gifTitle={'gifTitle'}
-				id={'id'}
-				goBack={'pgoBack'}
-				big
-				store={store}
-			/>
-		);
+		// wrapper = shallow(
+		// 	<GifCard
+		// 		src={'src'}
+		// 		gifTitle={'gifTitle'}
+		// 		id={'id'}
+		// 		goBack={'pgoBack'}
+		// 		big
+		// 		store={store}
+		// 	/>
+		// );
 	});
 	it('should render the GifCard with favorite property', () => {
 		expect(wrapper.find(gifCard).prop('favorite')).toEqual(true);
@@ -70,7 +70,7 @@ describe('GifCard big', () => {
 		);
 		expect(shallowToJson(wrapper)).toMatchSnapshot();
 	});
-	it('should click and match Snapshot', () => {
+	it('should click and remove favorite and match Snapshot', () => {
 		const wrapper = mount(
 			<GifCard
 				src={'src'}
@@ -82,6 +82,35 @@ describe('GifCard big', () => {
 			/>
 		);
 		wrapper.find(FavButton).simulate('click');
+		expect(shallowToJson(wrapper)).toMatchSnapshot();
+	});
+	it('should click and add favorite and match Snapshot', () => {
+		initialState.user.favorites = {};
+		const wrapper = mount(
+			<GifCard
+				src={'src'}
+				gifTitle={'gifTitle'}
+				id={'id'}
+				goBack={'pgoBack'}
+				big
+				store={store}
+			/>
+		);
+		wrapper.find(FavButton).simulate('click');
+		expect(shallowToJson(wrapper)).toMatchSnapshot();
+	});
+	it('should click Image goBack() and match Snapshot', () => {
+		const wrapper = mount(
+			<GifCard
+				src={'src'}
+				gifTitle={'gifTitle'}
+				id={'id'}
+				goBack={'pgoBack'}
+				big
+				store={store}
+			/>
+		);
+		wrapper.find(Image).simulate('click');
 		expect(shallowToJson(wrapper)).toMatchSnapshot();
 	});
 });
