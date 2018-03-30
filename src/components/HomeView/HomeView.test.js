@@ -1,7 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
-import { HomeView } from "./HomeView";
+import HomeViewConnected, { HomeView } from "./HomeView";
+import configureStore from "redux-mock-store";
 
 describe('HomeView component', () => {
   it('should render correctly', () => {
@@ -15,5 +16,16 @@ describe('HomeView component', () => {
       />
     );
     expect(shallowToJson(output)).toMatchSnapshot();
-  })
+  });
+  it('should render component connected', () => {
+    const initialState = { trendingGifs: { data:{} }, searchingGifs: { data: {}} };
+    const mockStore = configureStore();
+    const store = mockStore(initialState);
+    const output = shallow(
+      <HomeViewConnected
+        store={store}
+      />
+    );
+    expect(shallowToJson(output)).toMatchSnapshot();
+  });
 });
