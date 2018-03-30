@@ -3,7 +3,6 @@ const NAME = 'gifs';
 
 // Actions types
 const MARK_FAVORITE = "gif/MARK_FAVORITE";
-const SELECT_GIF = "gif/SELECT_GIF";
 const TRENDING_FETCH_REQUESTED = "git/TRENDING_FETCH_REQUESTED";
 const TRENDING_FETCH_SUCCEEDED = "git/TRENDING_FETCH_SUCCEEDED";
 const TRENDING_FETCH_FAILED = "git/TRENDING_FETCH_FAILED";
@@ -34,8 +33,6 @@ const reducer = (state = initialState, action) => {
         }
       }
       return {...state, favorites: newFavoriteArray};
-    case SELECT_GIF:
-      return {...state, select: action.gifId};
     case TRENDING_FETCH_REQUESTED:
       return {...state, fetching: true};
     case TRENDING_FETCH_SUCCEEDED:
@@ -63,11 +60,6 @@ const markFavorite = (status, gifReference) => ({
   type: MARK_FAVORITE,
   status: status,
   gif: gifReference
-});
-
-const selectGif = (gifId) => ({
-  type: SELECT_GIF,
-  gifId
 });
 
 const trendingFetchRequested = () => ({
@@ -111,7 +103,6 @@ export {
 export default{
   types: {
     MARK_FAVORITE,
-    SELECT_GIF,
     TRENDING_FETCH_REQUESTED,
     TRENDING_FETCH_FAILED,
     TRENDING_FETCH_SUCCEEDED,
@@ -121,7 +112,6 @@ export default{
   },
   actions: {
     markFavorite,
-    selectGif,
     trendingFetchRequested,
     trendingFetchFailed,
     trendingFetchSucceeded,

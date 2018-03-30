@@ -12,7 +12,7 @@ import DetailsView from './components/DetailsView';
 import {HOME_PATH, FAVORITES_PATH, DETAILS_PATH, DETAILS_VARIABLE_PATH}
   from './config/routerConstants';
 
-const DetailsRouterPipe = ({match}) => (
+export const DetailsRouterPipe = ({match}) => (
   <div>
     <Route path={`${match.url}/:${DETAILS_VARIABLE_PATH}`} component={DetailsView}/>
   </div>

@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DetailsView Should render correctly 1`] = `
+<Route
+  render={[Function]}
+/>
+`;
+
+exports[`DetailsView Should render correctly with a mocked state 1`] = `
+<Route
+  render={[Function]}
+/>
+`;
+
+exports[`DetailsView Should render with a mocked marked gif 1`] = `
+<Route
+  render={[Function]}
+/>
+`;
+
+exports[`DetailsView Should render with a mocked unmarked gif 1`] = `
+<Route
+  render={[Function]}
+/>
+`;

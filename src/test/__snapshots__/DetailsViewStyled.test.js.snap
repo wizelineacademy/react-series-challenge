@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DetailsViewStyled Should render correctly 1`] = `
+<div
+  className="sc-bdVaJa iHeenn"
+/>
+`;
+
+exports[`DetailsViewStyled Should render correctly with custom sizes 1`] = `
+<div
+  className="sc-bdVaJa kqsaLC"
+  height={200}
+  width={200}
+/>
+`;
+
+exports[`DetailsViewStyled Should simulate click 1`] = `
+<Router
+  history={
+    Object {
+      "action": "POP",
+      "block": [Function],
+      "createHref": [Function],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "pathname": "/",
+        "search": "",
+        "state": undefined,
+      },
+      "push": [Function],
+      "replace": [Function],
+    }
+  }
+>
+  <styled.div />
+</Router>
+`;

@@ -3,14 +3,12 @@ import createSagaMiddleware from 'redux-saga';
 
 import rootReducer from '../reducers';
 import rootSaga from '../sagas';
-import customMiddleware from '../middleware';
 import {APPLICATION_LOCAL_STORAGE_KEY} from './config';
 import {initialState as gifInitialState} from '../reducers/gif';
 
 // Middlewares
 const sagaMiddleware = createSagaMiddleware();
 const middlewares = [
-  ...customMiddleware,
   sagaMiddleware
 ];
 
@@ -18,11 +16,15 @@ const middlewares = [
 const createEnhancers = () => {
   let enhancers = [];
 
-  if (process.env.NODE_ENV !== 'production') {
-    enhancers.push(
-      window.__REDUX_DEVTOOLS_EXTENSION__
-        && window.__REDUX_DEVTOOLS_EXTENSION__());
-  }
+  /**
+   * Uncomment this lines and add the redux-devtools package to enable redux dev
+   *  tools into development mode.
+   */
+  // if (process.env.NODE_ENV !== 'production') {
+  //   enhancers.push(
+  //     window.__REDUX_DEVTOOLS_EXTENSION__
+  //       && window.__REDUX_DEVTOOLS_EXTENSION__());
+  // }
 
   return enhancers;
 };
@@ -49,23 +51,33 @@ const retrievePreviousStateDetails = () => {
         window.localStorage.getItem(APPLICATION_LOCAL_STORAGE_KEY);
 
       if (serializedState) {
-        result = JSON.parse(serializedState);;
+        result = JSON.parse(serializedState);
       }
     } catch (e) {}
 
   return result;
 }
 
-const composedEnhancers =
-  compose(applyMiddleware(...middlewares), ...createEnhancers());
+const enhancers = createEnhancers();
+const composedEnhancers = (enhancers.length > 0)
+  ? compose(applyMiddleware(...middlewares), ...enhancers)
+  : applyMiddleware(...middlewares);
 
-// Rehydrate the store
-let initialState = retrievePreviousStateDetails();
-// Store object
-const store = createStore(rootReducer, initialState, composedEnhancers);
 
-store.subscribe(() => persistStateDetails(store.getState()));
+const initializeStore = (initialState) => {
+  if (!initialState) {
+    // Rehydrate the store
+    initialState = retrievePreviousStateDetails();
+  }
 
-sagaMiddleware.run(rootSaga);
+  // Store object
+  const store = createStore(rootReducer, initialState, composedEnhancers);
 
-export default store;
+  store.subscribe(() => persistStateDetails(store.getState()));
+
+  sagaMiddleware.run(rootSaga);
+
+  return store;
+}
+
+export default initializeStore;

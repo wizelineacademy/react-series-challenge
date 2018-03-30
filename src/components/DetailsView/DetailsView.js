@@ -57,7 +57,6 @@ class DetailsView extends React.Component {
     const gifDetails = this.retrieveGifDetails();
 
     if (!gifDetails) {
-
       return null;
     }
 

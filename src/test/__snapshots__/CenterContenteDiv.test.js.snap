@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CenterContenteDiv Should render correctly 1`] = `
+<div
+  className="sc-bdVaJa fdvndk"
+/>
+`;
+
+exports[`CenterContenteDiv Should render width custom padding 1`] = `
+<div
+  className="sc-bdVaJa kNZQKq"
+/>
+`;
+
+exports[`CenterContenteDiv Should render width direction column 1`] = `
+<div
+  className="sc-bdVaJa hsvaDJ"
+  direction="column"
+/>
+`;
+
+exports[`CenterContenteDiv Should render with coverAll flag 1`] = `
+<div
+  className="sc-bdVaJa ekBauC"
+/>
+`;

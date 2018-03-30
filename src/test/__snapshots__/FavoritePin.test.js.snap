@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FavoritePin Should render correctly 1`] = `
+<FavoritePin
+  actions={
+    Object {
+      "markFavorite": [Function],
+      "searchFetchFailed": [Function],
+      "searchFetchRequested": [Function],
+      "searchFetchSucceeded": [Function],
+      "trendingFetchFailed": [Function],
+      "trendingFetchRequested": [Function],
+      "trendingFetchSucceeded": [Function],
+      "updateFavoritesTextFilter": [Function],
+    }
+  }
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+      Symbol(observable): [Function],
+    }
+  }
+/>
+`;
+
+exports[`FavoritePin Should simulate a user click to mark it 1`] = `
+<styled.i
+  onClick={[Function]}
+/>
+`;
+
+exports[`FavoritePin Should simulate a user click to unmark it 1`] = `
+<styled.i
+  marked={true}
+  onClick={[Function]}
+/>
+`;
