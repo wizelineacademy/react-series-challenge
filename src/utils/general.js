@@ -22,6 +22,10 @@ export const markFavorites = (elems, favs) => {
 export const getPaginator = (page, totalElements) => {
   const totalPages = Math.ceil(totalElements / lim);
 
+  if(!(page >= 1 && page <= totalPages)){
+    return false;
+  }
+
   const paginator = {
     totalPages,
     currentPage: page,

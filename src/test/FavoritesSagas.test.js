@@ -1,4 +1,13 @@
-import { getFavoritesRSaga, loadFavoritesRSaga, filterChangeSaga, addRemoveHomeSaga, addRemoveViewSaga, addRemoveDetailsSaga, deleteFromArrayR, filterArray, addRemoveFavoriteSaga } from '../sagas/favorites_sagas';
+import {
+  loadFavoritesRSaga,
+  filterChangeSaga,
+  addRemoveHomeSaga,
+  addRemoveViewSaga,
+  addRemoveDetailsSaga,
+  deleteFromArrayR,
+  filterArray,
+  addRemoveFavoriteSaga
+} from '../sagas/favorites_sagas';
 
 
 class FakeStorage {
