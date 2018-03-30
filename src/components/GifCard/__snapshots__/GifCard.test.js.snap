@@ -1,0 +1,225 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GifCard big should be match Snapshot 1`] = `
+<Connect(Component)
+  big={true}
+  gifTitle="gifTitle"
+  goBack="pgoBack"
+  id="id"
+  src="src"
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Component
+    big={true}
+    favorite={true}
+    gifTitle="gifTitle"
+    goBack="pgoBack"
+    id="id"
+    search=""
+    src="src"
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+    storeSubscription={
+      Subscription {
+        "listeners": Object {
+          "clear": [Function],
+          "get": [Function],
+          "notify": [Function],
+          "subscribe": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "unsubscribe": [Function],
+      }
+    }
+    toggleFavorite={[Function]}
+  >
+    <styled.div
+      big={true}
+    >
+      <div
+        className="sc-htpNat hLLoSK"
+      >
+        <styled.img
+          alt="Favorite"
+          src="Happy-Pug.png"
+        >
+          <img
+            alt="Favorite"
+            className="sc-iwsKbI bdsDLT"
+            src="Happy-Pug.png"
+          />
+        </styled.img>
+        <div
+          onClick={[Function]}
+        >
+          <styled.img
+            big={true}
+            key="id"
+            src="src"
+          >
+            <img
+              className="sc-bdVaJa kwzEhH"
+              src="src"
+            />
+          </styled.img>
+        </div>
+        <styled.div>
+          <div
+            className="sc-bwzfXH ptlfS"
+          >
+            <styled.button
+              onClick={[Function]}
+            >
+              <button
+                className="sc-dnqmqq bqbCgB"
+                onClick={[Function]}
+              >
+                Remove Favorite
+              </button>
+            </styled.button>
+          </div>
+        </styled.div>
+      </div>
+    </styled.div>
+  </Component>
+</Connect(Component)>
+`;
+
+exports[`GifCard big should click and match Snapshot 1`] = `
+<Connect(Component)
+  big={true}
+  gifTitle="gifTitle"
+  goBack="pgoBack"
+  id="id"
+  src="src"
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Component
+    big={true}
+    favorite={true}
+    gifTitle="gifTitle"
+    goBack="pgoBack"
+    id="id"
+    search=""
+    src="src"
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+    storeSubscription={
+      Subscription {
+        "listeners": Object {
+          "clear": [Function],
+          "get": [Function],
+          "notify": [Function],
+          "subscribe": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "unsubscribe": [Function],
+      }
+    }
+    toggleFavorite={[Function]}
+  >
+    <styled.div
+      big={true}
+    >
+      <div
+        className="sc-htpNat hLLoSK"
+      >
+        <styled.img
+          alt="Favorite"
+          src="Happy-Pug.png"
+        >
+          <img
+            alt="Favorite"
+            className="sc-iwsKbI bdsDLT"
+            src="Happy-Pug.png"
+          />
+        </styled.img>
+        <div
+          onClick={[Function]}
+        >
+          <styled.img
+            big={true}
+            key="id"
+            src="src"
+          >
+            <img
+              className="sc-bdVaJa kwzEhH"
+              src="src"
+            />
+          </styled.img>
+        </div>
+        <styled.div>
+          <div
+            className="sc-bwzfXH ptlfS"
+          >
+            <styled.button
+              onClick={[Function]}
+            >
+              <button
+                className="sc-dnqmqq bqbCgB"
+                onClick={[Function]}
+              >
+                Remove Favorite
+              </button>
+            </styled.button>
+          </div>
+        </styled.div>
+      </div>
+    </styled.div>
+  </Component>
+</Connect(Component)>
+`;
+
+exports[`gifCard should be match Snapshot 1`] = `<gifCard />`;
