@@ -1,7 +1,6 @@
 import search from '../actions/search';
 
 const initialState = {
-  //searchStr = '',
   searchFetching: false,
 };
 

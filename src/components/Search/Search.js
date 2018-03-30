@@ -8,7 +8,7 @@ import {
   ImageContainerStyled,
 } from './Search.styled';
 
-class Search extends React.Component {
+ export class Search extends React.Component {
   constructor(props) {
     super(props);
 
@@ -50,9 +50,9 @@ class Search extends React.Component {
 
     return (
       <div>
-        <SearchFormStyled onSubmit={this.handleSubmit}>
+        <SearchFormStyled id="searchForm" className="search" onSubmit={this.handleSubmit}>
           <input type="text" placeholder="Search for a gif..." name="qry_str" onChange={this.setQueryStr} />
-          <input type="submit" value="Submit" />
+          <input id="searchButton" type="submit" value="Submit" />
         </SearchFormStyled>
         <SearchListContainerStyled>
           {
@@ -71,7 +71,7 @@ class Search extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {
+export const mapStateToProps = (state) => {
   const {
     search,
   } = state;
@@ -81,7 +81,7 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+export const mapDispatchToProps = (dispatch) => {
   const { getSearchRequested } = search.creators;
 
   return bindActionCreators({
