@@ -11,26 +11,20 @@ const url = `http://api.giphy.com/v1/gifs/`;
 const get = uri => fetch(uri).then(resp => resp.json());
 
 
-export function* detailsFavoriteSaga ({ payload }) {
-  const image = { ...payload };
-  yield put(actions.addRemoveFavorites({ image }));
-  yield put(actions.detailsRequest(image.id));
-}
-
-export function* getDetailsSaga({ payload }){
-  const id = payload;console.log(id)
-  const favorites = yield call(selectors.getFavorites);
+export function* getDetailsSaga({ payload }, testsParams){
+  const id = payload;
+  const favorites =  testsParams ? testsParams.favorites : yield call(selectors.getFavorites);
 
   // Check if it is in favorites.
   const indexFavorites = favorites.findIndex((item) => item.id === id);
   
   // Check if it is in currentList
-  const listState = yield call(selectors.getPieceOfState, 'list');
+  const listState = testsParams ? testsParams.list : yield call(selectors.getPieceOfState, 'list');
   const content = [ ...listState.currentList ];
   const indexContent = content.findIndex((item) => item.id === id);
   
   let img = {}
-  if(indexFavorites > -1){
+  if(indexFavorites > -1 ){
     img = { ...favorites[indexFavorites], favorite: true };
   }else if(indexContent > -1){
     img = { ...content[indexContent], favorite: false };
@@ -38,9 +32,9 @@ export function* getDetailsSaga({ payload }){
     // Fetch It
     const fetchUrl = `${url}${id}?${API_KEY}`;
     const response = yield call(get, fetchUrl)
-    const { data } = response;
+    const { data } = testsParams ? testsParams.fetch : response;
     img = { ...data, favorite: false }
-  
+
   }
   
   yield put(actions.setDetails({ ...img }));

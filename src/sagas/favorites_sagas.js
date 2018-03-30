@@ -13,15 +13,15 @@ import { getPaginator } from '../utils/general';
 import selectors from '../utils/selectors';
 
 const lim = 15;
-const getFromStorage = (item) => window.localStorage.getItem(item);
+const getFromStorage = (item) => localStorage.getItem(item);
 
-const deleteFromArrayR = (arr, ind) => {
+export const deleteFromArrayR = (arr, ind) => {
   const aux = [ ...arr ];
   aux.splice(ind,1);
   return [ ...aux ]
 }
 
-const filterArray = (str, elements) => {
+export const filterArray = (str, elements) => {
   return elements.filter(({ title }) => {
     const lowTitle = title.toLowerCase();
     const lowStr = str.toLowerCase();
@@ -79,26 +79,20 @@ export function* filterChangeSaga({payload}) {
   yield put(actions.getFavoritesR(1))
 }
 
-export function* addRemoveFavoriteSaga({ payload }) {
-  console.group('AddRemove Favorite');
+export function* addRemoveFavoriteSaga({ payload }, testParams) {
+  
   const img = { ...payload.image };
-  console.log(img)
-  const oldFavorites = yield call(selectors.getFavorites);
-  console.log(oldFavorites);
+  const oldFavorites = testParams ? [ ...testParams.favorites ] : yield call(selectors.getFavorites);
   // TODO separate this proccess to a function
   const index = oldFavorites.findIndex((image) => img.id === image.id);
 
-  console.log(index);
   const elements = index === -1 ? [...oldFavorites, img] : yield call(deleteFromArrayR, oldFavorites, index);
-  console.log(elements);
   const newElementsString = JSON.stringify(elements);
-  console.log(newElementsString);
   // Process Ends
 
   yield call([localStorage, 'setItem'], 'reactFavorites', newElementsString);
 
   yield put(actions.setFavorites(elements));
-  console.groupEnd()
 
 }
 
@@ -107,9 +101,9 @@ export function* addRemoveHomeSaga ({ payload }) {
   yield put(actions.updateContent(payload.index));
 }
 
-export function* addRemoveViewSaga ({ payload }) {
+export function* addRemoveViewSaga ({ payload }, testParams) {
   yield put(actions.addRemoveFavorite(payload));
-  const page = yield call(selectors.getCurrentPage)
+  const page = testParams ? testParams.page : yield call(selectors.getCurrentPage)
   yield put(actions.getFavoritesR(page));
 }
 

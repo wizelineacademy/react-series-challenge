@@ -8,26 +8,26 @@ import selectors from '../utils/selectors';
 import { getData, getPaginator } from '../utils/general';
 
 
-const markFavorites = (elems, favs) => {
+const markFavorites = async (elems, favs) => {
   return elems.map((item) => {
     return favs.findIndex((fav) => fav.id === item.id) > -1 ? { ...item, favorite: true } : { ...item, favorite: false };
   })
 }
 
-export function* getNewContentSaga ({ payload }) {
+export function* getNewContentSaga ({ payload }, testParams) {
   // Change loading state
   yield put(actions.setLoading(true))
   
 
   // Check the requiered endpoint (Search / Trending)
 
-  const search = yield select(({search}) => search.inputString)
+  const search = testParams ? testParams.search : yield select(({search}) => search.inputString)
   const endpoint = search === '' ? 'trending' : 'search';
   const page = payload;
 
   // Fetch the data
 
-  const resp = yield call(getData, { search, endpoint, page });
+  const resp = testParams ? testParams.resp : yield call(getData, { search, endpoint, page });
   const { data, pagination } = resp;
 
   // Get the nex paginator state
@@ -36,7 +36,7 @@ export function* getNewContentSaga ({ payload }) {
   
   // Check which ones are part of the favorites.
 
-  const favorites = yield call(selectors.getFavorites)
+  const favorites = testParams ? testParams.favorites : yield call(selectors.getFavorites)
   const pageElements = yield call(markFavorites, data, favorites);
 
   // Set the new paginator state
@@ -54,10 +54,10 @@ export function* getNewContentSaga ({ payload }) {
 
 }
 
-export function* updateContentSaga ({ payload }){
-  const listState = yield call(selectors.getPieceOfState, 'list');
+export function* updateContentSaga (action, testParams){
+  const listState = testParams ? { ...testParams.list } : yield call(selectors.getPieceOfState, 'list') 
   const { currentList } = listState;
-  const favorites = yield call(selectors.getFavorites);
+  const favorites = testParams ? [ ...testParams.favorites ] : yield call(selectors.getFavorites);
   const pageElements = yield call(markFavorites, currentList, favorites);
   yield put(actions.setList(pageElements))
 
