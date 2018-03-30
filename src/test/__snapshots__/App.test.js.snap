@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Should render correctly 1`] = `
+<styled.div>
+  <header>
+    <styled.div>
+      <styled.div
+        padding="15px"
+      >
+        <Styled(NavLink)
+          exact={true}
+          to="/"
+        >
+          Home
+        </Styled(NavLink)>
+      </styled.div>
+      <styled.div
+        padding="15px"
+      >
+        <Styled(NavLink)
+          exact={true}
+          to="/favorites"
+        >
+          Favorites
+        </Styled(NavLink)>
+      </styled.div>
+    </styled.div>
+  </header>
+  <Route
+    component={[Function]}
+    exact={true}
+    path="/"
+  />
+  <Route
+    component={[Function]}
+    exact={true}
+    path="/favorites"
+  />
+  <Route
+    component={[Function]}
+    path="/details"
+  />
+</styled.div>
+`;
+
+exports[`App Should render the pipe router correctly 1`] = `
+<div>
+  <Route
+    component={[Function]}
+    path="test/:giphyId"
+  />
+</div>
+`;

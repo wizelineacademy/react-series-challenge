@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GifPreviewStyled Should render container correctly 1`] = `
+<div
+  className="sc-bdVaJa EXKLM"
+/>
+`;
+
+exports[`GifPreviewStyled Should render correctly 1`] = `
+<img
+  className="sc-bwzfXH fLucZL"
+/>
+`;
+
+exports[`GifPreviewStyled Should render with custom sizes 1`] = `
+<img
+  className="sc-bwzfXH etYtAg"
+  height={100}
+  width={100}
+/>
+`;

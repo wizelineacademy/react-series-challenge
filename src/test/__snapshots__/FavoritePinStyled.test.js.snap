@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FavoritePinStyled Should render a marked pin correctly 1`] = `
+<i
+  className="sc-bdVaJa fas fa-heart fa-lg cDmNxb"
+/>
+`;
+
+exports[`FavoritePinStyled Should render correctly 1`] = `
+<i
+  className="sc-bdVaJa far fa-heart fa-lg eeSLbs"
+/>
+`;

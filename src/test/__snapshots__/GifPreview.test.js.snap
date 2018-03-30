@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GifPreview Should render correctly 1`] = `
+<Route
+  render={[Function]}
+/>
+`;
+
+exports[`GifPreview Should render escaled gif x2 1`] = `
+<Route
+  render={[Function]}
+/>
+`;
+
+exports[`GifPreview Should render marked gif 1`] = `
+<Route
+  render={[Function]}
+/>
+`;
+
+exports[`GifPreview Should render unmarked gif 1`] = `
+<Route
+  render={[Function]}
+/>
+`;
+
+exports[`GifPreview Should simulate a click 1`] = `
+<Route
+  render={[Function]}
+/>
+`;
+
+exports[`GifPreview Should simulate a click with router 1`] = `
+<Router
+  history={
+    Object {
+      "action": "POP",
+      "block": [Function],
+      "createHref": [Function],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "pathname": "/",
+        "search": "",
+        "state": undefined,
+      },
+      "push": [Function],
+      "replace": [Function],
+    }
+  }
+>
+  <withRouter(GifPreview)
+    alt="test"
+    gifDetails={
+      Object {
+        "id": "mockId",
+        "images": Object {
+          "preview_gif": Object {
+            "height": 200,
+            "width": 200,
+          },
+        },
+      }
+    }
+    marked={false}
+  />
+</Router>
+`;
