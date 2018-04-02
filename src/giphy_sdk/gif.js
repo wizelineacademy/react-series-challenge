@@ -8,6 +8,8 @@ import Service from './base/service';
 export class GIF extends Service {
   constructor () {
     super();
+    this.getData = this.getData.bind(this);
+    this.trending = this.trending.bind(this);
     this.search = this.search.bind(this);
     this.getByID = this.getByID.bind(this);
   }
