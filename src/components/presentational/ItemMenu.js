@@ -51,9 +51,4 @@ const ItemMenu = (props) => {
   );
 };
 
-
-// a:active, a:hover {
-//   outline-width: 0;
-// }
-
 export default ItemMenu;

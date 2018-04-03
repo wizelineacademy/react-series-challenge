@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { HomeContainer } from './Home.styled';
+import { GiphyList } from '../../presentational';
 import { connect } from 'react-redux';
 import trendingGifsActions from '../../../actions/trendingGifs';
 const { creators } = trendingGifsActions;
@@ -14,9 +15,8 @@ class Home extends Component {
     const {trendingGifs} = this.props;
     return (
       <HomeContainer>
-        Home
-        <hr />
-        {JSON.stringify(trendingGifs)}
+        {/* {JSON.stringify(trendingGifs, null, 2)} */}
+        <GiphyList dataSource={trendingGifs} />
       </HomeContainer>
     );
   }

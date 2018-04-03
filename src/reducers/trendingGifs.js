@@ -2,7 +2,7 @@ import trendingGifs from '../actions/trendingGifs';
 
 const initialState = {
   fetching: false,
-  gifs: {}
+  data: []
 };
 
 const trendingGifsReducer = (state = initialState, action) => {
