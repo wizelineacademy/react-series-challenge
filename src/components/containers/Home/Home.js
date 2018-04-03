@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { HomeContainer } from './Home.styled';
-import { GiphyList } from '../../presentational';
+import { GiphyList, InputSearch } from '../../presentational';
 import { connect } from 'react-redux';
 import trendingGifsActions from '../../../actions/trendingGifs';
 const { creators } = trendingGifsActions;
@@ -16,6 +16,7 @@ class Home extends Component {
     return (
       <HomeContainer>
         {/* {JSON.stringify(trendingGifs, null, 2)} */}
+        <InputSearch placeholder='Search images ...' />
         <GiphyList dataSource={trendingGifs} />
       </HomeContainer>
     );

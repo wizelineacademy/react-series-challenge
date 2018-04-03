@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 
 const HomeContainer = styled.div`
-  margin: 15px;
+  margin: 0px 0px 0px 15px;
+  position: relative;
+  padding-top: 35px;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -18,7 +20,6 @@ const HomeContainer = styled.div`
     justify-content: space-around;
   }
 `;
-
 
 export {
   HomeContainer

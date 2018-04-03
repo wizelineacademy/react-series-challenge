@@ -12,28 +12,30 @@ const GiphyListContainer = styled.ul`
   -webkit-flex-flow: row wrap;
   justify-content: space-around;
 
-  @media (max-width: 500px) {
-    flex-direction: column;
-  }
-
   @media (max-width: 800px) {
     justify-content: space-around;
+  }
+
+  @media (max-width: 500px) {
+    flex-direction: column;
   }
 `;
 
 const GiphyListItem = styled.li`
   display: list-item;
   text-align: -webkit-match-parent;
-  width: 450px;
-  height: 400px;
+  width: 31%;
+  height: 250px;
   border: 1px solid;
   margin-right: 20px;
   margin-bottom: 20px;
-  @media (max-width: 800px) {
-    width: 100%;
-    &:last-of-type a {
-      border-bottom: none;
-    }
+  
+  @media (max-width: 1024px) {
+    width: 46%;
+  }
+
+  @media (max-width: 600px) {
+    width: 97%;
   }
 
   & a.active {
