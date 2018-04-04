@@ -12,12 +12,17 @@ class Home extends Component {
   }
 
   render() {
-    const {trendingGifs} = this.props;
+    const {trendingGifs, getTrendingGifsRequested} = this.props;
     return (
       <HomeContainer>
         {/* {JSON.stringify(trendingGifs, null, 2)} */}
         <InputSearch placeholder='Search images ...' />
-        <GiphyList dataSource={trendingGifs} />
+        <GiphyList 
+          dataSource={trendingGifs}
+          onClickFirstPage={() => getTrendingGifsRequested({offset:0})}
+          onClickPreviousPage={() => getTrendingGifsRequested({movePrevious:true})}
+          onClickNextPage={() => getTrendingGifsRequested({moveNext:true})}
+          onClickLastPage={() => alert('Go to last page')} />
       </HomeContainer>
     );
   }

@@ -2,13 +2,14 @@ const GET_TRENDING_GIFS_REQUESTED = 'GET_TRENDING_GIFS_REQUESTED';
 const GET_TRENDING_GIFS_COMPLETED = 'GET_TRENDING_GIFS_COMPLETED';
 const GET_TRENDING_GIFS_FAILED = 'GET_TRENDING_GIFS_FAILED';
 
-const getTrendingGifsRequested = () => ({
+const getTrendingGifsRequested = (pagination) => ({
   type: GET_TRENDING_GIFS_REQUESTED,
+  payload: pagination
 });
 
-const getTrendingGifsCompleted = prices => ({
+const getTrendingGifsCompleted = gifs => ({
   type: GET_TRENDING_GIFS_COMPLETED,
-  prices,
+  payload: gifs,
 });
 
 const getTrendingGifsFailed = error => ({

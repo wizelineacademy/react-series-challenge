@@ -37,11 +37,6 @@ const GiphyListItem = styled.li`
   @media (max-width: 600px) {
     width: 97%;
   }
-
-  & a.active {
-    background: tomato;
-    color: white;
-  }
 `;
 
 const GiphyListItemHeader = styled.h3`
@@ -51,6 +46,39 @@ const GiphyListItemHeader = styled.h3`
   }
   
 `;
+
+const GiphyListPager = styled.ul`
+  list-style: none;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
+
+  @media (max-width: 800px) {
+    justify-content: space-around;
+  }
+
+  @media (max-width: 500px) {
+    flex-direction: column;
+  }
+`;
+
+const GiphyListPagerItem = styled.li`
+  display: list-item;
+  text-align: -webkit-match-parent;
+  
+  @media (max-width: 1024px) {
+    width: 46%;
+  }
+
+  @media (max-width: 600px) {
+    width: 97%;
+  }
+`;
+
 
 // const Link = styled(NavLink)`
 //   text-decoration: none;
@@ -65,19 +93,26 @@ const GiphyListItemHeader = styled.h3`
 //   }
 // `;
 
+const Item = ({source}) => {
+  return (
+    <GiphyListItem source={source}>
+      <header>
+        <GiphyListItemHeader>{source.title}</GiphyListItemHeader>
+      </header>
+    </GiphyListItem>
+  );
+};
+
+const GiphyListPagerButton = ({label, onClick}) => {
+  return (
+    <GiphyListPagerItem>
+      <button onClick={onClick}>{label}</button>
+    </GiphyListPagerItem>
+  );
+};
+
 const GiphyList = (props) => {
   const { dataSource } = props;
-  console.log('​GiphyList -> dataSource', dataSource);
-
-  const Item = ({source}) => {
-    return (
-      <GiphyListItem source={source}>
-        <header>
-          <GiphyListItemHeader>{source.title}</GiphyListItemHeader>
-        </header>
-      </GiphyListItem>
-    );
-  };
 
   const renderItems = (data) => {
     return data.map((giphyItem) => {
@@ -88,6 +123,12 @@ const GiphyList = (props) => {
   return (
     <GiphyListContainer>
       {renderItems(dataSource.data)}
+      <GiphyListPager>
+        <GiphyListPagerButton label='First' onClick={props.onClickFirstPage} />
+        <GiphyListPagerButton label='Previous' onClick={props.onClickPreviousPage} />
+        <GiphyListPagerButton label='Next' onClick={props.onClickNextPage} />
+        <GiphyListPagerButton label='Last' onClick={props.onClickLastPage} />
+      </GiphyListPager>
     </GiphyListContainer>
   );
 };
