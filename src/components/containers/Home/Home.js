@@ -19,10 +19,10 @@ class Home extends Component {
         <InputSearch placeholder='Search images ...' />
         <GiphyList 
           dataSource={trendingGifs}
-          onClickFirstPage={() => getTrendingGifsRequested({offset:0})}
+          onClickFirstPage={() => getTrendingGifsRequested({offset:1})}
           onClickPreviousPage={() => getTrendingGifsRequested({movePrevious:true})}
           onClickNextPage={() => getTrendingGifsRequested({moveNext:true})}
-          onClickLastPage={() => alert('Go to last page')} />
+          onClickLastPage={() => getTrendingGifsRequested({moveLast:true})} />
       </HomeContainer>
     );
   }
