@@ -8,7 +8,8 @@ const initialState = {
     offset: 1,
     total_count: 0,
     count: 0
-  }
+  },
+  error: ''
 };
 
 const trendingGifsReducer = (state = initialState, action) => {

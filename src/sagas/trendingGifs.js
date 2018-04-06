@@ -12,15 +12,17 @@ export const getOffset = (state) => {
 };
 
 export function* loadTrendingGifsSaga() {
-  console.log('[SAGA] loadTrendingGifsSaga...');
+  const { creators } = trendingGifs;
+  // console.log('[SAGA] loadTrendingGifsSaga...');
   try {
     let offset = yield select(getOffset);
-    console.log('​exportfunction*loadTrendingGifsSaga -> offset', offset);
+    // console.log('​exportfunction*loadTrendingGifsSaga -> offset', offset);
     const trendingGifsResponse = yield call(giftService.trending, { offset } );
-    // const trendingGifsResponse = yield call(giftService.trending);
-    yield put(trendingGifs.creators.getTrendingGifsCompleted(trendingGifsResponse));
+    // console.log('​exportfunction*loadTrendingGifsSaga -> trendingGifsResponse', trendingGifsResponse);
+    yield put(creators.getTrendingGifsCompleted(trendingGifsResponse));
   } catch (error) {
-    yield put(trendingGifs.creators.getTrendingGifsFailed(error), error);
+    // console.log('​}catch -> error', error);
+    yield put(creators.getTrendingGifsFailed(error.message));
   }
 }
 

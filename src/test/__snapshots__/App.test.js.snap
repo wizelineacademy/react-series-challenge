@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should render correctly 1`] = `
+<styled.div>
+  <header>
+    <Menu>
+      <ItemMenu
+        exact={true}
+        to="/"
+      >
+        Home
+      </ItemMenu>
+      <ItemMenu
+        exact={true}
+        to="/favorites"
+      >
+        Favorites
+      </ItemMenu>
+    </Menu>
+  </header>
+  <Switch>
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/"
+    />
+    <Route
+      component={[Function]}
+      path="/favorites"
+    />
+    <Route
+      component={[Function]}
+      path="/gifs/:gif_id"
+    />
+    <Route
+      component={[Function]}
+    />
+  </Switch>
+</styled.div>
+`;

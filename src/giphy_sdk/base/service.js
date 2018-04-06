@@ -148,8 +148,18 @@ class Service {
         error.stack = err.stack;
         reject(error);
       };
-      console.log(`[API] loading ${toUrl} ...`);
+
+      request.onreadystatechange = function() {
+        if(request.readyState === 4) { 
+          if (request.status === 403) {
+            const errorReq = JSON.parse(request.responseText);
+            reject(new Error(errorReq.Message));
+          }
+        }
+      };
+      
       request.send();
+      console.log(`[API] loading ${toUrl} ...`);
     });
   }
 }

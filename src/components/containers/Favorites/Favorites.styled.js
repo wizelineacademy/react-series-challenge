@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const HomeContainer = styled.div`
+const FavoritesContainer = styled.div`
   margin: 0px 0px 0px 15px;
   padding-top: 35px;
   display: -webkit-box;
@@ -21,5 +21,5 @@ const HomeContainer = styled.div`
 `;
 
 export {
-  HomeContainer
+  FavoritesContainer
 };

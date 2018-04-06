@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { HomeContainer } from './Home.styled';
-import { GiphyList, InputSearch } from '../../presentational';
+import { GiphyList, InputSearch, ErrorWatcher } from '../../presentational';
 import { connect } from 'react-redux';
 import trendingGifsActions from '../../../actions/trendingGifs';
 const { creators } = trendingGifsActions;
@@ -23,13 +23,13 @@ class Home extends Component {
           onClickPreviousPage={() => getTrendingGifsRequested({movePrevious:true})}
           onClickNextPage={() => getTrendingGifsRequested({moveNext:true})}
           onClickLastPage={() => getTrendingGifsRequested({moveLast:true})} />
+        <ErrorWatcher visible={trendingGifs.error !== ''}>{trendingGifs.error}</ErrorWatcher>
       </HomeContainer>
     );
   }
 }
 
 const mapStateToProps = (state) => {
-  console.log('​mapStateToProps -> state', state);
   const {trendingGifs} = state;
 
   return {
