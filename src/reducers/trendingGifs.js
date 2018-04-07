@@ -101,7 +101,6 @@ const trendingGifsReducer = (state = initialState, action) => {
       const newSeletedGif = {...newState.selectedGif};
       newSeletedGif.fetching = false;
       newState.selectedGif = {...newSeletedGif, ...action.payload};
-      console.log('​trendingGifsReducer -> newState', newState);
       
       return {
         ...newState
@@ -121,8 +120,32 @@ const trendingGifsReducer = (state = initialState, action) => {
     
     case trendingGifs.types.ADDED_TO_FAVORITES_GIF: {
       const newState = {...state};
-      
-      newState.data.find(d => d.id === action.payload).isFavorite = true;
+      if (newState.selectedGif.id === action.payload) {
+        const newSeletedGif = {...newState.selectedGif};
+        newSeletedGif.isFavorite = true;
+        newState.selectedGif = newSeletedGif;
+      }
+      const currGif = newState.data.find(d => d.id === action.payload);
+      if (currGif) {
+        currGif.isFavorite = true;
+      }
+      newState.data = [...newState.data];
+      return {
+        ...newState
+      };
+    }
+
+    case trendingGifs.types.REMOVED_TO_FAVORITES_GIF: {
+      const newState = {...state};
+      const currGif = newState.data.find(d => d.id === action.payload);
+      if (currGif) {
+        currGif.isFavorite = false;
+      }
+      if (newState.selectedGif.id === action.payload) {
+        const newSeletedGif = {...newState.selectedGif};
+        newSeletedGif.isFavorite = false;
+        newState.selectedGif = newSeletedGif;
+      }
       newState.data = [...newState.data];
       return {
         ...newState

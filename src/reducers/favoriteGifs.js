@@ -3,6 +3,7 @@ import favoriteGifs from '../actions/favoriteGifs';
 const initialState = {
   fetching: false,
   selected2Add: {},
+  selectedID2remove: '',
   data: [],
   pagination: {
     offset: 1,
@@ -96,8 +97,8 @@ const favoriteGifsReducer = (state = initialState, action) => {
       const newSelected2Add = { ...newState.selected2Add };
       newSelected2Add.saving = false;
       newState.selected2Add = newSelected2Add;
-
-      newState.data = [...newState.data, ...[action.payload]];
+      newState.data = newState.data.filter(d => d.id !== action.payload.id);
+      newState.data = [...[action.payload], ...newState.data];
       return {
         ...newState
       };
@@ -108,6 +109,31 @@ const favoriteGifsReducer = (state = initialState, action) => {
       newSelected2Add.saving = false;
       newSelected2Add.error = action.error;
       newState.selected2Add = newSelected2Add;
+
+      return {
+        ...newState
+      };
+    }
+
+    case favoriteGifs.types.REMOVE_FAVORITE_GIF_REQUESTED: {
+      const newState = {...state};
+      newState.selectedID2remove = action.payload;
+
+      return {
+        ...newState
+      };
+    }
+    case favoriteGifs.types.REMOVE_FAVORITE_GIF_COMPLETED: {
+      const newState = {...state};
+      newState.data = newState.data.filter(d => d.id !== action.payload);
+      newState.data = [...newState.data];
+      return {
+        ...newState
+      };
+    }
+    case favoriteGifs.types.REMOVE_FAVORITE_GIF_FAILED: {
+      const newState = {...state};
+      newState.error = action.error;
 
       return {
         ...newState

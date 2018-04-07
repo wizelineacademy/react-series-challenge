@@ -6,7 +6,7 @@ import {
 } from 'redux-saga/effects';
 import favoriteGifs from '../actions/favoriteGifs';
 import trendingGifs from '../actions/trendingGifs';
-import { getFavoriteGifs, addFavoriteGif } from '../storage/favoriteGifs';
+import { getFavoriteGifs, addFavoriteGif, removeFavoriteGif } from '../storage/favoriteGifs';
 
 const { types } = favoriteGifs;
 
@@ -16,6 +16,10 @@ const selectData2Send = (state) => {
 
 const selectGif2Save = (state) => {
   return state.favoriteGifs.selected2Add;
+};
+
+const selectGifID2Remove = (state) => {
+  return state.favoriteGifs.selectedID2remove;
 };
 
 export function* loadFavoriteGifsSaga() {
@@ -51,7 +55,25 @@ export function* addFavoriteGifSaga() {
   }
 }
 
+export function* removeFavoriteGifSaga() {
+  const { creators } = favoriteGifs;
+  const { creators: trendingCreators } = trendingGifs;
+
+  try {
+    const gifID2Remove = yield select(selectGifID2Remove);
+    let favoriteGifIDResponse = null;
+    
+    favoriteGifIDResponse = yield call(removeFavoriteGif, gifID2Remove);
+    yield put(creators.removeFavoriteGifCompleted(favoriteGifIDResponse));
+    yield put(trendingCreators.removed2Favorites(favoriteGifIDResponse))
+  } catch (error) {
+    console.log('removeFavoriteGifSaga catch -> error', error);
+    yield put(creators.removeFavoriteGifFailed(error.message));
+  }
+}
+
 export default function* favoriteGifsSaga() {
   yield takeEvery(types.GET_FAVORITE_GIFS_REQUESTED, loadFavoriteGifsSaga);
   yield takeEvery(types.ADD_FAVORITE_GIF_REQUESTED, addFavoriteGifSaga);
+  yield takeEvery(types.REMOVE_FAVORITE_GIF_REQUESTED, removeFavoriteGifSaga);
 }

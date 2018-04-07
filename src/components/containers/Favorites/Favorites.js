@@ -4,7 +4,7 @@ import { GiphyList, InputSearch, ErrorWatcher } from '../../presentational';
 import { connect } from 'react-redux';
 import favoriteGifsActions from '../../../actions/favoriteGifs';
 const { creators } = favoriteGifsActions;
-const { getFavoriteGifsRequested } = creators;
+const { getFavoriteGifsRequested, addFavoriteGifRequested, removeFavoriteGifRequested } = creators;
 class Favorites extends Component {
   componentDidMount () {
     const { getFavoriteGifsRequested } = this.props;
@@ -19,8 +19,12 @@ class Favorites extends Component {
   }
 
   render() {
-    const {favoriteGifs, getFavoriteGifsRequested} = this.props;
-    console.log('​Favorites -> render -> favoriteGifs', favoriteGifs);
+    const {
+      favoriteGifs,
+      getFavoriteGifsRequested,
+      addFavoriteGifRequested,
+      removeFavoriteGifRequested
+    } = this.props;
     return (
       <FavoritesContainer>
         <InputSearch 
@@ -38,7 +42,15 @@ class Favorites extends Component {
           onClickFirstPage={() => getFavoriteGifsRequested({offset:1})}
           onClickPreviousPage={() => getFavoriteGifsRequested({movePrevious:true})}
           onClickNextPage={() => getFavoriteGifsRequested({moveNext:true})}
-          onClickLastPage={() => getFavoriteGifsRequested({moveLast:true})} />
+          onClickLastPage={() => getFavoriteGifsRequested({moveLast:true})}
+          clickAdd2Favorites={(source) => {
+            
+            if (source.isFavorite) {
+              removeFavoriteGifRequested(source.id);
+            } else {
+              addFavoriteGifRequested(source);
+            }
+          }} />
         <ErrorWatcher visible={favoriteGifs.error !== ''}>{favoriteGifs.error}</ErrorWatcher>
       </FavoritesContainer>
     );
@@ -47,11 +59,18 @@ class Favorites extends Component {
 
 const mapStateToProps = (state) => {
   const {favoriteGifs} = state;
-  console.log('​mapStateToProps -> state', state);
 
   return {
     favoriteGifs
   };
 };
 
-export default connect(mapStateToProps, { getFavoriteGifsRequested })(Favorites);
+export default 
+  connect(
+    mapStateToProps,
+    {
+      getFavoriteGifsRequested,
+      addFavoriteGifRequested,
+      removeFavoriteGifRequested
+    }
+  )(Favorites);

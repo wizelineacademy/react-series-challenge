@@ -8,9 +8,11 @@ import {
   GiphyHeartFavorite} from '../../presentational/GiphyList';
 import { connect } from 'react-redux';
 import trendingGifsActions from '../../../actions/trendingGifs';
+import favoriteGifsActions from '../../../actions/favoriteGifs';
 const { creators } = trendingGifsActions;
 const { getGifRequested } = creators;
-
+const { creators: creatorsFav } = favoriteGifsActions;
+const { addFavoriteGifRequested, removeFavoriteGifRequested } = creatorsFav;
 
 class GifDetail extends Component {
   componentDidMount () {
@@ -19,7 +21,7 @@ class GifDetail extends Component {
   }
 
   render() {
-    const {selectedGif: source} = this.props;
+    const {selectedGif: source, addFavoriteGifRequested, removeFavoriteGifRequested} = this.props;
 
     if (!source.fetching) {
       /*eslint no-script-url:0*/
@@ -32,7 +34,13 @@ class GifDetail extends Component {
             <img src={source.images.original.url} alt={source.title} />
           </GiphyListItemBody>
           <GiphyListItemFooter>
-            <GiphyLinkFavorite href='javascript:void(0)' >
+            <GiphyLinkFavorite href='javascript:void(0)' onClick={() => {
+              if (source.isFavorite) {
+                removeFavoriteGifRequested(source.id);
+              } else {
+                addFavoriteGifRequested(source);
+              }
+            }}>
             {source.isFavorite === true
               ? <span>Remove from my favorites</span> 
               : <span>Send to my favorites</span>}
@@ -59,4 +67,12 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { getGifRequested })(GifDetail);
+export default 
+  connect(
+    mapStateToProps,
+    {
+      getGifRequested,
+      addFavoriteGifRequested,
+      removeFavoriteGifRequested
+    }
+  )(GifDetail);

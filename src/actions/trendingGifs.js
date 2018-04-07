@@ -7,6 +7,7 @@ const GET_GIF_COMPLETED = 'GET_GIF_COMPLETED';
 const GET_GIF_FAILED = 'GET_GIF_FAILED';
 
 const ADDED_TO_FAVORITES_GIF = 'ADDED_TO_FAVORITES_GIF';
+const REMOVED_TO_FAVORITES_GIF = 'REMOVED_TO_FAVORITES_GIF';
 
 const getTrendingGifsRequested = (pagination) => ({
   type: GET_TRENDING_GIFS_REQUESTED,
@@ -43,6 +44,11 @@ const added2Favorites = gifID => ({
   payload: gifID,
 });
 
+const removed2Favorites = gifID => ({
+  type: REMOVED_TO_FAVORITES_GIF,
+  payload: gifID,
+});
+
 export default {
   types: {
     GET_TRENDING_GIFS_REQUESTED,
@@ -54,6 +60,7 @@ export default {
     GET_GIF_FAILED,
 
     ADDED_TO_FAVORITES_GIF,
+    REMOVED_TO_FAVORITES_GIF,
   },
   creators: {
     getTrendingGifsRequested,
@@ -65,5 +72,6 @@ export default {
     getGifFailed,
 
     added2Favorites,
+    removed2Favorites,
   },
 };

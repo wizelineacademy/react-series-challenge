@@ -49,6 +49,7 @@ export const addFavoriteGif = (gif) => {
       
       try {
         allData = allData.filter(d => d.id !== gif.id);
+        gif.isFavorite = true;
         allData.unshift(gif);
         localStorage.setItem('favoriteGifs', JSON.stringify(allData))
       } catch (error) {
@@ -56,6 +57,34 @@ export const addFavoriteGif = (gif) => {
       }
       
       resolve(gif);
+    });
+  });
+};
+
+export const removeFavoriteGif = (gifID) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      let allData = null;
+
+      try {
+        allData = localStorage.getItem('favoriteGifs') !== null 
+          ? JSON.parse(localStorage.getItem('favoriteGifs')) : [];
+      } catch (error) {
+        allData = [];
+      }
+
+      if (allData.length === 0) {
+        localStorage.setItem('favoriteGifs', JSON.stringify([]))
+      }
+      
+      try {
+        allData = allData.filter(d => d.id !== gifID);
+        localStorage.setItem('favoriteGifs', JSON.stringify(allData))
+      } catch (error) {
+        reject(error)
+      }
+      
+      resolve(gifID);
     });
   });
 };

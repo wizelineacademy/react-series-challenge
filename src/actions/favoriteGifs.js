@@ -4,6 +4,9 @@ const GET_FAVORITE_GIFS_FAILED = 'GET_FAVORITE_GIFS_FAILED';
 const ADD_FAVORITE_GIF_REQUESTED = 'ADD_FAVORITE_GIF_REQUESTED';
 const ADD_FAVORITE_GIF_COMPLETED = 'ADD_FAVORITE_GIF_COMPLETED';
 const ADD_FAVORITE_GIF_FAILED = 'ADD_FAVORITE_GIF_FAILED';
+const REMOVE_FAVORITE_GIF_REQUESTED = 'REMOVE_FAVORITE_GIF_REQUESTED';
+const REMOVE_FAVORITE_GIF_COMPLETED = 'REMOVE_FAVORITE_GIF_COMPLETED';
+const REMOVE_FAVORITE_GIF_FAILED = 'REMOVE_FAVORITE_GIF_FAILED';
 
 const getFavoriteGifsRequested = (pagination) => ({
   type: GET_FAVORITE_GIFS_REQUESTED,
@@ -36,6 +39,22 @@ const addFavoriteGifFailed = error => ({
   error,
 });
 
+
+const removeFavoriteGifRequested = (gifID) => ({
+  type: REMOVE_FAVORITE_GIF_REQUESTED,
+  payload: gifID
+});
+
+const removeFavoriteGifCompleted = gifID => ({
+  type: REMOVE_FAVORITE_GIF_COMPLETED,
+  payload: gifID,
+});
+
+const removeFavoriteGifFailed = error => ({
+  type: REMOVE_FAVORITE_GIF_FAILED,
+  error,
+});
+
 export default {
   types: {
     GET_FAVORITE_GIFS_REQUESTED,
@@ -45,6 +64,10 @@ export default {
     ADD_FAVORITE_GIF_REQUESTED,
     ADD_FAVORITE_GIF_COMPLETED,
     ADD_FAVORITE_GIF_FAILED,
+
+    REMOVE_FAVORITE_GIF_REQUESTED,
+    REMOVE_FAVORITE_GIF_COMPLETED,
+    REMOVE_FAVORITE_GIF_FAILED,
   },
   creators: {
     getFavoriteGifsRequested,
@@ -54,5 +77,9 @@ export default {
     addFavoriteGifRequested,
     addFavoriteGifCompleted,
     addFavoriteGifFailed,
+
+    removeFavoriteGifRequested,
+    removeFavoriteGifCompleted,
+    removeFavoriteGifFailed,
   },
 };

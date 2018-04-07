@@ -7,7 +7,7 @@ import favoriteGifsActions from '../../../actions/favoriteGifs';
 const { creators } = trendingGifsActions;
 const { getTrendingGifsRequested } = creators;
 const { creators: creatorsFav } = favoriteGifsActions;
-const { addFavoriteGifRequested } = creatorsFav;
+const { addFavoriteGifRequested, removeFavoriteGifRequested } = creatorsFav;
 class Home extends Component {
   constructor(props) {
     super(props);
@@ -27,7 +27,12 @@ class Home extends Component {
   }
 
   render() {
-    const {trendingGifs, getTrendingGifsRequested, addFavoriteGifRequested} = this.props;
+    const {
+      trendingGifs,
+      getTrendingGifsRequested,
+      addFavoriteGifRequested,
+      removeFavoriteGifRequested
+    } = this.props;
     return (
       <HomeContainer>
         <InputSearch 
@@ -46,7 +51,13 @@ class Home extends Component {
           onClickPreviousPage={() => getTrendingGifsRequested({movePrevious:true})}
           onClickNextPage={() => getTrendingGifsRequested({moveNext:true})}
           onClickLastPage={() => getTrendingGifsRequested({moveLast:true})}
-          clickAdd2Favorites={(source) => addFavoriteGifRequested(source)} />
+          clickAdd2Favorites={(source) => {
+            if (source.isFavorite) {
+              removeFavoriteGifRequested(source.id);
+            } else {
+              addFavoriteGifRequested(source);
+            }
+          }} />
         <ErrorWatcher visible={trendingGifs.error !== ''}>{trendingGifs.error}</ErrorWatcher>
       </HomeContainer>
     );
@@ -62,4 +73,7 @@ const mapStateToProps = (state) => {
 };
 
 export default 
-  connect(mapStateToProps, { getTrendingGifsRequested, addFavoriteGifRequested })(Home);
+  connect(mapStateToProps, { 
+    getTrendingGifsRequested,
+    addFavoriteGifRequested,
+    removeFavoriteGifRequested })(Home);
