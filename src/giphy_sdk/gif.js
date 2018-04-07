@@ -73,7 +73,7 @@ export class GIF extends Service {
    * @return {Promise<Object>} Promise with the Api Request
    */
   getByID (id) {
-    return this.getData(`${id}/`);
+    return this.getData(`${id}`);
   }
 }
 

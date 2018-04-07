@@ -11,7 +11,6 @@ exports[`App should render correctly 1`] = `
         Home
       </ItemMenu>
       <ItemMenu
-        exact={true}
         to="/favorites"
       >
         Favorites
@@ -26,6 +25,7 @@ exports[`App should render correctly 1`] = `
     />
     <Route
       component={[Function]}
+      exact={true}
       path="/favorites"
     />
     <Route

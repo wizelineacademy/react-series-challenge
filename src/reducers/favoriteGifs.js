@@ -1,14 +1,8 @@
-import trendingGifs from '../actions/trendingGifs';
+import favoriteGifs from '../actions/favoriteGifs';
 
 const initialState = {
   fetching: false,
-  selectedID: '',
-  selectedGif: { 
-    fetching: false,
-    id: '',
-    title: '',
-    images: { original: { url: '' } }
-  },
+  selected2Add: {},
   data: [],
   pagination: {
     offset: 1,
@@ -23,11 +17,11 @@ const initialState = {
 const selectorTotalPages = ({total_count, count}) => 
   total_count > 0 ? Math.ceil(total_count / count) : 0;
 
-const trendingGifsReducer = (state = initialState, action) => {
+const favoriteGifsReducer = (state = initialState, action) => {
   const { type } = action;
 
   switch (type) {
-    case trendingGifs.types.GET_TRENDING_GIFS_REQUESTED:
+    case favoriteGifs.types.GET_FAVORITE_GIFS_REQUESTED: {
       const newState = {...state};
       const newPagination = { ...newState.pagination };
       const { total_count } = newPagination;
@@ -70,68 +64,58 @@ const trendingGifsReducer = (state = initialState, action) => {
         ...newState,
         fetching: true
       };
-    case trendingGifs.types.GET_TRENDING_GIFS_COMPLETED:
+    }
+    case favoriteGifs.types.GET_FAVORITE_GIFS_COMPLETED: {
       action.payload.pagination.pages  = selectorTotalPages(action.payload.pagination);
       return {
         ...state,
         fetching: false,
         ...action.payload,
       };
-    case trendingGifs.types.GET_TRENDING_GIFS_FAILED:
+    }
+    case favoriteGifs.types.GET_FAVORITE_GIFS_FAILED: {
       return {
         ...state,
         fetching: false,
         error: action.error,
-      }
-    
-    case trendingGifs.types.GET_GIF_REQUESTED: {
-      const newState = {...state};
-      const newSeletedGif = {...newState.selectedGif};
-      newSeletedGif.fetching = true;
-      delete(newSeletedGif.isFavorite);
-      newState.selectedGif = newSeletedGif;
-      newState.selectedID = action.payload;
-      return {
-        ...newState
       };
     }
 
-    case trendingGifs.types.GET_GIF_COMPLETED: {
+    case favoriteGifs.types.ADD_FAVORITE_GIF_REQUESTED: {
       const newState = {...state};
-      const newSeletedGif = {...newState.selectedGif};
-      newSeletedGif.fetching = false;
-      newState.selectedGif = {...newSeletedGif, ...action.payload};
-      console.log('​trendingGifsReducer -> newState', newState);
-      
+      const newSelected2Add = { ...newState.selected2Add };
+      newSelected2Add.saving = true;
+
+      newState.selected2Add = {...newSelected2Add, ...action.payload};
       return {
         ...newState
       };
     }
-    case trendingGifs.types.GET_GIF_FAILED: {
+    case favoriteGifs.types.ADD_FAVORITE_GIF_COMPLETED: {
       const newState = {...state};
-      const newSeletedGif = {...newState.selectedGif};
-      newSeletedGif.fetching = false;
-      newSeletedGif.error = action.error;
-      newState.selectedGif = newSeletedGif;
+      const newSelected2Add = { ...newState.selected2Add };
+      newSelected2Add.saving = false;
+      newState.selected2Add = newSelected2Add;
+
+      newState.data = [...newState.data, ...[action.payload]];
+      return {
+        ...newState
+      };
+    }
+    case favoriteGifs.types.ADD_FAVORITE_GIF_FAILED: {
+      const newState = {...state};
+      const newSelected2Add = { ...newState.selected2Add };
+      newSelected2Add.saving = false;
+      newSelected2Add.error = action.error;
+      newState.selected2Add = newSelected2Add;
 
       return {
         ...newState
       };
     }
-    
-    case trendingGifs.types.ADDED_TO_FAVORITES_GIF: {
-      const newState = {...state};
-      
-      newState.data.find(d => d.id === action.payload).isFavorite = true;
-      newState.data = [...newState.data];
-      return {
-        ...newState
-      };
-    }
-    
     default:
       return state;
   }
 };
 
-export default trendingGifsReducer;
+export default favoriteGifsReducer;

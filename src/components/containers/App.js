@@ -4,6 +4,7 @@ import {Menu, ItemMenu} from '../presentational';
 import {AppContainer} from './App.styled';
 import Home from './Home';
 import Favorites from './Favorites';
+import GifDetail from './GifDetail';
 import NotFound from './NotFound';
 
 class App extends Component {
@@ -13,15 +14,17 @@ class App extends Component {
         <header>
           <Menu>
             <ItemMenu exact to='/'>Home</ItemMenu>
-            <ItemMenu exact to='/favorites'>Favorites</ItemMenu>
-            {/* <ItemMenu exact to='/gifs/123'>Detail</ItemMenu> */}
+            <ItemMenu to='/favorites'>Favorites</ItemMenu>
           </Menu>
         </header>
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/favorites" component={Favorites} />
-          <Route path="/gifs/:gif_id" component={
-            ({match}) => <span>Detail of GIF {match.params.gif_id}</span>} />
+          <Route exact path="/favorites" component={Favorites} />
+          <Route 
+            path="/gifs/:gif_id" 
+            component={({match}) => {
+              return <GifDetail gifID={match.params.gif_id} />
+            }} />
           <Route component={NotFound} />
         </Switch>
       </AppContainer>
