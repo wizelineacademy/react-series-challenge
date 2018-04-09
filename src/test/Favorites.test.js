@@ -36,5 +36,8 @@ describe('InputSearch', () => {
     expect(section.exists()).toEqual(true);
     const input = wrapper.find('input');
     expect(input.exists()).toEqual(true);
+    const value = 'anna faris';
+    input.simulate('change', { target: { value } });
+    expect(input.props().value).toEqual(value);
   });
 });
