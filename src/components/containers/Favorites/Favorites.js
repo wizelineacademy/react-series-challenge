@@ -44,7 +44,6 @@ class Favorites extends Component {
           onClickNextPage={() => getFavoriteGifsRequested({moveNext:true})}
           onClickLastPage={() => getFavoriteGifsRequested({moveLast:true})}
           clickAdd2Favorites={(source) => {
-            
             if (source.isFavorite) {
               removeFavoriteGifRequested(source.id);
             } else {

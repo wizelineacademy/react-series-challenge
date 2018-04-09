@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home should render correctly 1`] = `
+<Home
+  addFavoriteGifRequested={[Function]}
+  getTrendingGifsRequested={[Function]}
+  removeFavoriteGifRequested={[Function]}
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+      Symbol(observable): [Function],
+    }
+  }
+  storeSubscription={
+    Subscription {
+      "listeners": Object {
+        "clear": [Function],
+        "get": [Function],
+        "notify": [Function],
+        "subscribe": [Function],
+      },
+      "onStateChange": [Function],
+      "parentSub": undefined,
+      "store": Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+        Symbol(observable): [Function],
+      },
+      "unsubscribe": [Function],
+    }
+  }
+  trendingGifs={
+    Object {
+      "data": Array [],
+      "error": "",
+      "fetching": false,
+      "pagination": Object {
+        "count": 0,
+        "offset": 1,
+        "pages": 0,
+        "total_count": 0,
+      },
+      "query": "",
+      "selectedGif": Object {
+        "fetching": false,
+        "id": "",
+        "images": Object {
+          "original": Object {
+            "url": "",
+          },
+        },
+        "title": "",
+      },
+      "selectedID": "",
+    }
+  }
+/>
+`;

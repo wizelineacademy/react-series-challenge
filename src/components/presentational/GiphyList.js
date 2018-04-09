@@ -219,7 +219,7 @@ const Item = ({source, clickAdd2Favorites = () =>  { }}) => {
       </GiphyListItemHeader>
       <GiphyListItemBody>
         <Link to={`/gifs/${source.id}`}>
-        <img src={source.images.fixed_width.url} alt={source.title} />
+          <img src={source.images.fixed_width.url} alt={source.title} />
         </Link>
       </GiphyListItemBody>
       <GiphyListItemFooter>

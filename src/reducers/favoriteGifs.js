@@ -23,6 +23,7 @@ const favoriteGifsReducer = (state = initialState, action) => {
 
   switch (type) {
     case favoriteGifs.types.GET_FAVORITE_GIFS_REQUESTED: {
+      //console.log(JSON.stringify(action, null, 2), 'GET_FAVORITE_GIFS_REQUESTED');
       const newState = {...state};
       const newPagination = { ...newState.pagination };
       const { total_count } = newPagination;
@@ -61,18 +62,25 @@ const favoriteGifsReducer = (state = initialState, action) => {
         ? action.payload.query 
         : newState.query;
       newState.pagination = {...newPagination, ...action.payload};
-      return {
+
+      const newStateRet = {
         ...newState,
         fetching: true
       };
+      // console.log(JSON.stringify(newStateRet, null, 2), 'GET_FAVORITE_GIFS_REQUESTED');
+      return newStateRet;
     }
     case favoriteGifs.types.GET_FAVORITE_GIFS_COMPLETED: {
+      //console.log(JSON.stringify(action, null, 2), 'GET_FAVORITE_GIFS_COMPLETED');
       action.payload.pagination.pages  = selectorTotalPages(action.payload.pagination);
-      return {
+      const newState = {
         ...state,
         fetching: false,
         ...action.payload,
       };
+
+      console.log(JSON.stringify(newState, null, 2), 'GET_FAVORITE_GIFS_COMPLETED');
+      return newState;
     }
     case favoriteGifs.types.GET_FAVORITE_GIFS_FAILED: {
       return {

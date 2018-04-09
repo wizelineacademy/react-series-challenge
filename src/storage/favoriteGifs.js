@@ -5,12 +5,8 @@ export const getFavoriteGifs = ({offset = 1, count = 25, q = ''}) => {
       const response = {data:[], pagination: {offset, count, total_count: 0, pages: 0}};
       let allData = null;
 
-      try {
-        allData = localStorage.getItem('favoriteGifs') !== null 
-          ? JSON.parse(localStorage.getItem('favoriteGifs')) : [];
-      } catch (error) {
-        allData = [];
-      }
+      allData = localStorage.getItem('favoriteGifs') !== null 
+        ? JSON.parse(localStorage.getItem('favoriteGifs')) : [];
       
       if (allData.length === 0) {
         localStorage.setItem('favoriteGifs', JSON.stringify([]))
@@ -36,25 +32,17 @@ export const addFavoriteGif = (gif) => {
     setTimeout(() => {
       let allData = null;
 
-      try {
-        allData = localStorage.getItem('favoriteGifs') !== null 
-          ? JSON.parse(localStorage.getItem('favoriteGifs')) : [];
-      } catch (error) {
-        allData = [];
-      }
+      allData = localStorage.getItem('favoriteGifs') !== null
+        ? JSON.parse(localStorage.getItem('favoriteGifs')) : [];
 
       if (allData.length === 0) {
         localStorage.setItem('favoriteGifs', JSON.stringify([]))
       }
       
-      try {
-        allData = allData.filter(d => d.id !== gif.id);
-        gif.isFavorite = true;
-        allData.unshift(gif);
-        localStorage.setItem('favoriteGifs', JSON.stringify(allData))
-      } catch (error) {
-        reject(error)
-      }
+      allData = allData.filter(d => d.id !== gif.id);
+      gif.isFavorite = true;
+      allData.unshift(gif);
+      localStorage.setItem('favoriteGifs', JSON.stringify(allData))
       
       resolve(gif);
     });
@@ -66,23 +54,12 @@ export const removeFavoriteGif = (gifID) => {
     setTimeout(() => {
       let allData = null;
 
-      try {
-        allData = localStorage.getItem('favoriteGifs') !== null 
-          ? JSON.parse(localStorage.getItem('favoriteGifs')) : [];
-      } catch (error) {
-        allData = [];
-      }
+      allData = localStorage.getItem('favoriteGifs') !== null 
+        ? JSON.parse(localStorage.getItem('favoriteGifs')) : [];
 
-      if (allData.length === 0) {
-        localStorage.setItem('favoriteGifs', JSON.stringify([]))
-      }
-      
-      try {
-        allData = allData.filter(d => d.id !== gifID);
-        localStorage.setItem('favoriteGifs', JSON.stringify(allData))
-      } catch (error) {
-        reject(error)
-      }
+      allData = allData.filter(d => d.id !== gifID);
+      localStorage.setItem('favoriteGifs', JSON.stringify(allData))
+
       
       resolve(gifID);
     });

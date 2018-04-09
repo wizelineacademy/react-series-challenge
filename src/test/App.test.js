@@ -9,7 +9,9 @@ import Home from '../components/containers/Home';
 import Favorites from '../components/containers/Favorites';
 import GifDetail from '../components/containers/GifDetail';
 import NotFound from '../components/containers/NotFound';
+import {InputSearch, GiphyList} from '../components/presentational';
 import '../style/global';
+
 
 describe('App', () => {
   it('should render correctly', () => {
@@ -28,6 +30,8 @@ describe('App', () => {
       </Provider>
     );
     expect(wrapper.find(Home)).toHaveLength(1);
+    expect(wrapper.find(InputSearch)).toHaveLength(1);
+    expect(wrapper.find(GiphyList)).toHaveLength(1);
   });
 
   it('Move router to favorites', () => {
@@ -39,6 +43,8 @@ describe('App', () => {
       </Provider>
     );
     expect(wrapper.find(Favorites)).toHaveLength(1);
+    expect(wrapper.find(InputSearch)).toHaveLength(1);
+    expect(wrapper.find(GiphyList)).toHaveLength(1);
   });
 
   it('Move router to Gif Detail View', () => {
@@ -50,6 +56,7 @@ describe('App', () => {
       </Provider>
     );
     expect(wrapper.find(GifDetail)).toHaveLength(1);
+    //expect(wrapper.find('img')).toHaveLength(1);
   });
 
   it('Move router to non-existent route and its showed the not found page', () => {
