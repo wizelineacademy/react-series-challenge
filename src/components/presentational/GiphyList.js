@@ -25,7 +25,7 @@ const GiphyListContainer = styled.ul`
   }
 `;
 
-const GiphyListItem = styled.li`
+export const GiphyListItem = styled.li`
   display: list-item;
   position: relative;
   text-align: -webkit-match-parent;
@@ -236,7 +236,7 @@ const Item = ({source, clickAdd2Favorites = () =>  { }}) => {
   );
 };
 
-const GiphyListPagerButton = ({label, onClick}) => {
+export const GiphyListPagerButton = ({label, onClick}) => {
   return (
     <GiphyListPagerItem>
       <Button onClick={onClick}>{label}</Button>

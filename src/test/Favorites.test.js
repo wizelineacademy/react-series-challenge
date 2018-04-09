@@ -4,8 +4,10 @@ import { shallowToJson } from 'enzyme-to-json';
 import { Provider } from 'react-redux';
 import {MemoryRouter as Router} from 'react-router-dom';
 import Favorites from '../components/containers/Favorites';
+import GiphyList, 
+  {GiphyListPagerButton, GiphyLinkFavorite} from '../components/presentational/GiphyList';
 import store from '../store';
-import actions from '../actions/favoriteGifs'
+import actions from '../actions/favoriteGifs';
 import dataSource from './__mocks/completeFavoritesDataSource';
 const {creators} = actions;
 
@@ -23,14 +25,15 @@ describe('InputSearch', () => {
   });
 
   it('Find controls', () => {
-    store.dispatch(creators.getFavoriteGifsCompleted(dataSource));
     const wrapper = mount(
       <Provider store={store}>
         <Router>
-          <Favorites store={store} favoriteGifs={dataSource} />
+          <Favorites />
         </Router>
       </Provider>
     );
+
+    store.dispatch(creators.getFavoriteGifsCompleted(dataSource));
 
     const section = wrapper.find('section');
     expect(section.exists()).toEqual(true);
@@ -39,5 +42,19 @@ describe('InputSearch', () => {
     const value = 'anna faris';
     input.simulate('change', { target: { value } });
     input.simulate('focus');
+
+    const list = wrapper.find(GiphyList);
+    expect(list).toHaveLength(1);
+    const buttons = list.find(GiphyListPagerButton)
+    expect(buttons).toHaveLength(4);
+    buttons.at(0).simulate('click');
+    buttons.at(1).simulate('click');
+    buttons.at(2).simulate('click');
+    buttons.at(3).simulate('click');
+
+    
+    const links = wrapper.find(GiphyLinkFavorite);
+    expect(links).toHaveLength(2);
+    links.at(0).simulate('click');
   });
 });
