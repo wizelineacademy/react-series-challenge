@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import {MemoryRouter as Router} from 'react-router-dom';
 import store from '../store';
 import {GiphyList} from '../components/presentational';
+import {GiphyLinkFavorite} from '../components/presentational/GiphyList';
 import dataSource from './__mocks/completeFavoritesDataSource';
 
 describe('GiphyList', () => {
@@ -28,6 +29,13 @@ describe('GiphyList', () => {
       </Provider>
     );
     const ul = wrapper.find('ul');
+    
     expect(ul.exists()).toEqual(true);
+    
+    expect(wrapper.find(GiphyLinkFavorite)).toHaveLength(2);
+    const link = wrapper.find(GiphyLinkFavorite).at(0);
+    expect(link.exists()).toEqual(true);
+    link.simulate('click');
+    
   });
 });

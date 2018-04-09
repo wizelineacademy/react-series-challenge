@@ -79,7 +79,7 @@ const favoriteGifsReducer = (state = initialState, action) => {
         ...action.payload,
       };
 
-      console.log(JSON.stringify(newState, null, 2), 'GET_FAVORITE_GIFS_COMPLETED');
+      //console.log(JSON.stringify(newState, null, 2), 'GET_FAVORITE_GIFS_COMPLETED');
       return newState;
     }
     case favoriteGifs.types.GET_FAVORITE_GIFS_FAILED: {
