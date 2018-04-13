@@ -55,7 +55,7 @@ export function* searchGifs({query}){
 export function* searchGifsLocal({query}){
     try{
         const response = yield call(getLikedGifsSearch,query)
-        console.log(response)
+        
         //poner aqui el acion para mostar gifs
         
         yield put(gifs.creators.getGifsCompleted(response))
@@ -85,6 +85,7 @@ export function* unLikeGifStart(gif){
 
 export function* giphySaga(){
     //aqui poner el action creator del requested
+    
     yield takeEvery(gifs.types.GET_GIFS_REQUESTED, loadTrendingGifs);
     yield takeLatest(gifs.types.SEARCH_GIF_REQUESTED,searchGifs);
     yield takeLatest(gifs.types.LIKE_GIF,likeGifStart);
