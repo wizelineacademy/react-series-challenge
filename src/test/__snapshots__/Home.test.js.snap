@@ -1,0 +1,277 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home should render correctly 1`] = `
+<Provider
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+      Symbol(observable): [Function],
+    }
+  }
+>
+  <MemoryRouter>
+    <Router
+      history={
+        Object {
+          "action": "POP",
+          "block": [Function],
+          "canGo": [Function],
+          "createHref": [Function],
+          "entries": Array [
+            Object {
+              "hash": "",
+              "key": "9ntg05",
+              "pathname": "/",
+              "search": "",
+              "state": undefined,
+            },
+          ],
+          "go": [Function],
+          "goBack": [Function],
+          "goForward": [Function],
+          "index": 0,
+          "length": 1,
+          "listen": [Function],
+          "location": Object {
+            "hash": "",
+            "key": "9ntg05",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+          "push": [Function],
+          "replace": [Function],
+        }
+      }
+    >
+      <Connect(Home)>
+        <Home
+          addFavoriteGifRequested={[Function]}
+          getTrendingGifsRequested={[Function]}
+          removeFavoriteGifRequested={[Function]}
+          trendingGifs={
+            Object {
+              "data": Array [],
+              "error": "",
+              "fetching": true,
+              "pagination": Object {
+                "count": 0,
+                "offset": 1,
+                "pages": 0,
+                "total_count": 0,
+              },
+              "query": "",
+              "selectedGif": Object {
+                "fetching": false,
+                "id": "",
+                "images": Object {
+                  "original": Object {
+                    "url": "",
+                  },
+                },
+                "title": "",
+              },
+              "selectedID": "",
+            }
+          }
+        >
+          <styled.div>
+            <div
+              className="sc-bdVaJa bAdWnB"
+            >
+              <InputSearch
+                defaultValue=""
+                onChange={[Function]}
+                placeholder="Search images ..."
+              >
+                <styled.section>
+                  <section
+                    className="sc-kAzzGY XXYSG"
+                  >
+                    <input
+                      defaultValue=""
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      placeholder="Search images ..."
+                      type="search"
+                    />
+                  </section>
+                </styled.section>
+              </InputSearch>
+              <GiphyList
+                clickAdd2Favorites={[Function]}
+                dataSource={
+                  Object {
+                    "data": Array [],
+                    "error": "",
+                    "fetching": true,
+                    "pagination": Object {
+                      "count": 0,
+                      "offset": 1,
+                      "pages": 0,
+                      "total_count": 0,
+                    },
+                    "query": "",
+                    "selectedGif": Object {
+                      "fetching": false,
+                      "id": "",
+                      "images": Object {
+                        "original": Object {
+                          "url": "",
+                        },
+                      },
+                      "title": "",
+                    },
+                    "selectedID": "",
+                  }
+                }
+                onClickFirstPage={[Function]}
+                onClickLastPage={[Function]}
+                onClickNextPage={[Function]}
+                onClickPreviousPage={[Function]}
+              >
+                <styled.div>
+                  <div
+                    className="sc-EHOje YINzU"
+                  >
+                    <styled.ul>
+                      <ul
+                        className="sc-bZQynM bVjBPE"
+                      >
+                        <styled.li>
+                          <li
+                            className="sc-htoDjs cWyyZm"
+                          >
+                            Loading gifs ...
+                          </li>
+                        </styled.li>
+                      </ul>
+                    </styled.ul>
+                    <styled.ul
+                      visible={false}
+                    >
+                      <ul
+                        className="sc-jTzLTM fvksz"
+                      >
+                        <Component
+                          label="First"
+                          onClick={[Function]}
+                        >
+                          <styled.li>
+                            <li
+                              className="sc-fjdhpX fNhZuO"
+                            >
+                              <styled.button
+                                onClick={[Function]}
+                              >
+                                <button
+                                  className="sc-jzJRlG bRydtF"
+                                  onClick={[Function]}
+                                >
+                                  First
+                                </button>
+                              </styled.button>
+                            </li>
+                          </styled.li>
+                        </Component>
+                        <Component
+                          label="Previous"
+                          onClick={[Function]}
+                        >
+                          <styled.li>
+                            <li
+                              className="sc-fjdhpX fNhZuO"
+                            >
+                              <styled.button
+                                onClick={[Function]}
+                              >
+                                <button
+                                  className="sc-jzJRlG bRydtF"
+                                  onClick={[Function]}
+                                >
+                                  Previous
+                                </button>
+                              </styled.button>
+                            </li>
+                          </styled.li>
+                        </Component>
+                        <styled.li>
+                          <li
+                            className="sc-fjdhpX fNhZuO"
+                          >
+                            <div>
+                              Current page:
+                              <strong>
+                                 
+                                1
+                                 / 
+                                0
+                              </strong>
+                            </div>
+                          </li>
+                        </styled.li>
+                        <Component
+                          label="Next"
+                          onClick={[Function]}
+                        >
+                          <styled.li>
+                            <li
+                              className="sc-fjdhpX fNhZuO"
+                            >
+                              <styled.button
+                                onClick={[Function]}
+                              >
+                                <button
+                                  className="sc-jzJRlG bRydtF"
+                                  onClick={[Function]}
+                                >
+                                  Next
+                                </button>
+                              </styled.button>
+                            </li>
+                          </styled.li>
+                        </Component>
+                        <Component
+                          label="Last"
+                          onClick={[Function]}
+                        >
+                          <styled.li>
+                            <li
+                              className="sc-fjdhpX fNhZuO"
+                            >
+                              <styled.button
+                                onClick={[Function]}
+                              >
+                                <button
+                                  className="sc-jzJRlG bRydtF"
+                                  onClick={[Function]}
+                                >
+                                  Last
+                                </button>
+                              </styled.button>
+                            </li>
+                          </styled.li>
+                        </Component>
+                      </ul>
+                    </styled.ul>
+                  </div>
+                </styled.div>
+              </GiphyList>
+              <styled.section
+                visible={false}
+              >
+                <section
+                  className="sc-chPdSV iDNhkJ"
+                />
+              </styled.section>
+            </div>
+          </styled.div>
+        </Home>
+      </Connect(Home)>
+    </Router>
+  </MemoryRouter>
+</Provider>
+`;

@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InputSearch should render correctly 1`] = `
+<styled.section>
+  <input
+    onFocus={[Function]}
+    type="search"
+  />
+</styled.section>
+`;
