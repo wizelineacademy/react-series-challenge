@@ -8,7 +8,7 @@ describe ('Favorite Gifs Actions', () => {
 
     const expectedAction = {
       type: types.GET_FAVORITE_GIFS_REQUESTED,
-      payload: pagination
+      payload: {pagination}
     };
     expect(creators.getFavoriteGifsRequested(pagination)).toEqual(expectedAction);
   });
@@ -17,7 +17,7 @@ describe ('Favorite Gifs Actions', () => {
     const {data: gifs} = dataSource;
     const expectedAction = {
       type: types.GET_FAVORITE_GIFS_COMPLETED,
-      payload: gifs,
+      payload: {gifs},
     };
     expect(creators.getFavoriteGifsCompleted(gifs)).toEqual(expectedAction);
   });
@@ -36,7 +36,7 @@ describe ('Favorite Gifs Actions', () => {
     const [gif] = dataSource.data;
     const expectedAction = {
       type: types.ADD_FAVORITE_GIF_REQUESTED,
-      payload: gif
+      payload: {gif}
     };
     expect(creators.addFavoriteGifRequested(gif)).toEqual(expectedAction);
   });
@@ -45,7 +45,7 @@ describe ('Favorite Gifs Actions', () => {
     const [gif] = dataSource.data;
     const expectedAction = {
       type: types.ADD_FAVORITE_GIF_COMPLETED,
-      payload: gif,
+      payload: {gif},
     };
     expect(creators.addFavoriteGifCompleted(gif)).toEqual(expectedAction);
   });
@@ -64,7 +64,7 @@ describe ('Favorite Gifs Actions', () => {
     const {id: gifID} = dataSource.data[0];
     const expectedAction = {
       type: types.REMOVE_FAVORITE_GIF_REQUESTED,
-      payload: gifID
+      payload: {gifID}
     };
     expect(creators.removeFavoriteGifRequested(gifID)).toEqual(expectedAction);
   });
@@ -73,7 +73,7 @@ describe ('Favorite Gifs Actions', () => {
     const {id: gifID} = dataSource.data[0];
     const expectedAction = {
       type: types.REMOVE_FAVORITE_GIF_COMPLETED,
-      payload: gifID,
+      payload: {gifID},
     };
     expect(creators.removeFavoriteGifCompleted(gifID)).toEqual(expectedAction);
   });

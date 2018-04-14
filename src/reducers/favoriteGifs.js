@@ -27,56 +27,55 @@ const favoriteGifsReducer = (state = initialState, action) => {
       const newState = {...state};
       const newPagination = { ...newState.pagination };
       const { total_count } = newPagination;
+      const { pagination: actionPagination } = action.payload;
 
       newPagination.pages = total_count > 0 
         ? selectorTotalPages(newPagination)
         : newState.pagination.pages;
 
-      const movePrevious = action.payload && action.payload.movePrevious;
+      const movePrevious = actionPagination && actionPagination.movePrevious;
       if (movePrevious) {
-        action.payload.offset = newState.pagination.offset - 1;
-        action.payload.offset = action.payload.offset < 1 ? 1 : action.payload.offset;
-        delete(action.payload.movePrevious);
+        actionPagination.offset = newState.pagination.offset - 1;
+        actionPagination.offset = actionPagination.offset < 1 ? 1 : actionPagination.offset;
+        delete(actionPagination.movePrevious);
       }
 
-      const moveNext = action.payload && action.payload.moveNext;
+      const moveNext = actionPagination && actionPagination.moveNext;
       if (moveNext) {
-        action.payload.offset = newState.pagination.offset + 1;
+        actionPagination.offset = newState.pagination.offset + 1;
         if (total_count > 0) {
           const lastPage = selectorTotalPages(newPagination);
-          action.payload.offset = action.payload.offset > lastPage 
+          actionPagination.offset = actionPagination.offset > lastPage 
             ? lastPage 
-            : action.payload.offset;
+            : actionPagination.offset;
         }
-        delete(action.payload.moveNext);
+        delete(actionPagination.moveNext);
       }
 
-      const moveLast = action.payload && action.payload.moveLast;
+      const moveLast = actionPagination && actionPagination.moveLast;
       if (moveLast && total_count > 0) {
         const lastPage = selectorTotalPages(newPagination);
-        action.payload.offset = lastPage;
-        delete(action.payload.moveLast);
+        actionPagination.offset = lastPage;
+        delete(actionPagination.moveLast);
       }
 
-      newState.query = action.payload && typeof(action.payload.query) !== 'undefined'
-        ? action.payload.query 
+      newState.query = actionPagination && typeof(actionPagination.query) !== 'undefined'
+        ? actionPagination.query 
         : newState.query;
-      newState.pagination = {...newPagination, ...action.payload};
+      newState.pagination = {...newPagination, ...actionPagination};
 
-      const newStateRet = {
-        ...newState,
-        fetching: true
-      };
-      // console.log(JSON.stringify(newStateRet, null, 2), 'GET_FAVORITE_GIFS_REQUESTED');
-      return newStateRet;
+      newState.fetching = true;
+      // console.log(JSON.stringify(newState, null, 2), 'GET_FAVORITE_GIFS_REQUESTED');
+      return newState;
     }
     case favoriteGifs.types.GET_FAVORITE_GIFS_COMPLETED: {
       //console.log(JSON.stringify(action, null, 2), 'GET_FAVORITE_GIFS_COMPLETED');
-      action.payload.pagination.pages  = selectorTotalPages(action.payload.pagination);
+      const { gifs: actionGifs } = action.payload;
+      actionGifs.pagination.pages  = selectorTotalPages(actionGifs.pagination);
       const newState = {
         ...state,
         fetching: false,
-        ...action.payload,
+        ...actionGifs,
       };
 
       //console.log(JSON.stringify(newState, null, 2), 'GET_FAVORITE_GIFS_COMPLETED');
@@ -91,25 +90,23 @@ const favoriteGifsReducer = (state = initialState, action) => {
     }
 
     case favoriteGifs.types.ADD_FAVORITE_GIF_REQUESTED: {
+      const { gif: actionGif } = action.payload;
       const newState = {...state};
       const newSelected2Add = { ...newState.selected2Add };
       newSelected2Add.saving = true;
 
-      newState.selected2Add = {...newSelected2Add, ...action.payload};
-      return {
-        ...newState
-      };
+      newState.selected2Add = {...newSelected2Add, ...actionGif};
+      return newState;
     }
     case favoriteGifs.types.ADD_FAVORITE_GIF_COMPLETED: {
+      const { gif: actionGif } = action.payload;
       const newState = {...state};
       const newSelected2Add = { ...newState.selected2Add };
       newSelected2Add.saving = false;
       newState.selected2Add = newSelected2Add;
-      newState.data = newState.data.filter(d => d.id !== action.payload.id);
-      newState.data = [...[action.payload], ...newState.data];
-      return {
-        ...newState
-      };
+      newState.data = newState.data.filter(d => d.id !== actionGif.id);
+      newState.data = [actionGif, ...newState.data];
+      return newState;
     }
     case favoriteGifs.types.ADD_FAVORITE_GIF_FAILED: {
       const newState = {...state};
@@ -118,34 +115,27 @@ const favoriteGifsReducer = (state = initialState, action) => {
       newSelected2Add.error = action.error;
       newState.selected2Add = newSelected2Add;
 
-      return {
-        ...newState
-      };
+      return newState;
     }
 
     case favoriteGifs.types.REMOVE_FAVORITE_GIF_REQUESTED: {
       const newState = {...state};
-      newState.selectedID2remove = action.payload;
+      const {gifID} = action.payload;
+      newState.selectedID2remove = gifID;
 
-      return {
-        ...newState
-      };
+      return newState;
     }
     case favoriteGifs.types.REMOVE_FAVORITE_GIF_COMPLETED: {
       const newState = {...state};
-      newState.data = newState.data.filter(d => d.id !== action.payload);
-      newState.data = [...newState.data];
-      return {
-        ...newState
-      };
+      const {gifID} = action.payload;
+      newState.data = newState.data.filter(d => d.id !== gifID);
+      return newState;
     }
     case favoriteGifs.types.REMOVE_FAVORITE_GIF_FAILED: {
       const newState = {...state};
       newState.error = action.error;
 
-      return {
-        ...newState
-      };
+      return newState;
     }
     default:
       return state;

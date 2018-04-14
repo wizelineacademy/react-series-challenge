@@ -133,7 +133,7 @@ class Service {
       request.onload = (e) => {
         try {
           const data = self._onLoadRequest(e);
-          console.log(`[API] loaded ${toUrl} ...`, data);
+          // console.log(`[API] loaded ${toUrl} ...`, data);
           resolve(data);
         } catch (err) {
           const error = new Error(`${err.message}: getData Failed failed on Service class`);
@@ -150,7 +150,7 @@ class Service {
       };
       
       request.send();
-      console.log(`[API] loading ${toUrl} ...`);
+      // console.log(`[API] loading ${toUrl} ...`);
     });
   }
 }

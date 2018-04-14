@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const ErrorWatcherStyled = styled.section`
-  position: absolute;
+  position: fixed;
   bottom: 0px;
   width: 100%;
   height: 60px;

@@ -27,56 +27,60 @@ const trendingGifsReducer = (state = initialState, action) => {
   const { type } = action;
 
   switch (type) {
-    case trendingGifs.types.GET_TRENDING_GIFS_REQUESTED:
+    case trendingGifs.types.GET_TRENDING_GIFS_REQUESTED: {
       const newState = {...state};
       const newPagination = { ...newState.pagination };
       const { total_count } = newPagination;
+      const { pagination: actionPagination } = action.payload;
 
       newPagination.pages = total_count > 0 
         ? selectorTotalPages(newPagination)
         : newState.pagination.pages;
 
-      const movePrevious = action.payload && action.payload.movePrevious;
+      const movePrevious = actionPagination && actionPagination.movePrevious;
       if (movePrevious) {
-        action.payload.offset = newState.pagination.offset - 1;
-        action.payload.offset = action.payload.offset < 1 ? 1 : action.payload.offset;
-        delete(action.payload.movePrevious);
+        actionPagination.offset = newState.pagination.offset - 1;
+        actionPagination.offset = actionPagination.offset < 1 ? 1 : actionPagination.offset;
+        delete(actionPagination.movePrevious);
       }
 
-      const moveNext = action.payload && action.payload.moveNext;
+      const moveNext = actionPagination && actionPagination.moveNext;
       if (moveNext) {
-        action.payload.offset = newState.pagination.offset + 1;
+        actionPagination.offset = newState.pagination.offset + 1;
         if (total_count > 0) {
           const lastPage = selectorTotalPages(newPagination);
-          action.payload.offset = action.payload.offset > lastPage 
+          actionPagination.offset = actionPagination.offset > lastPage 
             ? lastPage 
-            : action.payload.offset;
+            : actionPagination.offset;
         }
-        delete(action.payload.moveNext);
+        delete(actionPagination.moveNext);
       }
 
-      const moveLast = action.payload && action.payload.moveLast;
+      const moveLast = actionPagination && actionPagination.moveLast;
       if (moveLast && total_count > 0) {
         const lastPage = selectorTotalPages(newPagination);
-        action.payload.offset = lastPage;
-        delete(action.payload.moveLast);
+        actionPagination.offset = lastPage;
+        delete(actionPagination.moveLast);
       }
 
-      newState.query = action.payload && typeof(action.payload.query) !== 'undefined'
-        ? action.payload.query 
+      newState.query = actionPagination && typeof(actionPagination.query) !== 'undefined'
+        ? actionPagination.query 
         : newState.query;
-      newState.pagination = {...newPagination, ...action.payload};
+      newState.pagination = {...newPagination, ...actionPagination};
+      newState.fetching = true;
+      return newState;
+    }
+    case trendingGifs.types.GET_TRENDING_GIFS_COMPLETED: {
+      const newState = {...state};
+      const { gifs: actionGifs } = action.payload;
+      actionGifs.pagination.pages  = selectorTotalPages(actionGifs.pagination);
+
       return {
         ...newState,
-        fetching: true
-      };
-    case trendingGifs.types.GET_TRENDING_GIFS_COMPLETED:
-      action.payload.pagination.pages  = selectorTotalPages(action.payload.pagination);
-      return {
-        ...state,
+        ...actionGifs,
         fetching: false,
-        ...action.payload,
       };
+    }
     case trendingGifs.types.GET_TRENDING_GIFS_FAILED:
       return {
         ...state,
@@ -90,21 +94,17 @@ const trendingGifsReducer = (state = initialState, action) => {
       newSeletedGif.fetching = true;
       delete(newSeletedGif.isFavorite);
       newState.selectedGif = newSeletedGif;
-      newState.selectedID = action.payload;
-      return {
-        ...newState
-      };
+      newState.selectedID = action.payload.gifID;
+      return newState;
     }
 
     case trendingGifs.types.GET_GIF_COMPLETED: {
       const newState = {...state};
       const newSeletedGif = {...newState.selectedGif};
       newSeletedGif.fetching = false;
-      newState.selectedGif = {...newSeletedGif, ...action.payload};
+      newState.selectedGif = {...newSeletedGif, ...action.payload.gif};
       
-      return {
-        ...newState
-      };
+      return newState;
     }
     case trendingGifs.types.GET_GIF_FAILED: {
       const newState = {...state};
@@ -113,43 +113,39 @@ const trendingGifsReducer = (state = initialState, action) => {
       newSeletedGif.error = action.error;
       newState.selectedGif = newSeletedGif;
 
-      return {
-        ...newState
-      };
+      return newState;
     }
     
     case trendingGifs.types.ADDED_TO_FAVORITES_GIF: {
       const newState = {...state};
-      if (newState.selectedGif.id === action.payload) {
+      const {gifID} = action.payload;
+      if (newState.selectedGif.id === gifID) {
         const newSeletedGif = {...newState.selectedGif};
         newSeletedGif.isFavorite = true;
         newState.selectedGif = newSeletedGif;
       }
-      const currGif = newState.data.find(d => d.id === action.payload);
+      const currGif = newState.data.find(d => d.id === gifID);
       if (currGif) {
         currGif.isFavorite = true;
       }
       newState.data = [...newState.data];
-      return {
-        ...newState
-      };
+      return newState;
     }
 
     case trendingGifs.types.REMOVED_TO_FAVORITES_GIF: {
+      const {gifID} = action.payload;
       const newState = {...state};
-      const currGif = newState.data.find(d => d.id === action.payload);
+      const currGif = newState.data.find(d => d.id === gifID);
       if (currGif) {
         currGif.isFavorite = false;
       }
-      if (newState.selectedGif.id === action.payload) {
+      if (newState.selectedGif.id === gifID) {
         const newSeletedGif = {...newState.selectedGif};
         newSeletedGif.isFavorite = false;
         newState.selectedGif = newSeletedGif;
       }
       newState.data = [...newState.data];
-      return {
-        ...newState
-      };
+      return newState;
     }
     
     default:

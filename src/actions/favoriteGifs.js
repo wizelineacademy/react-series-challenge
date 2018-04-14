@@ -10,12 +10,12 @@ const REMOVE_FAVORITE_GIF_FAILED = 'REMOVE_FAVORITE_GIF_FAILED';
 
 const getFavoriteGifsRequested = (pagination) => ({
   type: GET_FAVORITE_GIFS_REQUESTED,
-  payload: pagination
+  payload: {pagination}
 });
 
 const getFavoriteGifsCompleted = gifs => ({
   type: GET_FAVORITE_GIFS_COMPLETED,
-  payload: gifs,
+  payload: {gifs},
 });
 
 const getFavoriteGifsFailed = error => ({
@@ -26,12 +26,12 @@ const getFavoriteGifsFailed = error => ({
 
 const addFavoriteGifRequested = (gif) => ({
   type: ADD_FAVORITE_GIF_REQUESTED,
-  payload: gif
+  payload: {gif}
 });
 
 const addFavoriteGifCompleted = gif => ({
   type: ADD_FAVORITE_GIF_COMPLETED,
-  payload: gif,
+  payload: {gif},
 });
 
 const addFavoriteGifFailed = error => ({
@@ -42,12 +42,12 @@ const addFavoriteGifFailed = error => ({
 
 const removeFavoriteGifRequested = (gifID) => ({
   type: REMOVE_FAVORITE_GIF_REQUESTED,
-  payload: gifID
+  payload: {gifID}
 });
 
 const removeFavoriteGifCompleted = gifID => ({
   type: REMOVE_FAVORITE_GIF_COMPLETED,
-  payload: gifID,
+  payload: {gifID},
 });
 
 const removeFavoriteGifFailed = error => ({

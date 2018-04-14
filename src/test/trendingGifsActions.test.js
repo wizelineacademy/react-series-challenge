@@ -8,7 +8,7 @@ describe ('Trendind Gifs Actions', () => {
 
     const expectedAction = {
       type: types.GET_TRENDING_GIFS_REQUESTED,
-      payload: pagination
+      payload: {pagination}
     };
     expect(creators.getTrendingGifsRequested(pagination)).toEqual(expectedAction);
   });
@@ -17,7 +17,7 @@ describe ('Trendind Gifs Actions', () => {
     const {data: gifs} = dataSource;
     const expectedAction = {
       type: types.GET_TRENDING_GIFS_COMPLETED,
-      payload: gifs,
+      payload: {gifs},
     };
     expect(creators.getTrendingGifsCompleted(gifs)).toEqual(expectedAction);
   });
@@ -36,7 +36,7 @@ describe ('Trendind Gifs Actions', () => {
     const {id: gifID} = dataSource.data[0];
     const expectedAction = {
       type: types.GET_GIF_REQUESTED,
-      payload: gifID
+      payload: {gifID}
     };
     expect(creators.getGifRequested(gifID)).toEqual(expectedAction);
   });
@@ -45,7 +45,7 @@ describe ('Trendind Gifs Actions', () => {
     const [gif] = dataSource.data;
     const expectedAction = {
       type: types.GET_GIF_COMPLETED,
-      payload: gif,
+      payload: {gif},
     };
     expect(creators.getGifCompleted(gif)).toEqual(expectedAction);
   });
@@ -63,7 +63,7 @@ describe ('Trendind Gifs Actions', () => {
     const {id: gifID} = dataSource.data[0];
     const expectedAction = {
       type: types.ADDED_TO_FAVORITES_GIF,
-      payload: gifID
+      payload: {gifID}
     };
     expect(creators.added2Favorites(gifID)).toEqual(expectedAction);
   });
@@ -72,7 +72,7 @@ describe ('Trendind Gifs Actions', () => {
     const {id: gifID} = dataSource.data[0];
     const expectedAction = {
       type: types.REMOVED_TO_FAVORITES_GIF,
-      payload: gifID
+      payload: {gifID}
     };
     expect(creators.removed2Favorites(gifID)).toEqual(expectedAction);
   });

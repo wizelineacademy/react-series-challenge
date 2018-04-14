@@ -11,12 +11,12 @@ const REMOVED_TO_FAVORITES_GIF = 'REMOVED_TO_FAVORITES_GIF';
 
 const getTrendingGifsRequested = (pagination) => ({
   type: GET_TRENDING_GIFS_REQUESTED,
-  payload: pagination
+  payload: {pagination}
 });
 
 const getTrendingGifsCompleted = gifs => ({
   type: GET_TRENDING_GIFS_COMPLETED,
-  payload: gifs,
+  payload: {gifs},
 });
 
 const getTrendingGifsFailed = error => ({
@@ -26,12 +26,12 @@ const getTrendingGifsFailed = error => ({
 
 const getGifRequested = (gifID) => ({
   type: GET_GIF_REQUESTED,
-  payload: gifID
+  payload: {gifID}
 });
 
 const getGifCompleted = gif => ({
   type: GET_GIF_COMPLETED,
-  payload: gif,
+  payload: {gif},
 });
 
 const getGifFailed = error => ({
@@ -41,12 +41,12 @@ const getGifFailed = error => ({
 
 const added2Favorites = gifID => ({
   type: ADDED_TO_FAVORITES_GIF,
-  payload: gifID,
+  payload: {gifID},
 });
 
 const removed2Favorites = gifID => ({
   type: REMOVED_TO_FAVORITES_GIF,
-  payload: gifID,
+  payload: {gifID},
 });
 
 export default {
