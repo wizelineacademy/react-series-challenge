@@ -11,16 +11,17 @@ import actions from '../actions/favoriteGifs';
 import dataSource from './__mocks/completeFavoritesDataSource';
 const {creators} = actions;
 
-describe('InputSearch', () => {
+describe('Favorites ...', () => {
   it('should render correctly', () => {
-    store.dispatch(creators.getFavoriteGifsCompleted(dataSource));
     const output = shallow(
       <Provider store={store}>
         <Router>
-          <Favorites store={store} favoriteGifs={dataSource} />
+          <Favorites />
         </Router>
       </Provider>
     );
+
+    store.dispatch(creators.getFavoriteGifsCompleted(dataSource));
     expect(shallowToJson(output)).toMatchSnapshot();
   });
 

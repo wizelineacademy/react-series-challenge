@@ -13,9 +13,16 @@ const {creators} = actions;
 
 describe('Home', () => {
   it('should render correctly', () => {
-    const output = shallow(
-      <Home store={store} />
+    
+    const output = mount(
+      <Provider store={store}>
+        <Router>
+          <Home />
+        </Router>
+      </Provider>
     );
+    store.dispatch(creators.getTrendingGifsCompleted(dataSource));
+
     expect(shallowToJson(output)).toMatchSnapshot();
   });
 

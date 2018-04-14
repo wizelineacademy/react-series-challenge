@@ -10,14 +10,23 @@ import Favorites from '../components/containers/Favorites';
 import GifDetail from '../components/containers/GifDetail';
 import NotFound from '../components/containers/NotFound';
 import {InputSearch, GiphyList} from '../components/presentational';
+import actions from '../actions/trendingGifs';
+import dataSource from './__mocks/completeFavoritesDataSource';
 import '../style/global';
+const {creators} = actions;
+
 
 
 describe('App', () => {
   it('should render correctly', () => {
     const output = shallow(
-      <App />
+      <Provider store={store}>
+        <Router>
+          <App />
+        </Router>
+      </Provider>
     );
+    store.dispatch(creators.getTrendingGifsCompleted(dataSource));
     expect(shallowToJson(output)).toMatchSnapshot();
   });
 
