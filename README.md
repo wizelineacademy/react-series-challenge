@@ -44,7 +44,7 @@ At this point, don't worry about styling nor tests, you will be focused on those
 
 ## Code Review
 - Fork this project.
-- You have until DUE DATE TBD to open a pull request (PR) against this repo (master branch).
+- You must open a pull request (PR) against this repo (master branch) for each of your deliveries.
 - If you send a commit after the deadline we won't take it into account for the evaluation.
 - All feedback will be given via your PR.
 
