@@ -2,6 +2,8 @@
 
 The output of this challenge is to create a Giphy Client. You will be applying the concepts that you learned along the course.
 
+Joins us via [Slack](https://join.slack.com/t/wizelineacademy/shared_invite/enQtMzkzNjQ5NzE2ODU1LTZhZDlhMWUwNjViMDYyNjcyY2ZhOTYzZjdmMzc3ZjFkZjE1OTA3NTlkZGE0NjU0YWYzODUzNmQ1NGVjYTUzYTc)!
+
 #### What we are expecting from you is:
 - Use [Giphy API](https://developers.giphy.com/docs)
 - Use styled components for styling
