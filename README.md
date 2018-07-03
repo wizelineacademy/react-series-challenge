@@ -10,7 +10,9 @@ The output of this challenge is to create a Giphy Client. You will be applying t
 - Use Redux Saga for API requests
 - Use Redux for your application's state management 
 
-## Delivery 
+## Delivery
+
+### First Delivery (due July 8th 23:59pm)
 - Home View
   - It displays the trending GIFs using Giphy Trending API.
   - It has a search bar, which uses Giphy Search API.
@@ -22,8 +24,15 @@ The output of this challenge is to create a Giphy Client. You will be applying t
   - It has a search bar, which filters from the Redux state.
   - Each GIF may be removed from favorite in the Redux state.
 
+At this point, don't worry about styling nor tests, you will be focused on those in the next delivery.
+
+### Second Delivery (due July 11th 23:59pm)
+- Style your views using styled components.
+  - Remove all CSS from the boilerplate code.
+
 - Unit Testing
-  - Coverage at least 70%
+  - Create tests for your application
+  - Coverage must be at least 70%
 
 ## Restrictions
 - Don’t include extra dependencies (lodash, ramda).
