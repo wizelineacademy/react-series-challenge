@@ -1,4 +1,5 @@
-import React, {Component} from 'react'
+import React, {Component} from 'react';
+import GifCard from '../../components/GifCards/GifCards';
 
 class GifPage extends Component {
     constructor(props){
@@ -9,10 +10,11 @@ class GifPage extends Component {
     }
 
     componentDidMount() {
-        fetch("http://api.giphy.com/v1/gifs/search?api_key=MKGAXNQl5cXUBSBMrXSsufVZ9bqvhX6p&q=cheeseburgers")
+        //fetch("http://api.giphy.com/v1/gifs/search?api_key=MKGAXNQl5cXUBSBMrXSsufVZ9bqvhX6p&q=cheeseburger")
+        fetch(`http://api.giphy.com/v1/gifs/trending?api_key=MKGAXNQl5cXUBSBMrXSsufVZ9bqvhX6p`)
         .then(Response => {
                 return Response.json().then( (json) => {
-                    //console.log(json.data);
+                    console.log(json.data);
                     this.setState({ gifs: json.data });
                 }
             );
@@ -20,14 +22,24 @@ class GifPage extends Component {
     }
 
     render() {
-        //console.log(this.state.gifs);
+
+        // Apply destructuring
         let arrays = null;
-        
-        if(this.state.gifs !==  null){
-            arrays = Object.keys(this.state.gifs).map((key, index) => {
-            return (<img key = {this.state.gifs[index].id} src = {this.state.gifs[index].images.original.url} alt = "Falla" />);
+        let gifsObjects = this.state.gifs;
+            
+        if(gifsObjects !== null){
+            arrays = Object.keys(gifsObjects).map((key, index) => {
+                let { id } = gifsObjects[index]; 
+                let { url } = gifsObjects[index].images.original;
+
+                //return (<img key = {id} src = {url} alt = "Cargando..." />);
+                return (<GifCard key = {id} imageUrl = {url} />);
             });
-            console.log(this.state.gifs[0]);
+            //console.log(arrays.length);
+            if(arrays.length === 0){
+                arrays = <h1> No se encontraron resultados :( </h1>;
+            }
+
         } else {
             arrays = <h1>Loading</h1>;
         }
@@ -37,16 +49,17 @@ class GifPage extends Component {
             <header>
                 <nav>
                     <ul>
-                        {arrays}
                         <li>Home</li>
                         <li>Favorites</li>
                     </ul>
                 </nav>
             </header>
-
+    
             <div>
                 <input type="text" placeholder = "Search for awesome gifs" />
             </div>
+
+            {arrays}
         </div>)
     }
 }
