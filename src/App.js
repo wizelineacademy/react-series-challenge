@@ -9,6 +9,7 @@ import {
 } from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
+import Home from './components/Home'
 
 class App extends Component {
   render() {
@@ -24,10 +25,7 @@ class App extends Component {
         </header>
 
         <Switch>
-             <Route path="/Search" render={()=> 
-                                        <p className="App-intro">
-                                          Welcome to Search.
-                                        </p>}  />
+             <Route path="/Search" component={Home}  />
              <Route path="/Favorites" render={()=> 
                                         <p className="App-intro">
                                           Welcome to Favorites.
