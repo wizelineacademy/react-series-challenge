@@ -29,3 +29,15 @@ body {
 .SearchBar input::-webkit-input-placeholder {
   color: #000;
 }
+
+.DisplayGifs {
+  padding: 3vh 1vw;
+  color: #F2C812;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.SingleGif {
+  flex-basis: 30%;
+  margin: 1vh 1vw;
+}
