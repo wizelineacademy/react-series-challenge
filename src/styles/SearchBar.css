@@ -1,8 +1,11 @@
 .SearchBar > input {
+  background: url('../icons/loupe.svg') no-repeat right 4px center;
+  background-size: 1.9em;
   font-size: 1.2em;
   outline-style: none;
   padding: 0.5em;
-  width: 100%;
+  padding-right: 2.3em;
+  width: calc(100% - 2.2em);
 }
 
 .SearchBar > input:focus {
