@@ -19,7 +19,7 @@ class Home extends Component {
             return results.json();
         }).then(data => {
             let images= data.data.map(image=>{
-                return <Gif src={image.images.fixed_width.url} liked={false}/>
+                return <Gif id={image.id} src={image.images.fixed_width.url} liked={false} />;
             });
             this.setState({gifs:images});
         }).catch(err => {

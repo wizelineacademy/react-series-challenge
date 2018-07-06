@@ -1,20 +1,13 @@
-import React, { Component } from 'react';
-import {Switch, Route} from "react-router-dom"
-import Fav from "./components/Fav"
-import Home from "./components/Home"
+import React, { Component } from "react";
+import Routes from "./Routes";
 import Navbar from "./components/Navbar";
-import Search from "./components/Search";
 
 class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <Navbar/>
-        <Switch>
-          <Route path="/fav" component={Fav}/>
-          <Route path="/" component={Home}/>
-          <Route path="/search" component={Search}/>
-        </Switch>
+        <Navbar />
+        <Routes />
       </React.Fragment>
     );
   }
