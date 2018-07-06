@@ -1,5 +1,8 @@
 {
   "name": "react-series-challenge",
+  "author": {
+    "name": "Luis Perez Bautista"
+  },
   "version": "0.1.0",
   "private": true,
   "dependencies": {
