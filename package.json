@@ -5,7 +5,10 @@
   "dependencies": {
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-scripts": "1.1.1"
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "1.1.1",
+    "redux": "^4.0.0",
+    "redux-saga": "^0.16.0"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -27,10 +30,13 @@
     "eject": "react-scripts eject",
     "lint": "eslint ./",
     "test": "yarn lint && yarn jest",
-    "jest": "react-scripts test --env=jsdom --coverage"
+    "jest": "react-scripts test --env=jsdom --coverage",
+    "precommit": "pretty-quick staged"
   },
   "devDependencies": {
     "enzyme": "^3.3.0",
-    "enzyme-adapter-react-16": "^1.1.1"
+    "enzyme-adapter-react-16": "^1.1.1",
+    "prettier": "^1.13.7",
+    "pretty-quick": "^1.6.0"
   }
 }
