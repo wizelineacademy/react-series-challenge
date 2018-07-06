@@ -3,6 +3,7 @@ import {Switch, Route} from "react-router-dom"
 import Fav from "./components/Fav"
 import Home from "./components/Home"
 import Navbar from "./components/Navbar";
+import Search from "./components/Search";
 
 class App extends Component {
   render() {
@@ -12,6 +13,7 @@ class App extends Component {
         <Switch>
           <Route path="/fav" component={Fav}/>
           <Route path="/" component={Home}/>
+          <Route path="/search" component={Search}/>
         </Switch>
       </React.Fragment>
     );

@@ -1,4 +1,4 @@
-import React, {Component} from "rect";
+import React, {Component} from "react";
 
 class Gif extends Component{
     liked =(like)=>{
@@ -10,10 +10,10 @@ class Gif extends Component{
     };
     render(){
         return(
-            <>
+            <div>
                 <img src={this.props.src}/>
                 {this.liked(this.props.liked)}
-            </>
+            </div>
         );
     }
 }

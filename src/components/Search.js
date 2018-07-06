@@ -1,23 +1,21 @@
-import React, {
-    Component
-} from "react";
-import Gif from "./Gif"
-class Home extends Component {
-    constructor(props) {
+import React, {Component} from "react";
+import Gif from "./Gif";
+class Search extends Component{
+    constructor(props){
         super(props);
-        this.state = {
-            gifs: []
+        this.state={
+            gifs:[]
         };
     }
-
-
     componentDidMount() {
-        fetch("https://api.giphy.com/v1/gifs/trending?api_key=" + process.env.REACT_APP_API_KEY + "&limit=25&rating=G", {
+        console.log(this.props);
+        fetch("https://api.giphy.com/v1/gifs/search?api_key=" + process.env.REACT_APP_API_KEY + "&q="+this.props.location.state.search+"&limit=25&offset=0&rating=G&lang=en", {
             method: "GET",
             timeout: process.env.REACT_APP_TIMEOUT
         }).then(results => {
             return results.json();
         }).then(data => {
+            console.log(data.data);
             let images= data.data.map(image=>{
                 return <Gif src={image.images.fixed_width.url} liked={false}/>
             });
@@ -27,8 +25,7 @@ class Home extends Component {
         });
     }
 
-
-    render() {
+    render(){
         return(
             <React.Fragment>
                 {this.state.gifs}
@@ -36,5 +33,4 @@ class Home extends Component {
         );
     }
 }
-
-export default Home;
+export default Search;
