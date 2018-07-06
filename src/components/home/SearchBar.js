@@ -4,6 +4,10 @@
 
 import React, { Component } from 'react';
 
+/**
+ * SearchBar Component becomes a class based component to handle its value state
+ */
+
 export default class SearchBar extends Component {
     constructor(props){
         super(props);
@@ -25,7 +29,7 @@ export default class SearchBar extends Component {
     render(){
         return (
             <section className="SearchBar">
-                <input type="text" value={this.state.term} onChange={ this.onTermChange } />
+                <input type="text" value={this.state.term} onChange={ this.onTermChange } placeholder="Search Giphy:" />
             </section>
         );
     };
