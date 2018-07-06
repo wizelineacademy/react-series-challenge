@@ -1,28 +1,43 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+html {
+  font-size: 62.5%;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+body {
+  font-size: 1.6rem;
+  background: #0C120C;
 }
 
-.App-title {
-  font-size: 1.5em;
+.HomeView {
+  padding: 1vh 1vw;
 }
 
-.App-intro {
-  font-size: large;
+.SearchBar input {
+  width: 100%;
+  padding: 2vh 1vw;
+  background: #3C6997;
+  border: none;
+  border-radius: 5px;
+  font-size: 2rem;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.SearchBar input::-webkit-input-placeholder {
+  color: #000;
+}
+
+.DisplayGifs {
+  padding: 3vh 1vw;
+  color: #F2C812;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.SingleGif {
+  flex-basis: 30%;
+  margin: 1vh 1vw;
 }

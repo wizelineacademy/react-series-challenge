@@ -1,19 +1,24 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+//Import Route and Switch Components from react-router-dom
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
+
+//Import Components
+import HomeView from './components/HomeView';
+import FavouritesView from './components/FavouritesView';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      /**
+       * Add a Switch Component to ensure only ONE match
+       * Add a HomeView Route -> This will serve as our Homepage
+       * Add a FavouritesView Route -> This will render our FavouritesView
+       */
+      <Switch>
+        <Route path='/favourites' component={FavouritesView} />
+        <Route path='/' component={HomeView} />
+      </Switch>
     );
   }
 }
