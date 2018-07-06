@@ -1,29 +1,31 @@
-import React, { Component } from "react";
-import { GiftContainer }  from '../styled_component/Home.styled'
+import React from "react";
+import { connect } from 'react-redux';
+import { GiftContainer }  from '../styled_component/Home.styled';
 
-class Home extends Component {
+const Home = (props) => {
 
-    constructor(props) {
-      super(props);
-  
-      this.state = {
-        data: 300,
-        principal: 'temperature',
-      };
-    }
-  
-  
-    render() {
-      const { data, principal } = this.state;
-  
-      return (
-        <GiftContainer>
-          <h3>{data}</h3>
-          <span>{principal}</span>
-        </GiftContainer>
+  const {
+    gifts,
+  } = props;
 
-      );
-    }
-  }
+
+  return (
+    <GiftContainer>
+      <h3>{props.gifts}</h3>
+    </GiftContainer>
+
+  );
+
+}
+
+const mapStateToProps = (state) => {
+  const {
+    gifts,
+  } = state;
   
-export default Home;
+  return {
+    gifts,
+  };
+};
+  
+export default connect(mapStateToProps, null)(Home);
