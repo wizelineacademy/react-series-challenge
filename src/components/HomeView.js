@@ -2,12 +2,17 @@
  * HomeView Component
  */
 
- import React, { Component } from 'react';
+import React from 'react';
 
- const HomeView = () => {
-     return (
-         <h1>HomeView</h1>
-     );
- }
+//Import Components
+import SearchBar from './home/SearchBar';
 
- export default HomeView;
+const HomeView = () => {
+    return (
+        <section className="HomeView">
+            <SearchBar />
+        </section>
+    );
+}
+
+export default HomeView;
