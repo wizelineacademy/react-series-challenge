@@ -1,0 +1,25 @@
+.Header {
+  align-items: center;
+  background-color: rgb(80, 80, 80);
+  color: white;
+  display: flex;
+  padding: 15px;
+}
+
+.Header-logo {
+  height: 4em;
+}
+
+.Header-nav-items {
+  margin-left: 1.5em;
+}
+
+.Header-nav-items > a {
+  color: white;
+  opacity: 0.8;
+  text-decoration: none;
+}
+
+.Header-nav-items > a:hover {
+  opacity: 0.99;
+}
