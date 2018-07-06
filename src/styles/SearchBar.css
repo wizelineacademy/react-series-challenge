@@ -1,0 +1,10 @@
+.SearchBar > input {
+  font-size: 1.2em;
+  outline-style: none;
+  padding: 0.5em;
+  width: 100%;
+}
+
+.SearchBar > input:focus {
+  border-color: rgb(61, 180, 255);
+}
