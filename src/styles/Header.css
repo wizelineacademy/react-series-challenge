@@ -1,9 +1,12 @@
 .Header {
-  align-items: center;
   background-color: rgb(80, 80, 80);
   color: white;
-  display: flex;
   padding: 15px;
+}
+
+.Header-container {
+  align-items: center;
+  display: flex;
 }
 
 .Header-logo {
