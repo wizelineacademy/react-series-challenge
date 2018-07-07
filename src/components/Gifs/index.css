@@ -1,0 +1,17 @@
+.gifs {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fill, 10rem);
+    grid-template-rows: repeat(auto-fill, 10rem)
+}
+
+.empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.empty .gif{
+    width: 32rem;
+    height: auto;
+}
