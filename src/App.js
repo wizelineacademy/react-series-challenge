@@ -6,6 +6,8 @@ import About from './components/About'
 import Contact from './components/Contact'
 import Home from './components/Home'
 import Page404 from './components/Page404'
+import { Provider } from "react-redux";
+import store from "./giphyClient/store";
 import './App.css';
 
 class App extends Component {
@@ -17,7 +19,7 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <div className="App-intro">
-          <h1>Hello</h1>
+          <h1>React Challenge</h1>
           <ul>
             <li><NavLink to="/about">About</NavLink></li>
             <li><NavLink to="/contact">Contact</NavLink></li>
@@ -26,7 +28,9 @@ class App extends Component {
           <Switch>
             <Route exact path="/about" component={About} />
             <Route exact path="/contact" component={Contact} />
-            <Route exact path="/" component={Home} />
+            <Provider store={store}>
+              <Route exact path="/" component={Home} />
+            </Provider>
             <Route component={Page404} />
           </Switch>
         </div>
