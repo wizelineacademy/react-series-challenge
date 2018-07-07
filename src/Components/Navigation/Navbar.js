@@ -8,6 +8,10 @@ const Navbar = () => (
       <NavLink to="/">Trending Gifs</NavLink>
       <NavLink to="/favorites">Favorites</NavLink>
     </nav>
+    <div>
+      <i className="fas fa-search" />
+      <input type="text" placeholder="Search gifs..." />
+    </div>
   </div>
 );
 

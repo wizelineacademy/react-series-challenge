@@ -1,4 +1,4 @@
-import trendGifsActions from "../actions/trendGifs";
+import searchGifsActions from "../actions/searchGifs";
 
 // reducer initial state
 const initialState = {
@@ -7,19 +7,19 @@ const initialState = {
   error: null
 };
 
-const trendGifs = (state = initialState, action) => {
+const searchGifs = (state = initialState, action) => {
   const { type, data, error } = action;
   console.log(action);
   switch (type) {
-    case trendGifsActions.types.API_CALL_REQUEST:
+    case searchGifsActions.types.API_CALL_SEARCH_REQUEST:
       return { ...state, fetching: true, error: null };
-    case trendGifsActions.types.API_CALL_SUCCESS:
+    case searchGifsActions.types.API_CALL_SEARCH_SUCCESS:
       return { ...state, fetching: false, data };
-    case trendGifsActions.types.API_CALL_FAILURE:
+    case searchGifsActions.types.API_CALL_SEARCH_FAILURE:
       return { ...state, fetching: false, data: null, error };
     default:
       return state;
   }
 };
 
-export default trendGifs;
+export default searchGifs;
