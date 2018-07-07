@@ -1,0 +1,19 @@
+{
+  "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
+  "linterOptions": {
+    "exclude": [
+      "config/**/*.js",
+      "coverage/**/*.js",
+      "dist/**/*.js",
+      "node_modules/**/*.ts"
+    ]
+  },
+  "rules": {
+    "variable-name": [ true, "ban-keywords", "check-format", "allow-leading-underscore", "allow-snake-case" ],
+    "object-literal-sort-keys": false,
+    "jsx-boolean-value": false,
+    "ordered-imports": false,
+    "curly": [true, "ignore-same-line"]
+  },
+  "defaultSeverity": "warning"
+}
