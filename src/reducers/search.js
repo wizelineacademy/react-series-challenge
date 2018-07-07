@@ -6,7 +6,7 @@ const searchReducer = (state = {}, action) => {
 
     switch(type) {
         case SEARCH_FETCHED: {
-            return { ...state, search: payload }
+            return { ...state, gifs: payload }
         }
         default: 
             return state
