@@ -1,7 +1,8 @@
 import React from "react";
+import ListGifs from "../components/ListGifs/ListGifs";
 
 const Home = () => {
-  return <div>Home</div>;
+  return <ListGifs />;
 };
 
 export default Home;

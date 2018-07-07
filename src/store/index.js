@@ -1,16 +1,23 @@
-import { createStore, applyMiddleware } from "redux";
+import { createStore, applyMiddleware, compose } from "redux";
 import createSagaMiddleware from "redux-saga";
 import reducers from "../reducers";
-
-// ...
-import { helloSaga } from "../sagas";
+import customMiddleware from "../middleware";
+import rootSaga from "../sagas";
 
 const sagaMiddleware = createSagaMiddleware();
 
-const store = createStore(reducers, applyMiddleware(sagaMiddleware));
+const initialState = {};
+const enhancers = [];
 
-sagaMiddleware.run(helloSaga);
+const middleware = [sagaMiddleware, ...customMiddleware];
 
-const action = type => store.dispatch({ type });
+const composedEnhancers = compose(
+  applyMiddleware(...middleware),
+  ...enhancers
+);
+
+const store = createStore(reducers, initialState, composedEnhancers);
+
+sagaMiddleware.run(rootSaga);
 
 export default store;

@@ -1,12 +1,21 @@
-export default function counter(state = 0, action) {
-  switch (action.type) {
-    case "GET_TRENDING_GIFS":
-      return state + 1;
-    case "INCREMENT_IF_ODD":
-      return state % 2 !== 0 ? state + 1 : state;
-    case "DECREMENT":
-      return state - 1;
+import trendingGifsActions from "../actions/trendingGifs";
+
+const initialState = {
+  gifs: []
+};
+
+const cryptoPricesReducer = (state = initialState, action) => {
+  const { type, payload } = action;
+
+  switch (type) {
+    case trendingGifsActions.types.FETCH_TRENDING_GIFS: {
+      const { gifs } = payload;
+      return { ...state, gifs };
+    }
+
     default:
       return state;
   }
-}
+};
+
+export default cryptoPricesReducer;
