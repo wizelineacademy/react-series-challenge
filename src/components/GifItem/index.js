@@ -1,12 +1,13 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const ItemWrapper = styled.div`
   background-color: #fff;
   border-radius: 3px;
   padding: 8px;
   border-color: #000;
-  border-width: 1px;
+  border-width: 4px;
+  border-color: #000;
   box-shadow: 1px 1px 1px #000;
   margin: 4px 10px;
   flex: 0.33;
