@@ -1,5 +1,5 @@
 import React from "react";
-import SearchButton from "../SearchButton/SearchButton";
+import SearchBar from "../SearchBar/SearchBar";
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => (
@@ -8,7 +8,7 @@ const Navbar = () => (
       <NavLink to="/">Home</NavLink>
       <NavLink to="/favorites">Favoritos</NavLink>
     </div>
-    <SearchButton />
+    <SearchBar />
   </div>
 );
 

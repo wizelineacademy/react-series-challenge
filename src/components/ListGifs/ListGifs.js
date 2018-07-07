@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import FavoriteButton from "../FavoriteButton/FavoriteButton";
 
 class ListGifs extends Component {
   componentDidMount() {
@@ -10,11 +11,17 @@ class ListGifs extends Component {
     const { gifs, sGifs } = this.props;
     if (!sGifs.length) {
       return gifs.map(gif => (
-        <img key={gif.id} src={gif.images.preview_gif.url} alt="Gif item" />
+        <div key={gif.id}>
+          <img src={gif.images.preview_gif.url} alt="Gif item" />
+          <FavoriteButton gif={gif} />
+        </div>
       ));
     }
     return sGifs.map(gif => (
-      <img key={gif.id} src={gif.images.preview_gif.url} alt="Gif item" />
+      <div key={gif.id}>
+        <img src={gif.images.preview_gif.url} alt="Gif item" />
+        <FavoriteButton gif={gif} key={gif.id} />
+      </div>
     ));
   }
 }

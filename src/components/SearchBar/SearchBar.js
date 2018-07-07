@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-class SearchButton extends Component {
+class SearchBar extends Component {
   state = {
     value: ""
   };
@@ -41,4 +41,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
   null,
   mapDispatchToProps
-)(SearchButton);
+)(SearchBar);
