@@ -8,14 +8,16 @@ export default function* watcherSaga() {
 }
 
 // function that makes the api request and returns a Promise for response
-const fetchSearchGifs = query => {
+const fetchSearchGifs = action => {
+  const { query } = action;
+  console.log(query);
   return axios({
     method: "get",
     baseURL: HOST,
     url: "/v1/gifs/search",
     params: {
       api_key: API_KEY,
-      query
+      q: query
     }
   });
 };
