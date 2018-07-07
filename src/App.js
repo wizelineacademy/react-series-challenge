@@ -1,19 +1,37 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Link, Redirect, Route, Switch, } from 'react-router-dom';
+import ComponentHome from './components/ComponentHome';
+import ComponentFavorites from './components/ComponentFavorites';
+import './styles/challenge.css';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+      <div className="app">
+        <header className="navbar">
+          <div className="navbar-container">
+            <ul>
+              <li>
+                <Route path="/Home" children={({ match }) => {
+                  const active = match ? 'active' : false;
+                  return <Link to="/Home" className={active}>Home</Link>;
+                }} />
+              </li>
+              <li>
+                <Route path="/Favorites" children={({ match }) => {
+                  const active = match ? 'active' : false;
+                  return <Link to="/Favorites" className={active}>Favorites</Link>;
+                }} />
+              </li>
+            </ul>
+          </div>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+        <Switch>
+          <Route path="/Home" component={ComponentHome} />
+          <Route path="/Favorites" component={ComponentFavorites} />
+          <Redirect to={{ pathname: "/Home", }} />
+        </Switch>
+      </div >
     );
   }
 }
