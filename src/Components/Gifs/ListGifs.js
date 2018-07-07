@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
-import Trending from "./Trending/TrendingGifs";
-import FilteredGifs from "./Filtered/FilteredGifs";
+import Trending from "../Trending/TrendingGifs";
+import FilteredGifs from "../Filtered/FilteredGifs";
 
 class ListGifs extends React.Component {
   render() {

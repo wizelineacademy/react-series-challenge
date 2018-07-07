@@ -1,5 +1,5 @@
 import React from "react";
-import ListGifs from "../Components/ListGifs";
+import ListGifs from "../Components/Gifs/ListGifs";
 
 const Home = () => (
   <div>
