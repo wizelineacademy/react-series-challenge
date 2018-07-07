@@ -8,32 +8,26 @@ class Home extends Component{
     componentDidMount(){
         this.props.requestSearchGifs()
     }
-    person = (x, i) => 
-    <div key={x.id.value}>
-      <h1>
-        {x.gender}
-      </h1>
-      <h1>
-        {x.name.first}
-      </h1>
-      <h1>
-        {x.name.last}
-      </h1>
-      <img src={x.picture.medium} />
-  </div>;
-
+    
     render(){
-        const { results = [] } = this.props.data
+        var imgTags = []
+        if(this.props.data.data != undefined){
+            const gifs = this.props.data.data
+            gifs.forEach(function(item, index){
+                console.log(item)
+                imgTags.push(<img alt='description' key={'gif' + index} src={item.images['original'].url} />)
+            })
+        }
+        
+
         return  <div className='home'>
             <h1>Home page</h1>
-            <h1>
-                {(results || []).map(this.person)}
-            </h1>
+            {imgTags}
         </div>
     }
 }
 
-//export default Home;
+
 const mapStateToProps = state => ({ data: state.data });
 
 const mapDispatchToProps = dispatch =>
