@@ -1,11 +1,16 @@
 import initialState from "./../constants/initialState";
+import reducersDic from "./../constants/reducersDic";
 
 export default (state = initialState, action) => {
-  switch (action.type) {
-    case 'CONFIG_CHECK':
+  const { type, data } = action;
+
+  console.log(data);
+
+  switch (type) {
+    case reducersDic.LOCALSTORAGE_DATA:
       return {
         ...state,
-        value: state.value + 1,
+        ...data
       }
     default:
       return state

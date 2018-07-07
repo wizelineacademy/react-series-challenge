@@ -3,14 +3,13 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router} from 'react-router-dom';
 import { Provider } from "react-redux";
 
-
 import './index.css';
 import App from './App';
 
 import store from './redux/store/';
 
-window.z = store;
-
+// Initial the storage flow
+store.dispatch({ type: 'LOCALSTORAGE_GET' });
 
 ReactDOM.render(
   <Provider store={store}>

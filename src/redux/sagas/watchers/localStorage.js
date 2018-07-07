@@ -1,18 +1,25 @@
-import { delay } from 'redux-saga';
 import { put, takeEvery } from 'redux-saga/effects';
 
 // RedursDic
 import reducersDic from "../../constants/reducersDic";
 
+const loadData = () => {
+  try {
+    const key = process.env.LOCAL_STORAGE_KEY;
+
+    // Check if .env file is empty
+    if (key === '') throw new Error('CHECK .ENV FILE');
+
+    return JSON.parse(window.localStorage.getItem(key) || '{}');
+  } catch (error) {
+    throw error;
+  }
+}
+
 function* localStorage() {
-  let data = {};
   console.log('Loading...');
-  yield delay(1000);
-  yield put({
-    type: reducersDic.LOCALSTORAGE_DATA, payload: {
-      data,
-    }
-  });
+  let data = loadData();
+  yield put({ type: reducersDic.LOCALSTORAGE_DATA, data});
 }
 
 export default function* watchLocalStorage() {

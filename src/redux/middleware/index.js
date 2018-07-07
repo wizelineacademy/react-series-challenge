@@ -4,7 +4,7 @@ const loggerMiddleware = store => next => action => {
   let result = next(action);
 
   console.group(type);
-  console.log(payload);
+  if(payload) console.log(payload);
   console.log(store.getState());
   console.groupEnd();
   return result;
