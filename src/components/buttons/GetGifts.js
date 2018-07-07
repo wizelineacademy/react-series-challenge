@@ -3,21 +3,24 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import giftActions from '../../redux/actions/gifts';
 
-const newGift = {
-  text: "nuevo",
-};
+const GetGifts = ({ getGift }) =>{
+  
+  const onInputChange = (term) => {
+    getGift({ text: term });
+  }
 
-const GetGifts = ({ giftFetched }) =>
-
-  <button onClick={() => giftFetched({ newGift })}>
-    Search Gift
-  </button>;
+  return (
+    <input 
+      placeholder={"Search GIPHY"}
+      onChange={(event) => onInputChange(event.target.value)} />
+  );
+}
 
 const mapDispatchToProps = (dispatch) => {
-  const { giftFetched } = giftActions.creators;
+  const { getGift } = giftActions.creators;
 
   return bindActionCreators({
-    giftFetched,
+    getGift,
   }, dispatch);
 };
 

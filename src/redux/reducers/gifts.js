@@ -1,18 +1,16 @@
 import giftActions from '../actions/gifts';
 
-const initialState = "hola";
+const initialState = null;
 
 const giftReducer = (state = initialState, action) => {
   const { type, payload } = action;
-  
 
   switch (type) {
     case giftActions.types.GIFT_FETCHED: {
-        const { newGift } = payload;
+        const { data } = payload;
+        const newState = data; 
 
-        const newState = newGift.text ;
-
-      return newState;
+        return newState;
     }
 
     default:

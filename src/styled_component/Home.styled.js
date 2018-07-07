@@ -12,31 +12,12 @@ const sharedStyle = css`
     background-color: #dee3eb;
   }
 `;
-
+//${sharedStyle}
 const GiftContainer = styled.div `
-  ${sharedStyle}
-  width: 120px;
-  height: 120px;
-  margin: 10px;
-
-  h3 {
-    padding: 15px;
-    text-transform: capitalize;
-    font-size: 12px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  span {
-    display: inline-block;
-    margin-top: 12%;
-    font-size: 15px;
-    background: white;
-    padding: 10px;
-    color: #22206b;
-    border-radius: 10px;
-  }
+  width: calc(100% - 30px);
+  height: 100%;
+  margin: auto;
+  background-color: #DDD;
 `;
 
 export {

@@ -4,7 +4,6 @@ import store from './redux/store';
 import { Route, Redirect, Link, NavLink, Switch, withRouter, } from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
-import GetGifts from './components/buttons'
 import Home from './components/Home';
 
 class App extends Component {
@@ -19,7 +18,6 @@ class App extends Component {
               <button><NavLink to="/Search" activeClass="active">Search</NavLink></button>
               <button><NavLink to="/Favorites" activeClass="active">Favorites</NavLink></button>
             </div>
-            <GetGifts />
           </header>
 
           <Switch>
