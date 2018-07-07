@@ -1,14 +1,13 @@
-import { delay } from "redux-saga";
-import { put, takeEvery, all } from "redux-saga/effects";
+import { all } from 'redux-saga/effects';
 
-function* helloSaga() {
-  console.log("Loading...");
-  yield delay(1000);
-  console.log("Hello Sagas");
-}
+// Watchers
+import watchFetchData from './watchers/fetch';
+import watchLocalStorage from './watchers/localStorage';
+
 
 export default function* rootSaga() {
     yield all([
-        helloSaga(),
+        watchLocalStorage(),
+        watchFetchData(),
     ]);
 }
