@@ -4,6 +4,8 @@ import './App.css';
 import { BrowserRouter as Router } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import MainPanel from './components/MainPanel';
+import store from './store';
+import { Provider } from "react-redux";
 
 class App extends Component {
   render() {
@@ -16,9 +18,15 @@ class App extends Component {
   }
 }
 
+const ConnectedApp = () => (
+  <Provider store={store}>
+    <App />
+  </Provider>
+)
+
 const RoutedApp = () => (
   <Router>
-    <App />
+    <ConnectedApp />
   </Router>
 )
 

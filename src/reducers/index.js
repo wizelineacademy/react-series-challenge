@@ -1,7 +1,17 @@
 import initialState from './initialState';
+import actions from "../actions";
+
+const { TRENDING_FETCHED } = actions.types;
 
 const rootReducer = (state = initialState, action) => {
-  return state;
+  switch (action.type) {
+    case TRENDING_FETCHED:
+      var newState = { ...state };
+      newState['trendingGifs'] = action.payload;
+      return newState;
+    default:
+      return state;
+  }
 }
 
 export default rootReducer;

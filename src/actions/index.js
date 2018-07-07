@@ -1,9 +1,7 @@
-import { createAction } from "redux-actions";
-
 const GET_TRENDING = 'GET_TRENDING';
 const TRENDING_FETCHED = 'TRENDING_FETCHED';
 
-const getTrendingGifs = createAction(GET_TRENDING);
+const getTrendingGifs = () => ({type: GET_TRENDING, payload: null});
 const trendingGifsFetched = (payload = {}) => ({type: TRENDING_FETCHED, payload});
 
 export default {
