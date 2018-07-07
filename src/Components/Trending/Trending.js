@@ -7,15 +7,12 @@ class Trending extends React.Component {
   }
 
   render() {
-    const { fetching, data, error, onRequestTrendGifs } = this.props;
+    const { fetching, data, error } = this.props;
     console.log(this.props);
     return (
       <div>
         <h2>Trending</h2>
         {error ? <p>{error}</p> : null}
-        <button onClick={onRequestTrendGifs} disabled={fetching}>
-          Refetch
-        </button>
         <div>
           {!fetching && data && data.length ? (
             <div>
