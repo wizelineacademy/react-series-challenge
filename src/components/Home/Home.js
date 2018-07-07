@@ -1,9 +1,22 @@
-import React from 'react'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import contentActions from '../../actions/content'
 
-const Home = (props) => {
-  return(
-    <div>Home</div>
-  )
+const {
+  startLoading,
+} = contentActions.actions
+
+class Home extends Component {
+
+  componentDidMount() {
+    this.props.dispatch(startLoading())
+  }
+
+  render() {
+    return(
+      <div>Home</div>
+    )
+  }
 }
 
-export default Home;
+export default connect(state => state)(Home)
