@@ -1,5 +1,7 @@
 import { createStore, applyMiddleware, compose } from 'redux'
 import createSagaMiddleware from 'redux-saga'
+import middlewares from '../middleware'
+import reducers from '../reducers'
 import rootSaga from '../sagas'
 
 const sagaMiddleware = createSagaMiddleware()
@@ -7,7 +9,8 @@ const sagaMiddleware = createSagaMiddleware()
 const state = {}
 const enhancers = []
 const middleware = [
-    sagaMiddleware
+    sagaMiddleware,
+    ...middlewares
 ]
 
 const composedEnhancers = compose(
@@ -16,7 +19,7 @@ const composedEnhancers = compose(
 )
 
 const store = createStore(
-    console.log,
+    reducers,
     state,
     composedEnhancers
 )
