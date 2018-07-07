@@ -6,6 +6,8 @@ html {
   box-sizing: inherit;
 }
 body {
+  background: #121212;
+  color: #fff;
   margin: 0;
   padding: 0;
   font-family: sans-serif;
@@ -18,6 +20,7 @@ ul {
 }
 
 a {
+  color: #fff;
   text-decoration: none;
   display: block;
 }
