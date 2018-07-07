@@ -46,7 +46,7 @@ const GifHome = (props) => {
         <br />
 
         <GifCards 
-        gifData = {gifData} 
+        gifData = { gifData } 
         loadError = {this.handleError} 
         loadSuccess = {this.handleOnLoad} />
     </div>)

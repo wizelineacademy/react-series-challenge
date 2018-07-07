@@ -23,7 +23,17 @@ class GifPage extends Component {
         .then(Response => {
                 return Response.json().then( (json) => {
                     console.log(json.data);
-                    this.setState({ gifs: json.data });
+                    var newArray = [];
+                    var newObject = {};
+                    
+                    for(var a = 0; a <= Object.keys(json.data).length - 1; a++){
+                        newObject = {};
+                        newObject.id = json.data[a].id;
+                        newObject.url = json.data[a].images.downsized.url;
+                        newArray.push(newObject);
+                    }
+                    
+                    this.setState({ gifs: newArray });
                 }
             )
         })
@@ -36,8 +46,18 @@ class GifPage extends Component {
         fetch(`${apiURL}${apiSearch}?api_key=${apiKey}&q=${searchValue}`)
         .then(Response => {
                 return Response.json().then( (json) => {
-                    console.log(json.data);
-                    this.setState({ gifs: json.data});
+                    console.log(Object.keys(json.data).length);
+                    var newArray = [];
+                    var newObject = {};
+                    
+                    for(var a = 0; a <= Object.keys(json.data).length - 1; a++){
+                        newObject = {};
+                        newObject.id = json.data[a].id;
+                        newObject.url = json.data[a].images.downsized.url;
+                        newArray.push(newObject);
+                    }
+
+                    this.setState({ gifs: newArray });
                 }
             )
         })

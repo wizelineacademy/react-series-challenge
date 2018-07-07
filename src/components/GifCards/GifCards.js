@@ -5,25 +5,22 @@ import './GifCards.css';
 const GifCards = (props) => {
 
         let arrays = null;
-
-        const gifsObjects = props.gifData;
-        //console.log("Datos de gifs", gifsObjects)
+        const gifsObjects = props.gifData;   
 
         if(gifsObjects !== null){
             arrays = Object.keys(gifsObjects).map((key, index) => {
-                let { id } = gifsObjects[index]; 
-                let { url } = gifsObjects[index].images.downsized;
+                let { id, url } = gifsObjects[index];
 
                 //console.log("url: " + url);
-
                 //return (<img key = {id} src = {url} alt = "Cargando..." />);
                 return (<GifCard 
                     key = {id} 
-                    loadError = {props.loadError}
-                    loadSuccess = {props.loadSuccess}
+                    //loadError = {props.loadError}
+                    //loadSuccess = {props.loadSuccess}
                     imageUrl = {url} />);
             });
-            //console.log(arrays.length);
+
+            //console.log("Arreglo" , arrays[0]);
             if(arrays.length === 0){
                 arrays = <h1> No results :( </h1>;
             }
