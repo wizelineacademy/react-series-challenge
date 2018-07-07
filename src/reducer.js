@@ -1,10 +1,6 @@
-const initialState = {};
-const reducer = (state = initialState, action) => {
-  const { type, payload } = action;
-  switch (type) {
-    default:
-      return state;
-  }
-};
+import { combineReducers } from 'redux';
+import homeReducer from './containers/Home/reducer';
 
-export default reducer;
+export default combineReducers({
+  home: homeReducer,
+});

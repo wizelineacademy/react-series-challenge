@@ -1,6 +1,6 @@
-import React from "react";
-import GifsList from "../GifsList";
-import styled from "styled-components";
+import React from 'react';
+import GifsList from '../GifsList';
+import styled from 'styled-components';
 
 const ItemsWrapper = styled.div`
   display: flex;
@@ -8,12 +8,14 @@ const ItemsWrapper = styled.div`
   flex-direction: row;
 `;
 
-const Home = ({ gifs, loading }) => {
-  return (
+const Home = ({ gifs, isLoading }) => {
+  return !isLoading ? (
     <div>
       <h1>Trending GIFS</h1>
-      <GifsList gifs={gifs} loading={loading} />
+      <GifsList gifs={gifs} loading={isLoading} />
     </div>
+  ) : (
+    <p>Cargando..</p>
   );
 };
 
