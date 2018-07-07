@@ -1,0 +1,6 @@
+.gif { 
+    width: 10rem;
+    height: 10rem;
+    -webkit-clip-path: inset(0 0 0 0 round 2%);
+    clip-path: inset(0 0 0 0 round 2%);
+}
