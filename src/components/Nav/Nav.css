@@ -1,0 +1,16 @@
+.Nav {
+  width: 100%;
+  border-bottom: 1px solid gray;
+}
+
+.NavContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: calc(100% - 5rem)
+}
+
+.NavListItem {
+  padding: 20px 10px;
+}
