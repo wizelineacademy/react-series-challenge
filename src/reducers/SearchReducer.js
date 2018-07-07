@@ -1,16 +1,17 @@
-import trendingGifsActions from "../actions/trendingGifs";
+import searchGifsActions from "../actions/searchGifs";
 
 const initialState = {
-  gifs: []
+  searchGifs: []
 };
 
 const cryptoPricesReducer = (state = initialState, action) => {
   const { type, payload } = action;
 
   switch (type) {
-    case trendingGifsActions.types.FETCH_TRENDING_GIFS: {
-      const gifs = payload;
-      return { ...state, gifs };
+    case searchGifsActions.types.FETCH_SEARCH_GIFS: {
+      const searchGifs = payload;
+      console.log(payload);
+      return { ...state, searchGifs };
     }
     default:
       return state;

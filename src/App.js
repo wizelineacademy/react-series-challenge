@@ -3,15 +3,19 @@ import { Provider } from "react-redux";
 import store from "./store";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
+import Navbar from "./components/Navigation/Navbar";
 
 class App extends Component {
   render() {
     return (
       <Provider store={store}>
         <Router>
-          <Switch>
-            <Route exact path="/" component={Home} />
-          </Switch>
+          <div>
+            <Navbar />
+            <Switch>
+              <Route exact path="/" component={Home} />
+            </Switch>
+          </div>
         </Router>
       </Provider>
     );
