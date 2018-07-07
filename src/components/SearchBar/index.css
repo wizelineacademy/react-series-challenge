@@ -1,0 +1,22 @@
+.bar {
+    padding: 1rem;
+}
+
+.search {
+    border: none;
+    border: thin #E8ECFF solid;
+    border-radius: 20px;
+    background-color: #fff;
+    padding: 0.5rem 0.5rem 0.5rem 1rem;
+    width: 100%;
+}
+
+.search::placeholder {
+    color: #B0B0B5;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.search:focus::placeholder {
+    color: #858ECC;
+}
