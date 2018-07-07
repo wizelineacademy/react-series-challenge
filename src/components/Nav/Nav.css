@@ -7,7 +7,7 @@
   align-items: center;
   justify-content: space-between;
   margin: 0 auto;
-  width: calc(100% - 5rem)
+  width: 1040px;
 }
 
 .NavListItem {
