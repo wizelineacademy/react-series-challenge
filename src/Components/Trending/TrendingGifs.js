@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import Item from "../Gifs/Item";
 
 class Trending extends React.Component {
   componentDidMount() {
@@ -15,23 +16,7 @@ class Trending extends React.Component {
         {error ? <p>{error}</p> : null}
         <div>
           {!fetching && data && data.length ? (
-            <div>
-              {data.map(item => {
-                const {
-                  id,
-                  title,
-                  images: {
-                    preview_gif: { url, height, width }
-                  }
-                } = item;
-                return (
-                  <span key={id}>
-                    <img src={url} alt={title} width={width} height={height} />
-                    <i className="fas fa-heart" />
-                  </span>
-                );
-              })}
-            </div>
+            <div>{data.map(item => <Item key={item.id} item={item} />)}</div>
           ) : (
             <p>Cargando...</p>
           )}
