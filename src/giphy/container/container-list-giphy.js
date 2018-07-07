@@ -10,45 +10,63 @@ export default class ContainerListGiphy extends Component{
     dataGiphy:{}
   }
   componentDidMount(){
+    
+    // setTimeout(()=>{
+    //   this.getDataGiphy(),
+    //   3000
+    // })
+
     // donde q=ryan+gosling parametro que va a buscar y limt = cantidad a mostrar
-    const url = 'http://api.giphy.com/v1/gifs/search?q=ryan+gosling&api_key=STKCOqnN3DKDQJRPbv5il9egmGwZqRSn&limit=10';
+    const url = 'http://api.giphy.com/v1/gifs/trending?&api_key=STKCOqnN3DKDQJRPbv5il9egmGwZqRSn&limit=25';
     axios.get(url)
-      .then((resultsGiphy) => {
-        this.setState({
-          dataGiphy:resultsGiphy
-        },()=>{
-          console.log(
-            // this.state.dataGiphy.data,
-            // this.state.dataGiphy.data.data[0].images.downsized.url
-          );
-        })
+    .then((resultsGiphy) => {
+      this.setState({
+        dataGiphy:resultsGiphy
       })
+    })
   }
- 
+  
+  // getDataGiphy = () =>{
+  //   alert('me recargue');
+  //   // donde q=ryan+gosling parametro que va a buscar y limt = cantidad a mostrar
+  //   const url = 'http://api.giphy.com/v1/gifs/trending?q=ryan+gosling&api_key=STKCOqnN3DKDQJRPbv5il9egmGwZqRSn&limit=25';
+  //   axios.get(url)
+  //   .then((resultsGiphy) => {
+  //     this.setState({
+  //       dataGiphy:resultsGiphy
+  //     })
+  //   })
+  // }
+
   render(){
-    // if( listGiphy.length === 0 ) return <div />
     return(
-      <React.Fragment>
-        <div>
+        <section className="list-giphy">
+          <form>
+            <input 
+              className="input-search"
+              type="text" 
+              placeholder="Search Giphy"/>
+          </form>
+          
           {
             listGiphy.map((giphy,index) => {
               return(
                 <ListGiphy 
                   key={index}
                   urlGiphy={giphy.images.downsized.url}
+                  description={giphy.title}
                 />
               )
             })
           }
-        </div>
-      </React.Fragment>
-      
+        </section>      
     )
   }
   componentWillUpdate(nextProps, nextState){
     nextState.dataGiphy.data.data.forEach((giphys,index) => {
       listGiphy.push(giphys);
     })
+    console.log(listGiphy);
   }
 };
 

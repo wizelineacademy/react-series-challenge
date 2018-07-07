@@ -1,17 +1,13 @@
 import React from 'react';
+import './list-giphy.css';
 
 export default function ListGiphy(props){
-  // this.state.dataGiphy.data,
-  // this.state.dataGiphy.data.data[0].images.downsized.url
-  console.log(props.urlGiphy, 'props');
   return(
-    <section>
-      <div>
-        <img  src={props.urlGiphy} alt="Giphy"/>
-        <span>
-          {props.description}
-        </span>
-      </div>
-    </section>
+    <div className="container-giphy">
+      <img  src={props.urlGiphy} alt="Giphy"/>
+      {/* <p>
+        {props.description}
+      </p> */}
+    </div>
   )
 }
