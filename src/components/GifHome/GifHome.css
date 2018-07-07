@@ -1,0 +1,11 @@
+.GifHome {
+    z-index: 10px;
+    display: inline-block;
+}
+
+.GifHome GifCards {
+    width: 400px;
+    height: 250px;
+    z-index: 10px;
+    display: inline-block;
+}

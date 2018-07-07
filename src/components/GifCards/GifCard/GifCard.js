@@ -1,41 +1,31 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './GifCard.css';
 
-class GifCard extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            isLoading: true,
-        };
-    }
+const GifCard  = (props) => {
 
-    handleOnLoad = () => {
-        this.setState({ isLoading: false });
-        console.log("cargado");
-    }
+    /*let image = null;
 
-    handleError = () => {
-        console.log("Error")
-    }
+    if(props.isLoading) {
+        console.log("Cargando imagen")
+        image = <p> Cargando imagen... </p>
+    } else {
+        //TODO: Spinner
+        image = <p> Cargada </p>
+        console.log("Cargada")
+        //image = <img src = {this.props.imageUrl} onLoad = {this.handleOnLoad} onError = {this.handleError} />
+    }*/
 
-    render() {
-        let image = null;
-
-        if(this.state.isLoading) {
-            image = <p> Cargando imagen... </p>
-        } else {
-            //TODO: Spinner
-            image = <p> Cargada </p>
-            //image = <img src = {this.props.imageUrl} onLoad = {this.handleOnLoad} onError = {this.handleError} />
-        }
-
-        return (
-            <div>
-                <img src = {this.props.imageUrl} onLoad = {this.handleOnLoad} onError = {this.handleError} />
-                { image }
-            </div>
-        )
-    }
+    return (
+        <div className = "GifCard">
+            <img 
+            src = {props.imageUrl} 
+            alt = "Img PlaceHolder"
+            //onLoad = {console.log("Hey, I loaded!")} 
+            //onError = {props.loadError} 
+            />
+        </div>
+    )
+    
 }
 
 export default GifCard;

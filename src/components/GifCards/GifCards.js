@@ -1,30 +1,26 @@
-import React, {Component} from 'react';
+import React from 'react';
 import GifCard from '../GifCards/GifCard/GifCard'
 import './GifCards.css';
 
-class GifCards extends Component {
+const GifCards = (props) => {
 
-    constructor(props) {
-        super(props);
-        this.state = ({ isLoading: true });
-    }
-
-    render() {
         let arrays = null;
 
-        const gifsObjects = this.props.gifData;
-        console.log("Datos de gifs", gifsObjects)
+        const gifsObjects = props.gifData;
+        //console.log("Datos de gifs", gifsObjects)
 
         if(gifsObjects !== null){
             arrays = Object.keys(gifsObjects).map((key, index) => {
                 let { id } = gifsObjects[index]; 
                 let { url } = gifsObjects[index].images.downsized;
 
-                console.log("url: " + url);
+                //console.log("url: " + url);
 
                 //return (<img key = {id} src = {url} alt = "Cargando..." />);
                 return (<GifCard 
                     key = {id} 
+                    loadError = {props.loadError}
+                    loadSuccess = {props.loadSuccess}
                     imageUrl = {url} />);
             });
             //console.log(arrays.length);
@@ -47,7 +43,7 @@ class GifCards extends Component {
                 { arrays }
             </div>
         )
-    }
+    
 }
 
 export default GifCards;

@@ -1,13 +1,51 @@
 import React, {Component} from 'react';
-import GifHome from '../GifHome/GifHome';
+import GifHome from '../../components/GifHome/GifHome';
+
+const apiURL = "http://api.giphy.com";
+const apiTrends = "/v1/gifs/trending";
+const apiSearch = "/v1/gifs/search";
+const apiKey = "MKGAXNQl5cXUBSBMrXSsufVZ9bqvhX6p"
 
 class GifPage extends Component {
 
     constructor(props){
         super(props);
         this.state = {
+            gifs: null, 
             searchValue: null,
+            isLoading: true,
         };
+    }
+
+    componentDidMount() {        
+        fetch(`${apiURL}${apiTrends}?api_key=${apiKey}`)
+        //fetch(`http://api.giphy.com/v1/gifs/trending?api_key=MKGAXNQl5cXUBSBMrXSsufVZ9bqvhX6p`)
+        .then(Response => {
+                return Response.json().then( (json) => {
+                    console.log(json.data);
+                    this.setState({ gifs: json.data });
+                }
+            )
+        })
+    }
+
+    handleSearch = () => {
+        //console.log(event.target.value);
+        //const searchParam = event.target.value;
+        const { searchValue } = this.state;
+        fetch(`${apiURL}${apiSearch}?api_key=${apiKey}&q=${searchValue}`)
+        .then(Response => {
+                return Response.json().then( (json) => {
+                    console.log(json.data);
+                    this.setState({ gifs: json.data});
+                }
+            )
+        })
+    }
+
+    updateState = (event) => {
+        this.setState({searchValue: event})
+        console.log(event);
     }
 
     render() {
@@ -22,7 +60,10 @@ class GifPage extends Component {
                     </ul>
                 </nav>
             </header>
-            <GifHome />
+            <GifHome 
+            gifData = {this.state.gifs} 
+            handleSearch = {this.handleSearch} 
+            updateState = {this.updateState} />
         </div>)
     }
 }
