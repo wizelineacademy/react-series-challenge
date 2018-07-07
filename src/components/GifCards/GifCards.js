@@ -5,9 +5,10 @@ import './GifCards.css';
 const GifCards = (props) => {
 
         let arrays = null;
-        const gifsObjects = props.gifData;   
+        const gifsObjects = props.gifData;  
+        console.log("GIFS DATA", gifsObjects); 
 
-        if(gifsObjects !== null){
+        if(gifsObjects !== null && gifsObjects !== undefined){
             arrays = Object.keys(gifsObjects).map((key, index) => {
                 let { id, url } = gifsObjects[index];
 

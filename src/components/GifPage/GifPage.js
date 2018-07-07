@@ -1,5 +1,11 @@
 import React, {Component} from 'react';
-import GifHome from '../../components/GifHome/GifHome';
+//import GifHome from '../../components/GifHome/GifHome';
+import GifCards from '../GifCards/GifCards'
+import './GifPage.css';
+import SearchBar from '../../UI/SearchBar';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import SearchFunctions from '../../actions/searchValues';
 
 const apiURL = "http://api.giphy.com";
 const apiTrends = "/v1/gifs/trending";
@@ -17,12 +23,13 @@ class GifPage extends Component {
         };
     }
 
+
     componentDidMount() {        
         fetch(`${apiURL}${apiTrends}?api_key=${apiKey}`)
         //fetch(`http://api.giphy.com/v1/gifs/trending?api_key=MKGAXNQl5cXUBSBMrXSsufVZ9bqvhX6p`)
         .then(Response => {
                 return Response.json().then( (json) => {
-                    console.log(json.data);
+                    //console.log(json.data);
                     var newArray = [];
                     var newObject = {};
                     
@@ -46,7 +53,7 @@ class GifPage extends Component {
         fetch(`${apiURL}${apiSearch}?api_key=${apiKey}&q=${searchValue}`)
         .then(Response => {
                 return Response.json().then( (json) => {
-                    console.log(Object.keys(json.data).length);
+                    //console.log(Object.keys(json.data).length);
                     var newArray = [];
                     var newObject = {};
                     
@@ -65,27 +72,39 @@ class GifPage extends Component {
 
     updateState = (event) => {
         this.setState({searchValue: event})
-        console.log(event);
+        //console.log(event);
     }
 
     render() {
         // Apply destructuring
         return(
-        <div>
-            <header>
-                <nav>
-                    <ul>
-                        <li>Home</li>
-                        <li>Favorites</li>
-                    </ul>
-                </nav>
-            </header>
-            <GifHome 
+            <div className = "GifPage">
+
+                <SearchBar updateState = {this.updateState} handleSearch = {this.handleSearch} />
+                <GifCards gifData = { this.state.gifs } />
+                <button onClick = {() => this.props.searchedFavoriteGifs({payload: {value: 4}})}>HELLO HELLO HELLO</button>
+                {/*//loadError = {this.handleError} 
+                //loadSuccess = {this.handleOnLoad} */}
+                
+            </div>)
+            /*{/*<GifHome 
             gifData = {this.state.gifs} 
             handleSearch = {this.handleSearch} 
-            updateState = {this.updateState} />
-        </div>)
+            updateState = {this.updateState} />*/
     }
 }
 
-export default GifPage;
+const mapStateToProps = (state) => {
+    console.log(state);
+    const { greeting } = state;
+    return {
+        greeting
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    const { searchedFavoriteGifs } = SearchFunctions.creators;
+    return bindActionCreators( { searchedFavoriteGifs }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(GifPage);

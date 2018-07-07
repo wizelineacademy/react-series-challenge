@@ -5,7 +5,6 @@ const initialState = {};
 
 const store = createStore(
   searchValues,
-  initialState,
 );
 
 // Start runner and do functions

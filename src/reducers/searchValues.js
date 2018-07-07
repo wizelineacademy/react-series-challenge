@@ -1,20 +1,27 @@
 import searchActions from '../actions/searchValues'
 
-const initialState = {};
+const initialState = {
+    greeting: "Hi",
+};
 
-const searchReducer = (state = initialState, action) => {
+const SearchReducer = (state = initialState, action) => {
     const { type, payload } = action;
 
     switch(type) {
         case searchActions.types.SEARCH_FAVORITE_GIFS: {
-            return;
+            console.log("SEARCH_FAVORITE_GIFS");
+            console.log(payload);
+            state = {...initialState, value: 2};
+            return state;
         }
 
         case searchActions.types.SEARCH_SPECIFIED_GIFS: {
+            console.log("SEARCH_SPECIFIED_GIFS");
             return;
         }
 
         case searchActions.types.SEARCH_TRENDING: {
+            console.log("SEARCH_TRENDING");
             return;
         }
 
@@ -22,3 +29,5 @@ const searchReducer = (state = initialState, action) => {
             return state;
     }
 }
+
+export default SearchReducer;
