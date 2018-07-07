@@ -3,6 +3,7 @@ import { Provider } from "react-redux";
 import store from "./store";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
+import Favorites from "./pages/Favorites";
 import Navbar from "./components/Navigation/Navbar";
 
 class App extends Component {
@@ -14,6 +15,7 @@ class App extends Component {
             <Navbar />
             <Switch>
               <Route exact path="/" component={Home} />
+              <Route path="/favorites" component={Favorites} />
             </Switch>
           </div>
         </Router>
