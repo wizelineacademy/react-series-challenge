@@ -1,0 +1,61 @@
+.app .navbar {
+    background-color: #f9f9f9;
+    border-bottom: 2px solid #acacac;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 200;
+    width: 100%;
+    float: left;
+}
+
+.app .navbar .navbar-container {
+    width: 1000px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.app .navbar .navbar-container ul li {
+    float: left;
+    position: relative;
+    display: block;
+    list-style: none;
+}
+
+.app .navbar .navbar-container ul li a {
+    padding: 10px 15px;
+    text-decoration: none;
+}
+
+.app .navbar .navbar-container ul li a.active {
+    border-bottom: 2px solid;
+}
+
+.app .container {
+    margin: 10px;
+}
+
+input {
+    width: 55%;
+    height: 30px;
+    padding: 2px 8px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.container-gif {
+    float: left;
+    width: 220px;
+    padding: 6px;
+}
+
+.container-gif button.icon {
+    position: absolute;
+    margin-left: 178px;
+    margin-top: 3px;
+}
