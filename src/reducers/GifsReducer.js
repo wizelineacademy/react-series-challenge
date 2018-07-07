@@ -10,6 +10,7 @@ const cryptoPricesReducer = (state = initialState, action) => {
   switch (type) {
     case trendingGifsActions.types.FETCH_TRENDING_GIFS: {
       const gifs = payload;
+      console.log(gifs);
       return { ...state, gifs };
     }
     default:

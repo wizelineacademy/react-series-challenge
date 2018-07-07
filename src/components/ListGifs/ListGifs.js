@@ -26,9 +26,9 @@ class ListGifs extends Component {
   }
 }
 
-const mapStateToProps = ({ gifs, sGifs }) => ({
-  sGifs: sGifs.searchGifs,
-  gifs: gifs.gifs
+const mapStateToProps = ({ GifsReducer, SearchGifs }) => ({
+  sGifs: SearchGifs.searchGifs,
+  gifs: GifsReducer.gifs
 });
 
 const mapDispatchToProps = dispatch => {
