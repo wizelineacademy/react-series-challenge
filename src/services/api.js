@@ -1,6 +1,5 @@
 import axios from "axios";
-
-const API_KEY = "zoZERMgHqLkGo92C0JJiJV7RY8PCmmkN";
+const API_KEY = process.env.REACT_APP_GIPHY_API_KEY;
 
 const api = {
   trending: () => {

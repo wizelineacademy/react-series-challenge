@@ -7,6 +7,9 @@ const ItemsWrapper = styled.div`
   flex: 1;
   flex-direction: row;
   flex-wrap: wrap;
+  max-width: 90%;
+  margin: 0 auto;
+  width: 1020px;
 `;
 
 const GifsList = ({ gifs, loading }) => {

@@ -8,7 +8,8 @@ const ItemWrapper = styled.div`
   border-color: #000;
   border-width: 1px;
   box-shadow: 1px 1px 1px #000;
-  margin: 4px;
+  margin: 4px 10px;
+  flex: 0.33;
 `;
 
 const GifImg = styled.img`
@@ -19,6 +20,12 @@ const GifItem = ({ gif }) => {
   return (
     <ItemWrapper>
       <GifImg alt={gif.slug} src={gif.images.preview_gif.url} />
+      <p>{gif.title}</p>
+      <p>
+        URL: <a href={gif.bitly_url}>{gif.bitly_url}</a>
+      </p>
+      <p>by: {gif.username}</p>
+      <a href="#">Add to my favs.</a>
     </ItemWrapper>
   );
 };
