@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 class Trending extends React.Component {
   render() {
     const { fetching, data, error, onRequestTrendGifs } = this.props;
-    console.log(data, error);
     return (
       <div>
         Trending
