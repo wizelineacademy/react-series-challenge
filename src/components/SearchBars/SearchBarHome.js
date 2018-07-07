@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import giftActions from '../../redux/actions/gifts';
 
-const GetGifts = ({ getGift }) =>{
+const SearchBarHome = ({ getGift }) =>{
   
   const onInputChange = (term) => {
     getGift({ text: term });
@@ -24,4 +24,4 @@ const mapDispatchToProps = (dispatch) => {
   }, dispatch);
 };
 
-export default connect(null, mapDispatchToProps)(GetGifts);
+export default connect(null, mapDispatchToProps)(SearchBarHome);
