@@ -8,12 +8,16 @@ const FullWidthImg = styled.img`
   padding: 1rem;
 `;
 
+const GifsRow = Row.extend`
+  margin-top: 5rem;
+`;
+
 class GifList extends Component {
   render() {
     const { gifs } = this.props;
     return (
       <Container>
-        <Row>
+        <GifsRow>
           {gifs.map((gif) => {
             const { images } = gif;
             const { fixed_width: image } = images;
@@ -23,7 +27,7 @@ class GifList extends Component {
               </Col>
             )
           })}
-        </Row>
+        </GifsRow>
       </Container>
     );
   }
