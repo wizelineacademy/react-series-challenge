@@ -1,6 +1,7 @@
 import { takeEvery, call, put } from "redux-saga/effects";
 import search from '../actions/search'
 import config from '../config'
+import axios from "axios";
 
 const { types: { SEARCH_GET }, creators: { fetchedSearch } } = search
 
@@ -9,19 +10,15 @@ function* watchSearchRequested() {
 }
 
 function fetchSearch(search) {
-    return fetch(`${config.HOST}${config.endpoints.SEARCH}?q=${search}&api_key=${config.KEY}`, {
-        method: 'GET',
-        mode: 'cors',
-        cache: 'default',
-        headers: new Headers()
-    }).then(response => response)
+    return axios.get(`${config.HOST}${config.endpoints.SEARCH}?q=${search}&api_key=${config.KEY}`)
+        .then(response => response.data)
 }
 
 function* getSearch(action) {
     try {
         const [ search ] = action.payload
-        const response = yield call(fetchSearch, search)
-        yield put(fetchedSearch(response))
+        const { data } = yield call(fetchSearch, search)
+        yield put(fetchedSearch(data))
     } catch (error) {
         console.error(error)
     }
