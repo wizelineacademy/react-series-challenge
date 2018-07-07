@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import contentActions from '../../actions/content'
+import Header from '../Header'
+import Searchbar from '../Searchbar'
 
 const {
   startLoading,
@@ -14,7 +16,11 @@ class Home extends Component {
 
   render() {
     return(
-      <div>Home</div>
+      <div>
+        <Header/>
+        <Searchbar/>
+        Home
+      </div>
     )
   }
 }
