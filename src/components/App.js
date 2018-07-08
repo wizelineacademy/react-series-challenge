@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
-import store from './store';
 
-import Header from './Header';
-import SearchBar from './SearchBar';
-import './App.css';
+import store from '../store';
+
+import Header from '../components/Header';
+import SearchBar from '../components/SearchBar';
+import '../styles/App.css';
 
 class App extends Component {
   render() {
