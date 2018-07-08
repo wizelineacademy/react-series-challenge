@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -20,29 +20,36 @@ border: 1px solid black;
 border-radius: 5px;
 `;
 
-const HomeSearchBar = (props) => {
-    const { searchBarInput, value, getTrendingGifs } = props;
-    return (
-        <Wrapper>
-            <Input
-                type='text'
-                placeholder='Search'
-                value={value}
-                onChange={
-                    (e) => {
-                        const { value } = e.target;
-                        if (value.length) {
-                            searchBarInput(value);
-                        } else {
-                            searchBarInput(value);
-                            getTrendingGifs();
+class HomeSearchBar extends Component {
+    render() {
+        const { searchBarInput, value, getTrendingGifs } = this.props;
+        return (
+            <Wrapper>
+                <Input
+                    type='text'
+                    placeholder='Search'
+                    value={value}
+                    onChange={
+                        (e) => {
+                            const { value } = e.target;
+                            if (value.length) {
+                                searchBarInput(value);
+                            } else {
+                                searchBarInput(value);
+                                getTrendingGifs();
+                            }
                         }
                     }
-                }
-            />
-        </Wrapper>
-    );
-};
+                />
+            </Wrapper>
+        );
+    }
+
+    componentWillUnmount() {
+        const { searchBarInput } = this.props;
+        searchBarInput('');
+    }
+}
 
 const mapStateToProps = (state) => {
     const { searchBar } = state;
