@@ -11,10 +11,11 @@ class MainGifsView extends Component{
     }
 
     render(){
+
         return (
             <div>
                 <h4>Main Gifs View!</h4>
-                <GifsList gifs={this.props.trendGifs}/>
+                <GifsList trendGifs={this.props.trendGifs} searchGifs={this.props.searchGifs}/>
             </div>
         );
     }
@@ -24,10 +25,12 @@ class MainGifsView extends Component{
 const mapStateToProps = (state) => {
     const {
         trendGifs,
+        searchGifs
     } = state;
 
     return {
         trendGifs,
+        searchGifs,
     };
 };
 

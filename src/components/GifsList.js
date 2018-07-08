@@ -3,8 +3,10 @@ import GifCard from './GifCard';
 
 const GifsList = (props) => {
 
+    const searchGifsLength = Object.keys(props.searchGifs).length;
+
     const renderListGifCard = () => {
-        const { gifs } = props;
+        const gifs = searchGifsLength > 0 ? props.searchGifs : props.trendGifs;
         return Object.keys(gifs).map((gifId) => <GifCard key={gifId} gif={gifs[gifId]}/>)
     };
 

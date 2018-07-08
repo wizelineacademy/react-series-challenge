@@ -4,7 +4,7 @@ const initialState = {};
 
 const favoriteGifsReducer = (state = initialState, action) => {
 
-    const { type, payload } = action;
+    const { type } = action;
 
     switch (type) {
 

@@ -1,9 +1,12 @@
 import React from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import searchGifsActions from '../actions/searchGifs';
 
-const SearchGif = () => {
+const SearchGif = (props) => {
 
     const onKeyUpSearch = (e) => {
-        console.log('KEY_UP', e.target.value)
+        props.loadSearchGifs(e.target.value);
     };
 
     return (
@@ -14,4 +17,12 @@ const SearchGif = () => {
     );
 };
 
-export default SearchGif;
+const mapDispatchToProps = (dispatch) => {
+    const { loadSearchGifs } = searchGifsActions.creators;
+
+    return bindActionCreators({
+        loadSearchGifs
+    }, dispatch)
+};
+
+export default connect(null, mapDispatchToProps)(SearchGif);

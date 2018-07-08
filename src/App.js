@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 import {
     Route,
-    Redirect,
-    Link,
-    NavLink,
     Switch,
-    withRouter,
 } from 'react-router-dom';
 
 import SearchGif from './components/SearchGif';
