@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import { connect } from 'react-redux'
 
 // Redux
 import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
 
 // Selectors
 import selectors from "./../../../redux/selectors";
@@ -48,7 +48,7 @@ class Home extends Component{
             </fieldset>
           </form>
         </div>
-        <Giphys data={data} />
+        <Giphys data={data} modifyLocal={this.props.modifyLocal} />
         <Footer />
       </div>
     );
@@ -62,10 +62,12 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  const { fetchChange } = actions;
+  const { fetchChange, modifyLocal } = actions;
 
-  return bindActionCreators({
-      fetchChange
+  return bindActionCreators(
+    {
+      fetchChange,
+      modifyLocal,
     },
     dispatch
   )

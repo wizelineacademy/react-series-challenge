@@ -1,11 +1,18 @@
 import React, { Component } from "react";
 
+import actions from "./../../../redux/actions";
+
 import './giphys.css';
 
 class Giphys extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   handleKeep = (event,index) => {
     event.preventDefault();
-
+    const { data } = this.props.data;
+    this.props.modifyLocal(data[index]);
   }
 
 
@@ -31,4 +38,5 @@ class Giphys extends Component {
   }
 }
 
+// export default connect(null,mapDispatchToProps)(Giphys);
 export default Giphys;

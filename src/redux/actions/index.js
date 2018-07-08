@@ -18,17 +18,17 @@ const showAlert = (text = '') => {
   }
 }
 
-const addLike = (type, search = '') => {
+const modifyLocal = (action,object) => {
   return {
-    type: actions.LOCALSTORAGE_DATA,
+    type: actions.LOCALSTORAGE_MODIFY,
     payload: {
-      type,
-      search
+      action,
+      object
     }
   }
 }
 
 export default {
   fetchChange,
-  addLike
+  modifyLocal
 }

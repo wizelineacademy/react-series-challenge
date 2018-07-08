@@ -13,6 +13,13 @@ export default (state = initialState, action) => {
         ...state,
         ...data
       }
+    case actions.LOCALSTORAGE_MODIFY: {
+      debugger;
+      return {
+        ...state,
+        ...data
+      }
+    }
     default:
       return state
   }
