@@ -1,5 +1,6 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import createSagaMiddleware from 'redux-saga'
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 import rootReducer from '../reducers';
 import gifsFetcher from '../middleware';
@@ -21,7 +22,7 @@ const composedEnhancers = compose(
 const store = createStore(
   rootReducer,
   initialState,
-  composedEnhancers,
+  composeWithDevTools(composedEnhancers),
 );
 
 sagaMiddleware.run(rootSaga);
