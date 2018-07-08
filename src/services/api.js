@@ -4,7 +4,7 @@ const API_KEY = process.env.REACT_APP_GIPHY_API_KEY;
 const BASE_URL = 'https://api.giphy.com/v1';
 const api = {
   trending: () => {
-    const URL = `${BASE_URL}/gifs/trending?api_key=${API_KEY}&limit=25&rating=G`;
+    const URL = `${BASE_URL}/gifs/trending?api_key=${API_KEY}&limit=25`;
     return axios.get(URL);
   },
   search: term => {

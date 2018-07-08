@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
@@ -18,6 +18,29 @@ const GifImg = styled.img`
   width: 145px;
 `;
 
+class GifErrorBoundary extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasErrors: false, errorInfo: '' };
+  }
+  componentDidCatch(error, info) {
+    console.log('error in boundary', error);
+    console.log('info in boundary', info);
+
+    this.setState({ hasErrors: true, errorInfo: info });
+  }
+  render() {
+    const { children } = this.props;
+    const { hasErrors } = this.state;
+    console.log('this.state errorboundary', this.state);
+    if (hasErrors) {
+      return <div>GIF no disponible</div>;
+    }
+
+    return children;
+  }
+}
+
 const GifItem = ({
   gif,
   addFavoriteId,
@@ -25,6 +48,11 @@ const GifItem = ({
   isFavorite,
   openModal,
 }) => {
+  const RESTRICTED_RATINGS = ['pg-13', 'r'];
+  if (RESTRICTED_RATINGS.indexOf(gif.rating) > -1) {
+    //throw new Error('NSFW content');
+  }
+
   const addFavBtn = (
     <button
       onClick={e => {
@@ -32,7 +60,7 @@ const GifItem = ({
         addFavoriteId(gif.id);
       }}
     >
-      Add to my favs.
+      Agregar mis favoritos.
     </button>
   );
 
@@ -43,7 +71,7 @@ const GifItem = ({
         removeFavoriteId(gif.id);
       }}
     >
-      Remove from my favs.
+      Quitar de mis favoritos.
     </button>
   );
 
@@ -68,6 +96,8 @@ GifItem.propTypes = {
     title: PropTypes.string.isRequired,
     username: PropTypes.string.isRequired,
     bitly_url: PropTypes.string.isRequired,
+    rating: PropTypes.string.isRequired,
+
     images: PropTypes.shape({
       preview_gif: PropTypes.shape({
         url: PropTypes.string,
@@ -80,4 +110,10 @@ GifItem.propTypes = {
   openModal: PropTypes.func.isRequired,
 };
 
-export default GifItem;
+const GifItemWrapper = props => (
+  <GifErrorBoundary>
+    <GifItem {...props} />
+  </GifErrorBoundary>
+);
+
+export default GifItemWrapper;
