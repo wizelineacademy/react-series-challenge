@@ -1,14 +1,14 @@
 import React from 'react';
-
+import { GifContainer, Gif, GifOverlay } from './GifCard.styled';
 const GifCard = (props) => {
 
     const { gif } = props;
     
     return (
-        <div>
-            <h6>Gif Card</h6>
-            <p>{gif.title || 'GIF NO NAME'}</p>
-        </div>
+        <GifContainer>
+            <Gif src={gif.images.original.webp} />
+            <GifOverlay />
+        </GifContainer>
     );
 
 };

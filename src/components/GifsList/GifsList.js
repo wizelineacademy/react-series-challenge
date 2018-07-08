@@ -1,5 +1,6 @@
 import React from 'react';
 import GifCard from '../GifCard/GifCard';
+import { CardsContainer } from './GifsList.styled';
 
 const GifsList = (props) => {
 
@@ -11,11 +12,13 @@ const GifsList = (props) => {
     };
 
     return (
-      <div>
-          <h5>Gifs List</h5>
-          {renderListGifCard()}
-      </div>
-    );
+        <div>
+            <h5>Gifs List</h5>
+            <CardsContainer>
+                {renderListGifCard()}
+            </CardsContainer>
+        </div>
+);
 
 };
 
