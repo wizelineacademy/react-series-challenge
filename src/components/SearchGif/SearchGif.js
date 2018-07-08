@@ -1,7 +1,8 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import searchGifsActions from '../actions/searchGifs';
+import searchGifsActions from '../../actions/searchGifs';
+// import {  } from './Searchgif.styled';
 
 const SearchGif = (props) => {
 

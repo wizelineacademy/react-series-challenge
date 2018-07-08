@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from "redux";
-import GifsList from './GifsList';
-import trendGifsActions from "../actions/trendGifs";
+import GifsList from '../GifsList/GifsList';
+import trendGifsActions from "../../actions/trendGifs";
+import { MainGifsViewContainer } from './MainGifsView.styled';
 
 class MainGifsView extends Component{
 
@@ -13,10 +14,10 @@ class MainGifsView extends Component{
     render(){
 
         return (
-            <div>
+            <MainGifsViewContainer>
                 <h4>Main Gifs View!</h4>
                 <GifsList trendGifs={this.props.trendGifs} searchGifs={this.props.searchGifs}/>
-            </div>
+            </MainGifsViewContainer>
         );
     }
 

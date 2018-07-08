@@ -1,5 +1,5 @@
 import React from 'react';
-import GifCard from './GifCard';
+import GifCard from '../GifCard/GifCard';
 
 const GifsList = (props) => {
 
