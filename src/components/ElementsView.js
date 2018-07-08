@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from "redux";
-import allGifs from "../actions";
+import {loadAllGifs} from "../actions/allGifs";
 import ElementList from "./ElementList";
 
 class ElementsView extends Component{
 
     componentDidMount() {
-        this.props.allGifs();
+        this.props.loadAllGifs();
     }
 
     render(){
@@ -36,7 +36,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
 
     return bindActionCreators({
-        allGifs,
+        loadAllGifs,
     }, dispatch);
 
 };

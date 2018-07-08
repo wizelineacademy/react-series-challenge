@@ -1,9 +1,7 @@
 import React from 'react';
 
 const Element = ({onClick,text}) => (
-    <li
-        onClick={onClick}
-    >
+    <li>
         {text}
     </li>
 )
