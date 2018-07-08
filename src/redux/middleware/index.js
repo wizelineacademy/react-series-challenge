@@ -7,6 +7,7 @@ const loggerMiddleware = store => next => action => {
   if(payload) console.log(payload);
   console.log(store.getState());
   console.groupEnd();
+
   return result;
 }
 
