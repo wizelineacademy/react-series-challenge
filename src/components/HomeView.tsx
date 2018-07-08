@@ -3,15 +3,30 @@ import {connect} from 'react-redux';
 import { fetch_gifs } from '../actions/gifs';
 import { bindActionCreators, ActionCreator, Dispatch } from 'redux';
 
+import * as API from '../api';
+import GIFList from './presentational/GIFList';
+import { IGIF } from '../types/gif';
+
 interface IHomeViewProps {
     fetch_gifs: ActionCreator<any>
 }
-class HomeView extends React.Component<IHomeViewProps> {
+
+interface IHomeViewState {
+    gifs: IGIF[]
+}
+class HomeView extends React.Component<IHomeViewProps, IHomeViewState> {
+    public state = {
+        gifs: []
+    }
     public componentDidMount() {
-        this.props.fetch_gifs();
+        API.getTrending().then(({data}) => this.setState({gifs: data.data}));
+        // API.search("GOOGLE").then(({data}) => console.log(data));
     }
     public render() {
-        return <h1>Home View!</h1>
+        return (<div>
+            <h1>Home View!</h1>
+            <GIFList gifs={this.state.gifs} />
+        </div>);
     }
 }
 
