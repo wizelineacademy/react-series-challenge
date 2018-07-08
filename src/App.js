@@ -13,7 +13,7 @@ export default class App extends Component {
         <BrowserRouter>
           <Switch>
             <Route exact path="/" component={ ContainerListGiphy } />
-            <Route path="/giphys-favorites" component={ ContainerGiphysFavorites } />
+            <Route path="/favorites" component={ ContainerGiphysFavorites } />
             <Route path='*' component={NotFound} />
           </Switch>
         </BrowserRouter>
