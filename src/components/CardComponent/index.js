@@ -12,7 +12,6 @@ const CardComponent = (props) => {
 		//for now just add (:
 		addFavorites({ card });
 	}
-	//console.log('CARD img',card.images.original);
 
 	return (
 		<div className='cardItem'>
@@ -20,7 +19,6 @@ const CardComponent = (props) => {
 			<div className='cardFooter'>
 				<div>
 					<span><a target='_blank' href={card.url}>Open</a></span>
-					<span><a> Source?? </a></span>
 					<span>
 						<button onClick={handleFavorite}> ❤ </button>
 					</span>

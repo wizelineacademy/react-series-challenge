@@ -1,29 +1,32 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import Card from '../CardComponent';
 import cards from '../../actions/cards';
 
-const CardsList = (props) => {
-	const {
-		loadCards,
-		addFavorites,
-		removeFavorites,
-	} = props;
-	const cards = Object.keys(props.cards).map((card) => 
+class CardsList extends Component {
+	constructor(props){
+		super(props);
+		//console.log(props);
+	}
+	componentDidMount(){
+		this.props.loadTrending();
+	}
+	render() {
+		const cards = Object.keys(this.props.cards).map((card) => 
 			<Card 
 				key={card}
-				card={props.cards[card]} 
-				loadCards={loadCards}
-				addFavorites={addFavorites}
-				removeFavorites={removeFavorites} />
-	);
-	return (
-		<div className='container'>
-			{cards}
-		</div>
-	);
+				card={this.props.cards[card]} 
+				addFavorites={this.props.addFavorites}
+				removeFavorites={this.props.removeFavorites} />
+		);
+		return (
+			<div className='container'>
+				{cards}
+			</div>
+		)
+	};
 };
 
 const mapStateToProps = (state) => {
@@ -39,12 +42,14 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   	const { 
 		loadCards,
+		loadTrending,
 		addFavorites,
 		removeFavorites,
 	} = cards.creators;
 
 	return bindActionCreators({
 	    loadCards,
+		loadTrending,
 		addFavorites,
 		removeFavorites,
 	}, dispatch);
