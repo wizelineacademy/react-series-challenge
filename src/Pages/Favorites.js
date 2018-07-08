@@ -5,7 +5,6 @@ import SearchInput from "../Components/Search/SearchInput";
 const Favorites = () => (
   <div>
     <SearchInput fromFavorites />
-    <h1>Favorites</h1>
     <FavoriteGifs />
   </div>
 );

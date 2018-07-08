@@ -2,10 +2,10 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 const NavbarStyled = styled.div`
-  padding: 5px 32px;
+  padding: 0 32px;
   display: flex;
   align-items: center;
-  background: rgba(16, 144, 177, 1);
+  background: rgb(16, 144, 177);
 `;
 
 const LogoContainer = styled.div`
@@ -15,6 +15,33 @@ const LogoContainer = styled.div`
   margin-right: 32px;
 `;
 
-const NavLinkStyled = styled(NavLink)``;
+const NavStyled = styled.nav`
+  height: 65px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
-export { NavbarStyled, LogoContainer, NavLinkStyled };
+const NavLinkStyled = styled(NavLink)`
+  text-decoration: none;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 16px;
+  color: #fff;
+  font-weight: 200;
+  transition: all 0.25s;
+
+  &:hover,
+  &.${props => props.activeClassName} {
+    color: rgb(16, 144, 177);
+    background-color: rgb(144, 177, 16);
+  }
+`;
+
+NavLinkStyled.defaultProps = {
+  activeClassName: "active"
+};
+
+export { NavbarStyled, LogoContainer, NavStyled, NavLinkStyled };

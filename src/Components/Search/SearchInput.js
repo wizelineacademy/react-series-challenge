@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { SearchStyled, InputStyled, ButtonStyled } from "./SearchInput.styled";
 
 class SearchInput extends React.Component {
   handleSearch = () => {
@@ -52,20 +53,20 @@ class SearchInput extends React.Component {
   render() {
     const { searchInput, searchFavorite, fromFavorites } = this.props;
     return (
-      <div>
-        <input
+      <SearchStyled>
+        <InputStyled
           type="text"
           placeholder={
-            !fromFavorites ? "Search gifs..." : "Buscar en favoritos"
+            !fromFavorites ? "Buscar GIFs..." : "Buscar en favoritos..."
           }
           onKeyPress={this.handleKeyPress}
           onChange={this.handleOnChange}
           defaultValue={fromFavorites ? searchFavorite : searchInput}
         />
-        <button onClick={this.handleSearch}>
+        <ButtonStyled onClick={this.handleSearch}>
           <i className="fas fa-search" />
-        </button>
-      </div>
+        </ButtonStyled>
+      </SearchStyled>
     );
   }
 }

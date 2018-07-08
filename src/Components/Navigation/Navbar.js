@@ -1,14 +1,21 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-import { NavbarStyled, LogoContainer } from "./Navbar.styled";
+// import { NavLink } from "react-router-dom";
+import {
+  NavbarStyled,
+  LogoContainer,
+  NavStyled,
+  NavLinkStyled
+} from "./Navbar.styled";
 
 const Navbar = () => (
   <NavbarStyled>
     <LogoContainer />
-    <nav>
-      <NavLink to="/">Trending Gifs</NavLink>
-      <NavLink to="/favorites">Favorites</NavLink>
-    </nav>
+    <NavStyled>
+      <NavLinkStyled exact to="/">
+        Tendencias
+      </NavLinkStyled>
+      <NavLinkStyled to="/favorites">Favoritos</NavLinkStyled>
+    </NavStyled>
   </NavbarStyled>
 );
 

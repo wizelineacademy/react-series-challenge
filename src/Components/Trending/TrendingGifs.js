@@ -11,7 +11,6 @@ class Trending extends React.Component {
     const { fetching, data, error } = this.props;
     return (
       <div>
-        <h2>Tendencias</h2>
         {error ? (
           <p>{error}</p>
         ) : (

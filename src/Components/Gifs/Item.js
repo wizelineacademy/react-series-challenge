@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { ItemStyled, ItemButtonStyled } from "./Item.styled";
 
 const Item = ({
   item,
@@ -13,18 +14,19 @@ const Item = ({
     }
   } = item;
 
+  console.log(item.id in favoriteItems);
   return (
-    <span>
+    <ItemStyled>
       <img src={url} alt={title} width={width} height={height} />
-      <button
+      <ItemButtonStyled
         onClick={() => {
           onToggleFavorite(item);
         }}
+        isFavorite={item.id in favoriteItems}
       >
         <i className="fas fa-heart" />
-      </button>
-      {item.id in favoriteItems ? "favorite" : null}
-    </span>
+      </ItemButtonStyled>
+    </ItemStyled>
   );
 };
 
