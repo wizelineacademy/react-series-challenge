@@ -13,8 +13,10 @@ class Home extends Component{
     }
 
     componentDidMount(){
-        //this.props.getTrendingGifs()
-        //this.props.getSearchGifs()
+        const {
+            getTrendingGifs,
+          } = this.props
+        getTrendingGifs()
     }
 
     submitForm = (event) =>{
@@ -33,21 +35,65 @@ class Home extends Component{
         this.props.trendingGifs.query = value
     }
 
+    addFav = (event) =>{
+        const {
+            addFav,
+          } = this.props
+        
+        var id = event.target.getAttribute('data-id')
+        
+        var exists = this.props.trendingGifs.favs.find(function(element){
+            return element === id
+        })
+
+        if(exists === undefined){
+            addFav(id)
+        }
+        
+    }
+
+    removeFav = (event) =>{
+        const {
+            removeFav,
+          } = this.props
+        
+        var id = event.target.getAttribute('data-id')
+        removeFav(id)
+    }
+
     render(){
         const trendingGifs = this.props.trendingGifs.trendingGifs
         const searchGifs = this.props.trendingGifs.searchGifs
+        const addFavFunction = this.addFav
+        const removeFavFunction = this.removeFav
         var arrayGifs = []
         if(trendingGifs !== undefined){
             if(trendingGifs.length > 0){
+
+                let gifFavs = this.props.trendingGifs.favs
                 trendingGifs.forEach(function(item, index){
-                    arrayGifs.push(<img src={item.images["original"].url} key={'trending-' + index}/>)
+                    let exists = gifFavs.find(function(element){
+                        return element === item.id
+                    })
+
+                    var img = <div key={index}>
+                        <img src={item.images["original"].url} key={'trending-' + index}/>
+                        <br/>
+                        <button onClick={exists === undefined ? addFavFunction:removeFavFunction} data-id={item.id}>{exists === undefined ? 'FAV':'UN-FAV'}</button>
+                    </div>
+                    arrayGifs.push(img)
                 })
             }
         }
         if(searchGifs !== undefined){
             if(searchGifs.length > 0){
                 searchGifs.forEach(function(item, index){
-                    arrayGifs.push(<img src={item.images["original"].url} key={'trending-' + index}/>)
+                    var img = <div key={index}>
+                        <img src={item.images["original"].url} key={'trending-' + index}/>
+                        <br/>
+                        <button onClick={addFavFunction} data-id={item.id}>Fav</button>
+                    </div>
+                    arrayGifs.push(img)
                 })
             }
         }
@@ -82,9 +128,13 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     const { getTrendingGifs } = getTrendingGifsActions.creators
     const { getSearchGifs } = getTrendingGifsActions.creators
+    const { addFav } = getTrendingGifsActions.creators
+    const { removeFav } = getTrendingGifsActions.creators
     return bindActionCreators({
         getTrendingGifs,
-        getSearchGifs
+        getSearchGifs,
+        addFav,
+        removeFav
     }, dispatch)
   }
   

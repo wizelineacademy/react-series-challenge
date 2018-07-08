@@ -3,22 +3,31 @@ import trendingGifsActions from '../actions/trendingGifs';
 
 const { TRENDING_GIFS_GET } = trendingGifsActions.types;
 const { SEARCH_GIFS_GET } = trendingGifsActions.types;
+const { ADD_FAV } = trendingGifsActions.types;
+const { REMOVE_FAV } = trendingGifsActions.types;
 const { fetchedTrendingGifs } = trendingGifsActions.creators;
 const { fetchedSearchGifs } = trendingGifsActions.creators;
 
 const API_URL = 'https://api.giphy.com/v1/gifs/';
 
 const fetchTrending = (dispatch) => {
-  axios.get(`${API_URL}trending?api_key=SA3WrTOcAq5bNF9hsWC4Z8j0O1UkOMuB&limit=25&rating=G`)
+  axios.get(`${API_URL}trending?api_key=SA3WrTOcAq5bNF9hsWC4Z8j0O1UkOMuB&limit=10&rating=G`)
     .then((response) => dispatch(fetchedTrendingGifs({ ...response })));
 };
 
 const fetchSearch = (dispatch, query) => {
-  var urlQuery = 'search?api_key=SA3WrTOcAq5bNF9hsWC4Z8j0O1UkOMuB&q=' + query + '&limit=25&offset=0&rating=G&lang=en'
+  var urlQuery = 'search?api_key=SA3WrTOcAq5bNF9hsWC4Z8j0O1UkOMuB&q=' + query + '&limit=10&offset=0&rating=G&lang=en'
   axios.get(API_URL + urlQuery)
     .then((response) => dispatch(fetchedSearchGifs({ ...response })));
 };
 
+const addFav = (dispatch, gifId) =>{
+  dispatch(addFav, gifId)
+}
+
+const removeFav = (dispatch, gifId) =>{
+  dispatch(removeFav, gifId)
+}
 
 const trendingFetcher = (store) => (next) => (action) => {
   const { type } = action;
@@ -30,6 +39,12 @@ const trendingFetcher = (store) => (next) => (action) => {
     fetchSearch(store.dispatch,store.getState().trendingGifs.query);
   }
 
+  if (type === ADD_FAV) {
+    fetchSearch(store.dispatch,store.getState().trendingGifs.query);
+  }
+  if (type === REMOVE_FAV) {
+    fetchSearch(store.dispatch,store.getState().trendingGifs.query);
+  }
   return next(action);
 };
 
