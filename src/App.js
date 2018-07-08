@@ -3,8 +3,8 @@ import logo from './logo.svg';
 import { Route, NavLink, Switch } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import store from './store'
-import About from './components/About'
-import Contact from './components/Contact'
+import Favs from './components/Favs'
+import Search from './components/Search'
 import Home from './components/Home'
 import Page404 from './components/Page404'
 import './App.css';
@@ -21,13 +21,11 @@ class App extends Component {
         <div className="App-intro">
           <h1>React Challenge</h1>
           <ul>
-            <li><NavLink to="/about">About</NavLink></li>
-            <li><NavLink to="/contact">Contact</NavLink></li>
-            <li><NavLink to="/">Home</NavLink></li>            
+            <li><NavLink to="/favs">Your favs</NavLink></li>
+            <li><NavLink to="/">Trending</NavLink></li>            
           </ul>
           <Switch>
-            <Route exact path="/about" component={About} />
-            <Route exact path="/contact" component={Contact} />
+            <Route exact path="/favs" component={Favs} />
             <Route exact path="/" component={Home} />
             <Route component={Page404} />
           </Switch>

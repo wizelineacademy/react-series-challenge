@@ -8,7 +8,8 @@ class Home extends Component{
     constructor(props){
         super(props)
         this.state = {
-            query:''
+            query:'',
+            showTrendings:true
         }
     }
 
@@ -25,7 +26,14 @@ class Home extends Component{
             getSearchGifs,
           } = this.props;
         var query = this.state.query
-        getSearchGifs(query)
+        if(query == ''){ 
+            this.setState({showTrendings:true})
+        }
+        else{
+            this.setState({showTrendings:false})
+            getSearchGifs(query)
+        }
+
     }
 
     
@@ -42,13 +50,7 @@ class Home extends Component{
         
         var id = event.target.getAttribute('data-id')
         
-        var exists = this.props.trendingGifs.favs.find(function(element){
-            return element === id
-        })
-
-        if(exists === undefined){
-            addFav(id)
-        }
+        addFav(id)
         
     }
 
@@ -67,38 +69,31 @@ class Home extends Component{
         const addFavFunction = this.addFav
         const removeFavFunction = this.removeFav
         var arrayGifs = []
-        if(trendingGifs !== undefined){
-            if(trendingGifs.length > 0){
-
-                let gifFavs = this.props.trendingGifs.favs
-                trendingGifs.forEach(function(item, index){
-                    let exists = gifFavs.find(function(element){
-                        return element === item.id
-                    })
-
-                    var img = <div key={index}>
-                        <img src={item.images["original"].url} key={'trending-' + index}/>
-                        <br/>
-                        <button onClick={exists === undefined ? addFavFunction:removeFavFunction} data-id={item.id}>{exists === undefined ? 'FAV':'UN-FAV'}</button>
-                    </div>
-                    arrayGifs.push(img)
-                })
-            }
+        if(trendingGifs.length > 0 && this.state.showTrendings){
+            trendingGifs.forEach(function(item, index){
+                console.log(item.fav ? 'UN-FAV':'FAV')
+                var img = <div key={index}>
+                    <img src={item.url} key={'trending-' + index}/>
+                    <br/>
+                    <button onClick={ !item.fav ? addFavFunction:removeFavFunction} data-id={item.id}>{item.fav ? 'UN-FAV':'FAV'}</button>
+                </div>
+                arrayGifs.push(img)
+            })
         }
-        if(searchGifs !== undefined){
-            if(searchGifs.length > 0){
-                searchGifs.forEach(function(item, index){
-                    var img = <div key={index}>
-                        <img src={item.images["original"].url} key={'trending-' + index}/>
-                        <br/>
-                        <button onClick={addFavFunction} data-id={item.id}>Fav</button>
-                    </div>
-                    arrayGifs.push(img)
-                })
-            }
+        
+        if(searchGifs.length > 0 && !this.state.showTrendings ){
+            searchGifs.forEach(function(item, index){
+                var img = <div key={index}>
+                    <img src={item.url} key={'search-' + index}/>
+                    <br/>
+                    <button onClick={ !item.fav ? addFavFunction:removeFavFunction} data-id={item.id}>{item.fav ? 'UN-FAV':'FAV'}</button>
+                </div>
+                arrayGifs.push(img)
+            })
         }
         
         return <div className='home'>
+        <h1>Trending</h1><br/>
             <form onSubmit={this.submitForm}>
             <InputContainerStyled>
                 <input type='text' onChange={this.handleChange}/>
