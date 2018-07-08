@@ -1,5 +1,6 @@
 export default {
   searchQuery: '',
   searchResults: [],
-  trendingGifs: []
+  trendingGifs: [],
+  favorites: []
 };
