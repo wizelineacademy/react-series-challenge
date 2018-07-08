@@ -1,22 +1,15 @@
 import React from "react";
 import { connect } from "react-redux";
+
 import Trending from "../Trending/TrendingGifs";
 import FilteredGifs from "../Filtered/FilteredGifs";
 
-class ListGifs extends React.Component {
-  render() {
-    const { trendGifs, searchGifs, onRequestTrendGifs } = this.props;
-    return (
-      <div>
-        {searchGifs.data && searchGifs.data.length ? (
-          <FilteredGifs {...searchGifs} />
-        ) : (
-          <Trending {...trendGifs} onRequestTrendGifs={onRequestTrendGifs} />
-        )}
-      </div>
-    );
-  }
-}
+const ListGifs = ({ trendGifs, searchGifs, onRequestTrendGifs }) =>
+  searchGifs.data && searchGifs.data.length ? (
+    <FilteredGifs {...searchGifs} />
+  ) : (
+    <Trending {...trendGifs} onRequestTrendGifs={onRequestTrendGifs} />
+  );
 
 const mapStateToProps = state => {
   const { trendGifs, searchGifs } = state;

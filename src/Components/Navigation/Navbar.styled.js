@@ -6,6 +6,7 @@ const NavbarStyled = styled.div`
   display: flex;
   align-items: center;
   background: rgb(16, 144, 177);
+  box-shadow: 0px 2px 10px 1px rgba(16, 144, 177, 0.6);
 `;
 
 const LogoContainer = styled.div`

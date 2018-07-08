@@ -10,11 +10,10 @@ const Item = ({
   const {
     title,
     images: {
-      preview_gif: { url, height, width }
+      fixed_width: { url, height, width }
     }
   } = item;
 
-  console.log(item.id in favoriteItems);
   return (
     <ItemStyled>
       <img src={url} alt={title} width={width} height={height} />

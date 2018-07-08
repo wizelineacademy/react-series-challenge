@@ -12,15 +12,11 @@ class Trending extends React.Component {
     return (
       <div>
         {error ? (
-          <p>{error}</p>
+          <div>{error}</div>
+        ) : !fetching && data && data.length ? (
+          data.map(item => <Item key={item.id} item={item} />)
         ) : (
-          <div>
-            {!fetching && data && data.length ? (
-              <div>{data.map(item => <Item key={item.id} item={item} />)}</div>
-            ) : (
-              <p>Cargando...</p>
-            )}
-          </div>
+          <div>Cargando...</div>
         )}
       </div>
     );

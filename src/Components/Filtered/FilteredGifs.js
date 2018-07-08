@@ -1,25 +1,20 @@
 import React from "react";
 import Item from "../Gifs/Item";
 
-class FilteredGifs extends React.Component {
-  render() {
-    const { fetching, data, error } = this.props;
-    return (
+const FilteredGifs = ({ fetching, data, error }) => (
+  <div>
+    {error ? (
+      <p>{error}</p>
+    ) : (
       <div>
-        {error ? (
-          <p>{error}</p>
+        {!fetching && data && data.length ? (
+          data.map(item => <Item key={item.id} item={item} />)
         ) : (
-          <div>
-            {!fetching && data && data.length ? (
-              <div>{data.map(item => <Item key={item.id} item={item} />)}</div>
-            ) : (
-              <p>Cargando...</p>
-            )}
-          </div>
+          <p>Cargando...</p>
         )}
       </div>
-    );
-  }
-}
+    )}
+  </div>
+);
 
 export default FilteredGifs;
