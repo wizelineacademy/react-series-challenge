@@ -1,17 +1,31 @@
 import React, { Component } from 'react';
 import GifList from './GifList';
-import mockData from './mockData';
-import NavBar from './NavBar';
-
+import { connect } from 'react-redux';
+import { fetchTrendingGifs } from './actions/giphyApi'
 
 class Home extends Component {
+  componentDidMount() {
+    this.props.fetchTrendingGifs();
+  }
+
   render() {
+    const { trendingGifs } = this.props;
     return (
       <div>
-        <GifList gifs={mockData.data} />
+        <GifList gifs={trendingGifs} />
       </div>
     );
   }
 }
 
-export default Home;
+const mapStateToProps = (state = {}) => {
+  const { giphyApi } = state;
+  const { trendingGifs } = giphyApi;
+  return { trendingGifs };
+}
+
+const mapDispatchToProps = {
+  fetchTrendingGifs
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

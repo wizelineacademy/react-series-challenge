@@ -18,7 +18,7 @@ class GifList extends Component {
     return (
       <Container>
         <GifsRow>
-          {gifs.map((gif) => {
+          {gifs && gifs.map((gif) => {
             const { images } = gif;
             const { fixed_width: image } = images;
             return (
