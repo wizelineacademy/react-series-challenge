@@ -5,7 +5,7 @@ class Gif extends Component {
   render(){
     return (
       <div className="gif">
-        <img src={this.props.src} />
+        <img src={this.props.src} alt={this.props.src} />
         <LikeStatus liked={this.props.liked} />
       </div>
     )  

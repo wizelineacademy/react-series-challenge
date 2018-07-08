@@ -7,13 +7,21 @@ class Favorites extends Component {
     this.state = {
       gifs: [
         {
-          src: "https://media.giphy.com/media/l1J9KqKcpnG6ychfq/giphy.gif",
+          images: {
+            original: {
+              url: "https://media.giphy.com/media/l1J9KqKcpnG6ychfq/giphy.gif"
+            }
+          },
           liked: true
         },
         {
-          src: "https://media.giphy.com/media/3xz2BuKH7jQnxBTCtG/giphy.gif",
+          images: {
+            original: {
+              url: "https://media.giphy.com/media/3xz2BuKH7jQnxBTCtG/giphy.gif"
+            }
+          },
           liked: true
-        },
+        }
       ]
     }
   }

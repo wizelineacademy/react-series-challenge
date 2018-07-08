@@ -4,8 +4,8 @@ import Gif from './Gif'
 const GifList = (props) => {
   return (
     <React.Fragment>
-      {props.gifs.map((gif, index) =>
-        <Gif key={index} liked={gif.liked} src={gif.src} />
+      {Object.keys(props.gifs).map((gif, index) =>
+        <Gif key={index} liked={props.gifs[gif].liked} src={props.gifs[gif].images.original.url} />
       )}
     </React.Fragment>
   );
