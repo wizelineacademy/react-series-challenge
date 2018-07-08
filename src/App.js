@@ -24,6 +24,10 @@ class App extends Component {
           <Switch>
               <Route path="/Search" component={Home}  />
               <Route path="/Favorites" component={Favorites}/>
+              <Redirect to={{
+                pathname: "/Search",
+                state: { from: 'NOT FOUND PAGE' },
+              }} />
           </Switch>
           
         </div>
