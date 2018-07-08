@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Home from './Home';
-import Favorites from './Favorites';
-import NavBar from './NavBar';
+import Home from './components/Home';
+import Favorites from './components/Favorites';
+import NavBar from './components/NavBar';
 
 class App extends Component {
   render() {

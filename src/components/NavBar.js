@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Container, Row, Col } from './Grid.styled';
-import logo from './logo.svg';
-import searchIcon from './search.svg'
+import logo from '../assets/logo.svg';
+import searchIcon from '../assets/search.svg'
 import { Link, NavLink } from 'react-router-dom';
 
 const Header = styled.header`
@@ -74,7 +74,7 @@ class NavBar extends Component {
           <Row>
             <Link to="/">
               <LogoImage src={logo} alt="logo" />
-              <LogoText> GifApp </LogoText>
+              <LogoText> GIFApp </LogoText>
             </Link>
             <Col>
               <NavLinks>

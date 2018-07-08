@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import GifList from './GifList';
 import { connect } from 'react-redux';
-import { fetchTrendingGifs } from './actions/giphyApi'
+import { fetchTrendingGifs } from '../actions/giphyApi'
 
 class Home extends Component {
   componentDidMount() {
@@ -12,7 +12,9 @@ class Home extends Component {
     const { trendingGifs } = this.props;
     return (
       <div>
-        <GifList gifs={trendingGifs} />
+        <GifList
+          gifs={trendingGifs}
+        />
       </div>
     );
   }
