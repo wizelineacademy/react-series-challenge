@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import FavoriteButton from "../FavoriteButton/FavoriteButton";
+import GifItem from "./GifItem";
 
 class ListGifs extends Component {
   componentDidMount() {
@@ -14,19 +14,12 @@ class ListGifs extends Component {
     }
     if (!searchGifs.length) {
       return trendingGifs.map(gif => (
-        <div key={gif.id}>
-          <img src={gif.images.preview_gif.url} alt="Gif item" />
-          <FavoriteButton gif={gif} />
-          {!favoriteGifs[gif.id] ? null : <label>Favorito</label> }
-        </div>
+        <GifItem key={gif.id} gif={gif} favoriteGifs={favoriteGifs} />
       ));
     }
     return searchGifs.map(gif => (
-      <div key={gif.id}>
-        <img src={gif.images.preview_gif.url} alt="Gif item" />
-        <FavoriteButton gif={gif} key={gif.id} />
-        {!favoriteGifs[gif.id] ? null : <label>Favorito</label> }
-      </div>
+
+      <GifItem key={gif.id} gif={gif} favoriteGifs={favoriteGifs} />
     ));
   }
 }
