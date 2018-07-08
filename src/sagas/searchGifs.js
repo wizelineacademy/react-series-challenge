@@ -10,7 +10,6 @@ export default function* watcherSaga() {
 // function that makes the api request and returns a Promise for response
 const fetchSearchGifs = action => {
   const { query } = action;
-  console.log(query);
   return axios({
     method: "get",
     baseURL: HOST,
@@ -27,7 +26,6 @@ function* workerSaga(query) {
   try {
     const response = yield call(fetchSearchGifs, query);
     const { data } = response.data;
-    console.log(data);
 
     // dispatch a success action to the store with the new data
     yield put({ type: "API_CALL_SEARCH_SUCCESS", data });

@@ -9,7 +9,6 @@ const initialState = {
 
 const searchGifs = (state = initialState, action) => {
   const { type, data, error } = action;
-  console.log(action);
   switch (type) {
     case searchGifsActions.types.API_CALL_SEARCH_REQUEST:
       return { ...state, fetching: true, error: null };

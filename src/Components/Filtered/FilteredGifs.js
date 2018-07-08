@@ -4,7 +4,6 @@ import Item from "../Gifs/Item";
 class FilteredGifs extends React.Component {
   render() {
     const { fetching, data, error } = this.props;
-    console.log(this.props);
     return (
       <div>
         <h2>Trending</h2>

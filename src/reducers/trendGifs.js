@@ -9,7 +9,6 @@ const initialState = {
 
 const trendGifs = (state = initialState, action) => {
   const { type, data, error } = action;
-  console.log(action);
   switch (type) {
     case trendGifsActions.types.API_CALL_REQUEST:
       return { ...state, fetching: true, error: null };

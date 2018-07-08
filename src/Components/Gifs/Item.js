@@ -18,7 +18,6 @@ const Item = ({
       <img src={url} alt={title} width={width} height={height} />
       <button
         onClick={() => {
-          console.log(item);
           onToggleFavorite(item);
         }}
       >

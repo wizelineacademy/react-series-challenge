@@ -9,7 +9,6 @@ class Trending extends React.Component {
 
   render() {
     const { fetching, data, error } = this.props;
-    console.log(this.props);
     return (
       <div>
         <h2>Trending</h2>
@@ -33,7 +32,6 @@ const mapStateToProps = state => {
   const {
     trendGifs: { fetching, data, error }
   } = state;
-  console.log(data);
   return {
     fetching: fetching,
     data,

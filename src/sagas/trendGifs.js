@@ -24,7 +24,6 @@ function* workerSaga() {
   try {
     const response = yield call(fetchTrendGifs);
     const { data } = response.data;
-    console.log(data);
 
     // dispatch a success action to the store with the new data
     yield put({ type: "API_CALL_SUCCESS", data });

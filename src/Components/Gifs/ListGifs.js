@@ -20,7 +20,6 @@ class ListGifs extends React.Component {
 
 const mapStateToProps = state => {
   const { trendGifs, searchGifs } = state;
-  console.log(trendGifs, searchGifs);
   return {
     trendGifs,
     searchGifs
