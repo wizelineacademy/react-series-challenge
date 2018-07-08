@@ -1,11 +1,13 @@
-import {LOAD_All_GIFS} from "../actions/allGifs";
+import {FETCH_ALL_GIFS} from "../actions/allGifs";
 
 const allGifs = (state = {}, action) => {
     switch (action.type) {
-        case LOAD_All_GIFS:
-        //todo: get all trendy gifs from Api
+        //set the data from saga to the state
+        case FETCH_ALL_GIFS:
+            const  { gifs } = action.payload;
+            return { ...state,...gifs};
         default:
-            return state
+            return state;
     }
 }
 
