@@ -1,8 +1,8 @@
 import React from 'react';
-import SearchBar from './SearchBar';
+import SearchBar from './HomeSearchBar';
 import GifList from './GifList';
 
-const Home = (props) => (
+const Home = () => (
     <div>
         <SearchBar/>
         <GifList/>

@@ -1,12 +1,12 @@
-const SEARCH_BAR_SUBMIT = 'SEARCH_BAR_SUBMIT';
+const SEARCH_BAR_INPUT = 'SEARCH_BAR_INPUT';
 
-const searchBarSubmit = (payload = '') => ({ type: SEARCH_BAR_SUBMIT, payload });
+const searchBarInput = (payload = '') => ({ type: SEARCH_BAR_INPUT, payload });
 
 export default {
     types: {
-        SEARCH_BAR_SUBMIT,
+        SEARCH_BAR_INPUT,
     },
     creators: {
-        searchBarSubmit,
+        searchBarInput,
     },
 }
