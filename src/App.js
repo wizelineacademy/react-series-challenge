@@ -5,6 +5,7 @@ import { Route, Redirect, Link, NavLink, Switch, withRouter, } from 'react-route
 import logo from './logo.svg';
 import './App.css';
 import Home from './components/Home';
+import Favorites from './components/Favorites';
 
 class App extends Component {
   render() {
@@ -22,10 +23,7 @@ class App extends Component {
 
           <Switch>
               <Route path="/Search" component={Home}  />
-              <Route path="/Favorites" render={()=> 
-                                          <p className="App-intro">
-                                            Welcome to Favorites.
-                                          </p>}  />
+              <Route path="/Favorites" component={Favorites}/>
           </Switch>
           
         </div>
