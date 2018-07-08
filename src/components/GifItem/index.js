@@ -53,13 +53,19 @@ const GifItem = ({
   );
 
   return (
-    <ItemWrapper>
-      <GifImg alt={gif.slug} src={gif.images.preview_gif.url} />
-      <p>{gif.title}</p>
+    <ItemWrapper itemscope itemtype="http://schema.org/Media">
+      <GifImg
+        itemprop="image"
+        alt={gif.title}
+        src={gif.images.preview_gif.url}
+      />
+      <p itemprop="name">{gif.title}</p>
       <p>
         URL: <a href={gif.bitly_url}>{gif.bitly_url}</a>
       </p>
-      <p>by: {gif.username}</p>
+      <p>
+        by: <span itemprop="author">{gif.username}</span>
+      </p>
       {isFavorite ? removeFavBtn : addFavBtn}
       <button onClick={() => openModal({ gif })}>Ampliar</button>
     </ItemWrapper>
