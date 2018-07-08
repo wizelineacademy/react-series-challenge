@@ -2,19 +2,15 @@ import  React,{ Component } from 'react';
 import axios from 'axios';
 import ListGiphy from '../components/list-giphy';
 
-// const GphApiClient = require('giphy-js-sdk-core')
-// client = GphApiClient('STKCOqnN3DKDQJRPbv5il9egmGwZqRSn');
+const GphApiClient = require('giphy-js-sdk-core');
+const client = GphApiClient('STKCOqnN3DKDQJRPbv5il9egmGwZqRSn');
+
 const listGiphy = [];
 export default class ContainerListGiphy extends Component{
   state = {
     dataGiphy:{}
   }
   componentDidMount(){
-    
-    // setTimeout(()=>{
-    //   this.getDataGiphy(),
-    //   3000
-    // })
 
     // donde q=ryan+gosling parametro que va a buscar y limt = cantidad a mostrar
     const url = 'http://api.giphy.com/v1/gifs/trending?&api_key=STKCOqnN3DKDQJRPbv5il9egmGwZqRSn&limit=25';
@@ -24,23 +20,24 @@ export default class ContainerListGiphy extends Component{
         dataGiphy:resultsGiphy
       })
     })
+
+
+    // prueba
+    client.trending("gifs", {})
+    .then((response) => {
+      console.log(response, 'search')
+    })
+    .catch((err) => {
+
+    })
+
+
+    // fin prueba
   }
   
-  // getDataGiphy = () =>{
-  //   alert('me recargue');
-  //   // donde q=ryan+gosling parametro que va a buscar y limt = cantidad a mostrar
-  //   const url = 'http://api.giphy.com/v1/gifs/trending?q=ryan+gosling&api_key=STKCOqnN3DKDQJRPbv5il9egmGwZqRSn&limit=25';
-  //   axios.get(url)
-  //   .then((resultsGiphy) => {
-  //     this.setState({
-  //       dataGiphy:resultsGiphy
-  //     })
-  //   })
-  // }
-
   render(){
     return(
-        <section className="list-giphy">
+        <section className="list-giphy container">
           <form>
             <input 
               className="input-search"
@@ -66,7 +63,6 @@ export default class ContainerListGiphy extends Component{
     nextState.dataGiphy.data.data.forEach((giphys,index) => {
       listGiphy.push(giphys);
     })
-    console.log(listGiphy);
   }
 };
 
