@@ -3,15 +3,16 @@ import actions from '../actions/index';
 import { GET_MORE_GIFS, UPDATE_GIFS } from '../actions/types';
 import selectors from '../utils/selectors';
 import { fetchGifs } from '../utils/common';
+import { getMoreGifs } from '../actions/home';
 
 const url = 'http://api.giphy.com/v1/gifs/';
 const api_key = process.env.REACT_APP_GIPHY_API_KEY;
 const limit = 10;
 
-const markFavorites = async (elems, favs) =>
-  elems.map(
+const markFavorites = (elemets, favorites) =>
+  elemets.map(
     item =>
-      favs.findIndex(fav => fav.id === item.id) > -1
+      favorites.findIndex(favorite => favorite.id === item.id) > -1
         ? { ...item, favorite: true }
         : { ...item, favorite: false }
   );
@@ -48,6 +49,6 @@ export function* updateGifsSaga() {
 }
 
 export default function* homeSaga() {
-  yield takeLatest(GET_MORE_GIFS, getNewContentSaga);
-  yield takeEvery(UPDATE_GIFS, updateContentSaga);
+  yield takeLatest(GET_MORE_GIFS, getMoreGifs);
+  yield takeEvery(UPDATE_GIFS, updateGifsSaga);
 }
