@@ -9,13 +9,21 @@ const PAGE_SIZE = 20;
 // https://stackoverflow.com/questions/6566456/how-to-serialize-an-object-into-a-list-of-url-query-parameters
 const mapToParams = (obj) => {
   var str = "";
-  for (var key in obj) {
+  for (let key in obj) {
     if (str !== "") {
       str += "&";
     }
     str += key + "=" + encodeURIComponent(obj[key]);
   }
   return str;
+}
+
+const listToMap = (list) => {
+  var map = {};
+  for (let item of list) {
+    map[item.id] = item;
+  }
+  return map;
 }
 
 const fetchJson = (...args) => {
@@ -35,8 +43,9 @@ function* getTrendingGifs(action) {
   const endpoint = `${BASE_URL}${path}?${searchParams}`;
 
   try {
-    const { data } = yield call(fetchJson, endpoint);
-    yield put(receiveTrendingGifs(data));
+    const { data: gifs } = yield call(fetchJson, endpoint);
+    const gifsMap = listToMap(gifs);
+    yield put(receiveTrendingGifs(gifsMap));
   } catch (e) {
     yield put(receiveTrendingGifs(e));
   }
