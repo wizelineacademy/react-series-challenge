@@ -18,7 +18,7 @@ const GifImg = styled.img`
   width: 145px;
 `;
 
-const GifItem = ({ gif, addFavoriteId, isFavorite }) => {
+const GifItem = ({ gif, addFavoriteId, removeFavoriteId, isFavorite }) => {
   const addFavBtn = (
     <button
       onClick={e => {
@@ -34,6 +34,7 @@ const GifItem = ({ gif, addFavoriteId, isFavorite }) => {
     <button
       onClick={e => {
         e.preventDefault();
+        removeFavoriteId(gif.id);
       }}
     >
       Remove from my favs.
@@ -68,6 +69,7 @@ GifItem.propTypes = {
   }),
   isFavorite: PropTypes.bool.isRequired,
   addFavoriteId: PropTypes.func.isRequired,
+  removeFavoriteId: PropTypes.func.isRequired,
 };
 
 export default GifItem;

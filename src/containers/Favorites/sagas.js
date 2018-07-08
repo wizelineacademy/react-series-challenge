@@ -10,7 +10,6 @@ function* loadFavorites() {
   try {
     yield put(creators.setLoadingFavorites(true));
     const favoritesIds = yield select(selectors.favoritesIdsSelector);
-    console.log('favoritesIds', favoritesIds);
     if (favoritesIds.length > 0) {
       const { data } = yield call(api.gifs, { ids: favoritesIds });
       yield put(creators.setFavorites(data.data));
