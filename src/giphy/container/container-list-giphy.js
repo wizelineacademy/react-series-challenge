@@ -44,7 +44,6 @@ export default class ContainerListGiphy extends Component{
               type="text" 
               placeholder="Search Giphy"/>
           </form>
-          
           {
             listGiphy.map((giphy,index) => {
               return(
