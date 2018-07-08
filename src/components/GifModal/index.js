@@ -3,7 +3,7 @@ import { createPortal } from 'react-dom';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-export const GifModalBox = styled.div`
+const GifModalBox = styled.div`
   height: 420px;
   width: 420px;
   margin: 0 auto;
@@ -19,6 +19,10 @@ export const GifModalBox = styled.div`
   display: ${({ isOpen }) => (isOpen ? 'block' : 'none')};
 `;
 
+const GifImg = styled.img`
+  max-width: 100%;
+`;
+
 const GifPortal = ({ children }) => {
   const nodeToAppend = document.getElementsByTagName('body')[0];
   return createPortal(children, nodeToAppend);
@@ -29,7 +33,7 @@ const GifModal = ({ isOpen, closeModal, gif }) => (
     <GifModalBox isOpen={isOpen}>
       {gif && (
         <div>
-          <img alt={gif.slug} src={gif.images.preview_gif.url} />
+          <GifImg alt={gif.slug} src={gif.images.original.url} />
           <p>{gif.title}</p>
         </div>
       )}

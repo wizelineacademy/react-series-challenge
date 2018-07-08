@@ -56,7 +56,7 @@ const GifItem = ({
       </p>
       <p>by: {gif.username}</p>
       {isFavorite ? removeFavBtn : addFavBtn}
-      <button onClick={() => openModal()}>Ver más</button>
+      <button onClick={() => openModal({ gif })}>Ver más</button>
     </ItemWrapper>
   );
 };
