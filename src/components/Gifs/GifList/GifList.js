@@ -3,8 +3,9 @@ import GifCard from '../GifCard/GifCard'
 import './GifList.css'
 
 const GifList = ({data}) => {
+
   const gifs = data.map((gif, index) => (
-    <GifCard src={gif.gifImage} key={index}/>
+    <GifCard src={gif.images.downsized.url} key={index}/>
   ))
 
   return (
