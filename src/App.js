@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 import Header from './Header';
 import SearchBar from './SearchBar';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
