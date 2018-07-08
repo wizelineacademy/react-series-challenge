@@ -1,6 +1,6 @@
-import React from "react";
-import GiftItem from "../GifItem";
-import styled from "styled-components";
+import React from 'react';
+import GifItem from '../../containers/GifItem';
+import styled from 'styled-components';
 
 const ItemsWrapper = styled.div`
   display: flex;
@@ -15,7 +15,7 @@ const ItemsWrapper = styled.div`
 const GifsList = ({ gifs, loading }) => {
   return (
     <ItemsWrapper>
-      {gifs.map(gif => <GiftItem key={gif.id} gif={gif} />)}
+      {gifs.map(gif => <GifItem id={gif.id} key={gif.id} gif={gif} />)}
     </ItemsWrapper>
   );
 };

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const ItemWrapper = styled.div`
   background-color: #fff;
@@ -17,7 +18,28 @@ const GifImg = styled.img`
   width: 145px;
 `;
 
-const GifItem = ({ gif }) => {
+const GifItem = ({ gif, addFavorite, isFavorite }) => {
+  const addFavBtn = (
+    <button
+      onClick={e => {
+        e.preventDefault();
+        addFavorite(gif.id);
+      }}
+    >
+      Add to my favs.
+    </button>
+  );
+
+  const removeFavBtn = (
+    <button
+      onClick={e => {
+        e.preventDefault();
+      }}
+    >
+      Remove from my favs.
+    </button>
+  );
+
   return (
     <ItemWrapper>
       <GifImg alt={gif.slug} src={gif.images.preview_gif.url} />
@@ -26,9 +48,26 @@ const GifItem = ({ gif }) => {
         URL: <a href={gif.bitly_url}>{gif.bitly_url}</a>
       </p>
       <p>by: {gif.username}</p>
-      <a href="#">Add to my favs.</a>
+      {isFavorite ? removeFavBtn : addFavBtn}
     </ItemWrapper>
   );
+};
+
+GifItem.propTypes = {
+  id: PropTypes.string.isRequired,
+  gif: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    username: PropTypes.string.isRequired,
+    bitly_url: PropTypes.string.isRequired,
+    images: PropTypes.shape({
+      preview_gif: PropTypes.shape({
+        url: PropTypes.string,
+      }),
+    }),
+  }),
+  isFavorite: PropTypes.bool.isRequired,
+  addFavorite: PropTypes.func.isRequired,
 };
 
 export default GifItem;
