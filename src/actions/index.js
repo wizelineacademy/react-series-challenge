@@ -4,20 +4,18 @@ export const ADD_ITEM = 'ADD_ITEM';
 export const DELETE_ITEM = 'DELETE_ITEM';
 
 //Action creators
-let fakeID = 0;
-export const addItem = (text) => ({
+export const addItem = (payload) => ({
     type : ADD_ITEM,
-    id   : fakeID++,
-    text
+    payload
 });
 
-export const deleteItem = (id) => ({
+export const deleteItem = (payload) => ({
     type : DELETE_ITEM,
-    id
+    payload
 })
 
-export const updateItems = ({data}) => ({
+export const updateItems = (payload) => ({
     type : UPDATE_ITEMS,
-    data
+    payload
 })
 
