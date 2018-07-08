@@ -22,7 +22,7 @@ const Favorites = (props) => {
 const GiftList = (props) => {
     const { gifts } = props
   
-    return gifts.map((item, index)=> (
+    return Object.values(gifts).map((item, index)=> (
       <FavoriteItem 
         url={item.url}
         name={item.name}
