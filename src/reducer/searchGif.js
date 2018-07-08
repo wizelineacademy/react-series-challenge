@@ -3,9 +3,9 @@ import * as actions from "../actions";
 const searchGif = (state = {}, action) => {
   switch (action.type) {
     case actions.SEARCH_RESULT:
-      return state;
+      return action.result;
     case actions.SEARCH_EVENT:
-      return state;
+      return action.result;
     default:
       return state;
   }
