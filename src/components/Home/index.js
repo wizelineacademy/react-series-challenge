@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux';
 import getTrendingGifsActions from '../../actions/trendingGifs'
-import GifContainer from '../GifContainer'
+import {GifContainer, NoResults} from '../GifContainer'
 import SearchForm from '../SearchForm'
 
 class Home extends Component{
@@ -48,8 +48,12 @@ class Home extends Component{
         var arrayGifs = []
         trendingGifs.forEach(function(item, index){
             let isFav = favs.findIndex((obj => obj.id === item.id))
-            arrayGifs.push(<GifContainer key={item.id} url={item.url} alt={item.alt} id={item.id} isFav={isFav} title={item.title}  clickFuncion={addFavFunction} textButton='Add to favs' />)
+            arrayGifs.push(<GifContainer key={item.id} url={item.url} alt={item.alt} id={item.id} isFav={isFav} title={item.title}  clickFuncion={addFavFunction} action='add' />)
         })
+
+        if(arrayGifs.length === 0){
+            arrayGifs = <NoResults/>
+        }
         
         return <div className='home'>
         <h1>Trending</h1><br/>

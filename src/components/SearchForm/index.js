@@ -20,15 +20,17 @@ class SearchForm extends Component{
             searchFav,
           } = this.props;
         var query = this.state.query
-        switch(this.props.searchOn){
-            case 'all':
-            getSearchGifs(query)
-            break;
-            case 'favs':
-            searchFav(query)
-            break;
-            default:
-            break;
+        if(query !== ''){
+            switch(this.props.searchOn){
+                case 'all':
+                getSearchGifs(query)
+                break;
+                case 'favs':
+                searchFav(query)
+                break;
+                default:
+                break;
+            }
         }
     }
 
@@ -42,7 +44,7 @@ class SearchForm extends Component{
     render(){
         return <form onSubmit={this.submitForm}>
                     <InputContainerStyled>
-                        <input type='text' onChange={this.handleChange}/>
+                        <input type='text' value={this.props.trendingGifs.query} onChange={this.handleChange}/>
                     </InputContainerStyled>
                     <button>Search</button>
                 </form>

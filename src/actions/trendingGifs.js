@@ -9,6 +9,7 @@ const SEARCH_GIFS_GET = 'SEARCH_GIFS_GET'
 const ADD_FAV = 'ADD_FAV'
 const REMOVE_FAV = 'REMOVE_FAV'
 const SEARCH_GIFS_FAV = 'SEARCH_GIFS_FAV'
+const GET_GIFS_FAV = 'GET_GIFS_FAV'
 
 
 const fetchedTrendingGifs = createAction(TRENDING_GIFS_FETCHED)
@@ -30,7 +31,8 @@ export default{
         SEARCH_GIFS_GET,
         ADD_FAV,
         REMOVE_FAV,
-        SEARCH_GIFS_FAV
+        SEARCH_GIFS_FAV,
+        GET_GIFS_FAV
     },
     creators:{
         fetchedTrendingGifs,

@@ -24,12 +24,12 @@ const trendingGifsReducer = (state = initialState, action) => {
             payload.data.data.forEach(function(item, index){
                 trendingGifs.push({ id:item.id, url:item.images["original"].url, fav:false, title:item.title })
             })
-            const newState = { searchGifs:state.searchGifs, trendingGifs:trendingGifs, query:state.query, favs:state.favs }
+            const newState = { searchGifs:[], trendingGifs:trendingGifs, query:'', favs:state.favs }
             setLocal(state)
             return newState
         }
         case trendingGifsActions.types.SEARCH_GIFS_GET:{
-            const newState = { searchGifs: state.searchGifs, trendingGifs:state.trendingGifs, query:payload, favs:state.favs }
+            const newState = { searchGifs: [], trendingGifs:state.trendingGifs, query:payload, favs:state.favs }
             setLocal(state)
             return newState
         }
@@ -39,7 +39,7 @@ const trendingGifsReducer = (state = initialState, action) => {
             payload.data.data.forEach(function(item, index){
                 searchGifs.push({ id:item.id, url:item.images["original"].url, fav:false, title:item.title })
             })
-            const newState = { searchGifs: searchGifs, trendingGifs:searchGifs, query:state.query, favs:state.favs }
+            const newState = { searchGifs: [], trendingGifs:searchGifs, query:'', favs:state.favs }
             setLocal(state)
             return newState
         }
@@ -60,7 +60,7 @@ const trendingGifsReducer = (state = initialState, action) => {
             if(objIndexFav === -1){
                 state.favs.push(obj)
             }
-            const newState = {  searchGifs: state.searchGifs, trendingGifs:state.trendingGifs, query:state.query, favs:state.favs }
+            const newState = {  searchGifs: [], trendingGifs:state.trendingGifs, query:'', favs:state.favs }
             
             setLocal(state)
 
@@ -74,25 +74,30 @@ const trendingGifsReducer = (state = initialState, action) => {
             }
             if(objIndexSearch !== -1){
                 state.searchGifs[objIndexSearch].fav = false
+                state.searchGifs.splice(objIndexSearch,1)
             }
 
             let objIndexFav = state.favs.findIndex((obj => obj.id === payload));
             if(objIndexFav > -1){
                 state.favs.splice(objIndexFav,1)
             }
-            const newState = {  searchGifs: state.searchGifs, trendingGifs:state.trendingGifs, query:state.query, favs:state.favs }
+
+            
+
+            const newState = {  searchGifs: state.searchGifs, trendingGifs:state.trendingGifs, query:'', favs:state.favs }
             setLocal(state)
             return newState
         }
+        
         case trendingGifsActions.types.SEARCH_GIFS_FAV:{
             let query = payload
             let search = []
             if(query !== ''){
                 state.favs.forEach(function(item, index){
-                    item.title.search(query) !== -1 ? search.push(item): null
+                    if(item.title.search(query) !== -1) search.push(item)
                 })
             }
-            const newState = {  searchGifs: search, trendingGifs:state.trendingGifs, query:state.query, favs:state.favs }
+            const newState = {  searchGifs: search, trendingGifs:state.trendingGifs, query:payload, favs:state.favs }
             return newState
         }
         default:

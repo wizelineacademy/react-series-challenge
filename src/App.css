@@ -26,10 +26,6 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
-.fav > img{
-  border-color: green;
-  border-style: dotted;
-}
-.un-fav{
-  border: none;
+.btn-action{
+  cursor: pointer; 
 }
