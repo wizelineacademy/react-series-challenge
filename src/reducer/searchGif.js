@@ -1,6 +1,6 @@
 import * as actions from "../actions";
 
-const searchGif = (state = 0, action) => {
+const searchGif = (state = {}, action) => {
   switch (action.type) {
     case actions.SEARCH_RESULT:
       return state;
