@@ -1,0 +1,38 @@
+.modal {
+  max-width: 768px;
+  width: 100%;
+  margin: 0 auto;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 100px;
+  background:  white;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,.4);
+}
+
+.modal-close {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: 21px;
+  top: 3px;
+  border-radius: 50%;
+  border: none;
+  background: #171c30;
+  color: white;
+  cursor: pointer;
+}
+
+.modal-close:after {
+  content: "X";
+  font-weight: bold;
+  font-size: 20px;
+}
+.heart-svg{
+  fill:#777171;
+  width: 55px;
+  height: 55px;
+  cursor: pointer;
+}

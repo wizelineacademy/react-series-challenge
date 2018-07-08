@@ -9,13 +9,15 @@ import './App.css';
 export default class App extends Component {
   render() {
     return (
-      <BrowserRouter>
-        <Switch>
-          <Route exact path="/" component={ ContainerListGiphy } />
-          <Route path="/giphys-favorites" component={ ContainerGiphysFavorites } />
-          <Route path='*' component={NotFound} />
-        </Switch>
-      </BrowserRouter>
+      <React.Fragment>
+        <BrowserRouter>
+          <Switch>
+            <Route exact path="/" component={ ContainerListGiphy } />
+            <Route path="/giphys-favorites" component={ ContainerGiphysFavorites } />
+            <Route path='*' component={NotFound} />
+          </Switch>
+        </BrowserRouter>
+      </React.Fragment>
     );
   }
 }
