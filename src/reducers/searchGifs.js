@@ -5,7 +5,7 @@ const searchGifs = (state = {}, action) => {
         case SEARCH_GIFS:
             //todo: get gifs from Api based on input text
         default:
-            return state
+            return state;
     }
 }
 
