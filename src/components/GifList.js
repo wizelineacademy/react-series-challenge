@@ -19,7 +19,10 @@ class GifList extends Component {
                 {data.map(
                     (gif) => {
                         return (
-                            <GifElement gif={gif.images.preview_gif.url} id={gif.id} key={gif.id}/>
+                            <GifElement
+                                gif={gif}
+                                key={gif.id}
+                            />
                         );
                     }
                 )}

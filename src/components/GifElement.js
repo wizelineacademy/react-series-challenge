@@ -27,15 +27,15 @@ margin: 10px auto;
 `;
 
 const GifElement = (props) => {
-    const { gif, liked, id, addFavorite, deleteFavorite } = props;
+    const { gif, liked, addFavorite, deleteFavorite } = props;
     return (
         <Wrapper>
-            <GifPreview src={gif}/>
+            <GifPreview src={gif.images.preview_gif.url}/>
             <LikeButton
                 liked={liked}
                 onClick={
                     () => {
-                        liked ? deleteFavorite(id) : addFavorite(id)
+                        liked ? deleteFavorite(gif.id) : addFavorite({ gif })
                     }
                 }
             >
@@ -47,8 +47,9 @@ const GifElement = (props) => {
 
 const mapStateToProps = (state, ownProps) => {
     const { favorites } = state;
-    const { id } = ownProps;
-    const liked = favorites.favoriteIds.indexOf(id) !== -1;
+    const { data } = favorites;
+    const { gif } = ownProps;
+    const liked = data[gif.id] !== undefined;
     return {
         liked,
     };

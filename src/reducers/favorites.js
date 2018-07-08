@@ -1,8 +1,7 @@
 import favoritesActions from '../actions/favorites';
 
 const initialState = {
-    favoriteIds: [],
-    data: [],
+    data: {},
 };
 
 const favoritesReducer = (state = initialState, action) => {
@@ -11,20 +10,19 @@ const favoritesReducer = (state = initialState, action) => {
     switch (type) {
 
         case favoritesActions.types.ADD_FAVORITE: {
-            const newState = {...state};
-            newState.favoriteIds.push(payload);
+            const { gif } = payload;
+            const newState = {
+                data: { ...state.data },
+            };
+            newState.data[gif.id] = { ...gif };
             return newState;
         }
 
         case favoritesActions.types.DELETE_FAVORITE: {
-            const newState = {...state};
-            newState.favoriteIds.splice(newState.favoriteIds.indexOf(payload), 1);
-            return newState;
-        }
-
-        case favoritesActions.types.FETCHED_FAVORITES_GIFS: {
-            const newState = {...state};
-            newState.data = payload;
+            const newState = {
+                data: { ...state.data },
+            };
+            delete newState.data[payload];
             return newState;
         }
 
