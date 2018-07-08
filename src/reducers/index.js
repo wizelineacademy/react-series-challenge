@@ -7,6 +7,13 @@ const {
   TOGGLE_FAVORITE 
 } = actions.types;
 
+const mapFavoritesToList = (items, favorites) => (
+  items.map((item) => ({
+    ...item,
+    favorite: favorites.find((fav) => (fav.id == item.id))? true : false
+  }))
+)
+
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
     case TRENDING_FETCHED:
@@ -14,7 +21,8 @@ const rootReducer = (state = initialState, action) => {
       newState['trendingGifs'] = action.payload.data.map((gif) => ({
         url: gif.images.fixed_height_downsampled.url,
         original: gif.images.original.url,
-        id: gif.id
+        id: gif.id,
+        favorite: state.favorites.find((fav) => (fav.id == gif.id))? true : false
       }));
       return newState;
 
@@ -23,7 +31,8 @@ const rootReducer = (state = initialState, action) => {
       newState['searchResults'] = action.payload.data.map((gif) => ({
         url: gif.images.fixed_height_downsampled.url,
         original: gif.images.original.url,
-        id: gif.id
+        id: gif.id,
+        favorite: state.favorites.find((fav) => (fav.id == gif.id))? true : false
       }));
       newState['searchQuery'] = action.payload.query;
       return newState;
@@ -37,10 +46,20 @@ const rootReducer = (state = initialState, action) => {
           element.id != action.payload.id
         ))
       } else {
-        newState.favorites = state.favorites.concat([action.payload.gif])
+        newState.favorites = state.favorites.concat(
+          [{...action.payload.gif, favorite: true}]
+        )
       }
+      newState['searchResults'] = mapFavoritesToList(
+        newState['searchResults'],
+        newState['favorites']
+      )
+      newState['trendingGifs'] = mapFavoritesToList(
+        newState['trendingGifs'],
+        newState['favorites']
+      )
       return newState;
-      
+
     default:
       return state;
   }

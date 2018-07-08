@@ -3,7 +3,13 @@ import GifView from './GifView';
 
 const GifListView = ({data}) => {
   const gifs = data.map((gif) => (
-    <GifView src={gif.url} key={gif.id} id={gif.id} gif={gif} />
+    <GifView 
+      src={gif.url} 
+      key={gif.id} 
+      id={gif.id} 
+      gif={gif} 
+      favorite={gif.favorite} 
+    />
   ))
   return (
     <div style={{width: '80%', margin:'10px auto'}}>
