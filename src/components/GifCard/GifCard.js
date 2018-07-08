@@ -1,15 +1,36 @@
-import React from 'react';
-import { GifContainer, Gif, GifOverlay } from './GifCard.styled';
-const GifCard = (props) => {
+import React, {Component} from 'react';
+import { GifContainer, Gif, GifOverlay, GifOverlayLoading } from './GifCard.styled';
+class GifCard extends Component {
 
-    const { gif } = props;
-    
-    return (
-        <GifContainer>
-            <Gif src={gif.images.original.webp} />
-            <GifOverlay />
-        </GifContainer>
-    );
+    constructor(props) {
+        super(props);
+
+        this.state = { gifLoaded: false };
+        this.onLoadHandler = this.onLoadHandler.bind(this);
+    }
+
+    onLoadHandler = (e) => {
+        const gifLoaded = !this.state.gifLoaded;
+        this.setState({gifLoaded });
+    };
+
+    render() {
+
+        const { gif } = this.props;
+
+        const gifOverlay = <GifOverlay />;
+        const gifOverlayLoading = <GifOverlayLoading>
+            <p>Loading...</p>
+            <p>{gif.title}</p>
+        </GifOverlayLoading>;
+
+        return (
+            <GifContainer>
+                <Gif src={gif.images.original.webp} onLoad={this.onLoadHandler} gifLoaded={this.state.gifLoaded ? 'LOADED' : 'NOT_LOADED'}/>
+                {!this.state.gifLoaded ? gifOverlayLoading : gifOverlay}
+            </GifContainer>
+        );
+    }
 
 };
 

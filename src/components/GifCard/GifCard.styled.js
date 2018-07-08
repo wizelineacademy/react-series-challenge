@@ -10,6 +10,7 @@ const GifOverlay = styled.div`
     left: 0;
     bottom: 0;
     right: 0;
+    color: #fff;
     background-color: rgba(0,0,0,0.0);
     transition: background-color 0.3s ease;
     
@@ -18,11 +19,22 @@ const GifOverlay = styled.div`
     }
 `;
 
+const GifOverlayLoading = styled.div`
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    color: #fff;
+    background-color: rgba(0,0,0,0.9);
+    text-align: center;
+`;
+
 const Gif = styled.img`
     display: block;
     border: 0;
     width: 100%;
-    height: auto;
+    height: 150px;
     max-height: 150px;
     // height: auto;
 `;
@@ -30,5 +42,6 @@ const Gif = styled.img`
 export {
     GifContainer,
     GifOverlay,
+    GifOverlayLoading,
     Gif,
 };
