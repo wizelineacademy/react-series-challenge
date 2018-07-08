@@ -1,15 +1,13 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import GifList from './GifList';
 import { connect } from 'react-redux';
 import { fetchTrendingGifs } from '../actions/giphyApi'
 import { toggleFavoriteGif } from '../actions/favorites';
+import NavBar from './NavBar';
 
 class Home extends Component {
   componentDidMount() {
-    const { gifs } = this.props;
-    if (Object.keys(gifs).length <= 0) {
-      this.props.fetchTrendingGifs();
-    }
+    this.props.fetchTrendingGifs();
   }
 
   handleGifLikeClick = (gif) => {
@@ -19,12 +17,15 @@ class Home extends Component {
   render() {
     const { gifs } = this.props;
     return (
-      <div>
-        <GifList
-          onLikeClick={this.handleGifLikeClick}
-          gifs={gifs}
-        />
-      </div>
+      <Fragment>
+        <NavBar onSearch={(search) => this.props.fetchTrendingGifs(search)} />
+        <div>
+          <GifList
+            onLikeClick={this.handleGifLikeClick}
+            gifs={gifs}
+          />
+        </div>
+      </Fragment>
     );
   }
 }

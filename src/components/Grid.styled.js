@@ -1,5 +1,10 @@
 import styled from 'styled-components';
 
+const breakXs = '480px';
+const breakSm = '768px';
+const bteakMd = '992px';
+const breakLg = '1200px';
+
 export const Container = styled.div`
   max-width: 1140px;
   width: 100;
@@ -30,4 +35,8 @@ export const Col = styled.div`
     width: 100%;
     padding-right: 15px;
     padding-left: 15px;
+    @media only screen and (max-width: ${breakXs}){
+      max-width: 100%;
+      flex-basis: 100%;
+    }
 `;

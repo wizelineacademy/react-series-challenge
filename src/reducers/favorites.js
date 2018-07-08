@@ -16,9 +16,8 @@ const reducer = handleActions({
       return { ...state, gifs }
     },
     throw(state, action) {
-
     }
-  },
+  }
 }, { gifs: {} });
 
 export default reducer;

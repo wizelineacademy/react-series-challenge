@@ -1,4 +1,4 @@
-import { call, put, takeEvery } from 'redux-saga/effects';
+import { call, put, takeEvery, select } from 'redux-saga/effects';
 import { fetchTrendingGifs, receiveTrendingGifs } from '../actions/giphyApi';
 
 const BASE_URL = 'https://api.giphy.com'
@@ -26,26 +26,45 @@ const listToMap = (list) => {
   return map;
 }
 
+const selectFavoriteGifs = (state) => state.favorites.gifs;
+
 const fetchJson = (...args) => {
   return fetch(args).then((res) => res.json());
 }
 
 function* getTrendingGifs(action) {
-  let { page } = action;
+  let { page, search } = action.payload;
 
   if (page < 0) {
     page = 0;
   };
 
-  const path = '/v1/gifs/trending';
   const pageOffset = (page * PAGE_SIZE)
-  const searchParams = mapToParams({ api_key: API_KEY, limit: PAGE_SIZE, offset: pageOffset });
+  const params = { api_key: API_KEY, limit: PAGE_SIZE, offset: pageOffset };
+
+  let path;
+  if (search) {
+    path = '/v1/gifs/search';
+    params.q = search;
+  } else {
+    path = '/v1/gifs/trending';
+  }
+  const searchParams = mapToParams(params);
   const endpoint = `${BASE_URL}${path}?${searchParams}`;
 
   try {
     const { data: gifs } = yield call(fetchJson, endpoint);
-    const gifsMap = listToMap(gifs);
-    yield put(receiveTrendingGifs(gifsMap));
+    const trendingGifs = listToMap(gifs);
+    const favoriteGifs = yield select(selectFavoriteGifs);
+    Object.keys(favoriteGifs).map((key) => {
+      const gif = trendingGifs[key];
+      if (gif) {
+        gif.liked = true;
+      }
+      return null;
+    });
+
+    yield put(receiveTrendingGifs(trendingGifs));
   } catch (e) {
     yield put(receiveTrendingGifs(e));
   }

@@ -1,19 +1,15 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Home from './components/Home';
 import Favorites from './components/Favorites';
-import NavBar from './components/NavBar';
 
 class App extends Component {
   render() {
     return (
-      <Fragment>
-        <NavBar />
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/favorites" component={Favorites} />
-        </Switch>
-      </Fragment>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/favorites" component={Favorites} />
+      </Switch>
     );
   }
 }
