@@ -6,7 +6,20 @@ const homeSelector = state => {
   };
 };
 
+const favoritesIdsSelector = state => {
+  return state.favorites.favoritesIds;
+};
+
+const favoritesSelector = state => {
+  console.log('state.favorites.gifs', state.favorites.gifs);
+  return {
+    gifs: state.favorites.gifs,
+  };
+};
+
 export default {
   gifsSelector,
   homeSelector,
+  favoritesIdsSelector,
+  favoritesSelector,
 };

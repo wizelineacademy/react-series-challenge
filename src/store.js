@@ -15,7 +15,10 @@ const store = createStore(
 );
 store.subscribe(() => {
   saveState({
-    favorites: { favoritesIds: store.getState().favorites.favoritesIds },
+    favorites: {
+      ...store.getState().favorites,
+      favoritesIds: store.getState().favorites.favoritesIds,
+    },
   });
 });
 sagaMiddleware.run(sagas.run);

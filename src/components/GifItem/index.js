@@ -18,12 +18,12 @@ const GifImg = styled.img`
   width: 145px;
 `;
 
-const GifItem = ({ gif, addFavorite, isFavorite }) => {
+const GifItem = ({ gif, addFavoriteId, isFavorite }) => {
   const addFavBtn = (
     <button
       onClick={e => {
         e.preventDefault();
-        addFavorite(gif.id);
+        addFavoriteId(gif.id);
       }}
     >
       Add to my favs.
@@ -67,7 +67,7 @@ GifItem.propTypes = {
     }),
   }),
   isFavorite: PropTypes.bool.isRequired,
-  addFavorite: PropTypes.func.isRequired,
+  addFavoriteId: PropTypes.func.isRequired,
 };
 
 export default GifItem;

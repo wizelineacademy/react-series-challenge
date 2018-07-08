@@ -11,6 +11,11 @@ const api = {
     const URL = `${BASE_URL}/gifs/search?api_key=${API_KEY}&q=${term}`;
     return axios.get(URL);
   },
+  gifs: params => {
+    const ids = (params.ids || []).join(',');
+    const URL = `${BASE_URL}/gifs?api_key=${API_KEY}&ids=${ids}`;
+    return axios.get(URL);
+  },
 };
 
 export default api;

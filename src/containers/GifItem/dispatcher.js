@@ -1,9 +1,9 @@
 import actions from '../Favorites/actions';
 
-const { addFavorite } = actions.creators;
+const { addFavoriteId } = actions.creators;
 
 const dispatcher = dispatch => ({
-  addFavorite: params => dispatch(addFavorite({ id: params })),
+  addFavoriteId: params => dispatch(addFavoriteId({ id: params })),
 });
 
 export default dispatcher;
