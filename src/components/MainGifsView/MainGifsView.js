@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from "redux";
 import GifsList from '../GifsList/GifsList';
 import trendGifsActions from "../../actions/trendGifs";
-import { MainGifsViewContainer } from './MainGifsView.styled';
 
 class MainGifsView extends Component{
 
