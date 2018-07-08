@@ -12,12 +12,10 @@ const GifsList = (props) => {
     };
 
     return (
-        <div>
-            <CardsContainer>
-                {renderListGifCard()}
-            </CardsContainer>
-        </div>
-);
+        <CardsContainer>
+            {renderListGifCard()}
+        </CardsContainer>
+    );
 
 };
 
