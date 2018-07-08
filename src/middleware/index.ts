@@ -1,9 +1,12 @@
 import { Action, Store, Dispatch } from "redux";
 import { FETCH_TRENDING, fetched_gifs } from '../actions/gifs';
 
+import * as API from '../api';
+
 function fetchGifs(dispatch: Dispatch) {
   console.log("Fetching GIFs!...");
-  dispatch(fetched_gifs([ "HERE SHOULD BE THE GIFS" ]));
+  return API.getTrending()
+    .then(({data}) => dispatch(fetched_gifs(data)));
 }
 
 const gifsFetcher = (store: Store) => (next: any) => (action: Action) => {

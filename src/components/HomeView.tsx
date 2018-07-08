@@ -9,30 +9,27 @@ import { IGIF } from '../types/gif';
 
 interface IHomeViewProps {
     fetch_gifs: ActionCreator<any>
-}
-
-interface IHomeViewState {
     gifs: IGIF[]
 }
-class HomeView extends React.Component<IHomeViewProps, IHomeViewState> {
-    public state = {
-        gifs: []
-    }
+
+class HomeView extends React.Component<IHomeViewProps, any> {
     public componentDidMount() {
-        API.getTrending().then(({data}) => this.setState({gifs: data.data}));
-        // API.search("GOOGLE").then(({data}) => console.log(data));
+        this.props.fetch_gifs();
     }
     public render() {
         return (<div>
-            <h1>Home View!</h1>
-            <GIFList gifs={this.state.gifs} />
+            <h1 className="center">Trending GIFS</h1>
+            <GIFList gifs={this.props.gifs} />
         </div>);
     }
 }
 
-const mapDispatchToProps = (dispatch: Dispatch) => {
+function mapStateToProps(state: any) {
+    return { gifs: state.trending }
+}
+function mapDispatchToProps(dispatch: Dispatch) {
     return bindActionCreators({
       fetch_gifs,
     }, dispatch);
 };
-export default connect(null, mapDispatchToProps)(HomeView);
+export default connect(mapStateToProps, mapDispatchToProps)(HomeView);

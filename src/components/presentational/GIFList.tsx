@@ -20,11 +20,14 @@ function _create_item(gif: IGIF) {
     </div>
 }
 
-const GifList = (props: IGIFListProps) => {
+const GIFList = (props: IGIFListProps) => {
+    const { gifs } = props;
     return (
     <_div>
-        {props.gifs.map(gif => _create_item(gif))}
+        { gifs ?
+            gifs.map(gif => _create_item(gif))
+        :   <h2>No GIFs found!</h2>  }
     </_div>);
 }
 
-export default GifList;
+export default GIFList;
