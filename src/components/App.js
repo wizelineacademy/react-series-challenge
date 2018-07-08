@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
-import { HomePage, DetailPage, FavsPage } from "./pages";
+import { HomePage, DetailPage, FavsPage } from "../components";
 
 const App = () => {
   return (
