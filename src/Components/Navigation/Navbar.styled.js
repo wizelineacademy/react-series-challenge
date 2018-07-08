@@ -11,10 +11,10 @@ const NavbarStyled = styled.div`
 const LogoContainer = styled.div`
   height: 55px;
   width: 150px;
-  background: rgba(34, 194, 235, 0.5);
+  background: rgba(255, 255, 255, 0.3);
   margin-right: 32px;
 `;
 
 const NavLinkStyled = styled(NavLink)``;
 
-export { NavbarStyled, LogoContainer };
+export { NavbarStyled, LogoContainer, NavLinkStyled };
