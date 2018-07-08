@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux';
 import getTrendingGifsActions from '../../actions/trendingGifs'
 import { InputContainerStyled } from '../Home/searchForm.styled';
-
+import GifContainer from '../GifContainer'
 
 class Favs extends Component{
 
@@ -39,40 +39,25 @@ class Favs extends Component{
 
     render(){
         const favs = this.props.trendingGifs.favs
-        const addFavFunction = this.addFav
         const removeFavFunction = this.removeFav
         var arrayGifs = []
         
         if(favs.length > 0 && !this.state.showSearch){
             favs.forEach(function(item, index){
-                var img = <div key={index}>
-                    <img src={item.url} alt={item.title} key={'trending-' + index}/>
-                    <br/>
-                    <label>{item.title}</label>
-                    <br/>
-                    <button onClick={ !item.fav ? addFavFunction:removeFavFunction} data-id={item.id}>{item.fav ? 'UN-FAV':'FAV'}</button>
-                    <hr/>
-                </div>
-                arrayGifs.push(img)
+                arrayGifs.push(<GifContainer key={item.id} url={item.url} alt={item.alt} id={item.id} isFav={-1} title={item.title} clickFuncion={removeFavFunction} textButton='Remove' />)
             })
         }
         else if(this.state.showSearch){
             var query = this.state.query
             var searchFavs = []
             favs.forEach(function(item, index){
-                item.title.search(query) != -1 ? searchFavs.push(item): null
+                item.title.search(query) !== -1 ? searchFavs.push(item): null
             })
 
             searchFavs.forEach(function(item, index){
-                var img = <div key={index}>
-                    <img src={item.url} alt={item.title} key={'trending-' + index}/>
-                    <br/>
-                    <label>{item.title}</label>
-                    <br/>
-                    <button onClick={ !item.fav ? addFavFunction:removeFavFunction} data-id={item.id}>{item.fav ? 'UN-FAV':'FAV'}</button>
-                    <hr/>
-                </div>
-                arrayGifs.push(img)
+                favs.forEach(function(item, index){
+                    arrayGifs.push(<GifContainer key={item.id} url={item.url} alt={item.alt} id={item.id} isFav={-1}  title={item.title}  clickFuncion={removeFavFunction} textButton='Remove' />)
+                })
             })
         }
         

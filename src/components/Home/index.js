@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux';
 import getTrendingGifsActions from '../../actions/trendingGifs'
 import { InputContainerStyled } from './searchForm.styled';
+import GifContainer from '../GifContainer'
 
 class Home extends Component{
     constructor(props){
@@ -24,16 +25,16 @@ class Home extends Component{
         event.preventDefault()
         const {
             getSearchGifs,
+            getTrendingGifs,
           } = this.props;
         var query = this.state.query
-        if(query == ''){ 
-            this.setState({showTrendings:true})
+        if(query === ''){
+            getTrendingGifs()
         }
         else{
-            this.setState({showTrendings:false})
             getSearchGifs(query)
         }
-
+    
     }
 
     
@@ -64,55 +65,16 @@ class Home extends Component{
     }
 
     render(){
+        console.log('render home')
+        console.log(this.props.trendingGifs.trendingGifs)
         const trendingGifs = this.props.trendingGifs.trendingGifs
-        const searchGifs = this.props.trendingGifs.searchGifs
         const favs = this.props.trendingGifs.favs
         const addFavFunction = this.addFav
-        const removeFavFunction = this.removeFav
         var arrayGifs = []
-        if(trendingGifs.length > 0 && this.state.showTrendings){
-            trendingGifs.forEach(function(item, index){
-                
-                let isFav = favs.findIndex((obj => obj.id === item.id))
-                var img = <div key={index}>
-                    <img src={item.url} alt={item.title} key={'trending-' + index}/>
-                    <br/>
-                    {isFav == -1 ? '':<img alt={'fav' + item.title} key={'fav' + index} src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/heart.png'/>}
-                    <br/>
-                    <label>{item.title}</label>
-                    <br/>
-                    {
-                        isFav == -1 ? 
-                        <button onClick={addFavFunction} data-id={item.id}>FAV</button>
-                        :
-                        null
-                    }
-                    
-                    <hr/>
-                </div>
-                arrayGifs.push(img)
-            })
-        }
-        
-        if(searchGifs.length > 0 && !this.state.showTrendings ){
-            searchGifs.forEach(function(item, index){
-                let isFav = favs.findIndex((obj => obj.id === item.id))
-                var img = <div key={index}>
-                    <img src={item.url} alt={item.title} alt='gif' key={'search-' + index}/>
-                    <br/>
-                    <label>{item.title}</label>
-                    <br/>
-                    {
-                        isFav == -1 ? 
-                        <button onClick={addFavFunction} data-id={item.id}>FAV</button>
-                        :
-                        null
-                    }
-                    <hr/>
-                </div>
-                arrayGifs.push(img)
-            })
-        }
+        trendingGifs.forEach(function(item, index){
+            let isFav = favs.findIndex((obj => obj.id === item.id))
+            arrayGifs.push(<GifContainer key={item.id} url={item.url} alt={item.alt} id={item.id} isFav={isFav} title={item.title}  clickFuncion={addFavFunction} textButton='Add to favs' />)
+        })
         
         return <div className='home'>
         <h1>Trending</h1><br/>
@@ -131,13 +93,11 @@ class Home extends Component{
 const mapStateToProps = (state) => {
     const {
       trendingGifs,
-      searchGifs,
       query
     } = state
     
     return {
       trendingGifs,
-      searchGifs,
       query
     }
   }  
