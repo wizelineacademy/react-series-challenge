@@ -1,34 +1,38 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux'
 
-// selectors
+// Redux
+import { bindActionCreators } from 'redux'
+
+// Selectors
 import selectors from "./../../../redux/selectors";
+// Actions
+import actions from "./../../../redux/actions/";
 
 import './home.css'
 
-class Home extends Component{
+// Components
+import Footer from "./../../component/footer";
+import Giphys from "./../../component/giphys";
 
+class Home extends Component{
   handleSubmit = (event) => {
     event.preventDefault();
-    if(this.searchInput.value.length > 3 ){
-
+    if (this.searchInput.value.length > 0) {
+      this.props.fetchChange(this.searchInput.value.trim());
     } else {
-
+      this.searchInput.focus();
+      alert('please enter the text to be search');
     }
+  }
+
+  handleButton = (event) => {
+    event.preventDefault();
+    this.props.fetchChange('');
   }
 
   render() {
     const { data } = this.props;
-
-    let giphyView;
-
-    if (data && data.data) {
-      giphyView = data.data.map((v, i) => (
-        <div className="giphy">
-          <img src={v.images.fixed_width.webp} alt={v.title}/>
-        </div>
-      ));
-    }
 
     return (
       <div>
@@ -40,16 +44,12 @@ class Home extends Component{
               <input type="submit" value="Search" />
               <br />
               <br />
-              <input type="button" value="just show the trendings" />
+              <input type="button" value="just show the trendings" onClick={this.handleButton} />
             </fieldset>
           </form>
         </div>
-        <div>
-          {giphyView}
-        </div>
-        <footer className="footer">
-          <div>Just a footer =)</div>
-        </footer>
+        <Giphys data={data} />
+        <Footer />
       </div>
     );
   }
@@ -57,8 +57,18 @@ class Home extends Component{
 
 const mapStateToProps = (state) => {
   return {
-    data: selectors.api_data(state),
+    data: selectors.fetch_data(state),
   }
 }
 
-export default connect(mapStateToProps)(Home);
+const mapDispatchToProps = (dispatch) => {
+  const { fetchChange } = actions;
+
+  return bindActionCreators({
+      fetchChange
+    },
+    dispatch
+  )
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(Home);

@@ -1,8 +1,8 @@
 // REACT
-const api_data = state => state.api.data;
-const api_type = state => state.api.type;
+const fetch_data = state => state.fetch.data;
+const fetch_word = state => state.fetch.word;
 
 export default {
-  api_type,
-  api_data
+  fetch_data,
+  fetch_word
 }

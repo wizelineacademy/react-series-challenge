@@ -1,4 +1,4 @@
-import reducersDic from "./../constants/reducersDic";
+import actions from "./../constants/actions";
 
 const initialState = {
   likes: []
@@ -8,7 +8,7 @@ export default (state = initialState, action) => {
   const { type, data } = action;
 
   switch (type) {
-    case reducersDic.LOCALSTORAGE_DATA:
+    case actions.LOCALSTORAGE_DATA:
       return {
         ...state,
         ...data

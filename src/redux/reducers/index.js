@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 
-import api from './api';
-import localStorage from './localStorage';
+import fetch from './fetch';
+import local from './local';
 
 
 export default combineReducers({
-  api,
-  localStorage,
+  fetch,
+  local,
 });

@@ -1,0 +1,10 @@
+.giphy{
+  float: left;
+  position: relative;
+}
+
+.giphy > button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}

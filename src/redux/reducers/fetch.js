@@ -1,36 +1,43 @@
-import reducersDic from "./../constants/reducersDic";
+import actions from "./../constants/actions";
 
 const initialState = {
-  type: 'trending',
   loading: false,
+  word: '',
+  data: [],
   // error: null,
-  // data: null,
 }
 
 export default (state = initialState, action) => {
   const { type, payload } = action;
 
   switch (type) {
-    case reducersDic.FETCH_START:
+    case actions.FETCH_START:
       return {
         ...state,
         loading: true,
       }
-    case reducersDic.FETCH_DATA:
+    case actions.FETCH_DATA:
       return {
         ...state,
         ...payload,
       }
-    case reducersDic.FETCH_ERROR:
+    case actions.FETCH_ERROR:
       return {
         ...state,
         ...payload,
       }
-    case reducersDic.FETCH_END:
+    case actions.FETCH_END:
       return {
         ...state,
         loading: false,
       }
+    case actions.FETCH_REQUEST: {
+      return {
+        ...state,
+        type: (payload.search && payload.search !== '' ? 'search' : 'trending'),
+        word: (payload.search && payload.search !== '' ? payload.search : ''),
+      }
+    }
     default:
       return state
   }
