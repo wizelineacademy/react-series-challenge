@@ -22,7 +22,7 @@ const trendingGifsReducer = (state = initialState, action) => {
         case trendingGifsActions.types.TRENDING_GIFS_FETCHED:{
             let trendingGifs = []
             payload.data.data.forEach(function(item, index){
-                trendingGifs.push({ id:item.id, url:item.images["original"].url, fav:false })
+                trendingGifs.push({ id:item.id, url:item.images["original"].url, fav:false, title:item.title })
             })
             const newState = { searchGifs:state.searchGifs, trendingGifs:trendingGifs, query:state.query, favs:state.favs }
             setLocal(state)
@@ -37,7 +37,7 @@ const trendingGifsReducer = (state = initialState, action) => {
         case trendingGifsActions.types.SEARCH_GIFS_FETCHED:{
             let searchGifs = []
             payload.data.data.forEach(function(item, index){
-                searchGifs.push({ id:item.id, url:item.images["original"].url, fav:false })
+                searchGifs.push({ id:item.id, url:item.images["original"].url, fav:false, title:item.title })
             })
 
             const newState = { searchGifs: searchGifs, trendingGifs:state.trendingGifs, query:state.query, favs:state.favs }

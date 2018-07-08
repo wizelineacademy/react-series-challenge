@@ -66,16 +66,29 @@ class Home extends Component{
     render(){
         const trendingGifs = this.props.trendingGifs.trendingGifs
         const searchGifs = this.props.trendingGifs.searchGifs
+        const favs = this.props.trendingGifs.favs
         const addFavFunction = this.addFav
         const removeFavFunction = this.removeFav
         var arrayGifs = []
         if(trendingGifs.length > 0 && this.state.showTrendings){
             trendingGifs.forEach(function(item, index){
-                console.log(item.fav ? 'UN-FAV':'FAV')
+                
+                let isFav = favs.findIndex((obj => obj.id === item.id))
                 var img = <div key={index}>
-                    <img src={item.url} key={'trending-' + index}/>
+                    <img src={item.url} alt={item.title} key={'trending-' + index}/>
                     <br/>
-                    <button onClick={ !item.fav ? addFavFunction:removeFavFunction} data-id={item.id}>{item.fav ? 'UN-FAV':'FAV'}</button>
+                    {isFav == -1 ? '':<img alt={'fav' + item.title} key={'fav' + index} src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/heart.png'/>}
+                    <br/>
+                    <label>{item.title}</label>
+                    <br/>
+                    {
+                        isFav == -1 ? 
+                        <button onClick={addFavFunction} data-id={item.id}>FAV</button>
+                        :
+                        null
+                    }
+                    
+                    <hr/>
                 </div>
                 arrayGifs.push(img)
             })
@@ -83,10 +96,19 @@ class Home extends Component{
         
         if(searchGifs.length > 0 && !this.state.showTrendings ){
             searchGifs.forEach(function(item, index){
+                let isFav = favs.findIndex((obj => obj.id === item.id))
                 var img = <div key={index}>
-                    <img src={item.url} key={'search-' + index}/>
+                    <img src={item.url} alt={item.title} alt='gif' key={'search-' + index}/>
                     <br/>
-                    <button onClick={ !item.fav ? addFavFunction:removeFavFunction} data-id={item.id}>{item.fav ? 'UN-FAV':'FAV'}</button>
+                    <label>{item.title}</label>
+                    <br/>
+                    {
+                        isFav == -1 ? 
+                        <button onClick={addFavFunction} data-id={item.id}>FAV</button>
+                        :
+                        null
+                    }
+                    <hr/>
                 </div>
                 arrayGifs.push(img)
             })
