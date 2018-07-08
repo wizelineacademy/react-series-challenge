@@ -15,7 +15,6 @@ class MainGifsView extends Component{
 
         return (
             <MainGifsViewContainer>
-                <h4>Main Gifs View!</h4>
                 <GifsList trendGifs={this.props.trendGifs} searchGifs={this.props.searchGifs}/>
             </MainGifsViewContainer>
         );

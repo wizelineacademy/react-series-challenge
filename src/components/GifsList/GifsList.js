@@ -13,7 +13,6 @@ const GifsList = (props) => {
 
     return (
         <div>
-            <h5>Gifs List</h5>
             <CardsContainer>
                 {renderListGifCard()}
             </CardsContainer>
