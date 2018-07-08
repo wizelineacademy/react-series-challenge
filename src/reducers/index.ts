@@ -1,5 +1,7 @@
 import { combineReducers, Action, Reducer } from 'redux';
-import { FETCHED_TRENDING } from '../actions/gifs';
+import {
+  FETCHED_TRENDING,
+  TOGGLE_FAVORITE } from '../actions/gifs';
 
 const initialState = {
   trending: [],
@@ -9,9 +11,20 @@ const initialState = {
 function gifReducer(state = initialState, action: any) {
   const {type, payload} = action;
 
+  if (!state.favs) state.favs = {};
+
   switch (type) {
     case FETCHED_TRENDING:
       return {...state, trending: payload.data };
+    case TOGGLE_FAVORITE: {
+      const { id } = payload;
+      const newState = {...state};
+
+      if (state.favs[id]) delete newState.favs[payload.id];
+      else newState.favs[id] = payload;
+
+      return newState;
+    }
     default:
     return state;
   }

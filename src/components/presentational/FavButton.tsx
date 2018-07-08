@@ -22,6 +22,11 @@ const _button = styled.button`
     }
 `;
 
-const FavButton = (props: any) =>
-    <_button active={props.active}>♥</_button>;
+interface IFavButtonProps {
+    active: boolean
+    onAddFavorite?: any
+}
+const FavButton = (props: IFavButtonProps) =>
+    <_button onClick={props.onAddFavorite} active={props.active}>♥</_button>;
+
 export default FavButton;
