@@ -32,7 +32,8 @@ injectGlobal`
     }
 
     /* Remove the stupid outer glow in Webkit */
-    input:focus
+    input:focus,
+    button:focus
     {
         outline: none;
     }

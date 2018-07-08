@@ -13,9 +13,9 @@ const ItemButtonStyled = styled.button`
   right: 8px;
   transition: all 0.4s;
 
-  &:hover {
-    color: #90b110;
-  }
+//   &:hover {
+//     color: #90b110;
+//   }
 `;
 
 export { ItemStyled, ItemButtonStyled };

@@ -24,7 +24,7 @@ const Item = ({
         }}
         isFavorite={item.id in favoriteItems}
       >
-        <i className="fas fa-heart" />
+        <i className="far fa-thumbs-up" />
       </ItemButtonStyled>
     </ItemStyled>
   );
