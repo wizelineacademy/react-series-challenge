@@ -1,15 +1,15 @@
 import {ADD_ITEM, DELETE_ITEM} from "../actions/favGifs";
 
-const favGifs = (state = [], action) => {
+const favGifs = (state = {}, action) => {
     switch (action.type) {
         case ADD_ITEM:{
             const newState = { ...state };
-            newState.favGifs[action.payload.id] = action.payload;
+            newState[action.payload.id] = action.payload;
             return newState;
         }
         case DELETE_ITEM:{
             const newState = {...state};
-            delete(newState.favGifs[action.id]);
+            delete(newState[action.id]);
             return newState;
         }
         default:

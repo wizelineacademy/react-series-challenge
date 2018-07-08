@@ -1,5 +1,5 @@
-import { createStore, compose } from 'redux';
-import combineReducers from './reducers';
+import { createStore, applyMiddleware, compose } from 'redux';
+import combineReducers from '../reducers';
 
 const initialState = {};
 

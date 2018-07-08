@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Element = ({onClick,text}) => (
+const Element = (props) => (
     <li>
-        {text}
+        {props.element.text}
     </li>
 )
  export default Element;
