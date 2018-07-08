@@ -10,9 +10,7 @@ function* loadTrendingGifs() {
     yield put(creators.setLoading(true));
     const { data } = yield call(api.trending);
     yield put(creators.setGifs(data.data));
-    console.log('data', data);
   } catch (e) {
-    console.log('err', e);
   } finally {
     yield put(creators.setLoading(false));
   }
@@ -21,11 +19,13 @@ function* loadTrendingGifs() {
 function* searchGifs(action) {
   try {
     yield put(creators.setLoading(true));
-    const { data } = yield call(api.search, action.payload);
-    yield put(creators.setGifs(data.data));
-    console.log('data', data);
+    const searchTerm = action.payload;
+    yield put(creators.setSearchTerm(searchTerm));
+    if (searchTerm) {
+      const { data } = yield call(api.search, searchTerm);
+      yield put(creators.setGifs(data.data));
+    }
   } catch (e) {
-    console.log('err', e);
   } finally {
     yield put(creators.setLoading(false));
   }

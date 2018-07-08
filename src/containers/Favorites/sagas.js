@@ -3,7 +3,7 @@ import favoritesActions from './actions';
 import api from '../../services/api';
 import selectors from '../../selectors';
 
-const { FAVORITES_LOAD } = favoritesActions.types;
+const { FAVORITES_LOAD, FAVORITE_ID_ADD } = favoritesActions.types;
 const { creators } = favoritesActions;
 
 function* loadFavorites() {
@@ -21,8 +21,16 @@ function* loadFavorites() {
   }
 }
 
+function* onFavoriteIdAdd() {
+  const { path } = yield select(selectors.locationSelector);
+  if (path === '/favorites') {
+    yield call(loadFavorites);
+  }
+}
+
 function* run() {
   yield takeLatest(FAVORITES_LOAD, loadFavorites);
+  yield takeLatest(FAVORITE_ID_ADD, onFavoriteIdAdd);
 }
 
 export default {

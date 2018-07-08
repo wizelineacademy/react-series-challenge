@@ -16,7 +16,6 @@ class Home extends Component {
   };
 
   onTermChange = e => {
-    console.log('e', e);
     const val = e.target.value;
     this.setState(prevState => ({ ...prevState, searchTerm: val }));
   };
@@ -24,7 +23,6 @@ class Home extends Component {
   onSearchSubmit = e => {
     e.preventDefault();
     this.props.searchGifs(this.state.searchTerm);
-    console.log('this.state.searchTerm', this.state.searchTerm);
   };
 
   render() {

@@ -20,12 +20,23 @@ const gifModalSelector = state => {
   return {
     isOpen: state.gifModal.isOpen,
     gif: state.gifModal.gif,
+    isFavorite: state.gifModal.gif
+      ? state.favorites.favoritesIds.indexOf(state.gifModal.gif.id) > -1
+      : false,
   };
 };
+
+const locationSelector = state => {
+  return {
+    path: state.location.path,
+  };
+};
+
 export default {
   gifsSelector,
   homeSelector,
   favoritesIdsSelector,
   favoritesSelector,
   gifModalSelector,
+  locationSelector,
 };

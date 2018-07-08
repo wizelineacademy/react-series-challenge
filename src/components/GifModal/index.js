@@ -34,19 +34,51 @@ const GifPortal = ({ children }) => {
   return createPortal(children, nodeToAppend);
 };
 
-const GifModal = ({ isOpen, closeModal, gif }) => (
-  <GifPortal>
-    <GifModalBox isOpen={isOpen}>
-      {gif && (
-        <GifModalContent>
-          <GifImg alt={gif.slug} src={gif.images.original.url} />
-          <p>{gif.title}</p>
-        </GifModalContent>
-      )}
-      <button onClick={() => closeModal()}>Cerrar</button>
-    </GifModalBox>
-  </GifPortal>
-);
+const GifModal = ({
+  isOpen,
+  closeModal,
+  gif,
+  addFavoriteId,
+  removeFavoriteId,
+  isFavorite,
+}) => {
+  const addFavBtn = (
+    <button
+      onClick={e => {
+        e.preventDefault();
+        addFavoriteId(gif.id);
+      }}
+    >
+      Agregar mis favoritos.
+    </button>
+  );
+
+  const removeFavBtn = (
+    <button
+      onClick={e => {
+        e.preventDefault();
+        removeFavoriteId(gif.id);
+      }}
+    >
+      Quitar de mis favoritos.
+    </button>
+  );
+
+  return (
+    <GifPortal>
+      <GifModalBox isOpen={isOpen}>
+        {gif && (
+          <GifModalContent>
+            <GifImg alt={gif.slug} src={gif.images.original.url} />
+            <p>{gif.title}</p>
+          </GifModalContent>
+        )}
+        {isFavorite ? removeFavBtn : addFavBtn}
+        <button onClick={() => closeModal()}>Cerrar</button>
+      </GifModalBox>
+    </GifPortal>
+  );
+};
 
 GifModal.propTypes = {
   gif: PropTypes.shape({
@@ -61,6 +93,8 @@ GifModal.propTypes = {
     }),
   }),
   isOpen: PropTypes.bool.isRequired,
+  addFavoriteId: PropTypes.func.isRequired,
+  removeFavoriteId: PropTypes.func.isRequired,
 };
 
 export default GifModal;
