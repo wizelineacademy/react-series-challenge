@@ -1,13 +1,14 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom'
 import './Nav.css';
 
 const Nav = () => (
   <nav className="Nav">
     <div className="NavContainer">
-      <a href="#" className="Logo">GiphySearch</a>
+      <NavLink to="/">GiphySearch</NavLink>
       <ul className="NavList">
         <li className="NavListItem">
-          <a href="" className="NavListLink">Favorites</a>
+          <NavLink to="/favorites">Favorites</NavLink>
         </li>
       </ul>
     </div>
