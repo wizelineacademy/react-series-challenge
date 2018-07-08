@@ -3,27 +3,28 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 //import Modal from 'react-modal';
 import favoriteActions from '../redux/actions/favorites';
+import giftModalActions from '../redux/actions/giftModal';
 
 const GiftItem = (props) => {
     const {
         url, 
         name,
         id,
-        addFavorite,
+        showGiftModal,
     }=props
 
     const gift = { url, id, name }
 
     return (
-        <img src={url} width={"100px"} height={"100px"} onClick={()=>addFavorite({gift})}/>
+        <img src={url} width={"100px"} height={"100px"} onClick={()=>showGiftModal({gift})}/>
     );
 }
 
 const mapDispatchToProps = (dispatch) => {
-    const { addFavorite } = favoriteActions.creators;
+    const { showGiftModal } = giftModalActions.creators;
 
     return bindActionCreators({
-        addFavorite,
+        showGiftModal,
     }, dispatch);
 };
 

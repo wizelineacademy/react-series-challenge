@@ -2,8 +2,8 @@ import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { GiftContainer }  from '../styled_component/Home.styled';
-//import Modal from 'react-modal';
 import favoriteActions from '../redux/actions/favorites';
+import AddGiftModal from './Modal/AddGiftModal';
 
 const Favorites = (props) => {
     const {
@@ -12,7 +12,8 @@ const Favorites = (props) => {
 
     return (
         <GiftContainer>
-        {favorites && <GiftList
+            <AddGiftModal />
+            {favorites && <GiftList
                     gifts={favorites}/>}
         </GiftContainer>
     );

@@ -4,7 +4,8 @@ import { GiftContainer }  from '../styled_component/Home.styled';
 import SearchBarHome from './SearchBars';
 import giftActions from '../redux/actions/gifts';
 import { bindActionCreators } from 'redux';
-import GiftItem from './giftItem'
+import GiftItem from './giftItem';
+import AddGiftModal from './Modal/AddGiftModal';
 
 class Home extends Component {
   constructor(props){
@@ -20,6 +21,7 @@ class Home extends Component {
 
     return (
       <GiftContainer>
+        <AddGiftModal />
         <SearchBarHome />
         {gifts && <GiftList
                     gifts={gifts}/>}

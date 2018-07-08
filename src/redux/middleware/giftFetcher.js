@@ -17,9 +17,9 @@ const fecthTrend = (text, dispatch) => {
 
 const priceFetcher = (store) => (next) => (action) => {
     const { type, payload } = action;
-    const { text } = payload
 
     if (type === GET_GIFT) {
+        const { text } = payload
         if(text !== ""){
             fetchGifts(text, store.dispatch);
         }
