@@ -13,13 +13,21 @@ const fetchGifs = (url) => {
         .then((response) => response)
 };
 
+const arrayToObj = (arr) => {
+    const obj = {};
+    arr.forEach((gif) => {
+       obj[gif.id] = gif;
+    });
+    return obj;
+};
+
 function* getTrendGifs() {
 
     try {
         const url = `${giphyApiUrl}/gifs/trending?api_key=${giphyApiKey}&limit=25`;
         const { data } = yield call(fetchGifs, url);
-        console.log(data);
-        yield put(fetchedTrendGifs({gifs: data}));
+        const gifs = arrayToObj(data.data || []);
+        yield put(fetchedTrendGifs({ gifs }));
     } catch(e) {
         yield put(fetchedTrendGifs({error: e}));
     }

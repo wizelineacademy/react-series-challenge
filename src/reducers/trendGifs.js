@@ -1,6 +1,6 @@
 import trendGifsActions from '../actions/trendGifs';
 
-const initialState = [];
+const initialState = {};
 
 const trendGifsReducer = (state = initialState, action) => {
 
@@ -10,7 +10,7 @@ const trendGifsReducer = (state = initialState, action) => {
 
         case trendGifsActions.types.TREND_GIFS_FETCHED:
             const { gifs } = payload;
-            return [...state, ...gifs];
+            return {...state, ...gifs};
 
         default:
             return state;

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const GifCard = () => {
+const GifCard = (props) => {
 
     return (
         <div>

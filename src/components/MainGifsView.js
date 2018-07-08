@@ -1,15 +1,44 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from "redux";
 import GifsList from './GifsList';
+import trendGifsActions from "../actions/trendGifs";
 
-const MainGifsView = () => {
+class MainGifsView extends Component{
 
-    return (
-        <div>
-            <h4>Main Gifs View!</h4>
-            <GifsList />
-        </div>
-    );
+    componentDidMount() {
+        this.props.loadTrendGifs();
+    }
+
+    render(){
+        return (
+            <div>
+                <h4>Main Gifs View!</h4>
+                <GifsList gifs={this.props.trendGifs}/>
+            </div>
+        );
+    }
+
+}
+
+const mapStateToProps = (state) => {
+    const {
+        trendGifs,
+    } = state;
+
+    return {
+        trendGifs,
+    };
+};
+
+const mapDispatchToProps = (dispatch) => {
+
+    const { loadTrendGifs } = trendGifsActions.creators;
+
+    return bindActionCreators({
+        loadTrendGifs,
+    }, dispatch);
 
 };
 
-export default MainGifsView;
+export default connect(mapStateToProps, mapDispatchToProps)(MainGifsView);
