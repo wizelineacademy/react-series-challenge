@@ -18,7 +18,13 @@ const GifImg = styled.img`
   width: 145px;
 `;
 
-const GifItem = ({ gif, addFavoriteId, removeFavoriteId, isFavorite }) => {
+const GifItem = ({
+  gif,
+  addFavoriteId,
+  removeFavoriteId,
+  isFavorite,
+  openModal,
+}) => {
   const addFavBtn = (
     <button
       onClick={e => {
@@ -50,6 +56,7 @@ const GifItem = ({ gif, addFavoriteId, removeFavoriteId, isFavorite }) => {
       </p>
       <p>by: {gif.username}</p>
       {isFavorite ? removeFavBtn : addFavBtn}
+      <button onClick={() => openModal()}>Ver más</button>
     </ItemWrapper>
   );
 };
@@ -70,6 +77,7 @@ GifItem.propTypes = {
   isFavorite: PropTypes.bool.isRequired,
   addFavoriteId: PropTypes.func.isRequired,
   removeFavoriteId: PropTypes.func.isRequired,
+  openModal: PropTypes.func.isRequired,
 };
 
 export default GifItem;

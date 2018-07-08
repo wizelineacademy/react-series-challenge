@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import GifsList from '../GifsList';
+import GifModal from '../../containers/GifModal';
 import styled from 'styled-components';
 
 const ItemsWrapper = styled.div`
@@ -30,6 +31,7 @@ class Home extends Component {
     const { gifs, isLoading } = this.props;
     return !isLoading ? (
       <div>
+        <GifModal />
         <h1>Trending GIFS</h1>
         <form onSubmit={this.onSearchSubmit}>
           <input

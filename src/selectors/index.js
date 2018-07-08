@@ -17,9 +17,16 @@ const favoritesSelector = state => {
   };
 };
 
+const gifModalSelector = state => {
+  return {
+    isOpen: state.gifModal.isOpen,
+    gif: state.gifModal.gif,
+  };
+};
 export default {
   gifsSelector,
   homeSelector,
   favoritesIdsSelector,
   favoritesSelector,
+  gifModalSelector,
 };
