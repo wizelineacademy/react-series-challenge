@@ -8,7 +8,7 @@ const trendGifsReducer = (state = initialState, action) => {
 
     switch (type) {
 
-        case trendGifsActions.types.TREND_GIFS_LOAD:
+        case trendGifsActions.types.TREND_GIFS_FETCHED:
             const { gifs } = payload;
             return [...state, ...gifs];
 
