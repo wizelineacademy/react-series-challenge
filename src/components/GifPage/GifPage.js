@@ -29,7 +29,7 @@ class GifPage extends Component {
         //fetch(`http://api.giphy.com/v1/gifs/trending?api_key=MKGAXNQl5cXUBSBMrXSsufVZ9bqvhX6p`)
         .then(Response => {
                 return Response.json().then( (json) => {
-                    //console.log(json.data);
+                    console.log(json.data);
                     var newArray = [];
                     var newObject = {};
                     
@@ -81,8 +81,8 @@ class GifPage extends Component {
             <div className = "GifPage">
 
                 <SearchBar updateState = {this.updateState} handleSearch = {this.handleSearch} />
-                <GifCards gifData = { this.state.gifs } />
-                <button onClick = {() => this.props.searchedFavoriteGifs({payload: {value: 4}})}>HELLO HELLO HELLO</button>
+                <GifCards gifData = { this.state.gifs } searchedGifs = {this.props.searchedFavoriteGifs} searchedValue = {this.state.searchValue}/>
+                {/*<button onClick = {() => this.props.searchedFavoriteGifs(10)}>HELLO HELLO HELLO</button>*/}
                 {/*//loadError = {this.handleError} 
                 //loadSuccess = {this.handleOnLoad} */}
                 

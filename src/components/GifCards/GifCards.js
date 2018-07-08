@@ -1,24 +1,30 @@
 import React from 'react';
 import GifCard from '../GifCards/GifCard/GifCard'
+import GifCardControls from '../GifCards/GifCardControls/GifCardControls'
 import './GifCards.css';
 
 const GifCards = (props) => {
 
         let arrays = null;
-        const gifsObjects = props.gifData;  
-        console.log("GIFS DATA", gifsObjects); 
+        const { gifData, searchedValue } = props;  
+        console.log("GIFS DATA", gifData); 
+        console.log("Seach data",searchedValue );
 
-        if(gifsObjects !== null && gifsObjects !== undefined){
-            arrays = Object.keys(gifsObjects).map((key, index) => {
-                let { id, url } = gifsObjects[index];
+        if(gifData !== null && gifData !== undefined){
+            arrays = Object.keys(gifData).map((key, index) => {
+                let { id, url } = gifData[index];
 
                 //console.log("url: " + url);
                 //return (<img key = {id} src = {url} alt = "Cargando..." />);
-                return (<GifCard 
-                    key = {id} 
+                return (
+                <div key = {id} >
+                <GifCard 
                     //loadError = {props.loadError}
                     //loadSuccess = {props.loadSuccess}
-                    imageUrl = {url} />);
+                    imageUrl = {url}
+                     />
+                    <GifCardControls key = {index} searchedGifs = {() => props.searchedGifs({ searchedValue: searchedValue, url: url})} />
+                    </div>);
             });
 
             //console.log("Arreglo" , arrays[0]);

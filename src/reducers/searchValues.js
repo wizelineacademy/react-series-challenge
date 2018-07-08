@@ -2,6 +2,9 @@ import searchActions from '../actions/searchValues'
 
 const initialState = {
     greeting: "Hi",
+    favoritedImages: [
+        
+    ]
 };
 
 const SearchReducer = (state = initialState, action) => {
@@ -9,10 +12,15 @@ const SearchReducer = (state = initialState, action) => {
 
     switch(type) {
         case searchActions.types.SEARCH_FAVORITE_GIFS: {
+            //const { searchedValue, url } = payload;
             console.log("SEARCH_FAVORITE_GIFS");
-            console.log(payload);
-            state = {...initialState, value: 2};
-            return state;
+            console.log("PAYLOAD: " + JSON.stringify(payload));
+
+            const newState = {...initialState};
+            console.log(newState);
+            newState.favoritedImages.push(payload);
+
+            return newState;
         }
 
         case searchActions.types.SEARCH_SPECIFIED_GIFS: {
