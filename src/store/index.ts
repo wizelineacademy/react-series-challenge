@@ -5,13 +5,25 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import rootReducer from '../reducers';
 import gifsFetcher from '../middleware';
 import rootSaga from '../sagas/';
-
+import autosave from '../middleware/autosave';
 
 const sagaMiddleware = createSagaMiddleware();
 
-const initialState = {};
+function _getInitialFavs() {
+  const data = localStorage.getItem('favs') || "";
+  try {
+    return JSON.parse(data);
+  } catch(_) {
+    return {}
+  }
+}
+
+const initialState = {
+  favs: _getInitialFavs()
+};
 const middleware = [
   sagaMiddleware,
+  autosave,
   gifsFetcher,
 ];
 
