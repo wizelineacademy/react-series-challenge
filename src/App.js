@@ -1,5 +1,15 @@
 import React, { Component } from 'react';
+import {
+    Route,
+    Redirect,
+    Link,
+    NavLink,
+    Switch,
+    withRouter,
+} from 'react-router-dom';
+
 import SearchGif from './components/SearchGif';
+import MainGifsView from './components/MainGifsView';
 
 class App extends Component {
   render() {
@@ -12,6 +22,11 @@ class App extends Component {
 
           <main>
               <div>
+                  <Switch>
+
+                      <Route path="/" component={MainGifsView}/>
+
+                  </Switch>
               </div>
           </main>
 
