@@ -11,6 +11,9 @@ import store from './redux/store/';
 // Initial the storage flow
 store.dispatch({ type: 'LOCALSTORAGE_GET' });
 
+// TODO: REMOVED
+window.z = store;
+
 ReactDOM.render(
   <Provider store={store}>
     <Router>

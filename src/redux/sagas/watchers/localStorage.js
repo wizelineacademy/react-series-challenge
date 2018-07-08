@@ -19,7 +19,9 @@ const loadData = () => {
 function* localStorage() {
   console.log('Loading...');
   let data = loadData();
-  yield put({ type: reducersDic.LOCALSTORAGE_DATA, data});
+  yield put({ type: reducersDic.LOCALSTORAGE_DATA, data });
+  //START FETC
+  // yield put({ type: reducersDic.FETCH_REQUEST });
 }
 
 export default function* watchLocalStorage() {

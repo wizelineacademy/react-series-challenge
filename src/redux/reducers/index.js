@@ -1,16 +1,10 @@
-import initialState from "./../constants/initialState";
-import reducersDic from "./../constants/reducersDic";
+import { combineReducers } from 'redux';
 
-export default (state = initialState, action) => {
-  const { type, data } = action;
+import api from './api';
+import localStorage from './localStorage';
 
-  switch (type) {
-    case reducersDic.LOCALSTORAGE_DATA:
-      return {
-        ...state,
-        ...data
-      }
-    default:
-      return state
-  }
-}
+
+export default combineReducers({
+  api,
+  localStorage,
+});
