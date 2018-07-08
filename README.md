@@ -59,16 +59,16 @@ At this point, don't worry about styling nor tests, you will be focused on those
 
 ## TL;DR
 
-1.  Use Giphy API
-2.  Home ListView
+1.  :white_check_mark: Use Giphy API
+2.  :white_check_mark: Home ListView
 
-- Trending API
-- Search API
+- :white_check_mark: Trending API
+- :white_check_mark: Search API
 
-3.  Favorite ListView
+3.  :white_check_mark: Favorite ListView
 
-- Redux State List
-- Redux State Search
+- :white_check_mark: Redux State List
+- :white_check_mark: Redux State Search
 
 5.  Unit Testing
 
