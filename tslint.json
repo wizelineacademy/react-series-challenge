@@ -9,11 +9,11 @@
     ]
   },
   "rules": {
-    "variable-name": [ true, "ban-keywords", "check-format", "allow-leading-underscore", "allow-snake-case" ],
+    "variable-name": [ true, "ban-keywords", "check-format", "allow-leading-underscore", "allow-snake-case", "allow-pascal-case" ],
     "object-literal-sort-keys": false,
     "jsx-boolean-value": false,
     "ordered-imports": false,
-    "curly": [true, "ignore-same-line"]
+    "curly": [true, "ignore-same-line"],
   },
   "defaultSeverity": "warning"
 }
