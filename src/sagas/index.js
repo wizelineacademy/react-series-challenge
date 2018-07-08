@@ -1,16 +1,16 @@
-import { takeLatest, call, put } from 'redux-saga/effects';
+import { takeEvery, call, put, all } from 'redux-saga/effects';
 import actions from '../actions';
 import axios from 'axios';
 import constants from "../constants";
 
-const { API_KEY, TRENDING_API_URL } = constants;
+const { API_KEY, TRENDING_API_URL, SEARCH_API_URL } = constants;
 
-const { GET_TRENDING } = actions.types;
+const { GET_TRENDING, GET_SEARCH } = actions.types;
 
-const { trendingGifsFetched } = actions.creators;
+const { trendingGifsFetched, searchGifsFetched } = actions.creators;
 
-const fetchGifs = (url) => {
-  return axios.get(url, {params: {api_key: API_KEY}})
+const fetchGifs = (url, params={}) => {
+  return axios.get(url, {params: {api_key: API_KEY, ...params}})
 };
 
 function* trendingGifsFetcher() {
@@ -22,12 +22,29 @@ function* trendingGifsFetcher() {
   }
 }
 
+function* searchGifsFetcher(action) {
+  try {
+    const { data } = yield call(
+      fetchGifs, 
+      SEARCH_API_URL, 
+      {q: action.payload.q}
+    )
+    yield put(searchGifsFetched(data.data, action.payload.q))
+  } catch (e) {
+    console.warn(e);
+  }
+}
+
 function* watchTrendingGifsRequest() {
-  yield takeLatest(GET_TRENDING, trendingGifsFetcher);
+  yield takeEvery(GET_TRENDING, trendingGifsFetcher);
+}
+
+function* watchSearchRequests() {
+  yield takeEvery(GET_SEARCH, searchGifsFetcher);
 }
 
 function* rootSaga() {
-  yield* watchTrendingGifsRequest();
+  yield all([watchTrendingGifsRequest(), watchSearchRequests()]);
 }
 
 export default rootSaga;

@@ -6,7 +6,7 @@ const GifListView = ({data}) => {
     <GifView src={gif.url} key={gif.id} />
   ))
   return (
-    <div style={{width: '100%'}}>
+    <div style={{width: '80%', margin:'10px auto'}}>
       {gifs}
     </div>
   )
