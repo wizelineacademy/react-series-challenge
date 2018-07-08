@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import PropTypes from 'prop-types'
 import { Route, NavLink, Switch } from 'react-router-dom'
+import { Provider } from 'react-redux'
+import store from './store'
 import About from './components/About'
 import Contact from './components/Contact'
 import Home from './components/Home'
@@ -11,6 +12,7 @@ import './App.css';
 class App extends Component {
   render() {
     return (
+      <Provider store={store}>
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
@@ -31,6 +33,7 @@ class App extends Component {
           </Switch>
         </div>
       </div>
+      </Provider>
     );
   }
 }
