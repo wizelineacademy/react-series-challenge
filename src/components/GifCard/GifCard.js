@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { GifContainer, Gif, GifOverlay, GifOverlayLoading } from './GifCard.styled';
+import { GifContainer, Gif, GifOverlay, GifOverlayLoading, FavoriteBtn } from './GifCard.styled';
 class GifCard extends Component {
 
     constructor(props) {
@@ -18,11 +18,20 @@ class GifCard extends Component {
 
         const { gif } = this.props;
 
-        const gifOverlay = <GifOverlay />;
-        const gifOverlayLoading = <GifOverlayLoading>
-            <p>Loading...</p>
-            <p>{gif.title}</p>
-        </GifOverlayLoading>;
+        const gifOverlay = (
+            <GifOverlay>
+                <FavoriteBtn>
+                    <i className="far fa-heart"></i>
+                </FavoriteBtn>
+            </GifOverlay>
+        );
+
+        const gifOverlayLoading = (
+            <GifOverlayLoading>
+                <p>Loading...</p>
+                <p>{gif.title}</p>
+            </GifOverlayLoading>
+        );
 
         return (
             <GifContainer>

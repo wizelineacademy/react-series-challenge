@@ -12,7 +12,7 @@ const GifOverlay = styled.div`
     right: 0;
     color: #fff;
     background-color: rgba(0,0,0,0.0);
-    transition: background-color 0.3s ease;
+    transition: background-color 0.2s ease;
     
     &:hover {
         background-color: rgba(0,0,0,0.7);
@@ -39,9 +39,31 @@ const Gif = styled.img`
     // height: auto;
 `;
 
+const FavoriteBtn = styled.button`
+    position: absolute;
+    visibility: hidden;
+    bottom: 1rem;
+    right: 1rem;
+    font-size: 1.4rem;
+    background: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    
+    &:focus {
+        outline: none !important;
+    }
+    
+    ${GifOverlay}:hover & {
+        visibility: visible;
+        opacity: 1;
+    }
+`;
+
 export {
     GifContainer,
     GifOverlay,
     GifOverlayLoading,
     Gif,
+    FavoriteBtn,
 };
