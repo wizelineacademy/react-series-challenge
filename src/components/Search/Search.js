@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import PropTypes from "prop-types";
 // actions
@@ -10,6 +9,7 @@ import UI from './Search.ui';
 class Search extends Component {
 
   handleChange = (e) => {
+    e.preventDefault();
     this.props.searchGif('hola');
   }
 
@@ -23,16 +23,9 @@ class Search extends Component {
 };
 
 const mapStateToProps = (state) => {
-  console.log('mapStateToProps:::', state);
   return {
     result: state.searchResult,
   }
-}
-  
-const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({
-      searchGif
-  }, dispatch)
 }
 
 Search.propTypes = {
@@ -44,4 +37,4 @@ Search.defaultProps = {
 }
   
 
-export default connect(mapStateToProps, mapDispatchToProps)(Search);
+export default connect(mapStateToProps, {searchGif})(Search);
