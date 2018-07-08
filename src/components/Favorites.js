@@ -2,8 +2,8 @@ import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { GiftContainer }  from '../styled_component/Home.styled';
-import favoriteActions from '../redux/actions/favorites';
 import AddGiftModal from './Modal/AddGiftModal';
+import GiftItem from './giftItem';
 
 const Favorites = (props) => {
     const {
@@ -23,27 +23,12 @@ const GiftList = (props) => {
     const { gifts } = props
   
     return Object.values(gifts).map((item, index)=> (
-      <FavoriteItem 
+      <GiftItem 
         url={item.url}
         name={item.name}
         id={item.id}
         key={index}/>
     ));
-}
-
-const FavoriteItem = (props) => {
-    const {
-        url, 
-        name,
-        id,
-        deleteFavorite,
-    }=props
-
-    const gift = {url, name, id};
-
-    return (
-        <img src={url} width={"100px"} height={"100px"} onClick={()=>console.log("delete: ",{gift})}/>
-    );
 }
 
 const  mapStateToProps = (state) => {
@@ -52,12 +37,4 @@ const  mapStateToProps = (state) => {
     return { favorites, };
 };
 
-const mapDispatchToProps = (dispatch) => {
-    const { deleteFavorite } = favoriteActions.creators;
-
-    return bindActionCreators({
-        deleteFavorite,
-    }, dispatch);
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Favorites);
+export default connect(mapStateToProps, null)(Favorites);
