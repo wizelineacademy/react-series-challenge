@@ -1,7 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
 
-const Item = ({ item, favorites, onToggleFavorite }) => {
+const Item = ({
+  item,
+  favorites: { items: favoriteItems },
+  onToggleFavorite
+}) => {
   const {
     title,
     images: {
@@ -20,7 +24,7 @@ const Item = ({ item, favorites, onToggleFavorite }) => {
       >
         <i className="fas fa-heart" />
       </button>
-      {item.id in favorites ? "favorite" : null}
+      {item.id in favoriteItems ? "favorite" : null}
     </span>
   );
 };

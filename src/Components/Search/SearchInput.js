@@ -7,10 +7,13 @@ class SearchInput extends React.Component {
       onRequestSearchGifs,
       fromFavorites,
       searchInput,
-      searchFavorite
+      searchFavorite,
+      onFilterFavorites
     } = this.props;
     if (!fromFavorites) {
       onRequestSearchGifs(searchInput);
+    } else {
+      onFilterFavorites(searchFavorite);
     }
   };
 
@@ -20,11 +23,14 @@ class SearchInput extends React.Component {
       onRequestSearchGifs,
       fromFavorites,
       searchInput,
-      searchFavorite
+      searchFavorite,
+      onFilterFavorites
     } = this.props;
     if (keyCode === 13) {
       if (!fromFavorites) {
         onRequestSearchGifs(searchInput);
+      } else {
+        onFilterFavorites(searchFavorite);
       }
       return false;
     }
@@ -81,7 +87,9 @@ const mapDispatchToProps = dispatch => {
     onChangeSearchInput: value =>
       dispatch({ type: "SEARCH_INPUT", query: value }),
     onChangeFavoritesInput: value =>
-      dispatch({ type: "SEARCH_FAVORITE", query: value })
+      dispatch({ type: "SEARCH_FAVORITE", query: value }),
+    onFilterFavorites: query =>
+      dispatch({ type: "FAVORITE_FILTER", payload: query })
   };
 };
 

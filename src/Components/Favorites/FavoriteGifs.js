@@ -3,23 +3,37 @@ import { connect } from "react-redux";
 
 import Item from "../Gifs/Item";
 
-const FavoriteGifs = ({ favorites }) => {
-  const favoritesArr = Object.keys(favorites);
+const FavoriteGifs = ({ favorites: { items, filtered }, searchFavorite }) => {
+  const favoritesArr = Object.keys(items);
   if (!favoritesArr.length) {
-    return <p>No se encontraron favoritos</p>;
+    return <p>No hay favoritos</p>;
   }
 
-  return (
-    <div>
-      {favoritesArr.map(key => <Item key={key} item={favorites[key]} />)}
-    </div>
-  );
+  if (!filtered) {
+    return (
+      <div>{favoritesArr.map(key => <Item key={key} item={items[key]} />)}</div>
+    );
+  }
+
+  if (!filtered.length && searchFavorite) {
+    return (
+      <div>
+        No se encontraron gifs para <b>{searchFavorite}</b>
+      </div>
+    );
+  }
+
+  return <div>{filtered.map(item => <Item key={item.id} item={item} />)}</div>;
 };
 
 const mapStateToProps = state => {
-  const { favorites } = state;
+  const {
+    favorites,
+    search: { searchFavorite }
+  } = state;
   return {
-    favorites
+    favorites,
+    searchFavorite
   };
 };
 
