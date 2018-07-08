@@ -1,12 +1,11 @@
 import * as React from 'react';
-import { IGIF } from '../../types/gif';
+import { IGIF } from '../../types';
 import styled from 'styled-components';
 
 import FavButton from './FavButton';
 import { connect } from 'react-redux';
-import { Dispatch, bindActionCreators, Action } from 'redux';
+import { Dispatch, bindActionCreators } from 'redux';
 import { toggle_favorite } from '../../actions/gifs';
-import { ActionFunctionAny } from 'redux-actions';
 
 interface IGIFListProps {
     gifs: IGIF[],

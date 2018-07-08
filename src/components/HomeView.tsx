@@ -5,7 +5,7 @@ import { bindActionCreators, ActionCreator, Dispatch } from 'redux';
 
 import * as API from '../api';
 import GIFList from './presentational/GIFList';
-import { IGIF } from '../types/gif';
+import { IGIF } from '../types';
 
 interface IHomeViewProps {
     fetch_gifs: ActionCreator<any>

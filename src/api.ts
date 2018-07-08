@@ -13,7 +13,7 @@ export function search(query: string) {
     return API.get('/search', {
         params: {
             q: query,
-            limit: 10,
+            limit: 25,
             offset: 0,
             rating: 'G',
             lang: 'en'

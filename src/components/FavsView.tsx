@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { IGIF } from '../types/gif';
+import { IGIF } from '../types';
 import GIFList from './presentational/GIFList';
 import {connect} from 'react-redux';
 import { Dispatch, bindActionCreators } from 'redux';

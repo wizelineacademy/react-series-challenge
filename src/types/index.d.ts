@@ -14,3 +14,9 @@ export interface IGIF {
         fixed_height: IImageObject
     }
 }
+
+export interface AppState {
+    favs: any
+    trending: IGIF[]
+    search: string
+}
