@@ -1,3 +1,7 @@
-const rootReducer = (state = [], action) => (state)
+import { combineReducers } from 'redux';
 
-export default rootReducer;
+import gifsReducer from './gifs';
+
+export default combineReducers({
+  gifsReducer
+});
