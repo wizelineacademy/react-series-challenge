@@ -19,12 +19,12 @@ class GifPage extends Component {
         this.state = {
             gifs: null, 
             searchValue: null,
-            isLoading: true,
         };
     }
 
 
-    componentDidMount() {        
+    componentDidMount() {      
+        
         fetch(`${apiURL}${apiTrends}?api_key=${apiKey}`)
         //fetch(`http://api.giphy.com/v1/gifs/trending?api_key=MKGAXNQl5cXUBSBMrXSsufVZ9bqvhX6p`)
         .then(Response => {
@@ -39,16 +39,19 @@ class GifPage extends Component {
                         newObject.url = json.data[a].images.downsized.url;
                         newArray.push(newObject);
                     }
-                    
+                    console.log(newArray);
                     this.setState({ gifs: newArray });
                 }
             )
         })
+        //this.props.searchedTrendingGifs();
+        
     }
 
     handleSearch = () => {
         //console.log(event.target.value);
         //const searchParam = event.target.value;
+        
         const { searchValue } = this.state;
         fetch(`${apiURL}${apiSearch}?api_key=${apiKey}&q=${searchValue}`)
         .then(Response => {
@@ -63,15 +66,17 @@ class GifPage extends Component {
                         newObject.url = json.data[a].images.downsized.url;
                         newArray.push(newObject);
                     }
-
                     this.setState({ gifs: newArray });
                 }
             )
         })
+        //this.props.searchedSpecifiedGifs();
     }
 
     updateState = (event) => {
-        this.setState({searchValue: event})
+        //this.props.updateSearchValue(event.target.value);
+        console.log(event);
+        this.setState({ searchValue: event })
         //console.log(event);
     }
 
@@ -95,16 +100,17 @@ class GifPage extends Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log(state);
-    const { greeting } = state;
+    console.log("ESTADO", state);
+    const { searchValue, gifs } = state;
     return {
-        greeting
+        searchValue, 
+        gifs,
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
-    const { searchedFavoriteGifs } = SearchFunctions.creators;
-    return bindActionCreators( { searchedFavoriteGifs }, dispatch);
+    const { searchedFavoriteGifs, searchedTrendingGifs, searchedSpecifiedGifs, updateSearchValue } = SearchFunctions.creators;
+    return bindActionCreators( { searchedFavoriteGifs, searchedTrendingGifs, searchedSpecifiedGifs, updateSearchValue }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(GifPage);

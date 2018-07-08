@@ -6,9 +6,8 @@ import './GifCards.css';
 const GifCards = (props) => {
 
         let arrays = null;
-        const { gifData, searchedValue } = props;  
-        console.log("GIFS DATA", gifData); 
-        console.log("Seach data",searchedValue );
+        const { gifData, searchedValue, searchedGifs } = props; 
+        console.log("props", props); 
 
         if(gifData !== null && gifData !== undefined){
             arrays = Object.keys(gifData).map((key, index) => {
@@ -17,14 +16,14 @@ const GifCards = (props) => {
                 //console.log("url: " + url);
                 //return (<img key = {id} src = {url} alt = "Cargando..." />);
                 return (
-                <div key = {id} >
+                <div key = {id} className = "GifCards">
                 <GifCard 
                     //loadError = {props.loadError}
                     //loadSuccess = {props.loadSuccess}
                     imageUrl = {url}
                      />
-                    <GifCardControls key = {index} searchedGifs = {() => props.searchedGifs({ searchedValue: searchedValue, url: url})} />
-                    </div>);
+                    <GifCardControls key = {index} searchedGifs = {() => searchedGifs({ id: id, searchedValue: searchedValue, url: url})} />
+                </div>);
             });
 
             //console.log("Arreglo" , arrays[0]);
