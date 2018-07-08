@@ -9,7 +9,7 @@ const ajax = (params) => {
 export function* searchGifs(res) {
     try {
         const options = {
-            url: `http://api.giphy.com/v1/gifs/search?q=${res.result}&api_key=8lCcODDfELugUIKA3mCMdGbp1UBdtx15&limit=5`
+            url: `http://api.giphy.com/v1/gifs/search?q=${res.result}&api_key=8lCcODDfELugUIKA3mCMdGbp1UBdtx15&limit=5&lang=es`
         };
         const resultSearch = yield call(ajax, options);
         yield put(actions.searchResult(resultSearch));

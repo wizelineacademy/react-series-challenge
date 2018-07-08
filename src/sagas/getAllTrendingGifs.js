@@ -9,7 +9,7 @@ const ajax = (params) => {
 export function* watchGetAllTrendingGif() {
     try {
         const options = {
-            url: 'http://api.giphy.com/v1/gifs/trending?limit=25&offset=50&rating=g&api_key=8lCcODDfELugUIKA3mCMdGbp1UBdtx15'
+            url: 'http://api.giphy.com/v1/gifs/trending?limit=25&offset=50&rating=g&api_key=8lCcODDfELugUIKA3mCMdGbp1UBdtx15&lang=es'
         };
         const gifs = yield call(ajax, options);
         yield put(actions.receiveTrendingGifs(gifs));

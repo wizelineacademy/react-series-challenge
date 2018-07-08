@@ -4,7 +4,7 @@ import { all, select, takeEvery } from "redux-saga/effects";
 import watchGetAllTrendingGif from "./getAllTrendingGifs";
 import watchSearchGif from "./searchGif";
 
-export function* watchAndLog() {
+export function* watchLog() {
     yield takeEvery('*', function* logger(action) {
       const state = yield select()
         console.group(action.type);
@@ -12,11 +12,11 @@ export function* watchAndLog() {
         console.log('next state ', state);
         console.groupEnd(action.type);
     })
-  }
+}
 
 export default function* rootSaga() {
     yield all([
-        watchAndLog(),
+        watchLog(),
         watchGetAllTrendingGif(),
         watchSearchGif(),
     ]);
