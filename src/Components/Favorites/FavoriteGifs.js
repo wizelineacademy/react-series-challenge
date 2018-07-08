@@ -18,7 +18,7 @@ const FavoriteGifs = ({ favorites: { items, filtered }, searchFavorite }) => {
   if (!filtered.length && searchFavorite) {
     return (
       <div>
-        No se encontraron gifs para <b>{searchFavorite}</b>
+        No se encontraron gifs en favoritos para <b>{searchFavorite}</b>
       </div>
     );
   }
