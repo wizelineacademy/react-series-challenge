@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import GifView from './GifView';
 import { connect } from "react-redux";
 import { bindActionCreators } from 'redux';
@@ -6,16 +6,23 @@ import { bindActionCreators } from 'redux';
 import actions from "../../actions";
 const { getTrendingGifs } = actions.creators;
 
-const GifListView = ({data, getTrendingGifs}) => {
-  
+class GifListView extends Component {
 
-  return (
-    <div>
-      <GifView src='https://media1.giphy.com/media/3oEdv03JAv74J6KGTS/giphy.gif' favorite />
-      <pre>{JSON.stringify(data)}</pre>
-      <button onClick={getTrendingGifs} />
-    </div>
-  )
+  componentDidMount() {
+    this.props.getTrendingGifs();
+  }
+  
+  render() {
+    const {data, getTrendingGifs} = this.props;
+    const gifs = data.map((gif) => (
+      <GifView src={gif.url} key={gif.id} />
+    ))
+    return (
+      <div style={{width: '100%'}}>
+        {gifs}
+      </div>
+    )
+  }
 }
 
 const mapStateToProps = state => ({

@@ -15,10 +15,10 @@ const fetchGifs = (url) => {
 
 function* trendingGifsFetcher() {
   try {
-    const response = yield call(fetchGifs, TRENDING_API_URL)
-    yield put(trendingGifsFetched(response))
+    const { data } = yield call(fetchGifs, TRENDING_API_URL)
+    yield put(trendingGifsFetched(data))
   } catch (e) {
-    console.warn(e);    
+    console.warn(e);
   }
 }
 
