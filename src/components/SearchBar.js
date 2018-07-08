@@ -4,7 +4,7 @@ const SearchBar =  ({}) => (
     <div>
         <input >
         </input>
-        <button>Go</button>
+        <button>Add</button>
     </div>
 )
 
