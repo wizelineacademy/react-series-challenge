@@ -7,18 +7,23 @@ import Item from '../Item'
 
 const {
   startLoading,
+  addToFavContent,
+  removeFavContent,
 } = contentActions.actions
 
-const Content = ({data, onClick}) => {
+const Content = ({data, onClickFav, favorites}) => {
   const loading = !data
   if(loading){
     return(
       <div> loading ... </div>
     )
   }
-  return data.data.map((key, index) => (
+
+  return data.data.map((item, index) => (
     <Item key={index}
-      imageURL={key.images.original.webp}
+      item={item}
+      onClickFav={onClickFav}
+      isFav={favorites[item.id] ? true : false}
     />
   ))
 
@@ -26,8 +31,24 @@ const Content = ({data, onClick}) => {
 
 class Home extends Component {
 
+  constructor(props) {
+    super(props)
+
+    this.toogleFavorite = this.toogleFavorite.bind(this)
+  }
+
   componentDidMount() {
     this.props.fetchData()
+  }
+
+  toogleFavorite(item, isFav) {
+    if(!isFav){
+      this.props.addToFavContent(item)
+    }
+    else {
+      console.log('remove')
+      this.props.removeFavContent(item)
+    }
   }
 
   render() {
@@ -36,8 +57,10 @@ class Home extends Component {
         <Header/>
         <Searchbar/>
         <Content
-          data={this.props.content.content}/>
-        Home
+          data={this.props.content.data}
+          favorites={this.props.content.favorites}
+          onClickFav={this.toogleFavorite}
+        />
       </div>
     )
   }
@@ -53,6 +76,12 @@ const mapDispatchToProps = (dispatch) => {
   return {
     fetchData: () => {
       dispatch(startLoading())
+    },
+    addToFavContent: (item) => {
+      dispatch(addToFavContent(item))
+    },
+    removeFavContent: (item) => {
+      dispatch(removeFavContent(item))
     }
   }
 }
