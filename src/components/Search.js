@@ -10,7 +10,7 @@ class Search extends Component {
   componentDidMount() {
     console.log(this.props);
     fetch(
-      "https://api.giphy.com/v1/gifs/search?api_key=" +
+      process.env.REACT_APP_API_URL+"search?api_key=" +
         process.env.REACT_APP_API_KEY +
         "&q=" +
         this.props.location.state.tag +

@@ -1,40 +1,46 @@
-import React, {
-    Component
-} from "react";
-import Gif from "./Gif"
+import React, { Component } from "react";
+import Gif from "./Gif";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
+import trendingGifs from "../redux/actions/trendingGifs";
+
 class Home extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            gifs: []
-        };
-    }
-
-
     componentDidMount() {
-        fetch("https://api.giphy.com/v1/gifs/trending?api_key=" + process.env.REACT_APP_API_KEY + "&limit=25&rating=G", {
-            method: "GET",
-            timeout: process.env.REACT_APP_TIMEOUT
-        }).then(results => {
-            return results.json();
-        }).then(data => {
-            let images= data.data.map(image=>{
-                return <Gif id={image.id} src={image.images.fixed_width.url} liked={false} />;
-            });
-            this.setState({gifs:images});
-        }).catch(err => {
-            console.log(err);
-        });
+        console.log(this.props
+        );
+        this.props.requestTrendingGifs();
+        
+        
     }
 
+    gifs=(image)=>{
+        <Gif id={image.id} src={image.images.fixed_width.url} liked={false} />
+    }
 
     render() {
-        return(
-            <React.Fragment>
-                {this.state.gifs}
+    return <React.Fragment>
+                {this.props.data!==undefined 
+            ?this.props.data.data.map(this.gifs):null}
             </React.Fragment>
-        );
     }
 }
 
-export default Home;
+const mapStateToProps = (state) => {
+    const {
+      data
+    } = state;
+    
+    return {
+      data
+    };
+  };
+  
+  const mapDispatchToProps = (dispatch) => {
+    const { requestTrendingGifs } = trendingGifs.creators;
+  
+    return bindActionCreators({
+        requestTrendingGifs,
+    }, dispatch);
+  };
+  
+  export default connect(mapStateToProps, mapDispatchToProps)(Home);
