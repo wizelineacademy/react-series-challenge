@@ -1,8 +1,15 @@
-import { Action } from "redux";
+import { Action, Store, Dispatch } from "redux";
+import { FETCH_TRENDING, fetched_gifs } from '../actions/gifs';
 
-const gifsFetcher = (store: any) => (next: any) => (action: Action) => {
+function fetchGifs(dispatch: Dispatch) {
+  console.log("Fetching GIFs!...");
+  dispatch(fetched_gifs([ "HERE SHOULD BE THE GIFS" ]));
+}
+
+const gifsFetcher = (store: Store) => (next: any) => (action: Action) => {
     const { type } = action;
-    // TODO: Fetch gifs
+    if (type === FETCH_TRENDING ) fetchGifs(store.dispatch);
+
     return next(action);
   };
 
