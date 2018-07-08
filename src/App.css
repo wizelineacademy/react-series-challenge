@@ -26,3 +26,20 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+
+/* Styles */
+.container {
+  padding: 0 auto;
+}
+.element {
+  display: inline-block;
+  padding: 1rem;
+  width: 20%;  
+}
+.thegif {
+  width: 100%;
+}
+.search-input {
+  margin-right: 10px;
+}
