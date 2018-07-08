@@ -1,0 +1,33 @@
+.GifContainer {
+  width: 1040px;
+  margin: 0 auto;
+}
+
+/* .GifList {
+  display: grid;
+  grid-template-columns: repeat(4, 248px);
+  grid-gap: 1rem;
+}
+
+.GifCard {
+  width: 248px;
+  position: relative;
+}
+
+.GifCardItem {
+  height: 100%;
+  width: 100%;
+}
+
+.GifImage {
+  width: 100%;
+}
+
+.GifCardFavorites {
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+} */
