@@ -1,4 +1,3 @@
-import { createAction } from 'redux-actions';
 
 const TREND_GIFS_LOAD = 'TREND_GIFS_LOAD';
 
