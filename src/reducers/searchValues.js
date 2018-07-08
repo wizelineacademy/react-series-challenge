@@ -1,11 +1,8 @@
 import searchActions from '../actions/searchValues'
 
 const initialState = {
-    searchValue: "trendy",
     gifs: null,
-    favoritedImages: [
-        
-    ]
+    favoritedImages: []
 };
 
 const SearchReducer = (state = initialState, action) => {
@@ -13,15 +10,29 @@ const SearchReducer = (state = initialState, action) => {
 
     switch(type) {
         case searchActions.types.SEARCH_FAVORITE_GIFS: {
+            console.log("Accion index", action.index);
             //const { searchedValue, url } = payload;
-            console.log("SEARCH_FAVORITE_GIFS");
+            //console.log("SEARCH_FAVORITE_GIFS");
             console.log("PAYLOAD: " + JSON.stringify(payload));
 
-            const newState = {...state};
-            console.log(newState);
-            newState.favoritedImages.push(payload);
+            let newState = {...state};
+            //console.log(newState);
+            console.log("LENGTH", newState.favoritedImages.length);
 
-            return newState;
+            if(newState.favoritedImages !== undefined && newState.favoritedImages !== null && newState.favoritedImages.length > 0){
+                for(let a = 0; a <= newState.favoritedImages.length - 1; a++){
+                    if(payload.id === newState.favoritedImages[a].id){
+                        //console.log("Entro");        
+                        //delete newState.favoritedImages[a];  
+                        //console.log(newState.favoritedImages);             
+                        return {...state, favoritedImages: [...state.favoritedImages.slice(0, a), ...state.favoritedImages.slice(a+1)]};
+                    }
+                }
+            }
+            return {...state, favoritedImages: state.favoritedImages.concat(payload)};
+            //}
+            //console.log("Igual llego")
+            //newState.favoritedImages.concat(payload);
         }
 
         case searchActions.types.SEARCH_SPECIFIED_GIFS: {
@@ -85,7 +96,7 @@ const SearchReducer = (state = initialState, action) => {
             //console.log("updated state");
             //console.log("Payload", state.favoritedImages)
             //console.log("STATE PAYLOAD", state.favoritedImages[1].searchValue);
-            const { searchedValue } = payload;
+            /*const { searchedValue } = payload;
             console.log("BUSCADOR", searchedValue)
             console.log("payload", payload)
             let newState = {...state, searchValue: payload};
@@ -98,9 +109,8 @@ const SearchReducer = (state = initialState, action) => {
 
             if(newArray !== undefined && newArray !== null && newArray.length >= 0){
                 newState = { ...newState, favoritedImages: newArray };
-            }
-            
-            return newState;
+            }*/
+            return {...state, favoritedImages: state.favoritedImages.concat(payload)};
         }
 
         default: 

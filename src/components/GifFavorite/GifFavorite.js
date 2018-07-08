@@ -6,11 +6,19 @@ import { bindActionCreators } from 'redux';
 import SearchFunctions from '../../actions/searchValues';
 
 class GifFavorite extends Component {
+
     constructor(props) {
         super(props);
         this.state = {
-            searchedValue: null, 
+            searchedValue: "trendy", 
             searchResults: props.favoritedImages, 
+        }
+    }
+
+    componentDidUpdate(prevProps) {
+        console.log("Se actualiza");
+        if(prevProps.favoritedImages !== this.props.favoritedImages){
+            this.setState({searchResults: this.props.favoritedImages});
         }
     }
 
@@ -35,7 +43,6 @@ class GifFavorite extends Component {
             console.log("Entro a actualizar");
             this.setState({ searchResults: newArray });
         } 
-        
     }
 
     render() {
@@ -52,11 +59,10 @@ class GifFavorite extends Component {
             </div>
         );
     }
-
 }
 
 const mapStateToProps = (state) => {
-    console.log(state);
+    console.log(state.favoritedImages);
     const { greeting, favoritedImages } = state;
     return {
         greeting, favoritedImages

@@ -7,7 +7,7 @@ const GifCards = (props) => {
 
         let arrays = null;
         const { gifData, searchedValue, searchedGifs } = props; 
-        console.log("props", props); 
+        //console.log("props", props); 
 
         if(gifData !== null && gifData !== undefined){
             arrays = Object.keys(gifData).map((key, index) => {

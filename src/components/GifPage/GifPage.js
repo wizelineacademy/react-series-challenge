@@ -17,8 +17,8 @@ class GifPage extends Component {
     constructor(props){
         super(props);
         this.state = {
-            gifs: null, 
-            searchValue: null,
+            gifs: {}, 
+            searchValue: "trendy",
         };
     }
 
@@ -29,17 +29,17 @@ class GifPage extends Component {
         //fetch(`http://api.giphy.com/v1/gifs/trending?api_key=MKGAXNQl5cXUBSBMrXSsufVZ9bqvhX6p`)
         .then(Response => {
                 return Response.json().then( (json) => {
-                    console.log(json.data);
-                    var newArray = [];
-                    var newObject = {};
+                    //console.log(json.data);
+                    let newArray = [];
+                    let newObject = {};
                     
-                    for(var a = 0; a <= Object.keys(json.data).length - 1; a++){
+                    for(let a = 0; a <= Object.keys(json.data).length - 1; a++){
                         newObject = {};
                         newObject.id = json.data[a].id;
                         newObject.url = json.data[a].images.downsized.url;
                         newArray.push(newObject);
                     }
-                    console.log(newArray);
+                    //console.log(newArray);
                     this.setState({ gifs: newArray });
                 }
             )
@@ -75,8 +75,10 @@ class GifPage extends Component {
 
     updateState = (event) => {
         //this.props.updateSearchValue(event.target.value);
-        console.log(event);
-        this.setState({ searchValue: event })
+        //console.log("EVENTO DE BUSQUEDA", event);
+        if(event !== null && event !== undefined){
+            this.setState({ searchValue: event })
+        }
         //console.log(event);
     }
 
@@ -100,7 +102,7 @@ class GifPage extends Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log("ESTADO", state);
+    //console.log("ESTADO", state);
     const { searchValue, gifs } = state;
     return {
         searchValue, 
