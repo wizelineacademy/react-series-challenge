@@ -7,12 +7,12 @@ const initialState = {
 
 const favoritesReducer = (state = initialState, action) => {
   const { type, payload } = action;
+  const newState = { ...state.items };
 
   switch (type) {
     case favoriteActions.types.FAVORITE_TOGGLE:
       const { item } = payload;
 
-      const newState = { ...state.items };
       if (item.id in newState) {
         delete newState[item.id];
       } else {
@@ -21,12 +21,11 @@ const favoritesReducer = (state = initialState, action) => {
 
       return { ...state, items: newState };
     case favoriteActions.types.FAVORITE_FILTER:
-      const favoriteGifs = { ...state.items };
-      const filterdKeys = Object.keys(favoriteGifs).filter(key => {
+      const filterdKeys = Object.keys(newState).filter(key => {
         const query = new RegExp(action.payload, "i");
-        return query.test(favoriteGifs[key].title);
+        return query.test(newState[key].title);
       });
-      const filteredItems = filterdKeys.map(key => favoriteGifs[key]);
+      const filteredItems = filterdKeys.map(key => newState[key]);
 
       return { ...state, filtered: action.payload ? filteredItems : null };
     default:

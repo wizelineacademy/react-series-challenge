@@ -23,7 +23,13 @@ const FavoriteGifs = ({ favorites: { items, filtered }, searchFavorite }) => {
     );
   }
 
-  return <div>{filtered.map(item => <Item key={item.id} item={item} />)}</div>;
+  return (
+    <div>
+      {filtered
+        .filter(item => favoritesArr.find(fav => fav === item.id))
+        .map(item => <Item key={item.id} item={item} />)}
+    </div>
+  );
 };
 
 const mapStateToProps = state => {
