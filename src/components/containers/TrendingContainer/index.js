@@ -3,6 +3,7 @@ import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import { actionTrendingGetDataRequest } from "../../../store/actions";
 import { getTrendingData } from "../../../store/selectors/trendingSelectors";
+import { GiPanel } from "../../../components";
 //import PropTypes from "prop-types";
 
 class TrendingContainer extends Component {
@@ -17,7 +18,11 @@ class TrendingContainer extends Component {
   }
 
   render() {
-    return <div>{JSON.stringify(this.props.trending)}</div>;
+    return (
+      <div>
+        <GiPanel data={this.props.trending} />
+      </div>
+    );
   }
 }
 
