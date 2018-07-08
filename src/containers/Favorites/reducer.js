@@ -15,7 +15,10 @@ const reducer = (state = initialState, action) => {
       const favoritesIds = state.favoritesIds.filter(id => {
         return id !== payload.id;
       });
-      return { ...state, favoritesIds: favoritesIds };
+      const gifs = state.gifs.filter(gif => {
+        return gif.id !== payload.id;
+      });
+      return { ...state, favoritesIds: favoritesIds, gifs: gifs };
     case FAVORITES_SET:
       return { ...state, gifs: payload };
     default:
