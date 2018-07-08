@@ -1,10 +1,10 @@
 import { combineReducers } from "redux";
-import GifsReducer from "./GifsReducer";
-import SearchGifs from "./SearchReducer";
-import FavoriteGifs from "./FavoriteReducer";
+import trendingGifs from "./GifsReducer";
+import searchGifs from "./SearchReducer";
+import favoriteGifs from "./FavoriteReducer";
 
 export default combineReducers({
-  GifsReducer,
-  SearchGifs,
-  FavoriteGifs
+  trendingGifs,
+  searchGifs,
+  favoriteGifs
 });

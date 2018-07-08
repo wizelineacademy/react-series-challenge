@@ -1,17 +1,14 @@
 import trendingGifsActions from "../actions/trendingGifs";
 
-const initialState = {
-  gifs: []
-};
+const initialState = {};
 
 const cryptoPricesReducer = (state = initialState, action) => {
   const { type, payload } = action;
 
   switch (type) {
     case trendingGifsActions.types.FETCH_TRENDING_GIFS: {
-      const gifs = payload;
-      console.log(gifs);
-      return { ...state, gifs };
+      const newState = payload;
+      return newState;
     }
     default:
       return state;

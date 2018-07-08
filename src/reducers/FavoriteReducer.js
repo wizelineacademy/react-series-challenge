@@ -1,20 +1,18 @@
 import favoriteGifsActions from "../actions/favoriteGifs";
 
-const initialState = {
-  fGifs: {}
-};
+const initialState = {};
 
 const cryptoPricesReducer = (state = initialState, action) => {
   const { type, gif } = action;
   switch (type) {
     case favoriteGifsActions.types.ADD_FAVORITE_GIF: {
-      const { fGifs } = state;
-      if (!fGifs[gif.id]) {
-        fGifs[gif.id] = gif;
+      const newState = {...state};
+      if (!newState[gif.id]) {
+        newState[gif.id] = { ...gif };
       } else {
-        delete fGifs[gif.id];
+        delete newState[gif.id];
       }
-      return { ...state, fGifs };
+      return newState;
     }
     default:
       return state;

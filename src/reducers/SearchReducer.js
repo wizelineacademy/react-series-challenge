@@ -9,9 +9,8 @@ const cryptoPricesReducer = (state = initialState, action) => {
 
   switch (type) {
     case searchGifsActions.types.FETCH_SEARCH_GIFS: {
-      const searchGifs = payload;
-      console.log(searchGifs);
-      return { ...state, searchGifs };
+      const newState = payload;
+      return newState;
     }
     default:
       return state;
