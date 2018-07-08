@@ -1,15 +1,12 @@
 import { createActions } from 'redux-actions';
 
-const ADD_TO_FAVORITES = 'ADD_TO_FAVORITES';
-const REMOVE_FROM_FAVORITES = 'REMOVE_FROM_FAVORITES';
+const TOGGLE_FAVORITE_GIF = 'TOGGLE_FAVORITE_GIF';
 
-const { addToFavorites, removeFromFavorites } = createActions({
-  [ADD_TO_FAVORITES]: (id) => ({ gifId: id }),
-  [REMOVE_FROM_FAVORITES]: (id) => ({ gifId: id }),
+const { toggleFavoriteGif } = createActions({
+  [TOGGLE_FAVORITE_GIF]: (gif) => ({ gif }),
 });
 
 export {
-  addToFavorites,
-  removeFromFavorites,
+  toggleFavoriteGif,
 }
 

@@ -9,12 +9,14 @@ const FullWidthGif = styled.div`
   background-image: url(${(props) => props.src});
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
   border-radius: 1rem;
 `;
 
 const LikeButton = styled.button`
   position: absolute;
   display: none;
+  cursor: pointer;
   top: 15px;
   right: -10px;
   background-color: white;
@@ -57,14 +59,20 @@ class GifList extends Component {
     return (
       <Container>
         <GifsRow>
-          {gifs && gifs.map((gif) => {
+          {gifs && Object.keys(gifs).map((key) => {
+            const gif = gifs[key];
             const { images } = gif;
             const { fixed_width: image } = images;
             return (
-              <Col size="3">
+              <Col size="3" key={gif.id}>
                 <GifCard>
                   <FullWidthGif src={image.url} />
-                  <LikeButton onClick={this.props.onLikeClick}><i className="fas fa-heart" /></LikeButton>
+                  <LikeButton
+                    liked={gif.liked}
+                    onClick={() => this.props.onLikeClick(gif)}
+                  >
+                    <i className="fas fa-heart" />
+                  </LikeButton>
                 </GifCard>
               </Col>
             )

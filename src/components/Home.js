@@ -2,18 +2,27 @@ import React, { Component } from 'react';
 import GifList from './GifList';
 import { connect } from 'react-redux';
 import { fetchTrendingGifs } from '../actions/giphyApi'
+import { toggleFavoriteGif } from '../actions/favorites';
 
 class Home extends Component {
   componentDidMount() {
-    this.props.fetchTrendingGifs();
+    const { gifs } = this.props;
+    if (Object.keys(gifs).length <= 0) {
+      this.props.fetchTrendingGifs();
+    }
+  }
+
+  handleGifLikeClick = (gif) => {
+    this.props.toggleFavoriteGif(gif);
   }
 
   render() {
-    const { trendingGifs } = this.props;
+    const { gifs } = this.props;
     return (
       <div>
         <GifList
-          gifs={trendingGifs}
+          onLikeClick={this.handleGifLikeClick}
+          gifs={gifs}
         />
       </div>
     );
@@ -22,12 +31,13 @@ class Home extends Component {
 
 const mapStateToProps = (state = {}) => {
   const { giphyApi } = state;
-  const { trendingGifs } = giphyApi;
-  return { trendingGifs };
+  const { gifs } = giphyApi;
+  return { gifs };
 }
 
 const mapDispatchToProps = {
-  fetchTrendingGifs
+  fetchTrendingGifs,
+  toggleFavoriteGif,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

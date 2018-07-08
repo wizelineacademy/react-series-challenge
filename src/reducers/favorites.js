@@ -1,23 +1,24 @@
 import { handleActions } from 'redux-actions';
-import { addToFavorites, removeFromFavorites } from '../actions/favorites';
+import { toggleFavoriteGif } from '../actions/favorites';
 
 const reducer = handleActions({
-  [addToFavorites]: {
-    next(){
-
+  [toggleFavoriteGif]: {
+    next(state, action) {
+      const { gif } = action.payload;
+      const gifs = { ...state.gifs }
+      const storedGif = gifs[gif.id];
+      if (!storedGif) {
+        gif.liked = true;
+        gifs[gif.id] = gif;
+      } else {
+        delete gifs[gif.id];
+      }
+      return { ...state, gifs }
     },
-    throw(){
+    throw(state, action) {
 
     }
   },
-  [removeFromFavorites]: {
-    next(state, action){
-
-    },
-    throw(state, actions){
-
-    }
-  }
-}, {});
+}, { gifs: {} });
 
 export default reducer;
