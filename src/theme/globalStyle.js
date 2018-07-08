@@ -24,10 +24,8 @@ injectGlobal`
         vertical-align: middle;
         white-space: normal;
         background: none;
-        line-height: 1;
+        line-height: 1.6;
         
-        /* Browsers have different default form fonts */
-        // font-size: 13px;
         font-family: 'Montserrat', sans-serif;;
     }
 
