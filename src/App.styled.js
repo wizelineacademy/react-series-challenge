@@ -14,14 +14,17 @@ const Navbar = styled.div`
     box-shadow: 0px 4px 25px -10px rgba(66,66,66,1);
 `;
 
+const MainContainer = styled.div`
+    margin-top: 8rem;
+    width: 100%;
+    background-color: #fff;
+    padding: 0 1rem 1rem;
+`;
+
 const LogoContainer = styled.div`
     display: inline-block;
     position: relative;
     width: 40%;
-`;
-
-const Logo = styled.img`
-    max-width: 50px;
 `;
 
 const SearchContainer = styled.div`
@@ -33,7 +36,7 @@ const SearchContainer = styled.div`
 
 export {
     Navbar,
+    MainContainer,
     LogoContainer,
-    Logo,
     SearchContainer,
 };

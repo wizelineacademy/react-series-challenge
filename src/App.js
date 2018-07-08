@@ -6,7 +6,7 @@ import {
 
 import SearchGif from './components/SearchGif/SearchGif';
 import MainGifsView from './components/MainGifsView/MainGifsView';
-import { Navbar, LogoContainer, SearchContainer } from './App.styled';
+import { Navbar, MainContainer, LogoContainer, SearchContainer } from './App.styled';
 
 class App extends Component {
   render() {
@@ -26,13 +26,13 @@ class App extends Component {
           </header>
 
           <main>
-              <div>
+              <MainContainer>
                   <Switch>
 
                       <Route path="/" component={MainGifsView}/>
 
                   </Switch>
-              </div>
+              </MainContainer>
           </main>
 
       </div>
