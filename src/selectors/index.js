@@ -11,9 +11,8 @@ const favoritesIdsSelector = state => {
 };
 
 const favoritesSelector = state => {
-  console.log('state.favorites.gifs', state.favorites.gifs);
   return {
-    gifs: state.favorites.gifs,
+    gifs: state.favorites.filteredGifs,
   };
 };
 

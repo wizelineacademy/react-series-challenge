@@ -19,8 +19,14 @@ const GifModalBox = styled.div`
   display: ${({ isOpen }) => (isOpen ? 'block' : 'none')};
 `;
 
-const GifImg = styled.img`
+const GifModalContent = styled.div`
   max-width: 100%;
+  max-height: 100%;
+`;
+
+const GifImg = styled.img`
+  max-width: 85%;
+  max-height: 85%;
 `;
 
 const GifPortal = ({ children }) => {
@@ -32,10 +38,10 @@ const GifModal = ({ isOpen, closeModal, gif }) => (
   <GifPortal>
     <GifModalBox isOpen={isOpen}>
       {gif && (
-        <div>
+        <GifModalContent>
           <GifImg alt={gif.slug} src={gif.images.original.url} />
           <p>{gif.title}</p>
-        </div>
+        </GifModalContent>
       )}
       <button onClick={() => closeModal()}>Cerrar</button>
     </GifModalBox>
