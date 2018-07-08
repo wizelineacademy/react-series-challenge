@@ -1,7 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import GifElement from './GifElement';
 import gifListActions from '../actions/gifList';
+
 
 class GifList extends Component {
     componentDidMount() {
@@ -11,10 +13,17 @@ class GifList extends Component {
 
     render() {
         const { gifList } = this.props;
+        const { data } = gifList;
         return (
-            <div>
-                {JSON.stringify(gifList)}
-            </div>
+            <Fragment>
+                {data.map(
+                    (gif) => {
+                        return (
+                            <GifElement gif={gif.images.preview_gif.url} id={gif.id} key={gif.id}/>
+                        );
+                    }
+                )}
+            </Fragment>
         )
     }
 }
