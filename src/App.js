@@ -4,7 +4,6 @@ import { Route, NavLink, Switch } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import store from './store'
 import Favs from './components/Favs'
-import Search from './components/Search'
 import Home from './components/Home'
 import Page404 from './components/Page404'
 import './App.css';

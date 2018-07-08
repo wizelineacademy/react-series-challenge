@@ -2,15 +2,15 @@ import React, {Component} from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux';
 import getTrendingGifsActions from '../../actions/trendingGifs'
-import { InputContainerStyled } from './searchForm.styled';
 import GifContainer from '../GifContainer'
+import SearchForm from '../SearchForm'
 
 class Home extends Component{
     constructor(props){
         super(props)
         this.state = {
             query:'',
-            showTrendings:true
+            showSearchResults:false
         }
     }
 
@@ -19,29 +19,6 @@ class Home extends Component{
             getTrendingGifs,
           } = this.props
         getTrendingGifs()
-    }
-
-    submitForm = (event) =>{
-        event.preventDefault()
-        const {
-            getSearchGifs,
-            getTrendingGifs,
-          } = this.props;
-        var query = this.state.query
-        if(query === ''){
-            getTrendingGifs()
-        }
-        else{
-            getSearchGifs(query)
-        }
-    
-    }
-
-    
-    handleChange = (event) => {
-        const { value } = event.target;
-        this.setState({query:value });
-        this.props.trendingGifs.query = value
     }
 
     addFav = (event) =>{
@@ -65,9 +42,7 @@ class Home extends Component{
     }
 
     render(){
-        console.log('render home')
-        console.log(this.props.trendingGifs.trendingGifs)
-        const trendingGifs = this.props.trendingGifs.trendingGifs
+        const trendingGifs = this.state.showSearchResults ?this.props.trendingGifs.searchGifs : this.props.trendingGifs.trendingGifs
         const favs = this.props.trendingGifs.favs
         const addFavFunction = this.addFav
         var arrayGifs = []
@@ -78,12 +53,7 @@ class Home extends Component{
         
         return <div className='home'>
         <h1>Trending</h1><br/>
-            <form onSubmit={this.submitForm}>
-            <InputContainerStyled>
-                <input type='text' onChange={this.handleChange}/>
-            </InputContainerStyled>
-            <button>Search</button>
-        </form>
+            <SearchForm searchOn='all'/>
             {arrayGifs}
         </div>
     }
@@ -93,11 +63,13 @@ class Home extends Component{
 const mapStateToProps = (state) => {
     const {
       trendingGifs,
+      searchGifs,
       query
     } = state
     
     return {
       trendingGifs,
+      searchGifs,
       query
     }
   }  

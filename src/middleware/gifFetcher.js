@@ -3,8 +3,6 @@ import trendingGifsActions from '../actions/trendingGifs';
 
 const { TRENDING_GIFS_GET } = trendingGifsActions.types;
 const { SEARCH_GIFS_GET } = trendingGifsActions.types;
-const { ADD_FAV } = trendingGifsActions.types;
-const { REMOVE_FAV } = trendingGifsActions.types;
 const { fetchedTrendingGifs } = trendingGifsActions.creators;
 const { fetchedSearchGifs } = trendingGifsActions.creators;
 
@@ -39,12 +37,6 @@ const trendingFetcher = (store) => (next) => (action) => {
     fetchSearch(store.dispatch,store.getState().trendingGifs.query);
   }
 
-  if (type === ADD_FAV) {
-    fetchSearch(store.dispatch,store.getState().trendingGifs.query);
-  }
-  if (type === REMOVE_FAV) {
-    fetchSearch(store.dispatch,store.getState().trendingGifs.query);
-  }
   return next(action);
 };
 

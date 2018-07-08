@@ -8,6 +8,8 @@ const SEARCH_GIFS_GET = 'SEARCH_GIFS_GET'
 
 const ADD_FAV = 'ADD_FAV'
 const REMOVE_FAV = 'REMOVE_FAV'
+const SEARCH_GIFS_FAV = 'SEARCH_GIFS_FAV'
+
 
 const fetchedTrendingGifs = createAction(TRENDING_GIFS_FETCHED)
 const getTrendingGifs = (payload = { }) => ({type:TRENDING_GIFS_GET, payload})
@@ -18,6 +20,7 @@ const getSearchGifs = (payload = { }) => ({type:SEARCH_GIFS_GET, payload})
 
 const addFav = (payload = { }) => ({type:ADD_FAV, payload})
 const removeFav = (payload = { }) => ({type:REMOVE_FAV, payload})
+const searchFav = (payload = { }) => ({type:SEARCH_GIFS_FAV, payload})
 
 export default{
     types:{
@@ -26,7 +29,8 @@ export default{
         SEARCH_GIFS_FETCHED,
         SEARCH_GIFS_GET,
         ADD_FAV,
-        REMOVE_FAV
+        REMOVE_FAV,
+        SEARCH_GIFS_FAV
     },
     creators:{
         fetchedTrendingGifs,
@@ -34,6 +38,7 @@ export default{
         fetchedSearchGifs,
         getSearchGifs,
         addFav,
-        removeFav
+        removeFav,
+        searchFav
     }
 }
