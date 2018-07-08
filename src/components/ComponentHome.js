@@ -1,23 +1,21 @@
 import React, { Component, Fragment, } from 'react';
-import axios from 'axios';
 import ComponentGif from './ComponentGif';
+import { connect } from 'react-redux';
+import { fetchedGifsTrending, fetchedGifsSearch, } from '../actions/gifActions';
+import { addGifToFavorites, removeGifToFavorites, } from '../actions/gifsFavorites';
 
-const API_URL = 'http://api.giphy.com/v1/gifs';
-const API_KEY = "kWpyoml3LgBBvv0b03dvNxOSuNGXaRjl";
-export default class ComponentHome extends Component {
+class ComponentHome extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            gifs: [],
-            loading: true,
-        };
     }
 
     componentDidMount() {
-        this.fetchGiphyTrending();
+        this.props.dispatch(fetchedGifsTrending());
     }
 
     render() {
+        console.log('gifs', this.props.gifs);
+        console.log('favorites', this.props.favorites);
         return (
             <div>
                 <div style={{ marginBottom: 10, }}>
@@ -32,33 +30,34 @@ export default class ComponentHome extends Component {
     }
 
     renderGifs = () => {
-        return this.state.gifs.map((x, index) => ComponentGif(index, x.images.fixed_height_small_still));
+        return this.props.gifs.map(x => {
+            const isFavorite = this.props.favorites.find(x => x.id == x.id);
+            return ComponentGif(x.id, x.gif, isFavorite, () => {
+                this.props.dispatch(addGifToFavorites(x));
+                // console.log(isFavorite);
+            });
+        });
     }
 
     renderLoader = () => {
-        return (!this.state.loading ? null :
+        return (!this.props.loading ? null :
             <h4 className="text-center">Loading...</h4>
         );
     }
 
     onKeyUp = (e) => {
         if (e.keyCode == 13) {
-            this.setState({ gifs: [], loading: true, });
-            this.fetchGiphySearch(e.target.value);
+            this.props.dispatch(fetchedGifsSearch(e.target.value));
         }
     }
-
-    fetchGiphySearch = (filter) => {
-        axios.get(`${API_URL}/search?q=${filter}&api_key=${API_KEY}`)
-            .then((response) => {
-                this.setState({ gifs: response.data.data, loading: false, });
-            });
-    }
-
-    fetchGiphyTrending = () => {
-        axios.get(`${API_URL}/trending?api_key=${API_KEY}`)
-            .then((response) => {
-                this.setState({ gifs: response.data.data, loading: false, });
-            });
-    }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        gifs: state.gifsTrending.gifs,
+        favorites: state.gifsFavorites.gifs,
+        loading: state.gifsTrending.loading,
+    };
+};
+
+export default connect(mapStateToProps)(ComponentHome);
