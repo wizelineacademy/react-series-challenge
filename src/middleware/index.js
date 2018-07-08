@@ -1,4 +1,4 @@
-import trendingFetcher from './trendingFetcher';
+import trendingFetcher from './gifFetcher';
 
 export default [
     trendingFetcher
