@@ -4,6 +4,7 @@ import GifCards from '../GifCards/GifCards';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import SearchFunctions from '../../actions/searchValues';
+import ErrorBoundary from '../../ErrorBoundary/ErrorBoundary'
 
 class GifFavorite extends Component {
 
@@ -48,14 +49,16 @@ class GifFavorite extends Component {
     render() {
         return (
             <div className = "GifFavorite">
-                <SearchBar 
-                updateState = { this.updateState } 
-                handleSearch = { this.handleSearch } />
-    
-                <GifCards 
-                gifData = { this.state.searchResults } 
-                searchedGifs = { this.props.searchedFavoriteGifs } 
-                searchedValue = { this.props.searchedValue }/>
+                    <SearchBar 
+                    updateState = { this.updateState } 
+                    handleSearch = { this.handleSearch } />
+        
+                <ErrorBoundary>
+                    <GifCards 
+                    gifData = { this.state.searchResults } 
+                    searchedGifs = { this.props.searchedFavoriteGifs } 
+                    searchedValue = { this.props.searchedValue }/>
+                </ErrorBoundary>
             </div>
         );
     }

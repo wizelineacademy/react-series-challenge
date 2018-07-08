@@ -2,11 +2,12 @@ import searchActions from '../actions/searchValues'
 
 const initialState = {
     gifs: null,
-    favoritedImages: []
+    favoritedImages: [],
 };
 
 const SearchReducer = (state = initialState, action) => {
     const { type, payload } = action;
+    console.log("ESTADO INICIA", state);
 
     switch(type) {
         case searchActions.types.SEARCH_FAVORITE_GIFS: {
@@ -61,6 +62,14 @@ const SearchReducer = (state = initialState, action) => {
             })*/
             
             return;
+        }
+
+        case searchActions.types.GET_TRENDING: {
+            console.log("ESTADO EN BUSQUEDA", state);
+            console.log("PAYLOAD", payload.data.data)
+            console.log("Entro a trending");
+            let newState = {favoritedImages: [], gifs: payload.data.data}
+            return newState;
         }
 
         case searchActions.types.SEARCH_TRENDING: {

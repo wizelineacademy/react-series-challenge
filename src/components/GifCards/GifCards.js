@@ -13,7 +13,7 @@ const GifCards = (props) => {
             arrays = Object.keys(gifData).map((key, index) => {
                 let { id, url } = gifData[index];
 
-                //console.log("url: " + url);
+                console.log("url: " + url);
                 //return (<img key = {id} src = {url} alt = "Cargando..." />);
                 return (
                 <div key = {id} className = "GifCards">
