@@ -18,29 +18,6 @@ const GifImg = styled.img`
   width: 145px;
 `;
 
-class GifErrorBoundary extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { hasErrors: false, errorInfo: '' };
-  }
-  componentDidCatch(error, info) {
-    console.log('error in boundary', error);
-    console.log('info in boundary', info);
-
-    this.setState({ hasErrors: true, errorInfo: info });
-  }
-  render() {
-    const { children } = this.props;
-    const { hasErrors } = this.state;
-    console.log('this.state errorboundary', this.state);
-    if (hasErrors) {
-      return <div>GIF no disponible</div>;
-    }
-
-    return children;
-  }
-}
-
 const GifItem = ({
   gif,
   addFavoriteId,
@@ -50,7 +27,7 @@ const GifItem = ({
 }) => {
   const RESTRICTED_RATINGS = ['pg-13', 'r'];
   if (RESTRICTED_RATINGS.indexOf(gif.rating) > -1) {
-    //throw new Error('NSFW content');
+    throw new Error('NSFW content');
   }
 
   const addFavBtn = (
@@ -109,11 +86,12 @@ GifItem.propTypes = {
   removeFavoriteId: PropTypes.func.isRequired,
   openModal: PropTypes.func.isRequired,
 };
-
+/*
 const GifItemWrapper = props => (
-  <GifErrorBoundary>
+  <GifErrorBoundary {...props}>
     <GifItem {...props} />
   </GifErrorBoundary>
 );
+*/
 
-export default GifItemWrapper;
+export default GifItem;

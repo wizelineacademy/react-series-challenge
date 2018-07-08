@@ -1,5 +1,6 @@
 import React from 'react';
 import GifItem from '../../containers/GifItem';
+import GifErrorBoundary from '../GifErrorBoundary';
 import styled from 'styled-components';
 
 const ItemsWrapper = styled.div`
@@ -15,7 +16,11 @@ const ItemsWrapper = styled.div`
 const GifsList = ({ gifs, loading }) => {
   return (
     <ItemsWrapper>
-      {gifs.map(gif => <GifItem id={gif.id} key={gif.id} gif={gif} />)}
+      {gifs.map(gif => (
+        <GifErrorBoundary key={gif.id}>
+          <GifItem id={gif.id} gif={gif} />
+        </GifErrorBoundary>
+      ))}
     </ItemsWrapper>
   );
 };
