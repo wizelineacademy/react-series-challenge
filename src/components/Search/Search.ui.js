@@ -1,11 +1,11 @@
 import React from "react";
 
-const SearchUI = () => {
+const SearchUI = ({ handleChange }) => {
     return (
         <div>
             <span>Escribe el nombre de un gif</span>
             <input id="search" type="text" />
-            <button>Realizar busqueda</button>
+            <button onClick={handleChange}>Realizar busqueda</button>
         </div>
     );
 };
