@@ -1,14 +1,24 @@
-import { ACTION_TRENDING_GET_DATA_REQUEST } from "../actions";
+import {
+  ACTION_TRENDING_GET_DATA_REQUEST,
+  ACTION_TRENDING_GET_DATA_RESPONSE
+} from "../actions";
 
 export default function(state = {}, action) {
   switch (action.type) {
     case ACTION_TRENDING_GET_DATA_REQUEST:
-      console.log(ACTION_TRENDING_GET_DATA_REQUEST + " dispatched... ");
       return {
         ...state,
         [ACTION_TRENDING_GET_DATA_REQUEST]: {
           payload: action.payload,
           status: "sending"
+        }
+      };
+    case ACTION_TRENDING_GET_DATA_RESPONSE:
+      return {
+        ...state,
+        [ACTION_TRENDING_GET_DATA_RESPONSE]: {
+          payload: action.payload,
+          status: "done"
         }
       };
     default:

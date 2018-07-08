@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import { actionTrendingGetDataRequest } from "../../../store/actions";
+import { getTrendingData } from "../../../store/selectors/trendingSelectors";
 //import PropTypes from "prop-types";
 
 class TrendingContainer extends Component {
@@ -12,7 +13,7 @@ class TrendingContainer extends Component {
   }
 
   componentDidMount() {
-    this.props.actionTrendingGetDataRequest();
+    this.props.actionTrendingGetDataRequest({});
   }
 
   render() {
@@ -21,7 +22,10 @@ class TrendingContainer extends Component {
 }
 
 function mapStateToProps(state) {
-  const { trending } = state;
+  let { trending } = state;
+
+  trending = getTrendingData(trending);
+
   return {
     trending
   };
