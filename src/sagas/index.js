@@ -4,6 +4,7 @@ import axios from 'axios'
 
 const {
   CONTENT_START_LOADING,
+  CONTENT_SEARCH_START,
 } = contentActions.types
 
 const {
@@ -18,7 +19,12 @@ const fetchContent = () => {
   const url = `${API_URL}trending?api_key=${API_KEY}&limit=25&rating=G`
   return axios.get(url)
     .then(response => response)
+}
 
+const searchContent = (query) => {
+  const url = `${API_URL}search?api_key=${API_KEY}&q=${query}&limit=25&rating=G`
+  return axios.get(url)
+    .then(response => response)
 }
 
 function* getContent(){
@@ -29,13 +35,28 @@ function* getContent(){
     yield put(fetchedErrorContent(e))
   }
 }
+
+function* getSearchContent({ payload }) {
+  try{
+    const { data } = yield call(searchContent, payload)
+    yield put(fetchedContent(data))
+  } catch(e) {
+    yield put(fetchedErrorContent(e))
+  }
+}
+
 function* watchContentStartLoading() {
   yield takeEvery(CONTENT_START_LOADING, getContent)
+}
+
+function* watchContentStartSearch(params) {
+  yield takeEvery(CONTENT_SEARCH_START, getSearchContent)
 }
 
 function* rootSaga () {
   yield all([
     watchContentStartLoading(),
+    watchContentStartSearch(),
   ])
 }
 

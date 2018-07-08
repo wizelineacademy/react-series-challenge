@@ -1,11 +1,11 @@
 import React from 'react'
 import './Searchbar.css'
 
-const Searchbar = () => {
+const Searchbar = ({ handleKeyPress }) => {
 
   return (
     <div className="searchbar">
-      <input type="text" />
+      <input type="text" onKeyPress={e =>handleKeyPress(e)}/>
     </div>
   )
 }

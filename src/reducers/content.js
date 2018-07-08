@@ -26,7 +26,6 @@ const contentReducer = (state = initialState, action) => {
     case types.CONTENT_REMOVE_FAV: {
       const newState = {...state}
       delete newState.favorites[payload.id]
-      console.log('newState', newState)
       return newState
     }
     default:

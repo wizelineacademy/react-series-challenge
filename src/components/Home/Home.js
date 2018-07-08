@@ -9,6 +9,7 @@ const {
   startLoading,
   addToFavContent,
   removeFavContent,
+  startSearch,
 } = contentActions.actions
 
 const Content = ({data, onClickFav, favorites}) => {
@@ -35,6 +36,7 @@ class Home extends Component {
     super(props)
 
     this.toogleFavorite = this.toogleFavorite.bind(this)
+    this.handleKeyPress = this.handleKeyPress.bind(this)
   }
 
   componentDidMount() {
@@ -46,8 +48,13 @@ class Home extends Component {
       this.props.addToFavContent(item)
     }
     else {
-      console.log('remove')
       this.props.removeFavContent(item)
+    }
+  }
+
+  handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      this.props.startSearch(e.target.value)
     }
   }
 
@@ -55,7 +62,9 @@ class Home extends Component {
     return(
       <div>
         <Header/>
-        <Searchbar/>
+        <Searchbar
+          handleKeyPress={this.handleKeyPress}
+        />
         <Content
           data={this.props.content.data}
           favorites={this.props.content.favorites}
@@ -82,7 +91,10 @@ const mapDispatchToProps = (dispatch) => {
     },
     removeFavContent: (item) => {
       dispatch(removeFavContent(item))
-    }
+    },
+    startSearch: (query) => {
+      dispatch(startSearch(query))
+    },
   }
 }
 
