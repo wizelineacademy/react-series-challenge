@@ -1,9 +1,8 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { GiftContainer }  from '../styled_component/Home.styled';
-import AddGiftModal from './Modal/AddGiftModal';
 import GiftItem from './giftItem';
+import GiftContainer from './GiftContainer';
 
 const Favorites = (props) => {
     const {
@@ -11,11 +10,11 @@ const Favorites = (props) => {
     }=props
 
     return (
-        <GiftContainer>
-            <AddGiftModal />
-            {favorites && <GiftList
-                    gifts={favorites}/>}
-        </GiftContainer>
+        <GiftContainer 
+            searchBar = {"hola"}
+            giftList = {favorites ? <GiftList 
+                            gifts={favorites}/>:""}
+        />
     );
 }
 
@@ -34,7 +33,7 @@ const GiftList = (props) => {
 const  mapStateToProps = (state) => {
     const { favorites, } = state;
     
-    return { favorites, };
+    return { favorites };
 };
 
 export default connect(mapStateToProps, null)(Favorites);

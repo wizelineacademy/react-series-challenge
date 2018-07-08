@@ -13,7 +13,7 @@ const sharedStyle = css`
   }
 `;
 //${sharedStyle}
-const GiftContainer = styled.div `
+const GiftStyledContainer = styled.div `
   width: calc(100% - 30px);
   height: 100%;
   margin: auto;
@@ -21,6 +21,6 @@ const GiftContainer = styled.div `
 `;
 
 export {
-    GiftContainer,
-  };
+  GiftStyledContainer,
+};
   

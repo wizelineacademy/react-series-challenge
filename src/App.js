@@ -8,6 +8,7 @@ import Home from './components/Home';
 import Favorites from './components/Favorites';
 
 class App extends Component {
+
   render() {
     return (
       <Provider store={store}>

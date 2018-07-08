@@ -1,11 +1,10 @@
 import React, { Component }  from "react";
 import { connect } from 'react-redux';
-import { GiftContainer }  from '../styled_component/Home.styled';
 import SearchBarHome from './SearchBars';
 import giftActions from '../redux/actions/gifts';
 import { bindActionCreators } from 'redux';
+import GiftContainer from './GiftContainer';
 import GiftItem from './giftItem';
-import AddGiftModal from './Modal/AddGiftModal';
 
 class Home extends Component {
   constructor(props){
@@ -20,12 +19,11 @@ class Home extends Component {
     const { gifts } = this.props;
 
     return (
-      <GiftContainer>
-        <AddGiftModal />
-        <SearchBarHome />
-        {gifts && <GiftList
-                    gifts={gifts}/>}
-      </GiftContainer>
+      <GiftContainer 
+        searchBar = {<SearchBarHome />}
+        giftList = {gifts ? <GiftList 
+                        gifts={gifts}/>:null}
+        />
     );
   }
 }
@@ -40,7 +38,7 @@ const GiftList = (props) => {
       id={item.id}
       key={index}/>
   ));
-}
+};
 
 function mapStateToProps (state) {
   const { gifts, } = state;
