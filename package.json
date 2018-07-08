@@ -5,7 +5,9 @@
   "dependencies": {
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
-    "react-scripts-ts": "2.16.0"
+    "react-router-dom": "^4.3.1",
+    "react-scripts-ts": "2.16.0",
+    "styled-components": "^3.3.3"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -30,12 +32,13 @@
     "jest": "react-scripts-ts test --env=jsdom --coverage"
   },
   "devDependencies": {
-    "enzyme": "^3.3.0",
-    "enzyme-adapter-react-16": "^1.1.1",
     "@types/jest": "^23.1.4",
     "@types/node": "^10.5.2",
     "@types/react": "^16.4.6",
     "@types/react-dom": "^16.0.6",
+    "@types/react-router-dom": "^4.2.7",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "typescript": "^2.9.2"
   }
 }
