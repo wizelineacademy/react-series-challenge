@@ -14,12 +14,14 @@ class Favorites extends Component {
       query: '',
       search: '',
       loading: false,
-      title: ''
+      title: '',
+      favoriteGifs: []
     }
   }
 
   componentDidMount() {
-    this.fetchTrending()
+    // this.fetchTrending()
+    this.getFavorites()
   }
 
   fetchTrending() {
@@ -30,16 +32,44 @@ class Favorites extends Component {
     axios.get(
       `https://api.giphy.com/v1/gifs/trending?api_key=mjA6Ro3NCh6Q8yWu2qyxlIksx3ACBbAJ&limit=25&rating=G`
     )
-      .then(response => {
-        const gifs = response.data.data
-        console.log(response.data.data)
-        this.setState({
-          trendingGifs: gifs,
-          search: 'search',
-          loading: false,
-          title: 'Favorites'
-        })
+    .then(response => {
+      const gifs = response.data.data
+      console.log(response.data.data)
+      this.setState({
+        trendingGifs: gifs,
+        search: 'search',
+        loading: false,
+        title: 'Trending Now'
       })
+    })
+  }
+
+  handleAddFavorites = (favoriteGif) => {
+
+    const { trendingGifs } = this.state
+    console.log(favoriteGif)
+
+    const newFavoriteGif = [
+      ...trendingGifs,
+      favoriteGif
+    ]
+
+    this.setState({
+      trendingGifs: newFavoriteGif
+    })
+
+    console.log(newFavoriteGif)
+    localStorage.setItem('favoriteGif', JSON.stringify(newFavoriteGif))
+  }
+
+  getFavorites() {
+    const favoriteGifs = JSON.parse(localStorage.getItem('favoriteGif'))
+
+    console.log(favoriteGifs)
+
+    this.setState({
+      trendingGifs: favoriteGifs
+    })
   }
 
   updateQuery(e) {
@@ -88,7 +118,11 @@ class Favorites extends Component {
         {
           loading
             ? 'Cargando ...'
-            : <Gifs gifs={trendingGifs} title={title} />
+            : <Gifs
+                gifs={trendingGifs}
+                title={title}
+                addFavorites={this.handleAddFavorites}
+              />
         }
       </Fragment>
     )
