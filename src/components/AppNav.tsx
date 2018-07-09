@@ -5,30 +5,40 @@ import styled from 'styled-components';
 import Search from './Search';
 
 const _nav = styled.nav`
-    padding: 16px 0;
-    background-color: #2C3E50;
+    border-bottom: 1px solid #FC4349;
+    margin-bottom: 1em;
+    color: #6DBCDB;
+    font-weight: bold;
 
     ul {
         display: flex;
         justify-content: space-around;
+        text-align: center;
+        align-items: center;
+        height: 3.5em;
     }
 
-    a { text-decoration: none; color: #FFF; }
+    li { flex: 1; }
 
-    .active {
-        font-weight: bold;
-        color: #FC4349;
+    a {
+        text-decoration: none;
+        color: inherit;
+        padding: 1em;
     }
+
+    .active { color: #FC4349 }
+    .search-bar { flex: 1; }
 `;
 
 const LINKS = ROUTES.map(({path, content}) =>
     <li key={path}><NavLink  activeClassName="active" to={path}>{content}</NavLink></li>);
+
 class AppNav extends React.Component {
     public render() {
         return (<_nav>
             <ul>
                 {LINKS}
-                <Search />
+                <li className='search-bar'><Search /></li>
             </ul>
         </_nav>);
     }
