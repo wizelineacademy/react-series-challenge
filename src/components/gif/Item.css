@@ -1,0 +1,14 @@
+.gif {
+  width: 25%;
+  display: inline-block;
+}
+
+figure {
+  margin: 0;
+  text-align: center;
+  padding: 0;
+}
+
+figure > img {
+  width: 100%;
+}

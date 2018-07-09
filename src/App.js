@@ -1,19 +1,35 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { Provider } from 'react-redux';
+import store from './store';
+import { Link, Route, BrowserRouter, Switch } from 'react-router-dom';
+import Home from './components/home';
+import Favorites from './components/favorites';
 import './App.css';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <Provider store={store}>
+        <BrowserRouter>
+          <div className="App">
+            <header className="App-header">
+              <ul>
+                <li>
+                  <Link to="/">Home</Link>
+                </li>
+                <li>
+                  <Link to="/favorites">Favorites</Link>
+                </li>
+              </ul>
+            </header>
+
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route path="/favorites" component={Favorites} />
+            </Switch>
+          </div>
+        </BrowserRouter>
+      </Provider>
     );
   }
 }
