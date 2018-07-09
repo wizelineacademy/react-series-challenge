@@ -79,11 +79,11 @@ class Favorites extends Component {
   }
 
   handleSearch = () => {
+    const { query } = this.state
+
     this.setState({
       loading: true
     })
-
-    const { query } = this.state
 
     if (!query) {
       this.fetchTrending()
