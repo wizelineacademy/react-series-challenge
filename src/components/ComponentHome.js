@@ -14,7 +14,6 @@ class ComponentHome extends Component {
     }
 
     render() {
-        console.log('favorites', this.props.favorites);
         return (
             <div>
                 <div style={{ marginBottom: 10, }}>
@@ -32,7 +31,9 @@ class ComponentHome extends Component {
         return this.props.gifs.map(x => {
             const isFavorite = this.props.favorites.find(y => y.id == x.id);
             return ComponentGif(x.id, x.title, x.gif, isFavorite, () => {
-                this.props.dispatch(addGifToFavorites(x));
+                if(!isFavorite)this.props.dispatch(addGifToFavorites(x));
+                else this.props.dispatch(removeGifToFavorites(x));
+                this.forceUpdate();
             });
         });
     }

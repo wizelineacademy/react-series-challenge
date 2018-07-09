@@ -28,6 +28,7 @@ class ComponentFavorites extends Component {
         return this.filter().map(x => {
             return ComponentGif(x.id, x.title, x.gif, true, () => {
                 this.props.dispatch(removeGifToFavorites(x));
+                this.forceUpdate();
             });
         });
     }
@@ -35,7 +36,6 @@ class ComponentFavorites extends Component {
     filter = () => {
         if (!this.state.textFilter) return this.props.favorites;
         return this.props.favorites.filter(x => x.title.toLowerCase().indexOf(this.state.textFilter) > -1);
-        // return this.props
     }
 }
 
