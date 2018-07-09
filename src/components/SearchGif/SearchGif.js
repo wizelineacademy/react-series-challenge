@@ -2,7 +2,7 @@ import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import searchGifsActions from '../../actions/searchGifs';
-// import {  } from './Searchgif.styled';
+import { SearchLabel, SearchInput  } from './Searchgif.styled';
 
 const SearchGif = (props) => {
 
@@ -12,8 +12,8 @@ const SearchGif = (props) => {
 
     return (
         <div>
-            <label htmlFor="searchGif">Search Gif</label>
-            <input type="text" id="searchGif" onKeyUp={onKeyUpSearch}/>
+            <SearchLabel htmlFor="searchGif">Search <i className="fas fa-search" /></SearchLabel>
+            <SearchInput type="text" id="searchGif" onKeyUp={onKeyUpSearch}/>
         </div>
     );
 };

@@ -9,7 +9,7 @@ const Navbar = styled.div`
     left: 0;
     right: 0;
     background-color: #fff;
-    padding: 10px 15px 6px;
+    padding: 16px 15px 12px;
     -webkit-box-shadow: 0px 4px 25px -10px rgba(66,66,66,1);
     -moz-box-shadow: 0px 4px 25px -10px rgba(66,66,66,1);
     box-shadow: 0px 4px 25px -10px rgba(66,66,66,1);
@@ -24,6 +24,7 @@ const NavMenu = styled.ul`
 `;
 
 const NavItem = styled.li`
+    margin-right: .5rem;
     float: ${(props) => props.float ? props.float : 'left' };
 `;
 
@@ -33,6 +34,9 @@ const Link = styled(NavLink)`
     text-align: center;
     padding: 1rem;
     text-decoration: none;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
     
     
    &:hover {

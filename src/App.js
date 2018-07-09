@@ -22,7 +22,7 @@ class App extends Component {
                       <NavMenu>
 
                           <NavItem>
-                              <Link to="/trending">Home</Link>
+                              <Link to="/trending"><i className="fas fa-home" /></Link>
                           </NavItem>
 
                           <NavItem>
