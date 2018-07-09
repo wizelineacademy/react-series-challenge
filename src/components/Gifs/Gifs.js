@@ -10,12 +10,7 @@ import UI from './Gifs.ui';
 
 class Search extends Component {
   componentDidMount() {
-    const favoritesList = JSON.parse(localStorage.getItem('favorites'));
-    if(favoritesList && favoritesList.length) {
-      for(let i = 0, len = favoritesList.length; i < len; i += 1){
-        this.props.getFavorites(favoritesList[i]);
-      }
-    }
+    this.props.getFavorites();
   }
 
 
