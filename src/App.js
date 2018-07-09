@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import {
     Route,
     Switch,
+    Redirect,
 } from 'react-router-dom';
 
 import SearchGif from './components/SearchGif/SearchGif';
 import MainGifsView from './components/MainGifsView/MainGifsView';
 import FavoriteGifs from './components/FavoriteGifs/FavoriteGifs';
 
-import { Navbar, MainContainer, LogoContainer, SearchContainer } from './App.styled';
+import { Navbar, NavMenu, NavItem, Link, MainContainer, LogoContainer } from './App.styled';
 
 class App extends Component {
   render() {
@@ -17,13 +18,24 @@ class App extends Component {
           <header>
               <Navbar>
                   <LogoContainer>
-                      {/*<Logo src="http://yquetecuento.com/wp-content/uploads/2017/10/giphy_logo_square_social.png"/>*/}
-                      <h1>Giphy Explorer</h1>
-                  </LogoContainer>
 
-                  <SearchContainer>
-                      <SearchGif />
-                  </SearchContainer>
+                      <NavMenu>
+
+                          <NavItem>
+                              <Link to="/trending">Home</Link>
+                          </NavItem>
+
+                          <NavItem>
+                              <Link to="/favorites">Favorites</Link>
+                          </NavItem>
+
+                          <NavItem float={'right'}>
+                              <SearchGif />
+                          </NavItem>
+
+                      </NavMenu>
+
+                  </LogoContainer>
               </Navbar>
           </header>
 
@@ -31,8 +43,9 @@ class App extends Component {
               <MainContainer>
                   <Switch>
 
-                      <Route exact path="/" component={MainGifsView}/>
-                      <Route exact path="/favorites" component={FavoriteGifs}/>
+                      <Route path="/trending" component={MainGifsView}/>
+                      <Route path="/favorites" component={FavoriteGifs}/>
+                      <Redirect from="/" to="/trending"/>
 
                   </Switch>
               </MainContainer>
