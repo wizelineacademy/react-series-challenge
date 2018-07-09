@@ -23,7 +23,7 @@ const GifList = ({data, addFavorites}) => {
       )
     })
   } else {
-    gifs = 'No favorites'
+    gifs = 'No gifs to Show'
   }
 
   return (
