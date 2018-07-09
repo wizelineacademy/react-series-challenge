@@ -6,6 +6,7 @@ import Search from '../SearchComponent';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import cards from '../../actions/cards';
+import search from '../../actions/search';
 
 class ComponentsHome extends Component {
 	constructor(props){
@@ -18,7 +19,7 @@ class ComponentsHome extends Component {
 	render(){
 		return (
 			<React.Fragment>
-				<Search />
+				<Search searchAction={this.props.searchCards} />
 				<h1>Trending gif</h1>
 				<CardsList />
 			</React.Fragment>
@@ -46,6 +47,9 @@ const mapDispatchToProps = (dispatch) => {
 		loadFavorites,
 		setFavorites,
 	} = cards.creators;
+	const { 
+		searchCards,
+	} = search.creators;
 
 	return bindActionCreators({
 	    loadCards,
@@ -55,6 +59,7 @@ const mapDispatchToProps = (dispatch) => {
 		addRemoveFavorites,
 		loadFavorites,
 		setFavorites,
+		searchCards,
 	}, dispatch);
 };
 

@@ -16,7 +16,7 @@ class Search extends Component {
 		const { searchCards } = this.props;
 
 		const searchTerm = this.state.searchTerm;
-		searchCards({ searchTerm })
+		this.props.searchAction({ searchTerm });
 	}
 	setSearchTerm = (event) => {
     	const { value } = event.target;
@@ -35,25 +35,4 @@ class Search extends Component {
 		)
 	};
 };
-
-const mapStateToProps = (state) => {
-  const {
-    search
-  } = state;
-  
-  return {
-    search
-  };
-};
-
-const mapDispatchToProps = (dispatch) => {
-  	const { 
-		searchCards,
-	} = search.creators;
-
-	return bindActionCreators({
-	    searchCards,
-	}, dispatch);
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Search);
+export default Search;

@@ -7,6 +7,7 @@ import cardsActions from '../actions/cards';
 const {
 	SEARCH_CARDS,
 	ERROR_SEARCH,
+	SEARCH_FAVS,
 } = searchActions.types;
 const {
 	LOAD_CARDS,
@@ -28,6 +29,7 @@ const getTermState = state => state.search;
 function* searchCards(){
 	try{
 		const search = yield select(getTermState);
+		console.log('search',search);
 		if( Object.keys(search).length === 0 || search.term === "" ) throw 'No search term';
 		const response = yield call(fetchSearchCards,search.term);
 		yield put({ type:LOAD_CARDS, payload: {cards:response.data.data} });
@@ -37,6 +39,27 @@ function* searchCards(){
 }
 function* watchForSearch(){
 	yield takeEvery(SEARCH_CARDS,searchCards);
+}
+
+function* searchFavCards(){
+	try{
+		const search = yield select(getTermState);
+		const favs = JSON.parse(localStorage.getItem('favoritesCards'));
+		const favsArr = Object.keys(favs).map((k) => favs[k])
+		if( Object.keys(search).length === 0 || search.favsTerm === "" ){
+			yield put({ type:LOAD_CARDS, payload: {cards:favsArr} });
+		}else{
+			const favsFiltered = favsArr.filter(card => {
+				return card.title.indexOf(search.favsTerm) > -1
+			});
+			yield put({ type:LOAD_CARDS, payload: {cards:favsFiltered} });
+		}
+	}catch(e){
+		yield put({ type:ERROR_SEARCH, e });
+	}
+}
+function* watchForSearchFavs(){
+	yield takeEvery(SEARCH_FAVS,searchFavCards);
 }
 /*Search end*/
 
@@ -68,7 +91,6 @@ const getCardsState = state => state.cards;
 
 function* favCard(){
 	const cards = yield select(getCardsState);
-	console.log('cards',cards);
 	if( cards.favorites[cards.card.id] ){
 		yield put({ type: REMOVE_FAVORITES, payload: { card: cards.card } });
 	}else{
@@ -84,7 +106,6 @@ function* watchForAddRemove(){
 function* loadFavCard(){
 	const state = yield select();
 	const favs = JSON.parse(localStorage.getItem('favoritesCards'));
-	console.log('favs lodad',favs)
 	const favsArr = Object.keys(favs).map((k) => favs[k])
 	yield put({ type:LOAD_CARDS, payload: {cards:favsArr} });
 	/*if( state.path === '/Favorites' ){
@@ -98,6 +119,7 @@ function* watchForLoadFavs(){
 function* rootSaga(){
 	yield all([
 		watchForSearch(),
+		watchForSearchFavs(),
 		watchForTrending(),
 		watchForAddRemove(),
 		watchForLoadFavs(),
