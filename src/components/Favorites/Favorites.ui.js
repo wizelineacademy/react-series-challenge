@@ -4,7 +4,7 @@ import React from 'react';
 import Search from "./../Search/Search";
 import Menu from  './../Sidebar/Sidebar';
 
-const UI = ({ favoritesList }) => {
+const UI = ({ favoritesList, handleClick }) => {
 
   let gifCatalog;
 
@@ -21,7 +21,7 @@ const UI = ({ favoritesList }) => {
               </div>
             </div>
           </div>
-          <button>Eliminar de mis favoritos</button>
+          <button onClick={() => {handleClick(v.id)}}>Eliminar de mis favoritos</button>
         </div>
       );
     })
