@@ -1,13 +1,13 @@
 import searchActions from '../actions/searchValues'
 
 const initialState = {
+    searchedValue: "trendy",
     gifs: null,
     favoritedImages: [],
 };
 
 const SearchReducer = (state = initialState, action) => {
     const { type, payload } = action;
-    console.log("ESTADO INICIA", state);
 
     switch(type) {
         case searchActions.types.SEARCH_FAVORITE_GIFS: {
@@ -37,6 +37,7 @@ const SearchReducer = (state = initialState, action) => {
         }
 
         case searchActions.types.SEARCH_SPECIFIED_GIFS: {
+            console.log("PAYLOAD DE BUSQUEDA", payload);
             /*let newState = null;
             console.log("SEARCH_SPECIFIED_GIFS");
             console.log(payload);
@@ -60,8 +61,7 @@ const SearchReducer = (state = initialState, action) => {
                     }
                 )
             })*/
-            
-            return;
+            return {...state, gifs: payload.data.data};
         }
 
         case searchActions.types.GET_TRENDING: {
@@ -119,7 +119,8 @@ const SearchReducer = (state = initialState, action) => {
             if(newArray !== undefined && newArray !== null && newArray.length >= 0){
                 newState = { ...newState, favoritedImages: newArray };
             }*/
-            return {...state, favoritedImages: state.favoritedImages.concat(payload)};
+            //return {...state, favoritedImages: state.favoritedImages.concat(payload)};
+            return {...state, searchedValue: payload.searchValue};
         }
 
         default: 

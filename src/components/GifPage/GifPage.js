@@ -54,7 +54,7 @@ class GifPage extends Component {
     handleSearch = () => {
         //console.log(event.target.value);
         //const searchParam = event.target.value;
-        
+        /*
         const { searchValue } = this.state;
         fetch(`${apiURL}${apiSearch}?api_key=${apiKey}&q=${searchValue}`)
         .then(Response => {
@@ -72,16 +72,19 @@ class GifPage extends Component {
                     this.setState({ gifs: newArray });
                 }
             )
-        })
-        //this.props.searchedSpecifiedGifs();
+        })*/
+        console.log("Entra al handler");
+        this.props.requestApiDataSearched();
     }
 
     updateState = (event) => {
         //this.props.updateSearchValue(event.target.value);
         //console.log("EVENTO DE BUSQUEDA", event);
+        this.props.updateSearchValue({searchValue: event});
+        /*
         if(event !== null && event !== undefined){
             this.setState({ searchValue: event })
-        }
+        }*/
         //console.log(event);
     }
 
@@ -93,29 +96,25 @@ class GifPage extends Component {
 
         if(this.props.gifs !== undefined ){
         console.log("DATOS MAGICOS", this.props.gifs)
-        for(let a = 0; a <= Object.keys(this.props.gifs).length - 1; a++){
-            newObject = {};
-            newObject.id = this.props.gifs[a].id;
-            newObject.url = this.props.gifs[a].images.downsized.url;
-            newArray.push(newObject);
+            for(let a = 0; a <= Object.keys(this.props.gifs).length - 1; a++){
+                newObject = {};
+                newObject.id = this.props.gifs[a].id;
+                newObject.url = this.props.gifs[a].images.downsized.url;
+                newArray.push(newObject);
+            }
         }
-    }
         //console.log(newArray);
         //this.setState({ gifs: newArray });
 
         return(
-
-
             <div className = "GifPage">
-            
                 <SearchBar updateState = { this.updateState } handleSearch = {this.handleSearch} />
                 <ErrorBoundary>
                 <GifCards gifData = { newArray } searchedGifs = {this.props.searchedFavoriteGifs} searchedValue = {this.state.searchValue}/> 
                 </ErrorBoundary>
                 {/*<button onClick = {() => this.props.searchedFavoriteGifs(10)}>HELLO HELLO HELLO</button>*/}
                 {/*//loadError = {this.handleError} 
-                //loadSuccess = {this.handleOnLoad} */}
-                
+                //loadSuccess = {this.handleOnLoad} */}           
             </div>)
             /*{/*<GifHome 
             gifData = {this.state.gifs} 
@@ -133,8 +132,8 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-    const { searchedFavoriteGifs, searchedTrendingGifs, searchedSpecifiedGifs, updateSearchValue, getTrendingGifs,requestApiData } = SearchFunctions.creators;
-    return bindActionCreators( { searchedFavoriteGifs, searchedTrendingGifs, searchedSpecifiedGifs, updateSearchValue, getTrendingGifs,requestApiData }, dispatch);
+    const { searchedFavoriteGifs, searchedTrendingGifs, searchedSpecifiedGifs, updateSearchValue, getTrendingGifs,requestApiData, requestApiDataSearched } = SearchFunctions.creators;
+    return bindActionCreators( { searchedFavoriteGifs, searchedTrendingGifs, searchedSpecifiedGifs, updateSearchValue, getTrendingGifs,requestApiData, requestApiDataSearched }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(GifPage);
