@@ -1,15 +1,16 @@
 import React, { Component } from "react";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import { actionTrendingGetDataRequest } from "../../../store/actions";
+import {
+  actionTrendingGetDataRequest,
+  actionSetToFav
+} from "../../../store/actions";
 import { getTrendingData } from "../../../store/selectors/trendingSelectors";
 import { GiPanel } from "../../../components";
-//import PropTypes from "prop-types";
 
 class TrendingContainer extends Component {
   constructor(props) {
     super(props);
-
     this.state = {};
   }
 
@@ -17,12 +18,12 @@ class TrendingContainer extends Component {
     this.props.actionTrendingGetDataRequest({});
   }
 
+  addToFavs = item => {
+    this.props.actionSetToFav(item);
+  };
+
   render() {
-    return (
-      <div>
-        <GiPanel data={this.props.trending} />
-      </div>
-    );
+    return <GiPanel data={this.props.trending} addToFavs={this.addToFavs} />;
   }
 }
 
@@ -39,7 +40,8 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return bindActionCreators(
     {
-      actionTrendingGetDataRequest
+      actionTrendingGetDataRequest,
+      actionSetToFav
     },
     dispatch
   );

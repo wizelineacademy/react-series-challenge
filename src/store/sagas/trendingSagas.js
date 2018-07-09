@@ -9,7 +9,5 @@ export function* sagaTrendingGetDataRequest(action) {
       action.payload
     );
     yield put(actionTrendingGetDataResponse(result));
-  } catch (error) {
-    console.log(error);
-  }
+  } catch (error) {}
 }

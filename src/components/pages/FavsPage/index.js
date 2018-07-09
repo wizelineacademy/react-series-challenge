@@ -1,10 +1,11 @@
 import React from "react";
-import { PublicLayout } from "../../../components";
+import { PublicLayout, FavsContainer } from "../../../components";
 
-const FavsPage = ({ ...props }) => {
+const FavsPage = () => {
   return (
     <PublicLayout>
-      <div>Favs Page</div>
+      <h4>Click to Remove a Favorite</h4>
+      <FavsContainer />
     </PublicLayout>
   );
 };

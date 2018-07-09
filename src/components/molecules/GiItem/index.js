@@ -1,11 +1,21 @@
-import React from "react";
+import React, { Component } from "react";
+class GiItem extends Component {
+  constructor(props) {
+    super(props);
+    this.getClicked = this.getClicked.bind(this);
+  }
 
-const GiItem = props => {
-  const { giphy } = props;
+  getClicked() {
+    this.props.addToFavs(this.props.giphy);
+  }
 
-  const img = giphy.images["fixed_width"];
+  render() {
+    const { giphy } = this.props;
 
-  return <img src={img.url} alt={giphy.title} />;
-};
+    const img = giphy.images["fixed_height"];
+
+    return <img src={img.url} alt={giphy.title} onClick={this.getClicked} />;
+  }
+}
 
 export default GiItem;
