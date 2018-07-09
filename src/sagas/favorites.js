@@ -11,7 +11,6 @@ import {
 } from '../actions/types';
 import selectors from '../utils/selectors';
 
-const limit = 10;
 const getFromStorage = item => localStorage.getItem(item);
 
 //Fancy functions
@@ -20,10 +19,10 @@ const makeCopy = param => [...param];
 const doSplice = (param, index) => param.splice(index, 1);
 //End of Fancy functions
 
-export const deleteFromArrayR = (arr, index) => {
-  const auxiliar = [...arr];
-  auxiliar.splice(index, 1);
-  return [...auxiliar];
+export const deleteFromArrayR = (arr, ind) => {
+  const aux = [...arr];
+  aux.splice(ind, 1);
+  return [...aux];
 };
 
 export const filterArray = (str, elements) => {
@@ -44,9 +43,7 @@ export function* getFavoritesRSaga() {
   const auxFavorites =
     filter === '' ? [...favorites] : yield call(filterArray, filter, favorites);
 
-  const finalList = auxFavorites.slice(limit, limit + limit);
-
-  yield put(actions.setItemsList(finalList));
+  yield put(actions.setItemsList(auxFavorites));
 
   yield put(actions.setLoading(false));
 }
@@ -78,16 +75,17 @@ export function* addRemoveFavoriteSaga({ payload }) {
   const newElementsString = JSON.stringify(elements);
 
   yield call([localStorage, 'setItem'], 'reactFavorites', newElementsString);
-  yield call([localStorage, 'setItem'], 'reactFavorites', newElementsString);
+  yield put(actions.setFavorites(elements));
 }
 
 export function* addRemoveHomeSaga({ payload }) {
   yield put(actions.addRemoveFavorite(payload));
-  yield put(actions.updateContent(payload.index));
+  yield put(actions.updateGifs(payload.index));
 }
 
 export function* addRemoveViewSaga({ payload }) {
   yield put(actions.addRemoveFavorite(payload));
+  yield put(actions.getFavoritesR(1));
 }
 
 export function* addRemoveDetailsSaga({ payload }) {

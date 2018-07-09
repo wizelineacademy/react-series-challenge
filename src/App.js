@@ -6,11 +6,17 @@ import {
   NavLink,
   Switch,
 } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import './App.css';
 import Home from './components/Home';
 import Favorites from './components/Favorites';
+import actions from './actions';
 
 class App extends Component {
+  componentWillMount() {
+    this.props.loadFavoritesR();
+  }
   render() {
     return (
       <Router>
@@ -36,4 +42,13 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapDispatchToProps = dispatch => {
+  const { loadFavoritesR } = actions;
+
+  return bindActionCreators({ loadFavoritesR }, dispatch);
+};
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(App);

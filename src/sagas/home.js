@@ -41,7 +41,7 @@ export function* getNewGifsSaga() {
 }
 
 export function* updateGifsSaga() {
-  const itemsListState = yield call(selectors.getPieceOfState, 'list');
+  const itemsListState = yield call(selectors.getPieceOfState, 'itemsList');
   const { currentItemsList } = itemsListState;
   const favorites = yield call(selectors.getFavorites);
   const elements = yield call(markFavorites, currentItemsList, favorites);
