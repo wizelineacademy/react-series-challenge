@@ -21,7 +21,6 @@ const CardsReducer = (state = initCardState, action) => {
 			const { cards } = payload;
 			const newState = {...state};
 			newState.favorites = cards;
-			console.log('set',newState);
 			return newState;
 		}
 		case cardsActions.types.LOAD_FAVORITES:{

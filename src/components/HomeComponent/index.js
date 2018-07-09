@@ -13,7 +13,6 @@ class ComponentsHome extends Component {
 		super(props);
 	}
 	componentDidMount(){
-		console.log('this.props',this.props);
 		this.props.loadTrending();
 	}
 	render(){

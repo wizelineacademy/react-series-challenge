@@ -29,7 +29,6 @@ const getTermState = state => state.search;
 function* searchCards(){
 	try{
 		const search = yield select(getTermState);
-		console.log('search',search);
 		if( Object.keys(search).length === 0 || search.term === "" ) throw 'No search term';
 		const response = yield call(fetchSearchCards,search.term);
 		yield put({ type:LOAD_CARDS, payload: {cards:response.data.data} });

@@ -5,16 +5,46 @@ import { connect } from 'react-redux';
 import Card from '../CardComponent';
 import cards from '../../actions/cards';
 
+/*----------------*/
+class CardErrorB extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+	  		hasErrors: false,
+	  		info: '',
+		}
+	}
+
+	componentDidCatch(error, info) {
+	  this.setState(() => ({
+	    hasErrors: true,
+	    info,
+	  }));
+	}
+
+	render() {
+		const { children } = this.props;
+		const { hasErrors } = this.state;
+
+		if (hasErrors) {
+			return <div className='cardItem'>
+				<p>Image toooo big</p>
+			</div>
+		}
+		return children;
+	}
+}
+/*----------------*/
+
 class CardsList extends Component {
 	constructor(props){
 		super(props);
 	}
 	render() {
 		const cards = Object.keys(this.props.cards.cards).map((card) => 
-			<Card 
-				key={card}
+			<CardErrorB key={card} ><Card 
 				card={this.props.cards.cards[card]} 
-				addRemoveFavorites={this.props.addRemoveFavorites} />
+				addRemoveFavorites={this.props.addRemoveFavorites} /></CardErrorB>
 		);
 		return (
 			<div className='container'>
