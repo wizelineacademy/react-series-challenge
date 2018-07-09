@@ -8,7 +8,7 @@ const GiftContainer = (props) => {
             <AddGiftModal />
             {props.searchBar}
             {props.giftList}
-        </GiftStyledContainer>
+        </GiftStyledContainer>  
     );
 };
 

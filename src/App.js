@@ -4,8 +4,8 @@ import store from './redux/store';
 import { Route, Redirect, NavLink, Switch, } from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
-import Home from './components/Home';
-import Favorites from './components/Favorites';
+import Home from './components/Views/Home';
+import Favorites from './components/Views/Favorites';
 
 class App extends Component {
 

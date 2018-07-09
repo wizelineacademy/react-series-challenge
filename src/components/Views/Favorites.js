@@ -1,9 +1,8 @@
 import React from 'react';
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import GiftItem from './giftItem';
-import GiftContainer from './GiftContainer';
-import { SearchBarFavorites } from './SearchBars';
+import GiftItem from '../giftItem';
+import GiftContainer from '../GiftContainer';
+import { SearchBarFavorites } from '../SearchBars';
 
 const Favorites = (props) => {
     const {
@@ -13,6 +12,7 @@ const Favorites = (props) => {
     }=props
 
     const infoToShow = isSearching ? favoritesMatched : favorites;
+    
     return (
         <GiftContainer 
             searchBar = {<SearchBarFavorites />}

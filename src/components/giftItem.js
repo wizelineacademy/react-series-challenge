@@ -1,7 +1,6 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import favoriteActions from '../redux/actions/favorites';
 import giftModalActions from '../redux/actions/giftModal';
 
 const GiftItem = (props) => {
@@ -15,7 +14,7 @@ const GiftItem = (props) => {
     const gift = { url, id, name }
 
     return (
-        <img src={url} width={"100px"} height={"100px"} onClick={()=>showGiftModal({gift})}/>
+        <img src={url} width={"100px"} height={"100px"} onClick={()=>showGiftModal({gift})} alt={""}/>
     );
 }
 

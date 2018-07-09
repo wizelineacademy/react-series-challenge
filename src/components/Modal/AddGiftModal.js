@@ -36,8 +36,7 @@ const AddGiftModal = (props) => {
 
   const {
       url, 
-      name,
-      id
+      name
   } = gift 
 
   const isFavorite = checkFavorite({favorites,gift});
@@ -49,7 +48,7 @@ const AddGiftModal = (props) => {
     >
       <div>
         <header>{name}</header>
-        <img src={url} width={"95%"} />
+        <img src={url} width={"95%"} alt={""}/>
       </div>
       <button onClick={() => hideGiftModal()}>
         Close

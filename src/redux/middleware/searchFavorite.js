@@ -1,6 +1,6 @@
 import favoriteActions from '../actions/favorites';
 
-const { SEARCH_FAVORITE, IS_SEARCHING_FAVORITE } = favoriteActions.types;
+const { IS_SEARCHING_FAVORITE } = favoriteActions.types;
 const { searchFavorite } = favoriteActions.creators;
 
 const dispatchFavorite = (obj, dispatch) =>{
@@ -27,7 +27,7 @@ const SearchFavorite = (store) => (next) => (action) => {
             }
 
             dispatchFavorite(response, store.dispatch);
-
+            break;
         default: 
             break;
     }

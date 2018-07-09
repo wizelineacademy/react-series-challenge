@@ -11,10 +11,11 @@ const SearchBarFavorites = (props) =>{
   
     const onInputChange = (term) => {
         let newObj = {}; 
-        const newFavorites = Object.keys(favorites).map((key)=>{
+        Object.keys(favorites).map((key)=>{
             if(favorites[key].name.includes(term)){
                 newObj[key] = favorites[key];
             }
+            return true;
         });
         isSearchingFavorite({term, newObj});
     }
