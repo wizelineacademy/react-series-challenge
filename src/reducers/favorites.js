@@ -1,6 +1,6 @@
 import favorites from '../actions/favorites'
 
-const { types: { FAVORITES_ADD, FAVORITES_REMOVE } } = favorites
+const { types: { FAVORITES_ADD, FAVORITES_REMOVE, FAVORITES_GET } } = favorites
 const favoritesReducer = (state = { items: [] }, action) => {
     const { type, payload } = action
 
