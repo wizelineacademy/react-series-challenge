@@ -9,7 +9,7 @@ const SearchBar = ({ placeholder, onSearch }) => {
     /**
      * 
      */
-    const debouncedInput = debounce(onSearch, 2000)
+    const debouncedInput = debounce(onSearch, 250)
     const onInput = event => debouncedInput(event.target.value);
     /**
      * 
