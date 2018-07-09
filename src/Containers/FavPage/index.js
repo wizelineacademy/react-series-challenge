@@ -12,7 +12,6 @@ class FavPage extends Component {
 
   render() {
     const { gifs} = this.props;
-    console.log(this.props.gifs);
     
     return (
         <React.Fragment>

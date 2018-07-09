@@ -1,7 +1,4 @@
 import {
-  QUERY_FAV,
-  QUERY_FAV_ERROR,
-  QUERY_FAV_SUCCESS,
   ADD_FAV,
   WITHDRAW_FAV
 } from './action';
@@ -20,12 +17,10 @@ function favReducer(state = initialState, action) {
       var indexDelete;
       var arrayFav=state.favGifs;
       arrayFav.map((fav,index)=>{
-        console.log(index);
         if(fav===action.id){
           indexDelete=index;
         }
       });
-      console.log(indexDelete);
       arrayFav.splice(indexDelete,1);
       return {...state,favGifs:arrayFav}
     default:

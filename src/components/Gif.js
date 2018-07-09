@@ -5,9 +5,10 @@ import { connect } from 'react-redux'
 class Gifs extends Component{
 
     render(){
+        var fav=false;
         const click=()=>{
             if(this.props.gif.length!==0){
-                var fav=false;
+                
                 this.props.gif.map((image)=>{
                     if(image.id===this.props.id){
                         fav=true;
@@ -23,7 +24,7 @@ class Gifs extends Component{
         return(
             <React.Fragment>
                 <img alt="" src={this.props.url} key={this.props.id}/>
-                <button onClick={()=>click()}>{"fav"}</button>
+                <button onClick={()=>click()}>{"Fav/No Fav"}</button>
             </React.Fragment>
         );
     }
