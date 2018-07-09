@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 
 const REF_POINT_OFFSET = 250;
+const NEXT_LOAD_DATA_MS_DELAY = 1000;
 
 class InfiniteScroll extends Component {
   constructor(props) {
     super(props);
+    this.isTriggered = false;
     this.handleScroll = this.handleScroll.bind(this);
   }
 
@@ -20,8 +22,10 @@ class InfiniteScroll extends Component {
     const currentScrollPosition = (window.scrollY + window.innerHeight);
     const refPointScrollPosition = (this.refPoint.offsetTop - REF_POINT_OFFSET);
 
-    if (currentScrollPosition >= refPointScrollPosition) {
+    if ((currentScrollPosition >= refPointScrollPosition) && !this.isTriggered) {
       this.props.onLoadMoreData && this.props.onLoadMoreData();
+      this.isTriggered = true;
+      setTimeout(() => { this.isTriggered = false }, NEXT_LOAD_DATA_MS_DELAY);
     }
   }
 
