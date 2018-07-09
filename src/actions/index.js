@@ -7,6 +7,7 @@ export const SEARCH_EVENT = 'SEARCH_EVENT';
 export const ADD_FAVORITES = 'ADD_FAVORITES';
 export const GET_FAVORITES = 'GET_FAVORITES';
 export const DELETE_FAVORITES = 'DELETE_FAVORITES';
+export const FILTER_FAVORITES = 'FILTER_FAVORITES';
 
 function action(type, payload = {}) {
   return {type, ...payload}
@@ -18,3 +19,4 @@ export const searchResult = result => action(SEARCH_RESULT, {result});
 export const addFavorites = add => action(ADD_FAVORITES, {add});
 export const getFavorites = get => action(GET_FAVORITES, {get});
 export const deleteFavorites = id => action(DELETE_FAVORITES, {id});
+export const filterFavorites = search => action(FILTER_FAVORITES, {search});

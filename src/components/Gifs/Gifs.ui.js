@@ -24,7 +24,8 @@ const SearchUI = ({ data, favorites, favoritesList }) => {
           <button onClick={(e) => {
                     favorites(e, {
                       url: v.images.fixed_height_small.url,
-                      id: v.id
+                      id: v.id,
+                      title: v.title,
                     })
                   }}>
                   Agregar a favoritos

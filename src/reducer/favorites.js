@@ -6,8 +6,6 @@ const searchGif = (state = [], action) => {
       const newState = {...action.add};
       let favoritesArray = [...state, newState];
 
-      console.log('favoritesArray::: ', favoritesArray);
-
       localStorage.setItem('favorites', JSON.stringify(favoritesArray));
 
       return favoritesArray;
@@ -21,8 +19,6 @@ const searchGif = (state = [], action) => {
           favoritesArray = [...state, favoritesList[i]]
         }
       }
-
-      console.log('favoritesArray::: ', favoritesArray);
 
       return favoritesArray;
     }
