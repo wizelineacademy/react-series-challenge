@@ -4,25 +4,18 @@ import { connect } from 'react-redux'
 
 class Gifs extends Component{
 
-    componentDidMount(){
-        const { gif} = this.props;
-    }
-
-    
-
     render(){
-
         const click=()=>{
             if(this.props.gif.length!==0){
-                console.log("len diferente de 0");
-                
-                var fav;
+                var fav=false;
                 this.props.gif.map((image)=>{
-                    image.id===this.props.id?fav=true:fav=false;
+                    if(image.id===this.props.id){
+                        fav=true;
+                    }
                 });
-                fav?this.props.addFav({id:this.props.id,url:this.props.url,favorite:false}):this.props.withdrawFav(this.props.id);
+                fav?this.props.withdrawFav(this.props.id):this.props.addFav({id:this.props.id,url:this.props.url});
             }else{
-                this.props.addFav({id:this.props.id,url:this.props.url,favorite:false});
+                this.props.addFav({id:this.props.id,url:this.props.url});
             }
             
         }
