@@ -5,7 +5,7 @@ class Navbar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      tag: ""
+      tag: "nothing"
     };
   }
   render() {
@@ -16,7 +16,7 @@ class Navbar extends Component {
             <NavLink to="/">Home</NavLink>
           </li>
           <li>
-            <NavLink to="/search">Favs</NavLink>
+            <NavLink to="/fav">Favs</NavLink>
           </li>
           <li>
             <input
@@ -28,7 +28,7 @@ class Navbar extends Component {
             <Link
               to={{
                 pathname: "/search",
-                state: { tag: this.state.tag }
+                state: { query: this.state.tag }
               }}
             >
               <button type="button">Search</button>

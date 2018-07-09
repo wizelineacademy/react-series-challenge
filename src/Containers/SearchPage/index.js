@@ -11,7 +11,9 @@ class SearchPage extends Component {
 
   componentDidMount() {
     const { querySearch } = this.props;
-    querySearch();
+    querySearch({q:this.props.location.state.query});
+    console.log();
+    //
   }
 
   render() {

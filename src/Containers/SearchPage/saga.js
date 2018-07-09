@@ -8,7 +8,8 @@ import { call, put, takeLatest } from 'redux-saga/effects'
 import axios from 'axios'
 
 function* doQuerySearch({ param = {} }) {
-  const { q="pato" } = param;
+  var q;
+  param.q===""||param.q===undefined||param.q===null? q="pato":q=param.q;
 
   const query = serialize({
     limit:25,
