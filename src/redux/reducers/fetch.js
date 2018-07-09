@@ -3,7 +3,7 @@ import actions from "./../constants/actions";
 const initialState = {
   loading: false,
   word: '',
-  data: [],
+  data: {},
   // error: null,
 }
 

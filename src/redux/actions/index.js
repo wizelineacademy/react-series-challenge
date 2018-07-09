@@ -18,11 +18,10 @@ const showAlert = (text = '') => {
   }
 }
 
-const modifyLocal = (action,object) => {
+const modifyLocal = (object) => {
   return {
     type: actions.LOCALSTORAGE_MODIFY,
     payload: {
-      action,
       object
     }
   }

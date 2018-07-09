@@ -12,7 +12,11 @@ const loadData = () => {
     // Check if .env file is empty
     if (key === '') throw new Error('CHECK .ENV FILE');
 
-    return JSON.parse(window.localStorage.getItem(key) || '{}');
+    const data = window.localStorage.getItem(key);
+
+    if (!data) return {};
+
+    return JSON.parse(data || '{}');
   } catch (error) {
     throw error;
   }
@@ -22,19 +26,26 @@ function* getLocalStorage() {
   console.log('Loading...');
   let data = loadData();
   yield put({ type: actions.LOCALSTORAGE_DATA, payload: { data } });
+  // TODO: ENABLE
+  // yield put({ type: 'FETCH_REQUEST', payload: { search: '' }});
+}
+
+const setData = (data) => {
+  try {
+    const key = process.env.LOCAL_STORAGE_KEY;
+
+    // Check if .env file is empty
+    if (key === '') throw new Error('CHECK .ENV FILE');
+
+    return window.localStorage.setItem(key, JSON.stringify(data));
+  } catch (error) {
+    throw error;
+  }
 }
 
 function* modifyLocalStorage() {
-  try {
-    debugger;
-    const likes = yield select(selectors.local_likes);
-
-  //   yield put({ type: actions.FETCH_DATA, payload: { data } });
-  } catch (error) {
-  //     yield put({ type: actions.FETCH_ERROR, payload: { error } });
-  // }finally {
-  //     yield put({ type: actions.FETCH_END})
-  }
+  const local = yield select(selectors.local);
+  setData(local);
 }
 
 export default function* watchLocalStorage() {

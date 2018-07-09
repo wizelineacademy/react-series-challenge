@@ -16,6 +16,7 @@ import Footer from "./../../component/footer";
 import Giphys from "./../../component/giphys";
 
 class Home extends Component{
+
   handleSubmit = (event) => {
     event.preventDefault();
     if (this.searchInput.value.length > 0) {
@@ -32,7 +33,7 @@ class Home extends Component{
   }
 
   render() {
-    const { data } = this.props;
+    const { data, ids, modifyLocal } = this.props;
 
     return (
       <div>
@@ -48,7 +49,7 @@ class Home extends Component{
             </fieldset>
           </form>
         </div>
-        <Giphys data={data} modifyLocal={this.props.modifyLocal} />
+        <Giphys data={data} ids={ids} modifyLocal={modifyLocal} />
         <Footer />
       </div>
     );
@@ -58,6 +59,7 @@ class Home extends Component{
 const mapStateToProps = (state) => {
   return {
     data: selectors.fetch_data(state),
+    ids: selectors.local_ids(state),
   }
 }
 

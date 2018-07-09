@@ -18,13 +18,15 @@ class Giphys extends Component {
 
 
   render() {
+
     let giphyView;
-    const { data } = this.props;
+    const { data, ids } = this.props;
+    console.log(':::: ids 2 ::::', ids);
 
     if (data && data.data) {
       giphyView = data.data.map((v, i) => (
         <div key={v.id} className="giphy">
-          <button onClick={(event) => this.handleKeep(event,i) }>keep</button>
+          <button onClick={(event) => this.handleKeep(event, i)}>{`${ids.includes(v.id) ? 'undo' : 'keep'}`}</button>
           <img src={v.images.fixed_width.webp} alt={v.title} />
         </div>
       ));
