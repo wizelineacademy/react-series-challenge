@@ -7,6 +7,8 @@ import {
   actionSearchTermGetDataRequest
 } from "../../../store/actions";
 import { getTrendingData } from "../../../store/selectors/trendingSelectors";
+import { getFavsDataIds } from "../../../store/selectors/favsSelectors";
+
 import { GiPanel, SearchBar } from "../../../components";
 
 class TrendingContainer extends Component {
@@ -32,18 +34,25 @@ class TrendingContainer extends Component {
   render() {
     return [
       <SearchBar key={0} getInputValue={this.getInputValue} />,
-      <GiPanel key={1} data={this.props.trending} toggleFavs={this.addToFavs} />
+      <GiPanel
+        key={1}
+        data={this.props.trending}
+        toggleFavs={this.addToFavs}
+        selectedFavs={this.props.favs}
+      />
     ];
   }
 }
 
 function mapStateToProps(state) {
-  let { trending } = state;
+  let { trending, favs } = state;
 
+  favs = getFavsDataIds(favs);
   trending = getTrendingData(trending);
 
   return {
-    trending
+    trending,
+    favs
   };
 }
 

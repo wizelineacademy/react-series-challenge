@@ -11,8 +11,6 @@ class FavsContainer extends Component {
     this.state = {};
   }
 
-  componentDidMount() {}
-
   removeFromFavs = item => {
     this.props.actionFavDelete(item);
   };
