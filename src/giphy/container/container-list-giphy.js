@@ -3,7 +3,7 @@ import axios from 'axios';
 import ListGiphy from '../components/list-giphy';
 import Search from '../components/search';
 // import ContainerModal from '../../modal/container/container-modal';
-// import Modal from '../../modal/component/modal';
+import Modal from '../../modal/component/modal';
 
 const listGiphy = [];
 export default class ContainerListGiphy extends Component{
@@ -55,19 +55,19 @@ export default class ContainerListGiphy extends Component{
                   modalVisible={this.state.modalVisible}
                   handleCloseModal={this.handleCloseModal}
                   handleOpenModal={this.handleOpenModal}
-                  dataGiphyModal={listGiphy}
-                  favorites={this.favorites}
-                  colorHeart={this.state.colorHeart}
                 />
               )
             })
           }
-          {/* {
-            this.state.modalVisible && 
-            <ContainerModal>
-              <Modal/>
-            </ContainerModal>
-          } */}
+          {
+          this.state.modalVisible && 
+          <Modal 
+            favorites={this.favorites}
+            handleCloseModal={this.handleCloseModal}
+            colorHeart={this.state.colorHeart}
+            listGiphy={listGiphy}
+          />
+          }
       </section>      
     )
   }
