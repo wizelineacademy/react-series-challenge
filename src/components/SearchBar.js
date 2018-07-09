@@ -1,14 +1,14 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {addItem} from '../actions/favGifs';
+import {loadSearchGifs} from '../actions/searchGifs';
 
 const SearchBar =  (props) => {
 
     const getInputValue = () => {
         const input = document.getElementById('search').value;
         console.log(input);
-        props.addItem({text:input});
+        props.loadSearchGifs({text:input});
     }
 
     return(
@@ -29,7 +29,7 @@ const SearchBar =  (props) => {
 const mapDispatchToProps = (dispatch) => {
 
     return bindActionCreators({
-        addItem,
+        loadSearchGifs,
     }, dispatch);
 
 };

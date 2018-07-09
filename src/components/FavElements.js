@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from "redux";
-import {showFavs} from "../actions/favGifs";
+import {loadFavGifs} from "../actions/favGifs";
 import ElementList from "./ElementList";
 
 class FavElements extends Component{
 
     componentDidMount() {
-        this.props.showFavs();
+        this.props.loadFavGifs();
     }
 
     render(){
@@ -36,7 +36,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
 
     return bindActionCreators({
-        showFavs,
+        loadFavGifs,
     }, dispatch);
 
 };
