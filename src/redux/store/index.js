@@ -2,14 +2,14 @@ import { createStore, applyMiddleware } from "redux";
 import createSagaMiddleware from "redux-saga";
 
 import rootReducer from "./../reducers/";
-// import rootMiddleware from './../middleware/';
+import rootMiddleware from './../middleware/';
 
 import rootSagas from './../sagas/';
 
 // sagaMiddleware
 const sagaMiddleware = createSagaMiddleware();
 const middlewares = [
-  // rootMiddleware,
+  rootMiddleware,
   sagaMiddleware
 ];
 
