@@ -7,7 +7,7 @@ const Item = ({item, onClickFav, isFav}) => {
 
   const favImage = isFav ? favIcon : noFavIcon
   return(
-    <div className="item">
+    <div className="contentItem">
       <img src={favImage} className="favButton" onClick={() => onClickFav(item, isFav)} alt="Favorite"/>
       <img src={item.images.original.webp} className="imgContent" alt={item.title}/>
     </div>
