@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 import logo from '../icons/logo.svg';
 import '../styles/Header.css';
@@ -8,10 +9,12 @@ const Header = () => {
     <div className="Header">
       <div className="App-container">
         <div className="Header-container">
-          <img src={logo} className="Header-logo" alt="logo" />
+          <NavLink to="/">
+            <img src={logo} className="Header-logo" alt="logo" />
+          </NavLink>
 
           <div className="Header-nav-items">
-            <a href="#">Favorites</a>
+            <NavLink to="/favorites">Favorites</NavLink>
           </div>
         </div>
       </div>

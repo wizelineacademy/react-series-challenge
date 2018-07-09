@@ -1,9 +1,9 @@
 import React from 'react';
-import { connect } from 'react-redux';
 
 import GifCard from './GifCard';
 
 import '../styles/GifGrid.css';
+
 
 const GifGrid = (props) => {
   const { gifs } = props;
@@ -13,20 +13,11 @@ const GifGrid = (props) => {
       { gifs.map((gif) =>
         <GifCard key={gif.id} {...gif} />
       )}
+      { gifs.length === 0 &&
+        <p>Search for something</p>
+      }
     </div>
   );
 };
 
-const mapStateToProps = (state) => {
-  const { gifs } = state;
-
-  return {
-    gifs
-  };
-};
-
-const mapDispatchToProps = (dispatch) => {
-  return {};
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(GifGrid);
+export default GifGrid;
