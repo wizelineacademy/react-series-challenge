@@ -1,6 +1,6 @@
 {
-  "extends": "react-app",
+  "extends": "airbnb",
   "env": {
-    "jest": true
+      "jest": true
   }
 }
