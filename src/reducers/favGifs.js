@@ -5,6 +5,7 @@ const favGifs = (state = {}, action) => {
         case ADD_ITEM:{
             const newState = { ...state };
             newState[action.payload.id] = action.payload;
+            console.log(newState);
             return newState;
         }
         case DELETE_ITEM:{

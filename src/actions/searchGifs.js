@@ -10,8 +10,6 @@ export const loadSearchGifs = (payload) => {
 })}
 
 export const fetchSearchGifs = (payload) =>{
-    console.log(FETCH_SEARCH_GIFS);
-    console.log(payload)
     return ({
         type : FETCH_SEARCH_GIFS,
         payload

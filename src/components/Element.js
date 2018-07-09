@@ -4,8 +4,8 @@ import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
 
 const Element = (props) => (
-    <li onClick={() => props.addItem(props.element.title)}>
-        {props.element && props.element.title ? props.element.title : 'No data'}
+    <li onClick={() => props.addItem(props.gif)}>
+        {props && props.gif.title ? props.gif.title: 'No data'}
     </li>
 )
 //Set the acction is going to be trigerred on this component

@@ -14,7 +14,7 @@ class FavElements extends Component{
         return (
             <div>
                 <h4>Fav Gifs View!</h4>
-                <ElementList elements={this.props.favGifs}/>
+                <ElementList all={this.props.favGifs}/>
             </div>
         );
     }

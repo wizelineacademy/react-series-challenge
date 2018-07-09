@@ -40,7 +40,6 @@ function* getAllGifs() {
 
 //getting search gifs using axios in the fetchGif Function
 function* getSearchGifs(action) {
-    console.log('GETTING SEARCH FROM API');
     try {
         const search = action.payload || '';
         const url = `${apiUrl}/gifs/search?api_key=${apiKey}&limit=10&q=${search}`;
