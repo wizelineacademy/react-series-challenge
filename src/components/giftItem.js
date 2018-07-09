@@ -1,7 +1,6 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-//import Modal from 'react-modal';
 import favoriteActions from '../redux/actions/favorites';
 import giftModalActions from '../redux/actions/giftModal';
 

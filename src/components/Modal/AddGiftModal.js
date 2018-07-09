@@ -21,7 +21,7 @@ const checkFavorite = (props) =>{
         favorites
     } = props;
 
-    return Object.keys(favorites).includes(gift.id);
+    return Object.keys(favorites).includes(gift.name);
 }
 
 const AddGiftModal = (props) => {
@@ -63,7 +63,7 @@ const AddGiftModal = (props) => {
 
 const mapStateToProps = (state) => {
   const { isModalOpen, gift } = state.isModalOpen;
-  const { favorites, } = state;
+  const { favorites, } = state.favoritesReducer;
 
   return {
     isModalOpen,

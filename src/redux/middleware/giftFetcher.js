@@ -10,12 +10,12 @@ const fetchGifts = (text, dispatch) => {
     .then((response) => dispatch(giftFetched({ ...response.data })));
 };
 
-const fecthTrend = (text, dispatch) => {
+const fecthTrending = (text, dispatch) => {
     axios.get(`https://api.giphy.com/v1/gifs/trending?api_key=${API_KEY}&limit=25&rating=G`)
     .then((response) => dispatch(giftFetched({ ...response.data })));
 };
 
-const priceFetcher = (store) => (next) => (action) => {
+const giftFetcher = (store) => (next) => (action) => {
     const { type, payload } = action;
 
     if (type === GET_GIFT) {
@@ -24,11 +24,11 @@ const priceFetcher = (store) => (next) => (action) => {
             fetchGifts(text, store.dispatch);
         }
         else{
-            fecthTrend(text, store.dispatch);
+            fecthTrending(text, store.dispatch);
         }
     }
 
   return next(action);
 };
 
-export default priceFetcher;
+export default giftFetcher;

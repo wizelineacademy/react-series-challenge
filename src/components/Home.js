@@ -1,6 +1,6 @@
 import React, { Component }  from "react";
 import { connect } from 'react-redux';
-import SearchBarHome from './SearchBars';
+import { SearchBarHome } from './SearchBars';
 import giftActions from '../redux/actions/gifts';
 import { bindActionCreators } from 'redux';
 import GiftContainer from './GiftContainer';

@@ -1,3 +1,7 @@
 import SearchBarHome from './SearchBarHome.js';
+import SearchBarFavorites from './SearchBarFavorites';
 
-export default SearchBarHome;
+export {
+    SearchBarHome,
+    SearchBarFavorites
+};

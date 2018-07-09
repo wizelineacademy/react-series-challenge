@@ -1,6 +1,8 @@
 import logger from './logger';
-import priceFetcher from './giftFetcher';
+import giftFetcher from './giftFetcher';
+import SearchFavorite from './searchFavorite'
 
 export default [
-  priceFetcher,
+  giftFetcher,
+  SearchFavorite,
 ];

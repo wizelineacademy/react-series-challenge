@@ -1,5 +1,5 @@
-import favoriteActions from '../actions/favorites';
-import { loadFavorites, saveFavorites } from '../store/localStorage';
+import favoriteActions from '../../actions/favorites';
+import { loadFavorites, saveFavorites } from '../../store/localStorage';
 
 const initialState = loadFavorites();
 
@@ -9,13 +9,14 @@ const favoritesReducer = (state = initialState, action) => {
 
   switch (type) {
     case favoriteActions.types.ADD_FAVORITE: {
-        newState[payload.id] = { ...payload };
-        saveFavorites(newState);
+      newState[payload.name] = { ...payload };
+      saveFavorites(newState);
 
-        return newState;
+      return newState;
     }
     case favoriteActions.types.DELETE_FAVORITE: {
-      delete newState[payload.id];
+      delete newState[payload.name];
+      saveFavorites(newState);
       
       return newState;
   }

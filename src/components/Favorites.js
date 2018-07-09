@@ -3,17 +3,21 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import GiftItem from './giftItem';
 import GiftContainer from './GiftContainer';
+import { SearchBarFavorites } from './SearchBars';
 
 const Favorites = (props) => {
     const {
         favorites,
+        favoritesMatched,
+        isSearching,
     }=props
 
+    const infoToShow = isSearching ? favoritesMatched : favorites;
     return (
         <GiftContainer 
-            searchBar = {"hola"}
-            giftList = {favorites ? <GiftList 
-                            gifts={favorites}/>:""}
+            searchBar = {<SearchBarFavorites />}
+            giftList = {infoToShow ? <GiftList 
+                            gifts={infoToShow}/>:""}
         />
     );
 }
@@ -31,9 +35,10 @@ const GiftList = (props) => {
 }
 
 const  mapStateToProps = (state) => {
-    const { favorites, } = state;
+    const { favorites } = state.favoritesReducer;
+    const { isSearching, favoritesMatched } = state.favoritesReducer.searchFavorites;
     
-    return { favorites };
+    return { favorites, isSearching, favoritesMatched };
 };
 
 export default connect(mapStateToProps, null)(Favorites);
