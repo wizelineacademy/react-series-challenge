@@ -17,6 +17,7 @@ const Trending = ({
   fetchTrending,
   updateFilterTrendingText,
 }) => {
+  fetchTrending();
   const handleChange = (event) => {
     const { value } = event.target;
     updateFilterTrendingText({ payload: { text: value } });
@@ -24,9 +25,6 @@ const Trending = ({
   return (
     <Template>
       <input name="search-box" type="text" value={filterTrendingText} onChange={handleChange} />
-      <button onClick={fetchTrending}>
-        Fetch Trending Gifs
-      </button>
       <Link to="/favorite" href="/favorite">Go to Favorite</Link>
       <div>
         <GifGrid gifs={trendingGifs} filterText={filterTrendingText} />
