@@ -1,7 +1,9 @@
 import { combineReducers } from 'redux';
 
-import trendingGifs from './trendingGifs';
+import trending from './trending';
+import favorite from './favorite';
 
 export default combineReducers({
-  trendingGifs
+  trending,
+  favorite
 });

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import GifList from './GifList'
-import gifsActions from '../actions/gifs';
+import GifList from './GifList';
+import trendingActions from '../actions/trending';
 
 class Home extends Component {
   componentWillMount = () => {
@@ -12,7 +12,7 @@ class Home extends Component {
     return (
       <div className="home">
         <h1>Home</h1>
-        <GifList gifs={this.props.trendingGifs} />
+        <GifList gifs={this.props.trending} />
       </div>
     )  
   }
@@ -22,16 +22,16 @@ class Home extends Component {
 
 const mapStateToProps = (state) => {
   const {
-    trendingGifs
+    trending
   } = state;
   
   return {
-    trendingGifs
+    trending
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
-  const { getTrendingGifs } = gifsActions.creators;
+  const { getTrendingGifs } = trendingActions.creators;
   
   return bindActionCreators({
     getTrendingGifs,

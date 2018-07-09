@@ -1,8 +1,8 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import rootReducer from '../reducers';
 import customMiddleware from '../middleware';
+import initialState from './state';
 
-const initialState = {};
 const middleware = [ ...customMiddleware ];
 
 const enhancers = compose(

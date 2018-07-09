@@ -1,15 +1,32 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import LikeStatus from './LikeStatus';
 
 class Gif extends Component {
-  render(){
+  render() {
+    let likeRender = <LikeStatus liked={false} />;
+    if (this.props.favorite[this.props.id] && Boolean(this.props.favorite[this.props.id].liked)) {
+      likeRender = <LikeStatus liked={true} />;
+    }
     return (
-      <div className="gif">
+      <div className="gif" onClick={this.props.onClick}>
         <img src={this.props.src} alt={this.props.src} />
-        <LikeStatus liked={this.props.liked} />
+        { likeRender }
       </div>
-    )  
+    )
   }
 }
 
-export default Gif;
+
+
+const mapStateToProps = (state) => {
+  const {
+    favorite
+  } = state;
+  
+  return {
+    favorite
+  };
+};
+
+export default connect(mapStateToProps)(Gif);

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import SearchBar from './SearchBar'
+import SearchBar from './SearchBar';
 
 class Header extends Component {
   constructor(props) {
@@ -15,8 +15,8 @@ class Header extends Component {
   render() {
     return (
       <header className="App-header">
-        <NavLink to="/" activeClass="active" exact>Home</NavLink>
-        <NavLink to="/favorites" activeClass="active">Favorites</NavLink>
+        <NavLink to="/" exact>Home</NavLink>
+        <NavLink to="/favorites">Favorites</NavLink>
         <SearchBar value={this.searchValue} onChange={this.handleSearch} />
       </header>
     )  

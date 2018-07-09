@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 
 class LikeStatus extends Component {
   render(){
-    if (Boolean(this.props.liked)) {
-      return <span className="liked">Liked</span>
-    } else {
-      return <span className="not-liked">Not Liked</span>
-    }
+    return <span
+      className={(Boolean(this.props.liked)) ? 'liked' : 'not-liked'}
+    >
+      {(Boolean(this.props.liked)) ? 'liked' : 'not-liked'}
+    </span>
   }
 }
 

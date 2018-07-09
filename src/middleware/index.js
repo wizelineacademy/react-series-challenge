@@ -1,5 +1,5 @@
-import gifsFetcher from './gifsFetcher';
+import trendingFetcher from './trendingFetcher';
 
 export default [
-  gifsFetcher
-]
+  trendingFetcher
+];

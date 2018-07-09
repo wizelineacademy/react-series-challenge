@@ -1,15 +1,14 @@
 import axios from 'axios';
-import gifsActions from '../actions/gifs';
+import trendingActions from '../actions/trending';
 
-const { TRENDING_GIFS_GET } = gifsActions.types;
+const { TRENDING_GIFS_GET } = trendingActions.types;
 
-const { fetchedTrendingGifs } = gifsActions.creators;
+const { fetchedTrendingGifs } = trendingActions.creators;
 
 const API_URL = 'http://api.giphy.com/v1/gifs';
-const API_KEY = 'YH1JlbYHDQ0cDuUzqglJmP9U5U42YxO5'
 
 const fetchTrendingGifs = (dispatch) => {
-  axios.get(`${API_URL}/trending?api_key=${API_KEY}`)
+  axios.get(`${API_URL}/trending?api_key=${process.env.REACT_APP_API_KEY}`)
     .then(response => dispatch(fetchedTrendingGifs({ ...response.data })));
 }
 
