@@ -3,11 +3,17 @@ import Element from './Element';
 
 const ElementList = (props) => {
 
+    const searchGifsLength = props.search ? Object.keys(props.search).length : 0;
+
+    const renderGifs = () => {
+        const gifs = searchGifsLength > 0 ? props.search : props.all;
+        return  gifs ? Object.keys(gifs).map((gif) => <Element key={gif} gif={gifs[gif]} />) : <h1>No info</h1>
+    };
 
     return (
         <div>
             <h3>Gifs</h3>
-            {Object.keys(props.elements).map((element) => <Element key={element} element={props.elements[element]}/>)}
+            {renderGifs()}
         </div>
     );
 }

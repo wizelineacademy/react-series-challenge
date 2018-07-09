@@ -5,21 +5,13 @@ import {loadSearchGifs} from '../actions/searchGifs';
 
 const SearchBar =  (props) => {
 
-    const getInputValue = () => {
-        const input = document.getElementById('search').value;
-        console.log(input);
-        props.loadSearchGifs({text:input});
-    }
+    const searchString = (e) => {
+        props.loadSearchGifs(e.target.value);
+    };
 
     return(
         <div>
-            <input id='search'>
-            </input>
-            <button
-                onClick={() => getInputValue()}
-            >
-                Add
-            </button>
+            <input type="text" id="search" onKeyUp={searchString}/>
         </div>
     )
 

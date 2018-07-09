@@ -14,7 +14,7 @@ class ElementsView extends Component{
         return (
             <div>
                 <h4>Main Gifs View!</h4>
-                <ElementList elements={this.props.allGifs}/>
+                <ElementList all={this.props.allGifs} search={this.props.searchGifs} />
             </div>
         );
     }
@@ -25,10 +25,12 @@ class ElementsView extends Component{
 const mapStateToProps = (state) => {
     const {
         allGifs,
+        searchGifs
     } = state;
 
     return {
         allGifs,
+        searchGifs
     };
 };
 
