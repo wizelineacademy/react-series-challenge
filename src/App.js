@@ -4,7 +4,7 @@ import './App.css'
 import SearchBar from './components/SearchBar';
 import FavElements from './components/FavElements';
 import ElementsView from './components/ElementsView';
-import {Route, Link, Redirect} from "react-router-dom";
+import {Route, Link, Redirect, Switch} from "react-router-dom";
 
 class App extends Component {
   render() {
@@ -27,9 +27,10 @@ class App extends Component {
               <hr />
               <h2>Click on image to add or delete</h2>
 
-
-              <Route exact path="/" component={ElementsView} />
-              <Route path="/FavElements" component={FavElements} />
+              <Switch>
+                  <Route exact path="/" component={ElementsView} />
+                  <Route path="/FavElements" component={FavElements} />
+              </Switch>
           </div>
 
 
