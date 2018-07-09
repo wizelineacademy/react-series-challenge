@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import contentActions from '../../actions/content'
 import Header from '../Header'
 import Searchbar from '../Searchbar'
-import Item from '../Item'
+import Content from '../Content'
 
 const {
   startLoading,
@@ -12,23 +12,6 @@ const {
   startSearch,
 } = contentActions.actions
 
-const Content = ({data, onClickFav, favorites}) => {
-  const loading = !data
-  if(loading){
-    return(
-      <div> loading ... </div>
-    )
-  }
-
-  return data.data.map((item, index) => (
-    <Item key={index}
-      item={item}
-      onClickFav={onClickFav}
-      isFav={favorites[item.id] ? true : false}
-    />
-  ))
-
-}
 
 class Home extends Component {
 
@@ -67,6 +50,7 @@ class Home extends Component {
         />
         <Content
           data={this.props.content.data}
+          isLoading={this.props.content.isLoading}
           favorites={this.props.content.favorites}
           onClickFav={this.toogleFavorite}
         />

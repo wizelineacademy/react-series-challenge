@@ -10,13 +10,13 @@ const contentReducer = (state = initialState, action) => {
 
   switch(type) {
     case types.CONTENT_START_LOADING:{
-      return {...state, loading: true}
+      return {...state, isLoading: true}
     }
     case types.CONTENT_FETCHED: {
-      return {...state, data: payload, loading:false}
+      return {...state, data: payload, isLoading:false}
     }
     case types.CONTENT_FETCHED_ERROR: {
-      return {...state, loading:false}
+      return {...state, isLoading:false}
     }
     case types.CONTENT_ADD_FAV: {
       const newState = {...state}

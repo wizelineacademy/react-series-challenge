@@ -3,35 +3,13 @@ import { connect } from 'react-redux'
 import contentActions from '../../actions/content'
 import Header from '../Header'
 import Searchbar from '../Searchbar'
-import Item from '../Item'
+import Content from '../Content'
 
 const {
   addToFavContent,
   removeFavContent,
 } = contentActions.actions
 
-const Content = ({data, onClickFav, favorites, filter}) => {
-  const loading = !data
-  if(loading){
-    return(
-      <div> loading ... </div>
-    )
-  }
-
-  return Object.keys(data).map((key, index) => {
-    if(data[key].title.search(filter) > -1){
-      return(
-        <Item key={index}
-          item={data[key]}
-          onClickFav={onClickFav}
-          isFav={favorites[key] ? true : false}
-        />
-      )
-    }
-    return null
-  })
-
-}
 
 class Favorites extends Component {
 
