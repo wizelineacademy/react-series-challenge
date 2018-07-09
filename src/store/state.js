@@ -1,6 +1,7 @@
 const initialState = {
   trending: {},
-  favorite: {}
+  favorite: {},
+  search: {}
 };
 
 export default initialState;
