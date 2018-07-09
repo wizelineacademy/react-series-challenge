@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import { Link } from "react-router-dom";
+
 // Redux
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
@@ -33,11 +35,12 @@ class Home extends Component{
   }
 
   render() {
-    const { data, ids, modifyLocal } = this.props;
+    const { data, local, modifyLocal } = this.props;
 
     return (
       <div>
         <div>
+          <Link to="/keeps">Favorites</Link>
           <form onSubmit={this.handleSubmit}>
             <fieldset>
               <legend>API:</legend>
@@ -49,7 +52,7 @@ class Home extends Component{
             </fieldset>
           </form>
         </div>
-        <Giphys data={data} ids={ids} modifyLocal={modifyLocal} />
+        <Giphys data={data} local={local} modifyLocal={modifyLocal} />
         <Footer />
       </div>
     );
@@ -59,7 +62,7 @@ class Home extends Component{
 const mapStateToProps = (state) => {
   return {
     data: selectors.fetch_data(state),
-    ids: selectors.local_ids(state),
+    local: selectors.local(state),
   }
 }
 

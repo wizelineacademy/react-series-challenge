@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import { Link } from "react-router-dom";
+
 // Redux
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
@@ -15,12 +17,13 @@ import actions from "./../../../redux/actions/";
 
 class Keeps extends Component{
   render() {
-    const { ids, likes, modifyLocal } = this.props;
+    const { local, modifyLocal } = this.props;
 
     return (
       <div>
+        <Link to="/">HOME</Link>
         <div>YOUR SAVES GIPHY...</div>
-        <Giphys data={{ data: likes }} ids={ids} modifyLocal={modifyLocal} />
+        <Giphys data={{ data: local.likes }} local={local} modifyLocal={modifyLocal} />
         <Footer />
       </div>
     )
@@ -30,8 +33,7 @@ class Keeps extends Component{
 
 const mapStateToProps = (state) => {
   return {
-    likes: selectors.local_likes(state),
-    ids: selectors.local_ids(state),
+    local: selectors.local(state),
   }
 }
 

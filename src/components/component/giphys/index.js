@@ -10,18 +10,14 @@ class Giphys extends Component {
     this.props.modifyLocal(data[index]);
   }
 
-
-
   render() {
-
     let giphyView;
-    const { data, ids } = this.props;
-    console.log(':::: ids 2 ::::', ids);
+    const { data, local } = this.props;
 
     if (data && data.data) {
       giphyView = data.data.map((v, i) => (
         <div key={v.id} className="giphy">
-          <button onClick={(event) => this.handleKeep(event, i)}>{`${ids.includes(v.id) ? 'undo' : 'keep'}`}</button>
+          <button onClick={(event) => this.handleKeep(event, i)}>{`${local.ids.includes(v.id) ? 'undo' : 'keep'}`}</button>
           <img src={v.images.fixed_width.webp} alt={v.title} />
         </div>
       ));

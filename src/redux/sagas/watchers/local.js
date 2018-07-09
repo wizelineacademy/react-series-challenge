@@ -23,11 +23,10 @@ const loadData = () => {
 }
 
 function* getLocalStorage() {
-  console.log('Loading...');
   let data = loadData();
   yield put({ type: actions.LOCALSTORAGE_DATA, payload: { data } });
   // TODO: ENABLE
-  // yield put({ type: 'FETCH_REQUEST', payload: { search: '' }});
+  yield put({ type: 'FETCH_REQUEST', payload: { search: '' }});
 }
 
 const setData = (data) => {
