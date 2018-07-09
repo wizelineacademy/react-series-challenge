@@ -10,7 +10,7 @@ import store from "./store";
 // Components
 import Gifs from "./components/Gifs/Gifs";
 import SearchResult from "./components/SearchResult/SearchResult";
-
+import Favorites from './components/Favorites/Favorites';
 
 class App extends Component {
   render() {
@@ -20,6 +20,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Gifs} />
             <Route exact path="/search/:q" component={SearchResult} />
+            <Route path="/favorites" component={Favorites} />
           </Switch>
         </Router>
       </Provider>
