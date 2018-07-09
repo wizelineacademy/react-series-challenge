@@ -1,0 +1,25 @@
+.portal {
+  width: 500px;
+  height: 600px;
+  margin:auto;
+  background-color:gray;
+  text-align:center;
+}
+
+.portal > img {
+  width:100%;
+  height:500px;
+}
+
+.content {
+  position:absolute;
+  overflow:hidden;
+  z-index:-1;
+}
+
+.btn-close {
+  width: 100%;
+  height: 40px;
+  background-color:green;
+  font-size: 20px;
+}
