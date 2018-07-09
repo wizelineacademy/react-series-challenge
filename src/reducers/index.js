@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 
-import gifsReducer from './gifs';
+import gifs from './gifsReducer';
 
 export default combineReducers({
-  gifsReducer
+  gifs
 });
