@@ -1,7 +1,14 @@
 import React, {Component} from 'react';
 import {bindActionCreators} from "redux";
 import { connect } from 'react-redux';
-import { GifContainer, Gif, GifOverlay, GifOverlayLoading, FavoriteBtn } from './GifCard.styled';
+import {
+    GifContainer,
+    Gif,
+    GifOverlay,
+    GifTitle,
+    GifOverlayLoading,
+    FavoriteBtn
+} from './GifCard.styled';
 import favoriteGifsActions from "../../actions/favoriteGifs";
 
 const LOCAL_STORAGE_FAV_GIFS = 'favoriteGifs';
@@ -68,6 +75,9 @@ class GifCard extends Component {
 
         const gifOverlay = (
             <GifOverlay>
+                <GifTitle>
+                    {gif.title || ''}
+                </GifTitle>
                 <FavoriteBtn onClick={this.onClickFavoriteButton} isFavorite={this.state.isFavorite}>
                     { buttonIcon }
                 </FavoriteBtn>

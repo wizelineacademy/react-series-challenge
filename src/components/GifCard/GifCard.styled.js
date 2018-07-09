@@ -19,6 +19,17 @@ const GifOverlay = styled.div`
     }
 `;
 
+const GifTitle = styled.div`
+    visibility: hidden;
+    font-size: 1rem;
+    padding: 8px;
+    
+    ${GifOverlay}:hover & {
+        visibility: visible;
+        opacity: 1;
+    }
+`;
+
 const GifOverlayLoading = styled.div`
     position: absolute;
     top: 0;
@@ -63,6 +74,7 @@ const FavoriteBtn = styled.button`
 export {
     GifContainer,
     GifOverlay,
+    GifTitle,
     GifOverlayLoading,
     Gif,
     FavoriteBtn,
