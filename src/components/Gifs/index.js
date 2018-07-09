@@ -16,11 +16,14 @@ class Gifs extends Component {
         /**
          * 
          */
-        this.props.onComponentWillReceiveProps(nextProps.location)
+        if (nextProps.location.pathname !== this.props.location.pathname) {
+            this.props.onComponentWillReceiveProps(nextProps.location)
+        }
     }
 
     render() {
-        const content = this.props.gifs.length 
+        console.log(this.props.gifs)
+        const content = this.props.gifs && this.props.gifs.length 
             ? this.props.gifs.map( gif => <Gif key={gif.id} url={gif.images.downsized.url} slug={gif.title} gif={gif} /> )
             : <Loading />
 

@@ -18,7 +18,6 @@ function* getLocation(action) {
     const parsedURL = action.payload.pathname.substring(1);
     const state = yield select()
     if (parsedURL.includes(FAVORITES_PATH)) {
-       
         yield put(getFavorites(state))
     }
 

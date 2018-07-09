@@ -1,7 +1,9 @@
 import favorites from '../actions/favorites'
-
+const localStorage = window.localStorage
+const items = JSON.parse(localStorage.getItem("favorites") || "[]");
+const initialState = { items }
 const { types: { FAVORITES_ADD, FAVORITES_REMOVE, FAVORITES_GET } } = favorites
-const favoritesReducer = (state = { items: [] }, action) => {
+const favoritesReducer = (state = initialState, action) => {
     const { type, payload } = action
 
     switch(type) {
