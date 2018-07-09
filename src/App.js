@@ -6,6 +6,8 @@ import {
 
 import SearchGif from './components/SearchGif/SearchGif';
 import MainGifsView from './components/MainGifsView/MainGifsView';
+import FavoriteGifs from './components/FavoriteGifs/FavoriteGifs';
+
 import { Navbar, MainContainer, LogoContainer, SearchContainer } from './App.styled';
 
 class App extends Component {
@@ -29,7 +31,8 @@ class App extends Component {
               <MainContainer>
                   <Switch>
 
-                      <Route path="/" component={MainGifsView}/>
+                      <Route exact path="/" component={MainGifsView}/>
+                      <Route exact path="/favorites" component={FavoriteGifs}/>
 
                   </Switch>
               </MainContainer>
