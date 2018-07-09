@@ -4,7 +4,7 @@ import React from 'react';
 import Search from "./../Search/Search";
 import Menu from  './../Sidebar/Sidebar';
 
-const UI = ({ favoritesList, handleClick }) => {
+const UI = ({ favoritesList, handleClick, gitFilter, handleChange, inrernalData }) => {
 
   let gifCatalog;
 
@@ -30,7 +30,18 @@ const UI = ({ favoritesList, handleClick }) => {
     return(
         <div>
           <Menu />
-          <Search />
+          <div>
+            <form onSubmit={gitFilter}>
+              <span>Escribe el nombre de un gif</span>
+              <input
+                  id="search"
+                  type="text"
+                  value={inrernalData.searchField}
+                  onChange={(e) => { handleChange(e, 'searchForm.searchField'); }}
+              />
+              <button type="submit">Realizar busqueda</button>
+            </form>
+          </div>
           {gifCatalog}
         </div>
     );
