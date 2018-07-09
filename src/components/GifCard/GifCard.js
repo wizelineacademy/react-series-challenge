@@ -4,12 +4,41 @@ import { connect } from 'react-redux';
 import { GifContainer, Gif, GifOverlay, GifOverlayLoading, FavoriteBtn } from './GifCard.styled';
 import favoriteGifsActions from "../../actions/favoriteGifs";
 
+const LOCAL_STORAGE_FAV_GIFS = 'favoriteGifs';
+
 class GifCard extends Component {
 
     constructor(props) {
         super(props);
 
-        this.state = { gifLoaded: false, isFavorite: false};
+        let isFavorite = this.gifInLocalStorage();
+        if (isFavorite) {
+            this.props.addFavoriteGif({ gif: this.props.gif });
+        }
+        this.state = { gifLoaded: false, isFavorite };
+    }
+
+    gifInLocalStorage() {
+        const localFavoriteGifs = localStorage.getItem(LOCAL_STORAGE_FAV_GIFS);
+        const jsonGifs = JSON.parse(localFavoriteGifs);
+        return (jsonGifs && !!jsonGifs[this.props.gif.id]);
+    }
+
+    updateGifInLocalStorage(isFavorite, gif) {
+        let jsonFavGifs = JSON.parse(localStorage.getItem(LOCAL_STORAGE_FAV_GIFS));
+        if (isFavorite) {
+            this.props.addFavoriteGif({ gif });
+            if (jsonFavGifs) {
+                jsonFavGifs[gif.id] = gif.id;
+            } else {
+                jsonFavGifs = {[gif.id]: gif.id}
+            }
+
+        } else {
+            delete jsonFavGifs[gif.id];
+        }
+
+        localStorage.setItem(LOCAL_STORAGE_FAV_GIFS, JSON.stringify(jsonFavGifs));
     }
 
     onLoadHandler = () => {
@@ -20,12 +49,14 @@ class GifCard extends Component {
     onClickFavoriteButton = () => {
 
         const isFavorite = !this.state.isFavorite;
+        const { gif } = this.props;
+        this.updateGifInLocalStorage(isFavorite, gif);
         this.setState({ isFavorite });
 
         if (isFavorite) {
-            const { gif } = this.props;
             this.props.addFavoriteGif({ gif });
-
+        } else {
+            this.props.deleteFavoriteGif({ gif });
         }
     };
 
@@ -63,10 +94,11 @@ class GifCard extends Component {
 
 const mapDispatchToProps = (dispatch) => {
 
-    const { addFavoriteGif } = favoriteGifsActions.creators;
+    const { addFavoriteGif, deleteFavoriteGif } = favoriteGifsActions.creators;
 
     return bindActionCreators({
         addFavoriteGif,
+        deleteFavoriteGif,
     }, dispatch);
 
 };
