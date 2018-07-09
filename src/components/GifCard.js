@@ -3,14 +3,16 @@ import React from 'react';
 import '../styles/GifCard.css';
 
 const GifCard = (props) => {
-  var { user, images } = props;
+  var { images, title, user } = props;
 
   return (
     <div className="GifCard">
-      <a href={ user.profile_url } className="GifCardUser">
-        <img src={ user.avatar_url } />
-      </a>
-      <img src={ images.original.url } />
+      { user &&
+        <a href={ user.profile_url } className="GifCardUser">
+          <img src={ user.avatar_url } alt={ user.username } />
+        </a>
+      }
+      <img src={ images.original.url } alt={title} />
     </div>
   );
 };

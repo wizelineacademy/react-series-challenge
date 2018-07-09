@@ -2,28 +2,25 @@ import React from 'react';
 import { connect } from 'react-redux'
 
 import '../styles/SearchBar.css';
-import trendingGifsActions from '../actions/trendingGifsApi';
+import gifActions from '../actions/gifActions';
 
-const SearchBar = ({ fetchGifs }) => {
+const SearchBar = ({ dispatch }) => {
+  let input;
+
   return (
     <div className="SearchBar">
-      <input type="text" onKeyPress={ fetchGifs } />
+      <input
+        type="text"
+        placeholder="Search gifs!!"
+        ref={ node => input = node }
+        onKeyPress={ event => {
+          if(event.key === 'Enter' && input.value.trim()) {
+            dispatch(gifActions.creators.searchGifs(input.value));
+          }
+        }}
+      />
     </div>
   )
 }
 
-const mapStateToProps = (state) => {
-  return {};
-}
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    fetchGifs: (event) => {
-      if(event.key === 'Enter') {
-        dispatch(trendingGifsActions.creators.getTrendingGifs());
-      }
-    }
-  };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(SearchBar);
+export default connect()(SearchBar);

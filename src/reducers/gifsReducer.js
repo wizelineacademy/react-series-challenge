@@ -1,4 +1,4 @@
-import gifsActions from '../actions/trendingGifsApi';
+import gifActions from '../actions/gifActions';
 
 const initialState = [];
 
@@ -6,7 +6,10 @@ const gifsReducer = (state = initialState, action) => {
   const { type, payload } = action;
 
   switch (type) {
-    case gifsActions.types.TRENDING_GIFS_RECEIVED:
+    case gifActions.types.SEARCH_GIFS_RECEIVED:
+      return payload.gifs;
+
+    case gifActions.types.TRENDING_GIFS_RECEIVED:
       return payload.gifs;
 
     default:
