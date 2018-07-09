@@ -4,7 +4,6 @@ const initialState = {
   loading: false,
   word: '',
   data: {},
-  // error: null,
 }
 
 export default (state = initialState, action) => {

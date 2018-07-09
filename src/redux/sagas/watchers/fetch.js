@@ -1,6 +1,6 @@
 import { put, call, takeEvery, select } from 'redux-saga/effects';
 
-// RedursDic
+// actionsDic
 import actions from "./../../constants/actions";
 import selectors from "./../../selectors/";
 
