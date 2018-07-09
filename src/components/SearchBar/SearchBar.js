@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import favoriteGifs from "../../actions/favoriteGifs";
 
 class SearchBar extends Component {
   state = {
@@ -13,8 +14,15 @@ class SearchBar extends Component {
   };
   handleSearch = e => {
     e.preventDefault();
+    const { from } = this.props;
     const query = this.state.value;
-    this.props.getSearchGifs(query);
+    if(from === "/favorites") {
+      const { favoriteGifs } =  this.props;
+      const payload = { query, favoriteGifs };
+      this.props.getFavoriteSearchGifs(payload);
+    } else {
+      this.props.getSearchGifs(query);
+    }
   };
   render() {
     return (
@@ -32,13 +40,19 @@ class SearchBar extends Component {
     );
   }
 }
+
+const mapStateToProps = ({ favoriteGifs }) => ({
+  favoriteGifs
+});
+
 const mapDispatchToProps = dispatch => {
   return {
-    getSearchGifs: query => dispatch({ type: "GET_SEARCH_GIFS", query })
+    getSearchGifs: query => dispatch({ type: "GET_SEARCH_GIFS", query }),
+    getFavoriteSearchGifs: payload => dispatch({ type: "GET_FAVORITE_SEARCH_GIFS", payload })
   };
 };
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(SearchBar);

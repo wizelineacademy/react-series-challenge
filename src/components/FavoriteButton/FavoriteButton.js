@@ -7,7 +7,7 @@ const AddTransactionButton = ({ gif, addFavoriteGif }) => (
 
 const mapDispatchToProps = dispatch => {
   return {
-    addFavoriteGif: gif => dispatch({ type: "ADD_FAVORITE_GIF", gif: gif })
+    addFavoriteGif: gif => dispatch({ type: "ADD_FAVORITE_GIF", payload: gif })
   };
 };
 

@@ -1,10 +1,8 @@
 import searchGifsActions from "../actions/searchGifs";
 
-const initialState = {
-  searchGifs: []
-};
+const initialState = {};
 
-const cryptoPricesReducer = (state = initialState, action) => {
+const searchGifReducer = (state = initialState, action) => {
   const { type, payload } = action;
 
   switch (type) {
@@ -17,4 +15,4 @@ const cryptoPricesReducer = (state = initialState, action) => {
   }
 };
 
-export default cryptoPricesReducer;
+export default searchGifReducer;

@@ -2,7 +2,7 @@ import trendingGifsActions from "../actions/trendingGifs";
 
 const initialState = {};
 
-const cryptoPricesReducer = (state = initialState, action) => {
+const gifReducer = (state = initialState, action) => {
   const { type, payload } = action;
 
   switch (type) {
@@ -15,4 +15,4 @@ const cryptoPricesReducer = (state = initialState, action) => {
   }
 };
 
-export default cryptoPricesReducer;
+export default gifReducer;

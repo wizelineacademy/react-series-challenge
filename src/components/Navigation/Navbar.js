@@ -1,15 +1,16 @@
 import React from "react";
+import { withRouter } from "react-router-dom"
 import SearchBar from "../SearchBar/SearchBar";
 import { NavLink } from "react-router-dom";
 
-const Navbar = () => (
+const Navbar = ({ location }) => (
   <div>
     <div>
       <NavLink to="/">Home</NavLink>
       <NavLink to="/favorites">Favoritos</NavLink>
     </div>
-    <SearchBar />
+    <SearchBar from={location.pathname}/>
   </div>
 );
 
-export default Navbar;
+export default withRouter(Navbar);
