@@ -12,3 +12,5 @@ const logger = store => next => action => {
 
   return nextMiddlewares;
 };
+
+export default logger;

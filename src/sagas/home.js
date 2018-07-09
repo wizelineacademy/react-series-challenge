@@ -3,7 +3,6 @@ import actions from '../actions/index';
 import { GET_MORE_GIFS, UPDATE_GIFS } from '../actions/types';
 import selectors from '../utils/selectors';
 import { fetchGifs } from '../utils/common';
-import { getMoreGifs } from '../actions/home';
 
 const url = 'http://api.giphy.com/v1/gifs/';
 const api_key = process.env.REACT_APP_GIPHY_API_KEY;
@@ -33,9 +32,10 @@ export function* getNewGifsSaga() {
 
   const { data } = response;
 
+  const favorites = yield call(selectors.getFavorites);
   const elements = yield call(markFavorites, data, favorites);
 
-  yield put(actions.setList(elements));
+  yield put(actions.setItemsList(elements));
 
   yield put(actions.setLoading(false));
 }
@@ -43,12 +43,13 @@ export function* getNewGifsSaga() {
 export function* updateGifsSaga() {
   const itemsListState = yield call(selectors.getPieceOfState, 'list');
   const { currentItemsList } = itemsListState;
+  const favorites = yield call(selectors.getFavorites);
   const elements = yield call(markFavorites, currentItemsList, favorites);
 
   yield put(actions.setItemsList(elements));
 }
 
 export default function* homeSaga() {
-  yield takeLatest(GET_MORE_GIFS, getMoreGifs);
+  yield takeLatest(GET_MORE_GIFS, getNewGifsSaga);
   yield takeEvery(UPDATE_GIFS, updateGifsSaga);
 }

@@ -16,8 +16,8 @@ const ItemsList = ({ currentItemsList, favoritesButton }) => {
   return <div>{items}</div>;
 };
 
-const mapStateToProps = ({ list }) => {
-  const { currentItemsList } = list;
+const mapStateToProps = ({ itemsList }) => {
+  const { currentItemsList } = itemsList;
   return { currentItemsList };
 };
 

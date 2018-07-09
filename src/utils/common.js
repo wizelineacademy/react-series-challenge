@@ -1,13 +1,15 @@
+import axios from 'axios';
+
 const validateEndpoint = (endpoint, search) =>
-  endpoint === 'search' ? `?q=${search}` : '';
+  endpoint === 'search' ? `&q=${search}` : '';
 
 export const fetchGifs = ({ url, api_key, limit, endpoint, search }) =>
   axios
     .get(
-      `${url}${endpoint}${validateEndpoint(
+      `${url}${endpoint}?api_key=${api_key}${validateEndpoint(
         endpoint,
         search
-      )}&${api_key}&${limit}`
+      )}&limit=${limit}`
     )
     .then(response => response.data);
 
