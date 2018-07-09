@@ -14,7 +14,6 @@ class ComponentHome extends Component {
     }
 
     render() {
-        console.log('gifs', this.props.gifs);
         console.log('favorites', this.props.favorites);
         return (
             <div>
@@ -31,10 +30,9 @@ class ComponentHome extends Component {
 
     renderGifs = () => {
         return this.props.gifs.map(x => {
-            const isFavorite = this.props.favorites.find(x => x.id == x.id);
-            return ComponentGif(x.id, x.gif, isFavorite, () => {
+            const isFavorite = this.props.favorites.find(y => y.id == x.id);
+            return ComponentGif(x.id, x.title, x.gif, isFavorite, () => {
                 this.props.dispatch(addGifToFavorites(x));
-                // console.log(isFavorite);
             });
         });
     }
@@ -55,7 +53,7 @@ class ComponentHome extends Component {
 const mapStateToProps = (state) => {
     return {
         gifs: state.gifsTrending.gifs,
-        favorites: state.gifsFavorites.gifs,
+        favorites: state.gifsFavorites.favorites,
         loading: state.gifsTrending.loading,
     };
 };

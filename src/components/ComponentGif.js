@@ -1,9 +1,9 @@
 import React from 'react';
 
-const ComponentGif = (index, image, isFavorite, handleClick) => {
-    return (<div key={index} className='container-gif'>
-        <button onClick={handleClick} className="icon">{isFavorite ? 'Remove' : 'Add'}</button>
-        <img src={image.url} width='100%' height={120} />
+const ComponentGif = (id, title, image, isFavorite, handleClick) => {
+    return (<div key={id} className='container-gif'>
+        {isFavorite ? <i className="fa fa-star icon"></i> : null}
+        <img src={image.url} width='100%' height={120} onClick={handleClick} alt={title} />
     </div>);
 };
 

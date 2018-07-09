@@ -54,8 +54,9 @@ input {
     padding: 6px;
 }
 
-.container-gif button.icon {
+.container-gif i.icon {
     position: absolute;
-    margin-left: 178px;
-    margin-top: 3px;
+    margin-left: 197px;
+    margin-top: 8px;
+    color: #e7f52b;
 }

@@ -1,11 +1,48 @@
-import React, { Component, } from 'react';
+import React, { Component, Fragment, } from 'react';
+import ComponentGif from './ComponentGif';
+import { connect } from 'react-redux';
+import { removeGifToFavorites, } from '../actions/gifsFavorites';
 
-export default class ComponentFavorites extends Component {
+class ComponentFavorites extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            textFilter: '',
+        };
+    }
+
     render() {
         return (
             <div>
-                Component Favorites
+                <div style={{ marginBottom: 10, }}>
+                    <input type="text" placeholder="search" onChange={(e) => this.setState({ textFilter: e.target.value, })} />
+                </div>
+                <Fragment>
+                    {this.renderGifs()}
+                </Fragment>
             </div>
         )
     }
+
+    renderGifs = () => {
+        return this.filter().map(x => {
+            return ComponentGif(x.id, x.title, x.gif, true, () => {
+                this.props.dispatch(removeGifToFavorites(x));
+            });
+        });
+    }
+
+    filter = () => {
+        if (!this.state.textFilter) return this.props.favorites;
+        return this.props.favorites.filter(x => x.title.toLowerCase().indexOf(this.state.textFilter) > -1);
+        // return this.props
+    }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        favorites: state.gifsFavorites.favorites,
+    };
+};
+
+export default connect(mapStateToProps)(ComponentFavorites);

@@ -47,9 +47,10 @@ export default StyleSheet.create({
     'width': [{ 'unit': 'px', 'value': 220 }],
     'padding': [{ 'unit': 'px', 'value': 6 }, { 'unit': 'px', 'value': 6 }, { 'unit': 'px', 'value': 6 }, { 'unit': 'px', 'value': 6 }]
   },
-  'container-gif buttonicon': {
+  'container-gif iicon': {
     'position': 'absolute',
-    'marginLeft': [{ 'unit': 'px', 'value': 178 }],
-    'marginTop': [{ 'unit': 'px', 'value': 3 }]
+    'marginLeft': [{ 'unit': 'px', 'value': 197 }],
+    'marginTop': [{ 'unit': 'px', 'value': 8 }],
+    'color': '#e7f52b'
   }
 });
