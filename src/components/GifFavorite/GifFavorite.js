@@ -17,14 +17,12 @@ class GifFavorite extends Component {
     }
 
     componentDidUpdate(prevProps) {
-        console.log("Se actualiza");
         if(prevProps.favoritedImages !== this.props.favoritedImages){
             this.setState({searchResults: this.props.favoritedImages});
         }
     }
 
     updateState = (event) => {
-        console.log(event);
         if(event === ""){
             this.setState({searchResults: this.props.favoritedImages})
         } else {
@@ -33,21 +31,15 @@ class GifFavorite extends Component {
     }
 
     handleSearch = () => {
-        console.log(this.props.favoritedImages);
-        //const searchParam = event.target.value;
-
         if(this.state.searchedValue === ""){
             this.setState({searchResults: this.props.favoritedImages})
         } else {
             let newArray = Object.keys(this.props.favoritedImages).map((key, index) => {
                 return this.props.favoritedImages[index]
             }).filter(word => {
-                console.log("WORD", word);
-                console.log("SEARCHEDVALUE", this.state.searchedValue)
                 return word.searchedValue.includes(this.state.searchedValue)});
             
             if(newArray !== undefined && newArray !== null && newArray.length >= 0){
-                console.log("Entro a actualizar");
                 this.setState({ searchResults: newArray });
             } 
         }
@@ -63,7 +55,7 @@ class GifFavorite extends Component {
                 <ErrorBoundary>
                     <GifCards 
                     gifData = { this.state.searchResults } 
-                    searchedGifs = { this.props.searchedFavoriteGifs } 
+                    addRemoveGif = { this.props.addRemoveGifFavorites } 
                     searchedValue = { this.props.searchedValue }/>
                 </ErrorBoundary>
             </div>
@@ -72,7 +64,6 @@ class GifFavorite extends Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log(state.favoritedImages);
     const { favoritedImages } = state;
     return {
         favoritedImages
@@ -80,8 +71,8 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-    const { searchedFavoriteGifs, searchedTrendingGifs, searchedSpecifiedGifs, updateSearchValue } = SearchFunctions.creators;
-    return bindActionCreators( { searchedFavoriteGifs, searchedTrendingGifs, searchedSpecifiedGifs, updateSearchValue }, dispatch);
+    const { searchedFavoriteGifs, searchedValue, addRemoveGifFavorites } = SearchFunctions.creators;
+    return bindActionCreators( { searchedFavoriteGifs, searchedValue, addRemoveGifFavorites }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(GifFavorite);

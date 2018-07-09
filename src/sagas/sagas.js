@@ -1,4 +1,4 @@
-import { call, put, takeEvery, all, takeLatest, select } from 'redux-saga/effects';
+import { call, put, takeEvery, all, select } from 'redux-saga/effects';
 import SearchFunctions from '../actions/searchValues';
 import {getDataTrend, getDataSearch} from '../api/api'
 
@@ -9,22 +9,19 @@ const getToken = (state) => state
 function* getDataFromTrending() {
     try{
         let data = yield call(getDataTrend);
-        console.log("datos", data);
         yield put(getTrendingGifs({ data }));
     } catch(e){
-        console.log("ERROR", e);
+        console.error("ERROR", e);
     }
 }
 
 function* getDataFromSearch() {
     try{
         const token = yield select(getToken)
-        console.log("TOKEN", token);
         let data = yield call(() => getDataSearch(token.searchedValue));
-        console.log("datos buqueda", data);
         yield put(searchedSpecifiedGifs({ data }));
     } catch(e){
-        console.log("ERROR", e);
+        console.error("ERROR", e);
     }
 }
 
