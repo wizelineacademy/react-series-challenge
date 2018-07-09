@@ -14,6 +14,8 @@ const {
 	ADD_FAVORITES,
 	REMOVE_FAVORITES,
 	ADD_REMOVE_FAVORITES,
+	LOAD_FAVORITES,
+	SET_FAVORITES,
 } = cardsActions.types;
 
 function fetchSearchCards(term,limit=5) {
@@ -26,9 +28,9 @@ const getTermState = state => state.search;
 function* searchCards(){
 	try{
 		const search = yield select(getTermState);
-		if( Object.keys(search).length === 0 || search.term == "" ) throw 'No search term';
+		if( Object.keys(search).length === 0 || search.term === "" ) throw 'No search term';
 		const response = yield call(fetchSearchCards,search.term);
-		yield put({ type:LOAD_CARDS, payload: {cards:response.data} });
+		yield put({ type:LOAD_CARDS, payload: {cards:response.data.data} });
 	}catch(e){
 		yield put({ type:ERROR_SEARCH, e });
 	}
@@ -47,8 +49,11 @@ function fetchTrendingCards(limit=5) {
 }
 function* trendingCards(){
 	try{
+		const favs = JSON.parse(localStorage.getItem('favoritesCards'));
+		yield put({ type:SET_FAVORITES, payload: {cards:favs} });
+
 		const response = yield call(fetchTrendingCards);
-		yield put({ type:LOAD_CARDS, payload: {cards:response.data} });
+		yield put({ type:LOAD_CARDS, payload: {cards:response.data.data} });
 	}catch(e){
 		yield put({ type:'ERROR_SEARCH', e });
 	}
@@ -60,6 +65,7 @@ function* watchForTrending(){
 
 /*Favorites*/
 const getCardsState = state => state.cards;
+
 function* favCard(){
 	const cards = yield select(getCardsState);
 	console.log('cards',cards);
@@ -68,9 +74,24 @@ function* favCard(){
 	}else{
 		yield put({ type: ADD_FAVORITES, payload: { card: cards.card } });
 	}
+	const newCards = yield select(getCardsState);
+	localStorage.setItem('favoritesCards',JSON.stringify(newCards.favorites));
 }
 function* watchForAddRemove(){
 	yield takeEvery(ADD_REMOVE_FAVORITES,favCard);
+}
+
+function* loadFavCard(){
+	const state = yield select();
+	const favs = JSON.parse(localStorage.getItem('favoritesCards'));
+	console.log('favs lodad',favs)
+	const favsArr = Object.keys(favs).map((k) => favs[k])
+	yield put({ type:LOAD_CARDS, payload: {cards:favsArr} });
+	/*if( state.path === '/Favorites' ){
+	}*/
+}
+function* watchForLoadFavs(){
+	yield takeEvery(LOAD_FAVORITES,loadFavCard);
 }
 /*Favorites end*/
 
@@ -79,7 +100,8 @@ function* rootSaga(){
 		watchForSearch(),
 		watchForTrending(),
 		watchForAddRemove(),
-		]);
+		watchForLoadFavs(),
+	]);
 }
 
 export default rootSaga;

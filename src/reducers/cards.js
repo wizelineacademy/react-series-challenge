@@ -11,10 +11,21 @@ const CardsReducer = (state = initCardState, action) => {
 		case cardsActions.types.LOAD_CARDS:{
 			const { cards } = payload;
 			const newState = {...state};
-			newState.cards = cards.data.reduce(( newArray, card ) => {
-				newArray[ card.id ] = card;
+			newState.cards = cards.reduce(( newArray, card ) => {
+				newArray[ card.id ] = {...card,isFavorite:(newState.favorites[card.id])};
 				return newArray;
 			},{});
+			return newState;
+		}
+		case cardsActions.types.SET_FAVORITES:{
+			const { cards } = payload;
+			const newState = {...state};
+			newState.favorites = cards;
+			console.log('set',newState);
+			return newState;
+		}
+		case cardsActions.types.LOAD_FAVORITES:{
+			const newState = {...state};
 			return newState;
 		}
 		case cardsActions.types.ADD_REMOVE_FAVORITES:{

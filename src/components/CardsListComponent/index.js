@@ -9,9 +9,6 @@ class CardsList extends Component {
 	constructor(props){
 		super(props);
 	}
-	componentDidMount(){
-		this.props.loadTrending();
-	}
 	render() {
 		const cards = Object.keys(this.props.cards.cards).map((card) => 
 			<Card 
@@ -44,6 +41,8 @@ const mapDispatchToProps = (dispatch) => {
 		addFavorites,
 		removeFavorites,
 		addRemoveFavorites,
+		loadFavorites,
+		setFavorites,
 	} = cards.creators;
 
 	return bindActionCreators({
@@ -52,6 +51,8 @@ const mapDispatchToProps = (dispatch) => {
 		addFavorites,
 		removeFavorites,
 		addRemoveFavorites,
+		loadFavorites,
+		setFavorites,
 	}, dispatch);
 };
 
