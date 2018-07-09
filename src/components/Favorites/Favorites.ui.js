@@ -1,5 +1,8 @@
 import React from 'react';
+
+// Components
 import Search from "./../Search/Search";
+import Menu from  './../Sidebar/Sidebar';
 
 const UI = ({ favoritesList }) => {
 
@@ -26,6 +29,7 @@ const UI = ({ favoritesList }) => {
 
     return(
         <div>
+          <Menu />
           <Search />
           {gifCatalog}
         </div>

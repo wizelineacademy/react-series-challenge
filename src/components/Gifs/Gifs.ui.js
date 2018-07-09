@@ -2,6 +2,7 @@ import React from "react";
 
 // Components
 import Search from  './../Search/Search';
+import Menu from  './../Sidebar/Sidebar';
 
 const SearchUI = ({ data, favorites, favoritesList }) => {
   let gifCatalog;
@@ -36,6 +37,7 @@ const SearchUI = ({ data, favorites, favoritesList }) => {
 
   return (
     <div>
+        <Menu />
         <Search />
         {gifCatalog}
     </div>
