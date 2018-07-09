@@ -10,6 +10,7 @@ width: 140px;
 border: 10px solid black;
 `;
 const Wrapper = styled.div`
+max-width: 160px;
 display: inline-block;
 margin: 7px;
 padding: 1px;
@@ -23,7 +24,13 @@ border-radius: 5px;
 display: block;
 font-size: 18px;
 color: ${props => props.liked ? '#4267b2' : 'white' };
-margin: 10px auto;
+margin: 5px auto;
+`;
+
+const Title = styled.p`
+font-size: 15px;
+color: #444;
+text-align: center;
 `;
 
 const GifElement = (props) => {
@@ -41,6 +48,9 @@ const GifElement = (props) => {
             >
                 {liked ? 'Dislike' : 'Like'}
             </LikeButton>
+            <Title>
+                {gif.title}
+            </Title>
         </Wrapper>
     );
 };

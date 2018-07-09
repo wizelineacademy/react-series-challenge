@@ -1,11 +1,12 @@
 import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import GifElement from './GifElement';
+import FavsSearchBar from './FavsSearchBar';
 
-const getGifElements = (data) => {
+const getGifElements = (favoritedGifs) => {
     const components = [];
-    for (let key in data) {
-        const gif = data[key];
+    for (let key in favoritedGifs) {
+        const gif = favoritedGifs[key];
         components.push(
             <GifElement
                 gif={gif}
@@ -17,19 +18,34 @@ const getGifElements = (data) => {
 };
 
 const Favorites = (props) => {
-    const { data } = props;
+    const { favoritedGifs } = props;
     return (
         <Fragment>
-            {getGifElements(data)}
+            <FavsSearchBar/>
+            {getGifElements(favoritedGifs)}
         </Fragment>
     )
 };
 
 const mapStateToProps = (state) => {
-    const { favorites } = state;
+    const { favorites, favsSearchBar } = state;
     const { data } = favorites;
+    const { value } = favsSearchBar;
+    let favoritedGifs = {};
+
+    if (value.trim().length) {
+        for (let key in data) {
+            const { title } = data[key];
+            if (title.toLowerCase().search(value.toLowerCase()) !== -1) {
+                favoritedGifs[key] = data[key];
+            }
+        }
+    } else {
+        favoritedGifs = data;
+    }
+
     return {
-        data
+        favoritedGifs,
     };
 };
 
