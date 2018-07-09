@@ -6,6 +6,7 @@ export const SEARCH_GIF_FAILED = 'SEARCH_GIF_FAILED';
 export const SEARCH_EVENT = 'SEARCH_EVENT';
 export const ADD_FAVORITES = 'ADD_FAVORITES';
 export const GET_FAVORITES = 'GET_FAVORITES';
+export const DELETE_FAVORITES = 'DELETE_FAVORITES';
 
 function action(type, payload = {}) {
   return {type, ...payload}
@@ -16,3 +17,4 @@ export const searchGif = result => action(SEARCH_GIF, {result});
 export const searchResult = result => action(SEARCH_RESULT, {result});
 export const addFavorites = add => action(ADD_FAVORITES, {add});
 export const getFavorites = get => action(GET_FAVORITES, {get});
+export const deleteFavorites = id => action(DELETE_FAVORITES, {id});
