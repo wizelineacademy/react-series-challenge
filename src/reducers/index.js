@@ -4,7 +4,8 @@ import actions from "../actions";
 const { 
   TRENDING_FETCHED, 
   SEARCH_FETCHED, 
-  TOGGLE_FAVORITE 
+  TOGGLE_FAVORITE,
+  LOAD_SAVED_FAVORITES
 } = actions.types;
 
 const mapFavoritesToList = (items, favorites) => (
@@ -58,6 +59,15 @@ const rootReducer = (state = initialState, action) => {
         newState['trendingGifs'],
         newState['favorites']
       )
+      return newState;
+
+    case LOAD_SAVED_FAVORITES:
+      var newState = { ...state };
+      try {
+        newState['favorites'] = JSON.parse(localStorage.getItem('gif-favs')) || [];
+      } catch (e) {
+        console.warn(e);
+      }
       return newState;
 
     default:

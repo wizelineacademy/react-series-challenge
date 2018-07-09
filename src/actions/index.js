@@ -14,8 +14,6 @@ const searchGifs = (q = '') => ({type: GET_SEARCH, payload: { q } });
 const searchGifsFetched = (data, query) => ({type: SEARCH_FETCHED, payload:{data, query}});
 
 const toggleFavorite = (id, gif) => ({type: TOGGLE_FAVORITE, payload: { id, gif } })
-
-// Not yet implemented
 const loadSavedFavorites = () => ({type: LOAD_SAVED_FAVORITES, payload: null})
 
 export default {

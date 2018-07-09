@@ -3,12 +3,12 @@ import rootReducer from '../reducers';
 import initialState from '../reducers/initialState';
 import createSagaMiddleware from "redux-saga";
 import rootSaga from "../sagas";
-import logger from '../middleware/logger';
+import customMiddleware from '../middleware';
 
 const sagaMiddleware = createSagaMiddleware();
 
 const enhancers = [];
-const middleware = [logger, sagaMiddleware];
+const middleware = [...customMiddleware, sagaMiddleware];
 
 const composedEnhancers = compose(
   applyMiddleware(...middleware),
