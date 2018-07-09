@@ -2,7 +2,7 @@ import { call, put, takeEvery, select } from 'redux-saga/effects';
 import { fetchTrendingGifs, receiveTrendingGifs, receiveNextPageTrendingGifs } from '../actions/giphyApi';
 
 const BASE_URL = 'https://api.giphy.com'
-const API_KEY = 'OWyGkCD9SWGggtMzzEBRe3yPvwsh2BBq';
+const API_KEY = process.env.REACT_APP_GIPHY_API_KEY;
 const PAGE_SIZE = 20;
 
 // taken from:
