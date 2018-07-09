@@ -1,6 +1,7 @@
 import {
   ACTION_TRENDING_GET_DATA_REQUEST,
-  ACTION_TRENDING_GET_DATA_RESPONSE
+  ACTION_TRENDING_GET_DATA_RESPONSE,
+  ACTION_SEARCH_TERM_GET_DATA_RESPONSE
 } from "../actions";
 
 export default function(state = {}, action) {
@@ -14,6 +15,14 @@ export default function(state = {}, action) {
         }
       };
     case ACTION_TRENDING_GET_DATA_RESPONSE:
+      return {
+        ...state,
+        [ACTION_TRENDING_GET_DATA_RESPONSE]: {
+          payload: action.payload,
+          status: "done"
+        }
+      };
+    case ACTION_SEARCH_TERM_GET_DATA_RESPONSE:
       return {
         ...state,
         [ACTION_TRENDING_GET_DATA_RESPONSE]: {

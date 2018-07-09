@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Input, Button } from "../../../components";
+import { Input } from "../../../components";
 
 const StyledSearchBar = styled.div`
   margin: 0 auto;
@@ -11,8 +11,10 @@ const StyledSearchBar = styled.div`
 const SearchBar = props => {
   return (
     <StyledSearchBar>
-      <Input />
-      <Button title="Search" />
+      <Input
+        getInputValue={props.getInputValue}
+        placeholder="Type some words..."
+      />
     </StyledSearchBar>
   );
 };

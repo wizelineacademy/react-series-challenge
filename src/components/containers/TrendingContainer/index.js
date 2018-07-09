@@ -3,15 +3,18 @@ import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import {
   actionTrendingGetDataRequest,
-  actionSetToFav
+  actionSetToFav,
+  actionSearchTermGetDataRequest
 } from "../../../store/actions";
 import { getTrendingData } from "../../../store/selectors/trendingSelectors";
-import { GiPanel } from "../../../components";
+import { GiPanel, SearchBar } from "../../../components";
 
 class TrendingContainer extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      searchTerm: ""
+    };
   }
 
   componentDidMount() {
@@ -22,8 +25,15 @@ class TrendingContainer extends Component {
     this.props.actionSetToFav(item);
   };
 
+  getInputValue = e => {
+    this.props.actionSearchTermGetDataRequest(e.target.value);
+  };
+
   render() {
-    return <GiPanel data={this.props.trending} addToFavs={this.addToFavs} />;
+    return [
+      <SearchBar key={0} getInputValue={this.getInputValue} />,
+      <GiPanel key={1} data={this.props.trending} toggleFavs={this.addToFavs} />
+    ];
   }
 }
 
@@ -41,7 +51,8 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators(
     {
       actionTrendingGetDataRequest,
-      actionSetToFav
+      actionSetToFav,
+      actionSearchTermGetDataRequest
     },
     dispatch
   );

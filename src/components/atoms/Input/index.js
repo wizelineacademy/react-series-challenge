@@ -16,7 +16,7 @@ const StyledInput = styled.div`
 `;
 
 const Input = props => {
-  const { type, id, name, placeholder, label } = props;
+  const { type, id, name, placeholder, label, getInputValue } = props;
   return (
     <StyledInput>
       <input
@@ -25,6 +25,7 @@ const Input = props => {
         name={name}
         placeholder={placeholder}
         aria-label={label}
+        onChange={getInputValue}
       />
     </StyledInput>
   );

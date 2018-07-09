@@ -1,11 +1,10 @@
 import React from "react";
-import { Header, SearchBar } from "../../../components";
+import { Header } from "../../../components";
 import PropTypes from "prop-types";
 
 const PublicLayout = ({ children }) => (
   <div style={{ height: "100%" }}>
     <Header />
-    <SearchBar />
     <div>{children}</div>
   </div>
 );

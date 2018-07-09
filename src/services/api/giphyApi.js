@@ -7,6 +7,16 @@ const GiphyApiService = {
     return fetch(apiUrl + path + `?api_key=${giphyApiKey}`).then(response =>
       response.json()
     );
+  },
+  getSearchTermDataRequest(data) {
+    const path = "/v1/gifs/search";
+    data = data.trim();
+    data = data !== undefined && data !== "" ? data : "lolcats";
+    const params = `&q=${data}&limit=25&offset=0&rating=G&lang=en`;
+
+    return fetch(apiUrl + path + `?api_key=${giphyApiKey}` + params).then(
+      response => response.json()
+    );
   }
 };
 

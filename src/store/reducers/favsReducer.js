@@ -26,13 +26,3 @@ export default function(state = {}, action) {
       return state;
   }
 }
-
-/*
-      const { transaction } = payload;
-
-      const newState = { ...state };
-      delete newState[transaction.id];
-
-      return newState;
-
-*/

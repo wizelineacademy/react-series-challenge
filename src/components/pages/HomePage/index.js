@@ -4,7 +4,7 @@ import { PublicLayout, TrendingContainer } from "../../../components";
 const HomePage = () => {
   return (
     <PublicLayout>
-      <h4>Click to Add a Favorite</h4>
+      <h3>Click to Add a Favorite</h3>
       <TrendingContainer />
     </PublicLayout>
   );

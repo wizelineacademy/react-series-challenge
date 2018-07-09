@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import { GiPanel } from "../../../components";
+import { GiPanel, SearchBar } from "../../../components";
 import { actionFavDelete } from "../../../store/actions";
 import { getFavsData } from "../../../store/selectors/favsSelectors";
 
@@ -18,7 +18,14 @@ class FavsContainer extends Component {
   };
 
   render() {
-    return <GiPanel data={this.props.favs} addToFavs={this.removeFromFavs} />;
+    return [
+      <SearchBar key={0} />,
+      <GiPanel
+        key={1}
+        data={this.props.favs}
+        toggleFavs={this.removeFromFavs}
+      />
+    ];
   }
 }
 

@@ -4,7 +4,7 @@ import { PublicLayout, FavsContainer } from "../../../components";
 const FavsPage = () => {
   return (
     <PublicLayout>
-      <h4>Click to Remove a Favorite</h4>
+      <h3>Click to Remove a Favorite</h3>
       <FavsContainer />
     </PublicLayout>
   );

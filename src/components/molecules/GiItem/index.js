@@ -6,7 +6,7 @@ class GiItem extends Component {
   }
 
   getClicked() {
-    this.props.addToFavs(this.props.giphy);
+    this.props.toggleFavs(this.props.giphy);
   }
 
   render() {
