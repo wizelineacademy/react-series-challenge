@@ -5,16 +5,32 @@ import { connect } from "react-redux";
 
 const { searchGifs } = actions.creators;
 
-const SearchBar = ({ searchGifs }) => (
-  <input 
-    onChange={(e) => searchGifs(e.target.value)} 
-    type='text' 
-    placeholder='Search' 
-  />
-)
+class SearchBar extends Component {
+
+  ref = React.createRef()
+
+  componentDidMount() {
+    this.ref.current.value = this.props.searchQuery;
+  }
+
+  render () {
+    return (
+      <input 
+        onChange={(e) => this.props.searchGifs(e.target.value)} 
+        type='text' 
+        placeholder='Search'
+        ref={this.ref}
+      />
+    )
+  }
+}
+
+const mapStateToProps = state => ({
+  searchQuery: state.searchQuery
+})
 
 const mapDispatchToProps = dispatch => (
   bindActionCreators({ searchGifs }, dispatch)
 )
 
-export default connect(null, mapDispatchToProps)(SearchBar);
+export default connect(mapStateToProps, mapDispatchToProps)(SearchBar);
