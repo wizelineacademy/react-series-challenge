@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { querySearch } from './action'
 import { connect } from 'react-redux'
+import Gif from "../../components/Gif";
 
 
 class SearchPage extends Component {
@@ -21,7 +22,7 @@ class SearchPage extends Component {
     return (
         <React.Fragment>
         {
-          gifs && gifs.map((gif, index) => {return <img src={gif.images.fixed_width.url} key={gif.id}/>})
+          gifs && gifs.map((gif, index) => {return <Gif url={gif.images.fixed_width.url} id={gif.id}/>})
         }
         </React.Fragment>
     )

@@ -7,7 +7,8 @@ import rootSaga from './saga';
 import registerServiceWorker from './registerServiceWorker';
 import configureStore from './configureStore';
 
-const initialState = {};
+const initialState = {
+};
 const store = configureStore(initialState);
 
 store.runSaga(rootSaga);

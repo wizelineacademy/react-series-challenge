@@ -8,7 +8,6 @@ import { call, put, takeLatest } from 'redux-saga/effects'
 import axios from 'axios'
 
 function* doQueryTrending({ param = {} }) {
-  const { limit = 20, offset = 0 } = param;
 
   const query = serialize({
     limit:25,

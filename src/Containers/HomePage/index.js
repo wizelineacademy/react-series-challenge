@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { queryTrending } from './action'
 import { connect } from 'react-redux'
-
+import Gif from "../../components/Gif"
 
 class HomePage extends Component {
   state = {
@@ -19,7 +19,7 @@ class HomePage extends Component {
     return (
         <React.Fragment>
         {
-          gifs && gifs.map((gif, index) => {return <img src={gif.images.fixed_width.url} key={gif.id}/>})
+          gifs && gifs.map((gif, index) => {return <Gif url={gif.images.fixed_width.url} id={gif.id}/>})
         }
         </React.Fragment>
     )
@@ -27,7 +27,6 @@ class HomePage extends Component {
 }
 
 const mapStateToProps = state => {
-  console.log(state);
   return{
   gifs: state.home.trendingGifs,
   loading: state.home.trendingLoading
