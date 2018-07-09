@@ -16,7 +16,7 @@ class Navbar extends Component {
             <NavLink to="/">Home</NavLink>
           </li>
           <li>
-            <NavLink to="/fav">Favs</NavLink>
+            <NavLink to="/search">Favs</NavLink>
           </li>
           <li>
             <input
