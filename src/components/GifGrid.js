@@ -3,16 +3,16 @@ import { connect } from 'react-redux';
 
 import GifCard from './GifCard';
 
+import '../styles/GifGrid.css';
+
 const GifGrid = (props) => {
-  var { gifs } = props;
+  const { gifs } = props;
 
   return (
     <div className="GifGrid mt">
-      {
-        gifs.map((gif) =>
-          <GifCard key={gif.id} {...gif} />
-        )
-      }
+      { gifs.map((gif) =>
+        <GifCard key={gif.id} {...gif} />
+      )}
     </div>
   );
 };

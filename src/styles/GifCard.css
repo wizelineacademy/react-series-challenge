@@ -1,0 +1,18 @@
+.GifCard {
+  position: relative;
+}
+
+.GifCard > img {
+  width: 100%;
+}
+
+.GifCardUser {
+  left: 5px;
+  position: absolute;
+  top: 5px;
+}
+
+.GifCardUser > img {
+  height: 20px;
+  width: 20px;
+}

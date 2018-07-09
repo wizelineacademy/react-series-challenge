@@ -1,12 +1,16 @@
 import React from 'react';
 
+import '../styles/GifCard.css';
+
 const GifCard = (props) => {
-  var { url, username } = props;
+  var { user, images } = props;
 
   return (
     <div className="GifCard">
-      <p>{ username }</p>
-      <p>{ url }</p>
+      <a href={ user.profile_url } className="GifCardUser">
+        <img src={ user.avatar_url } />
+      </a>
+      <img src={ images.original.url } />
     </div>
   );
 };

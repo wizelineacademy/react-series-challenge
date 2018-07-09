@@ -22,7 +22,7 @@ function* fetchGifsSideEffect() {
   try {
     const response = yield call(
       fetchGifs,
-      `${api_base_url}/trending?api_key=${process.env.REACT_APP_GIPHY_API_KEY}&limit=25`
+      `${api_base_url}/trending?api_key=${process.env.REACT_APP_GIPHY_API_KEY}&limit=24`
     );
 
     yield put(receivedTrendingGifs({ gifs: response.data }));
