@@ -52,10 +52,8 @@ class Favorites extends Component {
     }
   }
 
-  handleKeyPress = (e) => {
-    if (e.key === 'Enter') {
-      this.setState({searchTerm: e.target.value})
-    }
+  handleChange = (e) => {
+    this.setState({searchTerm: e.target.value})
   }
 
   render() {
@@ -63,7 +61,7 @@ class Favorites extends Component {
       <div>
         <Header/>
         <Searchbar
-          handleKeyPress={this.handleKeyPress}
+          handleChange={this.handleChange}
         />
         <Content
           data={this.props.content.favorites}
