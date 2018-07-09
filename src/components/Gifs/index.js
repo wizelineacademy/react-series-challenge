@@ -21,10 +21,13 @@ class Gifs extends Component {
         }
     }
 
+    isInFavorites(gif) {
+        return this.props.favorites.some(fav => fav.id === gif.id)
+    }
+
     render() {
-        console.log(this.props.gifs)
         const content = this.props.gifs && this.props.gifs.length 
-            ? this.props.gifs.map( gif => <Gif key={gif.id} url={gif.images.downsized.url} slug={gif.title} gif={gif} /> )
+            ? this.props.gifs.map( gif => <Gif key={gif.id} url={gif.images.downsized.url} slug={gif.title} gif={gif} favorite={this.isInFavorites(gif)} /> )
             : <Loading />
 
         return (
@@ -36,8 +39,8 @@ class Gifs extends Component {
 } 
 
 const mapStateToProps = (state) => {
-    const { gifs } = state.search
-    return { gifs, loading: Boolean(gifs) }
+    const { search:{ gifs }, favorites: { items: favorites }} = state
+    return { gifs, loading: Boolean(gifs), favorites }
 }
 
 const mapDispatchToProps = (dispatch) => {

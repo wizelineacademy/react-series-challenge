@@ -25,7 +25,6 @@ function* clickFavorite(action) {
 }
 
 function* saveToLocalStorage(action) {
-    console.log('AAAAAAAAAAAAAa')
     const favorites = yield select(favoritesSelector)
     localStorage.setItem('favorites', JSON.stringify(favorites));
 }
