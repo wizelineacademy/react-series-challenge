@@ -7,11 +7,7 @@ const SearchReducer = (state = initCardState, action) => {
 
 	switch (type) {
 		case searchActions.types.SEARCH_CARDS:{
-			const newState ={ term: payload.searchTerm?payload.searchTerm:state.term };
-			return newState;
-		}
-		case searchActions.types.ERROR_SEARCH:{
-			const newState = { ...state };
+			const newState = { term: payload.searchTerm?payload.searchTerm:state.term };
 			return newState;
 		}
     	default:

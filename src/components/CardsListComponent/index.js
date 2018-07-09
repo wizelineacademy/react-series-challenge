@@ -8,18 +8,16 @@ import cards from '../../actions/cards';
 class CardsList extends Component {
 	constructor(props){
 		super(props);
-		//console.log(props);
 	}
 	componentDidMount(){
 		this.props.loadTrending();
 	}
 	render() {
-		const cards = Object.keys(this.props.cards).map((card) => 
+		const cards = Object.keys(this.props.cards.cards).map((card) => 
 			<Card 
 				key={card}
-				card={this.props.cards[card]} 
-				addFavorites={this.props.addFavorites}
-				removeFavorites={this.props.removeFavorites} />
+				card={this.props.cards.cards[card]} 
+				addRemoveFavorites={this.props.addRemoveFavorites} />
 		);
 		return (
 			<div className='container'>
@@ -45,6 +43,7 @@ const mapDispatchToProps = (dispatch) => {
 		loadTrending,
 		addFavorites,
 		removeFavorites,
+		addRemoveFavorites,
 	} = cards.creators;
 
 	return bindActionCreators({
@@ -52,6 +51,7 @@ const mapDispatchToProps = (dispatch) => {
 		loadTrending,
 		addFavorites,
 		removeFavorites,
+		addRemoveFavorites,
 	}, dispatch);
 };
 

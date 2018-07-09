@@ -11,6 +11,9 @@ const {
 const {
 	LOAD_CARDS,
 	LOAD_TRENDING,
+	ADD_FAVORITES,
+	REMOVE_FAVORITES,
+	ADD_REMOVE_FAVORITES,
 } = cardsActions.types;
 
 function fetchSearchCards(term,limit=5) {
@@ -19,15 +22,15 @@ function fetchSearchCards(term,limit=5) {
     url: `https://api.giphy.com/v1/gifs/search?api_key=${process.env.REACT_APP_APIKEY}&q=${term}&limit=${limit}&offset=0`
   });
 }
-const getTerm = state => state.search;
+const getTermState = state => state.search;
 function* searchCards(){
 	try{
-		const search = yield select(getTerm);
+		const search = yield select(getTermState);
 		if( Object.keys(search).length === 0 || search.term == "" ) throw 'No search term';
 		const response = yield call(fetchSearchCards,search.term);
 		yield put({ type:LOAD_CARDS, payload: {cards:response.data} });
 	}catch(e){
-		yield put({ type:'ERROR_SEARCH', e });
+		yield put({ type:ERROR_SEARCH, e });
 	}
 }
 function* watchForSearch(){
@@ -55,10 +58,27 @@ function* watchForTrending(){
 }
 /*Trending end*/
 
+/*Favorites*/
+const getCardsState = state => state.cards;
+function* favCard(){
+	const cards = yield select(getCardsState);
+	console.log('cards',cards);
+	if( cards.favorites[cards.card.id] ){
+		yield put({ type: REMOVE_FAVORITES, payload: { card: cards.card } });
+	}else{
+		yield put({ type: ADD_FAVORITES, payload: { card: cards.card } });
+	}
+}
+function* watchForAddRemove(){
+	yield takeEvery(ADD_REMOVE_FAVORITES,favCard);
+}
+/*Favorites end*/
+
 function* rootSaga(){
 	yield all([
 		watchForSearch(),
-		watchForTrending()
+		watchForTrending(),
+		watchForAddRemove(),
 		]);
 }
 
