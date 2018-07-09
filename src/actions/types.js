@@ -31,6 +31,9 @@ export const SEARCH_CHANGE = 'SEARCH_CHANGE';
 export const FILTER_CLICK = 'FILTER_CLICK';
 export const SEARCH_CLICK = 'SEARCH_CLICK';
 
+// Error Handling
+export const ERROR_STATUS = 'ERROR_STATUS';
+
 export default {
   GET_MORE_GIFS,
   UPDATE_GIFS,
@@ -48,4 +51,5 @@ export default {
   SEARCH_CHANGE,
   FILTER_CLICK,
   SEARCH_CLICK,
+  ERROR_STATUS,
 };
