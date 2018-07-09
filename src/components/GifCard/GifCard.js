@@ -34,7 +34,6 @@ class GifCard extends Component {
     updateGifInLocalStorage(isFavorite, gif) {
         let jsonFavGifs = JSON.parse(localStorage.getItem(LOCAL_STORAGE_FAV_GIFS));
         if (isFavorite) {
-            this.props.addFavoriteGif({ gif });
             if (jsonFavGifs) {
                 jsonFavGifs[gif.id] = gif.id;
             } else {

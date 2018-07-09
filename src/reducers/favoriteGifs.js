@@ -12,17 +12,22 @@ const favoriteGifsReducer = (state = initialState, action) => {
     switch (type) {
 
         case favoriteGifsActions.types.FAVORITE_GIFS_ADD: {
-            const newState = { ...state };
+            let { favs, filtered } = state;
             const { gif } = payload;
-            newState['favs'][gif.id] = gif;
-            return newState;
+            favs[gif.id] = gif;
+            favs = { ...favs };
+            filtered = { ...filtered };
+            return { favs, filtered };
         }
 
         case favoriteGifsActions.types.FAVORITE_GIFS_DELETE: {
             const { gif } = payload;
-            const newState = {...state};
-            delete newState['favs'][gif.id];
-            return newState;
+            let { favs, filtered } = state;
+            delete favs[gif.id];
+            delete filtered[gif.id];
+            favs = { ...favs };
+            filtered = { ...filtered };
+            return { favs, filtered };
         }
 
         case favoriteGifsActions.types.FAVORITE_GIFS_FILTER: {
