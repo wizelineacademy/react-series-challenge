@@ -1,5 +1,5 @@
 import { call, put, takeEvery, select } from 'redux-saga/effects';
-import { fetchTrendingGifs, receiveTrendingGifs } from '../actions/giphyApi';
+import { fetchTrendingGifs, receiveTrendingGifs, receiveNextPageTrendingGifs } from '../actions/giphyApi';
 
 const BASE_URL = 'https://api.giphy.com'
 const API_KEY = 'OWyGkCD9SWGggtMzzEBRe3yPvwsh2BBq';
@@ -64,7 +64,11 @@ function* getTrendingGifs(action) {
       return null;
     });
 
-    yield put(receiveTrendingGifs(trendingGifs));
+    if (page > 0) {
+      yield put(receiveNextPageTrendingGifs(trendingGifs));
+    } else {
+      yield put(receiveTrendingGifs(trendingGifs));
+    }
   } catch (e) {
     yield put(receiveTrendingGifs(e));
   }

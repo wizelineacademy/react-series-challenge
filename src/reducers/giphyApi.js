@@ -1,5 +1,5 @@
 import { handleActions } from 'redux-actions';
-import { receiveTrendingGifs } from '../actions/giphyApi';
+import { receiveTrendingGifs, receiveNextPageTrendingGifs } from '../actions/giphyApi';
 import { toggleFavoriteGif } from '../actions/favorites';
 
 const reducer = handleActions({
@@ -23,6 +23,16 @@ const reducer = handleActions({
     throw(state, action) {
     }
   },
+  [receiveNextPageTrendingGifs]: {
+    next(state, action) {
+      const { gifs: nextGifs } = action.payload;
+      const { gifs: currentGifs } = state;
+      const gifs = { ...currentGifs, ...nextGifs };
+      return { ...state, gifs };
+    },
+    throw(state, action) {
+    }
+  }
 }, { gifs: {} });
 
 export default reducer;

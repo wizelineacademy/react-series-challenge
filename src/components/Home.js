@@ -4,8 +4,17 @@ import { connect } from 'react-redux';
 import { fetchTrendingGifs } from '../actions/giphyApi'
 import { toggleFavoriteGif } from '../actions/favorites';
 import NavBar from './NavBar';
+import InfiniteScroll from './InfiniteScroll';
 
 class Home extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      search: '',
+      page: 0,
+    }
+  }
+
   componentDidMount() {
     this.props.fetchTrendingGifs();
   }
@@ -18,15 +27,30 @@ class Home extends Component {
     const { gifs } = this.props;
     return (
       <Fragment>
-        <NavBar onSearch={(search) => this.props.fetchTrendingGifs(search)} />
+        <NavBar onSearch={this.handleSearch} />
         <div>
           <GifList
             onLikeClick={this.handleGifLikeClick}
             gifs={gifs}
           />
+          <InfiniteScroll onLoadMoreData={this.handleLoadMoreData} />
         </div>
       </Fragment>
     );
+  }
+
+  handleSearch = (search) => {
+    this.setState({ search, page: 0 }, () => {
+      this.props.fetchTrendingGifs(search);
+    });
+  }
+
+  handleLoadMoreData = () => {
+    this.setState((prevState, props) => {
+      return { page: (prevState.page + 1) }
+    }, () => {
+      this.props.fetchTrendingGifs(this.state.search, this.state.page);
+    })
   }
 }
 
