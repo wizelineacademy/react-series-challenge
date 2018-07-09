@@ -1,5 +1,7 @@
 import React from 'react';
 
+import emptyStar from '../icons/empty-star.svg';
+import star from '../icons/star.svg';
 import '../styles/GifCard.css';
 
 const GifCard = (props) => {
@@ -12,7 +14,14 @@ const GifCard = (props) => {
           <img src={ user.avatar_url } alt={ user.username } />
         </a>
       }
-      <img src={ images.original.url } alt={title} />
+      <img
+        src={emptyStar}
+        className="GifCardStar"
+        alt="favorite icon"
+        onClick={(event) => console.log(event) }
+      />
+
+      <img src={ images.original.url } className="GifCardMain" alt={title} />
     </div>
   );
 };
