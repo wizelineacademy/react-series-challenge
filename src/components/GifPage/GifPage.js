@@ -14,14 +14,6 @@ const apiKey = "MKGAXNQl5cXUBSBMrXSsufVZ9bqvhX6p"
 
 class GifPage extends Component {
 
-    constructor(props){
-        super(props);
-        this.state = {
-            gifs: {}, 
-            searchValue: "trendy",
-        };
-    }
-
     componentDidMount() {      
         
         /*fetch(`${apiURL}${apiTrends}?api_key=${apiKey}`)
@@ -110,7 +102,7 @@ class GifPage extends Component {
             <div className = "GifPage">
                 <SearchBar updateState = { this.updateState } handleSearch = {this.handleSearch} />
                 <ErrorBoundary>
-                <GifCards gifData = { newArray } searchedGifs = {this.props.searchedFavoriteGifs} searchedValue = {this.state.searchValue}/> 
+                <GifCards gifData = { newArray } addRemoveGif = {this.props.addRemoveGifFavorites} searchedValue = {this.props.searchedValue}/> 
                 </ErrorBoundary>
                 {/*<button onClick = {() => this.props.searchedFavoriteGifs(10)}>HELLO HELLO HELLO</button>*/}
                 {/*//loadError = {this.handleError} 
@@ -125,15 +117,15 @@ class GifPage extends Component {
 
 const mapStateToProps = (state) => {
     console.log("Estado", state);
-    const { gifs } = state;
+    const { gifs, searchedValue } = state;
     return {
-        gifs,
+        gifs, searchedValue
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
-    const { searchedFavoriteGifs, searchedTrendingGifs, searchedSpecifiedGifs, updateSearchValue, getTrendingGifs,requestApiData, requestApiDataSearched } = SearchFunctions.creators;
-    return bindActionCreators( { searchedFavoriteGifs, searchedTrendingGifs, searchedSpecifiedGifs, updateSearchValue, getTrendingGifs,requestApiData, requestApiDataSearched }, dispatch);
+    const { addRemoveGifFavorites, searchedTrendingGifs, searchedSpecifiedGifs, updateSearchValue, getTrendingGifs,requestApiData, requestApiDataSearched } = SearchFunctions.creators;
+    return bindActionCreators( { addRemoveGifFavorites, searchedTrendingGifs, searchedSpecifiedGifs, updateSearchValue, getTrendingGifs, requestApiData, requestApiDataSearched }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(GifPage);

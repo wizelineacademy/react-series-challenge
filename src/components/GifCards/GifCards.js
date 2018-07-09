@@ -6,7 +6,7 @@ import './GifCards.css';
 const GifCards = (props) => {
 
         let arrays = null;
-        const { gifData, searchedValue, searchedGifs } = props; 
+        const { gifData, searchedValue, addRemoveGif } = props; 
         //console.log("props", props); 
 
         if(gifData !== null && gifData !== undefined){
@@ -22,7 +22,7 @@ const GifCards = (props) => {
                     //loadSuccess = {props.loadSuccess}
                     imageUrl = {url}
                      />
-                    <GifCardControls key = {index} searchedGifs = {() => searchedGifs({ id: id, searchedValue: searchedValue, url: url})} />
+                    <GifCardControls key = {index} addRemoveGif = {() => addRemoveGif({ id: id, searchedValue: searchedValue, url: url})} />
                 </div>);
             });
 

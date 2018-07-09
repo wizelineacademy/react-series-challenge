@@ -19,7 +19,7 @@ const GifCard  = (props) => {
         <div className = "GifCard">
             <img 
             src = {props.imageUrl} 
-            alt = "Img PlaceHolder"
+            alt = "Loading Great Gif :D ..."
             //onLoad = {console.log("Hey, I loaded!")} 
             //onError = {props.loadError} 
             />

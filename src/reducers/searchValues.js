@@ -2,15 +2,15 @@ import searchActions from '../actions/searchValues'
 
 const initialState = {
     searchedValue: "trendy",
-    gifs: null,
-    favoritedImages: [],
+    gifs: [],
+    recentFavoriteFilter: [],
 };
 
 const SearchReducer = (state = initialState, action) => {
     const { type, payload } = action;
 
     switch(type) {
-        case searchActions.types.SEARCH_FAVORITE_GIFS: {
+        case searchActions.types.ADD_REMOVE_GIF: {
             console.log("Accion index", action.index);
             //const { searchedValue, url } = payload;
             //console.log("SEARCH_FAVORITE_GIFS");
@@ -68,40 +68,12 @@ const SearchReducer = (state = initialState, action) => {
             console.log("ESTADO EN BUSQUEDA", state);
             console.log("PAYLOAD", payload.data.data)
             console.log("Entro a trending");
-            let newState = {favoritedImages: [], gifs: payload.data.data}
+            let newState = {...state, gifs: payload.data.data}
             return newState;
         }
 
-        case searchActions.types.SEARCH_TRENDING: {
-            /*let newState = null;
-            console.log("SEARCH_TRENDING");
-            fetch(`${apiURL}${apiTrends}?api_key=${apiKey}`)
-            //fetch(`http://api.giphy.com/v1/gifs/trending?api_key=MKGAXNQl5cXUBSBMrXSsufVZ9bqvhX6p`)
-            .then(Response => {
-                    return Response.json().then( (json) => {
-                        console.log(json.data);
-                        var newArray = [];
-                        var newObject = {};
-                        
-                        for(var a = 0; a <= Object.keys(json.data).length - 1; a++){
-                            newObject = {};
-                            newObject.id = json.data[a].id;
-                            newObject.url = json.data[a].images.downsized.url;
-                            newArray.push(newObject);
-                        }
-                        console.log(newArray);
-                        
-                        //this.setState({ gifs: newArray });
-                        newState = {...state, gifs: newArray};
-                        console.log("NUEVO ESTADO. ", newState)                   
-                    }
-                )
-            })
-            return newState;*/
-            return;
-        }
-
         case searchActions.types.SEARCH_UPDATE_VALUE: {
+            console.log("aCTUALIZA VALOR DE PA", payload);
             //console.log("updated state");
             //console.log("Payload", state.favoritedImages)
             //console.log("STATE PAYLOAD", state.favoritedImages[1].searchValue);

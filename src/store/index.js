@@ -10,7 +10,12 @@ const middleware = [
   sagaMiddleware,
 ];
 
-const initialState = {};
+const initialState = {
+  searchedValue: "trendy",
+  gifs: [],
+  favoritedImages: [],
+  recentFavoriteFilter: [],
+};
 
 const composedEnhancers = compose(
   applyMiddleware(...middleware),

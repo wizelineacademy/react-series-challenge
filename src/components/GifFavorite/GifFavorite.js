@@ -25,25 +25,32 @@ class GifFavorite extends Component {
 
     updateState = (event) => {
         console.log(event);
-        this.setState({ searchedValue: event })
+        if(event === ""){
+            this.setState({searchResults: this.props.favoritedImages})
+        } else {
+            this.setState({ searchedValue: event })
+        }
     }
 
     handleSearch = () => {
         console.log(this.props.favoritedImages);
         //const searchParam = event.target.value;
-        let newArray = Object.keys(this.props.favoritedImages).map((key, index) => {
-            return this.props.favoritedImages[index]
-        }).filter(word => {
-            console.log("WORD", word);
-            console.log("SEARCHEDVALUE", this.state.searchedValue)
-            return word.searchedValue.includes(this.state.searchedValue)});
-        
-        console.log("NUEVO ARRAY", newArray);
 
-        if(newArray !== undefined && newArray !== null && newArray.length >= 0){
-            console.log("Entro a actualizar");
-            this.setState({ searchResults: newArray });
-        } 
+        if(this.state.searchedValue === ""){
+            this.setState({searchResults: this.props.favoritedImages})
+        } else {
+            let newArray = Object.keys(this.props.favoritedImages).map((key, index) => {
+                return this.props.favoritedImages[index]
+            }).filter(word => {
+                console.log("WORD", word);
+                console.log("SEARCHEDVALUE", this.state.searchedValue)
+                return word.searchedValue.includes(this.state.searchedValue)});
+            
+            if(newArray !== undefined && newArray !== null && newArray.length >= 0){
+                console.log("Entro a actualizar");
+                this.setState({ searchResults: newArray });
+            } 
+        }
     }
 
     render() {
@@ -66,9 +73,9 @@ class GifFavorite extends Component {
 
 const mapStateToProps = (state) => {
     console.log(state.favoritedImages);
-    const { greeting, favoritedImages } = state;
+    const { favoritedImages } = state;
     return {
-        greeting, favoritedImages
+        favoritedImages
     }
 }
 
