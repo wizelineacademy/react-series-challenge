@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from "redux";
-import {loadAllGifs} from "../actions/allGifs";
-import ElementList from "./ElementList";
+import { bindActionCreators } from 'redux';
+import {loadAllGifs} from '../actions/allGifs';
+import ElementList from './ElementList';
+import SearchBar from './SearchBar';
 
 class ElementsView extends Component{
 
@@ -13,6 +14,8 @@ class ElementsView extends Component{
     render(){
         return (
             <div>
+                <h2>Type to search for gifs</h2>
+                <SearchBar />
                 <h4>Main Gifs View!</h4>
                 <ElementList all={this.props.allGifs} search={this.props.searchGifs} />
             </div>

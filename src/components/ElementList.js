@@ -12,7 +12,6 @@ const ElementList = (props) => {
 
     return (
         <div>
-            <h3>Gifs</h3>
             {renderGifs()}
         </div>
     );

@@ -25,8 +25,8 @@ class App extends Component {
               </ul>
 
               <hr />
-              <h2>Type to search for gifs</h2>
-              <SearchBar />
+              <h2>Click on image to add or delete</h2>
+
 
               <Route exact path="/" component={ElementsView} />
               <Route path="/FavElements" component={FavElements} />
