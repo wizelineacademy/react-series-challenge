@@ -4,8 +4,12 @@ const favGifs = (state = {}, action) => {
     switch (action.type) {
         case ADD_ITEM:{
             const newState = { ...state };
-            newState[action.payload.id] = action.payload;
-            console.log(newState);
+            if(newState[action.payload.id]){
+                delete(newState[action.payload.id])
+            }else {
+                newState[action.payload.id] = action.payload;
+                console.log(newState);
+            }
             return newState;
         }
         case DELETE_ITEM:{

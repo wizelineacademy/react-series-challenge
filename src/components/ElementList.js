@@ -7,7 +7,7 @@ const ElementList = (props) => {
 
     const renderGifs = () => {
         const gifs = searchGifsLength > 0 ? props.search : props.all;
-        return  gifs ? Object.keys(gifs).map((gif) => <Element key={gif.id} gif={gifs[gif]} />) : <h1>No info</h1>
+        return  gifs ? Object.keys(gifs).map((gif) => <Element key={gif.id} gif={gifs[gif]}> x</Element>) : <h1>No info</h1>
     };
 
     return (
