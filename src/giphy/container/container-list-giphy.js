@@ -51,22 +51,19 @@ export default class ContainerListGiphy extends Component{
                   key={index}
                   urlGiphy={giphy.images.downsized.url}
                   description={giphy.title}
-                  openModal={this.handleOpenModal}
-                  modalVisible={this.state.modalVisible}
-                  handleCloseModal={this.handleCloseModal}
                   handleOpenModal={this.handleOpenModal}
                 />
               )
             })
           }
           {
-          this.state.modalVisible && 
-          <Modal 
-            favorites={this.favorites}
-            handleCloseModal={this.handleCloseModal}
-            colorHeart={this.state.colorHeart}
-            listGiphy={listGiphy}
-          />
+            this.state.modalVisible && 
+            <Modal 
+              favorites={this.favorites}
+              handleCloseModal={this.handleCloseModal}
+              colorHeart={this.state.colorHeart}
+              listGiphy={listGiphy}
+            />
           }
       </section>      
     )
