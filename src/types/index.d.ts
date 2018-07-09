@@ -13,6 +13,7 @@ export interface IGIF {
         original: IImageObject
         fixed_height: IImageObject
     }
+    title: string
 }
 
 export interface AppState {

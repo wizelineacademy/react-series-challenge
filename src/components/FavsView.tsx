@@ -3,6 +3,7 @@ import { IGIF } from '../types';
 import GIFList from './presentational/GIFList';
 import {connect} from 'react-redux';
 import { Dispatch, bindActionCreators } from 'redux';
+import FavsSearch from './FavsSearch';
 
 interface IFavsView {
     gifs: IGIF[]
@@ -12,16 +13,23 @@ class FavsView extends React.Component<IFavsView, any> {
     public render() {
         return (<div>
             <h1 className="center">Your favorite GIFS</h1>
+            <FavsSearch />
             <GIFList gifs={this.props.gifs} />
         </div>);
     }
 }
 
-function mapStateToProps(state: any) {
-    const { favs } = state;
+function filterFavs(favs: object, query: string) {
     const gifs = Object.keys(favs).map(key => favs[key]);
 
-    return { gifs }
+    // Don't filter if there is no query term
+    if (!query || query.length === 0) return gifs;
+
+    return gifs.filter((gif: IGIF) => gif.title.includes(query));
+}
+
+function mapStateToProps(state: any) {
+    return { gifs: filterFavs(state.favs, state.filter_favs) }
 }
 function mapDispatchToProps(dispatch: Dispatch) {
     return bindActionCreators({}, dispatch);

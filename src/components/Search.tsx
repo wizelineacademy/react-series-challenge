@@ -17,7 +17,7 @@ class Search extends React.Component<any> {
     }
 
     public render() {
-        const { query} = this.props;
+        const { query } = this.props;
         return <input onChange={this.onSearch}
                     value={query}
                     type='text'
