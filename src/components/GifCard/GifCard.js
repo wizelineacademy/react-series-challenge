@@ -1,27 +1,44 @@
 import React, {Component} from 'react';
+import {bindActionCreators} from "redux";
+import { connect } from 'react-redux';
 import { GifContainer, Gif, GifOverlay, GifOverlayLoading, FavoriteBtn } from './GifCard.styled';
+import favoriteGifsActions from "../../actions/favoriteGifs";
+
 class GifCard extends Component {
 
     constructor(props) {
         super(props);
 
-        this.state = { gifLoaded: false };
-        this.onLoadHandler = this.onLoadHandler.bind(this);
+        this.state = { gifLoaded: false, isFavorite: false};
     }
 
-    onLoadHandler = (e) => {
+    onLoadHandler = () => {
         const gifLoaded = !this.state.gifLoaded;
-        this.setState({gifLoaded });
+        this.setState({ gifLoaded });
+    };
+
+    onClickFavoriteButton = () => {
+
+        const isFavorite = !this.state.isFavorite;
+        this.setState({ isFavorite });
+
+        if (isFavorite) {
+            const { gif } = this.props;
+            this.props.addFavoriteGif({ gif });
+
+        }
     };
 
     render() {
 
         const { gif } = this.props;
 
+        const buttonIcon = this.state.isFavorite ? <i className="fas fa-heart" /> : <i className="far fa-heart" />;
+
         const gifOverlay = (
             <GifOverlay>
-                <FavoriteBtn>
-                    <i className="far fa-heart"></i>
+                <FavoriteBtn onClick={this.onClickFavoriteButton} isFavorite={this.state.isFavorite}>
+                    { buttonIcon }
                 </FavoriteBtn>
             </GifOverlay>
         );
@@ -41,6 +58,17 @@ class GifCard extends Component {
         );
     }
 
+}
+
+
+const mapDispatchToProps = (dispatch) => {
+
+    const { addFavoriteGif } = favoriteGifsActions.creators;
+
+    return bindActionCreators({
+        addFavoriteGif,
+    }, dispatch);
+
 };
 
-export default GifCard;
+export default connect(null, mapDispatchToProps)(GifCard);

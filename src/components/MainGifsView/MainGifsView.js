@@ -7,7 +7,10 @@ import trendGifsActions from "../../actions/trendGifs";
 class MainGifsView extends Component{
 
     componentDidMount() {
-        this.props.loadTrendGifs();
+        const trendGifsLenght = Object.keys(this.props.trendGifs).length;
+        if (trendGifsLenght === 0) {
+            this.props.loadTrendGifs();
+        }
     }
 
     render(){

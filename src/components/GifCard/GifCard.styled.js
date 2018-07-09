@@ -47,7 +47,7 @@ const FavoriteBtn = styled.button`
     font-size: 1.4rem;
     background: transparent;
     border: none;
-    color: #fff;
+    color: ${(props) => props.isFavorite ? '#E93D44' : '#FFF'};
     cursor: pointer;
     
     &:focus {
