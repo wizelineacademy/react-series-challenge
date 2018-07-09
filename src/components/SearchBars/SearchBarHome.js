@@ -2,6 +2,7 @@ import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import giftActions from '../../redux/actions/gifts';
+import './SearchBar.css'
 
 const SearchBarHome = ({ getGift }) =>{
   
@@ -10,9 +11,11 @@ const SearchBarHome = ({ getGift }) =>{
   }
 
   return (
-    <input 
-      placeholder={"Search GIPHY"}
-      onChange={(event) => onInputChange(event.target.value)} />
+    <div>
+      <input className="SearchBar"
+        placeholder={"Search GIPHY"}
+        onChange={(event) => onInputChange(event.target.value)} />
+    </div>
   );
 }
 

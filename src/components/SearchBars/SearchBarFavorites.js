@@ -21,9 +21,11 @@ const SearchBarFavorites = (props) =>{
     }
 
     return (
-        <input 
-            placeholder={"Search Favorite by name"}
-            onChange={(event) => onInputChange(event.target.value)} />
+        <div>
+            <input  className="SearchBar"
+                placeholder={"Search Favorite by name"}
+                onChange={(event) => onInputChange(event.target.value)} />
+        </div>
     );
 }
 

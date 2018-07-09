@@ -15,7 +15,7 @@ class Home extends Component {
     const { gifts } = this.props;
 
     return (
-        <GiftContainer 
+        <GiftContainer
           searchBar = {<SearchBarHome />}
           giftList = {gifts ? <GiftList 
                           gifts={gifts}/>:""}

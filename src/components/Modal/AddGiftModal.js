@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import Modal from 'react-modal';
 import giftModalActions from '../../redux/actions/giftModal';
 import favoriteActions from '../../redux/actions/favorites';
+import './Modal.css';
 
 Modal.setAppElement('#root');
 
@@ -11,6 +12,10 @@ const customStyles = {
   content: {
     top: '50%',
     left: '50%',
+    width: '210px',
+    height: '310px',
+    overflow: 'hidden',
+
     transform: 'translate(-50%, -50%)'
   }
 };
@@ -47,14 +52,11 @@ const AddGiftModal = (props) => {
       style={customStyles}
     >
       <div>
-        <header>{name}</header>
-        <img src={url} width={"95%"} alt={""}/>
+        <header className="modal-header">{name}</header>
+        <img className="modal-image" src={url} alt={""}/>
       </div>
-      <button onClick={() => hideGiftModal()}>
-        Close
-      </button>
-      <button onClick={isFavorite ? ()=>deleteFavorite(gift): ()=>addFavorite(gift)}>Like</button>
-      <span>{isFavorite ? "Favorite" : ""}</span>
+      <button className="modal-button" onClick={() => hideGiftModal()}>Close</button>
+      <button className={`modal-button ${isFavorite ? "favorite":""}`} onClick={isFavorite ? ()=>deleteFavorite(gift): ()=>addFavorite(gift)}>Like</button>
       <span>{}</span>
     </Modal>
   );
