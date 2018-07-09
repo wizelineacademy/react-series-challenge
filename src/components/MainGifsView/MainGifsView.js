@@ -16,7 +16,7 @@ class MainGifsView extends Component{
     render(){
 
         return (
-            <GifsList mainGifs={this.props.trendGifs} searchGifs={this.props.searchGifs}/>
+            <GifsList mainGifs={this.props.trendGifs} secondaryGifs={this.props.searchGifs}/>
         );
     }
 

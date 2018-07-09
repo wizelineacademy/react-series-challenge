@@ -4,10 +4,10 @@ import { CardsContainer } from './GifsList.styled';
 
 const GifsList = (props) => {
 
-    const searchGifsLength = props.searchGifs ? Object.keys(props.searchGifs).length : 0;
+    const secondaryGifsLength = props.secondaryGifs ? Object.keys(props.secondaryGifs).length : 0;
 
     const renderListGifCard = () => {
-        const gifs = searchGifsLength > 0 ? props.searchGifs : props.mainGifs || {};
+        const gifs = secondaryGifsLength > 0 ? props.secondaryGifs : props.mainGifs || {};
         return Object.keys(gifs).map((gifId) => <GifCard key={gifId} gif={gifs[gifId]}/>)
     };
 

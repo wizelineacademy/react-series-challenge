@@ -43,8 +43,8 @@ class App extends Component {
               <MainContainer>
                   <Switch>
 
-                      <Route path="/trending" component={MainGifsView}/>
-                      <Route path="/favorites" component={FavoriteGifs}/>
+                      <Route exact path="/trending" component={MainGifsView}/>
+                      <Route exact path="/favorites" component={FavoriteGifs}/>
                       <Redirect from="/" to="/trending"/>
 
                   </Switch>

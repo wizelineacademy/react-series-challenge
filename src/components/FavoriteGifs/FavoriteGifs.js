@@ -11,20 +11,23 @@ class FavoriteGifs extends Component {
     }
 
     render(){
+
+        const { favs, filtered } = this.props;
+
         return (
-            <GifsList mainGifs={this.props.favoriteGifs}/>
+            <GifsList mainGifs={favs} secondaryGifs={filtered}/>
         );
     }
 
 }
 
 const mapStateToProps = (state) => {
-    const {
-        favoriteGifs,
-    } = state;
+
+    const { favs, filtered } = state.favoriteGifs;
 
     return {
-        favoriteGifs,
+        favs,
+        filtered,
     };
 };
 
