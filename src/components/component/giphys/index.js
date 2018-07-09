@@ -1,13 +1,8 @@
 import React, { Component } from "react";
 
-import actions from "./../../../redux/actions";
-
 import './giphys.css';
 
 class Giphys extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   handleKeep = (event,index) => {
     event.preventDefault();
