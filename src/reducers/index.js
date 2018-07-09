@@ -5,7 +5,8 @@ const {
   TRENDING_FETCHED, 
   SEARCH_FETCHED, 
   TOGGLE_FAVORITE,
-  LOAD_SAVED_FAVORITES
+  LOAD_SAVED_FAVORITES,
+  FILTER_FAVORITES
 } = actions.types;
 
 const mapFavoritesToList = (items, favorites) => (
@@ -23,6 +24,7 @@ const rootReducer = (state = initialState, action) => {
         url: gif.images.fixed_height_downsampled.url,
         original: gif.images.original.url,
         id: gif.id,
+        title: gif.title,
         favorite: state.favorites.find((fav) => (fav.id == gif.id))? true : false
       }));
       return newState;
@@ -33,6 +35,7 @@ const rootReducer = (state = initialState, action) => {
         url: gif.images.fixed_height_downsampled.url,
         original: gif.images.original.url,
         id: gif.id,
+        title: gif.title,
         favorite: state.favorites.find((fav) => (fav.id == gif.id))? true : false
       }));
       newState['searchQuery'] = action.payload.query;
@@ -68,6 +71,11 @@ const rootReducer = (state = initialState, action) => {
       } catch (e) {
         console.warn(e);
       }
+      return newState;
+
+    case FILTER_FAVORITES:
+      var newState = { ...state };
+      newState['filterFavorites'] = action.payload.query;
       return newState;
 
     default:

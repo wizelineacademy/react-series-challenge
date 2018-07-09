@@ -4,19 +4,37 @@ import ErrorBoundary from "../ErrorBoundary";
 
 import actions from "../../actions";
 import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 
-const FavoritesPanel = ({ data }) => (
-  <div>
-    <ErrorBoundary message="Unable to load.">
-      <GifListView data={data} />
-    </ErrorBoundary>
-  </div>
-)
+const { filterFavorites } = actions.creators;
+
+const FavoritesPanel = ({ data, filterFavorites, filter }) => {
+  const filteredData = data.filter((element) => (
+    element.title.toLowerCase().includes(filter.toLowerCase())
+  ))
+  return (
+    <div>
+      <input 
+        type="text" 
+        placeholder="Filter" 
+        onChange={(e) => filterFavorites(e.target.value)}
+      />
+      <ErrorBoundary message="Unable to load.">
+        <GifListView data={filteredData} />
+      </ErrorBoundary>
+    </div>
+  )
+}
 
 const mapStateToProps = state => {
   return {
-    data: state.favorites
+    data: state.favorites,
+    filter: state.filterFavorites
   }
 }
 
-export default connect(mapStateToProps)(FavoritesPanel);
+const mapDispatchToProps = dispatch => (
+  bindActionCreators({ filterFavorites }, dispatch)
+)
+
+export default connect(mapStateToProps, mapDispatchToProps)(FavoritesPanel);

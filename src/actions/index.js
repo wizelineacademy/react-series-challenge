@@ -7,6 +7,8 @@ const SEARCH_FETCHED = 'SEARCH_FETCHED';
 const TOGGLE_FAVORITE = 'TOGGLE_FAVORITE';
 const LOAD_SAVED_FAVORITES = 'LOAD_SAVED_FAVORITES';
 
+const FILTER_FAVORITES = 'FILTER_FAVORITES';
+
 const getTrendingGifs = () => ({type: GET_TRENDING, payload: null});
 const trendingGifsFetched = (payload = {}) => ({type: TRENDING_FETCHED, payload});
 
@@ -16,6 +18,8 @@ const searchGifsFetched = (data, query) => ({type: SEARCH_FETCHED, payload:{data
 const toggleFavorite = (id, gif) => ({type: TOGGLE_FAVORITE, payload: { id, gif } })
 const loadSavedFavorites = () => ({type: LOAD_SAVED_FAVORITES, payload: null})
 
+const filterFavorites = (query = '') => ({type: FILTER_FAVORITES, payload: { query } })
+
 export default {
   types: {
     GET_TRENDING,
@@ -23,7 +27,8 @@ export default {
     GET_SEARCH,
     SEARCH_FETCHED,
     TOGGLE_FAVORITE,
-    LOAD_SAVED_FAVORITES
+    LOAD_SAVED_FAVORITES,
+    FILTER_FAVORITES
   },
   creators: {
     getTrendingGifs,
@@ -31,6 +36,7 @@ export default {
     searchGifs,
     searchGifsFetched,
     toggleFavorite,
-    loadSavedFavorites
+    loadSavedFavorites,
+    filterFavorites
   }
 }
