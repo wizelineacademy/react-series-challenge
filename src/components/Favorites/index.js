@@ -15,7 +15,6 @@ class Favorites extends Component {
       search: '',
       loading: false,
       title: '',
-      favoriteGifs: []
     }
   }
 
@@ -44,26 +43,23 @@ class Favorites extends Component {
     })
   }
 
-  handleAddFavorites = (favoriteGif) => {
+  handleAddFavorites = (newFavoriteGif) => {
 
-    const { trendingGifs } = this.state
-    console.log(favoriteGif)
+    let favoriteGifs = JSON.parse(localStorage.getItem('favoriteGifs'))
+    favoriteGifs  = !!favoriteGifs ? favoriteGifs : []
 
-    const newFavoriteGif = [
-      ...trendingGifs,
-      favoriteGif
+    console.log(favoriteGifs)
+
+    const updateFavoriteGifs = [
+      ...favoriteGifs,
+      newFavoriteGif
     ]
 
-    this.setState({
-      trendingGifs: newFavoriteGif
-    })
-
-    console.log(newFavoriteGif)
-    localStorage.setItem('favoriteGif', JSON.stringify(newFavoriteGif))
+    localStorage.setItem('favoriteGifs', JSON.stringify(updateFavoriteGifs))
   }
 
   getFavorites() {
-    const favoriteGifs = JSON.parse(localStorage.getItem('favoriteGif'))
+    const favoriteGifs = JSON.parse(localStorage.getItem('favoriteGifs'))
 
     console.log(favoriteGifs)
 

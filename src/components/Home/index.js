@@ -42,6 +42,21 @@ class Home extends Component {
     })
   }
 
+  handleAddFavorites = (newFavoriteGif) => {
+
+    let favoriteGifs = JSON.parse(localStorage.getItem('favoriteGifs'))
+    favoriteGifs  = !!favoriteGifs ? favoriteGifs : []
+
+    console.log(favoriteGifs)
+
+    const updateFavoriteGifs = [
+      ...favoriteGifs,
+      newFavoriteGif
+    ]
+
+    localStorage.setItem('favoriteGifs', JSON.stringify(updateFavoriteGifs))
+  }
+
   updateQuery(e) {
     this.setState({
       query: e.target.value
@@ -88,7 +103,7 @@ class Home extends Component {
         {
           loading
             ? 'Cargando ...'
-            : <Gifs gifs={trendingGifs} title={title}/>
+            : <Gifs gifs={trendingGifs} title={title} addFavorites={this.handleAddFavorites}/>
         }
       </Fragment>
     )
