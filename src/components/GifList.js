@@ -23,6 +23,7 @@ class GifList extends Component {
               key={this.props.gifs[gif].id}
               id={this.props.gifs[gif].id}
               liked={this.props.gifs[gif].liked}
+              title={this.props.gifs[gif].title}
               src={this.props.gifs[gif].images.fixed_width_small.url}
               onClick={() => this.toggleFavorite(gif)}
             />
