@@ -6,14 +6,10 @@ const searchReducer = (state = initialState, action) => {
 
   switch (type) {
     case searchActions.types.SEARCH_GIFS_FETCHED: {
-      const { data } = payload;
+      const { gifs } = payload;
 
       let newState = {};
-
-      data.map(gif => {
-        return newState[gif.id] = { ...gif };
-      });
-      
+      gifs.map(gif => newState[gif.id] = { ...gif });
       return newState;
     }
     default:

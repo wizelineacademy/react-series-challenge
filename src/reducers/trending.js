@@ -6,14 +6,10 @@ const trendingReducer = (state = initialState, action) => {
 
   switch (type) {
     case trendingActions.types.TRENDING_GIFS_FETCHED: {
-      const { data } = payload;
+      const { gifs } = payload;
 
       let newState = {};
-
-      data.map(gif => {
-        return newState[gif.id] = { ...gif };
-      });
-      
+      gifs.map(gif => newState[gif.id] = { ...gif });
       return newState;
     }
     default:
