@@ -7,7 +7,8 @@ import store from '../store';
 //import Favorites from './Favorites';
 import {} from '../.env';
 
-const URL = process.env.REACT_APP_API_URL+'trending?api_key='+process.env.REACT_APP_GIPHY_API_KEY+'&limit=10';
+const URL = `http://api.giphy.com/v1/gifs/trending?api_key=`+process.env.REACT_APP_GIPHY_API_KEY+`&limit=10`;
+//console.log(URL);
 
 class App extends Component {
   constructor(props) {
@@ -35,7 +36,7 @@ class App extends Component {
   }
 
   handleSubmit(event) {
-    let url = process.env.REACT_APP_API_URL+'search?q='+this.state.searchFor+'&api_key='+process.env.REACT_APP_GIPHY_API_KEY+'&limit=10';
+    let url = 'http://api.giphy.com/v1/gifs/search?q='+this.state.searchFor+'&api_key='+process.env.REACT_APP_GIPHY_API_KEY+'&limit=10';
     axios.get(url)
       .then(res => {
         let gifs = res.data.data;

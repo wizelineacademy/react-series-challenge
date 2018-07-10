@@ -3,18 +3,18 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Home from './components/Home';
 import Favorites from './components/Favorites';
 import logo from './logo.svg';
-//import NotFound from './components/NotFound';
 import './App.css';
+import { Title, Wrapper, TheApp } from './App.style.js'
 
 class App extends Component {
   
   render() {
     return (
-      
-        <div className="App">
+      <Wrapper>
+        <TheApp>
           <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
-            <h1 className="App-title">DOCTOR GIF</h1>
+            <Title>DOCTOR GIF</Title>
           </header>
           <Router>
             <div>
@@ -32,7 +32,8 @@ class App extends Component {
               <Route path="/favorites" component={Favorites} />
             </div>
           </Router>
-        </div>
+        </TheApp>
+      </Wrapper>
     );
   }
 }
