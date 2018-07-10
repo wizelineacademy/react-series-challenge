@@ -4,23 +4,31 @@ import ListGiphy from '../components/list-giphy';
 import Search from '../components/search';
 // import ContainerModal from '../../modal/container/container-modal';
 import Modal from '../../modal/component/modal';
+import ContainerModal from '../../modal/container/container-modal';
 
-const listGiphy = [];
+// const listGiphy = [];
 export default class ContainerListGiphy extends Component{
   state = {
-    dataGiphy:{},
+    // los objetos no tiene map
+    dataGiphy:[],
     modalVisible:false,
     isFavorite:false,
-    colorHeart:'gray'
+    colorHeart:'gray',
+    selectedGIF:{}
   }
   handleCloseModal = ()=>{
     this.setState({
       modalVisible:false
     })
   }
-  handleOpenModal = () =>{
+  // this.state.datos -> []
+  // this.state.datos -> [ 1 ]
+  // this.state.selectedGIF -> {} -> objeto - 123
+  // this.state.selectedGIF -> { image: '', ... } -> objeto - 456
+  handleOpenModal = (index) =>{
     this.setState({
-      modalVisible:true
+      modalVisible:true,
+      selectedGIF:this.state.dataGiphy[index]// item de un arreglo de objetos
     })
   }
   favorites = () =>{
@@ -35,7 +43,7 @@ export default class ContainerListGiphy extends Component{
     axios.get(url)
     .then((resultsGiphy) => {
       this.setState({
-        dataGiphy:resultsGiphy
+        dataGiphy:resultsGiphy.data.data
       })
     })
   }
@@ -45,33 +53,35 @@ export default class ContainerListGiphy extends Component{
       <section className="list-giphy container">
         <Search/>
           {
-            listGiphy.map((giphy,index) => {
+            this.state.dataGiphy.map((giphy,index) => {
               return(
                 <ListGiphy 
                   key={index}
                   urlGiphy={giphy.images.downsized.url}
                   description={giphy.title}
-                  handleOpenModal={this.handleOpenModal}
+                  handleOpenModal={()=> this.handleOpenModal(index)}
                 />
               )
             })
           }
           {
             this.state.modalVisible && 
-            <Modal 
-              favorites={this.favorites}
-              handleCloseModal={this.handleCloseModal}
-              colorHeart={this.state.colorHeart}
-              listGiphy={listGiphy}
-            />
+              <ContainerModal >
+                <Modal 
+                  favorites={this.favorites}
+                  handleCloseModal={this.handleCloseModal}
+                  colorHeart={this.state.colorHeart}
+                  GIF={this.state.selectedGIF}
+                />
+              </ContainerModal>
           }
       </section>      
     )
   }
-  componentWillUpdate(nextProps, nextState){
-    nextState.dataGiphy.data.data.forEach((giphys,index) => {
-      listGiphy.push(giphys);
-    })
-  }
+  // componentWillUpdate(nextProps, nextState){
+  //   nextState.dataGiphy.data.data.forEach((giphys,index) => {
+  //     listGiphy.push(giphys);
+  //   })
+  // }
 };
 
