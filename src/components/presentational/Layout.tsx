@@ -11,6 +11,4 @@ export const Container = styled.header`
     flex-direction: column;
     background-color: #2C3E50;
     color: #FFF;
-
-    input { color: #333; }
 `;

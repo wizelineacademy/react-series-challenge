@@ -3,14 +3,7 @@ import { connect } from 'react-redux';
 import { Dispatch, bindActionCreators } from 'redux';
 
 import { filter_favs as filter_favs_action } from '../actions/gifs';
-
-import styled from 'styled-components';
-
-const _input = styled.input`
-    width: 100%;
-    padding: 6px;
-    border-radius: 20px;
-`;
+import { SearchInput } from './Search.style';
 
 class FavsSearch extends React.Component<any> {
     public onSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -19,7 +12,7 @@ class FavsSearch extends React.Component<any> {
     }
 
     public render() {
-        return <_input type='text'
+        return <SearchInput type='text'
                 onChange={this.onSearch}
                 placeholder='Search in your favorites...' />;
     }

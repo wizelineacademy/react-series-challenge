@@ -3,7 +3,6 @@ import {connect} from 'react-redux';
 import { fetch_gifs } from '../actions/gifs';
 import { bindActionCreators, ActionCreator, Dispatch } from 'redux';
 
-import * as API from '../api';
 import GIFList from './presentational/GIFList';
 import { IGIF } from '../types';
 

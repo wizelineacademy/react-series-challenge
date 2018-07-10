@@ -4,17 +4,12 @@ import GIFList from './presentational/GIFList';
 import {connect} from 'react-redux';
 import { Dispatch, bindActionCreators } from 'redux';
 import FavsSearch from './FavsSearch';
-import styled from 'styled-components';
+
+import { _div_search } from './FavsView.style'
 
 interface IFavsView {
     gifs: IGIF[]
 }
-
-const _div_search = styled.div`
-    width: 100%;
-    max-width: 320px;
-    margin: 0 auto;
-`;
 
 class FavsView extends React.Component<IFavsView, any> {
     public render() {

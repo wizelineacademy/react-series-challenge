@@ -1,47 +1,18 @@
 import * as React from 'react';
 import { IGIF } from '../../types';
-import styled from 'styled-components';
 
 import FavButton from './FavButton';
 import { connect } from 'react-redux';
 import { Dispatch, bindActionCreators } from 'redux';
 import { toggle_favorite } from '../../actions/gifs';
 
+import {_div, _gif_div, _gif_title} from './GIFList.style'
+
 interface IGIFListProps {
     gifs: IGIF[],
     favs: IGIF[],
     onToggleFavorite: any
 }
-
-const _div = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-`;
-
-const _gif_div = styled.div`
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    margin: 1em;
-`;
-const _gif_title = styled.p`
-    position: absolute;
-    top: 0px;
-    min-height: 32px;
-    text-align: center;
-    background-color: rgba(0,0,0, 0.5);
-    color: #FFF;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-
-    small { padding: 1em; text-align: center; }
-`;
-
 class GIFList extends React.Component<IGIFListProps, any> {
     public render() {
         const props = this.props;

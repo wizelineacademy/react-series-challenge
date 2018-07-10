@@ -27,7 +27,6 @@ const _nav = styled.nav`
     }
 
     .active { color: #FC4349 }
-    .search-bar { flex: 1; }
 `;
 
 const LINKS = ROUTES.map(({path, content}) =>
@@ -38,7 +37,7 @@ class AppNav extends React.Component {
         return (<_nav>
             <ul>
                 {LINKS}
-                <li className='search-bar'><Search /></li>
+                <li><Search /></li>
             </ul>
         </_nav>);
     }

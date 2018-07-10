@@ -4,13 +4,7 @@ import { Dispatch, bindActionCreators } from 'redux';
 
 import { search_trending, fetch_gifs as fetch_gifs_action } from '../actions/gifs';
 
-import styled from 'styled-components';
-
-const _input = styled.input`
-    width: 80%;
-    padding: 6px;
-    border-radius: 20px;
-`;
+import { SearchInput } from './Search.style';
 
 class Search extends React.Component<any> {
     public onSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -26,10 +20,9 @@ class Search extends React.Component<any> {
 
     public render() {
         const { query } = this.props;
-        return <_input onChange={this.onSearch}
+        return <SearchInput onChange={this.onSearch}
                     value={query}
-                    type='text'
-                    placeholder='Search...' />;
+                    placeholder='Search in trending...' />;
     }
 }
 function mapStateToProps(state: any) {

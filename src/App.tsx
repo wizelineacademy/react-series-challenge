@@ -8,7 +8,7 @@ import ROUTES from './routes';
 import Header from './components/presentational/Header';
 import { Container } from './components/presentational/Layout';
 
-import './App.css';
+import './App.style'
 
 class App extends React.Component {
   public render() {
