@@ -7,10 +7,6 @@ import { SearchBarInput } from '../styles/SearchBar.style.js';
 import gifActions from '../actions/gifActions';
 
 class SearchBar extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const { searchGifs } = this.props;
     const self = this;
