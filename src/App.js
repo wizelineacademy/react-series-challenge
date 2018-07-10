@@ -11,7 +11,20 @@ import { bindActionCreators } from 'redux';
 import './App.css';
 import Home from './components/Home';
 import Favorites from './components/Favorites';
+import Navbar from './components/Navbar';
 import actions from './actions';
+import { injectGlobal } from 'styled-components';
+
+injectGlobal`
+html, body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  background-color: lightsteelblue;
+  background-position: center;
+  background-size: cover;
+}`;
 
 class App extends Component {
   componentWillMount() {
@@ -21,16 +34,7 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <header>
-            <ul>
-              <li>
-                <NavLink to="/">Home</NavLink>
-              </li>
-              <li>
-                <NavLink to="/favorites">Favorites</NavLink>
-              </li>
-            </ul>
-          </header>
+          <Navbar />
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/favorites" component={Favorites} />
