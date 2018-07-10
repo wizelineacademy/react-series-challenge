@@ -4,7 +4,7 @@ import store from './store/index';
 import GifPage from './components/GifPage/GifPage'
 import GifFavorite from './components/GifFavorite/GifFavorite';
 import { GifSection, StyledHeader, StyledNavLink, StyledUl, StyledLi, StyledDiv } from './App.styled'
-import { Route, NavLink, Switch, Redirect } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
 class App extends Component {
   render() {

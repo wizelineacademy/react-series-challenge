@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import GifCard from '../GifCards/GifCard/GifCard'
 import GifCardControls from '../GifCards/GifCardControls/GifCardControls'
+import { GifCardsStyled, StyledH1 } from './GifCards.styled';
 
 const GifCards = (props) => {
 
@@ -12,25 +13,25 @@ const GifCards = (props) => {
             arrays = Object.keys(gifData).map((key, index) => {
                 let { id, url, isFavorite } = gifData[index];
                 return (
-                <div key = {id} className = "GifCards">
+                <GifCardsStyled key = {id} >
                     <GifCard imageUrl = {url}/>
 
                     <GifCardControls 
                     key = {index} 
                     addRemoveGif = {() => addRemoveGif({ id: id, searchedValue: searchedValue, url: url})} 
                     isFavorite = {isFavorite} />
-                </div>);
+                </GifCardsStyled>);
             });
 
             if(arrays.length === 0){
-                arrays = <h1> No results :( </h1>;
+                arrays = <StyledH1> No Results Found :(. Go search and fav some awesome gifs! </StyledH1>;
             }
         }
 
         return(
-            <div className = "GifCards">
+            <Fragment>
                 { arrays }
-            </div>
+            </Fragment>
         )
     
 }

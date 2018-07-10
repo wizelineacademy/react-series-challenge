@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import SearchFunctions from '../../actions/searchValues';
 import ErrorBoundary from '../../ErrorBoundary/ErrorBoundary';
+import { StyledGifPage } from './GifPage.styled'
 
 class GifPage extends Component {
 
@@ -35,18 +36,18 @@ class GifPage extends Component {
         }
 
         return(
-            <div className = "GifPage">
+            <StyledGifPage>
                 <SearchBar 
                 updateState = { this.updateState } 
                 handleSearch = {this.handleSearch} />
 
                 <ErrorBoundary>
-                <GifCards 
-                gifData = { newArray } 
-                addRemoveGif = {this.props.addRemoveGifFavorites} 
-                searchedValue = {this.props.searchedValue}/> 
+                    <GifCards 
+                    gifData = { newArray } 
+                    addRemoveGif = {this.props.addRemoveGifFavorites} 
+                    searchedValue = {this.props.searchedValue}/> 
                 </ErrorBoundary>        
-            </div>)
+            </StyledGifPage>)
     }
 }
 

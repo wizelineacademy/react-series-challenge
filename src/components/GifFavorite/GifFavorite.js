@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import SearchFunctions from '../../actions/searchValues';
 import ErrorBoundary from '../../ErrorBoundary/ErrorBoundary'
+import { StyledGifFavorite } from './GifFavorite.styled'
 
 class GifFavorite extends Component {
 
@@ -47,7 +48,7 @@ class GifFavorite extends Component {
 
     render() {
         return (
-            <div className = "GifFavorite">
+            <StyledGifFavorite>
                     <SearchBar 
                     updateState = { this.updateState } 
                     handleSearch = { this.handleSearch } />
@@ -58,7 +59,7 @@ class GifFavorite extends Component {
                     addRemoveGif = { this.props.addRemoveGifFavorites } 
                     searchedValue = { this.props.searchedValue }/>
                 </ErrorBoundary>
-            </div>
+            </StyledGifFavorite>
         );
     }
 }

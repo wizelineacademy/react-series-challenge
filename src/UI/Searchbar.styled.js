@@ -3,7 +3,8 @@ import searchIcon from '../assets/search.png'
 
 export const StyledSearchbar = styled.div`
     padding-top: 50px;
-    margin: 50px;  
+    padding-bottom: 50px;
+    margin: 0px;  
 `
 
 export const StyledInput = styled.input`

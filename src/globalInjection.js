@@ -1,11 +1,16 @@
 import { injectGlobal } from 'styled-components';
 
 injectGlobal`
-    @import url(‘https://fonts.googleapis.com/css?family=Montserrat|Roboto');
+    @import url('https://fonts.googleapis.com/css?family=Quicksand');  
     
-    body {
-    padding: 0;
-    margin: 0;
-    font-family: Roboto, sans-serif;
+    @font-face { 
+        font-family: 'Quicksand', sans-serif;
+        src: url('https://fonts.googleapis.com/css?family=Quicksand');
     }
+
+    body {
+        font-family: 'Quicksand', sans-serif;
+        height: 100%;
+    }
+
 `

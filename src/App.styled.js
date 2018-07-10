@@ -4,19 +4,29 @@ import { NavLink } from 'react-router-dom';
 export const GifSection = styled.div`
   text-align: center;
   background-color: DarkSlateGray;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 0px;
+  padding-right: 2px;
+  width: 100%;
+  height: 100%;
 `
 
 export const StyledHeader = styled.div`
   text-align: center;
   background-color: Crimson;
-  padding: 5px;
-  margin: 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 2px;
+  width: 100%;
 `
 
 export const StyledDiv = styled.div`
   text-align: center;
+  padding: 0px;
+  border: 0px;
+  margin: -10px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
 `
 /*
   li {
@@ -48,8 +58,8 @@ export const StyledLi = styled.li`
 `
 
 export const StyledNavLink = styled(NavLink)`
+  font-family: 'Quicksand', sans-serif;
   text-align: center;
   color: white;
   padding: 10px;
-  margin: -10px;
 `
