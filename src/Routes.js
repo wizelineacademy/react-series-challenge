@@ -7,8 +7,8 @@ import NoMatch from "./Pages/NoMatch";
 
 const Routes = () => (
   <Switch>
-    <Route exact path="/favorites" component={Favorites} />
     <Route exact path="/" component={Home} />
+    <Route path="/favorites" component={Favorites} />
     <Redirect from="/favorite" to="/favorites" />
     <Route component={NoMatch} />
   </Switch>

@@ -27,13 +27,17 @@ class SearchInput extends React.Component {
       searchFavorite,
       onFilterFavorites
     } = this.props;
-    if (keyCode === 13) {
+
+    console.log(e.target.value);
+    if (
+      keyCode === 13 ||
+      ((fromFavorites && !searchFavorite) || (!fromFavorites && !searchInput))
+    ) {
       if (!fromFavorites) {
         onRequestSearchGifs(searchInput);
       } else {
         onFilterFavorites(searchFavorite);
       }
-      return false;
     }
   };
 
@@ -43,6 +47,7 @@ class SearchInput extends React.Component {
       onChangeSearchInput,
       onChangeFavoritesInput
     } = this.props;
+
     if (!fromFavorites) {
       onChangeSearchInput(e.target.value);
     } else {
@@ -59,7 +64,7 @@ class SearchInput extends React.Component {
           placeholder={
             !fromFavorites ? "Buscar GIFs..." : "Buscar en favoritos..."
           }
-          onKeyPress={this.handleKeyPress}
+          onKeyUp={this.handleKeyPress}
           onChange={this.handleOnChange}
           defaultValue={fromFavorites ? searchFavorite : searchInput}
         />
