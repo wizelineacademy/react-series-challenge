@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 
-import { Link } from "react-router-dom";
-
 // Redux
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
@@ -16,43 +14,23 @@ import './home.css'
 // Components
 import Footer from "./../../component/footer";
 import Giphys from "./../../component/giphys";
+import Header from "./../../component/header";
+
 
 class Home extends Component{
 
-  handleSubmit = (event) => {
-    event.preventDefault();
-    if (this.searchInput.value.length > 0) {
-      this.props.fetchChange(this.searchInput.value.trim());
-    } else {
-      this.searchInput.focus();
-      alert('please enter the text to be search');
-    }
-  }
-
-  handleButton = (event) => {
-    event.preventDefault();
-    this.props.fetchChange('');
+  constructor(props) {
+    super(props);
+    this.home = this.props.match.path === '/';
   }
 
   render() {
-    const { data, local, modifyLocal } = this.props;
+    const { data, local, modifyLocal, fetchChange } = this.props;
 
     return (
       <div>
-        <div>
-          <Link to="/keeps">Favorites</Link>
-          <form onSubmit={this.handleSubmit}>
-            <fieldset>
-              <legend>API:</legend>
-              Search: <input type="text" ref={input => { this.searchInput = input; } } />
-              <input type="submit" value="Search" />
-              <br />
-              <br />
-              <input type="button" value="just show the trendings" onClick={this.handleButton} />
-            </fieldset>
-          </form>
-        </div>
-        <Giphys data={data} local={local} modifyLocal={modifyLocal} />
+        <Header home={this.home} fetchChange={fetchChange} />
+        <Giphys home={this.home} data={data} local={local} modifyLocal={modifyLocal} />
         <Footer />
       </div>
     );

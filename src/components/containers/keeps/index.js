@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 
-import { Link } from "react-router-dom";
-
 // Redux
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
@@ -9,6 +7,7 @@ import { connect } from 'react-redux'
 // Components
 import Footer from "./../../component/footer";
 import Giphys from "./../../component/giphys";
+import Header from "./../../component/header";
 
 // Selectors
 import selectors from "./../../../redux/selectors";
@@ -17,13 +16,12 @@ import actions from "./../../../redux/actions/";
 
 class Keeps extends Component{
   render() {
-    const { local, modifyLocal } = this.props;
+    const { local, modifyLocal, localFind } = this.props;
 
     return (
       <div>
-        <Link to="/">HOME</Link>
-        <div>YOUR SAVES GIPHY...</div>
-        <Giphys data={{ data: local.likes }} local={local} modifyLocal={modifyLocal} />
+        <Header match={this.props.match} localFind={localFind} />
+        <Giphys home={false} data={{ data: local.likes }} local={local} modifyLocal={modifyLocal} />
         <Footer />
       </div>
     )
@@ -38,9 +36,9 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  const {modifyLocal } = actions;
+  const { modifyLocal, localFind } = actions;
 
-  return bindActionCreators({ modifyLocal, }, dispatch);
+  return bindActionCreators({ modifyLocal, localFind }, dispatch);
 }
 
 export default connect(mapStateToProps,mapDispatchToProps)(Keeps);

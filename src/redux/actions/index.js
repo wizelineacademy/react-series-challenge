@@ -9,11 +9,11 @@ const fetchChange = (search = '') => {
   }
 }
 
-const showAlert = (text = '') => {
+const localFind = (filter = '') => {
   return {
-    type: actions.FECTH_CHANGE,
+    type: actions.LOCALSTORAGE_FIND,
     payload: {
-      text
+      filter
     }
   }
 }
@@ -29,5 +29,6 @@ const modifyLocal = (object) => {
 
 export default {
   fetchChange,
-  modifyLocal
+  modifyLocal,
+  localFind,
 }

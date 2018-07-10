@@ -3,7 +3,6 @@ import actions from "./../constants/actions";
 const initialState = {
   likes: [],
   ids: [],
-  random: null,
 }
 
 export default (state = initialState, action) => {
@@ -39,11 +38,12 @@ export default (state = initialState, action) => {
 
       return newState
     }
-    case actions.LOCALSTORAGE_END: {
-      debugger;
+    case actions.LOCALSTORAGE_FIND: {
+      const { filter } = payload;
+
       return {
         ...state,
-        random: Math.random(),
+        filter
       }
     }
     default:
