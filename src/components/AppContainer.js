@@ -5,14 +5,12 @@ import { Route } from 'react-router-dom';
 import GifGrid from '../components/GifGrid';
 import SearchBar from '../components/SearchBar';
 
-import '../styles/App.css';
-
 const AppContainer = (props) => {
   const { gifs, favorites } = props;
   const favoriteGifs = gifs.filter((gif) => favorites.indexOf(gif.id) !== -1);
 
   return (
-    <div className="App-container mt">
+    <div className="AppContainer mt">
       <SearchBar />
 
       <Route

@@ -13,7 +13,7 @@ import logo from '../icons/logo.svg';
 const Header = () => {
   return (
     <HeaderWrapper>
-      <div className="App-container">
+      <div className="AppContainer">
         <HeaderContainer>
           <NavLink to="/">
             <HeaderLogo src={logo} alt="logo" />

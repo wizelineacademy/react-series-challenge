@@ -6,13 +6,14 @@ import store from '../store';
 import AppContainer from '../components/AppContainer';
 import Header from '../components/Header';
 
-import '../styles/App.css';
+import '../styles/Global.style.js';
+
 
 class App extends Component {
   render() {
     return (
       <Provider store={ store }>
-        <div className="App">
+        <div>
           <Header />
 
           <AppContainer />

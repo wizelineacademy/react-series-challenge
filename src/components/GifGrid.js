@@ -7,7 +7,7 @@ const GifGrid = (props) => {
   const { gifs } = props;
 
   return (
-    <GifGridWrapper>
+    <GifGridWrapper className="mt">
       { gifs.map((gif) =>
         <GifCard key={gif.id} {...gif} />
       )}
