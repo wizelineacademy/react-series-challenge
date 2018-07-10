@@ -28,7 +28,6 @@ class SearchInput extends React.Component {
       onFilterFavorites
     } = this.props;
 
-    console.log(e.target.value);
     if (
       keyCode === 13 ||
       ((fromFavorites && !searchFavorite) || (!fromFavorites && !searchInput))
