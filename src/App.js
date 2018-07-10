@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css'
-import SearchBar from './components/SearchBar';
 import FavElements from './components/FavElements';
 import ElementsView from './components/ElementsView';
 import {Route, Link, Redirect, Switch} from "react-router-dom";
+import {StyledLink} from './App.styled';
 
 class App extends Component {
   render() {
@@ -17,7 +17,7 @@ class App extends Component {
           <div>
               <ul>
                   <li>
-                      <Link to="/">Gifs</Link>
+                      <StyledLink to="/">Gifs</StyledLink>
                   </li>
                   <li>
                       <Link to="/FavElements">Fav GIFS</Link>

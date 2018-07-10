@@ -8,6 +8,7 @@ const favGifs = (state = {}, action) => {
                 delete(newState[action.payload.id])
             }else {
                 newState[action.payload.id] = action.payload;
+                newState[action.payload.id].favorite = true;
                 console.log(newState);
             }
             return newState;
