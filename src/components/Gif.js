@@ -9,6 +9,8 @@ import {
     connect
 } from 'react-redux'
 
+import {Wraper, ImgStyled} from "./Gif.style";
+
 class Gifs extends Component {
     constructor(props) {
         super(props);
@@ -25,7 +27,7 @@ class Gifs extends Component {
                 if (image.id === this.props.id) {
                     this.setState({
                         fav: true,
-                        buttonText: "Not Fav"
+                        buttonText: "NotFav"
                     });
                 }
             });
@@ -53,7 +55,7 @@ class Gifs extends Component {
             });
             this.setState({
                 fav: true,
-                buttonText:"Not Fav"
+                buttonText:"NotFav"
             });
             }
         } else {
@@ -63,7 +65,7 @@ class Gifs extends Component {
             });
             this.setState({
                 fav: true,
-                buttonText:"Not Fav"
+                buttonText:"NotFav"
             });
         }
 
@@ -72,19 +74,15 @@ class Gifs extends Component {
     render() {
         return ( 
             < React.Fragment >
+            <Wraper onClick = {this.onClick}>
+                <ImgStyled src={require("./"+this.state.buttonText+".png")}   />
                 <img 
                 alt = ""
                 src = {this.props.url}
                 key = {this.props.id}
-                /> 
-                <button 
-                onClick = {this.onClick} 
-                > 
-                {
-                    this.state.buttonText
-                } 
-                </button> 
-            </React.Fragment>
+                />
+                </Wraper>
+            </ React.Fragment>
         );
     }
 }
