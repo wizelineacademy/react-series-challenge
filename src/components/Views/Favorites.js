@@ -13,6 +13,7 @@ const Favorites = (props) => {
 
     const infoToShow = isSearching ? favoritesMatched : favorites;
     
+
     return (
         <GiftContainer 
             searchBar = {<SearchBarFavorites />}
@@ -24,7 +25,7 @@ const Favorites = (props) => {
 
 const GiftList = (props) => {
     const { gifts } = props
-  
+
     return Object.values(gifts).map((item, index)=> (
       <GiftItem 
         url={item.url}

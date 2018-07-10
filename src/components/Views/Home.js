@@ -17,6 +17,7 @@ class Home extends Component {
     return (
         <GiftContainer
           searchBar = {<SearchBarHome />}
+          gifts = {gifts}
           giftList = {gifts ? <GiftList 
                           gifts={gifts}/>:""}
           />
@@ -26,6 +27,11 @@ class Home extends Component {
 
 const GiftList = (props) => {
   const { gifts } = props
+
+  console.log("gifts:",gifts)
+  if(gifts.length < 5){
+    throw new Error("Not Found")
+  }
   
   return (Object.values(gifts).map((item, index)=> (
     <GiftItem 

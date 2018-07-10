@@ -1,13 +1,16 @@
 import React  from "react";
 import { GiftStyledContainer }  from '../styled_component/Home.styled';
 import AddGiftModal from './Modal/AddGiftModal';
+import ErrorBoundary from './ErrorBoundry';
 
 const GiftContainer = (props) => {
     return (
         <GiftStyledContainer>
             <AddGiftModal />
             {props.searchBar}
-            {props.giftList}
+            <ErrorBoundary gifts={props.gifts} component={<p>Search Not Found</p>}>
+                {props.giftList}
+            </ErrorBoundary>
         </GiftStyledContainer>  
     );
 };

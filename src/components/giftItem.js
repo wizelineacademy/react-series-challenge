@@ -2,6 +2,7 @@ import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import giftModalActions from '../redux/actions/giftModal';
+import { GiftItemStyled } from '../styled_component/GiftItem.styled';
 
 const GiftItem = (props) => {
     const {
@@ -14,7 +15,7 @@ const GiftItem = (props) => {
     const gift = { url, id, name }
 
     return (
-        <img src={url} width={"100px"} height={"100px"} onClick={()=>showGiftModal({gift})} alt={""}/>
+        <GiftItemStyled src={url} onClick={()=>showGiftModal({gift})} alt={""}/>
     );
 }
 

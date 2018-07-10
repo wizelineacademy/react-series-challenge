@@ -2,6 +2,7 @@ import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import favoritesActions from '../../redux/actions/favorites';
+import { SearchBarStyle } from '../../styled_component/SearchBar.styled';
 
 const SearchBarFavorites = (props) =>{
     const {
@@ -21,11 +22,9 @@ const SearchBarFavorites = (props) =>{
     }
 
     return (
-        <div>
-            <input  className="SearchBar"
-                placeholder={"Search Favorite by name"}
-                onChange={(event) => onInputChange(event.target.value)} />
-        </div>
+        <SearchBarStyle  className="SearchBar"
+            placeholder={"Search Favorite by name"}
+            onChange={(event) => onInputChange(event.target.value)} />
     );
 }
 
