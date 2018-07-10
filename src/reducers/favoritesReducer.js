@@ -2,27 +2,35 @@ import favoriteActions from '../actions/favoriteActions';
 
 const initialState = [];
 
-const favoritesReducer = (state = initialState, action) => {
+const favoritesReducer = (favorites = initialState, action) => {
   const { type, payload } = action;
 
   switch (type) {
     case favoriteActions.types.TOGGLE_FAVORITE:
-      const index = state.indexOf(payload);
+      const index = favorites.findIndex((fav) => fav.id === payload.id);
 
       if(index === -1) {
         return [
-          ...state,
-          payload
+          ...favorites,
+          {
+            id: payload.id,
+            images: {
+              downsized: {
+                url: payload.url
+              }
+            },
+            title: payload.title
+          }
         ]
       } else {
         return [
-          ...state.slice(0, index),
-          ...state.slice(index + 1)
+          ...favorites.slice(0, index),
+          ...favorites.slice(index + 1)
         ];
       }
 
     default:
-      return state;
+      return favorites;
   }
 };
 

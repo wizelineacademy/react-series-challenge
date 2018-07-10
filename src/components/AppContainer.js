@@ -15,7 +15,6 @@ class AppContainer extends Component {
 
   render() {
   const { gifs, favorites } = this.props;
-  const favoriteGifs = gifs.filter((gif) => favorites.indexOf(gif.id) !== -1);
 
   return (
     <div className="AppContainer mt">
@@ -31,7 +30,7 @@ class AppContainer extends Component {
       <Route
         path="/favorites"
         render={({ match }) => (
-          <GifGrid gifs={ favoriteGifs } />
+          <GifGrid gifs={ favorites } />
         )}
       />
     </div>

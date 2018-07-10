@@ -14,14 +14,14 @@ import {
 } from '../styles/GifCard.style.js';
 
 const GifCard = (props) => {
-  var { favorite, id, images, title, toggleFavorite } = props;
+  const { favorited, id, images, title, toggleFavorite } = props;
 
   return (
     <GifCardWrapper>
       <GifCardStar
-        src={ favorite ? star : emptyStar }
+        src={ favorited ? star : emptyStar }
         alt="favorite icon"
-        onClick={ () => toggleFavorite(id) }
+        onClick={ () => toggleFavorite({ id, title, url: images.downsized.url }) }
       />
 
       <GifCardMainImage src={ images.downsized.url } alt={title} />
@@ -34,7 +34,7 @@ const mapStateToProps = (state, props) => {
   const { favorites } = state;
 
   return {
-    favorite: favorites.indexOf(id) !== -1
+    favorited: !!favorites.find((fav) => fav.id === id)
   };
 };
 
