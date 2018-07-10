@@ -33,7 +33,7 @@ class Header extends Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <fieldset>
-          <legend>API:</legend>
+          <legend>{(home ? 'API' : 'Favorites' )}:</legend>
           Search: <input type="text" ref={input => { this.searchInput = input; } } />
           <input type="submit" value="Search" />
           <br />
