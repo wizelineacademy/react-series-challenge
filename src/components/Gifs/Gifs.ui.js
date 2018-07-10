@@ -6,11 +6,20 @@ import Menu from  './../Sidebar/Sidebar';
 
 const SearchUI = ({ data, favorites, favoritesList }) => {
   let gifCatalog;
+  let addFavorite;
 
   if(Object.keys(data).length) {
     gifCatalog = data.data.map((v) => {
       const index = v.id;
-      const check = (favoritesList || []).some(({ id }) => id === index);
+      const check = (favoritesList ? favoritesList : []).some(({ id }) => id === index);
+
+      if(!check) {
+        addFavorite = (
+          <button onClick={(e) => {favorites(e, {url: v.images.fixed_height_small.url, id: v.id, title: v.title})}}>
+            Agregar a favoritos
+          </button>
+        );
+      }
 
       return(
         <div key={index} className="row">
@@ -21,15 +30,7 @@ const SearchUI = ({ data, favorites, favoritesList }) => {
               </div>
             </div>
           </div>
-          <button onClick={(e) => {
-                    favorites(e, {
-                      url: v.images.fixed_height_small.url,
-                      id: v.id,
-                      title: v.title,
-                    })
-                  }}>
-                  Agregar a favoritos
-          </button>
+          { addFavorite }
           <span>{(check ? 'favorito' : '')}</span>
         </div>
       );

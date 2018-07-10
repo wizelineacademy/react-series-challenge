@@ -17,6 +17,6 @@ export const receiveTrendingGifs = products => action(GET_TRENDING_GIF, {product
 export const searchGif = result => action(SEARCH_GIF, {result});
 export const searchResult = result => action(SEARCH_RESULT, {result});
 export const addFavorites = add => action(ADD_FAVORITES, {add});
-export const getFavorites = get => action(GET_FAVORITES, {get});
+export const getFavorites = gifs => action(GET_FAVORITES, {gifs});
 export const deleteFavorites = id => action(DELETE_FAVORITES, {id});
 export const filterFavorites = search => action(FILTER_FAVORITES, {search});

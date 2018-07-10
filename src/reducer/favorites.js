@@ -1,6 +1,6 @@
 import * as actions from "../actions";
 
-const searchGif = (state = [], action) => {
+const Favorites = (state = [], action) => {
   switch (action.type) {
     case actions.ADD_FAVORITES: {
       const newState = {...action.add};
@@ -11,16 +11,7 @@ const searchGif = (state = [], action) => {
       return favoritesArray;
     }
     case actions.GET_FAVORITES: {
-      let favoritesArray = [];
-      const favoritesList = JSON.parse(localStorage.getItem('favorites'));
-
-      if(favoritesList && favoritesList.length) {
-        for(let i = 0, len = favoritesList.length; i < len; i += 1){
-          favoritesArray = [...state, favoritesList[i]]
-        }
-      }
-
-      return favoritesArray;
+      return action.gifs;
     }
     case actions.DELETE_FAVORITES: {
       const newState = {...action.get};
@@ -45,4 +36,4 @@ const searchGif = (state = [], action) => {
   }
 }
   
-export default searchGif;
+export default Favorites;

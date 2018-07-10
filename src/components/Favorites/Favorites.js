@@ -18,10 +18,6 @@ class Favorites extends Component {
     };
   }
 
-  componentDidMount() {
-      this.props.getFavorites();
-  }
-
   handleChange = (e, data) => {
     const keys = data.split('.');
     const searchForm = this.state;

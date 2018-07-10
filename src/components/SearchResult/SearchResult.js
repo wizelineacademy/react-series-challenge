@@ -9,23 +9,18 @@ import { addFavorites, getFavorites, searchGif } from "./../../actions";
 import UI from './SearchResult.ui';
 
 class SearchResult extends Component {
-    componentDidMount() {
-        this.props.getFavorites();
-      }
-
-    favorites = (e, obj) => {
+  favorites = (e, obj) => {
     e.preventDefault();
     this.props.addFavorites(obj);
   }
 
   render() {
-
     return(
-        <UI
-            data={this.props.result}
-            favorites={this.favorites}
-            favoritesList={this.props.favorites}
-        />
+      <UI
+        data={this.props.result}
+        favorites={this.favorites}
+        favoritesList={this.props.favorites}
+      />
     );
   };
 };
