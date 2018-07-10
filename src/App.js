@@ -1,28 +1,49 @@
 import React, { Component } from 'react';
-import { Route, Switch, NavLink, Redirect } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
+import { injectGlobal, ThemeProvider } from 'styled-components';
 import Home from './containers/Home';
 import Favorites from './containers/Favorites';
-import './App.css';
+import { HeaderNav, HeaderNavLink } from './components/Header';
+//import './App.css';
+
+injectGlobal`
+  body {
+    
+    margin: 0;
+  }
+  body, button{
+    font-family: Ubuntu;
+  }
+`;
+
+const theme = {
+  primary: {
+    background: '#000',
+    foreground: '#fff',
+  },
+  secondary: {
+    background: '#4965f3',
+    foreground: '#fff',
+  },
+};
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <ul>
-          <li>
-            <NavLink to="/">Trending gifs</NavLink>
-          </li>
-          <li>
-            <NavLink to="/favorites">Mis favoritos</NavLink>
-          </li>
-        </ul>
+      <ThemeProvider theme={theme}>
+        <div className="App">
+          <HeaderNav>
+            <HeaderNavLink to="/">Trending gifs</HeaderNavLink>
+            <HeaderNavLink to="/favorites">Mis favoritos</HeaderNavLink>
+          </HeaderNav>
 
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/favorites" component={Favorites} />
-          <Redirect to="/" />
-        </Switch>
-      </div>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/favorites" component={Favorites} />
+            <Redirect to="/" />
+          </Switch>
+        </div>
+      </ThemeProvider>
     );
   }
 }

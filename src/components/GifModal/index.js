@@ -9,6 +9,7 @@ const GifModalBox = styled.div`
   margin: 0 auto;
   background: white;
   border-radius: 3px;
+  border: 1px solid #000;
   position: fixed;
   z-index: 999;
   top: 40px;

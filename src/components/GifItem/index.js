@@ -14,6 +14,24 @@ const ItemWrapper = styled.div`
   flex: 0.33;
 `;
 
+const ActionButton = styled.button`
+  border: none;
+  appearence: none;
+  border-radius: 3px;
+  padding: 6px;
+  cursor: pointer;
+  margin: 4px auto;
+  display: block;
+  background-color: ${props =>
+    props.secondary
+      ? props.theme.secondary.background
+      : props.theme.primary.background};
+  color: ${props =>
+    props.secondary
+      ? props.theme.secondary.foreground
+      : props.theme.primary.foreground};
+`;
+
 const GifImg = styled.img`
   width: 145px;
 `;
@@ -27,29 +45,30 @@ const GifItem = ({
 }) => {
   const RESTRICTED_RATINGS = ['pg-13', 'r'];
   if (RESTRICTED_RATINGS.indexOf(gif.rating) > -1) {
-    throw new Error('NSFW content');
+    //throw new Error('NSFW content');
   }
 
   const addFavBtn = (
-    <button
+    <ActionButton
       onClick={e => {
         e.preventDefault();
         addFavoriteId(gif.id);
       }}
     >
-      Agregar mis favoritos.
-    </button>
+      + Agregar mis favoritos.
+    </ActionButton>
   );
 
   const removeFavBtn = (
-    <button
+    <ActionButton
+      secondary
       onClick={e => {
         e.preventDefault();
         removeFavoriteId(gif.id);
       }}
     >
       Quitar de mis favoritos.
-    </button>
+    </ActionButton>
   );
 
   return (
@@ -67,7 +86,7 @@ const GifItem = ({
         by: <span itemprop="author">{gif.username}</span>
       </p>
       {isFavorite ? removeFavBtn : addFavBtn}
-      <button onClick={() => openModal({ gif })}>Ampliar</button>
+      <ActionButton onClick={() => openModal({ gif })}>Ampliar</ActionButton>
     </ItemWrapper>
   );
 };
