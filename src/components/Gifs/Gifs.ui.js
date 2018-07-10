@@ -4,22 +4,15 @@ import React from "react";
 import Search from './../Search/Search';
 import Menu from './../Sidebar/Sidebar';
 
-const SearchUI = ({ data, favorites, favoritesList }) => {
+const SearchUI = ({ data, favorites, favoritesList, handleClick }) => {
   let gifCatalog;
-  let addFavorite;
 
   if (Object.keys(data).length) {
     gifCatalog = data.data.map((v) => {
       const index = v.id;
-      const check = (favoritesList ? favoritesList : []).some(({ id }) => id === index);
-
-      if (!check) {
-        addFavorite = (
-          <button onClick={(e) => { favorites(e, { url: v.images.fixed_height_small.url, id: v.id, title: v.title }) }}>
-            Agregar a favoritos
-          </button>
-        );
-      }
+      const check = (favoritesList || []).some(({ id }) => {
+        return id === v.id;
+      });
 
       return (
         <div key={index} className="row">
@@ -30,7 +23,14 @@ const SearchUI = ({ data, favorites, favoritesList }) => {
               </div>
             </div>
           </div>
-          {addFavorite}
+          {
+            (!check ?
+              <button onClick={(e) => { favorites(e, { url: v.images.fixed_height_small.url, id: v.id, title: v.title }) }}>
+                Agregar a favoritos
+              </button> :
+              <button onClick={() => { handleClick(v.id) }}>Eliminar de mis favoritos</button>
+            )
+          }
           <span>{(check ? 'favorito' : '')}</span>
         </div>
       );

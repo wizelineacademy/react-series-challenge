@@ -1,14 +1,18 @@
 import * as actions from "../actions";
+const favorite = {
+  add: [],
+};
 
-const Favorites = (state = [], action) => {
+const Favorites = (state = favorite.add, action) => {
   switch (action.type) {
     case actions.ADD_FAVORITES: {
-      const newState = { ...action.add };
-      const favoritesArray = [...state, newState];
+      const newState = state || [];
+      const { add } = action;
+      const favoriteList = [...newState, add];
 
-      localStorage.setItem('favorites', JSON.stringify(favoritesArray));
+      localStorage.setItem('favorites', JSON.stringify(favoriteList));
 
-      return favoritesArray;
+      return favoriteList;
     }
     case actions.GET_FAVORITES: {
       return action.gifs;
