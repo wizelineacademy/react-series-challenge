@@ -21,11 +21,7 @@
 }
 
 .link.active {
-  outline: none;
-  border-radius: 0 20px 20px 0;
-  background-color: #E8ECFF;
-  color: #858ECC;
-  font-weight: bold;
+
 }
 
 @media screen and (min-width: 32rem) {

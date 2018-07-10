@@ -1,36 +1,32 @@
-import { BrowserRouter as Router, NavLink, Switch, Route } from 'react-router-dom';
-import SearchBar from './components/SearchBar'
-import Gifs from './components/Gifs'
-import Loading from './components/Loading'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { Navigation, Link, Main, Layout } from './App.style'
 import { Provider } from 'react-redux'
-import React from 'react';
 import store from './store'
-import './App.css';
-import search from './actions/search';
+import React from 'react';
 
 
-
-const App = () => {
+const App = ({ routes = [] }) => {
+  /**
+   * Get link from given routes
+   */
+  const links = routes.map(route => <Link to={route.route} exact={route.exact} activeClassName="active" > {route.name} </Link>)
+  /**
+   * 
+   */
+  const router = routes.map(route => <Route path={route.route} exact={route.exact} render={() => route.name} />)
   return (
     <Router>
       <Provider store={store} >
-        <div className="app" >
-          <header className="header" >
-            <SearchBar placeholder="Search all the GIFs" />
-          </header>
-          <aside className="aside" >
-            <nav className="navigation" >
-              <NavLink className="link" exact activeClassName="active" to="/" > Home </NavLink>
-              <NavLink className="link" activeClassName="active" to="/trending" > Trending </NavLink>
-              <NavLink className="link" activeClassName="active" to="/favorites" > Favorites </NavLink>
-            </nav>
-          </aside>
-          <main className="main" >
+        <Layout>
+          <Navigation>
+            {links}
+          </Navigation>
+          <Main>
             <Switch>
-              <Route path='/' component={Gifs} />
+              {router}
             </Switch>
-          </main>
-        </div>
+          </Main>
+        </Layout>
       </Provider>
     </Router>
   )
