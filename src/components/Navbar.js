@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { NavLink, Link } from "react-router-dom";
+import {UlStyled, LiStyled, InputTextStyled,ButtonTextStyled} from "./Navbar.style"
 
 class Navbar extends Component {
   constructor(props) {
@@ -11,30 +12,30 @@ class Navbar extends Component {
   render() {
     return (
       <React.Fragment>
-        <ul>
-          <li>
+        <UlStyled>
+          <LiStyled>
             <NavLink to="/">Home</NavLink>
-          </li>
-          <li>
-            <NavLink to="/fav">Favs</NavLink>
-          </li>
-          <li>
-            <input
+          </LiStyled>
+          <LiStyled>
+          <NavLink to="/fav">Favs</NavLink>
+          </LiStyled>
+          <LiStyled>
+          <InputTextStyled
               type="text"
               onChange={event => { this.setState({ tag: event.target.value }); }}
             />
-          </li>
-          <li>
+          </LiStyled>
+          <LiStyled>
             <Link
               to={{
                 pathname: "/search",
                 state: { query: this.state.tag }
               }}
             >
-              <button type="button">Search</button>
+              <ButtonTextStyled type="button">Search</ButtonTextStyled>
             </Link>
-          </li>
-        </ul>
+          </LiStyled>
+        </UlStyled>
       </React.Fragment>
     );
   }

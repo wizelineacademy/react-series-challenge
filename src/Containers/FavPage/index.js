@@ -16,7 +16,7 @@ class FavPage extends Component {
     return (
         <React.Fragment>
         {
-          gifs && gifs.map((gif, index) => {return <Gif url={gif.url} id={gif.id}/>})
+          gifs && gifs.map((gif, index) => {return <Gif url={gif.url} id={gif.id} key={gif.id} />})
         }
         </React.Fragment>
     )

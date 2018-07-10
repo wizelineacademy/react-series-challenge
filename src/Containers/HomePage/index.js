@@ -19,7 +19,7 @@ class HomePage extends Component {
     return (
         <React.Fragment>
         {
-          gifs && gifs.map((gif, index) => {return <Gif url={gif.images.fixed_width.url} id={gif.id}/>})
+          gifs && gifs.map((gif, index) => {return <Gif url={gif.images.fixed_width.url} id={gif.id} key={gif.id}/>})
         }
         </React.Fragment>
     )
