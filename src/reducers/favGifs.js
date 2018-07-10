@@ -9,6 +9,7 @@ const favGifs = (state = {}, action) => {
             }else {
                 newState[action.payload.id] = action.payload;
                 newState[action.payload.id].favorite = true;
+                localStorage.setItem(action.payload.id,action.payload.id);
                 console.log(newState);
             }
             return newState;
