@@ -4,7 +4,7 @@ export const GifCardWrapper = styled.div`
   position: relative;
 `
 
-export const GifCardUser = styled.div`
+export const GifCardUser = styled.a`
   left: 5px;
   position: absolute;
   top: 5px;
