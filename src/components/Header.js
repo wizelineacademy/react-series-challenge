@@ -1,24 +1,30 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
+import {
+  HeaderWrapper,
+  HeaderContainer,
+  HeaderLogo,
+  HeaderNavItems
+} from '../styles/Header.style.js';
+
 import logo from '../icons/logo.svg';
-import '../styles/Header.css';
 
 const Header = () => {
   return (
-    <div className="Header">
+    <HeaderWrapper>
       <div className="App-container">
-        <div className="Header-container">
+        <HeaderContainer>
           <NavLink to="/">
-            <img src={logo} className="Header-logo" alt="logo" />
+            <HeaderLogo src={logo} alt="logo" />
           </NavLink>
 
-          <div className="Header-nav-items">
+          <HeaderNavItems>
             <NavLink to="/favorites">Favorites</NavLink>
-          </div>
-        </div>
+          </HeaderNavItems>
+        </HeaderContainer>
       </div>
-    </div>
+    </HeaderWrapper>
   )
 }
 
