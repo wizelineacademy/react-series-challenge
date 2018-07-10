@@ -1,10 +1,13 @@
 import React from "react";
 import FavoritegGifs from "../components/FavoriteGifs/FavoritegGifs";
+import { ContainerListGifs } from "./HomeStyle";
 
 const Favorites = () => (
   <div>
     <h2>Favoritos</h2>
-    <FavoritegGifs />
+    <ContainerListGifs>
+      <FavoritegGifs />
+    </ContainerListGifs>
   </div>
 );
 

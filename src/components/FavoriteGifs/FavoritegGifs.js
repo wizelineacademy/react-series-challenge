@@ -1,30 +1,24 @@
 import React from "react";
 import { connect } from "react-redux";
 import FavoriteButton from "../FavoriteButton/FavoriteButton";
+import {ItemGif, Image } from "../ListGifs/GifItemStyle";
 
 const FavoritesGifs = ({ favoriteGifs, searchFavoriteGifs }) => {
+  let filterFavoriteGifs = null;
   if (Object.keys(searchFavoriteGifs).length) {
-    const filterFavoriteGifs = Object.keys(favoriteGifs)
+    filterFavoriteGifs = Object.keys(favoriteGifs)
     .filter(key => searchFavoriteGifs.includes(key))
     .reduce((obj, key) => {
       obj[key] = favoriteGifs[key];
       return obj
     }, {});
-    return (
-      Object.keys(filterFavoriteGifs).map(key => (
-        <div key={key}>
-          <img src={favoriteGifs[key].images.preview_gif.url} alt="Gif item" />
-          <FavoriteButton gif={favoriteGifs[key]} key={favoriteGifs[key].id} />
-        </div>
-      ))
-    )
   }
   return(
-    Object.keys(favoriteGifs).map(key => (
-      <div key={key}>
-        <img src={favoriteGifs[key].images.preview_gif.url} alt="Gif item" />
-        <FavoriteButton gif={favoriteGifs[key]} key={favoriteGifs[key].id} />
-      </div>
+    Object.keys(filterFavoriteGifs || favoriteGifs).map(key => (
+      <ItemGif key={key}>
+        <Image url={favoriteGifs[key].images.preview_webp.url} />
+        <FavoriteButton gif={favoriteGifs[key]} key={favoriteGifs[key].id} favorite />
+      </ItemGif>
     ))
   )
 };

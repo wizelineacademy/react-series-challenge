@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import favoriteGifs from "../../actions/favoriteGifs";
 
 class SearchBar extends Component {
   state = {

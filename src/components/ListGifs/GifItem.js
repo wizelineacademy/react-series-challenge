@@ -1,11 +1,11 @@
 import React from "react";
 import FavoriteButton from "../FavoriteButton/FavoriteButton";
+import {ItemGif, Image } from "./GifItemStyle";
 
 const GifItem = ({ gif, favoriteGifs }) => 
-   <div>
-    <img src={gif.images.preview_gif.url} alt="Gif item" />
-    <FavoriteButton gif={gif} />
-    {!favoriteGifs[gif.id] ? null : <label>Favorito</label> }
-  </div>;
+   <ItemGif>
+    <Image url={gif.images.preview_webp.url} />
+    <FavoriteButton gif={gif} favorite ={favoriteGifs[gif.id]} />
+  </ItemGif>;
 
 export default GifItem;

@@ -1,8 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
+import { Button } from "./FavoriteButtonStyled";
 
-const AddTransactionButton = ({ gif, addFavoriteGif }) => (
-  <button onClick={() => addFavoriteGif(gif)}>Favorito</button>
+const AddTransactionButton = ({ gif, addFavoriteGif, favorite }) => (
+  <Button favorite={favorite} onClick={() => addFavoriteGif(gif)}>
+    <i className="far fa-heart" />
+  </Button>
 );
 
 const mapDispatchToProps = dispatch => {
