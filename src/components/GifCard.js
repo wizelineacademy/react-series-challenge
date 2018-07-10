@@ -6,27 +6,32 @@ import favoriteActions from '../actions/favoriteActions';
 
 import emptyStar from '../icons/empty-star.svg';
 import star from '../icons/star.svg';
-import '../styles/GifCard.css';
+
+import {
+  GifCardWrapper,
+  GifCardUser,
+  GifCardStar,
+  GifCardMainImage
+} from '../styles/GifCard.style.js';
 
 const GifCard = (props) => {
   var { favorite, id, images, title, toggleFavorite, user } = props;
 
   return (
-    <div className="GifCard">
+    <GifCardWrapper>
       { user &&
-        <a href={ user.profile_url } className="GifCardUser">
+        <GifCardUser href={ user.profile_url } >
           <img src={ user.avatar_url } alt={ user.username } />
-        </a>
+        </GifCardUser>
       }
-      <img
+      <GifCardStar
         src={ favorite ? star : emptyStar }
-        className="GifCardStar"
         alt="favorite icon"
         onClick={ () => toggleFavorite(id) }
       />
 
-      <img src={ images.original.url } className="GifCardMain" alt={title} />
-    </div>
+      <GifCardMainImage src={ images.original.url } alt={title} />
+    </GifCardWrapper>
   );
 };
 
