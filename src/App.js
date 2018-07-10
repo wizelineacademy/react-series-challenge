@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import {
   BrowserRouter as Router,
   Route,
@@ -14,6 +14,7 @@ import Favorites from './components/Favorites';
 import Navbar from './components/Navbar';
 import actions from './actions';
 import { injectGlobal } from 'styled-components';
+import { Wrap } from './App.style';
 
 injectGlobal`
 html, body {
@@ -33,14 +34,16 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div>
+        <Fragment>
           <Navbar />
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/favorites" component={Favorites} />
-            <Redirect to="/" />
-          </Switch>
-        </div>
+          <Wrap>
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route path="/favorites" component={Favorites} />
+              <Redirect to="/" />
+            </Switch>
+          </Wrap>
+        </Fragment>
       </Router>
     );
   }
