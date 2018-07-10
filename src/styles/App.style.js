@@ -44,28 +44,6 @@ export const InputText = styled.input`
     padding: 2px 8px;   
 `;
 
-export const ContentGif = styled.div`
-    float: left;
-    width: 220px;
-    padding: 6px;
-`;
-
-export const Icon = styled.i`
-    position: absolute;
-    margin-left: 197px;
-    margin-top: 8px;
-    color: #e7f52b;
-`;
-
-export const Image = styled.img`
-    width: 100%;
-    height: 120px;
-`;
-
-export const ImageDescription = styled.div`
-    background-color: #acacac;
-`;
-
 export const H4 = styled.h4`
     text-align: center;
 `;

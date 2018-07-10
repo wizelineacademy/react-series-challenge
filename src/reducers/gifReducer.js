@@ -17,7 +17,7 @@ const transactionsReducer = (state = initialState, action) => {
         case types.GIFS_TRENDING_GET:
         case types.GIFS_SEARCH_GET: {
             const newState = { ...state };
-            newState.gifs = action.gifs;
+            newState.gifs = [...action.gifs];
             newState.loading = false;
             return newState;
         }
