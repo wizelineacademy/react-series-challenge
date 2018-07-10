@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import SearchBar from './SearchBar';
-import GifList from './GifList';
+import SearchBar from 'components/searchBar';
+import GifList from 'components/gifList';
 
 class Favorites extends Component {
   constructor(props) {

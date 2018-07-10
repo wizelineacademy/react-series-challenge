@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import LikeStatus from './LikeStatus';
+import LikeStatus from 'components/likeStatus';
 
 class Gif extends Component {
   render() {

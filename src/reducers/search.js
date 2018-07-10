@@ -1,5 +1,5 @@
-import searchActions from '../actions/search';
-import initialState from '../store/state';
+import searchActions from 'actions/search';
+import initialState from 'store/state';
 
 const searchReducer = (state = initialState, action) => {
   const { type, payload } = action;

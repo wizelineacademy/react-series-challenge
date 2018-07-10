@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import favoriteActions from '../actions/favorite';
-import Gif from './Gif';
+import favoriteActions from 'actions/favorite';
+import Gif from 'components/gif';
 
 class GifList extends Component {
   toggleFavorite = (gif) => {

@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import SearchBar from './SearchBar';
-import GifList from './GifList';
-import trendingActions from '../actions/trending';
-import searchActions from '../actions/search';
+import SearchBar from 'components/searchBar';
+import GifList from 'components/gifList';
+import trendingActions from 'actions/trending';
+import searchActions from 'actions/search';
 
 class Home extends Component {
   constructor(props) {

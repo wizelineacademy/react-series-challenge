@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { call, takeEvery, put } from 'redux-saga/effects'; 
-import trendingActions from '../actions/trending';
+import trendingActions from 'actions/trending';
 
 const { TRENDING_GIFS_GET } = trendingActions.types;
 

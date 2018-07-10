@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { call, takeEvery, put } from 'redux-saga/effects'; 
-import searchActions from '../actions/search';
+import searchActions from 'actions/search';
 
 const { SEARCH_GIFS_GET } = searchActions.types;
 

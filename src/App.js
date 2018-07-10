@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Header from './components/Header';
-import Home from './components/Home';
-import Favorites from './components/Favorites';
+import Header from 'components/header';
+import Home from 'components/home';
+import Favorites from 'components/favorites';
 import { Provider } from 'react-redux';
-import store from './store';
+import store from 'store';
 
 class App extends Component {
   render() {

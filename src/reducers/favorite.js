@@ -1,5 +1,5 @@
-import favoriteActions from '../actions/favorite';
-import initialState from '../store/state';
+import favoriteActions from 'actions/favorite';
+import initialState from 'store/state';
 
 const favoriteReducer = (state = initialState, action) => {
   const { type, payload } = action;

@@ -1,5 +1,5 @@
-import trendingActions from '../actions/trending';
-import initialState from '../store/state';
+import trendingActions from 'actions/trending';
+import initialState from 'store/state';
 
 const trendingReducer = (state = initialState, action) => {
   const { type, payload } = action;
