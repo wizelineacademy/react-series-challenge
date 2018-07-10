@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import GiphyElement from './GiphyElement';
+import ErrorBoundary from './ErrorBoundary';
 
 const getData = () => [
     {
@@ -148,13 +149,16 @@ class GiphyList extends Component {
     render() {
         return (
             <React.Fragment>
-                {this.state.giphies.map(({id, slug, caption, embed_url}) => <GiphyElement
-                    key={id}
-                    id={id}
-                    slug={slug}
-                    caption={caption}
-                    embedUrl={embed_url}
-                />)}
+                {this.state.giphies.map(({id, slug, caption, embed_url}) =>
+                    <ErrorBoundary>
+                        <GiphyElement
+                            key={id}
+                            id={id}
+                            slug={slug}
+                            caption={caption}
+                            embedUrl={embed_url}
+                        />
+                    </ErrorBoundary>)}
             </React.Fragment>
         );
     }

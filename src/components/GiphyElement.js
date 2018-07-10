@@ -37,7 +37,7 @@ class GiphyElement extends Component {
 
         return (
             <span>
-                <img src={this.state.embed_url}/>
+                <img slug={this.state.slug} src={this.state.embed_url}/>
                 <button onClick={this.handleShowInfo}>Info</button>
                 {info}
             </span>
