@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { SearchBarStyle, ButtonSearchStyle, FormStyle } from "./SearchBarStyle";
 
 class SearchBar extends Component {
   state = {
@@ -25,17 +26,17 @@ class SearchBar extends Component {
   };
   render() {
     return (
-      <form onSubmit={this.handleSearch}>
-        <input
+      <FormStyle onSubmit={this.handleSearch}>
+        <SearchBarStyle
           type="text"
           placeholder="Buscar"
           value={this.state.value}
           onChange={this.handleSearchInput}
         />
-        <button type="onSubmit" onClick={this.handleSearch}>
-          Buscar
-        </button>
-      </form>
+        <ButtonSearchStyle type="onSubmit" onClick={this.handleSearch}>
+          <i className="fas fa-search" />
+        </ButtonSearchStyle>
+      </FormStyle>
     );
   }
 }
