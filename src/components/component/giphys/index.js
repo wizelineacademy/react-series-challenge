@@ -39,5 +39,4 @@ class Giphys extends Component {
   }
 }
 
-// export default connect(null,mapDispatchToProps)(Giphys);
 export default Giphys;

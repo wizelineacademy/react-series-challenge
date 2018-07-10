@@ -18,16 +18,17 @@ class Header extends Component {
 
   handleButton = (event) => {
     event.preventDefault();
-    this.props.fetchChange('');
+    if (this.props.home) {
+      this.props.fetchChange('');
+    } else {
+      this.props.localFind('');
+      this.searchInput.value = '';
+      this.searchInput.focus();
+    }
   }
 
   render() {
-    const { match } = this.props;
-
-    let buttonView = 'the search will be for only the favorites...';
-    if (this.props.home) {
-      buttonView = <input type="button" value="just show the trendings" onClick={this.handleButton} />
-    }
+    const { match, home } = this.props;
 
     return (
       <form onSubmit={this.handleSubmit}>
@@ -37,7 +38,7 @@ class Header extends Component {
           <input type="submit" value="Search" />
           <br />
           <br />
-          {buttonView}
+          <input type="button" value={`${(home ? 'Just render trendings': 'Reset the search')}`} onClick={this.handleButton} />
         </fieldset>
       </form>
     )
