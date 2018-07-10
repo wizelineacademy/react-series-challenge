@@ -5,23 +5,19 @@ import Item from "../Gifs/Item";
 
 const FavoriteGifs = ({ favorites: { items, filtered }, searchFavorite }) => {
   const favoritesArr = Object.keys(items);
-  if (!favoritesArr.length) {
-    return <p>No hay favoritos</p>;
-  }
+  if (!favoritesArr.length) return <p>No hay favoritos</p>;
 
-  if (!filtered) {
+  if (!filtered)
     return (
       <div>{favoritesArr.map(key => <Item key={key} item={items[key]} />)}</div>
     );
-  }
 
-  if (!filtered.length && searchFavorite) {
+  if (!filtered.length && searchFavorite)
     return (
       <div>
         No se encontraron gifs en favoritos para <b>{searchFavorite}</b>
       </div>
     );
-  }
 
   return (
     <div>
