@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import GifCards from '../GifCards/GifCards'
-import './GifPage.css';
 import SearchBar from '../../UI/SearchBar';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';

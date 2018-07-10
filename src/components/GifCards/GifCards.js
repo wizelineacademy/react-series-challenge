@@ -1,7 +1,6 @@
 import React from 'react';
 import GifCard from '../GifCards/GifCard/GifCard'
 import GifCardControls from '../GifCards/GifCardControls/GifCardControls'
-import './GifCards.css';
 
 const GifCards = (props) => {
 

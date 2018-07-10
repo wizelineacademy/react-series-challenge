@@ -1,15 +1,16 @@
 import React from 'react';
-import './SearchBar.css';
+import { StyledSearchbar, StyledInput, StyledButton } from './Searchbar.styled';
 
 const SearchBar = (props) => {
     return (
-        <div className = "SearchBar" >
-            <input 
+        <StyledSearchbar>
+            <StyledInput 
             type="text" 
             placeholder = "Search for awesome gifs" 
             onChange = {(event) => {props.updateState(event.target.value)}} />
-            <button onClick = { props.handleSearch } > Search Gifs </button>
-        </div>
+
+            <StyledButton onClick = { props.handleSearch } />  
+        </StyledSearchbar>
     );
 }
 
