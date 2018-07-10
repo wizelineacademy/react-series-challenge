@@ -44,27 +44,3 @@ header ul li{
 header ul li a{
   padding: 0 20px;
 }
-
-.cardItem{
-  width: 60%;
-  margin: 0 auto 20px;
-  border: 5px solid #61dafb;
-  background-color: #61dafb;
-}
-.cardItem img{
-  width: 100%;
-}
-.cardFooter{
-  padding: 5px 0 15px;
-}
-.favContainer button{
-  background-color: transparent;
-  border: 0 none;
-  color: white;
-  font-size: 20px;
-  float: right;
-  cursor: pointer;
-}
-.favContainer button.favorite{
-  color: red;
-}

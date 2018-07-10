@@ -12,7 +12,7 @@ const CardsReducer = (state = initCardState, action) => {
 			const { cards } = payload;
 			const newState = {...state};
 			newState.cards = cards.reduce(( newArray, card ) => {
-				newArray[ card.id ] = {...card,isFavorite:(newState.favorites[card.id])};
+				newArray[ card.id ] = {...card,isFavorite:card.isFavorite?card.isFavorite:(newState.favorites[card.id])};
 				return newArray;
 			},{});
 			return newState;

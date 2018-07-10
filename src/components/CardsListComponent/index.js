@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 import Card from '../CardComponent';
 import cards from '../../actions/cards';
+import { CardItem } from '../CardComponent/Card.Styled';
 
 /*----------------*/
 class CardErrorB extends Component {
@@ -27,9 +28,9 @@ class CardErrorB extends Component {
 		const { hasErrors } = this.state;
 
 		if (hasErrors) {
-			return <div className='cardItem'>
+			return <CardItem>
 				<p>Image toooo big</p>
-			</div>
+			</CardItem>
 		}
 		return children;
 	}

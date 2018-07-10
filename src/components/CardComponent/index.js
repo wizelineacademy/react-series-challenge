@@ -1,4 +1,5 @@
 import React from 'react';
+import { CardItem, CardFooter, FavButton } from './Card.Styled';
 
 const CardComponent = (props) => {
 	const { 
@@ -9,19 +10,15 @@ const CardComponent = (props) => {
 	const handleFavorite = () => {
 		addRemoveFavorites({ card });
 	}
-	if( card.images.original.size > 5917958 )
-		throw new Error('Img too big');
-
+	//if( card.images.original.size > 5917958 ) throw new Error('Img too big');
 	return (
-		<div className='cardItem'>
+		<CardItem>
 			<div><img src={card.images.original.url} alt='' /></div>
-			<div className='cardFooter'>
+			<CardFooter>
 				<span><a target='_blank' href={card.url}>Source link</a></span>
-				<span className='favContainer'>
-					<button className={card.isFavorite?'favorite':''} onClick={handleFavorite}> ❤ </button>
-				</span>
-			</div>
-		</div>
+				<FavButton favorite={card.isFavorite} onClick={handleFavorite}> ❤ </FavButton>
+			</CardFooter>
+		</CardItem>
 	);
 }
 

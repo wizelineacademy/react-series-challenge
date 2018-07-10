@@ -13,16 +13,45 @@ import './App.css';
 import HomeComponent from './components/HomeComponent';
 import FavoritesComponent from './components/FavoritesComponent';
 
+import { ThemeProvider } from 'styled-components';
+import { AppStyled } from './styled/AppStyled.styled';
+
+const myTheme = {
+  bg: 'white',
+  cardColor: '#61dafb',
+  textColor: 'black',
+};
+const darkTheme = {
+  bg: '#1d1f27',
+  cardColor: '#61dafb',
+  textColor: 'white',
+}
+
 class App extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      theme: myTheme,
+      isDark: false
+    };
+  }
+  toggleTheme = () => {
+    console.log('toggle');
+    this.setState({
+      isDark: !this.state.isDark,
+      theme: !this.state.isDark?darkTheme:myTheme
+    })
+  };
   render() {
     return (
-      <Provider store={store} >
-        <div className="App">
+       <ThemeProvider theme={this.state.theme}><Provider store={store} >
+        <AppStyled>
           <header>
             <ul>
               <li><NavLink to='/' activeclass='active'><img src={logo} className="App-logo" alt="logo" /></NavLink></li>
               <li><NavLink to='/Home' activeclass='active'>Home</NavLink></li>
               <li><NavLink to='/Favorites' activeclass='active'>Favoritos</NavLink></li>
+              <li><button onClick={this.toggleTheme}>Toggle Theme</button></li>
             </ul>
           </header>
           <Switch>
@@ -31,8 +60,8 @@ class App extends Component {
             <Route exact path='/Favorites' component={FavoritesComponent} />
             <Redirect to='/Home' />
           </Switch>
-        </div>
-      </Provider>
+        </AppStyled>
+      </Provider></ThemeProvider>
     );
   }
 }
