@@ -20,10 +20,12 @@ const SearchReducer = (state = initialState, action) => {
                         let foundIndex = newState.gifs.findIndex( (x, index) => {
                             return x.id === payload.id;
                         });
-
-                        const news = [...state.gifs]; 
-                        news[foundIndex].isFavorite = false;
-                        return {...state, gifs: news, favoritedImages: [...state.favoritedImages.slice(0, a), ...state.favoritedImages.slice(a+1)]};
+                        if(foundIndex !== -1){
+                            const news = [...state.gifs]; 
+                            news[foundIndex].isFavorite = false;
+                            return {...state, gifs: news, favoritedImages: [...state.favoritedImages.slice(0, a), ...state.favoritedImages.slice(a+1)]};
+                        }
+                        return {...state, favoritedImages: [...state.favoritedImages.slice(0, a), ...state.favoritedImages.slice(a+1)]};
                     } else if (payload.id === newState.favoritedImages[a].id) {
                         return {...state, favoritedImages: [...state.favoritedImages.slice(0, a), ...state.favoritedImages.slice(a+1)]};
                     }
@@ -43,33 +45,8 @@ const SearchReducer = (state = initialState, action) => {
             return {...state, gifs: news, favoritedImages: state.favoritedImages.concat(payloadIsFavorite)};
         }
 
+        case searchActions.types.GET_TRENDING: 
         case searchActions.types.SEARCH_SPECIFIED_GIFS: {
-            const { data } = payload.data;
-            let nuevoArray = data.map (key => {
-                key.isFavorite = false;
-                return key;
-            })
-
-            if(data.length > 0 && state.favoritedImages.length > 0){
-                nuevoArray = data.map (key => {
-                    key.isFavorite = false;
-                    return key;
-                })
-
-                for(let a = 0; a <= nuevoArray.length - 1; a++){
-                    for(let b = 0; b <= state.favoritedImages.length - 1; b++){
-                        if( nuevoArray[a].id === state.favoritedImages[b].id ) {
-                            nuevoArray[a].isFavorite = true;
-                        } 
-                    }
-                }
-            } 
-
-            let newState = { ...state, gifs: nuevoArray}
-            return newState;
-        }
-
-        case searchActions.types.GET_TRENDING: {
             const { data } = payload.data;
             let nuevoArray = data.map (key => {
                 key.isFavorite = false;
