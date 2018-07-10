@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Redirect, NavLink, Switch } from "react-router-dom";
 import Home from './components/Home';
 import Favorites from './components/Favorites';
 import logo from './logo.svg';
 import './App.css';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import actions from './actions';
 import { Title, Wrapper, TheApp } from './App.style.js'
 
 class App extends Component {
@@ -18,18 +21,21 @@ class App extends Component {
           </header>
           <Router>
             <div>
-              <ul>
-                <li>
-                  <Link to="/">Home</Link>
-                </li>
-                <li>
-                  <Link to="/favorites">Favorites</Link>
-                </li>
-              </ul>
-              <hr />
-
-              <Route exact path="/" component={Home} />
-              <Route path="/favorites" component={Favorites} />
+              <header>
+                <ul>
+                  <li>
+                    <NavLink to="/">Home</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/favorites">Favorites</NavLink>
+                  </li>
+                </ul>
+              </header>
+              <Switch>
+                <Route exact path="/" component={Home} />
+                <Route path="/favorites" component={Favorites} />
+                <Redirect to="/" />
+              </Switch>
             </div>
           </Router>
         </TheApp>
@@ -38,4 +44,9 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapDispatchToProps = dispatch => {
+  const { loadFavoritesR } = actions;
+  return bindActionCreators({ loadFavoritesR }, dispatch);
+};
+
+export default connect(null, mapDispatchToProps)(App);

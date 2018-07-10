@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
-//import logo from '../logo.svg';
 import axios from 'axios';
-import '../App.css';
-import { Provider } from 'react-redux';
 import store from '../store';
-//import Favorites from './Favorites';
+import '../App.css';
 import {} from '../.env';
 
-const URL = `http://api.giphy.com/v1/gifs/trending?api_key=`+process.env.REACT_APP_GIPHY_API_KEY+`&limit=10`;
+//const URL = `http://api.giphy.com/v1/gifs/trending?api_key=`+process.env.REACT_APP_GIPHY_API_KEY+`&limit=10`;
+const URL = `http://api.giphy.com/v1/gifs/trending?api_key=Y354pcUIVTGZXofCIqvlYWA2Bv1khCCZ&limit=10`;
 //console.log(URL);
 
 class App extends Component {
@@ -48,7 +46,6 @@ class App extends Component {
   }
   render() {
     return (
-      <Provider store={store}>
         <div className="homeComponent">
           <div className="search">
             <form onSubmit={this.handleSubmit}>
@@ -68,7 +65,6 @@ class App extends Component {
             )}
           </div>
         </div>
-      </Provider>
     );
   }
 
