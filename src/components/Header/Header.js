@@ -1,25 +1,29 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
-import './Header.css'
+import {
+  Header,
+  Title,
+  Navigation,
+  StyledLink
+} from './Header.styled'
 
-const Header = () => {
+const HeaderComp = () => {
 
   return(
-    <div className="header">
-      <div className="title">
+    <Header>
+      <Title>
         Header
-      </div>
-      <div className="nav">
-        <Link className="item" to="/">
+      </Title>
+      <Navigation>
+        <StyledLink to="/">
           HOME
-        </Link>
-        <Link className="item" to="/favorites">
+        </StyledLink>
+        <StyledLink to="/favorites">
           FAVORITES
-        </Link>
-      </div>
-    </div>
+        </StyledLink>
+      </Navigation>
+    </Header>
   )
 
 }
 
-export default Header
+export default HeaderComp
