@@ -5,14 +5,14 @@ import initialState from './state';
 
 const middleware = [ ...customMiddleware ];
 
-const enhancers = compose(
-  applyMiddleware(...middleware)
-);
+const enhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(
   rootReducer,
   initialState,
-  enhancers
+  enhancers(
+    applyMiddleware(...middleware)
+  )
 );
 
 export default store;
