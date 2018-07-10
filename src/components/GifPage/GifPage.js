@@ -30,15 +30,22 @@ class GifPage extends Component {
                 newObject = {};
                 newObject.id = this.props.gifs[a].id;
                 newObject.url = this.props.gifs[a].images.downsized.url;
+                newObject.isFavorite = this.props.gifs[a].isFavorite;
                 newArray.push(newObject);
             }
         }
 
         return(
             <div className = "GifPage">
-                <SearchBar updateState = { this.updateState } handleSearch = {this.handleSearch} />
+                <SearchBar 
+                updateState = { this.updateState } 
+                handleSearch = {this.handleSearch} />
+
                 <ErrorBoundary>
-                <GifCards gifData = { newArray } addRemoveGif = {this.props.addRemoveGifFavorites} searchedValue = {this.props.searchedValue}/> 
+                <GifCards 
+                gifData = { newArray } 
+                addRemoveGif = {this.props.addRemoveGifFavorites} 
+                searchedValue = {this.props.searchedValue}/> 
                 </ErrorBoundary>        
             </div>)
     }
