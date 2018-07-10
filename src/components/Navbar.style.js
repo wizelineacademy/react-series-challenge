@@ -1,13 +1,11 @@
 import styled from 'styled-components'
 
 export const UlStyled=styled.ul`
-{
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
   background-color: #333;
-}
 `
 export const LiStyled=styled.li`
 {
@@ -27,7 +25,6 @@ a:hover {
 }
 `
 export const InputTextStyled=styled.input`
-{
     margin-top: 3px
     background-color: #454545
     font-size: 17px
@@ -41,16 +38,13 @@ export const InputTextStyled=styled.input`
     outline-style: none
     border-style:none
     color:white
-}
 `
 
 export const ButtonTextStyled=styled.button`
-{
   border-style:none
   background-color: #333;
   padding: 0px
   color:white
   margin:0px
   font-size: 17px
-}
 `

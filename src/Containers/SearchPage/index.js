@@ -13,8 +13,6 @@ class SearchPage extends Component {
   componentDidMount() {
     const { querySearch } = this.props;
     querySearch({q:this.props.location.state.query});
-    console.log();
-    //
   }
 
   render() {
@@ -30,7 +28,6 @@ class SearchPage extends Component {
 }
 
 const mapStateToProps = state => {
-  console.log(state);
   return{
   gifs: state.search.searchGifs,
   loading: state.search.searchLoading
