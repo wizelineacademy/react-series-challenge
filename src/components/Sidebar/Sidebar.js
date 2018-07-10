@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 class Search extends Component {
   render() {
-    return(
+    return (
       <div>
         <nav>
           <Link to="/">Catalogo</Link>

@@ -9,7 +9,7 @@ import { deleteFavorites, getFavorites, filterFavorites } from './../../actions'
 import UI from "./Favorites.ui";
 
 class Favorites extends Component {
-  constructor(...props){
+  constructor(...props) {
     super(...props);
     this.state = {
       searchForm: {
@@ -25,23 +25,23 @@ class Favorites extends Component {
     this.setState(searchForm);
   }
 
-  handleClick = (id) =>{
+  handleClick = (id) => {
     this.props.deleteFavorites(id);
   }
 
   gitFilter = (e) => {
     e.preventDefault();
-    this.props.filterFavorites({param: this.state.searchForm.searchField, favorites: this.props.favorites});
+    this.props.filterFavorites({ param: this.state.searchForm.searchField, favorites: this.props.favorites });
   }
 
   render() {
-    return(
+    return (
       <UI
-          favoritesList={this.props.favorites}
-          handleClick={this.handleClick}
-          gitFilter={this.gitFilter}
-          handleChange={this.handleChange}
-          inrernalData={this.state.searchForm}
+        favoritesList={this.props.favorites}
+        handleClick={this.handleClick}
+        gitFilter={this.gitFilter}
+        handleChange={this.handleChange}
+        inrernalData={this.state.searchForm}
       />
     );
   }
@@ -53,7 +53,7 @@ const mapStateToProps = (state) => {
     favorites: state.favorites,
   }
 }
-  
+
 Favorites.propTypes = {
   deleteFavorites: PropTypes.func,
   getFavorites: PropTypes.func,
@@ -61,11 +61,11 @@ Favorites.propTypes = {
 };
 
 Favorites.defaultProps = {
-  deleteFavorites: () => {},
-  getFavorites: () => {},
-  filterFavorites: () => {},
+  deleteFavorites: () => { },
+  getFavorites: () => { },
+  filterFavorites: () => { },
 }
- 
+
 export default connect(mapStateToProps, {
   deleteFavorites,
   getFavorites,

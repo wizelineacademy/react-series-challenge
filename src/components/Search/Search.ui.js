@@ -7,10 +7,10 @@ const SearchUI = ({ handleChange, inrernalData, handleSubmit }) => {
       <form onSubmit={handleSubmit}>
         <span>Escribe el nombre de un gif</span>
         <input
-            id="search"
-            type="text"
-            value={inrernalData.searchField}
-            onChange={(e) => { handleChange(e, 'searchForm.searchField'); }}
+          id="search"
+          type="text"
+          value={inrernalData.searchField}
+          onChange={(e) => { handleChange(e, 'searchForm.searchField'); }}
         />
         <button type="submit">Realizar busqueda</button>
       </form>

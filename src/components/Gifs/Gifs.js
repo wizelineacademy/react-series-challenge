@@ -15,7 +15,7 @@ class Search extends Component {
   }
 
   render() {
-    return(
+    return (
       <UI
         data={this.props.data}
         favorites={this.favorites}
@@ -38,10 +38,10 @@ Search.propTypes = {
 };
 
 Search.defaultProps = {
-  addFavorites: () => {},
-  getFavorites: () => {},
+  addFavorites: () => { },
+  getFavorites: () => { },
 }
-  
+
 
 export default connect(mapStateToProps, {
   addFavorites,

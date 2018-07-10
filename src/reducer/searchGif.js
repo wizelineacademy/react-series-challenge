@@ -10,5 +10,5 @@ const searchGif = (state = {}, action) => {
       return state;
   }
 }
-  
+
 export default searchGif;

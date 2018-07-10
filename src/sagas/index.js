@@ -8,10 +8,10 @@ import { watchFavorites } from './favorites'
 export function* watchLog() {
   yield takeEvery('*', function* logger(action) {
     const state = yield select()
-      console.group(action.type);
-      console.info('dispatching ', action);
-      console.log('next state ', state);
-      console.groupEnd(action.type);
+    console.group(action.type);
+    console.info('dispatching ', action);
+    console.log('next state ', state);
+    console.groupEnd(action.type);
   });
 }
 

@@ -3,8 +3,8 @@ import * as actions from "../actions";
 const Favorites = (state = [], action) => {
   switch (action.type) {
     case actions.ADD_FAVORITES: {
-      const newState = {...action.add};
-      let favoritesArray = [...state, newState];
+      const newState = { ...action.add };
+      const favoritesArray = [...state, newState];
 
       localStorage.setItem('favorites', JSON.stringify(favoritesArray));
 
@@ -14,15 +14,15 @@ const Favorites = (state = [], action) => {
       return action.gifs;
     }
     case actions.DELETE_FAVORITES: {
-      const newState = {...action.get};
+      const newState = { ...action.get };
       let favoritesArray = [...state, newState];
       let i = 0;
 
-      for(let len = favoritesArray.length; i < len; i += 1){
-        if(favoritesArray[i].id === action.id) break;
+      for (let len = favoritesArray.length; i < len; i += 1) {
+        if (favoritesArray[i].id === action.id) break;
       }
 
-      const deleteFavorite =  [
+      const deleteFavorite = [
         ...state.slice(0, i),
         ...state.slice(i + 1)
       ];
@@ -35,5 +35,5 @@ const Favorites = (state = [], action) => {
       return state;
   }
 }
-  
+
 export default Favorites;

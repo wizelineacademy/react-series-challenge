@@ -12,7 +12,7 @@ class Search extends Component {
     router: PropTypes.object,
   };
 
-  constructor(...props){
+  constructor(...props) {
     super(...props);
     this.state = {
       searchForm: {
@@ -37,7 +37,7 @@ class Search extends Component {
 
   render() {
 
-    return(
+    return (
       <UI
         handleChange={this.handleChange}
         inrernalData={this.state.searchForm}
@@ -61,9 +61,9 @@ Search.propTypes = {
 };
 
 Search.defaultProps = {
-  searchGif: () => {},
+  searchGif: () => { },
 }
-  
+
 
 export default connect(mapStateToProps, {
   searchGif,

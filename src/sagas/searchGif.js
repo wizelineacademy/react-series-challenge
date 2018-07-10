@@ -13,7 +13,7 @@ export function* searchGifs(res) {
         };
         const resultSearch = yield call(ajax, options);
         yield put(actions.searchResult(resultSearch));
-    } catch(error) {
+    } catch (error) {
         yield put({ type: actions.GET_TRENDING_GIF_FAILED, error });
     }
 }
@@ -24,4 +24,4 @@ export function* watchSearchGifs() {
 }
 
 
-export default  watchSearchGifs;
+export default watchSearchGifs;
