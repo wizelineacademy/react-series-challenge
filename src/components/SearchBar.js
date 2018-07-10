@@ -1,15 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux'
 
-import '../styles/SearchBar.css';
+import { SearchBarInput } from '../styles/SearchBar.style.js';
+
 import gifActions from '../actions/gifActions';
 
 const SearchBar = ({ dispatch }) => {
   let input;
 
   return (
-    <div className="SearchBar">
-      <input
+    <div>
+      <SearchBarInput
         type="text"
         placeholder="Search gifs!!"
         ref={ node => input = node }
