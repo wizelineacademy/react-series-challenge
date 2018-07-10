@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import ItemsList from '../ItemsList';
 import SearchBar from '../SearchBar';
 import actions from '../../actions';
+import { Wrap } from './index.style';
 
 class Home extends Component {
   constructor(props) {
@@ -24,10 +25,10 @@ class Home extends Component {
       return <div>Loading...</div>;
     }
     return (
-      <div>
+      <Wrap>
         <SearchBar handleSearch={this.props.getMoreGifs.bind(this, 1)} />
         <ItemsList favoritesButton={this.props.addRemoveFavoriteHome} />
-      </div>
+      </Wrap>
     );
   }
 }
