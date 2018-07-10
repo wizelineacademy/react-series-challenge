@@ -2,6 +2,7 @@ import React, { Component, Fragment, } from 'react';
 import ComponentGif from './ComponentGif';
 import { connect } from 'react-redux';
 import { removeGifToFavorites, } from '../actions/gifsFavorites';
+import { ContainerInputText, InputText, } from '../styles/App.style';
 
 class ComponentFavorites extends Component {
     constructor(props) {
@@ -14,9 +15,9 @@ class ComponentFavorites extends Component {
     render() {
         return (
             <div>
-                <div style={{ marginBottom: 10, }}>
-                    <input type="text" placeholder="search" onChange={(e) => this.setState({ textFilter: e.target.value, })} />
-                </div>
+                <ContainerInputText>
+                    <InputText type="text" placeholder="search" onChange={(e) => this.setState({ textFilter: e.target.value, })} />
+                </ContainerInputText>
                 <Fragment>
                     {this.renderGifs()}
                 </Fragment>

@@ -1,10 +1,12 @@
 import React from 'react';
+import { ContentGif, Icon, Image, ImageDescription, } from '../styles/App.style';
 
 const ComponentGif = (id, title, image, isFavorite, handleClick) => {
-    return (<div key={id} className='container-gif'>
-        {isFavorite ? <i className="fa fa-star icon"></i> : null}
-        <img src={image.url} width='100%' height={120} onClick={handleClick} alt={title} />
-    </div>);
+    return (<ContentGif key={id}>
+        {isFavorite ? <Icon className="fa fa-star icon"></Icon> : null}
+        <Image src={image.url} onClick={handleClick} alt={title} />
+        {/* <ImageDescription>{title}</ImageDescription> */}
+    </ContentGif>);
 };
 
 export default ComponentGif;

@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { Link, Redirect, Route, Switch, } from 'react-router-dom';
+import { /*Link,*/ Redirect, Route, Switch, } from 'react-router-dom';
 import ComponentHome from './components/ComponentHome';
 import ComponentFavorites from './components/ComponentFavorites';
 import ErrorBoundary from './components/ErrorBoundary';
-import './styles/challenge.css';
+// import './styles/challenge.css';
+import { Navbar, NavbarContainer, NavbarLi, NavbarLink, AppBody, } from './styles/App.style';
 import { Provider } from 'react-redux';
 import store from './store';
 
@@ -13,25 +14,25 @@ class App extends Component {
     return (
       <Provider store={_store}>
         <div className="app">
-          <header className="navbar">
-            <div className="navbar-container">
+          <Navbar>
+            <NavbarContainer>
               <ul>
-                <li>
+                <NavbarLi>
                   <Route path="/Home" children={({ match }) => {
                     const active = match ? 'active' : '';
-                    return <Link to="/Home" className={active}>Home</Link>;
+                    return <NavbarLink to="/Home" active={active} >Home</NavbarLink>;
                   }} />
-                </li>
-                <li>
+                </NavbarLi>
+                <NavbarLi>
                   <Route path="/Favorites" children={({ match }) => {
                     const active = match ? 'active' : '';
-                    return <Link to="/Favorites" className={active}>Favorites</Link>;
+                    return <NavbarLink to="/Favorites" active={active} className={active}>Favorites</NavbarLink>;
                   }} />
-                </li>
+                </NavbarLi>
               </ul>
-            </div>
-          </header>
-          <div className="container">
+            </NavbarContainer>
+          </Navbar>
+          <AppBody>
             <ErrorBoundary>
               <Switch>
                 <Route path="/Home" component={ComponentHome} />
@@ -39,7 +40,7 @@ class App extends Component {
                 <Redirect to={{ pathname: "/Home", }} />
               </Switch>
             </ErrorBoundary>
-          </div>
+          </AppBody>
         </div>
       </Provider>
     );

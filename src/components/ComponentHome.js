@@ -3,6 +3,7 @@ import ComponentGif from './ComponentGif';
 import { connect } from 'react-redux';
 import { fetchedGifsTrending, fetchedGifsSearch, } from '../actions/gifActions';
 import { addGifToFavorites, removeGifToFavorites, } from '../actions/gifsFavorites';
+import { ContainerInputText, H4, InputText, } from '../styles/App.style';
 
 class ComponentHome extends Component {
     constructor(props) {
@@ -16,9 +17,9 @@ class ComponentHome extends Component {
     render() {
         return (
             <div>
-                <div style={{ marginBottom: 10, }}>
-                    <input type="text" placeholder="search" onKeyUp={this.onKeyUp} />
-                </div>
+                <ContainerInputText>
+                    <InputText type="text" placeholder="search" onKeyUp={this.onKeyUp} />
+                </ContainerInputText>
                 {this.renderLoader()}
                 <Fragment>
                     {this.renderGifs()}
@@ -40,7 +41,7 @@ class ComponentHome extends Component {
 
     renderLoader = () => {
         return (!this.props.loading ? null :
-            <h4 className="text-center">Loading...</h4>
+            <H4>Loading...</H4>
         );
     }
 
