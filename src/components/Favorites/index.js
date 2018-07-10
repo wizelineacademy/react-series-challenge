@@ -44,16 +44,24 @@ class Favorites extends Component {
   }
 
   handleAddFavorites = (newFavoriteGif) => {
+    // Get favorite Gifs from localStorage
+    const favoriteGifs = JSON.parse(localStorage.getItem('favoriteGifs'))
 
-    let favoriteGifs = JSON.parse(localStorage.getItem('favoriteGifs'))
-    favoriteGifs  = !!favoriteGifs ? favoriteGifs : []
+    // Check if there are favorite gifs
+    // If exist favorite gifs assign into updateFavoriteGifs
+    // If not assign to the variable an empty array
+    const updateFavoriteGifs  = !!favoriteGifs ? [...favoriteGifs] : []
 
-    console.log(favoriteGifs)
+    // Check if gif already exist and get the index
+    const gifFavoriteExist = updateFavoriteGifs.findIndex(gif => gif.id == newFavoriteGif.id)
 
-    const updateFavoriteGifs = [
-      ...favoriteGifs,
-      newFavoriteGif
-    ]
+    console.log(gifFavoriteExist)
+
+    if (gifFavoriteExist > -1) {
+      updateFavoriteGifs.splice(gifFavoriteExist, 1)
+    } else {
+      updateFavoriteGifs.push(newFavoriteGif)
+    }
 
     localStorage.setItem('favoriteGifs', JSON.stringify(updateFavoriteGifs))
   }
