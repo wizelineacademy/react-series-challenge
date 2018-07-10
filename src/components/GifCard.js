@@ -9,28 +9,22 @@ import star from '../icons/star.svg';
 
 import {
   GifCardWrapper,
-  GifCardUser,
   GifCardStar,
   GifCardMainImage
 } from '../styles/GifCard.style.js';
 
 const GifCard = (props) => {
-  var { favorite, id, images, title, toggleFavorite, user } = props;
+  var { favorite, id, images, title, toggleFavorite } = props;
 
   return (
     <GifCardWrapper>
-      { user &&
-        <GifCardUser href={ user.profile_url } >
-          <img src={ user.avatar_url } alt={ user.username } />
-        </GifCardUser>
-      }
       <GifCardStar
         src={ favorite ? star : emptyStar }
         alt="favorite icon"
         onClick={ () => toggleFavorite(id) }
       />
 
-      <GifCardMainImage src={ images.original.url } alt={title} />
+      <GifCardMainImage src={ images.downsized.url } alt={title} />
     </GifCardWrapper>
   );
 };

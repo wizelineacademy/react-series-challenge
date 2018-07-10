@@ -1,12 +1,20 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Route } from 'react-router-dom';
 
+import gifActions from '../actions/gifActions';
 import GifGrid from '../components/GifGrid';
 import SearchBar from '../components/SearchBar';
 
-const AppContainer = (props) => {
-  const { gifs, favorites } = props;
+class AppContainer extends Component {
+  componentDidMount() {
+    const { dispatch } = this.props;
+
+    dispatch(gifActions.creators.getTrendingGifs());
+  }
+
+  render() {
+  const { gifs, favorites } = this.props;
   const favoriteGifs = gifs.filter((gif) => favorites.indexOf(gif.id) !== -1);
 
   return (
@@ -16,18 +24,19 @@ const AppContainer = (props) => {
       <Route
         exact
         path="/"
-        render={() => (
-          <GifGrid gifs={gifs} />
+        render={({ match }) => (
+          <GifGrid gifs={ gifs } />
         )}
       />
       <Route
         path="/favorites"
-        render={() => (
-          <GifGrid gifs={favoriteGifs} />
+        render={({ match }) => (
+          <GifGrid gifs={ favoriteGifs } />
         )}
       />
     </div>
   );
+  }
 }
 
 const mapStateToProps = (state) => state;
