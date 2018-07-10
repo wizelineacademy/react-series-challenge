@@ -4,7 +4,7 @@ import gifsActions from '../../actions/gifs';
 import { List } from '../gif';
 import { bindActionCreators } from 'redux';
 
-class Home extends Component {
+class Favorites extends Component {
   componentDidMount() {
     this.props.loadDataStart();
   }
@@ -42,4 +42,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Home);
+)(Favorites);
