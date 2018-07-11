@@ -1,5 +1,6 @@
 import React from 'react';
 import Element from './Element';
+import SearchBar from './SearchBar';
 
 const ElementList = (props) => {
     console.log('test test :',props);
@@ -12,6 +13,7 @@ const ElementList = (props) => {
 
     return (
         <div>
+            <SearchBar />
             {renderGifs()}
         </div>
     );

@@ -4,7 +4,11 @@ export const LOCAL_STORAGE_FAVS = 'favGifs';
 const addToStorage = (id) => {
     let jsonFavs = JSON.parse(localStorage.getItem(LOCAL_STORAGE_FAVS));
     if(jsonFavs){
-        jsonFavs[id] = id;
+        if(jsonFavs[id]){
+         delete jsonFavs[id];
+        }else {
+            jsonFavs[id] = id;
+        }
     }else {
         jsonFavs = {[id] : id}
     }
