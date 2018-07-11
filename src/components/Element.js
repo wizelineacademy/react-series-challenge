@@ -17,11 +17,11 @@ const Element = (props) => {
 
     if (!localStorageFavsId || !localStorageFavsId[props.gif.id]) {
         return (
-            <RelativeDiv>
+            <RelativeDiv onClick={() => props.addItem(props.gif)}>
                 <Shadow>
                     <IconFav className="fas fa-thumbs-up fa-3x"></IconFav>
                 </Shadow>
-                <ElementImg src={props.gif.images.original.webp} onClick={() => props.addItem(props.gif)}/>
+                <ElementImg src={props.gif.images.original.webp} />
             </RelativeDiv>
         )
     } else {
@@ -29,7 +29,7 @@ const Element = (props) => {
        return (
            <RelativeDiv>
                <Shadow>
-                   <IconFavBlue className="far fa-thumbs-up"></IconFavBlue>
+                   <IconFavBlue className="far fa-thumbs-up fa-3x"></IconFavBlue>
                </Shadow>
                <ElementImg src={props.gif.images.original.webp} onClick={() => props.addItem(props.gif)}/>
            </RelativeDiv>
