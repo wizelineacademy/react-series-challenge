@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const validateEndpoint = (endpoint, search) =>
+export const validateEndpoint = (endpoint, search) =>
   endpoint === 'search' ? `&q=${search}` : '';
 
 export const fetchGifs = ({ url, api_key, limit, endpoint, search }) =>
@@ -15,4 +15,5 @@ export const fetchGifs = ({ url, api_key, limit, endpoint, search }) =>
 
 export default {
   fetchGifs,
+  validateEndpoint,
 };

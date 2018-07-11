@@ -7,7 +7,6 @@ import {
   ADD_REMOVE_FAVORITE,
   ADD_REMOVE_FAVORITE_HOME,
   ADD_REMOVE_FAVORITE_VIEW,
-  ADD_REMOVE_FAVORITE_DETAILS_R,
 } from '../actions/types';
 import selectors from '../utils/selectors';
 
@@ -56,9 +55,12 @@ export function* filterChangeSaga({ payload }) {
   yield put(actions.changeInput(payload));
   yield put(actions.getFavoritesR(1));
 }
-export function* addRemoveFavoriteSaga({ payload }) {
+export function* addRemoveFavoriteSaga({ payload }, testParams) {
   const img = { ...payload.image };
-  const oldFavorites = yield call(selectors.getFavorites);
+
+  const oldFavorites = testParams
+    ? [...testParams.favorites]
+    : yield call(selectors.getFavorites);
 
   const index = oldFavorites.findIndex(image => img.id === image.id);
 
@@ -82,12 +84,6 @@ export function* addRemoveViewSaga({ payload }) {
   yield put(actions.getFavoritesR(1));
 }
 
-export function* addRemoveDetailsSaga({ payload }) {
-  const image = { ...payload };
-  yield put(actions.addRemoveFavorite({ image }));
-  yield put(actions.getDetails(payload.id));
-}
-
 export default function* favoritesSagas() {
   yield takeLatest(GET_FAVORITES, getFavoritesRSaga);
   yield takeLatest(LOAD_FAVORITESR, loadFavoritesRSaga);
@@ -95,5 +91,4 @@ export default function* favoritesSagas() {
   yield takeEvery(ADD_REMOVE_FAVORITE, addRemoveFavoriteSaga);
   yield takeEvery(ADD_REMOVE_FAVORITE_HOME, addRemoveHomeSaga);
   yield takeEvery(ADD_REMOVE_FAVORITE_VIEW, addRemoveViewSaga);
-  yield takeEvery(ADD_REMOVE_FAVORITE_DETAILS_R, addRemoveDetailsSaga);
 }
