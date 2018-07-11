@@ -18,14 +18,8 @@ class App extends Component {
       <Provider store={store}>
         <AppStyledDiv>
           <h1>React Challenge</h1>
-          <ul>
-            <li>
-              <NavLink to="/favs">Your favs</NavLink>
-            </li>
-            <li>
-              <NavLink to="/">Trending</NavLink>
-            </li>
-          </ul>
+          <NavLink to="/favs">Your favs</NavLink> |{" "}
+          <NavLink to="/">Trending</NavLink>
           <Switch>
             <Route exact path="/favs" component={Favs} />
             <Route exact path="/" component={Home} />

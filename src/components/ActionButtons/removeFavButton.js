@@ -15,7 +15,7 @@ class RemoveFavButton extends Component {
 
   render() {
     return (
-      <StyledFavButton remove onClick={this.addFav} data-id={this.props.id}>
+      <StyledFavButton remove onClick={this.removeFav} data-id={this.props.id}>
         Remove
       </StyledFavButton>
     );

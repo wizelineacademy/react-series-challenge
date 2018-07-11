@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const AppStyledDiv = styled.div`
   text-align: center;
+  float:left;
 `;
 
 export const StyledFavButton = styled.button`
@@ -38,5 +39,22 @@ export const StyledFavImg = styled.img`
 export const StyledGifImg = styled.img`
   height:180px;
   padding:4px;
+`
+
+export const StyledSearchForm = styled.form`
+  padding:20px;
+`
+
+export const StyledInputForm = styled.input`
+  padding:5px;
+`
+export const StyledButtonForm = styled.button`
+  padding:5px;
+  color:green;
+  font-size:small;
+`
+
+export const StyleFormGroup = styled.div`
+
 `
 //props =>
