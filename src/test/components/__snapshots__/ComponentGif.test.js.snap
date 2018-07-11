@@ -1,0 +1,159 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component Gif Should match Snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <styled.div
+    favorite={true}
+  >
+    <styled.i
+      className="fa fa-star icon"
+    />
+    <styled.img
+      alt="my_gif"
+      onClick={[Function]}
+      src="http://www.xyzyz"
+    />
+    <styled.span>
+      my_gif
+    </styled.span>
+  </styled.div>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <styled.i
+          className="fa fa-star icon"
+        />,
+        <styled.img
+          alt="my_gif"
+          onClick={[Function]}
+          src="http://www.xyzyz"
+        />,
+        <styled.span>
+          my_gif
+        </styled.span>,
+      ],
+      "className": "sc-bdVaJa yAkrI",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "className": "fa fa-star icon",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "alt": "my_gif",
+          "onClick": [Function],
+          "src": "http://www.xyzyz",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": "my_gif",
+        },
+        "ref": null,
+        "rendered": "my_gif",
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <styled.i
+            className="fa fa-star icon"
+          />,
+          <styled.img
+            alt="my_gif"
+            onClick={[Function]}
+            src="http://www.xyzyz"
+          />,
+          <styled.span>
+            my_gif
+          </styled.span>,
+        ],
+        "className": "sc-bdVaJa yAkrI",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "className": "fa fa-star icon",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "alt": "my_gif",
+            "onClick": [Function],
+            "src": "http://www.xyzyz",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": "my_gif",
+          },
+          "ref": null,
+          "rendered": "my_gif",
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

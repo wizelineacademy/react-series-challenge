@@ -24,7 +24,6 @@
             "!/node_modules/",
             "!**/src/index.{js}",
             "!**/src/setupTests.{js}",
-            "!**/src/components/ErrorBoundary.{js}",
             "!**/src/constants/",
             "!**/src/store/"
         ],
