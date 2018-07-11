@@ -24,7 +24,6 @@ const Element = (props) => {
             </RelativeDiv>
         )
     } else {
-        //props.addItem(props.gif);
        return (
            <RelativeDiv>
                <Shadow>

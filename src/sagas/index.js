@@ -9,7 +9,7 @@ const apiUrl = 'https://api.giphy.com/v1';
 const apiKey = 'X6LoG2xSv6iWz6Vj5RqopNfzCs9iQLaO';
 
 //get using axios to api Giphy
-const fetchGifs = (url) => {
+export const fetchGifs = (url) => {
     return axios.get(url)
         .then((response) => response)
 }
