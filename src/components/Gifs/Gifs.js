@@ -2,30 +2,63 @@ import React, { Component } from "react";
 import { connect } from 'react-redux';
 import PropTypes from "prop-types";
 
+// Components
+import Search from './../Search/Search';
+import Menu from './../Sidebar/Sidebar';
+
 // actions
-import { addFavorites, getFavorites, deleteFavorites } from "./../../actions";
+import { add, getFavorites, deleteFav } from "./../../actions";
 
-// UI
-import UI from './Gifs.ui';
-
-class Search extends Component {
+class Gifs extends Component {
   favorites = (e, obj) => {
     e.preventDefault();
-    this.props.addFavorites(obj);
+    this.props.add(obj);
   }
 
   handleClick = (id) => {
-    this.props.deleteFavorites(id);
+    this.props.deleteFav(id);
   }
 
   render() {
+    const { data, favorites } = this.props;
+    let gifCatalog;
+
+    if (Object.keys(data).length) {
+      gifCatalog = data.data.map((v) => {
+        const index = v.id;
+        const check = (favorites || []).some(({ id }) => {
+          return id === v.id;
+        });
+
+        return (
+          <div key={index} className="row">
+            <div className="col">
+              <div className="gif">
+                <div className="product-image">
+                  <img src={v.images.fixed_height_small.url} alt="" />
+                </div>
+              </div>
+            </div>
+            {
+              (!check ?
+                <button onClick={(e) => { this.favorites(e, { url: v.images.fixed_height_small.url, id: v.id, title: v.title }) }}>
+                  Agregar a favoritos
+              </button> :
+                <button onClick={() => { this.handleClick(v.id) }}>Eliminar de mis favoritos</button>
+              )
+            }
+            <span>{(check ? 'favorito' : '')}</span>
+          </div>
+        );
+      })
+    }
+
     return (
-      <UI
-        data={this.props.data}
-        favorites={this.favorites}
-        favoritesList={this.props.favorites}
-        handleClick={this.handleClick}
-      />
+      <div>
+        <Menu />
+        <Search />
+        {gifCatalog}
+      </div>
     );
   };
 };
@@ -38,20 +71,20 @@ const mapStateToProps = (state) => {
 }
 
 Search.propTypes = {
-  addFavorites: PropTypes.func,
-  deleteFavorites: PropTypes.func,
+  add: PropTypes.func,
+  deleteFav: PropTypes.func,
   getFavorites: PropTypes.func,
 };
 
 Search.defaultProps = {
-  addFavorites: () => { },
-  deleteFavorites: () => { },
+  add: () => { },
+  deleteFav: () => { },
   getFavorites: () => { },
 }
 
 
 export default connect(mapStateToProps, {
-  addFavorites,
-  deleteFavorites,
+  add,
+  deleteFav,
   getFavorites
-})(Search);
+})(Gifs);

@@ -3,10 +3,10 @@ import { connect } from 'react-redux';
 import PropTypes from "prop-types";
 
 // actions
-import { deleteFavorites, getFavorites, filterFavorites } from './../../actions'
+import { deleteFav, getFavorites, filterFavorites } from './../../actions'
 
-// UI
-import UI from "./Favorites.ui";
+// Components
+import Menu from './../Sidebar/Sidebar';
 
 class Favorites extends Component {
   constructor(...props) {
@@ -26,7 +26,7 @@ class Favorites extends Component {
   }
 
   handleClick = (id) => {
-    this.props.deleteFavorites(id);
+    this.props.deleteFav(id);
   }
 
   gitFilter = (e) => {
@@ -35,14 +35,46 @@ class Favorites extends Component {
   }
 
   render() {
+    let gifCatalog;
+    const { favorites } = this.props;
+    const { searchForm } = this.state;
+
+    if (favorites && Object.keys(favorites).length) {
+      gifCatalog = favorites.map((v, i) => {
+        const index = `${i}--${v.id}`;
+
+        return (
+          <div key={index} className="row">
+            <div className="col">
+              <div className="gif">
+                <div className="product-image">
+                  <img src={v.url} alt="" />
+                </div>
+              </div>
+            </div>
+            <button onClick={() => { this.handleClick(v.id) }}>Eliminar de mis favoritos</button>
+          </div>
+        );
+      })
+    }
+
     return (
-      <UI
-        favoritesList={this.props.favorites}
-        handleClick={this.handleClick}
-        gitFilter={this.gitFilter}
-        handleChange={this.handleChange}
-        inrernalData={this.state.searchForm}
-      />
+      <div>
+        <Menu />
+        <div>
+          <form onSubmit={this.gitFilter}>
+            <span>Escribe el nombre de un gif</span>
+            <input
+              id="search"
+              type="text"
+              value={searchForm.searchField}
+              onChange={(e) => { this.handleChange(e, 'searchForm.searchField'); }}
+            />
+            <button type="submit">Realizar busqueda</button>
+          </form>
+        </div>
+        {gifCatalog}
+      </div>
     );
   }
 }
@@ -55,19 +87,19 @@ const mapStateToProps = (state) => {
 }
 
 Favorites.propTypes = {
-  deleteFavorites: PropTypes.func,
+  deleteFav: PropTypes.func,
   getFavorites: PropTypes.func,
   filterFavorites: PropTypes.func,
 };
 
 Favorites.defaultProps = {
-  deleteFavorites: () => { },
+  deleteFav: () => { },
   getFavorites: () => { },
   filterFavorites: () => { },
 }
 
 export default connect(mapStateToProps, {
-  deleteFavorites,
+  deleteFav,
   getFavorites,
   filterFavorites,
 })(Favorites);

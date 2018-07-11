@@ -5,8 +5,6 @@ import PropTypes from "prop-types";
 // actions
 import { searchGif } from "./../../actions";
 
-import UI from './Search.ui';
-
 class Search extends Component {
   static contextTypes = {
     router: PropTypes.object,
@@ -36,13 +34,20 @@ class Search extends Component {
 
 
   render() {
-
+    const { searchForm } = this.state;
     return (
-      <UI
-        handleChange={this.handleChange}
-        inrernalData={this.state.searchForm}
-        handleSubmit={this.handleSubmit}
-      />
+      <div>
+        <form onSubmit={this.handleSubmit}>
+          <span>Escribe el nombre de un gif</span>
+          <input
+            id="search"
+            type="text"
+            value={searchForm.searchField}
+            onChange={(e) => { this.handleChange(e, 'searchForm.searchField'); }}
+          />
+          <button type="submit">Realizar busqueda</button>
+        </form>
+      </div>
     );
   };
 };
