@@ -14,8 +14,13 @@ import selectors from "./../../../redux/selectors";
 // Actions
 import actions from "./../../../redux/actions/";
 
-class Keeps extends Component{
+class Favorites extends Component{
   componentDidMount() {
+    this.handleMyfunc()
+  }
+
+
+  handleMyfunc = () => {
     this.props.localFind('');
   }
 
@@ -45,4 +50,4 @@ const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({ modifyLocal, localFind }, dispatch);
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(Keeps);
+export default connect(mapStateToProps,mapDispatchToProps)(Favorites);
