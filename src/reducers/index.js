@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux'
-import search from './search'
+import trending from './trending'
 import favorites from './favorites'
+import search from './search'
 
 export default combineReducers({
-    search,
-    favorites
+  trending,
+  favorites,
+  search
 });
