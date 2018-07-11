@@ -1,7 +1,7 @@
 import React  from "react";
 import { GiftStyledContainer }  from '../styled_component/Home.styled';
 import AddGiftModal from './Modal/AddGiftModal';
-import ErrorBoundary from './ErrorBoundry';
+import ErrorBoundary from './ErrorBoundary';
 
 const GiftContainer = (props) => {
     return (

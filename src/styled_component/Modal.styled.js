@@ -28,6 +28,7 @@ export const ModalButtons = styled.span`
     
     font-family: inherit;
     font-size: 15px;
+    font-weight: bold;
     margin-top: 15px;
     margin-left: 40px;
     text-transform: uppercase;

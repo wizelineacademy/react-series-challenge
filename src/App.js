@@ -13,10 +13,9 @@ class App extends Component {
       <Provider store={store}>
         <AppStyled>
           <AppHeader>
-            <AppTitle>Welcome to my Challenge</AppTitle>
             <HeaderButtons >
-              <button><NavLink to="/Search" activeClass="active">Search</NavLink></button>
-              <button><NavLink to="/Favorites" activeClass="active">Favorites</NavLink></button>
+              <NavLink to="/Search" activeClass="active">Search</NavLink>
+              <NavLink to="/Favorites" activeClass="active">Favorites</NavLink>
             </HeaderButtons>
           </AppHeader>
 

@@ -28,7 +28,7 @@ class Home extends Component {
 const GiftList = (props) => {
   const { gifts } = props
 
-  console.log("gifts:",gifts)
+  console.log("--->", gifts);
   if(gifts.length < 5){
     throw new Error("Not Found")
   }

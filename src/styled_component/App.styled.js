@@ -6,7 +6,7 @@ export const AppStyled = styled.div`
 
 export const AppHeader = styled.header`
     background-color: #222;
-    height: 80px;
+    height: 20px;
     padding: 20px;
     color: white;
 `
@@ -16,16 +16,17 @@ export const AppTitle = styled.h1`
 `
 
 export const HeaderButtons = styled.div`
-    button {
-        border: 1px solid #FFF;
-        margin: 5px;
-        background: none;
-        text-transform: uppercase;
-    }
     a {
-        color: #FFF;
+        font-weight: 600;
+        margin: 50px;   
+        text-transform: uppercase;
+        color:#67818a;
         font-family: inherit;
         text-decoration: none;
-        font-size: 10px;
+        font-size: 15px;
+
+        &.active{
+            color: #FFF;
+        }
     }
 `
