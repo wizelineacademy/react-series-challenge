@@ -3,7 +3,7 @@ import { all, select, takeEvery } from 'redux-saga/effects';
 // Sagas
 import watchGetAllTrendingGif from './getAllTrendingGifs';
 import watchSearchGif from './searchGif';
-import { watchFavorites, watchAddFavorites } from './favorites'
+import { watchFavorites, watchAddFavorites, watchDeleteFavorites } from './favorites'
 
 export function* watchLog() {
   yield takeEvery('*', function* logger(action) {
@@ -22,5 +22,6 @@ export default function* rootSaga() {
     watchSearchGif(),
     watchFavorites(),
     watchAddFavorites(),
+    watchDeleteFavorites(),
   ]);
-} 
+}
