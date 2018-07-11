@@ -6,8 +6,8 @@ import './navegation.css';
 const Navegation = () => (
   <header>
     <ul>
-      <li><NavLink to="/" activeClass="active" exact>HOME</NavLink></li>
-      <li><NavLink to="/keeps" activeClass="active">Favoritos</NavLink></li>
+      <li><NavLink to="/home" activeclass="active">HOME</NavLink></li>
+      <li><NavLink to="/keeps" activeclass="active">Favoritos</NavLink></li>
     </ul>
   </header>
 );

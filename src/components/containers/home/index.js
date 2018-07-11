@@ -17,7 +17,7 @@ import Giphys from "./../../component/giphys";
 import Header from "./../../component/header";
 
 
-class Home extends Component{
+export class Home extends Component{
 
   constructor(props) {
     super(props);
@@ -25,10 +25,17 @@ class Home extends Component{
   }
 
   render() {
-    const { data, local, modifyLocal, fetchChange } = this.props;
+    const { data, local, modifyLocal, fetchChange, currentPath } = this.props;
+
+    let sugestionView;
+
+    if (currentPath) {
+      sugestionView = `We dont have any application path as like this ${currentPath}`;
+    }
 
     return (
       <div>
+        {(sugestionView ? <p>sugestionView</p> : null)}
         <Header home={this.home} action={fetchChange} />
         <Giphys home={this.home} data={data} local={local} modifyLocal={modifyLocal} />
         <Footer />

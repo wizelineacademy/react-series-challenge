@@ -6,19 +6,20 @@ import Keeps from "./components/containers/keeps/";
 
 import Navegation from "./components/component/navegation";
 
-class App extends Component {
-  render() {
-    return (
-      <React.Fragment>
+const App = ({ ...props }) => {
+  return (
+    <React.Fragment>
       <Navegation/>
-        <Switch>
-          <Route path="/keeps"  component={Keeps} />
-          <Route path="/" component={Home} />
-          <Redirect to="/" />
-        </Switch>
-      </React.Fragment>
-    );
-  }
+      <Switch>
+        <Route path="/home" component={Home} />
+        <Route path="/keeps"  component={Keeps} />
+        <Redirect to={{
+          pathname: "/home",
+          state: { from: 'NOT FOUND PAGE' },
+        }} />
+      </Switch>
+    </React.Fragment>
+  );
 }
 
 export default App;

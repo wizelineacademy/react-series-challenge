@@ -1,6 +1,6 @@
 import actions from "./../constants/actions";
 
-const initialState = {
+export const initialState = {
   loading: false,
   word: '',
   data: {},
