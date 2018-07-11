@@ -1,9 +1,11 @@
 import React, { Component, Fragment } from 'react'
+import { connect } from 'react-redux'
+
 import Nav from '../Nav'
 import SearchBar from '../SearchBar'
 import Gifs from '../Gifs'
-
 import axios from 'axios'
+import * as actionTypes from '../../actions'
 
 class Favorites extends Component {
   constructor(props) {
@@ -41,29 +43,6 @@ class Favorites extends Component {
         title: 'Trending Now'
       })
     })
-  }
-
-  handleAddFavorites = (newFavoriteGif) => {
-    // Get favorite Gifs from localStorage
-    const favoriteGifs = JSON.parse(localStorage.getItem('favoriteGifs'))
-
-    // Check if there are favorite gifs
-    // If exist favorite gifs assign into updateFavoriteGifs
-    // If not assign to the variable an empty array
-    const updateFavoriteGifs  = !!favoriteGifs ? [...favoriteGifs] : []
-
-    // Check if gif already exist and get the index
-    const gifFavoriteExist = updateFavoriteGifs.findIndex(gif => gif.id == newFavoriteGif.id)
-
-    console.log(gifFavoriteExist)
-
-    if (gifFavoriteExist > -1) {
-      updateFavoriteGifs.splice(gifFavoriteExist, 1)
-    } else {
-      updateFavoriteGifs.push(newFavoriteGif)
-    }
-
-    localStorage.setItem('favoriteGifs', JSON.stringify(updateFavoriteGifs))
   }
 
   getFavorites() {
@@ -111,6 +90,7 @@ class Favorites extends Component {
 
   render() {
     const { trendingGifs, query, loading, title } = this.state
+    const { favoriteGifs } = this.props
     return (
       <Fragment>
         <Nav />
@@ -123,9 +103,10 @@ class Favorites extends Component {
           loading
             ? 'Cargando ...'
             : <Gifs
-                gifs={trendingGifs}
+                gifs={favoriteGifs}
                 title={title}
-                addFavorites={this.handleAddFavorites}
+                // addFavorites={this.handleAddFavorites}
+                addFavorites={this.props.onToggleFavorite}
               />
         }
       </Fragment>
@@ -133,4 +114,16 @@ class Favorites extends Component {
   }
 }
 
-export default Favorites
+const mapStateToProps = state => {
+  return {
+    favoriteGifs: state.gifs
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onToggleFavorite: (item) => dispatch(actionTypes.favoriteToggle(item))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Favorites)
