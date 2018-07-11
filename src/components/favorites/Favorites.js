@@ -7,33 +7,37 @@ class Favorites extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchValue: '',
-      filtered: {}
+      searchValue: ''
     }
   }
 
   handleSearch = (e) => {
+    let value = e.target.value;
+    this.setState({
+      searchValue: value
+    })
+  }
+
+  filteredFavorites = () => {
     let result = {};
     let matches = Object.keys(this.props.favorite).filter(favorite => {
-      let pattern = new RegExp(`.*?${e.target.value}.*?`, 'i');
+      let pattern = new RegExp(`.*?${this.state.searchValue}.*?`, 'i');
       let match = pattern.test(this.props.favorite[favorite].title);
       return match;
     });
     matches.forEach(match => {
       result[match] = { ...this.props.favorite[match] }
     });
-    this.setState({
-      filtered: result
-    });
-    return result;
+    return (result);
   }
 
   render() {
+
+    var filtered = this.filteredFavorites();
     let searchToggle = <GifList gifs={this.props.favorite} />;
-    
-    if (Object.keys(this.state.filtered).length > 0) {
-      searchToggle = <GifList gifs={this.state.filtered} />;
-    }
+    if (this.state.searchValue !== '') {(
+      searchToggle = <GifList gifs={filtered} />
+    )}
 
     return (
       <div className="favorites">
