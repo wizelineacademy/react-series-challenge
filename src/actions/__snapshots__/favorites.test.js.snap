@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`favorites_actions filterFavorite Should dispatches the correct action and payload 1`] = `
+Object {
+  "_persist": Object {
+    "rehydrated": true,
+    "version": -1,
+  },
+  "favorites": Object {
+    "_persist": Object {
+      "rehydrated": true,
+      "version": -1,
+    },
+    "filtered": Array [],
+    "items": Object {},
+  },
+  "search": Object {
+    "searchFavorite": "",
+    "searchInput": "",
+  },
+  "searchGifs": Object {
+    "data": null,
+    "error": null,
+    "fetching": false,
+  },
+  "trendGifs": Object {
+    "data": null,
+    "error": null,
+    "fetching": false,
+  },
+}
+`;
+
+exports[`favorites_actions toggle_Favorite Should dispatches the correct action and payload 1`] = `
+Object {
+  "_persist": Object {
+    "rehydrated": true,
+    "version": -1,
+  },
+  "favorites": Object {
+    "_persist": Object {
+      "rehydrated": true,
+      "version": -1,
+    },
+    "filtered": Array [],
+    "items": Object {
+      "1yTczxnQj0LojkuXCY": Object {
+        "id": "1yTczxnQj0LojkuXCY",
+      },
+    },
+  },
+  "search": Object {
+    "searchFavorite": "",
+    "searchInput": "",
+  },
+  "searchGifs": Object {
+    "data": null,
+    "error": null,
+    "fetching": false,
+  },
+  "trendGifs": Object {
+    "data": null,
+    "error": null,
+    "fetching": false,
+  },
+}
+`;

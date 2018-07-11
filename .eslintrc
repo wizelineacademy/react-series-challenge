@@ -2,5 +2,9 @@
   "extends": "react-app",
   "env": {
     "jest": true
+  },
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": "error"
   }
 }
