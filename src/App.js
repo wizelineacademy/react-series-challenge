@@ -4,7 +4,8 @@ import store from './store';
 import { Link, Route, BrowserRouter, Switch } from 'react-router-dom';
 import Home from './components/home';
 import Favorites from './components/favorites';
-import './App.css';
+import { Header } from './App.style';
+import './global';
 
 class App extends Component {
   render() {
@@ -12,7 +13,7 @@ class App extends Component {
       <Provider store={store}>
         <BrowserRouter>
           <div className="App">
-            <header className="App-header">
+            <Header>
               <ul>
                 <li>
                   <Link to="/">Home</Link>
@@ -20,8 +21,11 @@ class App extends Component {
                 <li>
                   <Link to="/favorites">Favorites</Link>
                 </li>
+                <li>
+                  <input type="text" />
+                </li>
               </ul>
-            </header>
+            </Header>
 
             <Switch>
               <Route exact path="/" component={Home} />

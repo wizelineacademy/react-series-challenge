@@ -1,4 +1,4 @@
-import { all, call, put, takeEvery } from 'redux-saga/effects';
+import { all, call, put, take, takeEvery } from 'redux-saga/effects';
 import gifsActions from '../actions/gifs';
 import axios from 'axios';
 
@@ -43,7 +43,9 @@ function* watchSearch(params) {
 }
 
 function* watchLoadData() {
-  yield takeEvery(LOAD_DATA_START, loadGifs);
+  yield take(LOAD_DATA_START);
+
+  yield call(loadGifs);
 }
 
 function* rootSaga() {

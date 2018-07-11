@@ -5,10 +5,6 @@ import { List } from '../gif';
 import { bindActionCreators } from 'redux';
 
 class Favorites extends Component {
-  componentDidMount() {
-    this.props.loadDataStart();
-  }
-
   render() {
     return (
       <List

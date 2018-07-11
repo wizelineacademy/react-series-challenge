@@ -11,7 +11,9 @@
     "react-scripts": "1.1.1",
     "redux": "^4.0.0",
     "redux-actions": "^2.4.0",
-    "redux-saga": "^0.16.0"
+    "redux-mock-store": "^1.5.3",
+    "redux-saga": "^0.16.0",
+    "styled-components": "^3.3.3"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -20,10 +22,10 @@
     ],
     "coverageThreshold": {
       "global": {
-        "branches": 75,
-        "functions": 75,
-        "lines": 75,
-        "statements": 75
+        "branches": 70,
+        "functions": 70,
+        "lines": 70,
+        "statements": 70
       }
     }
   },
@@ -48,6 +50,11 @@
     "enzyme-adapter-react-16": "^1.1.1",
     "husky": "^0.14.3",
     "lint-staged": "^7.2.0",
-    "prettier": "^1.13.7"
+    "prettier": "^1.13.7",
+    "react-test-renderer": "^16.4.1",
+    "redux-devtools-extension": "^2.13.5"
+  },
+  "resolutions": {
+    "**/istanbul-lib-instrument": "1.9.2"
   }
 }

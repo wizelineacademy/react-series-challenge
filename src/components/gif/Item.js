@@ -1,22 +1,19 @@
 import React from 'react';
-import './Item.css';
+import { Item, FavoriteButton } from './Item.style';
 
-const Item = ({ data, toggleFavorite, isFavorite }) => {
-  const favorite = isFavorite ? 'Favorite' : 'No Favorite';
-
-  const textButton = isFavorite ? 'Remove from Favorites' : 'Add to Favorites';
+export default ({ data, toggleFavorite, isFavorite }) => {
   return (
-    <div className="gif">
+    <Item>
       <figure>
         <img src={data.images.original.webp} alt={data.title} />
-        <figcaption>{favorite}</figcaption>
+        <figcaption>
+          <p>{data.title}</p>
+          <FavoriteButton
+            favorite={isFavorite}
+            onClick={() => toggleFavorite({ gif: data, isFavorite })}
+          />
+        </figcaption>
       </figure>
-
-      <button onClick={() => toggleFavorite({ gif: data, isFavorite })}>
-        {textButton}
-      </button>
-    </div>
+    </Item>
   );
 };
-
-export default Item;
