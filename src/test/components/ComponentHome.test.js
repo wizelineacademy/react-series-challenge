@@ -1,40 +1,41 @@
 import React from 'react';
-import { shallow } from 'enzyme';
 import ComponentHome from '../../components/ComponentHome';
-import { ContainerInputText, InputText, } from '../../styles/App.style';
-import store from '../../store';
+import configureStore from 'redux-mock-store';
+import { ContainerInputText, InputText, H4 } from '../../styles/App.style';
+import { mount } from 'enzyme';
+import renderer from 'react-test-renderer';
 
 const initialState = {
   gifsTrending: {
     gifs: [],
-    loading: false,
+    loading: true,
   },
   gifsFavorites: {
-    favoritos: [],
+    favorites: [],
     textFilter: '',
-  }
-}
-const _store = store();
-describe('Component Home', () => {
-  let home;
-
-  beforeEach(() => {
-    home = shallow(<ComponentHome store={_store} />);
-  });
+  },
+};
+const mockStore = configureStore();
+const store = mockStore(initialState);
+describe('ComponentHome test', () => {
 
   test('Should match snapshot', () => {
-    expect(home).toMatchSnapshot();
+    const favComponent = renderer.create(<ComponentHome store={store} />).toJSON();
+    expect(favComponent).toMatchSnapshot();
   });
 
-  test('Should exists component', () => {
-    expect(home.exists()).toEqual(true);
+  test('Should render ContainerInputText', () => {
+    const favComponent = mount(<ComponentHome store={store} />);
+    expect(favComponent.find(ContainerInputText).length).toEqual(1);
   });
 
-  test('Should find ContainerInputText', () => {
-    expect(home.find(ContainerInputText).length).toEqual(0);
+  test('Should render InputText', () => {
+    const favComponent = mount(<ComponentHome store={store} />);
+    expect(favComponent.find(InputText).length).toEqual(1);
   });
 
-  test('Should find InputText', () => {
-    expect(home.contains(<InputText />)).toEqual(false);
+  test('Should render LOADING', () => {
+    const favComponent = mount(<ComponentHome store={store} />);
+    expect(favComponent.find(H4).length).toEqual(1);
   });
 });

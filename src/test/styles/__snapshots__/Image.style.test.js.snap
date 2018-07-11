@@ -2,7 +2,7 @@
 
 exports[`Image styled Should match ContentGif 1`] = `
 .c0 {
-  background-color: #b5c4de;
+  background-color: #edf0f5;
   float: left;
   width: 220px;
   margin: 6px;

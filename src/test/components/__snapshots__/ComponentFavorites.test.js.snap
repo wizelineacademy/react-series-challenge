@@ -1,21 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ComponentHome test Should match snapshot 1`] = `
+exports[`ComponentFavorites test Should match snapshot 1`] = `
 <div>
   <div
     className="sc-dnqmqq gSaoM"
   >
     <input
       className="sc-iwsKbI fBMWKb"
-      onKeyUp={[Function]}
+      id="searchFav"
+      onChange={[Function]}
       placeholder="search"
       type="text"
     />
   </div>
-  <h4
-    className="sc-gZMcBi ijJpaU"
-  >
-    Loading...
-  </h4>
 </div>
 `;

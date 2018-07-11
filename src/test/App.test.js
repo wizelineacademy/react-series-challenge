@@ -1,46 +1,58 @@
-import App from '../App';
 import React from 'react';
-import { shallow } from 'enzyme';
+import App from '../App';
+import { mount, } from 'enzyme';
+import renderer from 'react-test-renderer';
 import { Navbar, NavbarContainer, NavbarLi, NavbarLink, AppBody, } from '../styles/App.style';
 import ErrorBoundary from '../components/ErrorBoundary';
-import { Switch } from 'react-router-dom';
+import { MemoryRouter, Switch, } from 'react-router-dom';
+import configureStore from 'redux-mock-store';
 
-describe('App', () => {
+const initialState = {
+  gifsTrending: {
+    gifs: [],
+    loading: true,
+  },
+  gifsFavorites: {
+    favorites: [],
+    textFilter: '',
+  },
+};
+
+const mockStore = configureStore();
+const store = mockStore(initialState);
+describe('App test', () => {
   let Wrapper;
 
   beforeEach(() => {
-    Wrapper = shallow(<App />);
+    Wrapper = mount(<MemoryRouter><App store={store} /></MemoryRouter>);
   });
 
   test('Should match snapshot', () => {
-      expect(Wrapper).toMatchSnapshot();
+    const appComponent = renderer.create(<MemoryRouter><App store={store} /></MemoryRouter>).toJSON();
+    expect(appComponent).toMatchSnapshot();
   });
 
   test('Should render Navbar', () => {
-    expect(Wrapper.find(Navbar)).toHaveLength(1);
+    expect(Wrapper.find(Navbar).length).toEqual(1);
   });
 
   test('Should render NavbarContainer', () => {
-    expect(Wrapper.find(NavbarContainer)).toHaveLength(1);
+    expect(Wrapper.find(NavbarContainer).length).toEqual(1);
   });
 
   test('Should render NavbarLi', () => {
-    expect(Wrapper.find(NavbarLi)).toHaveLength(2);
+    expect(Wrapper.find(NavbarLi).length).toEqual(2);
   });
 
   test('Should render NavbarLink', () => {
-    expect(Wrapper.find(NavbarLink)).toHaveLength(0);
+    expect(Wrapper.find(NavbarLink).length).toEqual(2);
   });
 
   test('Should render AppBody', () => {
-    expect(Wrapper.find(AppBody)).toHaveLength(1);
+    expect(Wrapper.find(AppBody).length).toEqual(1);
   });
 
   test('Should render ErrorBoundary', () => {
-    expect(Wrapper.find(ErrorBoundary)).toHaveLength(1);
-  });
-
-  test('Should render Switch', () => {
-    expect(Wrapper.find(Switch)).toHaveLength(1);
+    expect(Wrapper.find(ErrorBoundary).length).toEqual(1);
   });
 });

@@ -13,7 +13,7 @@ class ComponentFavorites extends Component {
         return (
             <div>
                 <ContainerInputText>
-                    <InputText type="text" placeholder="search" onChange={(e) => {
+                    <InputText id='searchFav' type="text" placeholder="search" onChange={(e) => {
                         this.props.dispatch(updateTextFilter(e.target.value));
                     }} />
                 </ContainerInputText>
