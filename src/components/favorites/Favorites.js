@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import SearchBar from 'components/searchBar';
 import GifList from 'components/gifList';
+import { StyledHeading1 } from '../Heading1.style'
 
 class Favorites extends Component {
   constructor(props) {
@@ -40,11 +41,11 @@ class Favorites extends Component {
     )}
 
     return (
-      <div className="favorites">
-        <SearchBar value={this.searchValue} onChange={this.handleSearch} />
-        <h1>Favorites</h1>
+      <React.Fragment>
+        <SearchBar value={this.searchValue} onChange={this.handleSearch} placeholder="Buscar en favoritos..." />
+        <StyledHeading1>Los más chidos... según yo</StyledHeading1>
         { searchToggle }
-      </div>
+      </React.Fragment>
     )  
   }
 }

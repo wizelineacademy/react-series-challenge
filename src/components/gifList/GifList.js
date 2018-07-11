@@ -1,37 +1,36 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import favoriteActions from 'actions/favorite';
 import Gif from 'components/gif';
+import { StyledGifList } from './GifList.style'
 
-export class GifList extends Component {
-  toggleFavorite = (gif) => {
-    let gifData = (this.props.favorite[gif]) || this.props.gifs[gif]
+const GifList = (props) => {
+  let toggleFavorite = (gif) => {
+    let gifData = (props.favorite[gif]) || props.gifs[gif]
     if(gifData.liked) {
-      this.props.removeFavorite({ gif: gifData });
+      props.removeFavorite({ gif: gifData });
     } else {
-      this.props.addFavorite({ gif: gifData });
+      props.addFavorite({ gif: gifData });
     }
   }
 
-  render(){
-    return (
-      <React.Fragment>
-        {
-          Object.keys(this.props.gifs).map((gif) =>
-            <Gif
-              key={this.props.gifs[gif].id}
-              id={this.props.gifs[gif].id}
-              liked={this.props.gifs[gif].liked}
-              title={this.props.gifs[gif].title}
-              src={this.props.gifs[gif].images.fixed_width_small.url}
-              onClick={() => this.toggleFavorite(gif)}
-            />
-          )
-        }
-      </React.Fragment>
-    )
-  }
+  return (
+    <StyledGifList>
+      {
+        Object.keys(props.gifs).map((gif) =>
+          <Gif
+            key={props.gifs[gif].id}
+            id={props.gifs[gif].id}
+            liked={props.gifs[gif].liked}
+            title={props.gifs[gif].title}
+            src={props.gifs[gif].images.original.webp}
+            onClick={() => toggleFavorite(gif)}
+          />
+        )
+      }
+    </StyledGifList>
+  )
 }
 
 

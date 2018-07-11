@@ -5,6 +5,7 @@ import SearchBar from 'components/searchBar';
 import GifList from 'components/gifList';
 import trendingActions from 'actions/trending';
 import searchActions from 'actions/search';
+import { StyledHeading1 } from '../Heading1.style'
 
 class Home extends Component {
   constructor(props) {
@@ -14,7 +15,7 @@ class Home extends Component {
     }
   }
 
-  componentWillMount = () => {
+  componentDidMount = () => {
     this.props.getTrendingGifs();
   }
 
@@ -29,11 +30,11 @@ class Home extends Component {
     }
 
     return (
-      <div className="home">
+      <React.Fragment>
         <SearchBar value={this.searchValue} onChange={this.handleSearch} />
-        <h1>Home</h1>
+        <StyledHeading1>Gifs de moda y de novedad</StyledHeading1>
         { searchToggle }
-      </div>
+      </React.Fragment>
     )  
   }
 }

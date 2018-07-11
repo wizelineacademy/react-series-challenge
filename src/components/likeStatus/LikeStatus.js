@@ -1,13 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class LikeStatus extends Component {
-  render(){
-    return <span
-      className={(Boolean(this.props.liked)) ? 'liked' : 'not-liked'}
-    >
-      {(Boolean(this.props.liked)) ? 'liked' : 'not-liked'}
-    </span>
-  }
+const LikeStatus = (props) => {
+  return <span className="like-status">
+    {(Boolean(props.liked)) ? '💖' : '🖤'}
+  </span>
 }
 
 export default LikeStatus;

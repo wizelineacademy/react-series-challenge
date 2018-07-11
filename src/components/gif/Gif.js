@@ -1,32 +1,31 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import LikeStatus from 'components/likeStatus';
+import { StyledGif } from './Gif.style'
 
-export class Gif extends Component {
-  constructor(props) {
-    super(props);
+export const Gif = (props) => {
+  let likeRender = <LikeStatus liked={false} />;
+  if (
+    props.favorite &&
+    props.favorite[props.id] &&
+    Boolean(props.favorite[props.id].liked)
+  ) {
+    likeRender = <LikeStatus liked={true} />;
   }
-  render() {
-    let likeRender = <LikeStatus liked={false} />;
-    if (
-      this.props.favorite &&
-      this.props.favorite[this.props.id] &&
-      Boolean(this.props.favorite[this.props.id].liked)
-    ) {
-      likeRender = <LikeStatus liked={true} />;
-    }
-    return (
-      <div className="gif" src={this.props.src} onClick={this.props.onClick}>
-        <img
-          className="img"
-          src={this.props.src}
-          alt={this.props.title}
-          title={this.props.title}
-        />
-        { likeRender }
-      </div>
-    )
+  let bgColor = () => {
+    return  `#${(Math.floor(Math.random()*16777215).toString(16))}`;
   }
+  return (
+    <StyledGif bgColor={bgColor} className="gif" src={props.src} onClick={props.onClick}>
+      <img
+        className="img"
+        src={props.src}
+        alt={props.title}
+        title={props.title}
+      />
+      { likeRender }
+    </StyledGif>
+  )
 }
 
 const mapStateToProps = (state) => {

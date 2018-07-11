@@ -12,12 +12,10 @@ class App extends Component {
       <Provider store={store}>
         <div className="App">
           <Header />
-          <div className="content">
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route path="/favorites" component={Favorites} />
-            </Switch>
-          </div>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/favorites" component={Favorites} />
+          </Switch>
         </div>
       </Provider>
     );

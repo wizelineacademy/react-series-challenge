@@ -1,15 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { StyledHeader } from './Header.style'
 
-class Header extends Component {
-  render() {
-    return (
-      <header className="App-header">
-        <NavLink to="/" exact>Home</NavLink>
-        <NavLink to="/favorites">Favorites</NavLink>
-      </header>
-    )  
-  }
+const Header = () => {
+  return (
+    <StyledHeader>
+      <NavLink to="/" exact>Home</NavLink>
+      <NavLink to="/favorites">Favorites</NavLink>
+    </StyledHeader>
+  )  
 }
 
 export default Header;
