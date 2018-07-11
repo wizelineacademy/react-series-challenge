@@ -9,6 +9,8 @@ import "./theme/globalStyle";
 import Routes from "./Routes";
 import Navbar from "./Components/Navigation/Navbar";
 
+console.log("Store", store);
+
 const App = () => (
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>

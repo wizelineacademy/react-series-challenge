@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`search_actions search_favorite Should dispatches the correct action and payload 1`] = `
+Object {
+  "_persist": Object {
+    "rehydrated": true,
+    "version": -1,
+  },
+  "favorites": Object {
+    "_persist": Object {
+      "rehydrated": true,
+      "version": -1,
+    },
+    "filtered": null,
+    "items": Object {},
+  },
+  "search": Object {
+    "searchFavorite": "",
+    "searchInput": "google",
+  },
+  "searchGifs": Object {
+    "data": null,
+    "error": null,
+    "fetching": false,
+  },
+  "trendGifs": Object {
+    "data": null,
+    "error": null,
+    "fetching": false,
+  },
+}
+`;
+
+exports[`search_actions search_input Should dispatches the correct action and payload 1`] = `
+Object {
+  "_persist": Object {
+    "rehydrated": true,
+    "version": -1,
+  },
+  "favorites": Object {
+    "_persist": Object {
+      "rehydrated": true,
+      "version": -1,
+    },
+    "filtered": null,
+    "items": Object {},
+  },
+  "search": Object {
+    "searchFavorite": "",
+    "searchInput": "soccer",
+  },
+  "searchGifs": Object {
+    "data": null,
+    "error": null,
+    "fetching": false,
+  },
+  "trendGifs": Object {
+    "data": null,
+    "error": null,
+    "fetching": false,
+  },
+}
+`;
