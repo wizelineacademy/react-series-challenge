@@ -1,6 +1,8 @@
+import { createAction } from 'redux-actions';
+
 const SEARCH_BAR_INPUT = 'SEARCH_BAR_INPUT';
 
-const searchBarInput = (payload = '') => ({ type: SEARCH_BAR_INPUT, payload });
+const searchBarInput = createAction(SEARCH_BAR_INPUT);
 
 export default {
     types: {

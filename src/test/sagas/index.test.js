@@ -18,7 +18,7 @@ const { SEARCH_BAR_INPUT } = searchBarActions.types;
 const trendingResource = '/trending?limit=25&rating=G';
 const searchedResource = `/search?q=test&limit=25&offset=0&rating=G&lang=en`;
 
-describe('sagas test', () => {
+describe('sagas tests', () => {
     const generatorGetTrendingGifs = getTrendingGifs();
     const generatorGetSearchedGifs = getSearchedGifs({ payload: 'test' });
     const generatorWatchGetTrendingGifs = watchGetTrendingGifs();
