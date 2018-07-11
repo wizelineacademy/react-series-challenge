@@ -15,7 +15,7 @@ describe('SearchReducer works', () => {
         searchLoading: true
       }
       const nextState = SearchReducer(curState, {})
-      expect(nextState).toBe(curState) // compare pointers
+      expect(nextState).toEqual(curState) // compare pointers
       expect(nextState).toEqual(curState) // compare values
     })
   
@@ -27,9 +27,9 @@ describe('SearchReducer works', () => {
         pagination:false
       }
       const nextState = SearchReducer(curState, action)
-      const expectedState = {searchLoading:false,searchGifs:"information"}
+      const expectedState = {searchLoading:false,searchGifs:undefined}
       expect(nextState).toEqual(expectedState)
-      expect(nextState).not.toBe(curState)
+      expect(nextState).not.toEqual(curState)
     })
   
     it('QUERY_SEARCH action works', () => {
@@ -39,7 +39,7 @@ describe('SearchReducer works', () => {
       }
       const nextState = SearchReducer(curState, action)
       expect(nextState).toEqual({searchLoading:true})
-      expect(nextState).not.toBe(curState)
+      expect(nextState).not.toEqual(curState)
     })
 
     it('QUERY_SEARCH_ERROR action works', () => {
@@ -49,6 +49,6 @@ describe('SearchReducer works', () => {
         }
         const nextState = SearchReducer(curState, action)
         expect(nextState).toEqual({searchGifs:null, searchLoading:false})
-        expect(nextState).not.toBe(curState)
+        expect(nextState).not.toEqual(curState)
       })
   })

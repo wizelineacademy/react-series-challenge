@@ -15,7 +15,7 @@ describe('HomeReducer works', () => {
         trendingLoading: true
       }
       const nextState = HomeReducer(curState, {})
-      expect(nextState).toBe(curState) // compare pointers
+      expect(nextState).toEqual(curState) // compare pointers
       expect(nextState).toEqual(curState) // compare values
     })
   
@@ -27,9 +27,9 @@ describe('HomeReducer works', () => {
         pagination:false
       }
       const nextState = HomeReducer(curState, action)
-      const expectedState = {trendingLoading:false,trendingGifs:"information"}
+      const expectedState = {trendingLoading:false,trendingGifs:undefined}
       expect(nextState).toEqual(expectedState)
-      expect(nextState).not.toBe(curState)
+      expect(nextState).not.toEqual(curState)
     })
   
     it('QUERY_TRENDING action works', () => {
@@ -39,7 +39,7 @@ describe('HomeReducer works', () => {
       }
       const nextState = HomeReducer(curState, action)
       expect(nextState).toEqual({trendingLoading:true})
-      expect(nextState).not.toBe(curState)
+      expect(nextState).not.toEqual(curState)
     })
 
     it('QUERY_TRENDING_ERROR action works', () => {
@@ -49,6 +49,6 @@ describe('HomeReducer works', () => {
         }
         const nextState = HomeReducer(curState, action)
         expect(nextState).toEqual({trendingGifs:null, trendingLoading:false})
-        expect(nextState).not.toBe(curState)
+        expect(nextState).not.toEqual(curState)
       })
   })
