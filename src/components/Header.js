@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
+import { ContainerWrapper } from '../styles/ContainerWrapper.style.js';
 import {
   HeaderWrapper,
   HeaderContainer,
@@ -13,7 +14,7 @@ import logo from '../icons/logo.svg';
 const Header = () => {
   return (
     <HeaderWrapper>
-      <div className="AppContainer">
+      <ContainerWrapper>
         <HeaderContainer>
           <NavLink to="/">
             <HeaderLogo src={logo} alt="logo" />
@@ -23,7 +24,7 @@ const Header = () => {
             <NavLink to="/favorites">Favorites</NavLink>
           </HeaderNavItems>
         </HeaderContainer>
-      </div>
+      </ContainerWrapper>
     </HeaderWrapper>
   )
 }
