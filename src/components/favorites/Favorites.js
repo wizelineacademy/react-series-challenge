@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import SearchBar from 'components/searchBar';
 import GifList from 'components/gifList';
 import { StyledHeading1 } from '../Heading1.style'
+import { EmptyPlaceholder } from '../EmptyPlaceholder.style'
 
 class Favorites extends Component {
   constructor(props) {
@@ -35,14 +36,24 @@ class Favorites extends Component {
   render() {
 
     var filtered = this.filteredFavorites();
-    let searchToggle = <GifList gifs={this.props.favorite} />;
-    if (this.state.searchValue !== '') {(
-      searchToggle = <GifList gifs={filtered} />
-    )}
+    let searchToggle = null;
+
+    if(Object.keys(this.props.favorite).length === 0) {
+      searchToggle = <EmptyPlaceholder>No tienes favoritos.</EmptyPlaceholder>
+    } else {
+      searchToggle = <GifList gifs={this.props.favorite} />;
+      if (this.state.searchValue !== '') {
+        if(Object.keys(filtered).length === 0) {
+          searchToggle = <EmptyPlaceholder>No hay resultados para esta búsqueda.</EmptyPlaceholder>
+        } else {
+          searchToggle = <GifList gifs={filtered} />
+        }
+      }  
+    }
 
     return (
       <React.Fragment>
-        <SearchBar value={this.searchValue} onChange={this.handleSearch} placeholder="Buscar en favoritos..." />
+        <SearchBar value={this.state.searchValue} onChange={this.handleSearch} placeholder="Buscar en favoritos..." />
         <StyledHeading1>Los más chidos... según yo</StyledHeading1>
         { searchToggle }
       </React.Fragment>

@@ -6,6 +6,7 @@ import GifList from 'components/gifList';
 import trendingActions from 'actions/trending';
 import searchActions from 'actions/search';
 import { StyledHeading1 } from '../Heading1.style'
+import { EmptyPlaceholder } from '../EmptyPlaceholder.style'
 
 class Home extends Component {
   constructor(props) {
@@ -20,18 +21,32 @@ class Home extends Component {
   }
 
   handleSearch = (e) => {
-    this.props.getSearchGifs(e.target.value);
+    let value = e.target.value;
+    this.setState({
+      searchValue: value
+    })
+    this.props.getSearchGifs(value);
   }
 
   render() {
-    let searchToggle = <GifList gifs={this.props.trending} />;
-    if (Object.keys(this.props.search).length > 0) {
-      searchToggle = <GifList gifs={this.props.search} />;
+    let searchToggle = null;
+
+    if(Object.keys(this.props.trending).length === 0) {
+      searchToggle = <EmptyPlaceholder>¡No hay gifs!</EmptyPlaceholder>
+    } else {
+      searchToggle = <GifList gifs={this.props.trending} />;
+      if (this.state.searchValue !== '') {
+        if(Object.keys(this.props.search).length === 0) {
+          searchToggle = <EmptyPlaceholder>No hay resultados para esta búsqueda.</EmptyPlaceholder>
+        } else {
+          searchToggle = <GifList gifs={this.props.search} />
+        }
+      }  
     }
 
     return (
       <React.Fragment>
-        <SearchBar value={this.searchValue} onChange={this.handleSearch} />
+        <SearchBar value={this.state.searchValue} onChange={this.handleSearch} />
         <StyledHeading1>Gifs de moda y de novedad</StyledHeading1>
         { searchToggle }
       </React.Fragment>

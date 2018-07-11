@@ -24,7 +24,7 @@ const GifList = (props) => {
             id={props.gifs[gif].id}
             liked={props.gifs[gif].liked}
             title={props.gifs[gif].title}
-            src={props.gifs[gif].images.original.webp}
+            src={props.gifs[gif].images.fixed_width_small.url}
             onClick={() => toggleFavorite(gif)}
           />
         )
