@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const ContentGif = styled.div`
-    background-color: #edf0f5;
+    background-color: ${props => props.favorite ? '#b5c4de' : '#edf0f5'};
     float: left;
     width: 220px;
     margin: 6px;

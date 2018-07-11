@@ -4,6 +4,8 @@
     "private": true,
     "dependencies": {
         "axios": "^0.18.0",
+        "jest-cli": "^23.4.0",
+        "jest-styled-components": "^5.0.1",
         "react": "^16.2.0",
         "react-dom": "^16.2.0",
         "react-redux": "^5.0.7",
@@ -17,7 +19,14 @@
     "jest": {
         "collectCoverageFrom": [
             "**/src/**/*.{js,jsx}",
-            "!**/src/registerServiceWorker.{js,jsx}"
+            "!**/src/registerServiceWorker.{js,jsx}",
+            "src/**/*.{js,jsx}",
+            "!/node_modules/",
+            "!**/src/index.{js}",
+            "!**/src/setupTests.{js}",
+            "!**/src/components/ErrorBoundary.{js}",
+            "!**/src/constants/",
+            "!**/src/store/"
         ],
         "coverageThreshold": {
             "global": {
@@ -38,6 +47,7 @@
     },
     "devDependencies": {
         "enzyme": "^3.3.0",
-        "enzyme-adapter-react-16": "^1.1.1"
+        "enzyme-adapter-react-16": "^1.1.1",
+        "jest": "^23.4.0"
     }
 }
