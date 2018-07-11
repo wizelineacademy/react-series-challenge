@@ -11,19 +11,25 @@ const GiphyList = (props) => {
         view,
         giphies,
         favorites,
+        addFavorites,
         removeFavorites
     } = props;
+
     const giphiesShown = (view === appActions.enums.viewType.SEARCH)
         ? giphies
         : favorites;
-    console.log(props);
-    console.log(giphiesShown);
 
     return (
         <React.Fragment>
             {giphiesShown.map(giphy =>
                 <ErrorBoundary key={giphy.id}>
-                    <GiphyElement key={giphy.slug} giphy={giphy} removeFavorites={removeFavorites}/>
+                    <GiphyElement
+                        key={giphy.slug}
+                        giphy={giphy}
+                        view={view}
+                        addFavorites={addFavorites}
+                        removeFavorites={removeFavorites}
+                    />
                 </ErrorBoundary>)}
         </React.Fragment>
     );
@@ -44,10 +50,13 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-    const {removeFavorites} = appActions.creators;
-
+    const {
+        addFavorites,
+        removeFavorites
+    } = appActions.creators;
     return bindActionCreators({
-        removeFavorites,
+        addFavorites,
+        removeFavorites
     }, dispatch);
 };
 

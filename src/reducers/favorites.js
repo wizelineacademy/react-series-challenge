@@ -3,27 +3,23 @@ import appActions from '../actions';
 const favoritesReducer = (state = [], action) => {
 
     const {type, payload} = action;
-    const newState = {...state};
+    const newState = [...state];
 
     switch (type) {
-        case appActions.types.FAVORITES_ADD: {
+        case appActions.types.FAVORITES_ADD:
 
-            const {favorite} = payload;
-
-            newState.push(favorite);
+            newState.push(payload);
 
             return newState;
-        }
-        case appActions.types.FAVORITES_REMOVE: {
 
-            const {favorite} = payload;
+        case appActions.types.FAVORITES_REMOVE:
 
             newState.splice(newState.findIndex(
-                it => it.id === favorite.id
+                it => it.id === payload.id
             ), 1);
 
             return newState;
-        }
+
         default:
             return state;
     }
