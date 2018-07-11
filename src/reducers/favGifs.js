@@ -1,18 +1,34 @@
-import {ADD_ITEM, DELETE_ITEM,LOAD_FAV_GIFS} from "../actions/favGifs";
+import {ADD_ITEM, SEARCH_FAV_GIFS} from "../actions/favGifs";
+const initialState = {
+    searchFavs:{},
+    favs:{}
+};
 
-const favGifs = (state = {}, action) => {
+const favGifs = (state =initialState, action) => {
     switch (action.type) {
+        //adds the item to State favGifs[favs]
         case ADD_ITEM:{
-            //console.log('Adding gif');
             const newState = { ...state };
-            if(newState[action.payload.id]){
-                delete(newState[action.payload.id])
+            if(newState.favs[action.payload.id]){
+                delete(newState.favs[action.payload.id])
             }else {
-                newState[action.payload.id] = action.payload;
-                //localStorage.setItem(action.payload.id,action.payload.id);
+                newState.favs[action.payload.id] = action.payload;
                 console.log(newState);
             }
             console.log('State addReducer',newState);
+            return newState;
+        }
+        //Search using a string and adds to favGifs[searchFavs]
+        case  SEARCH_FAV_GIFS:{
+            const strSearch = action.payload;
+            const newState = { ...state };
+            newState['searchFavs'] = {};
+            Object.keys(newState['favs']).forEach((gif) => {
+                const { title } = newState['favs'][gif];
+                if (title.includes(strSearch)) {
+                    newState['searchFavs'][gif] = newState['favs'][gif];
+                }
+            });
             return newState;
         }
 

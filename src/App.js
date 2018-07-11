@@ -5,6 +5,8 @@ import FavElements from './components/FavElements';
 import ElementsView from './components/ElementsView';
 import {Route, Link, Redirect, Switch} from "react-router-dom";
 import {StyledLink} from './App.styled';
+export const FAV_GIFS_VIEW = '/favElements';
+export const ALL_GIFS_VIEW = '/allElements';
 
 class App extends Component {
   render() {
@@ -17,10 +19,10 @@ class App extends Component {
           <div>
               <ul>
                   <li>
-                      <StyledLink to="/ElementsView">Gifs</StyledLink>
+                      <StyledLink to={ALL_GIFS_VIEW}>Gifs</StyledLink>
                   </li>
                   <li>
-                      <Link to="/FavElements">Fav GIFS</Link>
+                      <Link to={FAV_GIFS_VIEW}>Fav GIFS</Link>
                   </li>
               </ul>
 
@@ -28,9 +30,9 @@ class App extends Component {
               <h2>Click on image to add or delete</h2>
 
               <Switch>
-                  <Route exact path="/ElementsView" component={ElementsView} />
-                  <Route exact path="/FavElements" component={FavElements} />
-                  <Redirect from="/" to="/ElementsView"/>
+                  <Route exact path={ALL_GIFS_VIEW} component={ElementsView} />
+                  <Route exact path={FAV_GIFS_VIEW} component={FavElements} />
+                  <Redirect from="/" to={ALL_GIFS_VIEW}/>
               </Switch>
           </div>
 
