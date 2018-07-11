@@ -4,7 +4,7 @@ import ItemsList from './index';
 import store from '../../store';
 
 describe('test ItemsList Render', () => {
-  it('should render structure', () => {
+  it('should render component structure', () => {
     const renderedComponent = shallow(<ItemsList store={store} />);
     expect(renderedComponent).toMatchSnapshot();
   });
