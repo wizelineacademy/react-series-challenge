@@ -1,13 +1,15 @@
 import React from 'react';
 import Searchbar from '../../components/Searchbar'
 import renderer from 'react-test-renderer';
+import { shallow } from 'enzyme'
+import toJson from 'enzyme-to-json'
+import 'jest-styled-components'
 
 test('Searchbar snapshot', () => {
-  const component = renderer.create(
+  const component = shallow(
     <Searchbar/>
   );
-  let componentJSON = component.toJSON();
-  expect(componentJSON).toMatchSnapshot();
+  expect(toJson(component)).toMatchSnapshot();
 })
 
 

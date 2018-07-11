@@ -1,15 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Searchbar snapshot 1`] = `
-<div
-  className="sc-bdVaJa cpMCnx"
->
-  <input
-    className="sc-bwzfXH iYnflE"
+<styled.div>
+  <styled.input
     onChange={null}
     onKeyPress={null}
     placeholder="What are you looking for..."
     type="text"
   />
-</div>
+</styled.div>
 `;

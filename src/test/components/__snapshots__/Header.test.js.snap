@@ -1,31 +1,39 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Home snapshot 1`] = `
-<div
-  className="sc-bdVaJa hlvQFW"
+<Router
+  history={
+    Object {
+      "action": "POP",
+      "block": [Function],
+      "createHref": [Function],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "pathname": "/",
+        "search": "",
+        "state": undefined,
+      },
+      "push": [Function],
+      "replace": [Function],
+    }
+  }
 >
-  <div
-    className="sc-bwzfXH dUOqAh"
-  >
-    Header
-  </div>
-  <div
-    className="sc-htpNat hyqnut"
-  >
-    <a
-      className="sc-bxivhb ctpPqA"
-      href="/"
-      onClick={[Function]}
-    >
-      HOME
-    </a>
-    <a
-      className="sc-bxivhb ctpPqA"
-      href="/favorites"
-      onClick={[Function]}
-    >
-      FAVORITES
-    </a>
-  </div>
-</div>
+  <HeaderComp
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+  />
+</Router>
 `;

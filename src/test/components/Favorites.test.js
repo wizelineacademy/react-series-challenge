@@ -1,7 +1,9 @@
 import React from 'react';
 import Favorites from '../../components/Favorites'
-import renderer from 'react-test-renderer';
+import { shallow } from 'enzyme'
+import toJson from 'enzyme-to-json'
 import configureStore from 'redux-mock-store'
+import 'jest-styled-components'
 
 const middlewares = []
 const mockStore = configureStore(middlewares)
@@ -14,10 +16,9 @@ test('Home snapshot', () => {
     }
   }
   const store = mockStore(initialState)
-  const component = renderer.create(
+  const component = shallow(
     <Favorites store={store}/>,
   );
-  let componentJSON = component.toJSON();
-  expect(componentJSON).toMatchSnapshot();
+  expect(toJson(component)).toMatchSnapshot();
 })
 

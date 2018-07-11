@@ -1,24 +1,54 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Home snapshot 1`] = `
-<div>
-  <div
-    className="sc-bdVaJa cpMCnx"
-  >
-    <input
-      className="sc-bwzfXH iYnflE"
-      onChange={[Function]}
-      onKeyPress={null}
-      placeholder="What are you looking for..."
-      type="text"
-    />
-  </div>
-  <div
-    className="sc-bZQynM loJkTV"
-  >
-    <div>
-       No Favorites 
-    </div>
-  </div>
-</div>
+<Favorites
+  addToFavContent={[Function]}
+  content={
+    Object {
+      "data": Object {
+        "data": Object {
+          "images": Object {
+            "original": Object {
+              "webp": "srcImage",
+            },
+          },
+          "tite": "title1",
+        },
+      },
+      "favorites": Object {},
+    }
+  }
+  removeFavContent={[Function]}
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+  storeSubscription={
+    Subscription {
+      "listeners": Object {
+        "clear": [Function],
+        "get": [Function],
+        "notify": [Function],
+        "subscribe": [Function],
+      },
+      "onStateChange": [Function],
+      "parentSub": undefined,
+      "store": Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "unsubscribe": [Function],
+    }
+  }
+/>
 `;

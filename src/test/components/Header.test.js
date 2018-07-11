@@ -1,8 +1,10 @@
 import React from 'react';
 import Header from '../../components/Header'
-import renderer from 'react-test-renderer';
 import configureStore from 'redux-mock-store'
 import { BrowserRouter } from 'react-router-dom'
+import { shallow } from 'enzyme'
+import toJson from 'enzyme-to-json'
+import 'jest-styled-components'
 
 const middlewares = []
 const mockStore = configureStore(middlewares)
@@ -15,13 +17,12 @@ test('Home snapshot', () => {
     }
   }
   const store = mockStore(initialState)
-  const component = renderer.create(
+  const component = shallow(
     <BrowserRouter>
       <Header store={store}/>
     </BrowserRouter>,
-  );
-  let componentJSON = component.toJSON();
-  expect(componentJSON).toMatchSnapshot();
+  )
+  expect(toJson(component)).toMatchSnapshot();
 })
 
 
