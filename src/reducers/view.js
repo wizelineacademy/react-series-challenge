@@ -6,7 +6,7 @@ const viewReducer = (state = appActions.enums.viewType.SEARCH, action) => {
 
     switch (type) {
         case appActions.types.SET_VIEW:
-            return payload.view;
+            return payload;
         default:
             return state;
     }

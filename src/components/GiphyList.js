@@ -8,13 +8,20 @@ import appActions from '../actions';
 const GiphyList = (props) => {
 
     const {
+        view,
         giphies,
+        favorites,
         removeFavorites
     } = props;
+    const giphiesShown = (view === appActions.enums.viewType.SEARCH)
+        ? giphies
+        : favorites;
+    console.log(props);
+    console.log(giphiesShown);
 
     return (
         <React.Fragment>
-            {giphies.map(giphy =>
+            {giphiesShown.map(giphy =>
                 <ErrorBoundary key={giphy.id}>
                     <GiphyElement key={giphy.slug} giphy={giphy} removeFavorites={removeFavorites}/>
                 </ErrorBoundary>)}
@@ -24,9 +31,16 @@ const GiphyList = (props) => {
 };
 
 const mapStateToProps = (state) => {
-    const {giphies} = state;
-    console.log(state);
-    return {giphies};
+    const {
+        view,
+        giphies,
+        favorites
+    } = state;
+    return {
+        view,
+        giphies,
+        favorites
+    };
 };
 
 const mapDispatchToProps = (dispatch) => {
