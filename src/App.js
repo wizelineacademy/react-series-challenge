@@ -11,10 +11,10 @@ class App extends Component {
     return (
       <React.Fragment>
       <Navegation/>
-      <Switch>
-        <Route path="/keeps"  component={Keeps} />
-        <Route path="/" component={Home} />
-        <Redirect to="/" />
+        <Switch>
+          <Route path="/keeps"  component={Keeps} />
+          <Route path="/" component={Home} />
+          <Redirect to="/" />
         </Switch>
       </React.Fragment>
     );

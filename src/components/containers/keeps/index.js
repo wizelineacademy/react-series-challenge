@@ -15,12 +15,16 @@ import selectors from "./../../../redux/selectors";
 import actions from "./../../../redux/actions/";
 
 class Keeps extends Component{
+  componentDidMount() {
+    this.props.localFind('');
+  }
+
   render() {
     const { local, modifyLocal, localFind } = this.props;
 
     return (
       <div>
-        <Header match={this.props.match} localFind={localFind} />
+        <Header match={this.props.match} action={localFind} />
         <Giphys home={false} data={{ data: local.likes }} local={local} modifyLocal={modifyLocal} />
         <Footer />
       </div>

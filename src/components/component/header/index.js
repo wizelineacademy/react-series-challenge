@@ -9,26 +9,21 @@ class Header extends Component {
       alert('please enter the text to be search');
      }
 
-    if (this.props.home) {
-      this.props.fetchChange(this.searchInput.value.trim());
-    } else {
-      this.props.localFind(this.searchInput.value.trim());
-    }
+    this.props.action(this.searchInput.value.trim());
+
   }
 
   handleButton = (event) => {
     event.preventDefault();
-    if (this.props.home) {
-      this.props.fetchChange('');
-    } else {
-      this.props.localFind('');
+    this.props.action('');
+    if (!this.props.home) {
       this.searchInput.value = '';
       this.searchInput.focus();
     }
   }
 
   render() {
-    const { match, home } = this.props;
+    const { home } = this.props;
 
     return (
       <form onSubmit={this.handleSubmit}>

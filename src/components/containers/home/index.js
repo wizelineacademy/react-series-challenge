@@ -29,7 +29,7 @@ class Home extends Component{
 
     return (
       <div>
-        <Header home={this.home} fetchChange={fetchChange} />
+        <Header home={this.home} action={fetchChange} />
         <Giphys home={this.home} data={data} local={local} modifyLocal={modifyLocal} />
         <Footer />
       </div>
