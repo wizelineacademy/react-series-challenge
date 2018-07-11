@@ -29,5 +29,3 @@ export default connect(
   selectors.homeSelector,
   dispatcher
 )(HomeWrapper);
-
-//export default HomeWrapper;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import GifItem from '../../containers/GifItem';
 import GifErrorBoundary from '../GifErrorBoundary';
 import styled from 'styled-components';
@@ -23,6 +24,11 @@ const GifsList = ({ gifs, loading }) => {
       ))}
     </ItemsWrapper>
   );
+};
+
+GifsList.propTypes = {
+  gifs: PropTypes.array.isRequired,
+  loading: PropTypes.bool,
 };
 
 export default GifsList;

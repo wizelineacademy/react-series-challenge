@@ -4,7 +4,6 @@ import { injectGlobal, ThemeProvider } from 'styled-components';
 import Home from './containers/Home';
 import Favorites from './containers/Favorites';
 import { HeaderNav, HeaderNavLink } from './components/Header';
-//import './App.css';
 
 injectGlobal`
   body {

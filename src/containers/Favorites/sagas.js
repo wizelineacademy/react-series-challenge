@@ -35,4 +35,6 @@ function* run() {
 
 export default {
   run,
+  loadFavorites,
+  onFavoriteIdAdd,
 };
