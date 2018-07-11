@@ -1,33 +1,15 @@
 import * as actionTypes from '../actions'
 
 const initialState = {
-  gifs: JSON.parse(localStorage.getItem('favoriteGifs')) || []
+  gifs: []
 }
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.FAVORITE_TOGGLE:
-      const { item } = action
-      let newState = {
-        ...state,
-        gifs: [
-          ...state.gifs
-        ]
-      }
+      return state
 
-      const checkIndex = newState.gifs.findIndex(gif => gif.id === item.id)
-
-      if ( checkIndex > -1 ) {
-        newState.gifs = newState.gifs.filter(gif => gif.id !== item.id)
-      } else {
-        newState.gifs = newState.gifs.concat(item)
-      }
-
-      localStorage.setItem('favoriteGifs', JSON.stringify(newState.gifs))
-
-      return newState
-
-    case actionTypes.FETCH_FAVORITE_GIFS:
+    case actionTypes.FAVORITE_GIFS_DATA:
       return {
         ...state,
         gifs: action.gifs
