@@ -3,9 +3,9 @@ import { fetchGifsTrending, fetchGifsSearch, } from '../Api/api';
 import * as types from '../constants/actionTypes';
 
 
-export function* gifsTrending({ payload }) {
+export function* gifsTrending() {
     try {
-        const gifs = yield call(fetchGifsTrending, payload);
+        const gifs = yield call(fetchGifsTrending);
         yield put({ type: types.GIFS_TRENDING_GET, gifs });
     } catch (error) {
         yield put({ type: 'SEARCH_GIF_ERROR', error });

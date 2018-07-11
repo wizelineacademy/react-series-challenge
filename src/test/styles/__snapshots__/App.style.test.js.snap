@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test app style Should match AppBody 1`] = `
+.c0 {
+  margin: 10px;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`Test app style Should match ContainerInputText 1`] = `
+.c0 {
+  margin-bottom: 10px;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`Test app style Should match H4 1`] = `
+.c0 {
+  text-align: center;
+}
+
+<h4
+  className="c0"
+/>
+`;
+
+exports[`Test app style Should match InputText 1`] = `
+.c0 {
+  width: 55%;
+  height: 30px;
+  padding: 2px 8px;
+}
+
+<input
+  className="c0"
+/>
+`;
+
+exports[`Test app style Should match Navbar 1`] = `
+.c0 {
+  background-color: #f9f9f9;
+  border-bottom: 2px solid #acacac;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 200;
+  width: 100%;
+  float: left;
+}
+
+<header
+  className="c0"
+/>
+`;
+
+exports[`Test app style Should match NavbarContainer 1`] = `
+.c0 {
+  width: 1000px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`Test app style Should match NavbarLi 1`] = `
+.c0 {
+  float: left;
+  position: relative;
+  display: block;
+  list-style: none;
+}
+
+<div
+  className="c0"
+/>
+`;
