@@ -8,13 +8,14 @@ class FavElements extends Component{
 
     componentDidMount() {
         this.props.loadFavGifs();
+
     }
 
     render(){
         return (
             <div>
                 <h4>Fav Gifs View!</h4>
-                <ElementList all={this.props.favGifs}/>
+                <ElementList all={this.props.favGifs} />
             </div>
         );
     }
@@ -23,6 +24,7 @@ class FavElements extends Component{
 
 //Set the main stage to props i need to use on this component
 const mapStateToProps = (state) => {
+    console.log('store ', state)
     const {
         favGifs,
     } = state;

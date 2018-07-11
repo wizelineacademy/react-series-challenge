@@ -8,13 +8,14 @@ const addToStorage = (id) => {
     }else {
         jsonFavs = {[id] : id}
     }
-
+    console.log('Local Storage favs:',jsonFavs);
     localStorage.setItem(LOCAL_STORAGE_FAVS,JSON.stringify(jsonFavs));
 }
 const favStorage = (store) => (next) => (action) => {
 
     const {type} = action;
-    console.log(action);
+    //console.log(action);
+    console.log('localStoragee:',localStorage);
     if(type === ADD_ITEM){
         addToStorage(action.payload.id);
     }

@@ -17,7 +17,7 @@ class App extends Component {
           <div>
               <ul>
                   <li>
-                      <StyledLink to="/">Gifs</StyledLink>
+                      <StyledLink to="/ElementsView">Gifs</StyledLink>
                   </li>
                   <li>
                       <Link to="/FavElements">Fav GIFS</Link>
@@ -28,8 +28,9 @@ class App extends Component {
               <h2>Click on image to add or delete</h2>
 
               <Switch>
-                  <Route exact path="/" component={ElementsView} />
-                  <Route path="/FavElements" component={FavElements} />
+                  <Route exact path="/ElementsView" component={ElementsView} />
+                  <Route exact path="/FavElements" component={FavElements} />
+                  <Redirect from="/" to="/ElementsView"/>
               </Switch>
           </div>
 

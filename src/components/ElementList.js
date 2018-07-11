@@ -2,7 +2,7 @@ import React from 'react';
 import Element from './Element';
 
 const ElementList = (props) => {
-
+    console.log('test test :',props);
     const searchGifsLength = props.search ? Object.keys(props.search).length : 0;
 
     const renderGifs = () => {

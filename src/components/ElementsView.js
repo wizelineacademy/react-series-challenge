@@ -9,6 +9,7 @@ class ElementsView extends Component{
 
     componentDidMount() {
         this.props.loadAllGifs();
+        console.log('se monto el componente elements view');
     }
 
     render(){

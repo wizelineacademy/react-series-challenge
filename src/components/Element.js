@@ -10,6 +10,7 @@ const Element = (props) => {
     if (!localStorageFavsId || !localStorageFavsId[props.gif.id]) {
         return <img src={props.gif.images.original.webp} onClick={() => props.addItem(props.gif)}/>
     } else {
+        //props.addItem(props.gif);
        return (
            <div>
                <h2>fav</h2>
