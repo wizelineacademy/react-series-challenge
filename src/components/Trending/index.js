@@ -1,3 +1,3 @@
-import Trending from './Trending';
+import TrendingContainer from './TrendingContainer';
 
-export default Trending;
+export default TrendingContainer;

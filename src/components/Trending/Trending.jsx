@@ -1,63 +1,61 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-
-import trendingGifsActions from '../../actions/trendingGifs';
-import filterTextActions from '../../actions/filterText';
 
 import Template from '../Template';
 import GifGrid from '../GifGrid';
 import Gif from '../Gif';
 
-const Trending = ({
-  trendingGifs,
-  filterTrendingText,
-  fetchTrending,
-  updateFilterTrendingText,
-}) => {
-  fetchTrending();
-  const handleChange = (event) => {
+class Trending extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  componentDidMount() {
+    const { fetchTrending } = this.props;
+    fetchTrending();
+  }
+
+  handleChange(event) {
+    const { searchTrending, fetchTrending } = this.props;
     const { value } = event.target;
-    updateFilterTrendingText({ payload: { text: value } });
-  };
-  return (
-    <Template>
-      <input name="search-box" type="text" value={filterTrendingText} onChange={handleChange} />
-      <Link to="/favorite" href="/favorite">Go to Favorite</Link>
-      <div>
-        <GifGrid gifs={trendingGifs} filterText={filterTrendingText} />
-      </div>
-    </Template>
-  );
-};
+    if (value !== '') {
+      searchTrending({ payload: { text: value } });
+    } else {
+      fetchTrending();
+    }
+  }
+
+  render() {
+    const {
+      trendingGifs,
+      favoriteGifs,
+      filterTrendingText,
+    } = this.props;
+
+    return (
+      <Template>
+        <input name="search-box" type="text" value={filterTrendingText} onChange={this.handleChange} />
+        <Link to="/favorite" href="/favorite">Go to Favorite</Link>
+        <div>
+          <GifGrid
+            gifs={trendingGifs}
+            favoriteGifs={favoriteGifs}
+            filterText={filterTrendingText}
+          />
+        </div>
+      </Template>
+    );
+  }
+}
 
 Trending.propTypes = {
   filterTrendingText: PropTypes.string.isRequired,
   fetchTrending: PropTypes.func.isRequired,
-  updateFilterTrendingText: PropTypes.func.isRequired,
+  searchTrending: PropTypes.func.isRequired,
   ...Gif.propTypes,
 };
 
-const mapStateToProps = (state) => {
-  const {
-    trendingGifs,
-    filterText,
-  } = state;
-  return {
-    trendingGifs,
-    filterTrendingText: filterText.trendingFilter,
-  };
-};
-
-const mapDispatchToProps = (dispatch) => {
-  const { fetchTrending } = trendingGifsActions.creators;
-  const { updateFilterTrendingText } = filterTextActions.creators;
-  return bindActionCreators({
-    fetchTrending,
-    updateFilterTrendingText,
-  }, dispatch);
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Trending);
+export default Trending;

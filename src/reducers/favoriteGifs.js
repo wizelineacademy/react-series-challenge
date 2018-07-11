@@ -14,7 +14,7 @@ const favoriteGifsReducer = (state = initialState, action) => {
     case FAVORITE_ADD: {
       const { gif } = payload;
       const newState = { ...state };
-      newState[gif.id] = gif;
+      newState[gif.id] = { ...gif };
       return newState;
     }
     case FAVORITE_REMOVE: {
