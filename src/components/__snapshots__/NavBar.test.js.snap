@@ -1,0 +1,163 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavBar Header 1`] = `
+.c0 {
+  background-color: #20232a;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+<header
+  className="c0"
+/>
+`;
+
+exports[`NavBar LogoImage 1`] = `
+.c0 {
+  height: 50px;
+  width: 50px;
+}
+
+<img
+  className="c0"
+/>
+`;
+
+exports[`NavBar LogoText 1`] = `
+.c0 {
+  display: inline-block;
+  color: #61dafb;
+  vertical-align: middle;
+  margin-top: -38%;
+}
+
+<span
+  className="c0"
+/>
+`;
+
+exports[`NavBar NavBar 1`] = `
+<styled.header>
+  <styled.div>
+    <styled.div>
+      <Link
+        replace={false}
+        to="/"
+      >
+        <styled.img
+          alt="logo"
+          src="logo.svg"
+        />
+        <styled.span>
+           GIFApp 
+        </styled.span>
+      </Link>
+      <styled.div>
+        <styled.nav>
+          <Styled(NavLink)
+            activeStyle={
+              Object {
+                "borderBottom": "2px solid #61dafb",
+                "color": "#61dafb",
+              }
+            }
+            exact={true}
+            to="/"
+          >
+            Home
+          </Styled(NavLink)>
+          <Styled(NavLink)
+            activeStyle={
+              Object {
+                "borderBottom": "2px solid #61dafb",
+                "color": "#61dafb",
+              }
+            }
+            to="/favorites"
+          >
+            Favorites
+          </Styled(NavLink)>
+        </styled.nav>
+      </styled.div>
+      <styled.div
+        size="3"
+      >
+        <form
+          onSubmit={[Function]}
+        >
+          <styled.input
+            name="search"
+            onChange={[Function]}
+            placeholder="Look for a GIF"
+            value="react"
+          />
+        </form>
+      </styled.div>
+    </styled.div>
+  </styled.div>
+</styled.header>
+`;
+
+exports[`NavBar NavLinks 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+<nav
+  className="c0"
+/>
+`;
+
+exports[`NavBar NavTab 1`] = `
+.c0 {
+  text-align: center;
+  line-height: 3.3rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #fff;
+}
+
+<NavLink
+  activeClassName="active"
+  aria-current="page"
+  className="c0"
+  to="/"
+/>
+`;
+
+exports[`NavBar SearchInput 1`] = `
+.c0 {
+  width: 100%;
+  background-image: url(search.svg);
+  background-position-y: center;
+  background-position-x: 5px;
+  background-size: 16px 16px;
+  background-repeat: no-repeat;
+  padding: 0.5rem 0.5rem 0.5rem 1.8rem;
+  background-color: transparent;
+  font-size: 16px;
+  border: none;
+  border-radius: 1rem;
+  height: 1.5rem;
+  color: #fff;
+}
+
+.c0:focus {
+  outline: none;
+  background-color: rgba(132,132,132,0.2);
+}
+
+<input
+  className="c0"
+/>
+`;

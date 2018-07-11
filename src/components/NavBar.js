@@ -35,7 +35,7 @@ class NavBar extends Component {
               </NavLinks>
             </Col>
             <Col size="3">
-              <form onSubmit={(e) => { e.preventDefault(); this.onSearch() }}>
+              <form onSubmit={(e) => { e.preventDefault(); this.handleSearchFormSubmit() }}>
                 <SearchInput
                   name="search"
                   placeholder="Look for a GIF"
@@ -54,7 +54,7 @@ class NavBar extends Component {
     this.setState({ [name]: e.target.value });
   }
 
-  onSearch = () => {
+  handleSearchFormSubmit = () => {
     this.props.onSearch && this.props.onSearch(this.state.search);
   }
 }
