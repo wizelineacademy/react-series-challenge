@@ -16,9 +16,9 @@ function* doQuerySearch({ param = {} }) {
     q,
     lang:"eng",
     offset:0,
-    api_key: 'FUzMhhnPstdHnTImlV219s1qvwRk4y0v'
+    api_key: process.env.REACT_APP_API_KEY
   });
-  const response = yield call([axios, 'get'], `https://api.giphy.com/v1/gifs/search?${query}`);
+  const response = yield call([axios, 'get'], `${process.env.REACT_APP_API_URL}search?${query}`);
   if (response.error) {
     yield put(querySearchError(response.error));
     return;

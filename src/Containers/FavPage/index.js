@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import Gif from "../../components/Gif"
 
 class FavPage extends Component {
-  export render() {
+   render() {
     
     return (
         <React.Fragment>
