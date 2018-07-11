@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search in favorites dispatch GET_FAVORITE_SEARCH_GIFS 1`] = `
+Object {
+  "_persist": Object {
+    "rehydrated": true,
+    "version": -1,
+  },
+  "favoriteGifs": Object {},
+  "searchFavoriteGifs": Array [
+    "2xPJgFViwgMv1O42DK",
+  ],
+  "searchGifs": Object {},
+  "trendingGifs": Object {},
+}
+`;

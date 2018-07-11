@@ -18,7 +18,6 @@ class ListGifs extends Component {
       ));
     }
     return searchGifs.map(gif => (
-
       <GifItem key={gif.id} gif={gif} favoriteGifs={favoriteGifs} />
     ));
   }

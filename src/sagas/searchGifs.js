@@ -1,12 +1,13 @@
 import { takeEvery, call, put } from "redux-saga/effects";
 import axios from "axios";
+const api_key = process.env.REACT_APP_GIPHY_API_KEY;
 
 const fetchGifs = query => {
   return axios
     .get("http://api.giphy.com/v1/gifs/search", {
       params: {
         q: query,
-        api_key: "NYBl3G1fuM3PcJWfeAv0wSS6fuHAJhIK"
+        api_key
       }
     })
     .then(response => response);

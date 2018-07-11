@@ -18,7 +18,7 @@ const composedEnhancers = compose(
   ...enhancers,
 );
 
-const persistConfig = {
+const persistConfig = { 
   key : "root",
   storage,
   whitelist: ["favoriteGifs"]

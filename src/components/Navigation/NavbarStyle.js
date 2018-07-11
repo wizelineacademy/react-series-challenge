@@ -13,10 +13,18 @@ const ContainerNavbarStyled = styled.div`
 `;
 
 const NavbarLinkStyle = styled(NavLink)`
-    color: ${props => props.active ? "white" : "#3A4E89" };
+    color: #3A4E89;
     text-transform: uppercase;
     text-decoration: none;
     padding: 0 1rem;
+
+    &.${props => props.activeClassName} {
+        color: white
+    }
 `;
+
+NavbarLinkStyle.defaultProps = {
+    activeClassName: "active"
+}
 
 export { ContainerNavbarStyled, NavbarLinkStyle };

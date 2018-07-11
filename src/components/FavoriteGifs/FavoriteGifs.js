@@ -16,7 +16,7 @@ const FavoritesGifs = ({ favoriteGifs, searchFavoriteGifs }) => {
   return(
     Object.keys(filterFavoriteGifs || favoriteGifs).map(key => (
       <ItemGif key={key}>
-        <Image url={favoriteGifs[key].images.preview_webp.url} />
+        <Image src={favoriteGifs[key].images.preview_webp.url} />
         <FavoriteButton gif={favoriteGifs[key]} key={favoriteGifs[key].id} favorite />
       </ItemGif>
     ))

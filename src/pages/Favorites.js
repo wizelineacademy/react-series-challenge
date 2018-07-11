@@ -1,10 +1,10 @@
 import React from "react";
-import FavoritegGifs from "../components/FavoriteGifs/FavoritegGifs";
+import FavoriteGifs from "../components/FavoriteGifs/FavoriteGifs";
 import { ContainerListGifs } from "./HomeStyle";
 
 const Favorites = () => (
   <ContainerListGifs>
-    <FavoritegGifs />
+    <FavoriteGifs />
   </ContainerListGifs>
 );
 

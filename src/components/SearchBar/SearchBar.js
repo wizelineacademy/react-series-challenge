@@ -4,7 +4,8 @@ import { SearchBarStyle, ButtonSearchStyle, FormStyle } from "./SearchBarStyle";
 
 class SearchBar extends Component {
   state = {
-    value: ""
+    value: "",
+    submitted: false
   };
   handleSearchInput = e => {
     const value = e.target.value;
@@ -14,6 +15,7 @@ class SearchBar extends Component {
   };
   handleSearch = e => {
     e.preventDefault();
+    this.setState({ submitted: true });
     const { from } = this.props;
     const query = this.state.value;
     if(from === "/favorites") {

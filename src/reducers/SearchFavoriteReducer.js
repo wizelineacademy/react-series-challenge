@@ -15,6 +15,7 @@ const searchFavoriteReducer = (state = initialState, action) => {
         if (query && match) {
           favoriteSeacrhGifs.push(key);
         }
+        return null
       });
       const newState = favoriteSeacrhGifs;
       return newState;

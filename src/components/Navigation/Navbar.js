@@ -7,8 +7,8 @@ const Navbar = ({ location }) => (
   // location.pathame
   <ContainerNavbarStyled>
     <div>
-      <NavbarLinkStyle to="/" active={location.pathname === "/"}>Home</NavbarLinkStyle>
-      <NavbarLinkStyle to="/favorites" active={location.pathname === "/favorites"}>Favoritos</NavbarLinkStyle>
+      <NavbarLinkStyle exact to="/">Home</NavbarLinkStyle>
+      <NavbarLinkStyle to="/favorites">Favoritos</NavbarLinkStyle>
     </div>
     <SearchBar from={location.pathname}/>
   </ContainerNavbarStyled>

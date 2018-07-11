@@ -2,11 +2,11 @@ import styled from "styled-components";
 
 const Button = styled.button`
     position: absolute;
-    right: 10px;
-    top: 15px;
+    right: 5px;
+    top: 10px;
     background-color: transparent;
     color: ${props => props.favorite ? "#00a2ff" : "#ccc" };
-    font-size: 3.5rem
+    font-size: 3rem
     font-weight: bold;
     border: none;
     &:focus {
