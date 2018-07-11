@@ -6,7 +6,7 @@ export const StyledNavLink = styled(NavLink)`
   font-size: 18px;
   color: #8e06ad;
   text-decoration: none;
-  padding: 5px;
+  padding: 7px;
 
   :hover {
     text-decoration: underline;
@@ -16,6 +16,7 @@ export const StyledNavLink = styled(NavLink)`
 
 const NavBar = styled.div`
   padding: 15px;
+  text-align: center;
 `;
 
 export default NavBar;

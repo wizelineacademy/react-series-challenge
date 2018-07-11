@@ -5,12 +5,12 @@ import StyledNavBar, { StyledNavLink } from "../styled/NavBar.styled";
 const NavBar = (props) => (
   <StyledNavBar>
     <StyledNavLink
-      activeStyle={{fontSize: 23, fontWeight:'bold'}} 
+      activeStyle={{fontSize: 21, fontWeight:'bold'}} 
       to='/explore'>
         Explore
     </StyledNavLink> 
     <StyledNavLink 
-      activeStyle={{fontSize: 23, fontWeight:'bold'}} 
+      activeStyle={{fontSize: 21, fontWeight:'bold'}} 
       to='/favorites'>
         Favorites
     </StyledNavLink> 
