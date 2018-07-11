@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 export const GifSection = styled.div`
   text-align: center;
-  background-color: DarkSlateGray;
+  background-color: ${props => props.theme.gifPageBackground};
   padding-left: 0px;
   padding-right: 2px;
   width: 100%;
@@ -12,7 +12,7 @@ export const GifSection = styled.div`
 
 export const StyledHeader = styled.div`
   text-align: center;
-  background-color: Crimson;
+  background-color: ${props => props.theme.headerBackground};
   padding-top: 10px;
   padding-bottom: 10px;
   padding-right: 2px;

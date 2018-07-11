@@ -1,11 +1,17 @@
 import { injectGlobal } from 'styled-components';
 
 export const themeSunny = {
-    gifPageBackground: '#ff0198',
+    gifPageBackground: '#969ec3',
+    favoritePageBackground: '#c8bed7',
+    headerBackground: '#fde1cc',
+    cardBackground: '#fec492',
 }
   
 export const themeNightly = {
-    gifPageBackground: '#6e27c5',
+    gifPageBackground: '#131862',
+    favoritePageBackground: '#2e4482',
+    headerBackground: '#87889c',
+    cardBackground: '#bea9de',
 }
 
 injectGlobal`

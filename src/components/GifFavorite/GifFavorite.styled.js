@@ -5,6 +5,6 @@ export const StyledGifFavorite = styled.div`
     padding-left: 0px;
     padding-right: 2px;
     width: 100%;
-    background-color: DarkSlateGray;
+    background-color: ${props => props.theme.cardBackground};
 `
 

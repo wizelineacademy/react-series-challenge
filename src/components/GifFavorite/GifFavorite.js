@@ -48,7 +48,7 @@ class GifFavorite extends Component {
 
     render() {
         return (
-            <StyledGifFavorite>
+            <StyledGifFavorite {...this.props}>
                     <SearchBar 
                     updateState = { this.updateState } 
                     handleSearch = { this.handleSearch } />

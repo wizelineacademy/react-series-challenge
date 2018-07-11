@@ -4,7 +4,7 @@ import styled from 'styled-components';
 // Awesome job link: https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_box-shadow4
 export const GifCardsStyled = styled.div`
     display: inline-block;
-    background-color: #ffffff
+    background-color: ${props => props.theme.favoritePageBackground};
     padding: 10px;
     margin: 10px;
     border: 1px solid;

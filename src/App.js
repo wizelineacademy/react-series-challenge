@@ -28,7 +28,7 @@ class App extends Component {
       <ThemeProvider theme = { this.state.nightMode ? themeSunny : themeNightly }>
         <Provider store = {store}>
         <StyledDiv>   
-              <StyledHeader>
+              <StyledHeader {...this.props}>
                 <StyledUl>
                     <StyledLi><StyledNavLink 
                     to = "/home"

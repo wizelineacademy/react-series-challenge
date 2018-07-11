@@ -13,7 +13,7 @@ const GifCards = (props) => {
             arrays = Object.keys(gifData).map((key, index) => {
                 let { id, url, isFavorite } = gifData[index];
                 return (
-                <GifCardsStyled key = {id} >
+                <GifCardsStyled key = {id} {...props}>
                     <GifCard imageUrl = {url}/>
 
                     <GifCardControls 
