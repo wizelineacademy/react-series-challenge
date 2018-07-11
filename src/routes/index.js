@@ -8,13 +8,13 @@ export default () => {
   return (
     <BrowserRouter>
       <div>
-      <Header/>
-      <Switch>
-        <Route exact path="/" component={Home}/>
-        <Route exact path="/favorites" component={Favorites}/>
-        <Redirect to="/"/>
-      </Switch>
-  </div>
+        <Header/>
+        <Switch>
+          <Route exact path="/" component={Home}/>
+          <Route exact path="/favorites" component={Favorites}/>
+          <Redirect to="/"/>
+        </Switch>
+      </div>
     </BrowserRouter>
   )
 }
