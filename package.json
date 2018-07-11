@@ -18,7 +18,10 @@
   "jest": {
     "collectCoverageFrom": [
       "**/src/**/*.{js,jsx}",
-      "!**/src/registerServiceWorker.{js,jsx}"
+      "!**/src/registerServiceWorker.{js,jsx}",
+      "!/node_modules/",
+      "!**/src/index.js",
+      "!**/src/setupTests.js"
     ],
     "coverageThreshold": {
       "global": {
@@ -46,6 +49,7 @@
     "eslint-plugin-prettier": "^2.6.2",
     "husky": "^0.14.3",
     "prettier": "^1.13.7",
-    "pretty-quick": "^1.6.0"
+    "pretty-quick": "^1.6.0",
+    "redux-mock-store": "^1.5.3"
   }
 }
