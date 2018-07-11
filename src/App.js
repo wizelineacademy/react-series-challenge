@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import Header from 'components/header';
 import Home from 'components/home';
 import Favorites from 'components/favorites';
@@ -10,13 +10,14 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <div className="App">
+        <React.Fragment>
           <Header />
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/favorites" component={Favorites} />
+            <Redirect to="/" />
           </Switch>
-        </div>
+        </React.Fragment>
       </Provider>
     );
   }

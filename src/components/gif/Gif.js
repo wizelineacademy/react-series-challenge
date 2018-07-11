@@ -16,7 +16,7 @@ export const Gif = (props) => {
     return  `#${(Math.floor(Math.random()*16777215).toString(16))}`;
   }
   return (
-    <StyledGif bgColor={bgColor} className="gif" src={props.src} onClick={props.onClick}>
+    <StyledGif bgColor={bgColor} src={props.src} onClick={props.onClick}>
       <img
         className="img"
         src={props.src}

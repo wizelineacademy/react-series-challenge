@@ -1,9 +1,10 @@
 import React from 'react';
+import { StyledLikeStatus } from './LikeStatus.style'
 
 const LikeStatus = (props) => {
-  return <span className="like-status">
+  return <StyledLikeStatus className="like-status">
     {(Boolean(props.liked)) ? '💖' : '🖤'}
-  </span>
+  </StyledLikeStatus>
 }
 
 export default LikeStatus;

@@ -6,13 +6,13 @@ export const StyledGif = styled.div.attrs({
     background: props.bgColor(),
   })
 })`
+  width: auto;
+  margin: 1em;
   display: flex;
   min-width: 66px;
   position: relative;
   .like-status {
     position: absolute;
-    padding: .1em;
-    pointer-events: none;
     visibility: hidden;
   }
   &:hover .like-status {
