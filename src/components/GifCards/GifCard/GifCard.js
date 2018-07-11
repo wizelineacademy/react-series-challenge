@@ -2,7 +2,6 @@ import React from 'react';
 import { StyledGifCard, StyledImage } from './GifCard.styled'
 
 const GifCard  = (props) => {
-
     return (
         <StyledGifCard>
             <StyledImage 
@@ -11,7 +10,6 @@ const GifCard  = (props) => {
             />
         </StyledGifCard>
     )
-    
 }
 
 export default GifCard;

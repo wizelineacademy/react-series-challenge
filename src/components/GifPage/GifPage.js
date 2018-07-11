@@ -22,8 +22,6 @@ class GifPage extends Component {
     }
 
     render() {
-
-        console.log("PROPS", this.props);
         let newArrayOfGifData = [];
         let newObjectOfGifData = {};
 
