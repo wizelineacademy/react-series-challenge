@@ -13,12 +13,6 @@ import selectors from '../utils/selectors';
 
 const getFromStorage = item => localStorage.getItem(item);
 
-//Fancy functions
-const makeCopy = param => [...param];
-
-const doSplice = (param, index) => param.splice(index, 1);
-//End of Fancy functions
-
 export const deleteFromArrayR = (arr, ind) => {
   const aux = [...arr];
   aux.splice(ind, 1);

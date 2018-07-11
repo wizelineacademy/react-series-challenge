@@ -19,6 +19,8 @@ class Favorites extends Component {
     this.props.clearInput();
   }
 
+  getFavoritesR = () => this.props.getFavoritesR.bind(this, 1);
+
   render() {
     if (this.props.loading) {
       return <div>Loading...</div>;
@@ -27,7 +29,7 @@ class Favorites extends Component {
       <div>
         <SearchBar
           handleChange={this.props.filterChange}
-          handleSearch={this.props.getFavoritesR.bind(this, 1)}
+          handleSearch={this.getFavoritesR}
         />
         <ItemsList favoritesButton={this.props.addRemoveFavoriteView} />
       </div>

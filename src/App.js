@@ -3,7 +3,6 @@ import {
   BrowserRouter as Router,
   Route,
   Redirect,
-  NavLink,
   Switch,
 } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -28,7 +27,7 @@ body {
 }`;
 
 class App extends Component {
-  componentWillMount() {
+  componentDidMount() {
     this.props.loadFavoritesR();
   }
   render() {
@@ -59,3 +58,5 @@ export default connect(
   null,
   mapDispatchToProps
 )(App);
+
+export { App };

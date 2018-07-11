@@ -20,13 +20,15 @@ class Home extends Component {
     this.props.clearInput();
   }
 
+  getMoreGifs = () => this.props.getMoreGifs.bind(this, 1);
+
   render() {
     if (this.props.loading) {
       return <div>Loading...</div>;
     }
     return (
       <Wrap>
-        <SearchBar handleSearch={this.props.getMoreGifs.bind(this, 1)} />
+        <SearchBar handleSearch={this.getMoreGifs} />
         <ItemsList favoritesButton={this.props.addRemoveFavoriteHome} />
       </Wrap>
     );
