@@ -1,3 +1,3 @@
-import Gif from './Gif';
+import GifContainer from './GifContainer';
 
-export default Gif;
+export default GifContainer;
