@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App snapshot 1`] = `
+<div>
+  <div
+    className="sc-htpNat hIUflj"
+  >
+    <div
+      className="sc-bxivhb tLPKJ"
+    >
+      Header
+    </div>
+    <div
+      className="sc-ifAKCX fTqNOy"
+    >
+      <a
+        className="sc-EHOje kwhTfJ"
+        href="/"
+        onClick={[Function]}
+      >
+        HOME
+      </a>
+      <a
+        className="sc-EHOje kwhTfJ"
+        href="/favorites"
+        onClick={[Function]}
+      >
+        FAVORITES
+      </a>
+    </div>
+  </div>
+  <div>
+    <div
+      className="sc-bdVaJa cpMCnx"
+    >
+      <input
+        className="sc-bwzfXH iYnflE"
+        onChange={null}
+        onKeyPress={[Function]}
+        placeholder="What are you looking for..."
+        type="text"
+      />
+    </div>
+    <div>
+       loading ... 
+    </div>
+  </div>
+</div>
+`;

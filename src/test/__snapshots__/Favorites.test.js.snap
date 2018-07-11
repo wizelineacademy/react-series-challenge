@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home snapshot 1`] = `
+<div>
+  <div
+    className="sc-ifAKCX hTztJb"
+  >
+    <input
+      className="sc-EHOje iQNPwx"
+      onChange={[Function]}
+      onKeyPress={null}
+      placeholder="What are you looking for..."
+      type="text"
+    />
+  </div>
+  <div
+    className="content"
+  >
+    <div>
+       No Favorites 
+    </div>
+  </div>
+</div>
+`;

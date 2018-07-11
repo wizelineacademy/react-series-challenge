@@ -9,7 +9,7 @@ const {
 
 const {
   fetchedContent,
-  fetchedErrorContent,
+  fetchedContentError,
 } = contentActions.actions
 
 const API_URL = 'https://api.giphy.com/v1/gifs/'
@@ -32,7 +32,7 @@ function* getContent(){
     const { data } = yield call(fetchContent)
     yield put(fetchedContent(data))
   } catch(e) {
-    yield put(fetchedErrorContent(e))
+    yield put(fetchedContentError(e))
   }
 }
 
@@ -41,7 +41,7 @@ function* getSearchContent({ payload }) {
     const { data } = yield call(searchContent, payload)
     yield put(fetchedContent(data))
   } catch(e) {
-    yield put(fetchedErrorContent(e))
+    yield put(fetchedContentError(e))
   }
 }
 

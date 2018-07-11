@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home snapshot 1`] = `
+<div
+  className="sc-bdVaJa hlvQFW"
+>
+  <div
+    className="sc-bwzfXH dUOqAh"
+  >
+    Header
+  </div>
+  <div
+    className="sc-htpNat hyqnut"
+  >
+    <a
+      className="sc-bxivhb ctpPqA"
+      href="/"
+      onClick={[Function]}
+    >
+      HOME
+    </a>
+    <a
+      className="sc-bxivhb ctpPqA"
+      href="/favorites"
+      onClick={[Function]}
+    >
+      FAVORITES
+    </a>
+  </div>
+</div>
+`;

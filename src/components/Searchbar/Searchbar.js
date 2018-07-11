@@ -1,15 +1,19 @@
 import React from 'react'
-import './Searchbar.css'
+import {
+  Searchbar,
+  Input,
+} from './Searchbar.styled'
 
-const Searchbar = ({ handleKeyPress, handleChange }) => {
+const SearchbarComp = ({ handleKeyPress, handleChange }) => {
 
   return (
-    <div className="searchbar">
-      <input type="text"
+    <Searchbar>
+      <Input type="text"
+        placeholder="What are you looking for..."
         onKeyPress={handleKeyPress ? e => handleKeyPress(e) : null}
         onChange={handleChange ? e => handleChange(e) : null}/>
-    </div>
+    </Searchbar>
   )
 }
 
-export default Searchbar
+export default SearchbarComp

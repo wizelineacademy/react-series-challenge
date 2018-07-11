@@ -12,16 +12,6 @@ const ContentList = ({data = {}, onClickFav, favorites, filter, onClick}) => {
     return true
   }
 
-  if(data.hasOwnProperty('data')){
-    return data.data.map((item, index) => (
-      <Item key={index}
-        item={item}
-        onClickFav={onClickFav}
-        isFav={favorites[item.id] ? true : false}
-        onClick={onClick}
-      />
-    ))
-  } else {
   return !isEmptyObject(data) ? Object.keys(data).map((key, index) => {
     return data[key].title.search(new RegExp(filter, 'i')) > -1 ?
       (
@@ -33,13 +23,10 @@ const ContentList = ({data = {}, onClickFav, favorites, filter, onClick}) => {
           />
       ) : null
   }) : <div> No Favorites </div>
-  }
-
 }
 
 const PortalContainer = ({children}) => {
   const nodeToAppend = document.getElementsByTagName('body')[0]
-
   return createPortal(children, nodeToAppend)
 }
 

@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home snapshot 1`] = `
+<div
+  className="contentItem"
+>
+  <img
+    alt="Favorite"
+    className="favButton"
+    onClick={[Function]}
+    src="no-fav.svg"
+  />
+  <img
+    alt="title1"
+    className="imgContent"
+    onClick={[Function]}
+    src="srcImage"
+  />
+</div>
+`;

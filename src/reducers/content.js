@@ -13,7 +13,11 @@ const contentReducer = (state = initialState, action) => {
       return {...state, isLoading: true}
     }
     case types.CONTENT_FETCHED: {
-      return {...state, data: payload, isLoading:false}
+      const data = {}
+      payload.data.forEach( item => {
+        data[item.id] = item
+      })
+      return {...state, data, isLoading:false}
     }
     case types.CONTENT_FETCHED_ERROR: {
       return {...state, isLoading:false}

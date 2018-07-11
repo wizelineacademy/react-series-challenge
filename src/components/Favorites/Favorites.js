@@ -37,7 +37,6 @@ class Favorites extends Component {
   render() {
     return(
       <div>
-        <Header/>
         <Searchbar
           handleChange={this.handleChange}
         />
