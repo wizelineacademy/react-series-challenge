@@ -20,7 +20,7 @@ class GifCard extends Component {
 
         let isFavorite = this.gifInLocalStorage();
         if (isFavorite) {
-            this.props.addFavoriteGif({ gif: this.props.gif });
+            this.props.addFavoriteGif({ gif: this.props.gif, isFavorite });
         }
         this.state = { gifLoaded: false, isFavorite };
     }
@@ -29,22 +29,6 @@ class GifCard extends Component {
         const localFavoriteGifs = localStorage.getItem(LOCAL_STORAGE_FAV_GIFS);
         const jsonGifs = JSON.parse(localFavoriteGifs);
         return (jsonGifs && !!jsonGifs[this.props.gif.id]);
-    }
-
-    updateGifInLocalStorage(isFavorite, gif) {
-        let jsonFavGifs = JSON.parse(localStorage.getItem(LOCAL_STORAGE_FAV_GIFS));
-        if (isFavorite) {
-            if (jsonFavGifs) {
-                jsonFavGifs[gif.id] = gif.id;
-            } else {
-                jsonFavGifs = {[gif.id]: gif.id}
-            }
-
-        } else {
-            delete jsonFavGifs[gif.id];
-        }
-
-        localStorage.setItem(LOCAL_STORAGE_FAV_GIFS, JSON.stringify(jsonFavGifs));
     }
 
     onLoadHandler = () => {
@@ -56,13 +40,12 @@ class GifCard extends Component {
 
         const isFavorite = !this.state.isFavorite;
         const { gif } = this.props;
-        this.updateGifInLocalStorage(isFavorite, gif);
         this.setState({ isFavorite });
 
         if (isFavorite) {
-            this.props.addFavoriteGif({ gif });
+            this.props.addFavoriteGif({ gif, isFavorite });
         } else {
-            this.props.deleteFavoriteGif({ gif });
+            this.props.deleteFavoriteGif({ gif, isFavorite });
         }
     };
 
