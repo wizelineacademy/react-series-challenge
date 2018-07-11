@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import dispatcher from './dispatcher';
 import selectors from '../../selectors';
 import Favorites from '../../components/Favorites';
-class FavoritesWrapper extends Component {
+class FavoritesContainer extends Component {
   componentDidMount() {
     this.props.setPath(this.props.match.path);
     this.props.loadFavorites();
@@ -14,7 +14,7 @@ class FavoritesWrapper extends Component {
   }
 }
 
-FavoritesWrapper.propTypes = {
+FavoritesContainer.propTypes = {
   match: PropTypes.shape({
     path: PropTypes.string.isRequired,
   }).isRequired,
@@ -23,4 +23,6 @@ FavoritesWrapper.propTypes = {
 export default connect(
   selectors.favoritesSelector,
   dispatcher
-)(FavoritesWrapper);
+)(FavoritesContainer);
+
+export { FavoritesContainer };

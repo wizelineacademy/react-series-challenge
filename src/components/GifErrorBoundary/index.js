@@ -12,7 +12,11 @@ class GifErrorBoundary extends Component {
     const { children } = this.props;
     const { hasErrors } = this.state;
     if (hasErrors) {
-      return <div>GIF no disponible</div>;
+      return (
+        <div>
+          <p className="error-boundary-message">GIF no disponible</p>
+        </div>
+      );
     }
 
     return children;

@@ -7,3 +7,5 @@ export default connect(
   selectors.gifModalSelector,
   dispatcher
 )(GifModal);
+
+export { GifModal };

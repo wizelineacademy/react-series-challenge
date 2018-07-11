@@ -128,6 +128,7 @@ ShallowWrapper {
           </span>
 </p>,
         <styled.button
+          className="add-favorites-button"
           onClick={[Function]}
 >
           + Agregar mis favoritos.
@@ -238,6 +239,7 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "children": "+ Agregar mis favoritos.",
+          "className": "add-favorites-button",
           "onClick": [Function],
         },
         "ref": null,
@@ -293,6 +295,7 @@ ShallowWrapper {
             </span>
 </p>,
           <styled.button
+            className="add-favorites-button"
             onClick={[Function]}
 >
             + Agregar mis favoritos.
@@ -403,6 +406,7 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "children": "+ Agregar mis favoritos.",
+            "className": "add-favorites-button",
             "onClick": [Function],
           },
           "ref": null,

@@ -23,11 +23,11 @@ const ActionButton = styled.button`
   margin: 4px auto;
   display: block;
   background-color: ${props =>
-    props.secondary
+    props.secondary && props.theme
       ? props.theme.secondary.background
       : props.theme.primary.background};
   color: ${props =>
-    props.secondary
+    props.secondary && props.theme
       ? props.theme.secondary.foreground
       : props.theme.primary.foreground};
 `;
@@ -50,8 +50,8 @@ const GifItem = ({
 
   const addFavBtn = (
     <ActionButton
+      className="add-favorites-button"
       onClick={e => {
-        e.preventDefault();
         addFavoriteId(gif.id);
       }}
     >
@@ -61,9 +61,9 @@ const GifItem = ({
 
   const removeFavBtn = (
     <ActionButton
+      className="remove-favorites-button"
       secondary
       onClick={e => {
-        e.preventDefault();
         removeFavoriteId(gif.id);
       }}
     >

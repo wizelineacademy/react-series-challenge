@@ -5,7 +5,7 @@ import dispatcher from './dispatcher';
 import Home from '../../components/Home';
 import selectors from '../../selectors';
 
-class HomeWrapper extends Component {
+class HomeContainer extends Component {
   componentDidMount() {
     this.props.setPath(this.props.match.path);
     this.props.loadTrendingGifs();
@@ -16,7 +16,7 @@ class HomeWrapper extends Component {
   }
 }
 
-HomeWrapper.propTypes = {
+HomeContainer.propTypes = {
   loadTrendingGifs: PropTypes.func.isRequired,
   gifs: PropTypes.array.isRequired,
   isLoading: PropTypes.bool.isRequired,
@@ -28,4 +28,6 @@ HomeWrapper.propTypes = {
 export default connect(
   selectors.homeSelector,
   dispatcher
-)(HomeWrapper);
+)(HomeContainer);
+
+export { HomeContainer };
