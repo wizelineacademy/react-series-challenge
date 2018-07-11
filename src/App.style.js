@@ -15,7 +15,7 @@ export const Main = styled.section`
 export const Navigation = styled.nav`
     grid-area: aside
     display: flex;
-    padding: 2rem 0;
+    padding: 8rem 0;
     flex-direction: column;
 `
 export const Link = styled(NavLink)`

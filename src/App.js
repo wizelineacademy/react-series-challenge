@@ -9,11 +9,14 @@ const App = ({ routes = [] }) => {
   /**
    * Get link from given routes
    */
-  const links = routes.map(route => <Link to={route.route} exact={route.exact} activeClassName="active" > {route.name} </Link>)
+  const links = routes.map(route => <Link key={route.name} to={route.route} exact={route.exact} activeClassName="active" > {route.name} </Link>)
+  /**
+   * Routes from given routes
+   */
+  const router = routes.map(route => <Route key={route.name} path={route.route} exact={route.exact} component={route.component} />)
   /**
    * 
    */
-  const router = routes.map(route => <Route path={route.route} exact={route.exact} render={() => route.name} />)
   return (
     <Router>
       <Provider store={store} >
