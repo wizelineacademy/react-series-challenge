@@ -1,5 +1,6 @@
 import React from 'react';
 import image from '../../img/0757.png';
+
 export default function NotFoud(){
   return(
     <div className="container">

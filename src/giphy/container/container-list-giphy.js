@@ -21,10 +21,7 @@ export default class ContainerListGiphy extends Component{
       modalVisible:false
     })
   }
-  // this.state.datos -> []
-  // this.state.datos -> [ 1 ]
-  // this.state.selectedGIF -> {} -> objeto - 123
-  // this.state.selectedGIF -> { image: '', ... } -> objeto - 456
+
   handleOpenModal = (index) =>{
     this.setState({
       modalVisible:true,
@@ -38,7 +35,6 @@ export default class ContainerListGiphy extends Component{
     })
   }
   componentDidMount(){
-    // donde q=ryan+gosling parametro que va a buscar y limt = cantidad a mostrar
     const url = 'http://api.giphy.com/v1/gifs/trending?&api_key=STKCOqnN3DKDQJRPbv5il9egmGwZqRSn&limit=25';
     axios.get(url)
     .then((resultsGiphy) => {
