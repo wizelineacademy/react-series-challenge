@@ -1,5 +1,5 @@
 import React from 'react';
-import SearchBar from './HomeSearchBar';
+import SearchBar from './SearchBar';
 import GifList from './GifList';
 
 const Home = () => (

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { NavLink, Redirect, Route, Switch } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import { HeadLink, NavBar } from './App.style';
 import store from './store';
 import Home from './components/Home';
 import Favorites from './components/Favorites';
@@ -11,10 +12,10 @@ class App extends Component {
             <Provider store={store}>
                 <div className='App'>
                     <header>
-                        <nav>
-                            <NavLink to='/home'>Home</NavLink>
-                            <NavLink to='/favorites'>Favorites</NavLink>
-                        </nav>
+                        <NavBar>
+                            <HeadLink to='/home' actvieClass='active'>Home</HeadLink>
+                            <HeadLink to='/favorites'>Favorites</HeadLink>
+                        </NavBar>
                     </header>
                     <Switch>
                         <Route path='/home' component={Home}/>

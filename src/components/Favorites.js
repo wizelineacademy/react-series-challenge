@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import GifElement from './GifElement';
-import FavsSearchBar from './FavsSearchBar';
+import SearchBar from './SearchBar';
 
 const getGifElements = (favoritedGifs) => {
     const components = [];
@@ -21,16 +21,16 @@ const Favorites = (props) => {
     const { favoritedGifs } = props;
     return (
         <Fragment>
-            <FavsSearchBar/>
+            <SearchBar/>
             {getGifElements(favoritedGifs)}
         </Fragment>
     )
 };
 
 const mapStateToProps = (state) => {
-    const { favorites, favsSearchBar } = state;
+    const { favorites, searchBar } = state;
     const { data } = favorites;
-    const { value } = favsSearchBar;
+    const { value } = searchBar;
     let favoritedGifs = {};
 
     if (value.trim().length) {

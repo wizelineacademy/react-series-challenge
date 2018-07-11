@@ -1,26 +1,11 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { Wrapper, Input } from './SearchBar.style';
 import searchBarActions from '../actions/searchBar';
 import gifListActions from '../actions/gifList';
 
-const Wrapper = styled.div`
-background: skyblue;
-display: block;
-height: 25px;
-width: 100%;
-`;
-
-const Input = styled.input`
-background: white;
-float: right;
-height: 20px;
-border: 1px solid black;
-border-radius: 5px;
-`;
-
-class HomeSearchBar extends Component {
+class SearchBar extends Component {
     render() {
         const { searchBarInput, value, getTrendingGifs } = this.props;
         return (
@@ -64,4 +49,4 @@ const mapDispatchToProps = (dispatch) => {
     return bindActionCreators({ searchBarInput, getTrendingGifs }, dispatch);
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(HomeSearchBar);
+export default connect(mapStateToProps, mapDispatchToProps)(SearchBar);
