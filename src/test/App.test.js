@@ -42,6 +42,7 @@ describe('App', () => {
     expect(
       wrapper.contains(<StyledLi><StyledNavLink 
         to = "/home"
+        activeClassName = "act"
         exact>
         Home </StyledNavLink></StyledLi>)
     ).toBe(true);
@@ -51,6 +52,7 @@ describe('App', () => {
     expect(
       wrapper.contains(<StyledLi><StyledNavLink 
         to = "/favorite"
+        activeClassName = "act"
         exact>
         Favorites</StyledNavLink></StyledLi>)
     ).toBe(true);

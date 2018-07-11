@@ -1,7 +1,7 @@
 import GifCardControls from '../GifCardControls';
 import React from 'react';
 import { StyledGifCardControls, StyledButton } from '../GifCardControls.styled'
-import { shallow, mount, render } from 'enzyme';
+import { shallow } from 'enzyme';
 
 describe('GifCardControls', () => {
   const func = jest.fn();

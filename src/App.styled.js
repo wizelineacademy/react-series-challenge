@@ -60,6 +60,12 @@ export const StyledLi = styled.li`
 export const StyledNavLink = styled(NavLink)`
   font-family: 'Quicksand', sans-serif;
   text-align: center;
-  color: white;
+  color: #111111;
   padding: 10px;
+
+  &.act {
+    color: #000000;
+    font-weight: bold;
+    background-color: #ffffff;
+  }
 `

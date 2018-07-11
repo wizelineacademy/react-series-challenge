@@ -5,9 +5,9 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <SearchBar
-    handleSearch={[MockFunction]}
-    updateState={[MockFunction]}
-  />,
+    handleSearch={[Function]}
+    updateState={[Function]}
+/>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -25,10 +25,10 @@ ShallowWrapper {
           onChange={[Function]}
           placeholder="Search for awesome gifs"
           type="text"
-        />,
+/>,
         <styled.button
-          onClick={[MockFunction]}
-        />,
+          onClick={[Function]}
+/>,
       ],
     },
     "ref": null,
@@ -51,7 +51,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "onClick": [MockFunction],
+          "onClick": [Function],
         },
         "ref": null,
         "rendered": null,
@@ -71,10 +71,10 @@ ShallowWrapper {
             onChange={[Function]}
             placeholder="Search for awesome gifs"
             type="text"
-          />,
+/>,
           <styled.button
-            onClick={[MockFunction]}
-          />,
+            onClick={[Function]}
+/>,
         ],
       },
       "ref": null,
@@ -97,7 +97,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "onClick": [MockFunction],
+            "onClick": [Function],
           },
           "ref": null,
           "rendered": null,

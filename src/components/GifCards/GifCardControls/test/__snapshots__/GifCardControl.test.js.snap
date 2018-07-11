@@ -5,9 +5,9 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <GifCardControls
-    addRemoveGif={[MockFunction]}
+    addRemoveGif={[Function]}
     isFavorite={false}
-  />,
+/>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -22,14 +22,14 @@ ShallowWrapper {
     "props": Object {
       "children": <styled.button
         active={true}
-        onClick={[MockFunction]}
-      >
+        onClick={[Function]}
+>
          
         <h1>
-          ✨ Fav me! ✨
+                ✨ Fav me! ✨
         </h1>
          
-      </styled.button>,
+</styled.button>,
     },
     "ref": null,
     "rendered": Object {
@@ -42,10 +42,10 @@ ShallowWrapper {
           " ",
           <h1>
             ✨ Fav me! ✨
-          </h1>,
+</h1>,
           " ",
         ],
-        "onClick": [MockFunction],
+        "onClick": [Function],
       },
       "ref": null,
       "rendered": Array [
@@ -75,14 +75,14 @@ ShallowWrapper {
       "props": Object {
         "children": <styled.button
           active={true}
-          onClick={[MockFunction]}
-        >
+          onClick={[Function]}
+>
            
           <h1>
-            ✨ Fav me! ✨
+                    ✨ Fav me! ✨
           </h1>
            
-        </styled.button>,
+</styled.button>,
       },
       "ref": null,
       "rendered": Object {
@@ -95,10 +95,10 @@ ShallowWrapper {
             " ",
             <h1>
               ✨ Fav me! ✨
-            </h1>,
+</h1>,
             " ",
           ],
-          "onClick": [MockFunction],
+          "onClick": [Function],
         },
         "ref": null,
         "rendered": Array [

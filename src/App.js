@@ -32,11 +32,13 @@ class App extends Component {
                 <StyledUl>
                     <StyledLi><StyledNavLink 
                     to = "/home"
+                    activeClassName = "act"
                     exact>
                     Home </StyledNavLink></StyledLi>
 
                     <StyledLi><StyledNavLink 
                     to = "/favorite"
+                    activeClassName = "act"
                     exact>
                     Favorites</StyledNavLink></StyledLi>
                 </StyledUl>

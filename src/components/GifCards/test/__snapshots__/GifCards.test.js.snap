@@ -5,18 +5,19 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <GifCards
-    addRemoveGif={[MockFunction]}
+    addRemoveGif={[Function]}
     gifData={
-      Array [
-        Object {
-          "id": 1,
-          "isFavorite": true,
-          "searchedValue": "trendy",
-          "url": "https://image",
-        },
-      ]
+        Array [
+            Object {
+              "id": 1,
+              "isFavorite": true,
+              "searchedValue": "trendy",
+              "url": "https://image",
+            },
+          ]
     }
-  />,
+    searchedValue={undefined}
+/>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -31,26 +32,27 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <styled.div
-          addRemoveGif={[MockFunction]}
+          addRemoveGif={[Function]}
           gifData={
-            Array [
-              Object {
-                "id": 1,
-                "isFavorite": true,
-                "searchedValue": "trendy",
-                "url": "https://image",
-              },
-            ]
+                    Array [
+                              Object {
+                                "id": 1,
+                                "isFavorite": true,
+                                "searchedValue": "trendy",
+                                "url": "https://image",
+                              },
+                            ]
           }
-        >
+          searchedValue={undefined}
+>
           <GifCard
-            imageUrl="https://image"
+                    imageUrl="https://image"
           />
           <GifCardControls
-            addRemoveGif={[Function]}
-            isFavorite={true}
+                    addRemoveGif={[Function]}
+                    isFavorite={true}
           />
-        </styled.div>,
+</styled.div>,
       ],
     },
     "ref": null,
@@ -60,15 +62,15 @@ ShallowWrapper {
         "key": "1",
         "nodeType": "class",
         "props": Object {
-          "addRemoveGif": [MockFunction],
+          "addRemoveGif": [Function],
           "children": Array [
             <GifCard
               imageUrl="https://image"
-            />,
+/>,
             <GifCardControls
               addRemoveGif={[Function]}
               isFavorite={true}
-            />,
+/>,
           ],
           "gifData": Array [
             Object {
@@ -119,26 +121,27 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <styled.div
-            addRemoveGif={[MockFunction]}
+            addRemoveGif={[Function]}
             gifData={
-              Array [
-                Object {
-                  "id": 1,
-                  "isFavorite": true,
-                  "searchedValue": "trendy",
-                  "url": "https://image",
-                },
-              ]
+                        Array [
+                                    Object {
+                                      "id": 1,
+                                      "isFavorite": true,
+                                      "searchedValue": "trendy",
+                                      "url": "https://image",
+                                    },
+                                  ]
             }
-          >
+            searchedValue={undefined}
+>
             <GifCard
-              imageUrl="https://image"
+                        imageUrl="https://image"
             />
             <GifCardControls
-              addRemoveGif={[Function]}
-              isFavorite={true}
+                        addRemoveGif={[Function]}
+                        isFavorite={true}
             />
-          </styled.div>,
+</styled.div>,
         ],
       },
       "ref": null,
@@ -148,15 +151,15 @@ ShallowWrapper {
           "key": "1",
           "nodeType": "class",
           "props": Object {
-            "addRemoveGif": [MockFunction],
+            "addRemoveGif": [Function],
             "children": Array [
               <GifCard
                 imageUrl="https://image"
-              />,
+/>,
               <GifCardControls
                 addRemoveGif={[Function]}
                 isFavorite={true}
-              />,
+/>,
             ],
             "gifData": Array [
               Object {

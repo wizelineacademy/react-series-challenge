@@ -19,60 +19,62 @@ ShallowWrapper {
     "props": Object {
       "children": <Provider
         store={
-          Object {
-            "dispatch": [Function],
-            "getState": [Function],
-            "replaceReducer": [Function],
-            "subscribe": [Function],
-            Symbol(observable): [Function],
-          }
+                Object {
+                        "dispatch": [Function],
+                        "getState": [Function],
+                        "replaceReducer": [Function],
+                        "subscribe": [Function],
+                        Symbol(observable): [Function],
+                      }
         }
-      >
+>
         <styled.div>
-          <styled.div>
-            <styled.ul>
-              <styled.li>
-                <Styled(NavLink)
-                  exact={true}
-                  to="/home"
-                >
-                  Home 
-                </Styled(NavLink)>
-              </styled.li>
-              <styled.li>
-                <Styled(NavLink)
-                  exact={true}
-                  to="/favorite"
-                >
-                  Favorites
-                </Styled(NavLink)>
-              </styled.li>
-            </styled.ul>
-            <ThemeSelector
-              changeTheme={[Function]}
-            />
-          </styled.div>
-          <styled.div>
-            <Switch>
-              <Route
-                component={[Function]}
-                exact={true}
-                path="/home"
-              />
-              <Route
-                component={[Function]}
-                exact={true}
-                path="/favorite"
-              />
-              <Redirect
-                from="/"
-                push={false}
-                to="/home"
-              />
-            </Switch>
-          </styled.div>
+                <styled.div>
+                        <styled.ul>
+                                <styled.li>
+                                        <Styled(NavLink)
+                                                activeClassName="act"
+                                                exact={true}
+                                                to="/home"
+                                        >
+                                                Home 
+                                        </Styled(NavLink)>
+                                </styled.li>
+                                <styled.li>
+                                        <Styled(NavLink)
+                                                activeClassName="act"
+                                                exact={true}
+                                                to="/favorite"
+                                        >
+                                                Favorites
+                                        </Styled(NavLink)>
+                                </styled.li>
+                        </styled.ul>
+                        <ThemeSelector
+                                changeTheme={[Function]}
+                        />
+                </styled.div>
+                <styled.div>
+                        <Switch>
+                                <Route
+                                        component={[Function]}
+                                        exact={true}
+                                        path="/home"
+                                />
+                                <Route
+                                        component={[Function]}
+                                        exact={true}
+                                        path="/favorite"
+                                />
+                                <Redirect
+                                        from="/"
+                                        push={false}
+                                        to="/home"
+                                />
+                        </Switch>
+                </styled.div>
         </styled.div>
-      </Provider>,
+</Provider>,
       "theme": Object {
         "cardBackground": "#fec492",
         "favoritePageBackground": "#c8bed7",
@@ -88,48 +90,50 @@ ShallowWrapper {
       "props": Object {
         "children": <styled.div>
           <styled.div>
-            <styled.ul>
-              <styled.li>
-                <Styled(NavLink)
-                  exact={true}
-                  to="/home"
-                >
-                  Home 
-                </Styled(NavLink)>
-              </styled.li>
-              <styled.li>
-                <Styled(NavLink)
-                  exact={true}
-                  to="/favorite"
-                >
-                  Favorites
-                </Styled(NavLink)>
-              </styled.li>
-            </styled.ul>
-            <ThemeSelector
-              changeTheme={[Function]}
-            />
+                    <styled.ul>
+                              <styled.li>
+                                        <Styled(NavLink)
+                                                  activeClassName="act"
+                                                  exact={true}
+                                                  to="/home"
+                                        >
+                                                  Home 
+                                        </Styled(NavLink)>
+                              </styled.li>
+                              <styled.li>
+                                        <Styled(NavLink)
+                                                  activeClassName="act"
+                                                  exact={true}
+                                                  to="/favorite"
+                                        >
+                                                  Favorites
+                                        </Styled(NavLink)>
+                              </styled.li>
+                    </styled.ul>
+                    <ThemeSelector
+                              changeTheme={[Function]}
+                    />
           </styled.div>
           <styled.div>
-            <Switch>
-              <Route
-                component={[Function]}
-                exact={true}
-                path="/home"
-              />
-              <Route
-                component={[Function]}
-                exact={true}
-                path="/favorite"
-              />
-              <Redirect
-                from="/"
-                push={false}
-                to="/home"
-              />
-            </Switch>
+                    <Switch>
+                              <Route
+                                        component={[Function]}
+                                        exact={true}
+                                        path="/home"
+                              />
+                              <Route
+                                        component={[Function]}
+                                        exact={true}
+                                        path="/favorite"
+                              />
+                              <Redirect
+                                        from="/"
+                                        push={false}
+                                        to="/home"
+                              />
+                    </Switch>
           </styled.div>
-        </styled.div>,
+</styled.div>,
         "store": Object {
           "dispatch": [Function],
           "getState": [Function],
@@ -147,46 +151,48 @@ ShallowWrapper {
           "children": Array [
             <styled.div>
               <styled.ul>
-                <styled.li>
-                  <Styled(NavLink)
-                    exact={true}
-                    to="/home"
-                  >
-                    Home 
-                  </Styled(NavLink)>
-                </styled.li>
-                <styled.li>
-                  <Styled(NavLink)
-                    exact={true}
-                    to="/favorite"
-                  >
-                    Favorites
-                  </Styled(NavLink)>
-                </styled.li>
+                            <styled.li>
+                                          <Styled(NavLink)
+                                                        activeClassName="act"
+                                                        exact={true}
+                                                        to="/home"
+                                          >
+                                                        Home 
+                                          </Styled(NavLink)>
+                            </styled.li>
+                            <styled.li>
+                                          <Styled(NavLink)
+                                                        activeClassName="act"
+                                                        exact={true}
+                                                        to="/favorite"
+                                          >
+                                                        Favorites
+                                          </Styled(NavLink)>
+                            </styled.li>
               </styled.ul>
               <ThemeSelector
-                changeTheme={[Function]}
+                            changeTheme={[Function]}
               />
-            </styled.div>,
+</styled.div>,
             <styled.div>
               <Switch>
-                <Route
-                  component={[Function]}
-                  exact={true}
-                  path="/home"
-                />
-                <Route
-                  component={[Function]}
-                  exact={true}
-                  path="/favorite"
-                />
-                <Redirect
-                  from="/"
-                  push={false}
-                  to="/home"
-                />
+                            <Route
+                                          component={[Function]}
+                                          exact={true}
+                                          path="/home"
+                            />
+                            <Route
+                                          component={[Function]}
+                                          exact={true}
+                                          path="/favorite"
+                            />
+                            <Redirect
+                                          from="/"
+                                          push={false}
+                                          to="/home"
+                            />
               </Switch>
-            </styled.div>,
+</styled.div>,
           ],
         },
         "ref": null,
@@ -199,25 +205,27 @@ ShallowWrapper {
               "children": Array [
                 <styled.ul>
                   <styled.li>
-                    <Styled(NavLink)
-                      exact={true}
-                      to="/home"
-                    >
-                      Home 
-                    </Styled(NavLink)>
+                                    <Styled(NavLink)
+                                                      activeClassName="act"
+                                                      exact={true}
+                                                      to="/home"
+                                    >
+                                                      Home 
+                                    </Styled(NavLink)>
                   </styled.li>
                   <styled.li>
-                    <Styled(NavLink)
-                      exact={true}
-                      to="/favorite"
-                    >
-                      Favorites
-                    </Styled(NavLink)>
+                                    <Styled(NavLink)
+                                                      activeClassName="act"
+                                                      exact={true}
+                                                      to="/favorite"
+                                    >
+                                                      Favorites
+                                    </Styled(NavLink)>
                   </styled.li>
-                </styled.ul>,
+</styled.ul>,
                 <ThemeSelector
                   changeTheme={[Function]}
-                />,
+/>,
               ],
             },
             "ref": null,
@@ -230,20 +238,22 @@ ShallowWrapper {
                   "children": Array [
                     <styled.li>
                       <Styled(NavLink)
-                        exact={true}
-                        to="/home"
+                                            activeClassName="act"
+                                            exact={true}
+                                            to="/home"
                       >
-                        Home 
+                                            Home 
                       </Styled(NavLink)>
-                    </styled.li>,
+</styled.li>,
                     <styled.li>
                       <Styled(NavLink)
-                        exact={true}
-                        to="/favorite"
+                                            activeClassName="act"
+                                            exact={true}
+                                            to="/favorite"
                       >
-                        Favorites
+                                            Favorites
                       </Styled(NavLink)>
-                    </styled.li>,
+</styled.li>,
                   ],
                 },
                 "ref": null,
@@ -254,11 +264,12 @@ ShallowWrapper {
                     "nodeType": "class",
                     "props": Object {
                       "children": <Styled(NavLink)
+                        activeClassName="act"
                         exact={true}
                         to="/home"
-                      >
+>
                         Home 
-                      </Styled(NavLink)>,
+</Styled(NavLink)>,
                     },
                     "ref": null,
                     "rendered": Object {
@@ -266,6 +277,7 @@ ShallowWrapper {
                       "key": undefined,
                       "nodeType": "class",
                       "props": Object {
+                        "activeClassName": "act",
                         "children": "Home ",
                         "exact": true,
                         "to": "/home",
@@ -282,11 +294,12 @@ ShallowWrapper {
                     "nodeType": "class",
                     "props": Object {
                       "children": <Styled(NavLink)
+                        activeClassName="act"
                         exact={true}
                         to="/favorite"
-                      >
+>
                         Favorites
-                      </Styled(NavLink)>,
+</Styled(NavLink)>,
                     },
                     "ref": null,
                     "rendered": Object {
@@ -294,6 +307,7 @@ ShallowWrapper {
                       "key": undefined,
                       "nodeType": "class",
                       "props": Object {
+                        "activeClassName": "act",
                         "children": "Favorites",
                         "exact": true,
                         "to": "/favorite",
@@ -328,21 +342,21 @@ ShallowWrapper {
             "props": Object {
               "children": <Switch>
                 <Route
-                  component={[Function]}
-                  exact={true}
-                  path="/home"
+                                component={[Function]}
+                                exact={true}
+                                path="/home"
                 />
                 <Route
-                  component={[Function]}
-                  exact={true}
-                  path="/favorite"
+                                component={[Function]}
+                                exact={true}
+                                path="/favorite"
                 />
                 <Redirect
-                  from="/"
-                  push={false}
-                  to="/home"
+                                from="/"
+                                push={false}
+                                to="/home"
                 />
-              </Switch>,
+</Switch>,
             },
             "ref": null,
             "rendered": Object {
@@ -355,17 +369,17 @@ ShallowWrapper {
                     component={[Function]}
                     exact={true}
                     path="/home"
-                  />,
+/>,
                   <Route
                     component={[Function]}
                     exact={true}
                     path="/favorite"
-                  />,
+/>,
                   <Redirect
                     from="/"
                     push={false}
                     to="/home"
-                  />,
+/>,
                 ],
               },
               "ref": null,
@@ -429,60 +443,62 @@ ShallowWrapper {
       "props": Object {
         "children": <Provider
           store={
-            Object {
-              "dispatch": [Function],
-              "getState": [Function],
-              "replaceReducer": [Function],
-              "subscribe": [Function],
-              Symbol(observable): [Function],
-            }
+                    Object {
+                              "dispatch": [Function],
+                              "getState": [Function],
+                              "replaceReducer": [Function],
+                              "subscribe": [Function],
+                              Symbol(observable): [Function],
+                            }
           }
-        >
+>
           <styled.div>
-            <styled.div>
-              <styled.ul>
-                <styled.li>
-                  <Styled(NavLink)
-                    exact={true}
-                    to="/home"
-                  >
-                    Home 
-                  </Styled(NavLink)>
-                </styled.li>
-                <styled.li>
-                  <Styled(NavLink)
-                    exact={true}
-                    to="/favorite"
-                  >
-                    Favorites
-                  </Styled(NavLink)>
-                </styled.li>
-              </styled.ul>
-              <ThemeSelector
-                changeTheme={[Function]}
-              />
-            </styled.div>
-            <styled.div>
-              <Switch>
-                <Route
-                  component={[Function]}
-                  exact={true}
-                  path="/home"
-                />
-                <Route
-                  component={[Function]}
-                  exact={true}
-                  path="/favorite"
-                />
-                <Redirect
-                  from="/"
-                  push={false}
-                  to="/home"
-                />
-              </Switch>
-            </styled.div>
+                    <styled.div>
+                              <styled.ul>
+                                        <styled.li>
+                                                  <Styled(NavLink)
+                                                            activeClassName="act"
+                                                            exact={true}
+                                                            to="/home"
+                                                  >
+                                                            Home 
+                                                  </Styled(NavLink)>
+                                        </styled.li>
+                                        <styled.li>
+                                                  <Styled(NavLink)
+                                                            activeClassName="act"
+                                                            exact={true}
+                                                            to="/favorite"
+                                                  >
+                                                            Favorites
+                                                  </Styled(NavLink)>
+                                        </styled.li>
+                              </styled.ul>
+                              <ThemeSelector
+                                        changeTheme={[Function]}
+                              />
+                    </styled.div>
+                    <styled.div>
+                              <Switch>
+                                        <Route
+                                                  component={[Function]}
+                                                  exact={true}
+                                                  path="/home"
+                                        />
+                                        <Route
+                                                  component={[Function]}
+                                                  exact={true}
+                                                  path="/favorite"
+                                        />
+                                        <Redirect
+                                                  from="/"
+                                                  push={false}
+                                                  to="/home"
+                                        />
+                              </Switch>
+                    </styled.div>
           </styled.div>
-        </Provider>,
+</Provider>,
         "theme": Object {
           "cardBackground": "#fec492",
           "favoritePageBackground": "#c8bed7",
@@ -498,48 +514,50 @@ ShallowWrapper {
         "props": Object {
           "children": <styled.div>
             <styled.div>
-              <styled.ul>
-                <styled.li>
-                  <Styled(NavLink)
-                    exact={true}
-                    to="/home"
-                  >
-                    Home 
-                  </Styled(NavLink)>
-                </styled.li>
-                <styled.li>
-                  <Styled(NavLink)
-                    exact={true}
-                    to="/favorite"
-                  >
-                    Favorites
-                  </Styled(NavLink)>
-                </styled.li>
-              </styled.ul>
-              <ThemeSelector
-                changeTheme={[Function]}
-              />
+                        <styled.ul>
+                                    <styled.li>
+                                                <Styled(NavLink)
+                                                            activeClassName="act"
+                                                            exact={true}
+                                                            to="/home"
+                                                >
+                                                            Home 
+                                                </Styled(NavLink)>
+                                    </styled.li>
+                                    <styled.li>
+                                                <Styled(NavLink)
+                                                            activeClassName="act"
+                                                            exact={true}
+                                                            to="/favorite"
+                                                >
+                                                            Favorites
+                                                </Styled(NavLink)>
+                                    </styled.li>
+                        </styled.ul>
+                        <ThemeSelector
+                                    changeTheme={[Function]}
+                        />
             </styled.div>
             <styled.div>
-              <Switch>
-                <Route
-                  component={[Function]}
-                  exact={true}
-                  path="/home"
-                />
-                <Route
-                  component={[Function]}
-                  exact={true}
-                  path="/favorite"
-                />
-                <Redirect
-                  from="/"
-                  push={false}
-                  to="/home"
-                />
-              </Switch>
+                        <Switch>
+                                    <Route
+                                                component={[Function]}
+                                                exact={true}
+                                                path="/home"
+                                    />
+                                    <Route
+                                                component={[Function]}
+                                                exact={true}
+                                                path="/favorite"
+                                    />
+                                    <Redirect
+                                                from="/"
+                                                push={false}
+                                                to="/home"
+                                    />
+                        </Switch>
             </styled.div>
-          </styled.div>,
+</styled.div>,
           "store": Object {
             "dispatch": [Function],
             "getState": [Function],
@@ -557,46 +575,48 @@ ShallowWrapper {
             "children": Array [
               <styled.div>
                 <styled.ul>
-                  <styled.li>
-                    <Styled(NavLink)
-                      exact={true}
-                      to="/home"
-                    >
-                      Home 
-                    </Styled(NavLink)>
-                  </styled.li>
-                  <styled.li>
-                    <Styled(NavLink)
-                      exact={true}
-                      to="/favorite"
-                    >
-                      Favorites
-                    </Styled(NavLink)>
-                  </styled.li>
+                                <styled.li>
+                                                <Styled(NavLink)
+                                                                activeClassName="act"
+                                                                exact={true}
+                                                                to="/home"
+                                                >
+                                                                Home 
+                                                </Styled(NavLink)>
+                                </styled.li>
+                                <styled.li>
+                                                <Styled(NavLink)
+                                                                activeClassName="act"
+                                                                exact={true}
+                                                                to="/favorite"
+                                                >
+                                                                Favorites
+                                                </Styled(NavLink)>
+                                </styled.li>
                 </styled.ul>
                 <ThemeSelector
-                  changeTheme={[Function]}
+                                changeTheme={[Function]}
                 />
-              </styled.div>,
+</styled.div>,
               <styled.div>
                 <Switch>
-                  <Route
-                    component={[Function]}
-                    exact={true}
-                    path="/home"
-                  />
-                  <Route
-                    component={[Function]}
-                    exact={true}
-                    path="/favorite"
-                  />
-                  <Redirect
-                    from="/"
-                    push={false}
-                    to="/home"
-                  />
+                                <Route
+                                                component={[Function]}
+                                                exact={true}
+                                                path="/home"
+                                />
+                                <Route
+                                                component={[Function]}
+                                                exact={true}
+                                                path="/favorite"
+                                />
+                                <Redirect
+                                                from="/"
+                                                push={false}
+                                                to="/home"
+                                />
                 </Switch>
-              </styled.div>,
+</styled.div>,
             ],
           },
           "ref": null,
@@ -609,25 +629,27 @@ ShallowWrapper {
                 "children": Array [
                   <styled.ul>
                     <styled.li>
-                      <Styled(NavLink)
-                        exact={true}
-                        to="/home"
-                      >
-                        Home 
-                      </Styled(NavLink)>
+                                        <Styled(NavLink)
+                                                            activeClassName="act"
+                                                            exact={true}
+                                                            to="/home"
+                                        >
+                                                            Home 
+                                        </Styled(NavLink)>
                     </styled.li>
                     <styled.li>
-                      <Styled(NavLink)
-                        exact={true}
-                        to="/favorite"
-                      >
-                        Favorites
-                      </Styled(NavLink)>
+                                        <Styled(NavLink)
+                                                            activeClassName="act"
+                                                            exact={true}
+                                                            to="/favorite"
+                                        >
+                                                            Favorites
+                                        </Styled(NavLink)>
                     </styled.li>
-                  </styled.ul>,
+</styled.ul>,
                   <ThemeSelector
                     changeTheme={[Function]}
-                  />,
+/>,
                 ],
               },
               "ref": null,
@@ -640,20 +662,22 @@ ShallowWrapper {
                     "children": Array [
                       <styled.li>
                         <Styled(NavLink)
-                          exact={true}
-                          to="/home"
+                                                activeClassName="act"
+                                                exact={true}
+                                                to="/home"
                         >
-                          Home 
+                                                Home 
                         </Styled(NavLink)>
-                      </styled.li>,
+</styled.li>,
                       <styled.li>
                         <Styled(NavLink)
-                          exact={true}
-                          to="/favorite"
+                                                activeClassName="act"
+                                                exact={true}
+                                                to="/favorite"
                         >
-                          Favorites
+                                                Favorites
                         </Styled(NavLink)>
-                      </styled.li>,
+</styled.li>,
                     ],
                   },
                   "ref": null,
@@ -664,11 +688,12 @@ ShallowWrapper {
                       "nodeType": "class",
                       "props": Object {
                         "children": <Styled(NavLink)
+                          activeClassName="act"
                           exact={true}
                           to="/home"
-                        >
+>
                           Home 
-                        </Styled(NavLink)>,
+</Styled(NavLink)>,
                       },
                       "ref": null,
                       "rendered": Object {
@@ -676,6 +701,7 @@ ShallowWrapper {
                         "key": undefined,
                         "nodeType": "class",
                         "props": Object {
+                          "activeClassName": "act",
                           "children": "Home ",
                           "exact": true,
                           "to": "/home",
@@ -692,11 +718,12 @@ ShallowWrapper {
                       "nodeType": "class",
                       "props": Object {
                         "children": <Styled(NavLink)
+                          activeClassName="act"
                           exact={true}
                           to="/favorite"
-                        >
+>
                           Favorites
-                        </Styled(NavLink)>,
+</Styled(NavLink)>,
                       },
                       "ref": null,
                       "rendered": Object {
@@ -704,6 +731,7 @@ ShallowWrapper {
                         "key": undefined,
                         "nodeType": "class",
                         "props": Object {
+                          "activeClassName": "act",
                           "children": "Favorites",
                           "exact": true,
                           "to": "/favorite",
@@ -738,21 +766,21 @@ ShallowWrapper {
               "props": Object {
                 "children": <Switch>
                   <Route
-                    component={[Function]}
-                    exact={true}
-                    path="/home"
+                                    component={[Function]}
+                                    exact={true}
+                                    path="/home"
                   />
                   <Route
-                    component={[Function]}
-                    exact={true}
-                    path="/favorite"
+                                    component={[Function]}
+                                    exact={true}
+                                    path="/favorite"
                   />
                   <Redirect
-                    from="/"
-                    push={false}
-                    to="/home"
+                                    from="/"
+                                    push={false}
+                                    to="/home"
                   />
-                </Switch>,
+</Switch>,
               },
               "ref": null,
               "rendered": Object {
@@ -765,17 +793,17 @@ ShallowWrapper {
                       component={[Function]}
                       exact={true}
                       path="/home"
-                    />,
+/>,
                     <Route
                       component={[Function]}
                       exact={true}
                       path="/favorite"
-                    />,
+/>,
                     <Redirect
                       from="/"
                       push={false}
                       to="/home"
-                    />,
+/>,
                   ],
                 },
                 "ref": null,
