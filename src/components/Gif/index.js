@@ -1,21 +1,20 @@
-import favorites from '../../actions/favorites'
 import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
+import { connect } from 'react-redux'
+import gif from '../../actions/gif'
 import React from 'react'
-import './index.css'
 
-const Gif = ({ url, slug, onClick, gif, favorite }) => {
-    const className = `gif ${favorite ? 'favorite' : ''}` 
-    return <img className={className} src={url} alt={slug} onClick={onClick.bind(null, gif)} />
+const Gif = ({ src, alt, onClick, className, gif, favorite }) => {
+    return <img alt={alt} src={src} onClick={onClick.bind(null, gif)} className={ favorite ? `${className} favorite` : className } />
 }
 
-const mapDispatchToProps = (dispatch) => {
+
+const mapDispatchToProps = dispatch => {
     /**
-     * 
+     *
      */
-    const { clickFavorite: onClick } = favorites.creators
+    const { creators: { clickGif: onClick } } = gif
     /**
-     * 
+     *
      */
     return bindActionCreators({ onClick }, dispatch)
 }
