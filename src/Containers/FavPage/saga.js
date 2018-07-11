@@ -1,17 +1,13 @@
-import {
-  queryFavError,
-  queryFavSuccess,
-  QUERY_FAV
-} from './action'
-import serialize from '../../util/serialize'
-import { call, put, takeLatest } from 'redux-saga/effects'
-import axios from 'axios'
+import { queryFavError, queryFavSuccess, QUERY_FAV } from './action'
+import serialize from '../../util/serialize';
+import { call, put, takeLatest } from 'redux-saga/effects';
+import axios from 'axios';
+require('../.env').config();
 
 function* doQueryFav({ param = {} }) {
-
   const query = serialize({
-    limit:10
-    api_key: 'Y354pcUIVTGZXofCIqvlYWA2Bv1khCCZ'
+    limit:10,
+    api_key: REACT_APP_GIPHY_API_KEY
   });
   const response = yield call([axios, 'get'], `https://api.giphy.com/v1/gifs/gifs?${query}`);
   if (response.error) {

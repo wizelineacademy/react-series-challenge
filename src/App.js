@@ -6,20 +6,20 @@ import logo from './66.png';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import actions from './actions/home';
-import { Navelement, Title, Wrapper, TheApp } from './App.style.js';
+import { TheHeader, TheNav, Navelement, Title, Wrapper, TheApp } from './App.style.js';
 
 class App extends Component {  
   render() {
     return (
       <Wrapper>
         <TheApp>
-          <header className="App-header">
+          <TheHeader>
             <img src={logo} className="App-logo" alt="logo" />
             <Title>DOCTOR GIF</Title>
-          </header>
+          </TheHeader>
           <Router>
             <div>
-              <header>
+              <TheNav>
                 <ul>
                   <Navelement>
                     <NavLink to="/">Home</NavLink>
@@ -28,7 +28,7 @@ class App extends Component {
                     <NavLink to="/favorites">Favorites</NavLink>
                   </Navelement>
                 </ul>
-              </header>
+              </TheNav>
               <Switch>
                 <Route exact path="/" component={Home} />
                 <Route path="/favorites" component={Favorites} />

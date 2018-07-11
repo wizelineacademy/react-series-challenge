@@ -1,9 +1,23 @@
 import styled from 'styled-components';
 
+export const TheHeader = styled.div`
+  background-color: #222;
+  height: 100px;
+  padding: 20px;
+  color: white;
+`
+
+export const TheNav = styled.div`
+  background-color: #222;
+  height: 30px;
+  padding: 20px;
+  color: white;
+`
+
 export const Navelement = styled.li`
   display: inline-block;
   margin-right: 1rem;
-  color: red;
+  color: white;
 `
 
 export const Wrapper = styled.div`
