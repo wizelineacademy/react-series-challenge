@@ -6,7 +6,7 @@ import { SearchBarInput } from '../styles/SearchBar.style.js';
 
 import gifActions from '../actions/gifActions';
 
-class SearchBar extends Component {
+export class SearchBar extends Component {
   render() {
     const { searchGifs } = this.props;
     const self = this;

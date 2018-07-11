@@ -13,7 +13,7 @@ import {
   GifCardMainImage
 } from '../styles/GifCard.style.js';
 
-const GifCard = (props) => {
+export const GifCard = (props) => {
   const { favorited, id, images, title, toggleFavorite } = props;
 
   return (
