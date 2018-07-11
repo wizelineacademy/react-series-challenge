@@ -4,7 +4,7 @@ import { Button } from "./FavoriteButtonStyled";
 
 const AddTransactionButton = ({ gif, addFavoriteGif, favorite }) => (
   <Button favorite={favorite} onClick={() => addFavoriteGif(gif)}>
-    <i className="far fa-heart" />
+    <i className="fas fa-heart" />
   </Button>
 );
 
