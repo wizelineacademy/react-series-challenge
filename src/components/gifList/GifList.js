@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import favoriteActions from 'actions/favorite';
 import Gif from 'components/gif';
 
-class GifList extends Component {
+export class GifList extends Component {
   toggleFavorite = (gif) => {
     let gifData = (this.props.favorite[gif]) || this.props.gifs[gif]
     if(gifData.liked) {
