@@ -7,10 +7,7 @@ class GiphyElement extends Component {
         super(props);
         this.state = {
             'showInfo': false,
-            'id': props.id,
-            'slug': props.slug,
-            'caption': props.caption,
-            'embed_url': props.embedUrl,
+            'giphy': props.giphy
         };
         this.handleShowInfo = this.handleShowInfo.bind(this);
         this.handleHideInfo = this.handleHideInfo.bind(this);
@@ -29,7 +26,7 @@ class GiphyElement extends Component {
         const info = this.state.showInfo && (
             <InfoPortal>
             <span>
-                <p>ID: {this.state.id}, Slug: {this.state.slug}, Caption: {this.state.caption}</p>
+                <p>ID: {this.state.giphy.id}, Slug: {this.state.giphy.slug}, Caption: {this.state.giphy.caption}</p>
                 <button onClick={this.handleHideInfo}>Close</button>
             </span>
             </InfoPortal>
@@ -37,7 +34,11 @@ class GiphyElement extends Component {
 
         return (
             <span>
-                <img slug={this.state.slug} src={this.state.embed_url}/>
+                <img
+                    slug={this.state.giphy.slug}
+                    src={this.state.giphy.images.fixed_height_small.url}
+                    alt={this.state.giphy.caption}
+                />
                 <button onClick={this.handleShowInfo}>Info</button>
                 {info}
             </span>

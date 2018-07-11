@@ -1,15 +1,27 @@
-import React, {Component} from 'react';
+import React from 'react';
+import {bindActionCreators} from "redux";
+import appActions from "../actions";
+import {connect} from "react-redux";
 
-class SearchBar extends Component {
+const SearchBar = (props) => {
 
-    render() {
-        return (
-            <div>
-                <input/>
-            </div>
-        );
-    }
+    const {getGiphies} = props;
 
-}
+    return (
+        <div>
+            <input/>
+            <button onClick={getGiphies}>Actualizar</button>
+        </div>
+    );
 
-export default SearchBar;
+};
+
+const mapDispatchToProps = (dispatch) => {
+    const {getGiphies} = appActions.creators;
+
+    return bindActionCreators({
+        getGiphies,
+    }, dispatch);
+};
+
+export default connect(null, mapDispatchToProps)(SearchBar);
