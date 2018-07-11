@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home actions home creators 1`] = `
+Object {
+  "type": "TRENDING_GIFS_LOAD",
+}
+`;
+
+exports[`Home actions home creators 2`] = `
+Object {
+  "payload": true,
+  "type": "LOADING_SET",
+}
+`;
+
+exports[`Home actions home creators 3`] = `
+Object {
+  "payload": Array [],
+  "type": "GIFS_SET",
+}
+`;
+
+exports[`Home actions home creators 4`] = `
+Object {
+  "type": "GIFS_SEARCH",
+}
+`;
+
+exports[`Home actions home creators 5`] = `
+Object {
+  "payload": "dogo",
+  "type": "SEARCH_TERM_SET",
+}
+`;

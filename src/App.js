@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import { injectGlobal, ThemeProvider } from 'styled-components';
 import Home from './containers/Home';
@@ -27,25 +27,21 @@ const theme = {
   },
 };
 
-class App extends Component {
-  render() {
-    return (
-      <ThemeProvider theme={theme}>
-        <div className="App">
-          <HeaderNav>
-            <HeaderNavLink to="/">Trending gifs</HeaderNavLink>
-            <HeaderNavLink to="/favorites">Mis favoritos</HeaderNavLink>
-          </HeaderNav>
+const App = () => (
+  <ThemeProvider theme={theme}>
+    <div className="App">
+      <HeaderNav>
+        <HeaderNavLink to="/">Trending gifs</HeaderNavLink>
+        <HeaderNavLink to="/favorites">Mis favoritos</HeaderNavLink>
+      </HeaderNav>
 
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/favorites" component={Favorites} />
-            <Redirect to="/" />
-          </Switch>
-        </div>
-      </ThemeProvider>
-    );
-  }
-}
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/favorites" component={Favorites} />
+        <Redirect to="/" />
+      </Switch>
+    </div>
+  </ThemeProvider>
+);
 
 export default App;
