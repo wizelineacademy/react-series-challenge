@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import favoritesActions from '../../redux/actions/favorites';
 import { SearchBarStyle } from '../../styled_component/SearchBar.styled';
 
-const SearchBarFavorites = (props) =>{
+export const SearchBarFavorites = (props) =>{
     const {
         favorites,
         isSearchingFavorite,

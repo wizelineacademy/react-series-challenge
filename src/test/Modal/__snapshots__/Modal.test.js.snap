@@ -1,0 +1,298 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test will work 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Unknown
+    favorites={
+        Object {
+            "cdcd": "dcdcd",
+          }
+    }
+    gift={
+        Object {
+            "name": "dcdjc",
+            "url": "cdcdxs",
+          }
+    }
+    isModalOpen={true}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "ariaHideApp": true,
+      "bodyOpenClassName": "ReactModal__Body--open",
+      "children": Array [
+        <styled.img
+          alt=""
+          src="cdcdxs"
+/>,
+        <styled.div>
+          <styled.p>
+                    dcdjc
+          </styled.p>
+          <styled.span
+                    onClick={[Function]}
+          >
+                    Close
+          </styled.span>
+          <styled.span
+                    className=""
+                    onClick={[Function]}
+          >
+                    Like
+          </styled.span>
+</styled.div>,
+      ],
+      "closeTimeoutMS": 0,
+      "isOpen": true,
+      "parentSelector": [Function],
+      "portalClassName": "ReactModalPortal",
+      "shouldCloseOnEsc": true,
+      "shouldCloseOnOverlayClick": true,
+      "shouldFocusAfterRender": true,
+      "shouldReturnFocusAfterClose": true,
+      "style": Object {
+        "content": Object {
+          "bottom": "auto",
+          "height": "auto",
+          "left": "50%",
+          "overflow": "auto",
+          "padding": "0",
+          "top": "50%",
+          "transform": "translate(-50%, -50%)",
+          "width": "210px",
+        },
+      },
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "alt": "",
+          "src": "cdcdxs",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <styled.p>
+              dcdjc
+</styled.p>,
+            <styled.span
+              onClick={[Function]}
+>
+              Close
+</styled.span>,
+            <styled.span
+              className=""
+              onClick={[Function]}
+>
+              Like
+</styled.span>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": "dcdjc",
+            },
+            "ref": null,
+            "rendered": "dcdjc",
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": "Close",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": "Close",
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": "Like",
+              "className": "",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": "Like",
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "ariaHideApp": true,
+        "bodyOpenClassName": "ReactModal__Body--open",
+        "children": Array [
+          <styled.img
+            alt=""
+            src="cdcdxs"
+/>,
+          <styled.div>
+            <styled.p>
+                        dcdjc
+            </styled.p>
+            <styled.span
+                        onClick={[Function]}
+            >
+                        Close
+            </styled.span>
+            <styled.span
+                        className=""
+                        onClick={[Function]}
+            >
+                        Like
+            </styled.span>
+</styled.div>,
+        ],
+        "closeTimeoutMS": 0,
+        "isOpen": true,
+        "parentSelector": [Function],
+        "portalClassName": "ReactModalPortal",
+        "shouldCloseOnEsc": true,
+        "shouldCloseOnOverlayClick": true,
+        "shouldFocusAfterRender": true,
+        "shouldReturnFocusAfterClose": true,
+        "style": Object {
+          "content": Object {
+            "bottom": "auto",
+            "height": "auto",
+            "left": "50%",
+            "overflow": "auto",
+            "padding": "0",
+            "top": "50%",
+            "transform": "translate(-50%, -50%)",
+            "width": "210px",
+          },
+        },
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "alt": "",
+            "src": "cdcdxs",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <styled.p>
+                dcdjc
+</styled.p>,
+              <styled.span
+                onClick={[Function]}
+>
+                Close
+</styled.span>,
+              <styled.span
+                className=""
+                onClick={[Function]}
+>
+                Like
+</styled.span>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": "dcdjc",
+              },
+              "ref": null,
+              "rendered": "dcdjc",
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": "Close",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": "Close",
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": "Like",
+                "className": "",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": "Like",
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

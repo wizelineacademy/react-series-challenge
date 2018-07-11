@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import GiftItem from '../giftItem';
+import FavoritesList from '../FavoritesList.js';
 import GiftContainer from '../GiftContainer';
 import { SearchBarFavorites } from '../SearchBars';
 
@@ -17,23 +17,13 @@ const Favorites = (props) => {
     return (
         <GiftContainer 
             searchBar = {<SearchBarFavorites />}
-            giftList = {infoToShow ? <GiftList 
+            giftList = {infoToShow ? <FavoritesList 
                             gifts={infoToShow}/>:""}
         />
     );
 }
 
-const GiftList = (props) => {
-    const { gifts } = props
 
-    return Object.values(gifts).map((item, index)=> (
-      <GiftItem 
-        url={item.url}
-        name={item.name}
-        id={item.id}
-        key={index}/>
-    ));
-}
 
 const  mapStateToProps = (state) => {
     const { favorites } = state.favoritesReducer;
@@ -43,3 +33,6 @@ const  mapStateToProps = (state) => {
 };
 
 export default connect(mapStateToProps, null)(Favorites);
+export {
+    Favorites
+}

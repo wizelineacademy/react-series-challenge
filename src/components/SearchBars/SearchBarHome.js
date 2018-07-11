@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import giftActions from '../../redux/actions/gifts';
 import { SearchBarStyle } from '../../styled_component/SearchBar.styled';
 
-const SearchBarHome = ({ getGift }) =>{
+export const SearchBarHome = ({ getGift }) =>{
   
   const onInputChange = (term) => {
     getGift({ text: term });

@@ -32,7 +32,7 @@ const checkFavorite = (props) =>{
     return Object.keys(favorites).includes(gift.name);
 }
 
-const AddGiftModal = (props) => {
+export const AddGiftModal = (props) => {
   const {
     isModalOpen,
     gift,

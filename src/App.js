@@ -4,7 +4,7 @@ import store from './redux/store';
 import { Route, Redirect, NavLink, Switch, } from 'react-router-dom';
 import Home from './components/Views/Home';
 import Favorites from './components/Views/Favorites';
-import { AppStyled, AppTitle, AppHeader, HeaderButtons } from './styled_component/App.styled'; 
+import { AppStyled, AppHeader, HeaderButtons } from './styled_component/App.styled'; 
 
 class App extends Component {
 
@@ -14,8 +14,8 @@ class App extends Component {
         <AppStyled>
           <AppHeader>
             <HeaderButtons >
-              <NavLink to="/Search" activeClass="active">Search</NavLink>
-              <NavLink to="/Favorites" activeClass="active">Favorites</NavLink>
+              <span><NavLink to="/Search" activeClass="active">Search</NavLink></span>
+              <span><NavLink to="/Favorites" activeClass="active">Favorites</NavLink></span>
             </HeaderButtons>
           </AppHeader>
 
@@ -35,3 +35,6 @@ class App extends Component {
 }
 
 export default App;
+export {
+  App,
+}

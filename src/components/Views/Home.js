@@ -4,9 +4,9 @@ import { SearchBarHome } from '../SearchBars';
 import giftActions from '../../redux/actions/gifts';
 import { bindActionCreators } from 'redux';
 import GiftContainer from '../GiftContainer';
-import GiftItem from '../giftItem';
+import GiftList from '../GiftList';
 
-class Home extends Component {
+export class Home extends Component {
   componentDidMount(){
     this.props.getGift({ text: "" });
   }
@@ -25,23 +25,6 @@ class Home extends Component {
   }
 }
 
-const GiftList = (props) => {
-  const { gifts } = props
-
-  if(gifts.length < 5){
-    throw new Error("Not Found")
-  }
-  
-  return (Object.values(gifts).map((item, index)=> (
-    <GiftItem 
-      url={item.images.preview_gif.url}
-      name={item.title}
-      id={item.id}
-      key={index}/>
-  )));
-  
-};
-
 function mapStateToProps (state) {
   const { gifts, } = state;
   
@@ -55,7 +38,3 @@ function mapDispatchToProps (dispatch) {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
-export {
-  GiftList,
-  Home,
-}
