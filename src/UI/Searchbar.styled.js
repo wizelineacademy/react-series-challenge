@@ -13,10 +13,8 @@ export const StyledInput = styled.input`
     line-height: 15px;
     font-size: 15px;
     width: 80%
-
     border: 2px solid red;
     border-radius: 25px;
-
     color: #000000;
     background-color: #ffeeee;
     padding: 15px;

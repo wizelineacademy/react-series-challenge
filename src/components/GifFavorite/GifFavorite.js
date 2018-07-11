@@ -35,13 +35,13 @@ class GifFavorite extends Component {
         if(this.state.searchedValue === ""){
             this.setState({searchResults: this.props.favoritedImages})
         } else {
-            let newArray = Object.keys(this.props.favoritedImages).map((key, index) => {
+            let newArrayOfResults = Object.keys(this.props.favoritedImages).map((key, index) => {
                 return this.props.favoritedImages[index]
             }).filter(word => {
                 return word.searchedValue.includes(this.state.searchedValue)});
             
-            if(newArray !== undefined && newArray !== null && newArray.length >= 0){
-                this.setState({ searchResults: newArray });
+            if(newArrayOfResults !== undefined && newArrayOfResults !== null && newArrayOfResults.length >= 0){
+                this.setState({ searchResults: newArrayOfResults });
             } 
         }
     }

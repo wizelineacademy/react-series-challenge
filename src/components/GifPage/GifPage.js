@@ -22,28 +22,30 @@ class GifPage extends Component {
     }
 
     render() {
-        let newArray = [];
-        let newObject = {};
+
+        console.log("PROPS", this.props);
+        let newArrayOfGifData = [];
+        let newObjectOfGifData = {};
 
         if(this.props.gifs !== undefined ){
             for(let a = 0; a <= Object.keys(this.props.gifs).length - 1; a++){
-                newObject = {};
-                newObject.id = this.props.gifs[a].id;
-                newObject.url = this.props.gifs[a].images.downsized.url;
-                newObject.isFavorite = this.props.gifs[a].isFavorite;
-                newArray.push(newObject);
+                newObjectOfGifData = {};
+                newObjectOfGifData.id = this.props.gifs[a].id;
+                newObjectOfGifData.url = this.props.gifs[a].images.downsized.url;
+                newObjectOfGifData.isFavorite = this.props.gifs[a].isFavorite;
+                newArrayOfGifData.push(newObjectOfGifData);
             }
         }
 
         return(
-            <StyledGifPage>
+            <StyledGifPage {...this.props}>
                 <SearchBar 
                 updateState = { this.updateState } 
                 handleSearch = {this.handleSearch} />
 
                 <ErrorBoundary>
                     <GifCards 
-                    gifData = { newArray } 
+                    gifData = { newArrayOfGifData } 
                     addRemoveGif = {this.props.addRemoveGifFavorites} 
                     searchedValue = {this.props.searchedValue}/> 
                 </ErrorBoundary>        

@@ -1,5 +1,13 @@
 import { injectGlobal } from 'styled-components';
 
+export const themeSunny = {
+    gifPageBackground: '#ff0198',
+}
+  
+export const themeNightly = {
+    gifPageBackground: '#6e27c5',
+}
+
 injectGlobal`
     @import url('https://fonts.googleapis.com/css?family=Quicksand');  
     
