@@ -15,9 +15,8 @@ function trendingReducer(state = initialState, action) {
     case QUERY_TRENDING:
       return {...state,trendingLoading:true}
     case QUERY_TRENDING_SUCCESS:
-      const { pagination, data } = action.data;
-      const total = pagination ? pagination.total_count : 0;
-        return {...state,trendingLoading:false,trendingTotal:total,trendingGifs:data};
+      const { data } = action.data;
+        return {...state,trendingLoading:false,trendingGifs:data};
     case QUERY_TRENDING_ERROR:
       return {...state,trendingGifs:null, trendingLoading:false}
     default:

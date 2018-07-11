@@ -17,6 +17,7 @@ export default function configureStore(initialState) {
   )
 
   store.runSaga = sagaMiddleware.run
-  store.close = () => store.dispatch(END)
+  store.close = () => store.dispatch(END);
+  
   return store
 }

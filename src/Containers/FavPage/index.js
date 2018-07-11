@@ -4,12 +4,12 @@ import { connect } from 'react-redux'
 import Gif from "../../components/Gif"
 
 class FavPage extends Component {
-  render() {
+  export render() {
     
     return (
         <React.Fragment>
         {
-          this.props.gifs && this.props.gifs.map((gif, index) => {return <Gif url={gif.url} id={gif.id} key={gif.id} />})
+          this.props.gifs && this.props.gifs.map((gif) => {return <Gif url={gif.url} id={gif.id} key={gif.id} />})
         }
         </React.Fragment>
     )

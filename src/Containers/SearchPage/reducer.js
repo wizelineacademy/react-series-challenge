@@ -15,9 +15,8 @@ function searchReducer(state = initialState, action) {
     case QUERY_SEARCH:
       return {...state,searchLoading:true}
     case QUERY_SEARCH_SUCCESS:
-      const { pagination, data } = action.data;
-      const total = pagination ? pagination.total_count : 0;
-        return {...state,searchLoading:false,searchTotal:total,searchGifs:data};
+      const { data } = action.data;
+        return {...state,searchLoading:false,searchGifs:data};
     case QUERY_SEARCH_ERROR:
       return {...state,searchGifs:null, searchLoading:false}
     default:

@@ -7,7 +7,7 @@ import serialize from '../../util/serialize'
 import { call, put, takeLatest } from 'redux-saga/effects'
 import axios from 'axios'
 
-function* doQueryTrending({ param = {} }) {
+export function* doQueryTrending() {
 
   const query = serialize({
     limit:25,
@@ -20,7 +20,6 @@ function* doQueryTrending({ param = {} }) {
   }
   yield put(queryTrendingSuccess(response.data));
 }
-
 
 export default function* queryTrendingWatcher() {
   yield takeLatest(QUERY_TRENDING, doQueryTrending);

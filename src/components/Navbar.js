@@ -22,6 +22,7 @@ class Navbar extends Component {
           <LiStyled>
           <InputTextStyled
               type="text"
+              name="search"
               onChange={event => { this.setState({ tag: event.target.value }); }}
             />
           </LiStyled>
@@ -32,7 +33,7 @@ class Navbar extends Component {
                 state: { query: this.state.tag }
               }}
             >
-              <ButtonTextStyled type="button">Search</ButtonTextStyled>
+              <ButtonTextStyled type="button" id="add">Search</ButtonTextStyled>
             </Link>
           </LiStyled>
         </UlStyled>
