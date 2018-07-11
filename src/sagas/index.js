@@ -3,7 +3,9 @@ import actions from '../actions';
 import axios from 'axios';
 import constants from "../constants";
 
-const { API_KEY, TRENDING_API_URL, SEARCH_API_URL } = constants;
+const API_KEY = process.env.REACT_APP_API_KEY;
+
+const { TRENDING_API_URL, SEARCH_API_URL } = constants;
 
 const { GET_TRENDING, GET_SEARCH } = actions.types;
 

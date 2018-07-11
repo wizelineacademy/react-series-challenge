@@ -7,10 +7,8 @@ const { searchGifs } = actions.creators;
 
 class SearchBar extends Component {
 
-  ref = React.createRef()
-
   componentDidMount() {
-    this.ref.current.value = this.props.searchQuery;
+    this.input.value = this.props.searchQuery;
   }
 
   render () {
@@ -19,7 +17,7 @@ class SearchBar extends Component {
         onChange={(e) => this.props.searchGifs(e.target.value)} 
         type='text' 
         placeholder='Search'
-        ref={this.ref}
+        ref={el => this.input = el}
       />
     )
   }
