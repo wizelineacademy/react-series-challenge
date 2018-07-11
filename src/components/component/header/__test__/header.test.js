@@ -30,7 +30,7 @@ describe('<Header> ', () => {
     // const handleButtonSpy = spy(wrapper.instance(), "handleButton");
 
     //Mock
-    wrapper.instance().searchInput = { value: 0, focus: () => {} };
+    wrapper.instance().searchInput = { value: 0, focus: () => { } };
 
     wrapper.update();
 
@@ -38,6 +38,17 @@ describe('<Header> ', () => {
 
     wrapper.find('button').simulate('click', { preventDefault() { } });
     // expect(handleButtonSpy.calledOnce).toBeTruthy();
-  })
+  });
+
+  it('should be able to submit', () => {
+
+    // const handleSubmitSpy = spy(instance, "handleSubmit");
+
+    // wrapper.update();
+
+    // expect(handleSubmitSpy.calledOnce).toBeFalsy();
+    wrapper.find('form').simulate('submit', { preventDefault() { } });
+    // expect(handleSubmitSpy.calledOnce).toBeTruthy();
+  });
 
 });
