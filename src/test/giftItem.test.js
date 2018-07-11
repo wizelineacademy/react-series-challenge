@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import GiftItem from '../components/giftItem.js';
+import  { GiftItem } from '../components/giftItem.js';
 
 describe('test', () => {
   it('will work', () => {

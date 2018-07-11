@@ -6,7 +6,8 @@ import giftModalActions from '../../redux/actions/giftModal';
 import favoriteActions from '../../redux/actions/favorites';
 import { ModalHeader, ModalImage, ModalButtons, InfoContainer } from '../../styled_component/Modal.styled';
 
-Modal.setAppElement('#root');
+Modal.setAppElement('body');
+
 
 const customStyles = {
   content: {

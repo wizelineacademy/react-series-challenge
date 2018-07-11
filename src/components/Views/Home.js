@@ -28,7 +28,6 @@ class Home extends Component {
 const GiftList = (props) => {
   const { gifts } = props
 
-  console.log("--->", gifts);
   if(gifts.length < 5){
     throw new Error("Not Found")
   }
@@ -56,3 +55,7 @@ function mapDispatchToProps (dispatch) {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export {
+  GiftList,
+  Home,
+}
