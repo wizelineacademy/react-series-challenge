@@ -7,6 +7,21 @@ export const TheHeader = styled.div`
   color: white;
 `
 
+export const AppLogo = styled.img`
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+`
+
+export const Pill = styled.img`
+  height: 20px;
+  padding-right: 5px;
+`
+
+export const AppHeader = styled.div`
+
+`
+
+
 export const TheNav = styled.div`
   background-color: #222;
   height: 30px;

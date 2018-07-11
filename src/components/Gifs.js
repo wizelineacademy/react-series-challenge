@@ -22,6 +22,7 @@ class Gifs extends Component {
             buttonText: "NotFav"
           });
         }
+        return null;
       });
     }
   }
@@ -34,6 +35,7 @@ class Gifs extends Component {
                       fav: true
                   });
               }
+              return null;
           });
           if(this.state.fav){
               this.props.withdrawFav(this.props.id);

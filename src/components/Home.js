@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 //import actions from '../actions/home';
 import { queryTrending } from '../actions'
 import Gif from './Gifs';
-import '../App.css';
 import {} from '../.env';
 
 class Home extends Component {

@@ -3,10 +3,16 @@ import { BrowserRouter as Router, Route, Redirect, NavLink, Switch } from "react
 import Home from './components/Home';
 import Favorites from "./Containers/FavPage";
 import logo from './66.png';
+import pill from './pill.png';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import actions from './actions/home';
-import { TheHeader, TheNav, Navelement, Title, Wrapper, TheApp } from './App.style.js';
+import { AppLogo, Pill, TheHeader, TheNav, Navelement, Title, Wrapper, TheApp } from './App.style.js';
+
+let liStyle = {
+  color: 'white',
+  textDecoration: 'none'
+}
 
 class App extends Component {  
   render() {
@@ -14,7 +20,7 @@ class App extends Component {
       <Wrapper>
         <TheApp>
           <TheHeader>
-            <img src={logo} className="App-logo" alt="logo" />
+            <AppLogo src={logo} alt="logo" />
             <Title>DOCTOR GIF</Title>
           </TheHeader>
           <Router>
@@ -22,10 +28,10 @@ class App extends Component {
               <TheNav>
                 <ul>
                   <Navelement>
-                    <NavLink to="/">Home</NavLink>
+                    <NavLink to="/" style={liStyle}><Pill src={pill} alt="pill" />Home</NavLink>
                   </Navelement>
                   <Navelement>
-                    <NavLink to="/favorites">Favorites</NavLink>
+                    <NavLink to="/favorites" style={liStyle}><Pill src={pill} alt="pill" />Favorites</NavLink>
                   </Navelement>
                 </ul>
               </TheNav>
