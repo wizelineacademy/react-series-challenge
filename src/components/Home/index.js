@@ -1,7 +1,9 @@
 import React, { Component, Fragment } from 'react'
+import { connect } from 'react-redux'
 import Nav from '../Nav'
 import SearchBar from '../SearchBar'
 import Gifs from '../Gifs'
+import * as actionTypes from '../../actions'
 
 import axios from 'axios'
 
@@ -40,29 +42,6 @@ class Home extends Component {
         title: 'Trending Now'
       })
     })
-  }
-
-  handleAddFavorites = (newFavoriteGif) => {
-    // Get favorite Gifs from localStorage
-    const favoriteGifs = JSON.parse(localStorage.getItem('favoriteGifs'))
-
-    // Check if there are favorite gifs
-    // If exist favorite gifs assign into updateFavoriteGifs
-    // If not assign to the variable an empty array
-    const updateFavoriteGifs  = !!favoriteGifs ? [...favoriteGifs] : []
-
-    // Check if gif already exist and get the index
-    const gifFavoriteExist = updateFavoriteGifs.findIndex(gif => gif.id == newFavoriteGif.id)
-
-    console.log(gifFavoriteExist)
-
-    if (gifFavoriteExist > -1) {
-      updateFavoriteGifs.splice(gifFavoriteExist, 1)
-    } else {
-      updateFavoriteGifs.push(newFavoriteGif)
-    }
-
-    localStorage.setItem('favoriteGifs', JSON.stringify(updateFavoriteGifs))
   }
 
   updateQuery(e) {
@@ -111,11 +90,23 @@ class Home extends Component {
         {
           loading
             ? 'Cargando ...'
-            : <Gifs gifs={trendingGifs} title={title} addFavorites={this.handleAddFavorites}/>
+            : <Gifs gifs={trendingGifs} title={title} addFavorites={this.props.onToggleFavorite}/>
         }
       </Fragment>
     )
   }
 }
 
-export default Home
+const mapStateToProps = state => {
+  return {
+    gifs: state.gifs
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onToggleFavorite: (item) => dispatch(actionTypes.favoriteToggleStart(item))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home)

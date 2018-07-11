@@ -21,8 +21,7 @@ class Favorites extends Component {
   }
 
   componentDidMount() {
-    // this.fetchTrending()
-    this.getFavorites()
+    this.props.onFavoriteGifsInit()
   }
 
   fetchTrending() {
@@ -45,15 +44,6 @@ class Favorites extends Component {
     })
   }
 
-  getFavorites() {
-    const favoriteGifs = JSON.parse(localStorage.getItem('favoriteGifs'))
-
-    console.log(favoriteGifs)
-
-    this.setState({
-      trendingGifs: favoriteGifs
-    })
-  }
 
   updateQuery(e) {
     this.setState({
@@ -122,7 +112,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onToggleFavorite: (item) => dispatch(actionTypes.favoriteToggle(item))
+    onToggleFavorite: (item) => dispatch(actionTypes.favoriteToggleStart(item)),
+    onFavoriteGifsInit: () => dispatch(actionTypes.favoriteGifsInit()),
   }
 }
 
