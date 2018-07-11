@@ -3,6 +3,7 @@ import store from '../store';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import actions from '../actions/favorites';
+import { Wrapper } from '.././App.style.js';
 
 class Favorites extends Component {
   constructor() {
@@ -25,14 +26,14 @@ class Favorites extends Component {
       <div>
         <p>My Favorites</p>
 
-        <div className="container">
+        <Wrapper>
             { this.state.favorites.map(
               gif => <div className="element" key={gif.id}>
                       <img src={gif.images.downsized_medium.url} className="thegif" alt={gif.title}/>
                       <p onClick={() => this.addFavorite(gif)}>Like</p>
                     </div>
             )}
-          </div>
+          </Wrapper>
       </div>
     )
   }
