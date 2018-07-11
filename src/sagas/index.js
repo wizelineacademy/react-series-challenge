@@ -12,8 +12,8 @@ const {
   fetchedContentError,
 } = contentActions.actions
 
-const API_URL = 'https://api.giphy.com/v1/gifs/'
-const API_KEY = 'LRB79OdJK91f2MQW8XLsq0oS1DZU5OmO'
+const API_URL = process.env.REACT_APP_API_URL
+const API_KEY = process.env.REACT_APP_API_KEY
 
 const fetchContent = () => {
   const url = `${API_URL}trending?api_key=${API_KEY}&limit=25&rating=G`
