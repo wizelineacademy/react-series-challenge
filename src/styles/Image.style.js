@@ -6,7 +6,7 @@ export const ContentGif = styled.div`
     width: 220px;
     margin: 6px;
     border-radius: 4px;
-    min-height: 170px;
+    min-height: 175px;
 `;
 
 export const Icon = styled.i`
