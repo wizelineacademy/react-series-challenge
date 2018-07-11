@@ -1,36 +1,34 @@
-import { takeEvery, all, put, select } from "redux-saga/effects";
+import { takeEvery, all, take, select, put, call, takeLatest } from "redux-saga/effects";
+import { delay } from 'redux-saga'
 import favorites from '../actions/favorites'
 
 const localStorage = window.localStorage
-const favoritesSelector = (state) => state.favorites.items || []
-const { types: { FAVORITE_CLICK, FAVORITES_ADD, FAVORITES_REMOVE }, creators: { removeFavorite, addFavorite } } = favorites
+const { types: { FAVORITE_ADD, FAVORITE_REMOVE, FAVORITES_GET, FAVORITE_SEARCH }, creators: { fetchedFavorites, searchedFavorite } } = favorites
 
-function* watchFavoriteClicked() {
-    yield takeEvery(FAVORITE_CLICK, clickFavorite)
-}
-function* watchFavoritesChanged() {
+export function* watchFavorites() {
     yield all([
-        takeEvery(FAVORITES_REMOVE, saveToLocalStorage),
-        takeEvery(FAVORITES_ADD, saveToLocalStorage)
+        getFavorites(),
+        takeEvery(FAVORITE_ADD, favoriteAddedOrRemoved),
+        takeEvery(FAVORITE_REMOVE, favoriteAddedOrRemoved),
+        takeLatest(FAVORITE_SEARCH, handleSearch)
     ])
 }
-function* clickFavorite(action) {
-    const favorites = yield select(favoritesSelector)
-    const isInFavorites = favorites.some( fav => fav.id === action.payload.id)
-    if (isInFavorites) {
-        yield put(removeFavorite(action.payload))
-    } else {
-        yield put(addFavorite(action.payload))
-    }
+
+function* getFavorites() {
+    yield take(FAVORITES_GET)
+    const JSONfavorites = localStorage.getItem('favorites') || "[]";
+    const favorites = JSON.parse(JSONfavorites)
+    yield put(fetchedFavorites(favorites))
 }
 
-function* saveToLocalStorage(action) {
-    const favorites = yield select(favoritesSelector)
+function* favoriteAddedOrRemoved(action) {
+    const favorites = yield select(state => state.favorites.items)
     localStorage.setItem('favorites', JSON.stringify(favorites));
 }
 
-export {
-    watchFavoriteClicked,
-    watchFavoritesChanged
+function* handleSearch(action) {
+    yield call(delay, 500)
+    yield put(searchedFavorite(action.payload))
 }
+
 

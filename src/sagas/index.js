@@ -1,16 +1,15 @@
 import { all } from 'redux-saga/effects'
-import { watchSearchRequested } from './search'
-import { watchFavoriteClicked, watchFavoritesChanged } from './favorites'
-import { watchForLocation } from './locations'
-import { watchTrendingGet } from './trending'
+import { watchTrending } from './trending'
+import { watchGif } from './gif'
+import { watchSearch } from './search'
+import { watchFavorites } from './favorites'
 
 function* rootSaga() {
     yield all([
-        watchSearchRequested(),
-        watchFavoriteClicked(),
-        watchForLocation(),
-        watchTrendingGet(),
-        watchFavoritesChanged()
+      watchTrending(),
+      watchGif(),
+      watchFavorites(),
+      watchSearch()
     ])
 }
 
