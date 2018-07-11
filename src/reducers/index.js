@@ -1,7 +1,6 @@
-import { combineReducers } from 'redux';
-import trendingGifs from './trendingGifs'
-
+import { combineReducers } from "redux";
+import trendingGifs from "./trendingGifs";
 
 export default combineReducers({
-    trendingGifs
-})
+  trendingGifs
+});

@@ -1,39 +1,39 @@
-import React, {Component} from 'react'
-import remove from '../../assets/remove.png'
-import { bindActionCreators } from 'redux'
-import { connect } from 'react-redux';
-import getTrendingGifsActions from '../../actions/trendingGifs'
+import React, { Component } from "react";
+import remove from "../../assets/remove.png";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
+import getTrendingGifsActions from "../../actions/trendingGifs";
+import { StyledFavButton } from "../../App.styles";
 
-class RemoveFavButton extends Component{
-    removeFav = (event) =>{
-        const {
-            removeFav,
-          } = this.props
-        
-        var id = event.target.getAttribute('data-id')
-        removeFav(id)
-    }
+class RemoveFavButton extends Component {
+  removeFav = event => {
+    const { removeFav } = this.props;
 
-    render(){
-        return <button className='btn-action' onClick={this.removeFav} data-id={this.props.id}>
-            <img src={remove} alt='remove from favs' data-id={this.props.id} height={100}/>
-            <br/>
-            <label>Remove</label>
-        </button>
-    }
+    var id = event.target.getAttribute("data-id");
+    removeFav(id);
+  };
+
+  render() {
+    return (
+      <StyledFavButton remove onClick={this.addFav} data-id={this.props.id}>
+        Remove
+      </StyledFavButton>
+    );
+  }
 }
 
-const mapStateToProps = (state) => {
-    return {
-      
-    }
-  }  
+const mapStateToProps = state => {
+  return {};
+};
 
-const mapDispatchToProps = (dispatch) => {
-    const { removeFav } = getTrendingGifsActions.creators
-    return bindActionCreators({
-        removeFav
-    }, dispatch)
-  }
-  
-  export default connect(mapStateToProps, mapDispatchToProps)(RemoveFavButton)
+const mapDispatchToProps = dispatch => {
+  const { removeFav } = getTrendingGifsActions.creators;
+  return bindActionCreators(
+    {
+      removeFav
+    },
+    dispatch
+  );
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(RemoveFavButton);
