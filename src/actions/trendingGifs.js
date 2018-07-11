@@ -1,0 +1,9 @@
+const FETCH_TRENDING_GIFS = "FETCH_TRENDING_GIFS";
+const GET_TRENDING_GIFS = "GET_TENDING_GIFS";
+
+export default {
+  types: {
+    FETCH_TRENDING_GIFS,
+    GET_TRENDING_GIFS
+  }
+};
