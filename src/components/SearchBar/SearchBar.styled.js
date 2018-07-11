@@ -12,7 +12,8 @@ export const SearchBarInput = styled.input`
   height: 45px;
   box-sizing: border-box;
   appearance: none;
-  border: 1px solid ${props => props.theme.primary.background};
+  border: 1px solid
+    ${props => (props.theme ? props.theme.primary.background : '#000')};
 `;
 
 export const SearchBarButton = styled.button`
@@ -23,11 +24,13 @@ export const SearchBarButton = styled.button`
   padding: 5px 20px;
   font-size: 20px;
   transition: all 0.5s;
-  color: ${props => props.theme.primary.foreground};
+  color: ${props => (props.theme ? props.theme.primary.foreground : '#fff')};
   border: none;
-  background-color: ${props => props.theme.primary.background};
+  background-color: ${props =>
+    props.theme ? props.theme.primary.background : '#000'};
 
   :hover {
-    background-color: ${props => props.theme.secondary.background};
+    background-color: ${props =>
+      props.theme ? props.theme.secondary.background : 'blue'};
   }
 `;

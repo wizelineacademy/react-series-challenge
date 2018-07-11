@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`GifModal Container should render correctly 1`] = `
+exports[`GifModal component should renders correctly with given props 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
@@ -13,14 +13,14 @@ ShallowWrapper {
             "id": "id.1",
             "images": Object {
               "original": Object {
-                "url": "original.url",
+                "url": "url",
               },
               "preview_gif": Object {
                 "url": "url",
               },
             },
-            "rating": "r",
-            "title": "gif nsfw title",
+            "rating": "g",
+            "title": "gif.title",
             "username": "username1",
           }
     }
@@ -46,10 +46,10 @@ ShallowWrapper {
         <styled.div>
                 <styled.img
                         alt={undefined}
-                        src="original.url"
+                        src="url"
                 />
                 <p>
-                        gif nsfw title
+                        gif.title
                 </p>
         </styled.div>
         <button
@@ -75,10 +75,10 @@ ShallowWrapper {
           <styled.div>
             <styled.img
                         alt={undefined}
-                        src="original.url"
+                        src="url"
             />
             <p>
-                        gif nsfw title
+                        gif.title
             </p>
 </styled.div>,
           <button
@@ -105,10 +105,10 @@ ShallowWrapper {
             "children": Array [
               <styled.img
                 alt={undefined}
-                src="original.url"
+                src="url"
 />,
               <p>
-                gif nsfw title
+                gif.title
 </p>,
             ],
           },
@@ -120,7 +120,7 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "alt": undefined,
-                "src": "original.url",
+                "src": "url",
               },
               "ref": null,
               "rendered": null,
@@ -131,10 +131,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "gif nsfw title",
+                "children": "gif.title",
               },
               "ref": null,
-              "rendered": "gif nsfw title",
+              "rendered": "gif.title",
               "type": "p",
             },
           ],
@@ -182,10 +182,10 @@ ShallowWrapper {
           <styled.div>
                     <styled.img
                               alt={undefined}
-                              src="original.url"
+                              src="url"
                     />
                     <p>
-                              gif nsfw title
+                              gif.title
                     </p>
           </styled.div>
           <button
@@ -211,10 +211,10 @@ ShallowWrapper {
             <styled.div>
               <styled.img
                             alt={undefined}
-                            src="original.url"
+                            src="url"
               />
               <p>
-                            gif nsfw title
+                            gif.title
               </p>
 </styled.div>,
             <button
@@ -241,10 +241,10 @@ ShallowWrapper {
               "children": Array [
                 <styled.img
                   alt={undefined}
-                  src="original.url"
+                  src="url"
 />,
                 <p>
-                  gif nsfw title
+                  gif.title
 </p>,
               ],
             },
@@ -256,7 +256,7 @@ ShallowWrapper {
                 "nodeType": "class",
                 "props": Object {
                   "alt": undefined,
-                  "src": "original.url",
+                  "src": "url",
                 },
                 "ref": null,
                 "rendered": null,
@@ -267,10 +267,10 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": "gif nsfw title",
+                  "children": "gif.title",
                 },
                 "ref": null,
-                "rendered": "gif nsfw title",
+                "rendered": "gif.title",
                 "type": "p",
               },
             ],

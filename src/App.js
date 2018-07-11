@@ -28,7 +28,7 @@ const theme = {
 
 const App = () => (
   <ThemeProvider theme={theme}>
-    <div className="App">
+    <div>
       <HeaderNav>
         <HeaderNavLink to="/">Trending gifs</HeaderNavLink>
         <HeaderNavLink to="/favorites">Mis favoritos</HeaderNavLink>

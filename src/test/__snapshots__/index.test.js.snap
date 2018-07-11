@@ -17,9 +17,7 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "class",
     "props": Object {
-      "children": <div
-        className="App"
->
+      "children": <div>
         <styled.nav>
                 <Styled(NavLink)
                         to="/"
@@ -96,7 +94,6 @@ ShallowWrapper {
             />
 </Switch>,
         ],
-        "className": "App",
       },
       "ref": null,
       "rendered": Array [
@@ -223,9 +220,7 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "class",
       "props": Object {
-        "children": <div
-          className="App"
->
+        "children": <div>
           <styled.nav>
                     <Styled(NavLink)
                               to="/"
@@ -302,7 +297,6 @@ ShallowWrapper {
               />
 </Switch>,
           ],
-          "className": "App",
         },
         "ref": null,
         "rendered": Array [

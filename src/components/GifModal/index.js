@@ -75,7 +75,9 @@ const GifModal = ({
           </GifModalContent>
         )}
         {isFavorite ? removeFavBtn : addFavBtn}
-        <button onClick={() => closeModal()}>Cerrar</button>
+        <button id="close-modal-btn" onClick={() => closeModal()}>
+          Cerrar
+        </button>
       </GifModalBox>
     </GifPortal>
   );
@@ -96,6 +98,8 @@ GifModal.propTypes = {
   isOpen: PropTypes.bool.isRequired,
   addFavoriteId: PropTypes.func.isRequired,
   removeFavoriteId: PropTypes.func.isRequired,
+  isFavorite: PropTypes.bool.isRequired,
+  closeModal: PropTypes.func.isRequired,
 };
 
 export default GifModal;

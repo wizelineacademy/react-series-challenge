@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 import {
   SearchBarForm,
   SearchBarInput,
@@ -27,7 +29,7 @@ class SearchBar extends Component {
 
   render() {
     return (
-      <SearchBarForm onSubmit={this.onSearchSubmit}>
+      <SearchBarForm id="search-form" onSubmit={this.onSearchSubmit}>
         <SearchBarInput
           type="text"
           value={this.searchTerm}
@@ -38,4 +40,9 @@ class SearchBar extends Component {
     );
   }
 }
+
+SearchBar.propTypes = {
+  onSearch: PropTypes.func,
+};
+
 export default SearchBar;
