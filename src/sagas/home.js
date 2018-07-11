@@ -19,13 +19,15 @@ const markFavorites = (elemets, favorites) =>
 export function* getNewGifsSaga(testParams) {
   yield put(actions.setLoading(true));
 
-  const search = testParams
+  const search = testParams.search
     ? testParams.search
     : yield select(({ search }) => search.inputString);
 
   const endpoint = search === '' ? 'trending' : 'search';
 
-  const response = testParams
+  console.log('SEARCH: ', search);
+
+  const response = testParams.resp
     ? testParams.resp
     : yield call(fetchGifs, {
         url,
@@ -37,7 +39,9 @@ export function* getNewGifsSaga(testParams) {
 
   const { data } = response;
 
-  const favorites = testParams
+  console.log('DATA :', data);
+
+  const favorites = testParams.favorites
     ? testParams.favorites
     : yield call(selectors.getFavorites);
 
@@ -49,13 +53,13 @@ export function* getNewGifsSaga(testParams) {
 }
 
 export function* updateGifsSaga(testParams) {
-  const itemsListState = testParams
+  const itemsListState = testParams.list
     ? { ...testParams.list }
     : yield call(selectors.getPieceOfState, 'itemsList');
 
   const { currentItemsList } = itemsListState;
 
-  const favorites = testParams
+  const favorites = testParams.favorites
     ? [...testParams.favorites]
     : yield call(selectors.getFavorites);
 

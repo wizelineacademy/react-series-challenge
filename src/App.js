@@ -11,19 +11,7 @@ import Home from './components/Home';
 import Favorites from './components/Favorites';
 import Navbar from './components/Navbar';
 import actions from './actions';
-import { injectGlobal } from 'styled-components';
 import { Wrap } from './App.style';
-
-injectGlobal`
-html, body {
-  height: 100%;
-}
-body {
-  margin: 0;
-  background-color: lightsteelblue;
-  background-position: center;
-  background-size: cover;
-}`;
 
 class App extends Component {
   componentDidMount() {
