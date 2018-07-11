@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card Actions should return addFavorites action 1`] = `
+Object {
+  "payload": Object {},
+  "type": "ADD_FAVORITES",
+}
+`;
+
+exports[`Card Actions should return loadCards action 1`] = `
+Object {
+  "payload": Object {},
+  "type": "LOAD_CARDS",
+}
+`;
+
+exports[`Card Actions should return loadCards action 2`] = `
+Object {
+  "payload": Object {},
+  "type": "LOAD_CARDS",
+}
+`;
+
+exports[`Card Actions should return removeFavorites action 1`] = `
+Object {
+  "payload": Object {},
+  "type": "REMOVE_FAVORITES",
+}
+`;
+
+exports[`Card Actions should return setFavorites action 1`] = `
+Object {
+  "payload": Object {},
+  "type": "SET_FAVORITES",
+}
+`;

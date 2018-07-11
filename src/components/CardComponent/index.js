@@ -10,7 +10,7 @@ const CardComponent = (props) => {
 	const handleFavorite = () => {
 		addRemoveFavorites({ card });
 	}
-	//if( card.images.original.size > 5917958 ) throw new Error('Img too big');
+	if( card.images.original.size > 5917958 ) throw new Error('Img too big');
 	return (
 		<CardItem>
 			<div><img src={card.images.original.url} alt='' /></div>

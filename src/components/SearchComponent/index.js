@@ -1,8 +1,4 @@
 import React, { Component } from 'react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-
-import search from '../../actions/search';
 
 class Search extends Component {
 	constructor(props){
@@ -13,8 +9,6 @@ class Search extends Component {
 	}
 	handleSubmit = (event) => {
 		event.preventDefault();
-		const { searchCards } = this.props;
-
 		const searchTerm = this.state.searchTerm;
 		this.props.searchAction({ searchTerm });
 	}

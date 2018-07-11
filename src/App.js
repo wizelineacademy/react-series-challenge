@@ -36,7 +36,6 @@ class App extends Component {
     };
   }
   toggleTheme = () => {
-    console.log('toggle');
     this.setState({
       isDark: !this.state.isDark,
       theme: !this.state.isDark?darkTheme:myTheme

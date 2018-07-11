@@ -9,9 +9,6 @@ import cards from '../../actions/cards';
 import search from '../../actions/search';
 
 class ComponentsFavorites extends Component {
-	constructor(props){
-		super(props);
-	}
 	componentDidMount(){
 		this.props.loadFavorites();
 	}
@@ -20,7 +17,7 @@ class ComponentsFavorites extends Component {
 			<React.Fragment>
 				<Search searchAction={this.props.searchFavs} />
 				<h1>Trending gif</h1>
-				<CardsList />
+				<CardsList cards={this.props.cards} />
 			</React.Fragment>
 		);
 	}

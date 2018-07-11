@@ -19,28 +19,28 @@ const {
 	SET_FAVORITES,
 } = cardsActions.types;
 
-function fetchSearchCards(term,limit=5) {
+export function fetchSearchCards(term,limit=5) {
   return axios({
     method: "get",
     url: `https://api.giphy.com/v1/gifs/search?api_key=${process.env.REACT_APP_APIKEY}&q=${term}&limit=${limit}&offset=0`
   });
 }
-const getTermState = state => state.search;
-function* searchCards(){
+export const getTermState = state => state.search;
+export function* searchCards(){
 	try{
 		const search = yield select(getTermState);
-		if( Object.keys(search).length === 0 || search.term === "" ) throw 'No search term';
+		if( search.term === "" ) throw {msg:'No search term'};
 		const response = yield call(fetchSearchCards,search.term);
 		yield put({ type:LOAD_CARDS, payload: {cards:response.data.data} });
 	}catch(e){
 		yield put({ type:ERROR_SEARCH, e });
 	}
 }
-function* watchForSearch(){
+export function* watchForSearch(){
 	yield takeEvery(SEARCH_CARDS,searchCards);
 }
 
-function* searchFavCards(){
+export function* searchFavCards(){
 	try{
 		const search = yield select(getTermState);
 		const favs = JSON.parse(localStorage.getItem('favoritesCards'));
@@ -57,7 +57,7 @@ function* searchFavCards(){
 		yield put({ type:ERROR_SEARCH, e });
 	}
 }
-function* watchForSearchFavs(){
+export function* watchForSearchFavs(){
 	yield takeEvery(SEARCH_FAVS,searchFavCards);
 }
 /*Search end*/
@@ -80,7 +80,7 @@ function* trendingCards(){
 		yield put({ type:'ERROR_SEARCH', e });
 	}
 }
-function* watchForTrending(){
+export function* watchForTrending(){
 	yield takeEvery(LOAD_TRENDING,trendingCards);
 }
 /*Trending end*/
@@ -98,24 +98,21 @@ function* favCard(){
 	const newCards = yield select(getCardsState);
 	localStorage.setItem('favoritesCards',JSON.stringify(newCards.favorites));
 }
-function* watchForAddRemove(){
+export function* watchForAddRemove(){
 	yield takeEvery(ADD_REMOVE_FAVORITES,favCard);
 }
 
 function* loadFavCard(){
-	const state = yield select();
 	const favs = JSON.parse(localStorage.getItem('favoritesCards'));
 	const favsArr = Object.keys(favs).map((k) => favs[k])
 	yield put({ type:LOAD_CARDS, payload: {cards:favsArr} });
-	/*if( state.path === '/Favorites' ){
-	}*/
 }
-function* watchForLoadFavs(){
+export function* watchForLoadFavs(){
 	yield takeEvery(LOAD_FAVORITES,loadFavCard);
 }
 /*Favorites end*/
 
-function* rootSaga(){
+export function* rootSaga(){
 	yield all([
 		watchForSearch(),
 		watchForSearchFavs(),
@@ -125,4 +122,4 @@ function* rootSaga(){
 	]);
 }
 
-export default rootSaga;
+//export default rootSaga;

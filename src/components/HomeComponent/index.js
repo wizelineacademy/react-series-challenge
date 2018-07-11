@@ -9,9 +9,6 @@ import cards from '../../actions/cards';
 import search from '../../actions/search';
 
 class ComponentsHome extends Component {
-	constructor(props){
-		super(props);
-	}
 	componentDidMount(){
 		this.props.loadTrending();
 	}
@@ -20,7 +17,7 @@ class ComponentsHome extends Component {
 			<React.Fragment>
 				<Search searchAction={this.props.searchCards} />
 				<h1>Trending gif</h1>
-				<CardsList />
+				<CardsList addRemoveFavorites={this.props.addRemoveFavorites} cards={this.props.cards} />
 			</React.Fragment>
 		);
 	}
