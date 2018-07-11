@@ -14,15 +14,8 @@ function favReducer(state = initialState, action) {
     case ADD_FAV:
       return {...state, favGifs: [...state.favGifs, action.params]}
     case WITHDRAW_FAV:
-      var indexDelete;
-      var arrayFav=state.favGifs;
-      arrayFav.map((fav,index)=>{
-        if(fav===action.id){
-          indexDelete=index;
-        }
-      });
-      arrayFav.splice(indexDelete,1);
-      return {...state,favGifs:arrayFav}
+    const favGifs = state.favGifs.filter(fav => fav.id !== action.id);
+      return {...state,favGifs}
     default:
       return state;
   }
