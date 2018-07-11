@@ -1,5 +1,5 @@
 import React from 'react';
-import Favorites from '../components/Favorites'
+import Favorites from '../../components/Favorites'
 import renderer from 'react-test-renderer';
 import configureStore from 'redux-mock-store'
 

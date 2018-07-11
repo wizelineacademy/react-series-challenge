@@ -14,20 +14,20 @@ exports[`Home snapshot 1`] = `
     />
   </div>
   <div
-    className="content"
+    className="sc-bZQynM loJkTV"
   >
     <div
-      className="contentItem"
+      className="sc-htpNat bvKoIf"
     >
       <img
         alt="Favorite"
-        className="favButton"
+        className="sc-bxivhb kwWrpu"
         onClick={[Function]}
         src="no-fav.svg"
       />
       <img
         alt="title1"
-        className="imgContent"
+        className="sc-ifAKCX hwDhCM"
         onClick={[Function]}
         src="srcImage"
       />

@@ -1,7 +1,11 @@
 import React, { Component } from 'react'
 import Item from '../Item'
 import { createPortal } from 'react-dom'
-import './content.css'
+import {
+  Portal,
+  Content,
+  BtnClose,
+} from './Content.styled'
 
 const ContentList = ({data = {}, onClickFav, favorites, filter, onClick}) => {
 
@@ -30,20 +34,20 @@ const PortalContainer = ({children}) => {
   return createPortal(children, nodeToAppend)
 }
 
-const Portal = ({open, onClick, item}) => {
+const PortalComp = ({open, onClick, item}) => {
     return open ? (
       <PortalContainer>
-        <div className="portal">
-          <button onClick={onClick} className="btn-close"> Close </button>
+        <Portal>
+          <BtnClose onClick={onClick}> Close </BtnClose>
           <img src={item.images.original.webp} alt={item.title}/>
           <p> {item.title} </p>
-        </div>
-        </PortalContainer>
+        </Portal>
+      </PortalContainer>
     )
   : null
 }
 
-class Content extends Component {
+class ContentComp extends Component {
 
   constructor(props) {
     super(props)
@@ -69,7 +73,7 @@ class Content extends Component {
     }
 
     return(
-      <div className="content">
+      <Content>
         <ContentList
           data={data}
           favorites={favorites}
@@ -77,15 +81,15 @@ class Content extends Component {
           filter={filter}
           onClick={this.togglePortal}
         />
-        <Portal
+        <PortalComp
           open={this.state.open}
           onClick={this.togglePortal}
           item = {this.state.item}
         />
-      </div>
+      </Content>
     )
 
   }
 }
 
-export default Content
+export default ContentComp

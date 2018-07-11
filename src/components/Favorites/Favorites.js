@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import contentActions from '../../actions/content'
-import Header from '../Header'
 import Searchbar from '../Searchbar'
 import Content from '../Content'
 

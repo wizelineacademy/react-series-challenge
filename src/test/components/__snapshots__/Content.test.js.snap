@@ -2,20 +2,20 @@
 
 exports[`Home snapshot 1`] = `
 <div
-  className="content"
+  className="sc-ifAKCX iySRWN"
 >
   <div
-    className="contentItem"
+    className="sc-bdVaJa jFnFkT"
   >
     <img
       alt="Favorite"
-      className="favButton"
+      className="sc-bwzfXH caOhOO"
       onClick={[Function]}
       src="no-fav.svg"
     />
     <img
       alt="title1"
-      className="imgContent"
+      className="sc-htpNat kewJQA"
       onClick={[Function]}
       src="srcImage"
     />

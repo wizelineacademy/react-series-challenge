@@ -3,10 +3,10 @@
 exports[`Home snapshot 1`] = `
 <div>
   <div
-    className="sc-ifAKCX hTztJb"
+    className="sc-bdVaJa cpMCnx"
   >
     <input
-      className="sc-EHOje iQNPwx"
+      className="sc-bwzfXH iYnflE"
       onChange={[Function]}
       onKeyPress={null}
       placeholder="What are you looking for..."
@@ -14,7 +14,7 @@ exports[`Home snapshot 1`] = `
     />
   </div>
   <div
-    className="content"
+    className="sc-bZQynM loJkTV"
   >
     <div>
        No Favorites 

@@ -1,5 +1,5 @@
 import React from 'react';
-import Searchbar from '../components/Searchbar'
+import Searchbar from '../../components/Searchbar'
 import renderer from 'react-test-renderer';
 
 test('Searchbar snapshot', () => {

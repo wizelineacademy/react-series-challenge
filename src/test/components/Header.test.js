@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../components/Header'
+import Header from '../../components/Header'
 import renderer from 'react-test-renderer';
 import configureStore from 'redux-mock-store'
 import { BrowserRouter } from 'react-router-dom'

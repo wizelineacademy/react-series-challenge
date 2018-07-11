@@ -1,5 +1,5 @@
 import React from 'react';
-import Content from '../components/Content'
+import Content from '../../components/Content'
 import renderer from 'react-test-renderer';
 
 test('Home snapshot', () => {

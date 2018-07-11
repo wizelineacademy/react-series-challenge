@@ -1,5 +1,5 @@
 import React from 'react';
-import Home from '../components/Home'
+import Home from '../../components/Home'
 import renderer from 'react-test-renderer';
 import configureStore from 'redux-mock-store'
 
