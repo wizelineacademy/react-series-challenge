@@ -12,6 +12,7 @@ import Favorites from './components/Favorites';
 import Navbar from './components/Navbar';
 import actions from './actions';
 import { Wrap } from './App.style';
+import './global.style';
 
 class App extends Component {
   componentDidMount() {
