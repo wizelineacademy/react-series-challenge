@@ -33,7 +33,7 @@ class Header extends Component {
           <input type="submit" value="Search" />
           <br />
           <br />
-          <input type="button" value={`${(home ? 'Just render trendings': 'Reset the search')}`} onClick={this.handleButton} />
+          <button onClick={this.handleButton}>{(home ? 'Just render trendings': 'Reset the search')}</button>
         </fieldset>
       </form>
     )

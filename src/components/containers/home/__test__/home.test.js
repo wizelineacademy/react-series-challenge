@@ -1,5 +1,4 @@
 import React from 'react';
-import moxios from 'moxios';
 import configureStore from 'redux-mock-store'
 import { shallow } from 'enzyme';
 
@@ -30,10 +29,6 @@ describe('<Home connect component> ', () => {
     });
     // wraper = shallow( <Provider store={store}><ConnectedHome /></Provider> )
 
-  });
-
-  afterEach(function () {
-    moxios.uninstall();
   });
 
   describe('Checkin childs', () => {

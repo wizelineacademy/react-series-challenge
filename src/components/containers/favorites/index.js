@@ -16,11 +16,6 @@ import actions from "./../../../redux/actions/";
 
 class Favorites extends Component{
   componentDidMount() {
-    this.handleMyfunc()
-  }
-
-
-  handleMyfunc = () => {
     this.props.localFind('');
   }
 

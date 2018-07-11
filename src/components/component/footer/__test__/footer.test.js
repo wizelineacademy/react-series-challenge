@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 
 import Footer from "./../index";
 
-describe('<Home connect component> ', () => {
+describe('<Footer> ', () => {
 
   let wraper;
 
