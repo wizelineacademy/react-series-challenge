@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import actions from '../../actions';
 
+const onFormSubmit = e => e.preventDefault();
+
 const SearchBar = ({
   inputString,
   changeInput,
@@ -10,11 +12,7 @@ const SearchBar = ({
   handleChange,
 }) => (
   <div>
-    <form
-      onSubmit={e => {
-        e.preventDefault();
-      }}
-    >
+    <form onSubmit={onFormSubmit}>
       <input
         type="text"
         onChange={handleChange || changeInput}
