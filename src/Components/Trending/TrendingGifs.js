@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import Item from "../Gifs/Item";
 import TrendingErrorBoundary from "./TrendingErrorBoundary";
+import { ContainerStyled } from "../../theme/Container.styled";
 
 class Trending extends React.Component {
   componentDidMount() {
@@ -12,7 +13,7 @@ class Trending extends React.Component {
     const { fetching, data, error } = this.props;
     return (
       <TrendingErrorBoundary>
-        <div>
+        <ContainerStyled>
           {error ? (
             <div>ERROR: {error.message}</div>
           ) : !fetching && data && data.length ? (
@@ -20,7 +21,7 @@ class Trending extends React.Component {
           ) : (
             <div>Cargando...</div>
           )}
-        </div>
+        </ContainerStyled>
       </TrendingErrorBoundary>
     );
   }

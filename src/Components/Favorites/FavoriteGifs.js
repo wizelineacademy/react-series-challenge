@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 
 import Item from "../Gifs/Item";
+import { ContainerStyled } from "../../theme/Container.styled";
 
 const FavoriteGifs = ({ favorites: { items, filtered }, searchFavorite }) => {
   const favoritesArr = Object.keys(items);
@@ -9,7 +10,9 @@ const FavoriteGifs = ({ favorites: { items, filtered }, searchFavorite }) => {
 
   if (!filtered)
     return (
-      <div>{favoritesArr.map(key => <Item key={key} item={items[key]} />)}</div>
+      <ContainerStyled>
+        {favoritesArr.map(key => <Item key={key} item={items[key]} />)}
+      </ContainerStyled>
     );
 
   if (!filtered.length && searchFavorite)
@@ -20,11 +23,11 @@ const FavoriteGifs = ({ favorites: { items, filtered }, searchFavorite }) => {
     );
 
   return (
-    <div>
+    <ContainerStyled>
       {filtered
         .filter(item => favoritesArr.find(fav => fav === item.id))
         .map(item => <Item key={item.id} item={item} />)}
-    </div>
+    </ContainerStyled>
   );
 };
 

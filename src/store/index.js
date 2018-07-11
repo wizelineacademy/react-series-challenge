@@ -1,4 +1,4 @@
-import { createStore, applyMiddleware, compose } from "redux";
+import { createStore, applyMiddleware } from "redux";
 import createSagaMiddleware from "redux-saga";
 import { persistStore } from "redux-persist";
 
@@ -9,10 +9,6 @@ import customMiddleware from "../middleware";
 // create the saga middleware
 const sagaMiddleware = createSagaMiddleware();
 
-// dev tools middleware
-const reduxDevTools =
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
-
 const initialState = {};
 const middleware = [sagaMiddleware, customMiddleware];
 
@@ -20,10 +16,7 @@ const middleware = [sagaMiddleware, customMiddleware];
 const store = createStore(
   reducers,
   initialState,
-  compose(
-    applyMiddleware(...middleware),
-    reduxDevTools
-  )
+  applyMiddleware(...middleware)
 );
 
 const persistor = persistStore(store);

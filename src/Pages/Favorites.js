@@ -3,10 +3,10 @@ import FavoriteGifs from "../Components/Favorites/FavoriteGifs";
 import SearchInput from "../Components/Search/SearchInput";
 
 const Favorites = () => (
-  <div>
+  <React.Fragment>
     <SearchInput fromFavorites />
     <FavoriteGifs />
-  </div>
+  </React.Fragment>
 );
 
 export default Favorites;

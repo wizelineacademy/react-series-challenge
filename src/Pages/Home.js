@@ -3,10 +3,10 @@ import ListGifs from "../Components/Gifs/ListGifs";
 import SearchInput from "../Components/Search/SearchInput";
 
 const Home = () => (
-  <div>
+  <React.Fragment>
     <SearchInput />
     <ListGifs />
-  </div>
+  </React.Fragment>
 );
 
 export default Home;
