@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import store from '../store';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import actions from '../actions/favorites';
 
 class Favorites extends Component {
   constructor() {
@@ -35,4 +38,25 @@ class Favorites extends Component {
   }
 }
 
-export default Favorites;
+const mapDispatchToProps = dispatch => {
+  const {
+    
+  } = actions;
+
+  return bindActionCreators(
+    {
+      
+    },
+    dispatch
+  );
+};
+
+const mapStateToProps = state => {
+
+  const { loading } = 'loading.-.';
+  return { 
+    loading
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Favorites);

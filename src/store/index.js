@@ -1,29 +1,22 @@
-import { createStore } from 'redux';
-//import rootReducer from '../reducers';
+import { createStore, applyMiddleware, compose } from 'redux'
+import createSagaMiddleware, { END } from 'redux-saga'
+import rootReducer from  "../reducers"
 
-const initialState = {favorites:[]};
-/* 
+export default function configureStore(initialState) {
+  const sagaMiddleware = createSagaMiddleware()
 
+  const store = createStore(
+    rootReducer,
+    initialState,
+    compose(
+      applyMiddleware(
+        sagaMiddleware
+      ),
+      window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    )
+  )
 
-const favorite = createStore(
-  rootReducer,
-  initialState,
-);
-*/
-
-const reducer = (state, action ) => {
-  if (action.type === "ADD_FAVORITE") {
-    return {
-      ...state,
-      favorites: state.favorites.concat(action.favorite)
-    }
-  }
-  
-  return state;
+  store.runSaga = sagaMiddleware.run
+  store.close = () => store.dispatch(END)
+  return store
 }
-
-
-
-
-export default createStore(reducer, initialState);
-

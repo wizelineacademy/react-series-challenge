@@ -1,50 +1,25 @@
 import React, { Component } from 'react';
-import axios from 'axios';
-import store from '../store';
+//import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+//import actions from '../actions/home';
+import { queryTrending } from '../actions'
+import Gif from './Gifs';
 import '../App.css';
 import {} from '../.env';
 
-//const URL = `http://api.giphy.com/v1/gifs/trending?api_key=`+process.env.REACT_APP_GIPHY_API_KEY+`&limit=10`;
-const URL = `http://api.giphy.com/v1/gifs/trending?api_key=Y354pcUIVTGZXofCIqvlYWA2Bv1khCCZ&limit=10`;
-//console.log(URL);
-
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      gifs: [],
-      searchFor: ''
-    };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+class Home extends Component {
+  state = {
+    openFullScreen: false,
+    selectedImageUrl: ''
   }
 
   componentDidMount() {
-    axios.get(URL)
-      .then(res => {
-        const gifs = res.data.data;
-        this.setState({ gifs });
-        //console.log(this.state.gifs);
-      })
+    const { queryTrending } = this.props;
+    queryTrending();
   }
 
-  handleChange(event) {
-    this.setState({searchFor: event.target.value});
-    //console.log(event);
-  }
-
-  handleSubmit(event) {
-    let url = 'http://api.giphy.com/v1/gifs/search?q='+this.state.searchFor+'&api_key='+process.env.REACT_APP_GIPHY_API_KEY+'&limit=10';
-    axios.get(url)
-      .then(res => {
-        let gifs = res.data.data;
-        this.setState({ gifs });
-        //console.log(gifs);
-      })
-
-    event.preventDefault();
-  }
   render() {
+    const { gifs} = this.props;
     return (
         <div className="homeComponent">
           <div className="search">
@@ -53,34 +28,25 @@ class App extends Component {
               <input type="submit" value="Buscar" />
             </form>
           </div>
-          <p className="App-intro">
-            Trending:
-          </p>
           <div className="container">
-            { this.state.gifs.map(
-              gif => <div className="element" key={gif.id}>
-                      <img src={gif.images.downsized_medium.url} className="thegif" alt={gif.title}/>
-                      <button onClick={() => this.addFavorite(gif)}>Like</button>
-                    </div>
-            )}
+          {
+            gifs && gifs.map((gif, index) => {return <Gif url={gif.images.fixed_width.url} id={gif.id} key={gif.id}/>})
+          }
           </div>
         </div>
     );
   }
 
-  addFavorite(gif) {
-    let fav = {
-      id: gif.id,
-      title: gif.title,
-      url: gif.images.downsized_medium.url
-    }
-    store.dispatch({
-      type: "ADD_FAVORITE",
-      favorite: fav
-    })
-    //console.log(fav);
-  }
-  
 }
 
-export default App;
+const mapStateToProps = state => {
+  return{
+  gifs: state.home.trendingGifs,
+  loading: state.home.trendingLoading
+}};
+
+const mapDispatchToProps = {
+  queryTrending
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

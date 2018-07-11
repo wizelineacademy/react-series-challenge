@@ -1,16 +1,14 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Redirect, NavLink, Switch } from "react-router-dom";
 import Home from './components/Home';
-import Favorites from './components/Favorites';
-import logo from './logo.svg';
-import './App.css';
+import Favorites from "./Containers/FavPage";
+import logo from './66.png';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import actions from './actions';
-import { Title, Wrapper, TheApp } from './App.style.js'
+import actions from './actions/home';
+import { Navelement, Title, Wrapper, TheApp } from './App.style.js';
 
-class App extends Component {
-  
+class App extends Component {  
   render() {
     return (
       <Wrapper>
@@ -23,12 +21,12 @@ class App extends Component {
             <div>
               <header>
                 <ul>
-                  <li>
+                  <Navelement>
                     <NavLink to="/">Home</NavLink>
-                  </li>
-                  <li>
+                  </Navelement>
+                  <Navelement>
                     <NavLink to="/favorites">Favorites</NavLink>
-                  </li>
+                  </Navelement>
                 </ul>
               </header>
               <Switch>
