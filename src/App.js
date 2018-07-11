@@ -39,7 +39,7 @@ class App extends Component {
             <Switch>
               <Route exact path="/" component={Home} />
               <Route path="/favorites" component={Favorites} />
-              <Redirect to="/" />
+              <Redirect to="/not-found" />
             </Switch>
           </Wrap>
         </Fragment>
