@@ -10,7 +10,9 @@ const searchGifsReducer = (state = initialState, action) => {
 
         case searchGifsActions.types.SEARCH_GIFS_FETCHED:
             const { gifs } = payload;
-            return { ...gifs };
+            let newState = { ...state };
+            newState = {};
+            return { ...newState, ...gifs };
 
         default:
             return state;
