@@ -7,14 +7,19 @@ describe('GifCardControls', () => {
   const func = jest.fn();
   const valueKey = 1;
   const favorite = false;
+  let wrapper;
 
     beforeEach(() => {
-        const wrapper = shallow(
+        wrapper = shallow(
             <GifCardControls
             key = {valueKey} 
             addRemoveGif = {func} 
             isFavorite = {favorite} />
         );
+    });
+
+    test('should render', () => {
+        expect(wrapper).toMatchSnapshot();
     });
 
     test('should set GifCardControls ', () => {

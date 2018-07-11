@@ -12,7 +12,6 @@ const getDataTrend = async() => {
     } catch(e) {
         console.log(e);
     }
-   
 }
 
 const getDataSearch = async(value) => {

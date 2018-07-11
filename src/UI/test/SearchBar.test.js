@@ -1,7 +1,7 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import SearchBar from '../SearchBar'
 import { StyledSearchbar, StyledInput, StyledButton } from '../Searchbar.styled';
-import { shallow, mount, render } from 'enzyme';
+import { shallow, render } from 'enzyme';
 
 describe('SearchBar', () => {
     const func = jest.fn();
@@ -16,7 +16,11 @@ describe('SearchBar', () => {
         );
     });
 
-    test('should set SearchBar ', () => {
+    test('should render', () => {
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    test('should set internal components ', () => {
         const comp = render(
             <StyledSearchbar>
                 <StyledInput 
@@ -42,5 +46,4 @@ describe('SearchBar', () => {
             </StyledSearchbar>
         )).toBe(false);
     });
-
 })

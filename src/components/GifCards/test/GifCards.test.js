@@ -2,25 +2,25 @@ import GifCards from '../GifCards';
 import GifCard from '../GifCard/GifCard'
 import GifCardControls from '../GifCardControls/GifCardControls'
 import React, {Fragment} from 'react';
-import { GifCardsStyled, StyledH1 } from '../GifCards.styled';
-import { shallow, mount, render } from 'enzyme';
+import { GifCardsStyled  } from '../GifCards.styled';
+import { shallow, render } from 'enzyme';
 
 describe('GifCards', () => {
-  const func = jest.fn();
-  const searchResult = [{
-      id: 1,
-      searchedValue: "trendy",
-      url: "https://image", 
-      isFavorite: true,
-  }]
-  const searchResultEmpty = [];
-  const themeSunny = {
-    gifPageBackground: '#969ec3',
-    favoritePageBackground: '#c8bed7',
-    headerBackground: '#fde1cc',
-    cardBackground: '#fec492',
-}
-let wrapper;
+    const func = jest.fn();
+    const searchResult = [{
+        id: 1,
+        searchedValue: "trendy",
+        url: "https://image", 
+        isFavorite: true,
+    }]
+    const searchResultEmpty = [];
+    const themeSunny = {
+        gifPageBackground: '#969ec3',
+        favoritePageBackground: '#c8bed7',
+        headerBackground: '#fde1cc',
+        cardBackground: '#fec492',
+    }
+    let wrapper;
 
 
     beforeEach(() => {
@@ -32,7 +32,11 @@ let wrapper;
         );
     });
 
-    test('should set GifCards ', () => {
+    test('should render', () => {
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    test('should set internal components ', () => {
 
         const comp = render(
             <Fragment>

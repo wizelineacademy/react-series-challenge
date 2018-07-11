@@ -1,7 +1,7 @@
 import GifCard from '../GifCard';
 import React from 'react';
 import { StyledGifCard, StyledImage } from '../GifCard.styled'
-import { shallow, mount, render } from 'enzyme';
+import { shallow } from 'enzyme';
 
 describe('GifCard', () => {
   let wrapper;
@@ -11,6 +11,10 @@ describe('GifCard', () => {
         wrapper = shallow(
             <GifCard imageUrl = {imageUrl}/>
         );
+    });
+
+    test('should render', () => {
+        expect(wrapper).toMatchSnapshot();
     });
 
     test('should set StyledGifCards ', () => {

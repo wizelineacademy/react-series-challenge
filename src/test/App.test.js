@@ -1,6 +1,6 @@
 import App from '../App';
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import { Route } from 'react-router-dom';
 import GifPage from '../components/GifPage/GifPage'
 import GifFavorite from '../components/GifFavorite/GifFavorite'
@@ -8,12 +8,16 @@ import {StyledLi, StyledNavLink} from '../App.styled'
 
 describe('App', () => {
   let wrapper;
-  let func = jest.fn();
 
   beforeEach(() => {
     wrapper = shallow(
       <App />
     );
+  });
+
+  test('should render', () => {
+      const wrapper = shallow(<App />);
+      expect(wrapper).toMatchSnapshot();
   });
 
   test('should set the routes ', () => {

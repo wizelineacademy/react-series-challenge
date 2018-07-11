@@ -1,6 +1,6 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import ThemeSelector from '../ThemeSelector';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 
 describe('ThemeSelector', () => {
     const func = jest.fn();
@@ -10,6 +10,10 @@ describe('ThemeSelector', () => {
         wrapper = shallow(
             <ThemeSelector changeTheme = { func } />
         );
+    });
+
+    test('should render', () => {
+        expect(wrapper).toMatchSnapshot();
     });
 
     test('should set ThemeSelector ', () => {

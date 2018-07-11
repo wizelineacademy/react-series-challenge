@@ -1,0 +1,211 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GifCards should render 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <GifCards
+    addRemoveGif={[MockFunction]}
+    gifData={
+      Array [
+        Object {
+          "id": 1,
+          "isFavorite": true,
+          "searchedValue": "trendy",
+          "url": "https://image",
+        },
+      ]
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "children": Array [
+        <styled.div
+          addRemoveGif={[MockFunction]}
+          gifData={
+            Array [
+              Object {
+                "id": 1,
+                "isFavorite": true,
+                "searchedValue": "trendy",
+                "url": "https://image",
+              },
+            ]
+          }
+        >
+          <GifCard
+            imageUrl="https://image"
+          />
+          <GifCardControls
+            addRemoveGif={[Function]}
+            isFavorite={true}
+          />
+        </styled.div>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": "1",
+        "nodeType": "class",
+        "props": Object {
+          "addRemoveGif": [MockFunction],
+          "children": Array [
+            <GifCard
+              imageUrl="https://image"
+            />,
+            <GifCardControls
+              addRemoveGif={[Function]}
+              isFavorite={true}
+            />,
+          ],
+          "gifData": Array [
+            Object {
+              "id": 1,
+              "isFavorite": true,
+              "searchedValue": "trendy",
+              "url": "https://image",
+            },
+          ],
+          "searchedValue": undefined,
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "imageUrl": "https://image",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": "0",
+            "nodeType": "function",
+            "props": Object {
+              "addRemoveGif": [Function],
+              "isFavorite": true,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+    ],
+    "type": Symbol(react.fragment),
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "children": Array [
+          <styled.div
+            addRemoveGif={[MockFunction]}
+            gifData={
+              Array [
+                Object {
+                  "id": 1,
+                  "isFavorite": true,
+                  "searchedValue": "trendy",
+                  "url": "https://image",
+                },
+              ]
+            }
+          >
+            <GifCard
+              imageUrl="https://image"
+            />
+            <GifCardControls
+              addRemoveGif={[Function]}
+              isFavorite={true}
+            />
+          </styled.div>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": "1",
+          "nodeType": "class",
+          "props": Object {
+            "addRemoveGif": [MockFunction],
+            "children": Array [
+              <GifCard
+                imageUrl="https://image"
+              />,
+              <GifCardControls
+                addRemoveGif={[Function]}
+                isFavorite={true}
+              />,
+            ],
+            "gifData": Array [
+              Object {
+                "id": 1,
+                "isFavorite": true,
+                "searchedValue": "trendy",
+                "url": "https://image",
+              },
+            ],
+            "searchedValue": undefined,
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "imageUrl": "https://image",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": "0",
+              "nodeType": "function",
+              "props": Object {
+                "addRemoveGif": [Function],
+                "isFavorite": true,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+      ],
+      "type": Symbol(react.fragment),
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
