@@ -1,5 +1,5 @@
-import { SET_FAVORITES } from '../actions/types';
-import reducer from './favorites';
+import { SET_FAVORITES } from '../../actions/types';
+import reducer from '../favorites';
 
 const dataState = {
   favorites: [

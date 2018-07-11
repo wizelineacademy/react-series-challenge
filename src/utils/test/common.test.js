@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { fetchGifs, validateEndpoint } from './common';
+import { fetchGifs, validateEndpoint } from '../common';
 
 jest.mock('axios');
 

@@ -6,7 +6,7 @@ import {
   deleteFromArrayR,
   filterArray,
   addRemoveFavoriteSaga,
-} from './favorites';
+} from '../favorites';
 
 class FakeStorage {
   constructor(elements = null) {

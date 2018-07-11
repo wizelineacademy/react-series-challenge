@@ -1,5 +1,5 @@
-import { ERROR_STATUS } from '../actions/types';
-import reducer from './error';
+import { ERROR_STATUS } from '../../actions/types';
+import reducer from '../error';
 
 const cleanState = {
   err: false,

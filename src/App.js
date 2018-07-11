@@ -7,7 +7,6 @@ import {
 } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import './App.css';
 import Home from './components/Home';
 import Favorites from './components/Favorites';
 import Navbar from './components/Navbar';

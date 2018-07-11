@@ -1,4 +1,4 @@
-import { getNewGifsSaga, updateGifsSaga } from './home';
+import { getNewGifsSaga, updateGifsSaga } from '../home';
 
 const populatedArr = [
   {

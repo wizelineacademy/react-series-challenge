@@ -1,5 +1,5 @@
-import { CLEAR_INPUT, CHANGE_INPUT } from '../actions/types';
-import reducer from './search';
+import { CLEAR_INPUT, CHANGE_INPUT } from '../../actions/types';
+import reducer from '../search';
 
 const state = {
   inputString: 'Funny Cats',
