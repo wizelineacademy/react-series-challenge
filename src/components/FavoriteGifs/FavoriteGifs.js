@@ -1,25 +1,16 @@
-import React, { Component } from 'react';
-import {bindActionCreators} from "redux";
+import React from 'react';
 import { connect } from 'react-redux';
-import favoriteGifsActions from "../../actions/favoriteGifs";
 import GifsList from '../GifsList/GifsList';
 
-class FavoriteGifs extends Component {
+const FavoriteGifs = (props) => {
 
-    componentDidMount() {
-        this.props.fetchFavoriteGifs();
-    }
+    const { favs, filtered } = props;
 
-    render(){
+    return (
+        <GifsList mainGifs={favs} secondaryGifs={filtered}/>
+    );
 
-        const { favs, filtered } = this.props;
-
-        return (
-            <GifsList mainGifs={favs} secondaryGifs={filtered}/>
-        );
-    }
-
-}
+};
 
 const mapStateToProps = (state) => {
 
@@ -31,14 +22,4 @@ const mapStateToProps = (state) => {
     };
 };
 
-const mapDispatchToProps = (dispatch) => {
-
-    const { fetchFavoriteGifs } = favoriteGifsActions.creators;
-
-    return bindActionCreators({
-        fetchFavoriteGifs,
-    }, dispatch);
-
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(FavoriteGifs);
+export default connect(mapStateToProps)(FavoriteGifs);
