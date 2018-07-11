@@ -30,7 +30,7 @@ const mapDispatchToProps = dispatch => (
 )
 
 /* 
-withRouter HOC used to solve this bug:
+withRouter HOC used to solve this issue:
 https://github.com/ReactTraining/react-router/issues/4671
 */
 export default withRouter(connect(null, mapDispatchToProps)(MainPanel));

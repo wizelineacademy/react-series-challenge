@@ -1,13 +1,20 @@
 import React from 'react';
 import { NavLink } from "react-router-dom";
-//import SearchBar from './SearchBar';
+import StyledNavBar, { StyledNavLink } from "../styled/NavBar.styled";
 
 const NavBar = (props) => (
-  <div style={{padding: 10}} className='NavBar'>
-    <NavLink style={{padding: 10}} to='/explore'>Explore</NavLink> 
-    <NavLink style={{padding: 10}} to='/favorites'>Favorites</NavLink> 
-    {/*<SearchBar />*/}
-  </div>
+  <StyledNavBar>
+    <StyledNavLink
+      activeStyle={{fontSize: 23, fontWeight:'bold'}} 
+      to='/explore'>
+        Explore
+    </StyledNavLink> 
+    <StyledNavLink 
+      activeStyle={{fontSize: 23, fontWeight:'bold'}} 
+      to='/favorites'>
+        Favorites
+    </StyledNavLink> 
+  </StyledNavBar>
 )
 
 export default NavBar;

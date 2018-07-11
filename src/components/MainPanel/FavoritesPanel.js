@@ -6,6 +6,8 @@ import actions from "../../actions";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
+import StyledSearchBar from '../styled/SearchBar.styled';
+
 const { filterFavorites } = actions.creators;
 
 const FavoritesPanel = ({ data, filterFavorites, filter }) => {
@@ -14,7 +16,7 @@ const FavoritesPanel = ({ data, filterFavorites, filter }) => {
   ))
   return (
     <div>
-      <input 
+      <StyledSearchBar 
         type="text" 
         placeholder="Filter" 
         onChange={(e) => filterFavorites(e.target.value)}

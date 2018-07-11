@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import GifView from './GifView';
 
+import StyledGifListView from '../styled/GifListView.styled.js';
+
 const GifListView = ({data}) => {
   const gifs = data.map((gif) => (
     <GifView 
@@ -12,9 +14,9 @@ const GifListView = ({data}) => {
     />
   ))
   return (
-    <div style={{width: '80%', margin:'10px auto'}}>
+    <StyledGifListView>
       {gifs}
-    </div>
+    </StyledGifListView>
   )
 }
 

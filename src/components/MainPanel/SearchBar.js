@@ -3,6 +3,8 @@ import { bindActionCreators } from "redux";
 import actions from "../../actions";
 import { connect } from "react-redux";
 
+import StyledSearchBar from '../styled/SearchBar.styled';
+
 const { searchGifs } = actions.creators;
 
 class SearchBar extends Component {
@@ -13,7 +15,7 @@ class SearchBar extends Component {
 
   render () {
     return (
-      <input 
+      <StyledSearchBar 
         onChange={(e) => this.props.searchGifs(e.target.value)} 
         type='text' 
         placeholder='Search'

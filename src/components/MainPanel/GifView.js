@@ -1,11 +1,13 @@
 import React from 'react';
 import Star from './Star';
 
+import StyledGifView, { Gif } from '../styled/GifView.styled.js';
+
 const GifView = ({ src, id, favorite, gif }) => (
-  <div style={{display: 'inline-block', padding: 10}} className="GifView">
-    <img style={{width:150, height:100, objectFit:'contain'}} src={src} />
+  <StyledGifView>
+    <Gif src={src} />
     <Star active={favorite} id={id} gif={gif} />
-  </div>
+  </StyledGifView>
 )
 
 export default GifView;

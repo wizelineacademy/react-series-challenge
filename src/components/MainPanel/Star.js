@@ -7,11 +7,12 @@ import actions from '../../actions';
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
+import StyledStar from '../styled/Star.styled';
+
 const { toggleFavorite } = actions.creators;
 
 const Star = ({ active, id, toggleFavorite, gif }) => (
-  <img 
-    style={{display: 'block', margin: '5px auto'}}
+  <StyledStar 
     src={active? starFav:starNotFav}
     onClick={() => toggleFavorite(id, gif)}
   />
