@@ -7,7 +7,9 @@ import {
     RelativeDiv,
     ElementOverlay,
     ElementImg,
+    IconFav,
     IconFavBlue,
+    Shadow
 } from './Element.styled';
 
 const Element = (props) => {
@@ -16,7 +18,9 @@ const Element = (props) => {
     if (!localStorageFavsId || !localStorageFavsId[props.gif.id]) {
         return (
             <RelativeDiv>
-                <i className="fas fa-thumbs-up"></i>
+                <Shadow>
+                    <IconFav className="fas fa-thumbs-up fa-3x"></IconFav>
+                </Shadow>
                 <ElementImg src={props.gif.images.original.webp} onClick={() => props.addItem(props.gif)}/>
             </RelativeDiv>
         )
@@ -24,7 +28,9 @@ const Element = (props) => {
         //props.addItem(props.gif);
        return (
            <RelativeDiv>
-               <IconFavBlue className="far fa-thumbs-up"></IconFavBlue>
+               <Shadow>
+                   <IconFavBlue className="far fa-thumbs-up"></IconFavBlue>
+               </Shadow>
                <ElementImg src={props.gif.images.original.webp} onClick={() => props.addItem(props.gif)}/>
            </RelativeDiv>
        )

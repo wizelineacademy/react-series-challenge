@@ -7,6 +7,14 @@ const RelativeDiv = styled.div`
 
 const IconFavBlue = styled.i`
     color: blue;
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+`;
+const IconFav = styled.i`
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
 `;
 
 const ElementImg = styled.img`
@@ -15,28 +23,28 @@ const ElementImg = styled.img`
     width: 100%;
     height: 150px;
     max-height: 150px;
-    // height: auto;
 `;
 
-const FavBtn = styled.button`
+const Shadow = styled.div`
     position: absolute;
-    visibility: hidden;
-    bottom: 1rem;
-    right: 1rem;
-    font-size: 1.4rem;
-    background: transparent;
-    border: none;
-    color: ${(props) => props.isFavorite ? '#E93D44' : '#FFF'};
-    cursor: pointer;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    color: #fff;
+    background-color: rgba(0,0,0,0.0);
+    transition: background-color 0.2s ease;
     
-    &:focus {
-        outline: none !important;
+    &:hover {
+        background-color: rgba(0,0,0,0.7);
     }
 `;
+
 
 export {
     RelativeDiv,
     ElementImg,
-    FavBtn,
-    IconFavBlue
+    IconFavBlue,
+    IconFav,
+    Shadow
 };
