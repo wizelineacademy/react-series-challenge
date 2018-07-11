@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import {loadAllGifs} from '../actions/allGifs';
 import ElementList from './ElementList';
-import SearchBar from './SearchBar';
 
 class ElementsView extends Component{
 

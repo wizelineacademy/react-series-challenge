@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import FavElements from './components/FavElements';
 import ElementsView from './components/ElementsView';
 import {Route, Link, Redirect, Switch} from "react-router-dom";

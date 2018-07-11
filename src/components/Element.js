@@ -5,7 +5,6 @@ import {bindActionCreators} from "redux";
 import {LOCAL_STORAGE_FAVS} from '../middleware/favStorage';
 import {
     RelativeDiv,
-    ElementOverlay,
     ElementImg,
     IconFav,
     IconFavBlue,
