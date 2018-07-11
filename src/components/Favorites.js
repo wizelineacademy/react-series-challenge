@@ -22,7 +22,7 @@ class Favorites extends Component {
 
   render() {
     return (
-      <div className="">
+      <div>
         <p>My Favorites</p>
 
         <div className="container">

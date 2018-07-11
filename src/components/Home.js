@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-//import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-//import actions from '../actions/home';
 import { queryTrending } from '../actions'
 import Gif from './Gifs';
 import {} from '../.env';
@@ -15,6 +13,13 @@ class Home extends Component {
   componentDidMount() {
     const { queryTrending } = this.props;
     queryTrending();
+  }
+
+  handleChangue() {
+    
+  }
+
+  handleSubmit() {
   }
 
   render() {

@@ -9,11 +9,6 @@ import { bindActionCreators } from 'redux';
 import actions from './actions/home';
 import { AppLogo, Pill, TheHeader, TheNav, Navelement, Title, Wrapper, TheApp } from './App.style.js';
 
-let liStyle = {
-  color: 'white',
-  textDecoration: 'none'
-}
-
 class App extends Component {  
   render() {
     return (
@@ -46,6 +41,11 @@ class App extends Component {
       </Wrapper>
     );
   }
+}
+
+let liStyle = {
+  color: 'white',
+  textDecoration: 'none'
 }
 
 const mapDispatchToProps = dispatch => {
