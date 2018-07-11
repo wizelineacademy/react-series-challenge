@@ -1,5 +1,68 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`GifItem component ActionButton styled component should render correctly 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <styled.button
+    theme={
+        Object {
+            "primary": Object {
+              "background": "#000",
+              "foreground": "#fff",
+            },
+            "secondary": Object {
+              "background": "#4965f3",
+              "foreground": "#fff",
+            },
+          }
+    }
+>
+    Agregar a favoritos
+</styled.button>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": "Agregar a favoritos",
+      "className": "sc-bwzfXH jvlLur",
+    },
+    "ref": null,
+    "rendered": "Agregar a favoritos",
+    "type": "button",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": "Agregar a favoritos",
+        "className": "sc-bwzfXH jvlLur",
+      },
+      "ref": null,
+      "rendered": "Agregar a favoritos",
+      "type": "button",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
 exports[`GifItem component should render correctly 1`] = `
 ShallowWrapper {
   "length": 1,
@@ -15,7 +78,7 @@ ShallowWrapper {
                 "url": "url",
               },
             },
-            "rating": "r",
+            "rating": "g",
             "title": "gif.title",
             "username": "username1",
           }

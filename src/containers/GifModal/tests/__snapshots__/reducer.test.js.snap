@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GifModal container reducer should return the initialState or prevState when action is not recognized 1`] = `
+Object {
+  "gif": null,
+  "isOpen": false,
+}
+`;
+
+exports[`GifModal container reducer should set the state gif prop to  when passing MODAL_CLOSE action with a gif in payload 1`] = `
+Object {
+  "gif": Object {
+    "id": "id.1",
+    "title": "dogo",
+  },
+  "isOpen": false,
+}
+`;
+
+exports[`GifModal container reducer should set the state isOpen prop to false when passing MODAL_CLOSE action 1`] = `
+Object {
+  "gif": null,
+  "isOpen": false,
+}
+`;
+
+exports[`GifModal container reducer should set the state isOpen prop to true when passing MODAL_OPEN action 1`] = `
+Object {
+  "gif": null,
+  "isOpen": true,
+}
+`;

@@ -1,10 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Header styled components Header styled component should have the correct styles 1`] = `
+exports[`Header styled components with a theme provider object should associated the styled component hash to Header, to style the component 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <styled.div />,
+  Symbol(enzyme.__unrendered__): <styled.div
+    theme={
+        Object {
+            "primary": Object {
+              "background": "#000",
+              "foreground": "#fff",
+            },
+            "secondary": Object {
+              "background": "#4965f3",
+              "foreground": "#fff",
+            },
+          }
+    }
+/>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -34,6 +47,210 @@ ShallowWrapper {
       "ref": null,
       "rendered": null,
       "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`Header styled components with a theme provider object should associated the styled component hash to HeaderNav, to style the component 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <styled.nav
+    theme={
+        Object {
+            "primary": Object {
+              "background": "#000",
+              "foreground": "#fff",
+            },
+            "secondary": Object {
+              "background": "#4965f3",
+              "foreground": "#fff",
+            },
+          }
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "className": "sc-bxivhb dHeEbz",
+    },
+    "ref": null,
+    "rendered": null,
+    "type": "nav",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "className": "sc-bxivhb dHeEbz",
+      },
+      "ref": null,
+      "rendered": null,
+      "type": "nav",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`Header styled components with a theme provider object should associated the styled component hash to HeaderNavLink, to style the component 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Styled(NavLink)
+    theme={
+        Object {
+            "primary": Object {
+              "background": "#000",
+              "foreground": "#fff",
+            },
+            "secondary": Object {
+              "background": "#4965f3",
+              "foreground": "#fff",
+            },
+          }
+    }
+    to="/favorites"
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "activeClassName": "active",
+      "aria-current": "page",
+      "className": "sc-htpNat etuSpj",
+      "theme": Object {
+        "primary": Object {
+          "background": "#000",
+          "foreground": "#fff",
+        },
+        "secondary": Object {
+          "background": "#4965f3",
+          "foreground": "#fff",
+        },
+      },
+      "to": "/favorites",
+    },
+    "ref": null,
+    "rendered": null,
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "activeClassName": "active",
+        "aria-current": "page",
+        "className": "sc-htpNat etuSpj",
+        "theme": Object {
+          "primary": Object {
+            "background": "#000",
+            "foreground": "#fff",
+          },
+          "secondary": Object {
+            "background": "#4965f3",
+            "foreground": "#fff",
+          },
+        },
+        "to": "/favorites",
+      },
+      "ref": null,
+      "rendered": null,
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`Header styled components with a theme provider object should associated the styled component hash to HeaderTitle, to style the component 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <styled.h1
+    theme={
+        Object {
+            "primary": Object {
+              "background": "#000",
+              "foreground": "#fff",
+            },
+            "secondary": Object {
+              "background": "#4965f3",
+              "foreground": "#fff",
+            },
+          }
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "className": "sc-bwzfXH hjDKYQ",
+    },
+    "ref": null,
+    "rendered": null,
+    "type": "h1",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "className": "sc-bwzfXH hjDKYQ",
+      },
+      "ref": null,
+      "rendered": null,
+      "type": "h1",
     },
   ],
   Symbol(enzyme.__options__): Object {

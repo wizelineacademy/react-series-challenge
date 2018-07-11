@@ -45,7 +45,7 @@ const GifItem = ({
 }) => {
   const RESTRICTED_RATINGS = ['pg-13', 'r'];
   if (RESTRICTED_RATINGS.indexOf(gif.rating) > -1) {
-    //throw new Error('NSFW content');
+    throw new Error('NSFW content');
   }
 
   const addFavBtn = (
@@ -113,3 +113,5 @@ GifItem.propTypes = {
 };
 
 export default GifItem;
+
+export { ActionButton };

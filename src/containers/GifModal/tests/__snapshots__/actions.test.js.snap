@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GifModal container actions creators should return the correct action object from closeModal creator 1`] = `
+Object {
+  "type": "MODAL_CLOSE",
+}
+`;
+
+exports[`GifModal container actions creators should return the correct action object from openModal creator 1`] = `
+Object {
+  "type": "MODAL_OPEN",
+}
+`;
+
+exports[`GifModal container actions creators should return the correct action object from setModalGif creator 1`] = `
+Object {
+  "payload": Object {
+    "gif": Object {
+      "id": "gif.id1",
+      "title": "dogo",
+    },
+  },
+  "type": "MODAL_GIF_SET",
+}
+`;

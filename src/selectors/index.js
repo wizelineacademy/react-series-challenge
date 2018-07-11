@@ -1,4 +1,3 @@
-const gifsSelector = state => state.gifs;
 const homeSelector = state => {
   return {
     gifs: state.home.gifs,
@@ -33,7 +32,6 @@ const locationSelector = state => {
 };
 
 export default {
-  gifsSelector,
   homeSelector,
   favoritesIdsSelector,
   favoritesSelector,

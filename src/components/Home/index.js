@@ -23,7 +23,7 @@ const Home = ({ gifs, isLoading, searchGifs }) => {
 Home.propTypes = {
   searchGifs: PropTypes.func.isRequired,
   gifs: PropTypes.array.isRequired,
-  isLoading: PropTypes.isLoading,
+  isLoading: PropTypes.bool,
 };
 
 export default Home;

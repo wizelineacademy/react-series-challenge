@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home container reducer should return the initialState or prevState if action is not recognized 1`] = `
+Object {
+  "gifs": Array [],
+  "isLoading": false,
+  "searchTerm": "",
+}
+`;
+
+exports[`Home container reducer should set the state gifs when sending as GIFS_SET, with an array of gifs as payload 1`] = `
+Object {
+  "gifs": Array [
+    Object {
+      "id": "gif.1",
+    },
+    Object {
+      "id": "gif.2",
+    },
+  ],
+  "isLoading": false,
+  "searchTerm": "",
+}
+`;
+
+exports[`Home container reducer should set the state isLoading to false when sending as LOADING_SET, with false as payload 1`] = `
+Object {
+  "gifs": Array [],
+  "isLoading": false,
+  "searchTerm": "",
+}
+`;
+
+exports[`Home container reducer should set the state isLoading to true when sending as LOADING_SET, with true as payload 1`] = `
+Object {
+  "gifs": Array [],
+  "isLoading": true,
+  "searchTerm": "",
+}
+`;
+
+exports[`Home container reducer should set the state searchTerm  when sending as SEARCH_TERM_SET, with term as payload 1`] = `
+Object {
+  "gifs": Array [],
+  "isLoading": false,
+  "searchTerm": "dogo",
+}
+`;

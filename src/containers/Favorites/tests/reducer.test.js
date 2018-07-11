@@ -39,7 +39,7 @@ describe('Favorites container reducer', () => {
     expect(newState).toMatchSnapshot();
   });
 
-  it('should return all the favorite gifs in reducer when not sending a term in FAVORITES_SEARCH actioln', () => {
+  it('should return all the favorite gifs in reducer when not sending a term in FAVORITES_SEARCH action', () => {
     const action = actions.creators.setFavorites([
       { id: 'id.1', title: 'cat' },
       { id: 'id.2', title: 'dogo' },

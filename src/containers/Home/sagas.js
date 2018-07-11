@@ -38,4 +38,6 @@ function* run() {
 
 export default {
   run,
+  loadTrendingGifs,
+  searchGifs,
 };

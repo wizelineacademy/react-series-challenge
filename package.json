@@ -22,7 +22,8 @@
     "collectCoverageFrom": [
       "**/src/**/*.{js,jsx}",
       "!**/src/registerServiceWorker.{js,jsx}",
-      "!src/index.js"
+      "!src/index.js",
+      "!src/reducer.js"
     ],
     "coverageThreshold": {
       "global": {

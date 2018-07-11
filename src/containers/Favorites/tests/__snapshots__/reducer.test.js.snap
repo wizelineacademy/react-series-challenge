@@ -40,7 +40,7 @@ Object {
 }
 `;
 
-exports[`Favorites container reducer should return all the favorite gifs in reducer when not sending a term in FAVORITES_SEARCH actioln 1`] = `
+exports[`Favorites container reducer should return all the favorite gifs in reducer when not sending a term in FAVORITES_SEARCH action 1`] = `
 Object {
   "favoritesIds": Array [],
   "filteredGifs": Array [
