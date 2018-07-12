@@ -4,6 +4,7 @@ exports[`Home snapshot 1`] = `
 <styled.div>
   <styled.img
     alt="Favorite"
+    id="fav-button"
     onClick={[Function]}
     src="no-fav.svg"
   />

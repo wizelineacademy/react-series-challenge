@@ -1,7 +1,7 @@
 import React from 'react';
 import Home from '../../components/Home'
 import configureStore from 'redux-mock-store'
-import { shallow } from 'enzyme'
+import { mount } from 'enzyme'
 import toJson from 'enzyme-to-json'
 import 'jest-styled-components'
 
@@ -16,7 +16,7 @@ test('Home snapshot', () => {
     }
   }
   const store = mockStore(initialState)
-  const component = shallow(
+  const component = mount(
     <Home store={store}/>,
   );
   expect(toJson(component)).toMatchSnapshot();

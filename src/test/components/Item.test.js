@@ -1,5 +1,5 @@
 import React from 'react'
-import { shallow } from 'enzyme'
+import { shallow, mount } from 'enzyme'
 import Item from '../../components/Item'
 import toJson from 'enzyme-to-json'
 import 'jest-styled-components'
@@ -21,17 +21,23 @@ test('Home snapshot', () => {
 })
 
 
-// describe('test', () => {
-//   it('will work', () => {
-//     const onClick = (item, isFav) => {}
-//     const component = shallow(
-//       <Item
-//         item={item}
-//         onClick={onClick}
-//         onClickFav={onClick}
-//       />
-//     )
-//     expect(component.text()).toBe('hola')
-//   })
-// })
+describe('Test buttons', () => {
+  const onClick = (item, isFav) => {}
+  it('test onClick', () => {
+    const onButtonClick = jest.fn();
+    const component = mount(
+      <Item
+        item={item}
+        onClick={onButtonClick}
+        onClickFav={onClick}
+      />
+    )
+    const button = component.find('#fav-button').first();
+    console.log('test test ', button.debug())
+
+    button.simulate('click', {target: {id: 'fav-button'}});
+    // expect(onButtonClick.calledOnce).toBeTruthy()
+    expect(onButtonClick).toHaveBeenCalled()
+  })
+})
 

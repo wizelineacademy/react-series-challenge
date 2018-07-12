@@ -1,6 +1,6 @@
 import React from 'react';
 import Favorites from '../../components/Favorites'
-import { shallow } from 'enzyme'
+import { mount } from 'enzyme'
 import toJson from 'enzyme-to-json'
 import configureStore from 'redux-mock-store'
 import 'jest-styled-components'
@@ -16,7 +16,7 @@ test('Home snapshot', () => {
     }
   }
   const store = mockStore(initialState)
-  const component = shallow(
+  const component = mount(
     <Favorites store={store}/>,
   );
   expect(toJson(component)).toMatchSnapshot();
