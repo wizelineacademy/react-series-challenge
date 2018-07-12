@@ -7,15 +7,19 @@ describe('Test gifActions', () => {
   });
 
   it('actionCreator: receivedSearchGifs', () => {
-      const receivedSearchGifs = gifActions.creators.receivedSearchGifs([]);
+    const receivedSearchGifsDefault = gifActions.creators.receivedSearchGifs();
+    expect(receivedSearchGifsDefault).toEqual({ type: 'SEARCH_GIFS_RECEIVED', payload: {} })
 
-      expect(receivedSearchGifs).toEqual({ type: 'SEARCH_GIFS_RECEIVED', payload: [] })
+    const receivedSearchGifs = gifActions.creators.receivedSearchGifs([]);
+    expect(receivedSearchGifs).toEqual({ type: 'SEARCH_GIFS_RECEIVED', payload: [] })
   });
 
   it('actionCreator: searchGifs', () => {
-      const searchGifs = gifActions.creators.searchGifs('dog');
+    const searchGifsDefault = gifActions.creators.searchGifs();
+    expect(searchGifsDefault).toEqual({ type: 'SEARCH_GIFS_GET', payload: {} })
 
-      expect(searchGifs).toEqual({ type: 'SEARCH_GIFS_GET', payload: 'dog' })
+    const searchGifs = gifActions.creators.searchGifs('dog');
+    expect(searchGifs).toEqual({ type: 'SEARCH_GIFS_GET', payload: 'dog' })
   });
 
   it('actionCreator: failedTrendingGifs', () => {
@@ -27,8 +31,10 @@ describe('Test gifActions', () => {
   });
 
   it('actionCreator: receivedTrendingGifs', () => {
-      const receivedTrendingGifs = gifActions.creators.receivedTrendingGifs([]);
+    const receivedTrendingGifsDefault = gifActions.creators.receivedTrendingGifs();
+    expect(receivedTrendingGifsDefault).toEqual({ type: 'TRENDING_GIFS_RECEIVED', payload: {} })
 
-      expect(receivedTrendingGifs).toEqual({ type: 'TRENDING_GIFS_RECEIVED', payload: [] })
+    const receivedTrendingGifs = gifActions.creators.receivedTrendingGifs([]);
+    expect(receivedTrendingGifs).toEqual({ type: 'TRENDING_GIFS_RECEIVED', payload: [] })
   });
 });
