@@ -19,12 +19,10 @@
     "collectCoverageFrom": [
       "**/src/**/*.{js,jsx}",
       "!**/src/registerServiceWorker.{js,jsx}",
-      "!src/index.js",
       "!src/setupTests.js",
       "!src/App.js",
       "!src/AppMain.js",
       "!src/store/sagas.js",
-      "!src/store/index.js",
       "!src/store/reducers/index.js"
     ],
     "coverageThreshold": {
