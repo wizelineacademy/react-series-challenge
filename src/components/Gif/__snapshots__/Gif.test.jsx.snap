@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Gif component renders its children within the containing div 1`] = `
+"<styled.div>
+  <styled.p>
+    hello
+  </styled.p>
+  <styled.iframe src=\\"url\\" title=\\"hello\\" />
+  <styled.img src=\\"favorite-heart-like-selected.png\\" alt=\\"Remove from favorite\\" onClick={[Function: onClick]} />
+</styled.div>"
+`;
+
+exports[`Gif component renders the liked image 1`] = `
+"<styled.div>
+  <styled.p>
+    hello
+  </styled.p>
+  <styled.iframe src=\\"url\\" title=\\"hello\\" />
+  <styled.img src=\\"favorite-heart-like-selected.png\\" alt=\\"Remove from favorite\\" onClick={[Function: onClick]} />
+</styled.div>"
+`;
+
+exports[`Gif component renders the liked image 2`] = `
+"<styled.div>
+  <styled.p>
+    hello
+  </styled.p>
+  <styled.iframe src=\\"url\\" title=\\"hello\\" />
+  <styled.img src=\\"favorite-heart-like-container.png\\" alt=\\"Add to favorite\\" onClick={[Function: onClick]} />
+</styled.div>"
+`;
+
+exports[`Gif component renders the liked image 3`] = `
+"<styled.div>
+  <styled.p>
+    hello
+  </styled.p>
+  <styled.iframe src=\\"url\\" title=\\"hello\\" />
+  <styled.img src=\\"favorite-heart-like-container.png\\" alt=\\"Add to favorite\\" onClick={[Function: onClick]} />
+</styled.div>"
+`;
