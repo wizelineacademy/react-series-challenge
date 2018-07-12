@@ -1,5 +1,4 @@
 import React from 'react';
-import toJson from 'enzyme-to-json';
 import { mount } from 'enzyme';
 import GifErrorBoundary from '../index';
 
@@ -15,7 +14,6 @@ describe('GifErrorBoundary', () => {
       </GifErrorBoundary>
     );
     expect(component.find('.error-boundary-message')).toHaveLength(1);
-    expect(component).toMatchSnapshot();
   });
 
   it('should render the children component if everything was ok', () => {
@@ -27,6 +25,5 @@ describe('GifErrorBoundary', () => {
     );
 
     expect(component.find('.its-ok')).toHaveLength(1);
-    expect(toJson(component)).toMatchSnapshot();
   });
 });
