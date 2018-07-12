@@ -77,8 +77,11 @@ describe('GifCard', () => {
         const gifTree = shallow(<Gif />);
         expect(gifTree).toHaveStyleRule('max-height', '150px');
 
-        const favoriteBtnTree = shallow(<FavoriteBtn />);
-        expect(favoriteBtnTree).toHaveStyleRule('visibility', 'hidden');
+        let favoriteBtnTree = shallow(<FavoriteBtn isFavorite={true}/>);
+        expect(favoriteBtnTree).toHaveStyleRule('color', '#E93D44');
+
+        favoriteBtnTree = shallow(<FavoriteBtn isFavorite={false}/>);
+        expect(favoriteBtnTree).toHaveStyleRule('color', '#FFF');
     });
 
 });
