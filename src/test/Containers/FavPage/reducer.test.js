@@ -20,25 +20,35 @@ describe('FavReducer works', () => {
     })
   
     it('ADD_FAV action works', () => {
-      const curState = {}
+      const curState = {
+        favGifs:[
+          2,
+        ]
+      }
       const action = {
         type: ADD_FAV,
-        data: "information",
-        pagination:false
+        params:1
       }
       const nextState = FavReducer(curState, action)
-      const expectedState = {favLoading:false,favGifs:undefined}
-      expect(nextState).toEqual(expectedState)
-      expect(nextState).not.toEqual(curState)
+      expect(nextState).toEqual({"favGifs": [2, 1]})
     })
   
     it('WITHDRAW_FAV action works', () => {
-      const curState = {}
+      const curState = {
+        favGifs:[
+          {
+            id:2
+          },
+          {
+            id:1
+          }
+        ]
+      }
       const action = {
-        type: WITHDRAW_FAV
+        type: WITHDRAW_FAV,
+        id:1
       }
       const nextState = FavReducer(curState, action)
-      expect(nextState).toEqual({favLoading:true})
-      expect(nextState).not.toEqual(curState)
+      expect(nextState).toEqual({favGifs:[{id:2}]})
     })
   })
