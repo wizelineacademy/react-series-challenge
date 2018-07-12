@@ -22,21 +22,31 @@ test('Home snapshot', () => {
 
 
 describe('Test buttons', () => {
-  const onClick = (item, isFav) => {}
   it('test onClick', () => {
     const onButtonClick = jest.fn();
     const component = mount(
       <Item
         item={item}
         onClick={onButtonClick}
-        onClickFav={onClick}
+        onClickFav={onButtonClick}
       />
     )
-    const button = component.find('#fav-button').first();
-    console.log('test test ', button.debug())
-
-    button.simulate('click', {target: {id: 'fav-button'}});
-    // expect(onButtonClick.calledOnce).toBeTruthy()
+    const button = component.find('img').first()
+    button.simulate('click');
+    expect(onButtonClick).toHaveBeenCalled()
+  })
+  it('test onClick', () => {
+    const onButtonClick = jest.fn();
+    const component = mount(
+      <Item
+        item={item}
+        onClick={onButtonClick}
+        isFav={true}
+        onClickFav={onButtonClick}
+      />
+    )
+    const button = component.find('img').last()
+    button.simulate('click');
     expect(onButtonClick).toHaveBeenCalled()
   })
 })
