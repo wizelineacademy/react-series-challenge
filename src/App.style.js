@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import styled, { injectGlobal } from 'styled-components';
+import styled from 'styled-components';
 
 export const NavBar = styled.div`
 background-color: #333;
@@ -15,13 +15,7 @@ text-decoration: none;
 font-size: 17px;
 `;
 
-injectGlobal`
-body {
-margin: 0;
-padding: 0;
-}
-
-a.active{
-font-weight: bolder;
-}
+export const  MainContainer = styled.div`
+background: #0000f8;
 `;
+
