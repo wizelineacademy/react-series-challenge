@@ -10,6 +10,7 @@
     "react-scripts": "1.1.1",
     "redux": "^4.0.0",
     "redux-actions": "^2.4.0",
+    "redux-localstorage": "^0.4.1",
     "redux-saga": "^0.16.0",
     "styled-components": "^3.3.3"
   },
@@ -23,7 +24,8 @@
       "!**/src/index.js",
       "!**/src/enhancers/*.js",
       "!**/src/middleware/logger.js",
-      "!**/src/registerServiceWorker.js"
+      "!**/src/registerServiceWorker.js",
+      "!**/src/global.styled.js"
     ],
     "coverageThreshold": {
       "global": {
