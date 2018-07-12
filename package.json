@@ -3,9 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.18.0",
+    "dotenv": "^6.0.0",
+    "jest-cli": "^23.4.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-scripts": "1.1.1"
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "1.1.1",
+    "react-test-renderer": "^16.4.1",
+    "redux": "^4.0.0",
+    "redux-actions": "^2.4.0",
+    "redux-saga": "^0.16.0",
+    "styled-components": "^3.3.3"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -31,6 +41,9 @@
   },
   "devDependencies": {
     "enzyme": "^3.3.0",
-    "enzyme-adapter-react-16": "^1.1.1"
+    "enzyme-adapter-react-16": "^1.1.1",
+    "jest": "^23.4.0",
+    "react-addons-test-utils": "^15.6.2",
+    "redux-mock-store": "^1.5.3"
   }
 }
