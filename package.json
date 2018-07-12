@@ -22,6 +22,7 @@
       "!**/src/setupTest.{js,jsx}",
       "!**/src/components/**/index.{js,jsx}",
       "!**/src/index.{js,jsx}",
+      "!**/src/reducers/index.{js,jsx}",
       "!**/src/globalStyles.{js,jsx}"
     ],
     "coverageThreshold": {

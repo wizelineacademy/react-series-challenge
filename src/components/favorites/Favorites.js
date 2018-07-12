@@ -11,8 +11,9 @@ export class Favorites extends Component {
     this.state = {
       searchValue: ''
     }
+    this.handleSearch = this.handleSearch.bind(this);
   }
-
+  
   handleSearch = (e) => {
     let value = e.target.value;
     this.setState({

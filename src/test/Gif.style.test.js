@@ -1,11 +1,11 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import { Gif } from 'components/gif/Gif'
+import { render } from 'enzyme';
+import { StyledGif } from 'components/gif/Gif.style'
 import 'jest-styled-components'
 
-describe('Gif', () => {
+describe('StyledGif', () => {
   test('renders properly', () => {
-    const component = shallow(<Gif />);
+    const component = render(<StyledGif bgColor={jest.fn()} />);
     expect(component).toMatchSnapshot()
   })
 });

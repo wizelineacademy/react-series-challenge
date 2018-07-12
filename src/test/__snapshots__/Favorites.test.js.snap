@@ -25,3 +25,455 @@ ShallowWrapper {
   },
 }
 `;
+
+exports[`Favorites renders properly with empty favorites 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Favorites
+    favorite={Object {}}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "children": Array [
+        <SearchBar
+          onChange={[Function]}
+          placeholder="Buscar en favoritos..."
+          value=""
+/>,
+        <styled.h1>
+          Los más chidos... según yo
+</styled.h1>,
+        <styled.div>
+          No tienes favoritos.
+</styled.div>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "onChange": [Function],
+          "placeholder": "Buscar en favoritos...",
+          "value": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": "Los más chidos... según yo",
+        },
+        "ref": null,
+        "rendered": "Los más chidos... según yo",
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": "No tienes favoritos.",
+        },
+        "ref": null,
+        "rendered": "No tienes favoritos.",
+        "type": [Function],
+      },
+    ],
+    "type": Symbol(react.fragment),
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "children": Array [
+          <SearchBar
+            onChange={[Function]}
+            placeholder="Buscar en favoritos..."
+            value=""
+/>,
+          <styled.h1>
+            Los más chidos... según yo
+</styled.h1>,
+          <styled.div>
+            No tienes favoritos.
+</styled.div>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "onChange": [Function],
+            "placeholder": "Buscar en favoritos...",
+            "value": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": "Los más chidos... según yo",
+          },
+          "ref": null,
+          "rendered": "Los más chidos... según yo",
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": "No tienes favoritos.",
+          },
+          "ref": null,
+          "rendered": "No tienes favoritos.",
+          "type": [Function],
+        },
+      ],
+      "type": Symbol(react.fragment),
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`Favorites renders properly with favorites 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Favorites
+    favorite={
+        Object {
+            "id": Object {},
+          }
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "children": Array [
+        <SearchBar
+          onChange={[Function]}
+          placeholder="Buscar en favoritos..."
+          value=""
+/>,
+        <styled.h1>
+          Los más chidos... según yo
+</styled.h1>,
+        <Connect(Component)
+          gifs={
+                    Object {
+                              "id": Object {},
+                            }
+          }
+/>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "onChange": [Function],
+          "placeholder": "Buscar en favoritos...",
+          "value": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": "Los más chidos... según yo",
+        },
+        "ref": null,
+        "rendered": "Los más chidos... según yo",
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "gifs": Object {
+            "id": Object {},
+          },
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": Symbol(react.fragment),
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "children": Array [
+          <SearchBar
+            onChange={[Function]}
+            placeholder="Buscar en favoritos..."
+            value=""
+/>,
+          <styled.h1>
+            Los más chidos... según yo
+</styled.h1>,
+          <Connect(Component)
+            gifs={
+                        Object {
+                                    "id": Object {},
+                                  }
+            }
+/>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "onChange": [Function],
+            "placeholder": "Buscar en favoritos...",
+            "value": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": "Los más chidos... según yo",
+          },
+          "ref": null,
+          "rendered": "Los más chidos... según yo",
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "gifs": Object {
+              "id": Object {},
+            },
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": Symbol(react.fragment),
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`Favorites renders properly with favorites and search 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Favorites
+    favorite={
+        Object {
+            "id": Object {},
+          }
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "children": Array [
+        <SearchBar
+          onChange={[Function]}
+          placeholder="Buscar en favoritos..."
+          value="TEST"
+/>,
+        <styled.h1>
+          Los más chidos... según yo
+</styled.h1>,
+        <styled.div>
+          No hay resultados para esta búsqueda.
+</styled.div>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "onChange": [Function],
+          "placeholder": "Buscar en favoritos...",
+          "value": "TEST",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": "Los más chidos... según yo",
+        },
+        "ref": null,
+        "rendered": "Los más chidos... según yo",
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": "No hay resultados para esta búsqueda.",
+        },
+        "ref": null,
+        "rendered": "No hay resultados para esta búsqueda.",
+        "type": [Function],
+      },
+    ],
+    "type": Symbol(react.fragment),
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "children": Array [
+          <SearchBar
+            onChange={[Function]}
+            placeholder="Buscar en favoritos..."
+            value="TEST"
+/>,
+          <styled.h1>
+            Los más chidos... según yo
+</styled.h1>,
+          <styled.div>
+            No hay resultados para esta búsqueda.
+</styled.div>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "onChange": [Function],
+            "placeholder": "Buscar en favoritos...",
+            "value": "TEST",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": "Los más chidos... según yo",
+          },
+          "ref": null,
+          "rendered": "Los más chidos... según yo",
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": "No hay resultados para esta búsqueda.",
+          },
+          "ref": null,
+          "rendered": "No hay resultados para esta búsqueda.",
+          "type": [Function],
+        },
+      ],
+      "type": Symbol(react.fragment),
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
