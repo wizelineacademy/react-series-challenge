@@ -24,7 +24,7 @@
       "!**/src/registerServiceWorker.{js,jsx}",
       "!src/index.js",
       "!src/reducer.js",
-      "!src/logger.js"
+      "!src/middlewares/logger.js"
     ],
     "coverageThreshold": {
       "global": {
