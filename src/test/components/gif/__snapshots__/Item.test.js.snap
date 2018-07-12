@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Item component should render correctly 1`] = `
+<styled.div>
+  <figure>
+    <img
+      src=""
+    />
+    <figcaption>
+      <styled.button
+        onClick={[Function]}
+      />
+      <p />
+    </figcaption>
+  </figure>
+</styled.div>
+`;
+
+exports[`Item styled component should be render favorite icon if received favorite=true 1`] = `
+<styled.button
+  onClick={[Function]}
+/>
+`;

@@ -3,9 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.18.0",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "react-scripts": "1.1.1"
+    "react-dom": "^16.4.1",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "1.1.1",
+    "redux": "^4.0.0",
+    "redux-actions": "^2.4.0",
+    "redux-mock-store": "^1.5.3",
+    "redux-saga": "^0.16.0",
+    "styled-components": "^3.3.3"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -14,14 +22,15 @@
     ],
     "coverageThreshold": {
       "global": {
-        "branches": 75,
-        "functions": 75,
-        "lines": 75,
-        "statements": 75
+        "branches": 70,
+        "functions": 70,
+        "lines": 70,
+        "statements": 70
       }
     }
   },
   "scripts": {
+    "precommit": "lint-staged",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "eject": "react-scripts eject",
@@ -29,8 +38,25 @@
     "test": "yarn lint && yarn jest",
     "jest": "react-scripts test --env=jsdom --coverage"
   },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ]
+  },
   "devDependencies": {
     "enzyme": "^3.3.0",
-    "enzyme-adapter-react-16": "^1.1.1"
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.4",
+    "husky": "^0.14.3",
+    "jest-styled-components": "^5.0.1",
+    "lint-staged": "^7.2.0",
+    "prettier": "^1.13.7",
+    "react-test-renderer": "^16.4.1",
+    "redux-devtools-extension": "^2.13.5"
+  },
+  "resolutions": {
+    "**/istanbul-lib-instrument": "1.9.2"
   }
 }
