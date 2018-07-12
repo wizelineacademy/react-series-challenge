@@ -57,7 +57,7 @@ export function* filterChangeSaga({ payload }) {
 }
 export function* addRemoveFavoriteSaga({ payload }, testParams) {
   const img = { ...payload.image };
-  console.log('testParams: ', testParams);
+
   const oldFavorites = testParams
     ? [...testParams.favorites]
     : yield call(selectors.getFavorites);

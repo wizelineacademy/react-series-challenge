@@ -25,8 +25,6 @@ export function* getNewGifsSaga(testParams) {
 
   const endpoint = search === '' ? 'trending' : 'search';
 
-  console.log('SEARCH: ', search);
-
   const response = testParams.resp
     ? testParams.resp
     : yield call(fetchGifs, {
@@ -38,8 +36,6 @@ export function* getNewGifsSaga(testParams) {
       });
 
   const { data } = response;
-
-  console.log('DATA :', data);
 
   const favorites = testParams.favorites
     ? testParams.favorites
