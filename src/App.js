@@ -1,19 +1,32 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { Provider } from 'react-redux';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+
 import './App.css';
+
+// Store
+import store from "./store";
+
+// Components
+import Gifs from "./components/Gifs/Gifs";
+import SearchResult from "./components/SearchResult/SearchResult";
+import Favorites from './components/Favorites/Favorites';
+import NotFound from './components/NotFound/NotFound'
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <Provider store={store}>
+        <Router>
+          <Switch>
+            <Route exact path="/" component={Gifs} />
+            <Route exact path="/search/:q" component={SearchResult} />
+            <Route path="/favorites" component={Favorites} />
+            <Route path="*" component={NotFound} />
+            <Redirect to="not-found"/>
+          </Switch>
+        </Router>
+      </Provider>
     );
   }
 }
