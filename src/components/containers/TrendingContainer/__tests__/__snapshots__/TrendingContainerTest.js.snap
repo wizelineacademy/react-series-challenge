@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TrendingContainer should render without crashing with giphys 1`] = `
+Array [
+  <SearchBar
+    getInputValue={[Function]}
+    key="0"
+/>,
+  <GiPanel
+    key="1"
+    toggleFavs={[Function]}
+/>,
+]
+`;
+
+exports[`TrendingContainer should render without crashing without giphys 1`] = `
+Array [
+  <SearchBar
+    getInputValue={[Function]}
+    key="0"
+/>,
+  <GiPanel
+    key="1"
+    toggleFavs={[Function]}
+/>,
+]
+`;

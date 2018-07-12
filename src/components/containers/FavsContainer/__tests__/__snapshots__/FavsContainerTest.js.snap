@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FavsContainer should render without crashing 1`] = `
+Array [
+  <SearchBar
+    key="0"
+/>,
+  <GiPanel
+    key="1"
+    toggleFavs={[Function]}
+/>,
+]
+`;

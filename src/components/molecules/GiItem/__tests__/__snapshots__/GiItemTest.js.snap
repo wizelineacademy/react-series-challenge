@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GiItem should render without crashing 1`] = `
+<img
+  alt="palm trees storm GIF"
+  onClick={[Function]}
+  src="https://media3.giphy.com/media/HmTLatwLWpTQk/200.gif"
+/>
+`;

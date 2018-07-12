@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input should render without crashing 1`] = `
+<styled.div>
+  <input
+    aria-label="label"
+    id="0"
+    name="nombre"
+    onChange="test"
+    placeholder="nombre"
+    type="input"
+  />
+</styled.div>
+`;
