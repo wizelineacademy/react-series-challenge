@@ -1,0 +1,629 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should match snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <App />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": <styled.div>
+        <styled.header>
+                <styled.img
+                        alt="logo"
+                        src="logo.svg"
+                />
+                <styled.h1>
+                        Giphy
+                </styled.h1>
+        </styled.header>
+        <styled.ul>
+                <styled.li>
+                        <Styled(NavLink)
+                                miidx={0}
+                                to="/ListadoGeneral"
+                        >
+                                General
+                        </Styled(NavLink)>
+                </styled.li>
+                <styled.li>
+                        <Styled(NavLink)
+                                miidx={1}
+                                to="/ListadoFavoritos"
+                        >
+                                Favoritos
+                        </Styled(NavLink)>
+                </styled.li>
+        </styled.ul>
+        <Switch>
+                <Route
+                        component={[Function]}
+                        path="/ListadoGeneral"
+                />
+                <Route
+                        component={[Function]}
+                        path="/ListadoFavoritos"
+                />
+                <Redirect
+                        push={false}
+                        to="/ListadoGeneral"
+                />
+        </Switch>
+</styled.div>,
+      "store": Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+        Symbol(observable): [Function],
+      },
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <styled.header>
+            <styled.img
+                        alt="logo"
+                        src="logo.svg"
+            />
+            <styled.h1>
+                        Giphy
+            </styled.h1>
+</styled.header>,
+          <styled.ul>
+            <styled.li>
+                        <Styled(NavLink)
+                                    miidx={0}
+                                    to="/ListadoGeneral"
+                        >
+                                    General
+                        </Styled(NavLink)>
+            </styled.li>
+            <styled.li>
+                        <Styled(NavLink)
+                                    miidx={1}
+                                    to="/ListadoFavoritos"
+                        >
+                                    Favoritos
+                        </Styled(NavLink)>
+            </styled.li>
+</styled.ul>,
+          <Switch>
+            <Route
+                        component={[Function]}
+                        path="/ListadoGeneral"
+            />
+            <Route
+                        component={[Function]}
+                        path="/ListadoFavoritos"
+            />
+            <Redirect
+                        push={false}
+                        to="/ListadoGeneral"
+            />
+</Switch>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <styled.img
+                alt="logo"
+                src="logo.svg"
+/>,
+              <styled.h1>
+                Giphy
+</styled.h1>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "alt": "logo",
+                "src": "logo.svg",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": "Giphy",
+              },
+              "ref": null,
+              "rendered": "Giphy",
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <styled.li>
+                <Styled(NavLink)
+                                miidx={0}
+                                to="/ListadoGeneral"
+                >
+                                General
+                </Styled(NavLink)>
+</styled.li>,
+              <styled.li>
+                <Styled(NavLink)
+                                miidx={1}
+                                to="/ListadoFavoritos"
+                >
+                                Favoritos
+                </Styled(NavLink)>
+</styled.li>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": <Styled(NavLink)
+                  miidx={0}
+                  to="/ListadoGeneral"
+>
+                  General
+</Styled(NavLink)>,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "General",
+                  "miidx": 0,
+                  "to": "/ListadoGeneral",
+                },
+                "ref": null,
+                "rendered": "General",
+                "type": [Function],
+              },
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": <Styled(NavLink)
+                  miidx={1}
+                  to="/ListadoFavoritos"
+>
+                  Favoritos
+</Styled(NavLink)>,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "Favoritos",
+                  "miidx": 1,
+                  "to": "/ListadoFavoritos",
+                },
+                "ref": null,
+                "rendered": "Favoritos",
+                "type": [Function],
+              },
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <Route
+                component={[Function]}
+                path="/ListadoGeneral"
+/>,
+              <Route
+                component={[Function]}
+                path="/ListadoFavoritos"
+/>,
+              <Redirect
+                push={false}
+                to="/ListadoGeneral"
+/>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "path": "/ListadoGeneral",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "path": "/ListadoFavoritos",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "push": false,
+                "to": "/ListadoGeneral",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": <styled.div>
+          <styled.header>
+                    <styled.img
+                              alt="logo"
+                              src="logo.svg"
+                    />
+                    <styled.h1>
+                              Giphy
+                    </styled.h1>
+          </styled.header>
+          <styled.ul>
+                    <styled.li>
+                              <Styled(NavLink)
+                                        miidx={0}
+                                        to="/ListadoGeneral"
+                              >
+                                        General
+                              </Styled(NavLink)>
+                    </styled.li>
+                    <styled.li>
+                              <Styled(NavLink)
+                                        miidx={1}
+                                        to="/ListadoFavoritos"
+                              >
+                                        Favoritos
+                              </Styled(NavLink)>
+                    </styled.li>
+          </styled.ul>
+          <Switch>
+                    <Route
+                              component={[Function]}
+                              path="/ListadoGeneral"
+                    />
+                    <Route
+                              component={[Function]}
+                              path="/ListadoFavoritos"
+                    />
+                    <Redirect
+                              push={false}
+                              to="/ListadoGeneral"
+                    />
+          </Switch>
+</styled.div>,
+        "store": Object {
+          "dispatch": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+          Symbol(observable): [Function],
+        },
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <styled.header>
+              <styled.img
+                            alt="logo"
+                            src="logo.svg"
+              />
+              <styled.h1>
+                            Giphy
+              </styled.h1>
+</styled.header>,
+            <styled.ul>
+              <styled.li>
+                            <Styled(NavLink)
+                                          miidx={0}
+                                          to="/ListadoGeneral"
+                            >
+                                          General
+                            </Styled(NavLink)>
+              </styled.li>
+              <styled.li>
+                            <Styled(NavLink)
+                                          miidx={1}
+                                          to="/ListadoFavoritos"
+                            >
+                                          Favoritos
+                            </Styled(NavLink)>
+              </styled.li>
+</styled.ul>,
+            <Switch>
+              <Route
+                            component={[Function]}
+                            path="/ListadoGeneral"
+              />
+              <Route
+                            component={[Function]}
+                            path="/ListadoFavoritos"
+              />
+              <Redirect
+                            push={false}
+                            to="/ListadoGeneral"
+              />
+</Switch>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                <styled.img
+                  alt="logo"
+                  src="logo.svg"
+/>,
+                <styled.h1>
+                  Giphy
+</styled.h1>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "alt": "logo",
+                  "src": "logo.svg",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "Giphy",
+                },
+                "ref": null,
+                "rendered": "Giphy",
+                "type": [Function],
+              },
+            ],
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                <styled.li>
+                  <Styled(NavLink)
+                                    miidx={0}
+                                    to="/ListadoGeneral"
+                  >
+                                    General
+                  </Styled(NavLink)>
+</styled.li>,
+                <styled.li>
+                  <Styled(NavLink)
+                                    miidx={1}
+                                    to="/ListadoFavoritos"
+                  >
+                                    Favoritos
+                  </Styled(NavLink)>
+</styled.li>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": <Styled(NavLink)
+                    miidx={0}
+                    to="/ListadoGeneral"
+>
+                    General
+</Styled(NavLink)>,
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "General",
+                    "miidx": 0,
+                    "to": "/ListadoGeneral",
+                  },
+                  "ref": null,
+                  "rendered": "General",
+                  "type": [Function],
+                },
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": <Styled(NavLink)
+                    miidx={1}
+                    to="/ListadoFavoritos"
+>
+                    Favoritos
+</Styled(NavLink)>,
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "Favoritos",
+                    "miidx": 1,
+                    "to": "/ListadoFavoritos",
+                  },
+                  "ref": null,
+                  "rendered": "Favoritos",
+                  "type": [Function],
+                },
+                "type": [Function],
+              },
+            ],
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                <Route
+                  component={[Function]}
+                  path="/ListadoGeneral"
+/>,
+                <Route
+                  component={[Function]}
+                  path="/ListadoFavoritos"
+/>,
+                <Redirect
+                  push={false}
+                  to="/ListadoGeneral"
+/>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "path": "/ListadoGeneral",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "path": "/ListadoFavoritos",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "push": false,
+                  "to": "/ListadoGeneral",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+            ],
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
