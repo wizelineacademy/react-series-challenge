@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Giphys>  Will check with the snaptshot  1`] = `
+<div>
+  <giphys__StyledGiphys
+    key="3o7abttnfEEkYHspu8"
+  >
+    <giphys__StyledButton
+      onClick={[Function]}
+    >
+      undo
+    </giphys__StyledButton>
+    <img
+      alt="sad keith urban GIF by American Idol"
+      src="https://media1.giphy.com/media/3o7abttnfEEkYHspu8/200w.webp"
+    />
+  </giphys__StyledGiphys>
+</div>
+`;

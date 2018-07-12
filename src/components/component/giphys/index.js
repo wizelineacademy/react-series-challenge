@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 
-import './giphys.css';
-
 import styled from "styled-components";
 
 const StyledGiphys = styled.div`
@@ -9,7 +7,7 @@ const StyledGiphys = styled.div`
   position: relative;
 `;
 
-const StyledButton = styled.div`
+const StyledButton = styled.button`
   position: absolute;
   bottom: 0;
   right: 0;

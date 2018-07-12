@@ -1,23 +1,20 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import toJson from 'enzyme-to-json';
 
 import Footer from "./../index";
 
 describe('<Footer> ', () => {
 
-  let wraper;
+  let wrapper;
 
-  beforeAll(() => {
-    wraper = shallow(
+  beforeEach(() => {
+    wrapper = shallow(
       <Footer />
     );
   });
 
-  it('should be <footer></footer> type ', () => {
-    expect(wraper.type()).toEqual('footer');
-  });
-
-  it('should be footer have a <div></div> children  ', () => {
-    expect(wraper.find('div').type()).toEqual('div');
+  it('Will check with the snaptshot ', () => {
+    expect(toJson(wrapper)).toMatchSnapshot();
   });
 });
