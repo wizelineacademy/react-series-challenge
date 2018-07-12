@@ -1,41 +1,89 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Gif component renders its children within the containing div 1`] = `
-"<styled.div>
-  <styled.p>
+exports[`Gif component renders the liked Gif 1`] = `
+.c0 {
+  float: left;
+  height: 300px;
+  width: 200px;
+  margin: 10px;
+  padding: 10px;
+}
+
+.c1 {
+  text-align: center;
+}
+
+.c2 {
+  width: 100%;
+  height: 200px;
+}
+
+.c3 {
+  cursor: pointer;
+}
+
+<div
+  className="c0"
+>
+  <p
+    className="c1"
+  >
     hello
-  </styled.p>
-  <styled.iframe src=\\"url\\" title=\\"hello\\" />
-  <styled.img src=\\"favorite-heart-like-selected.png\\" alt=\\"Remove from favorite\\" onClick={[Function: onClick]} />
-</styled.div>"
+  </p>
+  <iframe
+    className="c2"
+    src="url"
+    title="hello"
+  />
+  <img
+    alt="Remove from favorite"
+    className="c3"
+    onClick={[Function]}
+    src="favorite-heart-like-selected.png"
+  />
+</div>
 `;
 
-exports[`Gif component renders the liked image 1`] = `
-"<styled.div>
-  <styled.p>
-    hello
-  </styled.p>
-  <styled.iframe src=\\"url\\" title=\\"hello\\" />
-  <styled.img src=\\"favorite-heart-like-selected.png\\" alt=\\"Remove from favorite\\" onClick={[Function: onClick]} />
-</styled.div>"
-`;
+exports[`Gif component renders the not liked Gif 1`] = `
+.c0 {
+  float: left;
+  height: 300px;
+  width: 200px;
+  margin: 10px;
+  padding: 10px;
+}
 
-exports[`Gif component renders the liked image 2`] = `
-"<styled.div>
-  <styled.p>
-    hello
-  </styled.p>
-  <styled.iframe src=\\"url\\" title=\\"hello\\" />
-  <styled.img src=\\"favorite-heart-like-container.png\\" alt=\\"Add to favorite\\" onClick={[Function: onClick]} />
-</styled.div>"
-`;
+.c1 {
+  text-align: center;
+}
 
-exports[`Gif component renders the liked image 3`] = `
-"<styled.div>
-  <styled.p>
+.c2 {
+  width: 100%;
+  height: 200px;
+}
+
+.c3 {
+  cursor: pointer;
+}
+
+<div
+  className="c0"
+>
+  <p
+    className="c1"
+  >
     hello
-  </styled.p>
-  <styled.iframe src=\\"url\\" title=\\"hello\\" />
-  <styled.img src=\\"favorite-heart-like-container.png\\" alt=\\"Add to favorite\\" onClick={[Function: onClick]} />
-</styled.div>"
+  </p>
+  <iframe
+    className="c2"
+    src="url"
+    title="hello"
+  />
+  <img
+    alt="Add to favorite"
+    className="c3"
+    onClick={[Function]}
+    src="favorite-heart-like-container.png"
+  />
+</div>
 `;

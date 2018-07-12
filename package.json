@@ -2,21 +2,29 @@
   "name": "react-series-challenge",
   "version": "0.1.0",
   "private": true,
+  "devDependencies": {
+    "eslint": "4.19.1",
+    "eslint-config-airbnb": "16.1.0",
+    "eslint-plugin-import": "2.11.0",
+    "eslint-plugin-jsx-a11y": "6.0.3",
+    "eslint-plugin-react": "7.7.0"
+  },
   "dependencies": {
     "axios": "^0.18.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "jest-styled-components": "^5.0.1",
     "prop-types": "^15.6.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.1",
+    "react-test-renderer": "^16.4.1",
     "redux": "^4.0.0",
     "redux-actions": "^2.4.0",
     "redux-saga": "^0.16.0",
-    "styled-components": "^3.3.3",
-
-    "enzyme": "^3.3.0",
-    "enzyme-adapter-react-16": "^1.1.1"
+    "styled-components": "^3.3.3"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -39,13 +47,5 @@
     "lint": "eslint ./",
     "testAndLint": "yarn lint && yarn jest",
     "test": "react-scripts test --env=jsdom --coverage"
-  },
-  "devDependencies": {
-    
-    "eslint": "4.19.1",
-    "eslint-config-airbnb": "16.1.0",
-    "eslint-plugin-import": "2.11.0",
-    "eslint-plugin-jsx-a11y": "6.0.3",
-    "eslint-plugin-react": "7.7.0"
   }
 }
