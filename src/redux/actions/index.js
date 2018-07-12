@@ -9,6 +9,13 @@ const fetchChange = (word = '') => {
   }
 }
 
+const localSetData = (data) => {
+  return {
+    type: actions.LOCALSTORAGE_DATA,
+    payload: { data }
+  }
+}
+
 const localFind = (filter = '') => {
   return {
     type: actions.LOCALSTORAGE_FIND,
@@ -27,8 +34,14 @@ const modifyLocal = (object) => {
   }
 }
 
+const fetchStart = () => {
+  return { type: actions.FETCH_START };
+}
+
 export default {
   fetchChange,
   modifyLocal,
   localFind,
+  localSetData,
+  fetchStart,
 }

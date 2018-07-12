@@ -7,7 +7,7 @@ import selectors from "./../selectors/";
 
 const baseUrl = 'https://api.giphy.com/v1/gifs/';
 
-export function* fetchData  (url)  {
+function* fetchData  (url)  {
     return yield axios.get(url)
         .then(response => {
             return response.data;

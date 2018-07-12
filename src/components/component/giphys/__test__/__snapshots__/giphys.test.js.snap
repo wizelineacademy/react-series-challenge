@@ -10,10 +10,12 @@ exports[`<Giphys>  Will check with the snaptshot  1`] = `
     >
       undo
     </giphys__StyledButton>
-    <img
-      alt="sad keith urban GIF by American Idol"
-      src="https://media1.giphy.com/media/3o7abttnfEEkYHspu8/200w.webp"
-    />
+    <ErrorBoundary>
+      <ImgG
+        alt="sad keith urban GIF by American Idol"
+        src="https://media1.giphy.com/media/3o7abttnfEEkYHspu8/200w.webp"
+      />
+    </ErrorBoundary>
   </giphys__StyledGiphys>
 </div>
 `;

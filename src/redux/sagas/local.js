@@ -1,8 +1,10 @@
 import { put, takeEvery, select } from 'redux-saga/effects';
 
 // actionsDic
-import actions from "../constants/actions";
+import actionsDic from "../constants/actions";
 import selectors from "./../selectors";
+
+import actions from "./../actions";
 
 
 const loadData = () => {
@@ -24,9 +26,9 @@ const loadData = () => {
 
 export function* getLocalStorage() {
   let data = loadData();
-  yield put({ type: actions.LOCALSTORAGE_DATA, payload: { data } });
-  // TODO: ENABLE
-  yield put({ type: 'FETCH_REQUEST', payload: { word: '' }});
+  yield put(actions.localSetData(data));
+  // TODO: ENABLE FIRST TIME SEARCH
+  yield put(actions.fetchChange(''));
 }
 
 const setData = (data) => {
@@ -42,12 +44,12 @@ const setData = (data) => {
   }
 }
 
-function* modifyLocalStorage() {
+export function* modifyLocalStorage() {
   const local = yield select(selectors.local);
   setData(local);
 }
 
 export default function* watchLocalStorage() {
-  yield takeEvery(actions.LOCALSTORAGE_GET, getLocalStorage);
-  yield takeEvery(actions.LOCALSTORAGE_MODIFY, modifyLocalStorage);
+  yield takeEvery(actionsDic.LOCALSTORAGE_GET, getLocalStorage);
+  yield takeEvery(actionsDic.LOCALSTORAGE_MODIFY, modifyLocalStorage);
 }

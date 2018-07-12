@@ -1,16 +1,44 @@
-// import { getLocalStorage } from "./../local";
+import { put, select } from "redux-saga/effects";
+import { getLocalStorage, modifyLocalStorage } from "./../local";
 
-// describe('SAGA local >', () => {
-//   it('should trigger on GET_DATA', () => {
-//     // arrange
-//     const iterator = getLocalStorage();
-//     const expectedYield = call(takeEvery, GET_DATA, getDataSaga);
+import selectors from "./../../selectors";
 
-//     // act
-//     const actualYield = iterator.next().value;
+import actions from "./../../actions";
 
-//     // assert
-//     expect(actualYield).to.deep.equal(expectedYield);
-//   });
+describe('SAGA local >', () => {
+  const simulateLocal = { like: ['item1'] };
 
-// })
+  it('should trigger on LOCALSTORAGE_GET', () => {
+    let currentYield;
+
+    // Set Dummy local
+    window.localStorage.setItem(process.env.LOCAL_STORAGE_KEY, JSON.stringify(simulateLocal))
+
+    const iterator = getLocalStorage();
+
+    currentYield = iterator.next().value;
+    expect(currentYield).toEqual(put(actions.localSetData(simulateLocal)));
+
+    // assert
+    currentYield = iterator.next().value;
+    expect(currentYield).toEqual(put(actions.fetchChange('')));
+  });
+
+  it('should trigger on LOCALSTORAGE_MODIFY', () => {
+    let currentYield;
+
+    // Set Dummy local
+    window.localStorage.setItem(process.env.LOCAL_STORAGE_KEY, JSON.stringify(simulateLocal))
+
+    const iterator = modifyLocalStorage();
+
+    currentYield = iterator.next().value;
+    expect(currentYield).toEqual(select(selectors.local));
+    //
+
+    iterator.next();
+  });
+
+
+
+});
