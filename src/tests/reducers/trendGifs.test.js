@@ -1,7 +1,7 @@
-import searchGifsActions from '../../actions/searchGifs';
-import searchGifsReducer from '../../reducers/searchGifs';
+import trendGifsActions from '../../actions/trendGifs';
+import trendGifsReducer from '../../reducers/trendGifs';
 
-const { SEARCH_GIFS_LOAD, SEARCH_GIFS_FETCHED, SEARCH_GIFS_FAILED } = searchGifsActions.types;
+const { TREND_GIFS_FETCHED } = trendGifsActions.types;
 
 const gif = {
     type: "gif",
@@ -37,16 +37,16 @@ const gif = {
 
 const initialState = {  };
 
-describe('favorite gifs reducer', () => {
+describe('trend gifs reducer', () => {
     it('should return the initial state', () => {
-        expect(searchGifsReducer(initialState, {})).toEqual(initialState)
+        expect(trendGifsReducer(initialState, {})).toEqual(initialState)
     });
 
-    it('should fetch the gifs from the search', () => {
+    it('should fetch the gifs from the trending ones', () => {
 
         expect(
-            searchGifsReducer(initialState, {
-                type: SEARCH_GIFS_FETCHED,
+            trendGifsReducer(initialState, {
+                type: TREND_GIFS_FETCHED,
                 payload: { gifs: { [gif.id]: gif } }
             })
         ).toEqual({ [gif.id]: gif });
