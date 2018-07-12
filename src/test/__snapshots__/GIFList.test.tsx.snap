@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GIFList renders withouth crashing 1`] = `
+<styled.div>
+  <h2>
+    No GIFs found!
+  </h2>
+</styled.div>
+`;
+
+exports[`GIFList with empty GIFS matches snapshot 1`] = `<styled.div />`;
