@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Favorites component should be able to render gifs 1`] = `
+<styled.div>
+  <Component
+    data={
+      Object {
+        "title": "best meme",
+      }
+    }
+    isFavorite={false}
+    key="1"
+  />
+</styled.div>
+`;
+
+exports[`Favorites component should render correctly that is loading if i passed loading=false 1`] = `<styled.div />`;
+
+exports[`Favorites component should render correctly that is loading if i passed loading=true 1`] = `
+<div>
+  Loading trending gifs!
+</div>
+`;
