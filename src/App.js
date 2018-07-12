@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import FavElements from './components/FavElements';
 import ElementsView from './components/ElementsView';
-import {Route, Link, Redirect, Switch} from "react-router-dom";
-import {StyledLink} from './App.styled';
+import {Route, Redirect, Switch} from "react-router-dom";
+import {Bar,Menu,Item,Link} from './App.styled';
 import SearchBar from './components/SearchBar';
 export const FAV_GIFS_VIEW = '/favElements';
 export const ALL_GIFS_VIEW = '/allElements';
@@ -15,16 +15,17 @@ class App extends Component {
           <h1>Giphys app</h1>
         </header>
           <div>
-              <ul>
-                  <li>
-                      <StyledLink to={ALL_GIFS_VIEW}>Gifs</StyledLink>
-                  </li>
-                  <li>
-                      <Link to={FAV_GIFS_VIEW}>Fav GIFS</Link>
-                  </li>
-              </ul>
+              <Bar>
+                  <Menu>
+                      <Item>
+                          <Link to={ALL_GIFS_VIEW}>Gifs</Link>
+                      </Item>
+                      <Item>
+                          <Link to={FAV_GIFS_VIEW}>FavGifs</Link>
+                      </Item>
+                  </Menu>
+              </Bar>
 
-              <hr />
               <h2>Click on image to add or delete</h2>
               <SearchBar />
               <Switch>

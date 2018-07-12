@@ -50,9 +50,6 @@ describe('Element', () => {
         const obj10 = renderer.create(<IconFavBlue/>).toJSON();
         expect(obj10).toHaveStyleRule('color', 'blue');
 
-        const obj11 = renderer.create(<IconFavBlue/>).toJSON();
-        expect(obj11).toHaveStyleRule('right', '1rem');
-
 
     });
 
