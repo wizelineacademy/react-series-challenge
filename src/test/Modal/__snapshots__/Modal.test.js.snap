@@ -1,68 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`test will work 1`] = `
-ShallowWrapper {
-  "length": 1,
-  Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Unknown
-    favorites={
-        Object {
-            "cdcd": "dcdcd",
-          }
+<Component
+  addFavorite={[Function]}
+  favorites={
+    Object {
+      "cdcd": "dcdcd",
     }
-    gift={
-        Object {
-            "name": "dcdjc",
-            "url": "cdcdxs",
-          }
+  }
+  gift={
+    Object {
+      "name": "dcdjc",
+      "url": "cdcdxs",
     }
-    isModalOpen={true}
-/>,
-  Symbol(enzyme.__renderer__): Object {
-    "batchedUpdates": [Function],
-    "getNode": [Function],
-    "render": [Function],
-    "simulateEvent": [Function],
-    "unmount": [Function],
-  },
-  Symbol(enzyme.__node__): Object {
-    "instance": null,
-    "key": undefined,
-    "nodeType": "class",
-    "props": Object {
-      "ariaHideApp": true,
-      "bodyOpenClassName": "ReactModal__Body--open",
-      "children": Array [
-        <styled.img
-          alt=""
-          src="cdcdxs"
-/>,
-        <styled.div>
-          <styled.p>
-                    dcdjc
-          </styled.p>
-          <styled.span
-                    onClick={[Function]}
-          >
-                    Close
-          </styled.span>
-          <styled.span
-                    className=""
-                    onClick={[Function]}
-          >
-                    Like
-          </styled.span>
-</styled.div>,
-      ],
-      "closeTimeoutMS": 0,
-      "isOpen": true,
-      "parentSelector": [Function],
-      "portalClassName": "ReactModalPortal",
-      "shouldCloseOnEsc": true,
-      "shouldCloseOnOverlayClick": true,
-      "shouldFocusAfterRender": true,
-      "shouldReturnFocusAfterClose": true,
-      "style": Object {
+  }
+  hideGiftModal={[Function]}
+  isModalOpen={true}
+>
+  <Modal
+    ariaHideApp={true}
+    bodyOpenClassName="ReactModal__Body--open"
+    closeTimeoutMS={0}
+    isOpen={true}
+    parentSelector={[Function]}
+    portalClassName="ReactModalPortal"
+    shouldCloseOnEsc={true}
+    shouldCloseOnOverlayClick={true}
+    shouldFocusAfterRender={true}
+    shouldReturnFocusAfterClose={true}
+    style={
+      Object {
         "content": Object {
           "bottom": "auto",
           "height": "auto",
@@ -73,127 +40,48 @@ ShallowWrapper {
           "transform": "translate(-50%, -50%)",
           "width": "210px",
         },
-      },
-    },
-    "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "alt": "",
-          "src": "cdcdxs",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "children": Array [
-            <styled.p>
-              dcdjc
-</styled.p>,
-            <styled.span
-              onClick={[Function]}
->
-              Close
-</styled.span>,
-            <styled.span
-              className=""
-              onClick={[Function]}
->
-              Like
-</styled.span>,
-          ],
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "children": "dcdjc",
-            },
-            "ref": null,
-            "rendered": "dcdjc",
-            "type": [Function],
+      }
+    }
+  >
+    <ModalPortal
+      ariaHideApp={true}
+      bodyOpenClassName="ReactModal__Body--open"
+      closeTimeoutMS={0}
+      defaultStyles={
+        Object {
+          "content": Object {
+            "WebkitOverflowScrolling": "touch",
+            "background": "#fff",
+            "border": "1px solid #ccc",
+            "borderRadius": "4px",
+            "bottom": "40px",
+            "left": "40px",
+            "outline": "none",
+            "overflow": "auto",
+            "padding": "20px",
+            "position": "absolute",
+            "right": "40px",
+            "top": "40px",
           },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "children": "Close",
-              "onClick": [Function],
-            },
-            "ref": null,
-            "rendered": "Close",
-            "type": [Function],
+          "overlay": Object {
+            "backgroundColor": "rgba(255, 255, 255, 0.75)",
+            "bottom": 0,
+            "left": 0,
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
           },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "children": "Like",
-              "className": "",
-              "onClick": [Function],
-            },
-            "ref": null,
-            "rendered": "Like",
-            "type": [Function],
-          },
-        ],
-        "type": [Function],
-      },
-    ],
-    "type": [Function],
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "class",
-      "props": Object {
-        "ariaHideApp": true,
-        "bodyOpenClassName": "ReactModal__Body--open",
-        "children": Array [
-          <styled.img
-            alt=""
-            src="cdcdxs"
-/>,
-          <styled.div>
-            <styled.p>
-                        dcdjc
-            </styled.p>
-            <styled.span
-                        onClick={[Function]}
-            >
-                        Close
-            </styled.span>
-            <styled.span
-                        className=""
-                        onClick={[Function]}
-            >
-                        Like
-            </styled.span>
-</styled.div>,
-        ],
-        "closeTimeoutMS": 0,
-        "isOpen": true,
-        "parentSelector": [Function],
-        "portalClassName": "ReactModalPortal",
-        "shouldCloseOnEsc": true,
-        "shouldCloseOnOverlayClick": true,
-        "shouldFocusAfterRender": true,
-        "shouldReturnFocusAfterClose": true,
-        "style": Object {
+        }
+      }
+      isOpen={true}
+      parentSelector={[Function]}
+      portalClassName="ReactModalPortal"
+      shouldCloseOnEsc={true}
+      shouldCloseOnOverlayClick={true}
+      shouldFocusAfterRender={true}
+      shouldReturnFocusAfterClose={true}
+      style={
+        Object {
           "content": Object {
             "bottom": "auto",
             "height": "auto",
@@ -204,95 +92,201 @@ ShallowWrapper {
             "transform": "translate(-50%, -50%)",
             "width": "210px",
           },
-        },
-      },
-      "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "alt": "",
-            "src": "cdcdxs",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "children": Array [
+        }
+      }
+    >
+      <div
+        aria-modal="true"
+        className="ReactModal__Overlay ReactModal__Overlay--after-open"
+        onClick={[Function]}
+        onMouseDown={[Function]}
+        style={
+          Object {
+            "backgroundColor": "rgba(255, 255, 255, 0.75)",
+            "bottom": 0,
+            "left": 0,
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      >
+        <div
+          className="ReactModal__Content ReactModal__Content--after-open"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          style={
+            Object {
+              "WebkitOverflowScrolling": "touch",
+              "background": "#fff",
+              "border": "1px solid #ccc",
+              "borderRadius": "4px",
+              "bottom": "auto",
+              "height": "auto",
+              "left": "50%",
+              "outline": "none",
+              "overflow": "auto",
+              "padding": "0",
+              "position": "absolute",
+              "right": "40px",
+              "top": "50%",
+              "transform": "translate(-50%, -50%)",
+              "width": "210px",
+            }
+          }
+          tabIndex="-1"
+        >
+          <styled.img
+            alt=""
+            src="cdcdxs"
+          >
+            <img
+              alt=""
+              className="sc-htpNat fmBtRa"
+              src="cdcdxs"
+            />
+          </styled.img>
+          <styled.div>
+            <div
+              className="sc-bwzfXH hwgLmo"
+            >
               <styled.p>
-                dcdjc
-</styled.p>,
+                <p
+                  className="sc-bdVaJa bKeyaB"
+                >
+                  dcdjc
+                </p>
+              </styled.p>
               <styled.span
+                id="hide"
                 onClick={[Function]}
->
-                Close
-</styled.span>,
+              >
+                <span
+                  className="sc-bxivhb kkJzXi"
+                  id="hide"
+                  onClick={[Function]}
+                >
+                  Close
+                </span>
+              </styled.span>
               <styled.span
                 className=""
+                id="fav"
                 onClick={[Function]}
+              >
+                <span
+                  className="sc-bxivhb kkJzXi"
+                  id="fav"
+                  onClick={[Function]}
+                >
+                  Like
+                </span>
+              </styled.span>
+            </div>
+          </styled.div>
+        </div>
+      </div>
+    </ModalPortal>
+  </Modal>
+</Component>
+`;
+
+exports[`test will work 2`] = `
+<Component
+  favorites={
+    Object {
+      "cdcd": "dcdcd",
+    }
+  }
+  gift={
+    Object {
+      "name": "dcdjc",
+      "url": "cdcdxs",
+    }
+  }
+  hideGiftModal={[Function]}
+  isModalOpen={false}
 >
-                Like
-</styled.span>,
-            ],
-          },
-          "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "children": "dcdjc",
-              },
-              "ref": null,
-              "rendered": "dcdjc",
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "children": "Close",
-                "onClick": [Function],
-              },
-              "ref": null,
-              "rendered": "Close",
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "children": "Like",
-                "className": "",
-                "onClick": [Function],
-              },
-              "ref": null,
-              "rendered": "Like",
-              "type": [Function],
-            },
-          ],
-          "type": [Function],
+  <Modal
+    ariaHideApp={true}
+    bodyOpenClassName="ReactModal__Body--open"
+    closeTimeoutMS={0}
+    isOpen={false}
+    parentSelector={[Function]}
+    portalClassName="ReactModalPortal"
+    shouldCloseOnEsc={true}
+    shouldCloseOnOverlayClick={true}
+    shouldFocusAfterRender={true}
+    shouldReturnFocusAfterClose={true}
+    style={
+      Object {
+        "content": Object {
+          "bottom": "auto",
+          "height": "auto",
+          "left": "50%",
+          "overflow": "auto",
+          "padding": "0",
+          "top": "50%",
+          "transform": "translate(-50%, -50%)",
+          "width": "210px",
         },
-      ],
-      "type": [Function],
-    },
-  ],
-  Symbol(enzyme.__options__): Object {
-    "adapter": ReactSixteenAdapter {
-      "options": Object {
-        "enableComponentDidUpdateOnSetState": true,
-      },
-    },
-  },
-}
+      }
+    }
+  >
+    <ModalPortal
+      ariaHideApp={true}
+      bodyOpenClassName="ReactModal__Body--open"
+      closeTimeoutMS={0}
+      defaultStyles={
+        Object {
+          "content": Object {
+            "WebkitOverflowScrolling": "touch",
+            "background": "#fff",
+            "border": "1px solid #ccc",
+            "borderRadius": "4px",
+            "bottom": "40px",
+            "left": "40px",
+            "outline": "none",
+            "overflow": "auto",
+            "padding": "20px",
+            "position": "absolute",
+            "right": "40px",
+            "top": "40px",
+          },
+          "overlay": Object {
+            "backgroundColor": "rgba(255, 255, 255, 0.75)",
+            "bottom": 0,
+            "left": 0,
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+          },
+        }
+      }
+      isOpen={false}
+      parentSelector={[Function]}
+      portalClassName="ReactModalPortal"
+      shouldCloseOnEsc={true}
+      shouldCloseOnOverlayClick={true}
+      shouldFocusAfterRender={true}
+      shouldReturnFocusAfterClose={true}
+      style={
+        Object {
+          "content": Object {
+            "bottom": "auto",
+            "height": "auto",
+            "left": "50%",
+            "overflow": "auto",
+            "padding": "0",
+            "top": "50%",
+            "transform": "translate(-50%, -50%)",
+            "width": "210px",
+          },
+        }
+      }
+    />
+  </Modal>
+</Component>
 `;

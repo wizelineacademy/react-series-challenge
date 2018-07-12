@@ -1,6 +1,6 @@
 import React from 'react';
 import configureStore from 'redux-mock-store';
-import { mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import Home from '../../components/Views/Home';
 
 describe('Home', () => {
@@ -12,9 +12,9 @@ describe('Home', () => {
 
     beforeEach(()=>{
         store=mockStore(initialState)
-        container=mount(<Home 
-                                gifts={{}}
-                                store={store}/>)
+        container=shallow(<Home 
+                            store={store}
+                            gifts={{}}/>)
     })
 
     it('should dispatch action', () => {

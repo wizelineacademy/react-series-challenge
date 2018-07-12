@@ -56,8 +56,8 @@ export const AddGiftModal = (props) => {
       <ModalImage src={url} alt={""}/>
       <InfoContainer>
         <ModalHeader>{name}</ModalHeader>
-        <ModalButtons onClick={() => hideGiftModal()}>Close</ModalButtons>
-        <ModalButtons className={isFavorite ? "favorite":""} onClick={isFavorite ? ()=>deleteFavorite(gift): ()=>addFavorite(gift)}>Like</ModalButtons>
+        <ModalButtons id="hide" onClick={() => hideGiftModal()}>Close</ModalButtons>
+        <ModalButtons id="fav" className={isFavorite ? "favorite":""} onClick={isFavorite ? ()=>deleteFavorite(gift): ()=>addFavorite(gift)}>Like</ModalButtons>
       </InfoContainer>
     </Modal>
   );

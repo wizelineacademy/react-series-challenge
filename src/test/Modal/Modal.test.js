@@ -1,10 +1,35 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import { AddGiftModal } from '../../components/Modal/AddGiftModal';
+import toJson from 'enzyme-to-json'
 
 describe('test', () => {
   it('will work', () => {
-    const component = shallow(<AddGiftModal isModalOpen={true} gift={{"url":"cdcdxs", "name":"dcdjc"}} favorites={{"cdcd":"dcdcd"}}/>);
-    expect(component).toMatchSnapshot();
+    const hidefn = jest.fn();
+    const addfn = jest.fn(); 
+    const component = mount(<AddGiftModal 
+                                isModalOpen 
+                                gift={{"url":"cdcdxs", "name":"dcdjc"}} 
+                                favorites={{"cdcd":"dcdcd"}}
+                                hideGiftModal={hidefn}
+                                addFavorite={addfn}/>);
+    
+    component.find('#hide').first().simulate('click');
+    expect(hidefn).toHaveBeenCalled();
+    
+    component.find('#fav').first().simulate('click');
+    expect(addfn).toHaveBeenCalled();
+      
+    expect(toJson(component)).toMatchSnapshot();
+  });
+  it('will work', () => {
+    const hidefn = jest.fn();
+    const component = mount(<AddGiftModal 
+                                isModalOpen ={false}
+                                gift={{"url":"cdcdxs", "name":"dcdjc"}} 
+                                favorites={{"cdcd":"dcdcd"}}
+                                hideGiftModal={hidefn}/>);
+
+    expect(toJson(component)).toMatchSnapshot();
   });
 });
