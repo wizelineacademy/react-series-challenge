@@ -118,7 +118,7 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Unknown
-    id="3"
+    id={3}
     images={
         Object {
             "downsized": Object {
