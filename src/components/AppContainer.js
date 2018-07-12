@@ -1,19 +1,21 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
+import { bindActionCreators } from 'redux';
 
 import gifActions from '../actions/gifActions';
+
 import GifGrid from '../components/GifGrid';
 import SearchBar from '../components/SearchBar';
 
 import { ContainerWrapper } from '../styles/ContainerWrapper.style.js';
 
 
-class AppContainer extends Component {
+export class AppContainer extends Component {
   componentDidMount() {
-    const { dispatch } = this.props;
+    const { getTrendingGifs } = this.props;
 
-    dispatch(gifActions.creators.getTrendingGifs());
+    getTrendingGifs();
   }
 
   render() {
@@ -23,19 +25,21 @@ class AppContainer extends Component {
       <ContainerWrapper className="mt">
         <SearchBar />
 
-        <Route
-          exact
-          path="/"
-          render={({ match }) => (
-            <GifGrid gifs={ gifs } />
-          )}
-        />
-        <Route
-          path="/favorites"
-          render={({ match }) => (
-            <GifGrid gifs={ favorites } />
-          )}
-        />
+        <Switch>
+          <Route
+            exact
+            path="/"
+            render={({ match }) => (
+              <GifGrid gifs={ gifs } />
+            )}
+          />
+          <Route
+            path="/favorites"
+            render={({ match }) => (
+              <GifGrid gifs={ favorites } />
+            )}
+          />
+        </Switch>
       </ContainerWrapper>
     );
   }
@@ -43,4 +47,10 @@ class AppContainer extends Component {
 
 const mapStateToProps = (state) => state;
 
-export default connect(mapStateToProps)(AppContainer);
+const mapDispatchToProps = (dispatch) => {
+  const { getTrendingGifs } = gifActions.creators;
+
+  return bindActionCreators({ getTrendingGifs }, dispatch);
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(AppContainer);
