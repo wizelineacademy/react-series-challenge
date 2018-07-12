@@ -1,6 +1,6 @@
 import React from 'react'
 import configureStore from 'redux-mock-store'
-import FavPage from '../../../Containers/FavPage';
+import Gif from '../../components/Gif';
 import { mount } from "enzyme"
 import { Provider } from 'react-redux';
 
@@ -15,5 +15,5 @@ it('Favpage should mount', () => {
     };
 
     const store = mockStore(initialState);
-     mount( <Provider store={store}><FavPage/></Provider>);
+     mount( <Provider store={store}><Gif url={"www.google.com"} id={"123"} key={"123"}/></Provider>);
 })

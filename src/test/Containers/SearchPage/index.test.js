@@ -7,7 +7,7 @@ import { Provider } from 'react-redux';
 const middlewares = []
 const mockStore = configureStore(middlewares)
 
-it('Home should mount', () => {
+it('Search should mount', () => {
     const initialState = {
         search: {
             searchGifs: [],
@@ -16,5 +16,5 @@ it('Home should mount', () => {
     };
 
     const store = mockStore(initialState);
-     mount( <Provider store={store}><SearchPage/></Provider>);
+     mount( <Provider store={store}><SearchPage location={{state:{query:""}}}/></Provider>);
 })
