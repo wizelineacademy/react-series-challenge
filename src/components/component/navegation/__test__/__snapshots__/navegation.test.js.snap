@@ -4,20 +4,20 @@ exports[`<Navegation>  create a Snapshot  1`] = `
 <header>
   <ul>
     <li>
-      <Styled(NavLink)
+      <navegation__StyledNavLink
         activeClassName="active"
         to="/home"
       >
         HOME
-      </Styled(NavLink)>
+      </navegation__StyledNavLink>
     </li>
     <li>
-      <Styled(NavLink)
+      <navegation__StyledNavLink
         activeClassName="active"
         to="/keeps"
       >
         Favoritos
-      </Styled(NavLink)>
+      </navegation__StyledNavLink>
     </li>
   </ul>
 </header>
