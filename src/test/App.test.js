@@ -1,13 +1,16 @@
 import App from '../App';
 import React from 'react';
 import { shallow } from 'enzyme';
-import { Route } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import GifPage from '../components/GifPage/GifPage'
 import GifFavorite from '../components/GifFavorite/GifFavorite'
-import {StyledLi, StyledNavLink} from '../App.styled'
+import {StyledLi, StyledNavLink, StyledDiv, StyledHeader, StyledUl, GifSection} from '../App.styled'
+import ThemeSelector from '../components/ThemeSelector/ThemeSelector';
+
 
 describe('App', () => {
   let wrapper;
+  const func = jest.fn();
 
   beforeEach(() => {
     wrapper = shallow(
@@ -35,16 +38,6 @@ describe('App', () => {
   test('should set the routess ', () => {
     expect(
       wrapper.contains(<Route path = "/favorite" exact component = {GifFavorite} />)
-    ).toBe(true);
-  });
-
-  test('should set nav links ', () => {
-    expect(
-      wrapper.contains(<StyledLi><StyledNavLink 
-        to = "/home"
-        activeClassName = "act"
-        exact>
-        Home </StyledNavLink></StyledLi>)
     ).toBe(true);
   });
 

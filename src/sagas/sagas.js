@@ -29,7 +29,7 @@ function* setValuesTrending() {
     yield takeEvery(REQUEST_API_DATA, getDataFromTrending);
 }
 
-function* setValuesSearched() {
+export function* setValuesSearched() {
     yield takeEvery(REQUEST_API_DATA_SEARCHED, getDataFromSearch);
 }
 
