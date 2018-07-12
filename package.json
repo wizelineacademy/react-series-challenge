@@ -5,12 +5,27 @@
   "dependencies": {
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-scripts": "1.1.1"
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "1.1.1",
+    "redux": "^4.0.0",
+    "redux-actions": "^2.4.0",
+    "redux-localstorage": "^0.4.1",
+    "redux-saga": "^0.16.0",
+    "styled-components": "^3.3.3"
   },
   "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
     "collectCoverageFrom": [
       "**/src/**/*.{js,jsx}",
-      "!**/src/registerServiceWorker.{js,jsx}"
+      "!**/src/**/setupTests.js",
+      "!**/src/index.js",
+      "!**/src/enhancers/*.js",
+      "!**/src/middleware/logger.js",
+      "!**/src/registerServiceWorker.js",
+      "!**/src/global.styled.js"
     ],
     "coverageThreshold": {
       "global": {
@@ -31,6 +46,10 @@
   },
   "devDependencies": {
     "enzyme": "^3.3.0",
-    "enzyme-adapter-react-16": "^1.1.1"
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.4",
+    "jest-enzyme": "^6.0.2",
+    "jest-styled-components": "^5.0.1",
+    "redux-devtools-extension": "^2.13.5"
   }
 }

@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`favorites reducer toggleFavoriteGif 1`] = `
+Object {
+  "gifs": Object {
+    "7vzoRu05YJp2pFMd24": Object {
+      "id": "7vzoRu05YJp2pFMd24",
+      "images": Object {
+        "fixed_width": Object {
+          "height": "112",
+          "mp4": "https://media2.giphy.com/media/7vzoRu05YJp2pFMd24/200w.mp4",
+          "mp4_size": "68902",
+          "size": "361247",
+          "url": "https://media2.giphy.com/media/7vzoRu05YJp2pFMd24/200w.gif",
+          "webp": "https://media2.giphy.com/media/7vzoRu05YJp2pFMd24/200w.webp",
+          "webp_size": "122550",
+          "width": "200",
+        },
+      },
+      "slug": "ellamai-ella-mai-bood-up-7vzoRu05YJp2pFMd24",
+      "type": "gif",
+    },
+    "8FMLOqBX3TwBxnKbrA": Object {
+      "id": "8FMLOqBX3TwBxnKbrA",
+      "images": Object {
+        "fixed_width": Object {
+          "height": "112",
+          "mp4": "https://media2.giphy.com/media/8FMLOqBX3TwBxnKbrA/200w.mp4",
+          "mp4_size": "142753",
+          "size": "739715",
+          "url": "https://media2.giphy.com/media/8FMLOqBX3TwBxnKbrA/200w.gif",
+          "webp": "https://media2.giphy.com/media/8FMLOqBX3TwBxnKbrA/200w.webp",
+          "webp_size": "265118",
+          "width": "200",
+        },
+      },
+      "slug": "ellamai-ella-mai-bood-up-8FMLOqBX3TwBxnKbrA",
+      "type": "gif",
+    },
+    "undefined": Object {
+      "8FMLOqBX3TwBxnKbrA": Object {
+        "id": "8FMLOqBX3TwBxnKbrA",
+        "images": Object {
+          "fixed_width": Object {
+            "height": "112",
+            "mp4": "https://media2.giphy.com/media/8FMLOqBX3TwBxnKbrA/200w.mp4",
+            "mp4_size": "142753",
+            "size": "739715",
+            "url": "https://media2.giphy.com/media/8FMLOqBX3TwBxnKbrA/200w.gif",
+            "webp": "https://media2.giphy.com/media/8FMLOqBX3TwBxnKbrA/200w.webp",
+            "webp_size": "265118",
+            "width": "200",
+          },
+        },
+        "slug": "ellamai-ella-mai-bood-up-8FMLOqBX3TwBxnKbrA",
+        "type": "gif",
+      },
+      "liked": true,
+    },
+  },
+}
+`;

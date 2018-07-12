@@ -1,8 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import './global.styled';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import configureStore from './store';
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+const AppAndRouter = (
+  <Router>
+    <App />
+  </Router>
+);
+
+const store = configureStore()
+
+const renderApp = () => ReactDOM.render(
+  <Provider store={store}>
+    {AppAndRouter}
+  </Provider>,
+  document.getElementById('root')
+)
+
+if (process.env.NODE_ENV !== 'production' && module.hot) {
+  module.hot.accept('./App', () => {
+    renderApp()
+  })
+}
+
+renderApp()
