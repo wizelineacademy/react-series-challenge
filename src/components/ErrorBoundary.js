@@ -4,7 +4,7 @@ export default class ErrorBoundary extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      hasError: false,
+      hasError: props.hasError,
     };
   }
 
@@ -19,4 +19,8 @@ export default class ErrorBoundary extends Component {
     }
     return this.props.children;
   }
+}
+
+ErrorBoundary.defaultProps = {
+  hasError: false
 }

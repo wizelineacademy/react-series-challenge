@@ -4,6 +4,7 @@ import configureStore from 'redux-mock-store';
 import { ContainerInputText, InputText, H4 } from '../../styles/App.style';
 import { mount } from 'enzyme';
 import renderer from 'react-test-renderer';
+import ComponentGif from '../../components/ComponentGif';
 
 const initialState = {
   gifsTrending: {
@@ -37,5 +38,14 @@ describe('ComponentHome test', () => {
   test('Should render LOADING', () => {
     const favComponent = mount(<ComponentHome store={store} />);
     expect(favComponent.find(H4).length).toEqual(1);
+  });
+
+  test('Should favorite', () => {
+    const gif = { id: '01010101', title: 'my gif', gif: { url: 'http://www.zyzyzy', width: '100px', height: '100' } };
+    initialState.gifsTrending.gifs = [gif];
+    initialState.gifsFavorites.favorites = [gif];
+    const __store = mockStore(initialState);
+    const favComponent = mount(<ComponentHome store={__store} />);
+    expect(favComponent.find(ComponentGif).length).toEqual(0);
   });
 });

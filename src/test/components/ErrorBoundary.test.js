@@ -9,5 +9,10 @@ describe('Error Boundary', () => {
         const Wrapper = shallow(<ErrorBoundary><div><h1>Hi!</h1></div></ErrorBoundary>);
         expect(Wrapper).toMatchSnapshot();
     });
+
+    test('Should match snapshot hasError', () => {
+        const Wrapper = shallow(<ErrorBoundary hasError><div><h1>Hi!</h1></div></ErrorBoundary>);
+        expect(Wrapper).toMatchSnapshot();
+    });
 });
 

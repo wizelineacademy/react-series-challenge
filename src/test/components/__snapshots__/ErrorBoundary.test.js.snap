@@ -4,7 +4,9 @@ exports[`Error Boundary Should match snapshot 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <ErrorBoundary>
+  Symbol(enzyme.__unrendered__): <ErrorBoundary
+    hasError={false}
+  >
     <div>
       <h1>
         Hi!
@@ -64,6 +66,60 @@ ShallowWrapper {
         "type": "h1",
       },
       "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`Error Boundary Should match snapshot hasError 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ErrorBoundary
+    hasError={true}
+  >
+    <div>
+      <h1>
+        Hi!
+      </h1>
+    </div>
+  </ErrorBoundary>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": "Something went wrong",
+    },
+    "ref": null,
+    "rendered": "Something went wrong",
+    "type": "h1",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": "Something went wrong",
+      },
+      "ref": null,
+      "rendered": "Something went wrong",
+      "type": "h1",
     },
   ],
   Symbol(enzyme.__options__): Object {
