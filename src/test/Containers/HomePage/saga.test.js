@@ -1,6 +1,7 @@
 
 import {call, put} from 'redux-saga/effects'
-import {doQueryTrending, queryTrendingSuccess} from "../../../Containers/HomePage/saga"
+import {doQueryTrending, } from "../../../Containers/HomePage/saga"
+import {queryTrendingSuccess} from "../../../Containers/HomePage/action"
 describe('>>>Saga home works ',()=>{
     const generator = doQueryTrending("") 
     it('+++ fetch trending works', () => {

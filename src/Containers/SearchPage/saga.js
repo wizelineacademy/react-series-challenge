@@ -7,7 +7,7 @@ import serialize from '../../util/serialize'
 import { call, put, takeLatest } from 'redux-saga/effects'
 import axios from 'axios'
 
-function* doQuerySearch({ param = {} }) {
+export function* doQuerySearch({ param = {} }) {
   var q;
   param.q===""||param.q===undefined||param.q===null? q="pato":q=param.q;
 
