@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Global selectors favoritesIdsSelector should return favoritesIds from state.favorites 1`] = `
+Array [
+  "id.2",
+  "id.3",
+]
+`;
+
+exports[`Global selectors favoritesSelector should return filteredGifs from state.favorites.gifs key 1`] = `
+Object {
+  "gifs": Array [
+    Object {
+      "id": "id.2",
+    },
+  ],
+}
+`;
+
+exports[`Global selectors gifModalSelector should return isOpen, gif from state.gifModal and isFavorite set to false if gif is not in favoritesIds 1`] = `
+Object {
+  "gif": Object {
+    "id": "id.999",
+  },
+  "isFavorite": false,
+  "isOpen": false,
+}
+`;
+
+exports[`Global selectors gifModalSelector should return isOpen, gif from state.gifModal and isFavorite set to false if gif is not set  1`] = `
+Object {
+  "gif": null,
+  "isFavorite": false,
+  "isOpen": false,
+}
+`;
+
+exports[`Global selectors gifModalSelector should return isOpen, gif from state.gifModal and isFavorite set to true if gif is in favoritesIds 1`] = `
+Object {
+  "gif": Object {
+    "id": "id.2",
+  },
+  "isFavorite": true,
+  "isOpen": false,
+}
+`;
+
+exports[`Global selectors homeSelector should return gifs and isLoading values from state.home 1`] = `
+Object {
+  "gifs": Array [
+    Object {
+      "id": "id.1",
+    },
+    Object {
+      "id": "id.2",
+    },
+  ],
+  "isLoading": false,
+}
+`;
+
+exports[`Global selectors locationSelector should return an object with the path stored in state.location 1`] = `
+Object {
+  "path": "/favorites",
+}
+`;

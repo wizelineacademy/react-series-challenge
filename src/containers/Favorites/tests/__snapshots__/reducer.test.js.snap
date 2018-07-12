@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Favorites container reducer should add a favorite id when sending FAVORITE_ID_ADD action 1`] = `
+Object {
+  "favoritesIds": Array [
+    "id.1",
+  ],
+  "filteredGifs": Array [],
+  "gifs": Array [],
+}
+`;
+
+exports[`Favorites container reducer should filter the favorites gifs in reducer when calling FAVORITES_SEARCH action 1`] = `
+Object {
+  "favoritesIds": Array [],
+  "filteredGifs": Array [
+    Object {
+      "id": "id.2",
+      "title": "dogo",
+    },
+  ],
+  "gifs": Array [
+    Object {
+      "id": "id.1",
+      "title": "cat",
+    },
+    Object {
+      "id": "id.2",
+      "title": "dogo",
+    },
+  ],
+}
+`;
+
+exports[`Favorites container reducer should remove a favorite id when sending FAVORITE_ID_REMOVE action 1`] = `
+Object {
+  "favoritesIds": Array [],
+  "filteredGifs": Array [],
+  "gifs": Array [],
+}
+`;
+
+exports[`Favorites container reducer should return all the favorite gifs in reducer when not sending a term in FAVORITES_SEARCH action 1`] = `
+Object {
+  "favoritesIds": Array [],
+  "filteredGifs": Array [
+    Object {
+      "id": "id.1",
+      "title": "cat",
+    },
+    Object {
+      "id": "id.2",
+      "title": "dogo",
+    },
+  ],
+  "gifs": Array [
+    Object {
+      "id": "id.1",
+      "title": "cat",
+    },
+    Object {
+      "id": "id.2",
+      "title": "dogo",
+    },
+  ],
+}
+`;
+
+exports[`Favorites container reducer should return the initial state 1`] = `
+Object {
+  "favoritesIds": Array [],
+  "filteredGifs": Array [],
+  "gifs": Array [],
+}
+`;
+
+exports[`Favorites container reducer should set the favorites in the reducer when calling FAVORITES_SET action 1`] = `
+Object {
+  "favoritesIds": Array [],
+  "filteredGifs": Array [
+    Object {
+      "id": "id.1",
+    },
+    Object {
+      "id": "id.2",
+    },
+  ],
+  "gifs": Array [
+    Object {
+      "id": "id.1",
+    },
+    Object {
+      "id": "id.2",
+    },
+  ],
+}
+`;

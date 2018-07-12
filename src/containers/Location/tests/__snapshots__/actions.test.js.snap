@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Location container actions creators should return a correct action object with setPath creator 1`] = `
+Object {
+  "payload": "/favorites",
+  "type": "PATH_SET",
+}
+`;

@@ -1,13 +1,20 @@
 {
   "env": {
     "testing": {
-      "presets":[
-        ["env", { "modules": false }],
-        "react"
-      ],
+      "presets": [["env", { "modules": false }], "react"],
       "plugins": [
         "transform-es2015-modules-commonjs",
-        "transform-object-rest-spread"
+        "transform-object-rest-spread",
+        [
+          "module-resolver",
+          {
+            "root": ["./src"],
+            "alias": {
+              "components": "./src/components",
+              "services": "./src/services"
+            }
+          }
+        ]
       ]
     }
   }

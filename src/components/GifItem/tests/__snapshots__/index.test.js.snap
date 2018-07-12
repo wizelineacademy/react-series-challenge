@@ -1,0 +1,440 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GifItem component ActionButton styled component should render correctly 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <styled.button
+    theme={
+        Object {
+            "primary": Object {
+              "background": "#000",
+              "foreground": "#fff",
+            },
+            "secondary": Object {
+              "background": "#4965f3",
+              "foreground": "#fff",
+            },
+          }
+    }
+>
+    Agregar a favoritos
+</styled.button>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": "Agregar a favoritos",
+      "className": "sc-bwzfXH jvlLur",
+    },
+    "ref": null,
+    "rendered": "Agregar a favoritos",
+    "type": "button",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": "Agregar a favoritos",
+        "className": "sc-bwzfXH jvlLur",
+      },
+      "ref": null,
+      "rendered": "Agregar a favoritos",
+      "type": "button",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`GifItem component should render correctly 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <GifItem
+    addFavoriteId={[Function]}
+    gif={
+        Object {
+            "bitly_url": "url",
+            "id": "id.1",
+            "images": Object {
+              "preview_gif": Object {
+                "url": "url",
+              },
+            },
+            "rating": "g",
+            "title": "gif.title",
+            "username": "username1",
+          }
+    }
+    id="id.1"
+    isFavorite={false}
+    openModal={[Function]}
+    removeFavoriteId={[Function]}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": Array [
+        <styled.img
+          alt="gif.title"
+          itemProp="image"
+          src="url"
+/>,
+        <p
+          itemProp="name"
+>
+          gif.title
+</p>,
+        <p>
+          URL: 
+          <a
+                    href="url"
+          >
+                    url
+          </a>
+</p>,
+        <p>
+          by: 
+          <span
+                    itemProp="author"
+          >
+                    username1
+          </span>
+</p>,
+        <styled.button
+          className="add-favorites-button"
+          onClick={[Function]}
+>
+          + Agregar mis favoritos.
+</styled.button>,
+        <styled.button
+          onClick={[Function]}
+>
+          Ampliar
+</styled.button>,
+      ],
+      "itemscope": true,
+      "itemtype": "http://schema.org/Media",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "alt": "gif.title",
+          "itemProp": "image",
+          "src": "url",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "gif.title",
+          "itemProp": "name",
+        },
+        "ref": null,
+        "rendered": "gif.title",
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "URL: ",
+            <a
+              href="url"
+>
+              url
+</a>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          "URL: ",
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "url",
+              "href": "url",
+            },
+            "ref": null,
+            "rendered": "url",
+            "type": "a",
+          },
+        ],
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "by: ",
+            <span
+              itemProp="author"
+>
+              username1
+</span>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          "by: ",
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "username1",
+              "itemProp": "author",
+            },
+            "ref": null,
+            "rendered": "username1",
+            "type": "span",
+          },
+        ],
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": "+ Agregar mis favoritos.",
+          "className": "add-favorites-button",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": "+ Agregar mis favoritos.",
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": "Ampliar",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": "Ampliar",
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <styled.img
+            alt="gif.title"
+            itemProp="image"
+            src="url"
+/>,
+          <p
+            itemProp="name"
+>
+            gif.title
+</p>,
+          <p>
+            URL: 
+            <a
+                        href="url"
+            >
+                        url
+            </a>
+</p>,
+          <p>
+            by: 
+            <span
+                        itemProp="author"
+            >
+                        username1
+            </span>
+</p>,
+          <styled.button
+            className="add-favorites-button"
+            onClick={[Function]}
+>
+            + Agregar mis favoritos.
+</styled.button>,
+          <styled.button
+            onClick={[Function]}
+>
+            Ampliar
+</styled.button>,
+        ],
+        "itemscope": true,
+        "itemtype": "http://schema.org/Media",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "alt": "gif.title",
+            "itemProp": "image",
+            "src": "url",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "gif.title",
+            "itemProp": "name",
+          },
+          "ref": null,
+          "rendered": "gif.title",
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "URL: ",
+              <a
+                href="url"
+>
+                url
+</a>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            "URL: ",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "url",
+                "href": "url",
+              },
+              "ref": null,
+              "rendered": "url",
+              "type": "a",
+            },
+          ],
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "by: ",
+              <span
+                itemProp="author"
+>
+                username1
+</span>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            "by: ",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "username1",
+                "itemProp": "author",
+              },
+              "ref": null,
+              "rendered": "username1",
+              "type": "span",
+            },
+          ],
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": "+ Agregar mis favoritos.",
+            "className": "add-favorites-button",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "+ Agregar mis favoritos.",
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": "Ampliar",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "Ampliar",
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

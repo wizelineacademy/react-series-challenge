@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Location container reducer should modifiy the reducer state path property when sending a PATH_SET action 1`] = `
+Object {
+  "path": "/favorites",
+}
+`;
+
+exports[`Location container reducer should return the initialState or prevState when sending a not recognized action 1`] = `
+Object {
+  "path": "",
+}
+`;

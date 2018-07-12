@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Favorites container actions should correctly create the actions 1`] = `
+Object {
+  "payload": Object {
+    "id": "id.1",
+  },
+  "type": "FAVORITE_ID_ADD",
+}
+`;
+
+exports[`Favorites container actions should correctly create the actions 2`] = `
+Object {
+  "payload": Object {
+    "id": "id.1",
+  },
+  "type": "FAVORITE_ID_REMOVE",
+}
+`;
+
+exports[`Favorites container actions should correctly create the actions 3`] = `
+Object {
+  "type": "FAVORITES_LOAD",
+}
+`;
+
+exports[`Favorites container actions should correctly create the actions 4`] = `
+Object {
+  "payload": true,
+  "type": "FAVORITES_LOADING_SET",
+}
+`;
+
+exports[`Favorites container actions should correctly create the actions 5`] = `
+Object {
+  "payload": Array [],
+  "type": "FAVORITES_SET",
+}
+`;
+
+exports[`Favorites container actions should correctly create the actions 6`] = `
+Object {
+  "payload": Object {
+    "term": "dogo",
+  },
+  "type": "FAVORITES_SEARCH",
+}
+`;
