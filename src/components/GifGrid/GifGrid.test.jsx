@@ -3,6 +3,8 @@ import { shallow } from 'enzyme';
 
 import GifGrid from './GifGrid';
 
+jest.mock('../Gif', () => () => (<div>a</div>));
+
 describe('GifGrid compoent', () => {
   let gifs = null;
   let favoriteGifs = null;
