@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Template from '../Template';
 import GifGrid from '../GifGrid';
@@ -40,7 +41,13 @@ class Favorite extends React.Component {
 }
 
 Favorite.propTypes = {
-  ...GifGrid.propTypes,
+  favoriteGifs: PropTypes.arrayOf(PropTypes.shape({
+    embed_url: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+    isFavorite: PropTypes.bool.isRequired,
+  })).isRequired,
+  fetchFavorite: PropTypes.func.isRequired,
 };
 
 export default Favorite;
