@@ -24,7 +24,7 @@ export class Home extends Component{
   }
 
   render() {
-    const { data, local, modifyLocal, fetchChange, location } = this.props;
+    const { data, local, localModify, fetchChange, location } = this.props;
 
     let sugestionView;
 
@@ -37,7 +37,7 @@ export class Home extends Component{
       <div>
         {(sugestionView ? <p>{sugestionView}</p> : null)}
         <Header home={this.home} action={fetchChange} />
-        <Giphys home={this.home} data={data} local={local} modifyLocal={modifyLocal} />
+        <Giphys home={this.home} data={data} local={local} localModify={localModify} />
         <Footer />
       </div>
     );
@@ -52,12 +52,12 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  const { fetchChange, modifyLocal } = actions;
+  const { fetchChange, localModify } = actions;
 
   return bindActionCreators(
     {
       fetchChange,
-      modifyLocal,
+      localModify,
     },
     dispatch
   )

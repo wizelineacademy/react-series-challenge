@@ -2,8 +2,10 @@ import { put, call, takeEvery, select } from 'redux-saga/effects';
 import axios from 'axios';
 
 // actionsDic
-import actions from "./../constants/actions";
+import actionsDic from "./../constants/actions";
 import selectors from "./../selectors/";
+
+import action from "./../actions";
 
 const baseUrl = 'https://api.giphy.com/v1/gifs/';
 
@@ -14,9 +16,9 @@ function* fetchData  (url)  {
         })
 }
 
-export function* fetchingData(action) {
+export function* fetchingData() {
     try {
-        yield put({ type: actions.FETCH_START });
+        yield put(action.fetchStart());
 
         const word = yield select(selectors.fetch_word);
 
@@ -26,14 +28,14 @@ export function* fetchingData(action) {
         let url = `${baseUrl}${word.length > 0 ? 'search' : 'trending'}?api_key=${process.env.YOUR_API_KEY}&limit=10&rating=G${query}`;
         const data = yield call(fetchData, url);
 
-        yield put({ type: actions.FETCH_DATA, payload: { data } });
+        yield put(action.fetchData(data));
     } catch (error) {
-        yield put({ type: actions.FETCH_ERROR, payload: { error } });
+        yield put(action.fetchError(error));
     }finally {
-        yield put({ type: actions.FETCH_END})
+        yield put(action.fetchEnd());
     }
 }
 
 export default function* watchFetchData() {
-    yield takeEvery(actions.FETCH_REQUEST, fetchingData);
+    yield takeEvery(actionsDic.FETCH_REQUEST, fetchingData);
 }

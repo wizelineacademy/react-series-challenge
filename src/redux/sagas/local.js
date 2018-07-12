@@ -44,12 +44,12 @@ const setData = (data) => {
   }
 }
 
-export function* modifyLocalStorage() {
+export function* localModifyStorage() {
   const local = yield select(selectors.local);
   setData(local);
 }
 
 export default function* watchLocalStorage() {
   yield takeEvery(actionsDic.LOCALSTORAGE_GET, getLocalStorage);
-  yield takeEvery(actionsDic.LOCALSTORAGE_MODIFY, modifyLocalStorage);
+  yield takeEvery(actionsDic.LOCALSTORAGE_MODIFY, localModifyStorage);
 }

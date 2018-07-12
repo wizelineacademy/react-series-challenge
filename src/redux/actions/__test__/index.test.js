@@ -35,6 +35,6 @@ describe('Redux Actions > ', () => {
       },
     };
 
-    expect(actions.modifyLocal(object)).toEqual(expectedAction);
+    expect(actions.localModify(object)).toEqual(expectedAction);
   })
 });

@@ -42,13 +42,13 @@ describe('<Giphys> ', () => {
     const handleKeepSpy = spy(wrapper.instance(), "handleKeep");
 
     expect(handleKeepSpy.calledOnce).toBeFalsy();
-    wrapper.setProps({ data: { data: json.likes }, local: json , modifyLocal: () => {} });
+    wrapper.setProps({ data: { data: json.likes }, local: json , localModify: () => {} });
     wrapper.find('giphys__StyledButton').simulate('click', { preventDefault() { } });
     expect(handleKeepSpy.calledOnce).toBeTruthy();
   });
 
   it('Will check with the snaptshot ', () => {
-    wrapper.setProps({ data: { data: json.likes }, local: json , modifyLocal: () => {} });
+    wrapper.setProps({ data: { data: json.likes }, local: json , localModify: () => {} });
     expect(toJson(wrapper)).toMatchSnapshot();
   });
 

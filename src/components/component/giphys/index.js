@@ -18,7 +18,6 @@ const StyledButton = styled.button`
 class ImgG extends Component {
 
   handleError = (e) => {
-    debugger;
     throw new Error('img, cant load');
   }
 
@@ -34,7 +33,7 @@ class Giphys extends Component {
   handleKeep = (event,index) => {
     event.preventDefault();
     const { data } = this.props.data;
-    this.props.modifyLocal(data[index]);
+    this.props.localModify(data[index]);
   }
 
   render() {

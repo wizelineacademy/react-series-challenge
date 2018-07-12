@@ -9,6 +9,33 @@ const fetchChange = (word = '') => {
   }
 }
 
+const fetchStart = () => {
+  return {
+    type: actions.FETCH_START
+  };
+}
+
+const fetchData = (data = {}) => {
+  return {
+    type: actions.FETCH_DATA,
+    payload: { data }
+  }
+}
+
+const fetchError = (error = {}) => {
+  return {
+    type: actions.FETCH_ERROR,
+    payload: { error }
+  }
+}
+
+const fetchEnd = () => {
+  return {
+    type: actions.FETCH_END
+  };
+}
+
+
 const localSetData = (data) => {
   return {
     type: actions.LOCALSTORAGE_DATA,
@@ -25,7 +52,7 @@ const localFind = (filter = '') => {
   }
 }
 
-const modifyLocal = (object) => {
+const localModify = (object) => {
   return {
     type: actions.LOCALSTORAGE_MODIFY,
     payload: {
@@ -34,14 +61,14 @@ const modifyLocal = (object) => {
   }
 }
 
-const fetchStart = () => {
-  return { type: actions.FETCH_START };
-}
-
 export default {
+  // Fetch
+  fetchStart,
+  fetchData,
   fetchChange,
-  modifyLocal,
+  fetchError,
+  // Local
+  localModify,
   localFind,
   localSetData,
-  fetchStart,
 }

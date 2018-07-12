@@ -20,12 +20,12 @@ class Favorites extends Component{
   }
 
   render() {
-    const { local, modifyLocal, localFind } = this.props;
+    const { local, localModify, localFind } = this.props;
 
     return (
       <div>
         <Header match={this.props.match} action={localFind} />
-        <Giphys home={false} data={{ data: local.likes }} local={local} modifyLocal={modifyLocal} />
+        <Giphys home={false} data={{ data: local.likes }} local={local} localModify={localModify} />
         <Footer />
       </div>
     )
@@ -40,9 +40,9 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  const { modifyLocal, localFind } = actions;
+  const { localModify, localFind } = actions;
 
-  return bindActionCreators({ modifyLocal, localFind }, dispatch);
+  return bindActionCreators({ localModify, localFind }, dispatch);
 }
 
 export default connect(mapStateToProps,mapDispatchToProps)(Favorites);

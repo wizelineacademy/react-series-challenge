@@ -1,5 +1,5 @@
 import { put, select } from "redux-saga/effects";
-import { getLocalStorage, modifyLocalStorage } from "./../local";
+import { getLocalStorage, localModifyStorage } from "./../local";
 
 import selectors from "./../../selectors";
 
@@ -30,7 +30,7 @@ describe('SAGA local >', () => {
     // Set Dummy local
     window.localStorage.setItem(process.env.LOCAL_STORAGE_KEY, JSON.stringify(simulateLocal))
 
-    const iterator = modifyLocalStorage();
+    const iterator = localModifyStorage();
 
     currentYield = iterator.next().value;
     expect(currentYield).toEqual(select(selectors.local));
