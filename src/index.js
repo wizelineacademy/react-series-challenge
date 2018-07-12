@@ -1,8 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { Provider } from 'react-redux';
 import App from './App';
+import rootSaga from './saga';
 import registerServiceWorker from './registerServiceWorker';
+import configureStore from './configureStore';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const initialState = {
+};
+const store = configureStore(initialState);
+
+store.runSaga(rootSaga);
+
+ReactDOM.render(<Provider store={store}><Router><App /></Router></Provider>, document.getElementById('root'));
 registerServiceWorker();

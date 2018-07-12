@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Styled gif works 1`] = `
+<button
+  className="sc-bxivhb jhBOgb"
+/>
+`;
+
+exports[`Styled navbar works 1`] = `
+<button
+  className="sc-bxivhb jhBOgb"
+/>
+`;
