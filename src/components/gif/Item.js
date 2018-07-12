@@ -7,11 +7,11 @@ export default ({ data, toggleFavorite, isFavorite }) => {
       <figure>
         <img src={data.images.original.webp} alt={data.title} />
         <figcaption>
-          <p>{data.title}</p>
           <FavoriteButton
             favorite={isFavorite}
             onClick={() => toggleFavorite({ gif: data, isFavorite })}
           />
+          <p>{data.title}</p>
         </figcaption>
       </figure>
     </Item>

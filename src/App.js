@@ -21,9 +21,6 @@ class App extends Component {
                 <li>
                   <Link to="/favorites">Favorites</Link>
                 </li>
-                <li>
-                  <input type="text" />
-                </li>
               </ul>
             </Header>
 

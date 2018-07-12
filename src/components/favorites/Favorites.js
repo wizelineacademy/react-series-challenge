@@ -1,35 +1,54 @@
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import gifsActions from '../../actions/gifs';
 import { List } from '../gif';
-import { bindActionCreators } from 'redux';
+import Search from '../search';
+import { Favorites as FavoritesStyled } from './Favorites.style';
 
 class Favorites extends Component {
+  componentDidMount() {
+    this.props.clearQuery();
+    this.props.loadFavorites();
+  }
+
   render() {
     return (
-      <List
-        gifs={this.props.favorites}
-        favorites={this.props.favorites}
-        toggleFavorite={this.props.toggleFavorite}
-      />
+      <FavoritesStyled>
+        <Search searchAction={this.props.searchFavorites} />
+        <List
+          gifs={this.props.gifs}
+          favorites={this.props.gifs}
+          toggleFavorite={this.props.toggleFavorite}
+        />
+      </FavoritesStyled>
     );
   }
 }
 
 const mapStateToProps = state => {
+  const gifs = state.data.searchQuery
+    ? state.data.favoritesResults
+    : state.data.favorites;
   return {
-    gifs: state.data.gifs,
-    favorites: state.data.favorites
+    gifs
   };
 };
 
 const mapDispatchToProps = dispatch => {
-  const { loadDataStart, toggleFavorite } = gifsActions.creators;
+  const {
+    toggleFavorite,
+    searchFavorites,
+    clearQuery,
+    loadFavorites
+  } = gifsActions.creators;
 
   return bindActionCreators(
     {
-      loadDataStart,
-      toggleFavorite
+      searchFavorites,
+      toggleFavorite,
+      clearQuery,
+      loadFavorites
     },
     dispatch
   );

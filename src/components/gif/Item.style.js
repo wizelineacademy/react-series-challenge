@@ -21,7 +21,7 @@ export const Item = styled.div`
 
   figcaption {
     padding: 0 10px;
-    height: 50px;
+    height: 65px;
   }
 
   figcaption p {
@@ -34,9 +34,7 @@ export const FavoriteButton = styled.button`
   width: 30px;
   height: 30px;
   background: url(${props =>
-      props.favorite
-        ? './resources/favorite.svg'
-        : './resources/no-favorite.svg'})
+      props.favorite ? './icons/favorite.svg' : './icons/no-favorite.svg'})
     no-repeat;
   background-repeat: no-repeat;
   border: none;

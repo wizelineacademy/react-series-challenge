@@ -2,9 +2,16 @@ import { all, call, put, take, takeEvery } from 'redux-saga/effects';
 import gifsActions from '../actions/gifs';
 import axios from 'axios';
 
-const { LOAD_DATA_START, SEARCH } = gifsActions.types;
+const { LOAD_DATA_START, SEARCH, LOAD_FAVORITES } = gifsActions.types;
 
-const { loadDataFinished, loadDataFailed } = gifsActions.creators;
+const {
+  loadDataFinished,
+  loadDataFailed,
+  searchFinished,
+  searchFailed,
+  dontSearch,
+  loadFavoritesFinished
+} = gifsActions.creators;
 
 const API_URL = 'https://api.giphy.com/v1/gifs/';
 const API_KEY = 'PCv31jAmmHGTcGvY06Tow2lcIHZPMmj6';
@@ -29,16 +36,26 @@ function* loadGifs() {
   }
 }
 
-function* doSearch({ payload }) {
+function* loadFavorites() {
+  const favorites = JSON.parse(localStorage.getItem('favorites')) || {};
+
+  yield put(loadFavoritesFinished({ favorites }));
+}
+
+function* doSearch({ payload: { query } }) {
   try {
-    const { gifs } = yield call(searchGif, payload);
-    yield put(loadDataFinished({ gifs }));
+    if (query) {
+      const gifs = yield call(searchGif, query);
+      yield put(searchFinished({ gifs }));
+    } else {
+      yield put(dontSearch());
+    }
   } catch (e) {
-    yield put(loadDataFailed({ error: e }));
+    yield put(searchFailed({ error: e }));
   }
 }
 
-function* watchSearch(params) {
+function* watchSearch() {
   yield takeEvery(SEARCH, doSearch);
 }
 
@@ -48,8 +65,14 @@ function* watchLoadData() {
   yield call(loadGifs);
 }
 
+function* watchLoadFavorites() {
+  yield take(LOAD_FAVORITES);
+
+  yield call(loadFavorites);
+}
+
 function* rootSaga() {
-  yield all([watchLoadData(), watchSearch()]);
+  yield all([watchLoadData(), watchSearch(), watchLoadFavorites()]);
 }
 
 export default rootSaga;

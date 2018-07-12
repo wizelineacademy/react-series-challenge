@@ -6,9 +6,12 @@ injectGlobal`
     src: url('./fonts/Montserrat-Regular.ttf');
   }
 
-  body {
+  * {
     font-family: 'Montserrat-Regular';
     font-size: 16px;
+  }
+
+  body {
     text-align: center;
     margin: 0;
     padding: 0;
