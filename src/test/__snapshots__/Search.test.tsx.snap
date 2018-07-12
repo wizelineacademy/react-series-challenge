@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search renders with the given query as value 1`] = `
+.c0 {
+  width: 100%;
+  padding: 6px;
+  margin: 0 auto;
+  box-shadow: none;
+  color: #333;
+  box-sizing: border-box;
+}
+
+.c0:focus {
+  outline: none;
+}
+
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Connect(Search)>
+    <Search
+      fetch_gifs={[Function]}
+      query="Game of Thrones"
+      search={[Function]}
+    >
+      <styled.input
+        onChange={[Function]}
+        placeholder="Search in trending..."
+        value="Game of Thrones"
+      >
+        <input
+          className="c0"
+          onChange={[Function]}
+          placeholder="Search in trending..."
+          type="text"
+          value="Game of Thrones"
+        />
+      </styled.input>
+    </Search>
+  </Connect(Search)>
+</Provider>
+`;
+
+exports[`Search renders withouth crashing 1`] = `
+.c0 {
+  width: 100%;
+  padding: 6px;
+  margin: 0 auto;
+  box-shadow: none;
+  color: #333;
+  box-sizing: border-box;
+}
+
+.c0:focus {
+  outline: none;
+}
+
+<Search
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <styled.input
+    onChange={[Function]}
+    placeholder="Search in trending..."
+  >
+    <input
+      className="c0"
+      onChange={[Function]}
+      placeholder="Search in trending..."
+      type="text"
+    />
+  </styled.input>
+</Search>
+`;
