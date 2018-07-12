@@ -1,7 +1,8 @@
 import * as actionTypes from '../actions'
 
 const initialState = {
-  gifs: []
+  gifs: [],
+  load: false
 }
 
 const reducer = (state = initialState, action) => {
@@ -15,6 +16,11 @@ const reducer = (state = initialState, action) => {
         gifs: action.gifs
       }
 
+    case actionTypes.FETCH_DATA_SUCCESS:
+      return {
+        ...state,
+        gifs: action.gifs.data.data
+      }
     default:
       return state;
   }

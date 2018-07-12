@@ -12,11 +12,9 @@ class Favorites extends Component {
     super(props)
 
     this.state = {
-      trendingGifs: [],
       query: '',
-      search: '',
       loading: false,
-      title: '',
+      title: 'Favorites',
     }
   }
 
@@ -24,58 +22,11 @@ class Favorites extends Component {
     this.props.onFavoriteGifsInit()
   }
 
-  fetchTrending() {
-    this.setState({
-      loading: true
-    })
-
-    axios.get(
-      `https://api.giphy.com/v1/gifs/trending?api_key=mjA6Ro3NCh6Q8yWu2qyxlIksx3ACBbAJ&limit=25&rating=G`
-    )
-    .then(response => {
-      const gifs = response.data.data
-      console.log(response.data.data)
-      this.setState({
-        trendingGifs: gifs,
-        search: 'search',
-        loading: false,
-        title: 'Trending Now'
-      })
-    })
-  }
-
 
   updateQuery(e) {
     this.setState({
       query: e.target.value
     })
-  }
-
-  handleSearch = () => {
-    const { query } = this.state
-
-    this.setState({
-      loading: true
-    })
-
-    if (!query) {
-      this.fetchTrending()
-    } else {
-      axios.get(
-        `https://api.giphy.com/v1/gifs/search?api_key=mjA6Ro3NCh6Q8yWu2qyxlIksx3ACBbAJ&q=${query}&limit=25&offset=0&rating=G&lang=en`
-      )
-        .then(response => {
-          const gifs = response.data.data
-          console.log(response.data.data)
-
-          this.setState({
-            trendingGifs: gifs,
-            search: 'chicken',
-            loading: false,
-            title: query
-          })
-        })
-    }
   }
 
   render() {

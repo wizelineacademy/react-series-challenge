@@ -2,6 +2,7 @@ import React from 'react';
 import './SearchBar.css'
 import { format } from 'util';
 
+
 const SearchBar = (props) => (
   <div className="SearchBar">
     <form className="SearchBarForm">
@@ -12,7 +13,7 @@ const SearchBar = (props) => (
         onChange={props.updateQuery}
       />
     </form>
-    <a onClick={props.handleSearch}>Search</a>
+    <a onClick={() => props.handleSearch(props.value)}>Search</a>
   </div>
 );
 
