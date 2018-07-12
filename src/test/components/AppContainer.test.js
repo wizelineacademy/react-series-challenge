@@ -5,7 +5,8 @@ import { AppContainer } from '../../components/AppContainer';
 
 describe('Header component', () => {
   test('should shallow correctly', () => {
-    const header = shallow(<AppContainer />);
+    const getTrendingGifs = () => {};
+    const header = shallow(<AppContainer getTrendingGifs={ getTrendingGifs } />);
 
     expect(header).toMatchSnapshot();
   });

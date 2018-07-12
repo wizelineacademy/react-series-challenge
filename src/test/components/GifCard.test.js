@@ -1,9 +1,11 @@
 import React from 'react';
+import configureStore from 'redux-mock-store';
+
 import { shallow } from 'enzyme';
 
-import { GifCard } from '../../components/GifCard';
+import ConnectedGifCard, { GifCard } from '../../components/GifCard';
 
-describe('Header component', () => {
+describe('GifCard component', () => {
   test('should shallow correctly', () => {
     const props = {
       id: '3',
@@ -15,10 +17,14 @@ describe('Header component', () => {
       }
     };
 
-    const header = shallow(
-      <GifCard { ...props } />
-    );
+    const gifCard = shallow(<GifCard { ...props } />);
+    expect(gifCard).toMatchSnapshot();
+  });
 
-    expect(header).toMatchSnapshot();
+  test('should shallow connected component correctly', () => {
+    const store = configureStore()({ favorites: [], gifs: [] });
+    const container = shallow(<ConnectedGifCard store={store} />);
+
+    expect(container).toMatchSnapshot();
   });
 });

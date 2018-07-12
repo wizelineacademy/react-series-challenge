@@ -17,9 +17,7 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "class",
     "props": Object {
-      "children": <div
-        className="AppContainer"
->
+      "children": <styled.div>
         <styled.div>
                 <NavLink
                         activeClassName="active"
@@ -41,13 +39,13 @@ ShallowWrapper {
                         </NavLink>
                 </styled.div>
         </styled.div>
-</div>,
+</styled.div>,
     },
     "ref": null,
     "rendered": Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "host",
+      "nodeType": "class",
       "props": Object {
         "children": <styled.div>
           <NavLink
@@ -70,7 +68,6 @@ ShallowWrapper {
                     </NavLink>
           </styled.div>
 </styled.div>,
-        "className": "AppContainer",
       },
       "ref": null,
       "rendered": Object {
@@ -163,7 +160,7 @@ ShallowWrapper {
         ],
         "type": [Function],
       },
-      "type": "div",
+      "type": [Function],
     },
     "type": [Function],
   },
@@ -173,9 +170,7 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "class",
       "props": Object {
-        "children": <div
-          className="AppContainer"
->
+        "children": <styled.div>
           <styled.div>
                     <NavLink
                               activeClassName="active"
@@ -197,13 +192,13 @@ ShallowWrapper {
                               </NavLink>
                     </styled.div>
           </styled.div>
-</div>,
+</styled.div>,
       },
       "ref": null,
       "rendered": Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "host",
+        "nodeType": "class",
         "props": Object {
           "children": <styled.div>
             <NavLink
@@ -226,7 +221,6 @@ ShallowWrapper {
                         </NavLink>
             </styled.div>
 </styled.div>,
-          "className": "AppContainer",
         },
         "ref": null,
         "rendered": Object {
@@ -319,7 +313,7 @@ ShallowWrapper {
           ],
           "type": [Function],
         },
-        "type": "div",
+        "type": [Function],
       },
       "type": [Function],
     },

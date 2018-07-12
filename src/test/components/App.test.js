@@ -1,12 +1,18 @@
 import React from 'react';
+import configureStore from 'redux-mock-store';
+
 import { shallow } from 'enzyme';
 
-import App from '../../components/App';
 
-describe('Header component', () => {
+import ConnectedApp from '../../components/App';
+
+describe('App component', () => {
   test('should shallow correctly', () => {
-    const header = shallow(<App />);
+    const mockStore = configureStore();
 
-    expect(header).toMatchSnapshot();
+    const store = mockStore({});
+    const container = shallow(<ConnectedApp store={store} />);
+
+    expect(container).toMatchSnapshot();
   });
 });
