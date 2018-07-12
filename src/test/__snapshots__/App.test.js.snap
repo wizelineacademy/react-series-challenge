@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App test Should match snapshot 1`] = `
+<div
+  className="app"
+>
+  <header
+    className="sc-ifAKCX ibyWup"
+  >
+    <div
+      className="sc-EHOje bFSewm"
+    >
+      <ul>
+        <div
+          className="sc-bZQynM GcHKR"
+        >
+          <a
+            active="active"
+            className="sc-gzVnrw fvIVEE"
+            href="/Home"
+            onClick={[Function]}
+          >
+            Home
+          </a>
+        </div>
+        <div
+          className="sc-bZQynM GcHKR"
+        >
+          <a
+            active=""
+            className="sc-gzVnrw djoBuf"
+            href="/Favorites"
+            onClick={[Function]}
+          >
+            Favorites
+          </a>
+        </div>
+      </ul>
+    </div>
+  </header>
+  <div
+    className="sc-htoDjs eeOUCq"
+  >
+    <div>
+      <div
+        className="sc-dnqmqq gSaoM"
+      >
+        <input
+          className="sc-iwsKbI fBMWKb"
+          onKeyUp={[Function]}
+          placeholder="search"
+          type="text"
+        />
+      </div>
+      <h4
+        className="sc-gZMcBi ijJpaU"
+      >
+        Loading...
+      </h4>
+    </div>
+  </div>
+</div>
+`;
