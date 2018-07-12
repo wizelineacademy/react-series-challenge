@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home snapshot 1`] = `
+<styled.div>
+  <ContentList
+    data={
+      Object {
+        "data1": Object {
+          "images": Object {
+            "original": Object {
+              "webp": "srcImage",
+            },
+          },
+          "title": "title1",
+        },
+      }
+    }
+    favorites={Object {}}
+    onClick={[Function]}
+  />
+  <PortalComp
+    item=""
+    onClick={[Function]}
+    open={false}
+  />
+</styled.div>
+`;

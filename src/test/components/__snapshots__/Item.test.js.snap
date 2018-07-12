@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home snapshot 1`] = `
+<styled.div>
+  <styled.img
+    alt="Favorite"
+    id="fav-button"
+    onClick={[Function]}
+    src="no-fav.svg"
+  />
+  <styled.img
+    alt="title1"
+    onClick={[Function]}
+    src="srcImage"
+  />
+</styled.div>
+`;

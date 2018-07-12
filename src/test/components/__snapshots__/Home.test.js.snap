@@ -1,0 +1,233 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home snapshot 1`] = `
+.c0 {
+  margin: 75px auto 0 auto;
+  width: 75%;
+}
+
+.c1 {
+  padding: 6px;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+  width: 100%;
+  height: 25px;
+}
+
+.c3 {
+  display: inline-block;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 1em;
+}
+
+.c4 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 2px 2px 0 0;
+  width: 24px;
+  height: 24px;
+}
+
+.c5 {
+  width: 100%;
+  height: 100%;
+}
+
+.c2 {
+  position: absolute;
+  overflow: hidden;
+  z-index: -1;
+}
+
+<Connect(Home)
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Home
+    addToFavContent={[Function]}
+    content={
+      Object {
+        "data": Object {
+          "data": Object {
+            "images": Object {
+              "original": Object {
+                "webp": "srcImage",
+              },
+            },
+            "title": "title1",
+          },
+        },
+        "favorites": Object {},
+      }
+    }
+    fetchData={[Function]}
+    removeFavContent={[Function]}
+    startSearch={[Function]}
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+    storeSubscription={
+      Subscription {
+        "listeners": Object {
+          "clear": [Function],
+          "get": [Function],
+          "notify": [Function],
+          "subscribe": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "unsubscribe": [Function],
+      }
+    }
+  >
+    <div>
+      <SearchbarComp
+        handleKeyPress={[Function]}
+      >
+        <styled.div>
+          <div
+            className="c0"
+          >
+            <styled.input
+              onChange={null}
+              onKeyPress={[Function]}
+              placeholder="What are you looking for..."
+              type="text"
+            >
+              <input
+                className="c1"
+                onChange={null}
+                onKeyPress={[Function]}
+                placeholder="What are you looking for..."
+                type="text"
+              />
+            </styled.input>
+          </div>
+        </styled.div>
+      </SearchbarComp>
+      <ContentComp
+        data={
+          Object {
+            "data": Object {
+              "images": Object {
+                "original": Object {
+                  "webp": "srcImage",
+                },
+              },
+              "title": "title1",
+            },
+          }
+        }
+        favorites={Object {}}
+        onClickFav={[Function]}
+      >
+        <styled.div>
+          <div
+            className="c2"
+          >
+            <ContentList
+              data={
+                Object {
+                  "data": Object {
+                    "images": Object {
+                      "original": Object {
+                        "webp": "srcImage",
+                      },
+                    },
+                    "title": "title1",
+                  },
+                }
+              }
+              favorites={Object {}}
+              onClick={[Function]}
+              onClickFav={[Function]}
+            >
+              <ItemComp
+                isFav={false}
+                item={
+                  Object {
+                    "images": Object {
+                      "original": Object {
+                        "webp": "srcImage",
+                      },
+                    },
+                    "title": "title1",
+                  }
+                }
+                key="0"
+                onClick={[Function]}
+                onClickFav={[Function]}
+              >
+                <styled.div>
+                  <div
+                    className="c3"
+                  >
+                    <styled.img
+                      alt="Favorite"
+                      id="fav-button"
+                      onClick={[Function]}
+                      src="no-fav.svg"
+                    >
+                      <img
+                        alt="Favorite"
+                        className="c4"
+                        id="fav-button"
+                        onClick={[Function]}
+                        src="no-fav.svg"
+                      />
+                    </styled.img>
+                    <styled.img
+                      alt="title1"
+                      onClick={[Function]}
+                      src="srcImage"
+                    >
+                      <img
+                        alt="title1"
+                        className="c5"
+                        onClick={[Function]}
+                        src="srcImage"
+                      />
+                    </styled.img>
+                  </div>
+                </styled.div>
+              </ItemComp>
+            </ContentList>
+            <PortalComp
+              item=""
+              onClick={[Function]}
+              open={false}
+            />
+          </div>
+        </styled.div>
+      </ContentComp>
+    </div>
+  </Home>
+</Connect(Home)>
+`;
