@@ -22,4 +22,11 @@ describe('test', () => {
                                 favoritesMatched={{}}/>);
     expect(component).toMatchSnapshot();
   });
+  it('will work', () => {
+    const component = shallow(<Favorites 
+                                gifts={[gift,gift,gift,gift,gift,gift]}
+                                isSearching={true}
+                                favoritesMatched={{}}/>);
+    expect(component).toMatchSnapshot();
+  });
 });

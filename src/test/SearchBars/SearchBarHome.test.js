@@ -1,10 +1,15 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import { SearchBarHome } from '../../components/SearchBars/SearchBarHome';
 
 describe('test', () => {
   it('will work', () => {
-    const component = shallow(<SearchBarHome/>);
+    const getfn=jest.fn();
+    const component = mount(<SearchBarHome
+      getGift={getfn}/>);
+
+    component.find('input').simulate('change');
+
     expect(component).toMatchSnapshot();
   });
 });

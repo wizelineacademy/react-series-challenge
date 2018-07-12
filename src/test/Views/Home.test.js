@@ -1,8 +1,7 @@
 import React from 'react';
 import configureStore from 'redux-mock-store';
-import { mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import Home from '../../components/Views/Home';
-import toJson from 'enzyme-to-json';
 
 describe('Home', () => {
     const initialState = {};
@@ -13,12 +12,12 @@ describe('Home', () => {
 
     beforeEach(()=>{
         store=mockStore(initialState)
-        container=mount(<Home 
+        container=shallow(<Home 
                             store={store}
-                            gifts={{"cdcd":"cdcdc"}}/>)
+                            gifts={null}/>)
     })
 
-    it('Home', () => {
-        expect(toJson(container)).toMatchSnapshot();
+    it('should dispatch action', () => {
+        expect(container).toMatchSnapshot();
     })
 })
