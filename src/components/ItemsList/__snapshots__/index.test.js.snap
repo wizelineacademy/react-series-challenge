@@ -8,6 +8,322 @@ ShallowWrapper {
     currentItemsList={
         Array [
             Object {
+              "favorite": true,
+              "id": "WsKVAem02Efuw",
+              "images": Object {
+                "original": Object {
+                  "url": "https://media1.giphy.com/media/WsKVAem02Efuw/giphy.gif",
+                },
+              },
+              "title": "happy emma watson GIF",
+            },
+            Object {
+              "favorite": true,
+              "id": "rSsoG2WPmzOIE",
+              "images": Object {
+                "original": Object {
+                  "url": "https://media3.giphy.com/media/rSsoG2WPmzOIE/giphy.gif",
+                },
+              },
+              "title": "emma watson GIF",
+            },
+          ]
+    }
+    favoritesButton={[Function]}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div>
+          <img
+                    alt="hi"
+                    src="https://media1.giphy.com/media/WsKVAem02Efuw/giphy.gif"
+          />
+          <button
+                    onClick={[Function]}
+          >
+                    Make me your favorite
+          </button>
+          Added to Favorites
+</div>,
+        <div>
+          <img
+                    alt="hi"
+                    src="https://media3.giphy.com/media/rSsoG2WPmzOIE/giphy.gif"
+          />
+          <button
+                    onClick={[Function]}
+          >
+                    Make me your favorite
+          </button>
+          Added to Favorites
+</div>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": "WsKVAem02Efuw",
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <img
+              alt="hi"
+              src="https://media1.giphy.com/media/WsKVAem02Efuw/giphy.gif"
+/>,
+            <button
+              onClick={[Function]}
+>
+              Make me your favorite
+</button>,
+            "Added to Favorites",
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "alt": "hi",
+              "src": "https://media1.giphy.com/media/WsKVAem02Efuw/giphy.gif",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "img",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Make me your favorite",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": "Make me your favorite",
+            "type": "button",
+          },
+          "Added to Favorites",
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": "rSsoG2WPmzOIE",
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <img
+              alt="hi"
+              src="https://media3.giphy.com/media/rSsoG2WPmzOIE/giphy.gif"
+/>,
+            <button
+              onClick={[Function]}
+>
+              Make me your favorite
+</button>,
+            "Added to Favorites",
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "alt": "hi",
+              "src": "https://media3.giphy.com/media/rSsoG2WPmzOIE/giphy.gif",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "img",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Make me your favorite",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": "Make me your favorite",
+            "type": "button",
+          },
+          "Added to Favorites",
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div>
+            <img
+                        alt="hi"
+                        src="https://media1.giphy.com/media/WsKVAem02Efuw/giphy.gif"
+            />
+            <button
+                        onClick={[Function]}
+            >
+                        Make me your favorite
+            </button>
+            Added to Favorites
+</div>,
+          <div>
+            <img
+                        alt="hi"
+                        src="https://media3.giphy.com/media/rSsoG2WPmzOIE/giphy.gif"
+            />
+            <button
+                        onClick={[Function]}
+            >
+                        Make me your favorite
+            </button>
+            Added to Favorites
+</div>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": "WsKVAem02Efuw",
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <img
+                alt="hi"
+                src="https://media1.giphy.com/media/WsKVAem02Efuw/giphy.gif"
+/>,
+              <button
+                onClick={[Function]}
+>
+                Make me your favorite
+</button>,
+              "Added to Favorites",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "alt": "hi",
+                "src": "https://media1.giphy.com/media/WsKVAem02Efuw/giphy.gif",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "img",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Make me your favorite",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": "Make me your favorite",
+              "type": "button",
+            },
+            "Added to Favorites",
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": "rSsoG2WPmzOIE",
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <img
+                alt="hi"
+                src="https://media3.giphy.com/media/rSsoG2WPmzOIE/giphy.gif"
+/>,
+              <button
+                onClick={[Function]}
+>
+                Make me your favorite
+</button>,
+              "Added to Favorites",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "alt": "hi",
+                "src": "https://media3.giphy.com/media/rSsoG2WPmzOIE/giphy.gif",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "img",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Make me your favorite",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": "Make me your favorite",
+              "type": "button",
+            },
+            "Added to Favorites",
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`test ItemsList Render should render ItemsList Component null condition 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ItemsList
+    currentItemsList={
+        Array [
+            Object {
               "favorite": false,
               "id": "WsKVAem02Efuw",
               "images": Object {

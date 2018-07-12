@@ -14,6 +14,29 @@ const testCurrentItemsList = [
         url: 'https://media1.giphy.com/media/WsKVAem02Efuw/giphy.gif',
       },
     },
+    favorite: true,
+  },
+  {
+    title: 'emma watson GIF',
+    id: 'rSsoG2WPmzOIE',
+    images: {
+      original: {
+        url: 'https://media3.giphy.com/media/rSsoG2WPmzOIE/giphy.gif',
+      },
+    },
+    favorite: true,
+  },
+];
+
+const testCurrentItemsListFavoriteNull = [
+  {
+    title: 'happy emma watson GIF',
+    id: 'WsKVAem02Efuw',
+    images: {
+      original: {
+        url: 'https://media1.giphy.com/media/WsKVAem02Efuw/giphy.gif',
+      },
+    },
     favorite: false,
   },
   {
@@ -42,6 +65,15 @@ describe('test ItemsList Render', () => {
     const renderedComponent = shallow(
       <ItemsListComponent
         currentItemsList={testCurrentItemsList}
+        favoritesButton={onClickMock}
+      />
+    );
+    expect(renderedComponent).toMatchSnapshot();
+  });
+  it('should render ItemsList Component null condition', () => {
+    const renderedComponent = shallow(
+      <ItemsListComponent
+        currentItemsList={testCurrentItemsListFavoriteNull}
         favoritesButton={onClickMock}
       />
     );
