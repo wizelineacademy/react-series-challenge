@@ -1,5 +1,5 @@
-import favGifs from '../../reducers/favGifs';
 import {ADD_ITEM,SEARCH_FAV_GIFS} from '../../reducers/favGifs';
+import favGifs from '../../reducers/favGifs';
 
 const testElement = {elements: {testKey:{id:'20012'}}};
 const testString  = 'test string';
@@ -15,11 +15,11 @@ describe('addGifs reducer', () => {
     });
 
     it('Should add Gif to favGifs state', () => {
-        const loadFavGifs = {
-            type : ADD_ITEM,
-            gif  :  testElement
+        const startAction = {
+            type    : ADD_ITEM,
+            payload :  {gif: {id: 'test'}}
         };
-        expect(loadFavGifs.gif).toEqual(testElement);
+        expect(favGifs(testElement, startAction)).toEqual({elements: {testKey:{id:'20012'}}});
     });
 
     it('Should add Gif if it has a string similar at his title', () => {
