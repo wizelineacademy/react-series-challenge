@@ -331,7 +331,7 @@ ReactWrapper {
               "memoizedState": Object {
                 "errorInfo": Object {
                   "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                 },
@@ -354,7 +354,7 @@ ReactWrapper {
                 "baseState": Object {
                   "errorInfo": Object {
                     "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                   },
@@ -397,7 +397,7 @@ ReactWrapper {
                 "memoizedState": Object {
                   "errorInfo": Object {
                     "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                   },
@@ -420,7 +420,7 @@ ReactWrapper {
                   "baseState": Object {
                     "errorInfo": Object {
                       "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                     },
@@ -468,7 +468,7 @@ ReactWrapper {
                   "memoizedState": Object {
                     "errorInfo": Object {
                       "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                     },
@@ -491,7 +491,7 @@ ReactWrapper {
                     "baseState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -592,7 +592,7 @@ ReactWrapper {
                 "memoizedState": Object {
                   "errorInfo": Object {
                     "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                   },
@@ -615,7 +615,7 @@ ReactWrapper {
                   "baseState": Object {
                     "errorInfo": Object {
                       "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                     },
@@ -672,7 +672,7 @@ ReactWrapper {
                 "memoizedState": Object {
                   "errorInfo": Object {
                     "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                   },
@@ -695,7 +695,7 @@ ReactWrapper {
                   "baseState": Object {
                     "errorInfo": Object {
                       "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                     },
@@ -743,7 +743,7 @@ ReactWrapper {
                   "memoizedState": Object {
                     "errorInfo": Object {
                       "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                     },
@@ -766,7 +766,7 @@ ReactWrapper {
                     "baseState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -867,7 +867,7 @@ ReactWrapper {
                 "memoizedState": Object {
                   "errorInfo": Object {
                     "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                   },
@@ -890,7 +890,7 @@ ReactWrapper {
                   "baseState": Object {
                     "errorInfo": Object {
                       "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                     },
@@ -1065,7 +1065,7 @@ ReactWrapper {
                   "memoizedState": Object {
                     "errorInfo": Object {
                       "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                     },
@@ -1088,7 +1088,7 @@ ReactWrapper {
                     "baseState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -1136,7 +1136,7 @@ ReactWrapper {
                     "memoizedState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -1159,7 +1159,7 @@ ReactWrapper {
                       "baseState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -1260,7 +1260,7 @@ ReactWrapper {
                   "memoizedState": Object {
                     "errorInfo": Object {
                       "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                     },
@@ -1283,7 +1283,7 @@ ReactWrapper {
                     "baseState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -1340,7 +1340,7 @@ ReactWrapper {
                   "memoizedState": Object {
                     "errorInfo": Object {
                       "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                     },
@@ -1363,7 +1363,7 @@ ReactWrapper {
                     "baseState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -1411,7 +1411,7 @@ ReactWrapper {
                     "memoizedState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -1434,7 +1434,7 @@ ReactWrapper {
                       "baseState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -1535,7 +1535,7 @@ ReactWrapper {
                   "memoizedState": Object {
                     "errorInfo": Object {
                       "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                     },
@@ -1558,7 +1558,7 @@ ReactWrapper {
                     "baseState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -2044,7 +2044,7 @@ ReactWrapper {
                   "memoizedState": Object {
                     "errorInfo": Object {
                       "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                     },
@@ -2067,7 +2067,7 @@ ReactWrapper {
                     "baseState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -2110,7 +2110,7 @@ ReactWrapper {
                     "memoizedState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -2133,7 +2133,7 @@ ReactWrapper {
                       "baseState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -2181,7 +2181,7 @@ ReactWrapper {
                       "memoizedState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -2204,7 +2204,7 @@ ReactWrapper {
                         "baseState": Object {
                           "errorInfo": Object {
                             "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                           },
@@ -2305,7 +2305,7 @@ ReactWrapper {
                     "memoizedState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -2328,7 +2328,7 @@ ReactWrapper {
                       "baseState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -2385,7 +2385,7 @@ ReactWrapper {
                     "memoizedState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -2408,7 +2408,7 @@ ReactWrapper {
                       "baseState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -2456,7 +2456,7 @@ ReactWrapper {
                       "memoizedState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -2479,7 +2479,7 @@ ReactWrapper {
                         "baseState": Object {
                           "errorInfo": Object {
                             "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                           },
@@ -2580,7 +2580,7 @@ ReactWrapper {
                     "memoizedState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -2603,7 +2603,7 @@ ReactWrapper {
                       "baseState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -2718,7 +2718,7 @@ ReactWrapper {
                   "memoizedState": Object {
                     "errorInfo": Object {
                       "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                     },
@@ -2813,7 +2813,7 @@ ReactWrapper {
                     "baseState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -2861,7 +2861,7 @@ ReactWrapper {
                     "memoizedState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -2956,7 +2956,7 @@ ReactWrapper {
                       "baseState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -3057,7 +3057,7 @@ ReactWrapper {
                   "memoizedState": Object {
                     "errorInfo": Object {
                       "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                     },
@@ -3152,7 +3152,7 @@ ReactWrapper {
                     "baseState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -3209,7 +3209,7 @@ ReactWrapper {
                   "memoizedState": Object {
                     "errorInfo": Object {
                       "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                     },
@@ -3304,7 +3304,7 @@ ReactWrapper {
                     "baseState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -3352,7 +3352,7 @@ ReactWrapper {
                     "memoizedState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -3447,7 +3447,7 @@ ReactWrapper {
                       "baseState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -3548,7 +3548,7 @@ ReactWrapper {
                   "memoizedState": Object {
                     "errorInfo": Object {
                       "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                     },
@@ -3643,7 +3643,7 @@ ReactWrapper {
                     "baseState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -4095,7 +4095,7 @@ ReactWrapper {
                     "memoizedState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -4118,7 +4118,7 @@ ReactWrapper {
                       "baseState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -4161,7 +4161,7 @@ ReactWrapper {
                       "memoizedState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -4184,7 +4184,7 @@ ReactWrapper {
                         "baseState": Object {
                           "errorInfo": Object {
                             "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                           },
@@ -4232,7 +4232,7 @@ ReactWrapper {
                         "memoizedState": Object {
                           "errorInfo": Object {
                             "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                           },
@@ -4255,7 +4255,7 @@ ReactWrapper {
                           "baseState": Object {
                             "errorInfo": Object {
                               "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                             },
@@ -4356,7 +4356,7 @@ ReactWrapper {
                       "memoizedState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -4379,7 +4379,7 @@ ReactWrapper {
                         "baseState": Object {
                           "errorInfo": Object {
                             "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                           },
@@ -4436,7 +4436,7 @@ ReactWrapper {
                       "memoizedState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -4459,7 +4459,7 @@ ReactWrapper {
                         "baseState": Object {
                           "errorInfo": Object {
                             "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                           },
@@ -4507,7 +4507,7 @@ ReactWrapper {
                         "memoizedState": Object {
                           "errorInfo": Object {
                             "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                           },
@@ -4530,7 +4530,7 @@ ReactWrapper {
                           "baseState": Object {
                             "errorInfo": Object {
                               "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                             },
@@ -4631,7 +4631,7 @@ ReactWrapper {
                       "memoizedState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -4654,7 +4654,7 @@ ReactWrapper {
                         "baseState": Object {
                           "errorInfo": Object {
                             "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                           },
@@ -4769,7 +4769,7 @@ ReactWrapper {
                     "memoizedState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -4864,7 +4864,7 @@ ReactWrapper {
                       "baseState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -4912,7 +4912,7 @@ ReactWrapper {
                       "memoizedState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -5007,7 +5007,7 @@ ReactWrapper {
                         "baseState": Object {
                           "errorInfo": Object {
                             "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                           },
@@ -5108,7 +5108,7 @@ ReactWrapper {
                     "memoizedState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -5203,7 +5203,7 @@ ReactWrapper {
                       "baseState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -5260,7 +5260,7 @@ ReactWrapper {
                     "memoizedState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -5355,7 +5355,7 @@ ReactWrapper {
                       "baseState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -5403,7 +5403,7 @@ ReactWrapper {
                       "memoizedState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -5498,7 +5498,7 @@ ReactWrapper {
                         "baseState": Object {
                           "errorInfo": Object {
                             "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                           },
@@ -5599,7 +5599,7 @@ ReactWrapper {
                     "memoizedState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -5694,7 +5694,7 @@ ReactWrapper {
                       "baseState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -7936,7 +7936,7 @@ ReactWrapper {
           "memoizedState": Object {
             "errorInfo": Object {
               "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
             },
@@ -10028,7 +10028,7 @@ ReactWrapper {
             "baseState": Object {
               "errorInfo": Object {
                 "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
               },
@@ -10377,7 +10377,7 @@ ReactWrapper {
               "memoizedState": Object {
                 "errorInfo": Object {
                   "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                 },
@@ -10400,7 +10400,7 @@ ReactWrapper {
                 "baseState": Object {
                   "errorInfo": Object {
                     "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                   },
@@ -10443,7 +10443,7 @@ ReactWrapper {
                 "memoizedState": Object {
                   "errorInfo": Object {
                     "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                   },
@@ -10466,7 +10466,7 @@ ReactWrapper {
                   "baseState": Object {
                     "errorInfo": Object {
                       "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                     },
@@ -10514,7 +10514,7 @@ ReactWrapper {
                   "memoizedState": Object {
                     "errorInfo": Object {
                       "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                     },
@@ -10537,7 +10537,7 @@ ReactWrapper {
                     "baseState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -10638,7 +10638,7 @@ ReactWrapper {
                 "memoizedState": Object {
                   "errorInfo": Object {
                     "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                   },
@@ -10661,7 +10661,7 @@ ReactWrapper {
                   "baseState": Object {
                     "errorInfo": Object {
                       "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                     },
@@ -10718,7 +10718,7 @@ ReactWrapper {
                 "memoizedState": Object {
                   "errorInfo": Object {
                     "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                   },
@@ -10741,7 +10741,7 @@ ReactWrapper {
                   "baseState": Object {
                     "errorInfo": Object {
                       "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                     },
@@ -10789,7 +10789,7 @@ ReactWrapper {
                   "memoizedState": Object {
                     "errorInfo": Object {
                       "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                     },
@@ -10812,7 +10812,7 @@ ReactWrapper {
                     "baseState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -10913,7 +10913,7 @@ ReactWrapper {
                 "memoizedState": Object {
                   "errorInfo": Object {
                     "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                   },
@@ -10936,7 +10936,7 @@ ReactWrapper {
                   "baseState": Object {
                     "errorInfo": Object {
                       "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                     },
@@ -11111,7 +11111,7 @@ ReactWrapper {
                   "memoizedState": Object {
                     "errorInfo": Object {
                       "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                     },
@@ -11134,7 +11134,7 @@ ReactWrapper {
                     "baseState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -11182,7 +11182,7 @@ ReactWrapper {
                     "memoizedState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -11205,7 +11205,7 @@ ReactWrapper {
                       "baseState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -11306,7 +11306,7 @@ ReactWrapper {
                   "memoizedState": Object {
                     "errorInfo": Object {
                       "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                     },
@@ -11329,7 +11329,7 @@ ReactWrapper {
                     "baseState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -11386,7 +11386,7 @@ ReactWrapper {
                   "memoizedState": Object {
                     "errorInfo": Object {
                       "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                     },
@@ -11409,7 +11409,7 @@ ReactWrapper {
                     "baseState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -11457,7 +11457,7 @@ ReactWrapper {
                     "memoizedState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -11480,7 +11480,7 @@ ReactWrapper {
                       "baseState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -11581,7 +11581,7 @@ ReactWrapper {
                   "memoizedState": Object {
                     "errorInfo": Object {
                       "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                     },
@@ -11604,7 +11604,7 @@ ReactWrapper {
                     "baseState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -12090,7 +12090,7 @@ ReactWrapper {
                   "memoizedState": Object {
                     "errorInfo": Object {
                       "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                     },
@@ -12113,7 +12113,7 @@ ReactWrapper {
                     "baseState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -12156,7 +12156,7 @@ ReactWrapper {
                     "memoizedState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -12179,7 +12179,7 @@ ReactWrapper {
                       "baseState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -12227,7 +12227,7 @@ ReactWrapper {
                       "memoizedState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -12250,7 +12250,7 @@ ReactWrapper {
                         "baseState": Object {
                           "errorInfo": Object {
                             "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                           },
@@ -12351,7 +12351,7 @@ ReactWrapper {
                     "memoizedState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -12374,7 +12374,7 @@ ReactWrapper {
                       "baseState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -12431,7 +12431,7 @@ ReactWrapper {
                     "memoizedState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -12454,7 +12454,7 @@ ReactWrapper {
                       "baseState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -12502,7 +12502,7 @@ ReactWrapper {
                       "memoizedState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -12525,7 +12525,7 @@ ReactWrapper {
                         "baseState": Object {
                           "errorInfo": Object {
                             "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                           },
@@ -12626,7 +12626,7 @@ ReactWrapper {
                     "memoizedState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -12649,7 +12649,7 @@ ReactWrapper {
                       "baseState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -12764,7 +12764,7 @@ ReactWrapper {
                   "memoizedState": Object {
                     "errorInfo": Object {
                       "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                     },
@@ -12859,7 +12859,7 @@ ReactWrapper {
                     "baseState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -12907,7 +12907,7 @@ ReactWrapper {
                     "memoizedState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -13002,7 +13002,7 @@ ReactWrapper {
                       "baseState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -13103,7 +13103,7 @@ ReactWrapper {
                   "memoizedState": Object {
                     "errorInfo": Object {
                       "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                     },
@@ -13198,7 +13198,7 @@ ReactWrapper {
                     "baseState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -13255,7 +13255,7 @@ ReactWrapper {
                   "memoizedState": Object {
                     "errorInfo": Object {
                       "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                     },
@@ -13350,7 +13350,7 @@ ReactWrapper {
                     "baseState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -13398,7 +13398,7 @@ ReactWrapper {
                     "memoizedState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -13493,7 +13493,7 @@ ReactWrapper {
                       "baseState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -13594,7 +13594,7 @@ ReactWrapper {
                   "memoizedState": Object {
                     "errorInfo": Object {
                       "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                     },
@@ -13689,7 +13689,7 @@ ReactWrapper {
                     "baseState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -14141,7 +14141,7 @@ ReactWrapper {
                     "memoizedState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -14164,7 +14164,7 @@ ReactWrapper {
                       "baseState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -14207,7 +14207,7 @@ ReactWrapper {
                       "memoizedState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -14230,7 +14230,7 @@ ReactWrapper {
                         "baseState": Object {
                           "errorInfo": Object {
                             "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                           },
@@ -14278,7 +14278,7 @@ ReactWrapper {
                         "memoizedState": Object {
                           "errorInfo": Object {
                             "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                           },
@@ -14301,7 +14301,7 @@ ReactWrapper {
                           "baseState": Object {
                             "errorInfo": Object {
                               "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                             },
@@ -14402,7 +14402,7 @@ ReactWrapper {
                       "memoizedState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -14425,7 +14425,7 @@ ReactWrapper {
                         "baseState": Object {
                           "errorInfo": Object {
                             "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                           },
@@ -14482,7 +14482,7 @@ ReactWrapper {
                       "memoizedState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -14505,7 +14505,7 @@ ReactWrapper {
                         "baseState": Object {
                           "errorInfo": Object {
                             "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                           },
@@ -14553,7 +14553,7 @@ ReactWrapper {
                         "memoizedState": Object {
                           "errorInfo": Object {
                             "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                           },
@@ -14576,7 +14576,7 @@ ReactWrapper {
                           "baseState": Object {
                             "errorInfo": Object {
                               "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                             },
@@ -14677,7 +14677,7 @@ ReactWrapper {
                       "memoizedState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -14700,7 +14700,7 @@ ReactWrapper {
                         "baseState": Object {
                           "errorInfo": Object {
                             "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                           },
@@ -14815,7 +14815,7 @@ ReactWrapper {
                     "memoizedState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -14910,7 +14910,7 @@ ReactWrapper {
                       "baseState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -14958,7 +14958,7 @@ ReactWrapper {
                       "memoizedState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -15053,7 +15053,7 @@ ReactWrapper {
                         "baseState": Object {
                           "errorInfo": Object {
                             "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                           },
@@ -15154,7 +15154,7 @@ ReactWrapper {
                     "memoizedState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -15249,7 +15249,7 @@ ReactWrapper {
                       "baseState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -15306,7 +15306,7 @@ ReactWrapper {
                     "memoizedState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -15401,7 +15401,7 @@ ReactWrapper {
                       "baseState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -15449,7 +15449,7 @@ ReactWrapper {
                       "memoizedState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -15544,7 +15544,7 @@ ReactWrapper {
                         "baseState": Object {
                           "errorInfo": Object {
                             "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                           },
@@ -15645,7 +15645,7 @@ ReactWrapper {
                     "memoizedState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -15740,7 +15740,7 @@ ReactWrapper {
                       "baseState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -15913,7 +15913,7 @@ ReactWrapper {
             "payload": Object {
               "errorInfo": Object {
                 "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
               },
@@ -15932,7 +15932,7 @@ ReactWrapper {
             "payload": Object {
               "errorInfo": Object {
                 "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
               },
@@ -15951,7 +15951,7 @@ ReactWrapper {
       "state": Object {
         "errorInfo": Object {
           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
         },
@@ -16330,7 +16330,7 @@ ReactWrapper {
                 "memoizedState": Object {
                   "errorInfo": Object {
                     "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                   },
@@ -16353,7 +16353,7 @@ ReactWrapper {
                   "baseState": Object {
                     "errorInfo": Object {
                       "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                     },
@@ -16396,7 +16396,7 @@ ReactWrapper {
                   "memoizedState": Object {
                     "errorInfo": Object {
                       "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                     },
@@ -16419,7 +16419,7 @@ ReactWrapper {
                     "baseState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -16467,7 +16467,7 @@ ReactWrapper {
                     "memoizedState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -16490,7 +16490,7 @@ ReactWrapper {
                       "baseState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -16591,7 +16591,7 @@ ReactWrapper {
                   "memoizedState": Object {
                     "errorInfo": Object {
                       "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                     },
@@ -16614,7 +16614,7 @@ ReactWrapper {
                     "baseState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -16671,7 +16671,7 @@ ReactWrapper {
                   "memoizedState": Object {
                     "errorInfo": Object {
                       "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                     },
@@ -16694,7 +16694,7 @@ ReactWrapper {
                     "baseState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -16742,7 +16742,7 @@ ReactWrapper {
                     "memoizedState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -16765,7 +16765,7 @@ ReactWrapper {
                       "baseState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -16866,7 +16866,7 @@ ReactWrapper {
                   "memoizedState": Object {
                     "errorInfo": Object {
                       "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                     },
@@ -16889,7 +16889,7 @@ ReactWrapper {
                     "baseState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -17064,7 +17064,7 @@ ReactWrapper {
                     "memoizedState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -17087,7 +17087,7 @@ ReactWrapper {
                       "baseState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -17135,7 +17135,7 @@ ReactWrapper {
                       "memoizedState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -17158,7 +17158,7 @@ ReactWrapper {
                         "baseState": Object {
                           "errorInfo": Object {
                             "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                           },
@@ -17259,7 +17259,7 @@ ReactWrapper {
                     "memoizedState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -17282,7 +17282,7 @@ ReactWrapper {
                       "baseState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -17339,7 +17339,7 @@ ReactWrapper {
                     "memoizedState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -17362,7 +17362,7 @@ ReactWrapper {
                       "baseState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -17410,7 +17410,7 @@ ReactWrapper {
                       "memoizedState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -17433,7 +17433,7 @@ ReactWrapper {
                         "baseState": Object {
                           "errorInfo": Object {
                             "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                           },
@@ -17534,7 +17534,7 @@ ReactWrapper {
                     "memoizedState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -17557,7 +17557,7 @@ ReactWrapper {
                       "baseState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -18043,7 +18043,7 @@ ReactWrapper {
                     "memoizedState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -18066,7 +18066,7 @@ ReactWrapper {
                       "baseState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -18109,7 +18109,7 @@ ReactWrapper {
                       "memoizedState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -18132,7 +18132,7 @@ ReactWrapper {
                         "baseState": Object {
                           "errorInfo": Object {
                             "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                           },
@@ -18180,7 +18180,7 @@ ReactWrapper {
                         "memoizedState": Object {
                           "errorInfo": Object {
                             "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                           },
@@ -18203,7 +18203,7 @@ ReactWrapper {
                           "baseState": Object {
                             "errorInfo": Object {
                               "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                             },
@@ -18304,7 +18304,7 @@ ReactWrapper {
                       "memoizedState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -18327,7 +18327,7 @@ ReactWrapper {
                         "baseState": Object {
                           "errorInfo": Object {
                             "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                           },
@@ -18384,7 +18384,7 @@ ReactWrapper {
                       "memoizedState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -18407,7 +18407,7 @@ ReactWrapper {
                         "baseState": Object {
                           "errorInfo": Object {
                             "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                           },
@@ -18455,7 +18455,7 @@ ReactWrapper {
                         "memoizedState": Object {
                           "errorInfo": Object {
                             "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                           },
@@ -18478,7 +18478,7 @@ ReactWrapper {
                           "baseState": Object {
                             "errorInfo": Object {
                               "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                             },
@@ -18579,7 +18579,7 @@ ReactWrapper {
                       "memoizedState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -18602,7 +18602,7 @@ ReactWrapper {
                         "baseState": Object {
                           "errorInfo": Object {
                             "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                           },
@@ -18717,7 +18717,7 @@ ReactWrapper {
                     "memoizedState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -18812,7 +18812,7 @@ ReactWrapper {
                       "baseState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -18860,7 +18860,7 @@ ReactWrapper {
                       "memoizedState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -18955,7 +18955,7 @@ ReactWrapper {
                         "baseState": Object {
                           "errorInfo": Object {
                             "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                           },
@@ -19056,7 +19056,7 @@ ReactWrapper {
                     "memoizedState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -19151,7 +19151,7 @@ ReactWrapper {
                       "baseState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -19208,7 +19208,7 @@ ReactWrapper {
                     "memoizedState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -19303,7 +19303,7 @@ ReactWrapper {
                       "baseState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -19351,7 +19351,7 @@ ReactWrapper {
                       "memoizedState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -19446,7 +19446,7 @@ ReactWrapper {
                         "baseState": Object {
                           "errorInfo": Object {
                             "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                           },
@@ -19547,7 +19547,7 @@ ReactWrapper {
                     "memoizedState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -19642,7 +19642,7 @@ ReactWrapper {
                       "baseState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -20094,7 +20094,7 @@ ReactWrapper {
                       "memoizedState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -20117,7 +20117,7 @@ ReactWrapper {
                         "baseState": Object {
                           "errorInfo": Object {
                             "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                           },
@@ -20160,7 +20160,7 @@ ReactWrapper {
                         "memoizedState": Object {
                           "errorInfo": Object {
                             "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                           },
@@ -20183,7 +20183,7 @@ ReactWrapper {
                           "baseState": Object {
                             "errorInfo": Object {
                               "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                             },
@@ -20231,7 +20231,7 @@ ReactWrapper {
                           "memoizedState": Object {
                             "errorInfo": Object {
                               "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                             },
@@ -20254,7 +20254,7 @@ ReactWrapper {
                             "baseState": Object {
                               "errorInfo": Object {
                                 "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                               },
@@ -20355,7 +20355,7 @@ ReactWrapper {
                         "memoizedState": Object {
                           "errorInfo": Object {
                             "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                           },
@@ -20378,7 +20378,7 @@ ReactWrapper {
                           "baseState": Object {
                             "errorInfo": Object {
                               "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                             },
@@ -20435,7 +20435,7 @@ ReactWrapper {
                         "memoizedState": Object {
                           "errorInfo": Object {
                             "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                           },
@@ -20458,7 +20458,7 @@ ReactWrapper {
                           "baseState": Object {
                             "errorInfo": Object {
                               "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                             },
@@ -20506,7 +20506,7 @@ ReactWrapper {
                           "memoizedState": Object {
                             "errorInfo": Object {
                               "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                             },
@@ -20529,7 +20529,7 @@ ReactWrapper {
                             "baseState": Object {
                               "errorInfo": Object {
                                 "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                               },
@@ -20630,7 +20630,7 @@ ReactWrapper {
                         "memoizedState": Object {
                           "errorInfo": Object {
                             "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                           },
@@ -20653,7 +20653,7 @@ ReactWrapper {
                           "baseState": Object {
                             "errorInfo": Object {
                               "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                             },
@@ -20768,7 +20768,7 @@ ReactWrapper {
                       "memoizedState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -20863,7 +20863,7 @@ ReactWrapper {
                         "baseState": Object {
                           "errorInfo": Object {
                             "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                           },
@@ -20911,7 +20911,7 @@ ReactWrapper {
                         "memoizedState": Object {
                           "errorInfo": Object {
                             "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                           },
@@ -21006,7 +21006,7 @@ ReactWrapper {
                           "baseState": Object {
                             "errorInfo": Object {
                               "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                             },
@@ -21107,7 +21107,7 @@ ReactWrapper {
                       "memoizedState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -21202,7 +21202,7 @@ ReactWrapper {
                         "baseState": Object {
                           "errorInfo": Object {
                             "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                           },
@@ -21259,7 +21259,7 @@ ReactWrapper {
                       "memoizedState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -21354,7 +21354,7 @@ ReactWrapper {
                         "baseState": Object {
                           "errorInfo": Object {
                             "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                           },
@@ -21402,7 +21402,7 @@ ReactWrapper {
                         "memoizedState": Object {
                           "errorInfo": Object {
                             "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                           },
@@ -21497,7 +21497,7 @@ ReactWrapper {
                           "baseState": Object {
                             "errorInfo": Object {
                               "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                             },
@@ -21598,7 +21598,7 @@ ReactWrapper {
                       "memoizedState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -21693,7 +21693,7 @@ ReactWrapper {
                         "baseState": Object {
                           "errorInfo": Object {
                             "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                           },
@@ -23935,7 +23935,7 @@ ReactWrapper {
             "memoizedState": Object {
               "errorInfo": Object {
                 "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
               },
@@ -26027,7 +26027,7 @@ ReactWrapper {
               "baseState": Object {
                 "errorInfo": Object {
                   "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                 },
@@ -26376,7 +26376,7 @@ ReactWrapper {
                 "memoizedState": Object {
                   "errorInfo": Object {
                     "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                   },
@@ -26399,7 +26399,7 @@ ReactWrapper {
                   "baseState": Object {
                     "errorInfo": Object {
                       "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                     },
@@ -26442,7 +26442,7 @@ ReactWrapper {
                   "memoizedState": Object {
                     "errorInfo": Object {
                       "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                     },
@@ -26465,7 +26465,7 @@ ReactWrapper {
                     "baseState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -26513,7 +26513,7 @@ ReactWrapper {
                     "memoizedState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -26536,7 +26536,7 @@ ReactWrapper {
                       "baseState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -26637,7 +26637,7 @@ ReactWrapper {
                   "memoizedState": Object {
                     "errorInfo": Object {
                       "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                     },
@@ -26660,7 +26660,7 @@ ReactWrapper {
                     "baseState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -26717,7 +26717,7 @@ ReactWrapper {
                   "memoizedState": Object {
                     "errorInfo": Object {
                       "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                     },
@@ -26740,7 +26740,7 @@ ReactWrapper {
                     "baseState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -26788,7 +26788,7 @@ ReactWrapper {
                     "memoizedState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -26811,7 +26811,7 @@ ReactWrapper {
                       "baseState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -26912,7 +26912,7 @@ ReactWrapper {
                   "memoizedState": Object {
                     "errorInfo": Object {
                       "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                     },
@@ -26935,7 +26935,7 @@ ReactWrapper {
                     "baseState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -27110,7 +27110,7 @@ ReactWrapper {
                     "memoizedState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -27133,7 +27133,7 @@ ReactWrapper {
                       "baseState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -27181,7 +27181,7 @@ ReactWrapper {
                       "memoizedState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -27204,7 +27204,7 @@ ReactWrapper {
                         "baseState": Object {
                           "errorInfo": Object {
                             "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                           },
@@ -27305,7 +27305,7 @@ ReactWrapper {
                     "memoizedState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -27328,7 +27328,7 @@ ReactWrapper {
                       "baseState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -27385,7 +27385,7 @@ ReactWrapper {
                     "memoizedState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -27408,7 +27408,7 @@ ReactWrapper {
                       "baseState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -27456,7 +27456,7 @@ ReactWrapper {
                       "memoizedState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -27479,7 +27479,7 @@ ReactWrapper {
                         "baseState": Object {
                           "errorInfo": Object {
                             "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                           },
@@ -27580,7 +27580,7 @@ ReactWrapper {
                     "memoizedState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -27603,7 +27603,7 @@ ReactWrapper {
                       "baseState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -28089,7 +28089,7 @@ ReactWrapper {
                     "memoizedState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -28112,7 +28112,7 @@ ReactWrapper {
                       "baseState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -28155,7 +28155,7 @@ ReactWrapper {
                       "memoizedState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -28178,7 +28178,7 @@ ReactWrapper {
                         "baseState": Object {
                           "errorInfo": Object {
                             "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                           },
@@ -28226,7 +28226,7 @@ ReactWrapper {
                         "memoizedState": Object {
                           "errorInfo": Object {
                             "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                           },
@@ -28249,7 +28249,7 @@ ReactWrapper {
                           "baseState": Object {
                             "errorInfo": Object {
                               "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                             },
@@ -28350,7 +28350,7 @@ ReactWrapper {
                       "memoizedState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -28373,7 +28373,7 @@ ReactWrapper {
                         "baseState": Object {
                           "errorInfo": Object {
                             "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                           },
@@ -28430,7 +28430,7 @@ ReactWrapper {
                       "memoizedState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -28453,7 +28453,7 @@ ReactWrapper {
                         "baseState": Object {
                           "errorInfo": Object {
                             "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                           },
@@ -28501,7 +28501,7 @@ ReactWrapper {
                         "memoizedState": Object {
                           "errorInfo": Object {
                             "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                           },
@@ -28524,7 +28524,7 @@ ReactWrapper {
                           "baseState": Object {
                             "errorInfo": Object {
                               "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                             },
@@ -28625,7 +28625,7 @@ ReactWrapper {
                       "memoizedState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -28648,7 +28648,7 @@ ReactWrapper {
                         "baseState": Object {
                           "errorInfo": Object {
                             "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                           },
@@ -28763,7 +28763,7 @@ ReactWrapper {
                     "memoizedState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -28858,7 +28858,7 @@ ReactWrapper {
                       "baseState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -28906,7 +28906,7 @@ ReactWrapper {
                       "memoizedState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -29001,7 +29001,7 @@ ReactWrapper {
                         "baseState": Object {
                           "errorInfo": Object {
                             "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                           },
@@ -29102,7 +29102,7 @@ ReactWrapper {
                     "memoizedState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -29197,7 +29197,7 @@ ReactWrapper {
                       "baseState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -29254,7 +29254,7 @@ ReactWrapper {
                     "memoizedState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -29349,7 +29349,7 @@ ReactWrapper {
                       "baseState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -29397,7 +29397,7 @@ ReactWrapper {
                       "memoizedState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -29492,7 +29492,7 @@ ReactWrapper {
                         "baseState": Object {
                           "errorInfo": Object {
                             "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                           },
@@ -29593,7 +29593,7 @@ ReactWrapper {
                     "memoizedState": Object {
                       "errorInfo": Object {
                         "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                       },
@@ -29688,7 +29688,7 @@ ReactWrapper {
                       "baseState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -30140,7 +30140,7 @@ ReactWrapper {
                       "memoizedState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -30163,7 +30163,7 @@ ReactWrapper {
                         "baseState": Object {
                           "errorInfo": Object {
                             "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                           },
@@ -30206,7 +30206,7 @@ ReactWrapper {
                         "memoizedState": Object {
                           "errorInfo": Object {
                             "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                           },
@@ -30229,7 +30229,7 @@ ReactWrapper {
                           "baseState": Object {
                             "errorInfo": Object {
                               "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                             },
@@ -30277,7 +30277,7 @@ ReactWrapper {
                           "memoizedState": Object {
                             "errorInfo": Object {
                               "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                             },
@@ -30300,7 +30300,7 @@ ReactWrapper {
                             "baseState": Object {
                               "errorInfo": Object {
                                 "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                               },
@@ -30401,7 +30401,7 @@ ReactWrapper {
                         "memoizedState": Object {
                           "errorInfo": Object {
                             "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                           },
@@ -30424,7 +30424,7 @@ ReactWrapper {
                           "baseState": Object {
                             "errorInfo": Object {
                               "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                             },
@@ -30481,7 +30481,7 @@ ReactWrapper {
                         "memoizedState": Object {
                           "errorInfo": Object {
                             "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                           },
@@ -30504,7 +30504,7 @@ ReactWrapper {
                           "baseState": Object {
                             "errorInfo": Object {
                               "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                             },
@@ -30552,7 +30552,7 @@ ReactWrapper {
                           "memoizedState": Object {
                             "errorInfo": Object {
                               "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                             },
@@ -30575,7 +30575,7 @@ ReactWrapper {
                             "baseState": Object {
                               "errorInfo": Object {
                                 "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                               },
@@ -30676,7 +30676,7 @@ ReactWrapper {
                         "memoizedState": Object {
                           "errorInfo": Object {
                             "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                           },
@@ -30699,7 +30699,7 @@ ReactWrapper {
                           "baseState": Object {
                             "errorInfo": Object {
                               "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                             },
@@ -30814,7 +30814,7 @@ ReactWrapper {
                       "memoizedState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -30909,7 +30909,7 @@ ReactWrapper {
                         "baseState": Object {
                           "errorInfo": Object {
                             "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                           },
@@ -30957,7 +30957,7 @@ ReactWrapper {
                         "memoizedState": Object {
                           "errorInfo": Object {
                             "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                           },
@@ -31052,7 +31052,7 @@ ReactWrapper {
                           "baseState": Object {
                             "errorInfo": Object {
                               "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                             },
@@ -31153,7 +31153,7 @@ ReactWrapper {
                       "memoizedState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -31248,7 +31248,7 @@ ReactWrapper {
                         "baseState": Object {
                           "errorInfo": Object {
                             "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                           },
@@ -31305,7 +31305,7 @@ ReactWrapper {
                       "memoizedState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -31400,7 +31400,7 @@ ReactWrapper {
                         "baseState": Object {
                           "errorInfo": Object {
                             "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                           },
@@ -31448,7 +31448,7 @@ ReactWrapper {
                         "memoizedState": Object {
                           "errorInfo": Object {
                             "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                           },
@@ -31543,7 +31543,7 @@ ReactWrapper {
                           "baseState": Object {
                             "errorInfo": Object {
                               "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                             },
@@ -31644,7 +31644,7 @@ ReactWrapper {
                       "memoizedState": Object {
                         "errorInfo": Object {
                           "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                         },
@@ -31739,7 +31739,7 @@ ReactWrapper {
                         "baseState": Object {
                           "errorInfo": Object {
                             "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                           },
@@ -31912,7 +31912,7 @@ ReactWrapper {
               "payload": Object {
                 "errorInfo": Object {
                   "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                 },
@@ -31931,7 +31931,7 @@ ReactWrapper {
               "payload": Object {
                 "errorInfo": Object {
                   "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
                 },
@@ -31950,7 +31950,7 @@ ReactWrapper {
         "state": Object {
           "errorInfo": Object {
             "componentStack": "
-    in Child (at index.test.js:13)
+    in Child (at index.test.js:14)
     in GifErrorBoundary (created by WrapperComponent)
     in WrapperComponent",
           },
@@ -32023,1363 +32023,13 @@ ReactWrapper {
 `;
 
 exports[`GifErrorBoundary should render the children component if everything was ok 1`] = `
-ReactWrapper {
-  "length": 1,
-  Symbol(enzyme.__unrendered__): <GifErrorBoundary>
-    <Child />
-</GifErrorBoundary>,
-  Symbol(enzyme.__renderer__): Object {
-    "batchedUpdates": [Function],
-    "getNode": [Function],
-    "render": [Function],
-    "simulateEvent": [Function],
-    "unmount": [Function],
-  },
-  Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__node__): Object {
-    "instance": GifErrorBoundary {
-      "_reactInternalFiber": FiberNode {
-        "_debugID": 14,
-        "_debugIsCurrentlyTiming": false,
-        "_debugOwner": FiberNode {
-          "_debugID": 13,
-          "_debugIsCurrentlyTiming": false,
-          "_debugOwner": null,
-          "_debugSource": null,
-          "actualDuration": 0,
-          "actualStartTime": 0,
-          "alternate": null,
-          "child": [Circular],
-          "effectTag": 1,
-          "expirationTime": 0,
-          "firstEffect": null,
-          "index": 0,
-          "key": null,
-          "lastEffect": null,
-          "memoizedProps": Object {
-            "Component": [Function],
-            "context": null,
-            "props": Object {
-              "children": <Child />,
-            },
-          },
-          "memoizedState": Object {
-            "context": null,
-            "mount": true,
-            "props": Object {
-              "children": <Child />,
-            },
-          },
-          "mode": 0,
-          "nextEffect": null,
-          "pendingProps": Object {
-            "Component": [Function],
-            "context": null,
-            "props": Object {
-              "children": <Child />,
-            },
-          },
-          "ref": null,
-          "return": FiberNode {
-            "_debugID": 11,
-            "_debugIsCurrentlyTiming": false,
-            "_debugOwner": null,
-            "_debugSource": null,
-            "actualDuration": 0,
-            "actualStartTime": 0,
-            "alternate": FiberNode {
-              "_debugID": 11,
-              "_debugIsCurrentlyTiming": false,
-              "_debugOwner": null,
-              "_debugSource": null,
-              "actualDuration": 0,
-              "actualStartTime": 0,
-              "alternate": [Circular],
-              "child": null,
-              "effectTag": 0,
-              "expirationTime": 1,
-              "firstEffect": null,
-              "index": 0,
-              "key": null,
-              "lastEffect": null,
-              "memoizedProps": null,
-              "memoizedState": null,
-              "mode": 0,
-              "nextEffect": null,
-              "pendingProps": null,
-              "ref": null,
-              "return": null,
-              "selfBaseTime": 0,
-              "sibling": null,
-              "stateNode": Object {
-                "containerInfo": <div>
-                  <h1
-                                    class="its-ok"
-                  >
-                                    Everthing ok!
-                  </h1>
-</div>,
-                "context": Object {},
-                "current": [Circular],
-                "earliestPendingTime": 0,
-                "earliestSuspendedTime": 0,
-                "finishedWork": null,
-                "firstBatch": null,
-                "hydrate": false,
-                "latestPendingTime": 0,
-                "latestPingedTime": 0,
-                "latestSuspendedTime": 0,
-                "nextScheduledRoot": null,
-                "pendingChildren": null,
-                "pendingCommitExpirationTime": 0,
-                "pendingContext": null,
-                "remainingExpirationTime": 0,
-              },
-              "tag": 3,
-              "treeBaseTime": 0,
-              "type": null,
-              "updateQueue": Object {
-                "baseState": null,
-                "expirationTime": 1,
-                "firstCapturedEffect": null,
-                "firstCapturedUpdate": null,
-                "firstEffect": null,
-                "firstUpdate": Object {
-                  "callback": null,
-                  "expirationTime": 1,
-                  "next": null,
-                  "nextEffect": null,
-                  "payload": Object {
-                    "element": <WrapperComponent
-                      Component={[Function]}
-                      context={null}
-                      props={
-                                            Object {
-                                                                  "children": <Child />,
-                                                                }
-                      }
-/>,
-                  },
-                  "tag": 0,
-                },
-                "lastCapturedEffect": null,
-                "lastCapturedUpdate": null,
-                "lastEffect": null,
-                "lastUpdate": Object {
-                  "callback": null,
-                  "expirationTime": 1,
-                  "next": null,
-                  "nextEffect": null,
-                  "payload": Object {
-                    "element": <WrapperComponent
-                      Component={[Function]}
-                      context={null}
-                      props={
-                                            Object {
-                                                                  "children": <Child />,
-                                                                }
-                      }
-/>,
-                  },
-                  "tag": 0,
-                },
-              },
-            },
-            "child": [Circular],
-            "effectTag": 32,
-            "expirationTime": 0,
-            "firstEffect": [Circular],
-            "index": 0,
-            "key": null,
-            "lastEffect": [Circular],
-            "memoizedProps": null,
-            "memoizedState": Object {
-              "element": <WrapperComponent
-                Component={[Function]}
-                context={null}
-                props={
-                                Object {
-                                                "children": <Child />,
-                                              }
-                }
-/>,
-            },
-            "mode": 0,
-            "nextEffect": null,
-            "pendingProps": null,
-            "ref": null,
-            "return": null,
-            "selfBaseTime": 0,
-            "sibling": null,
-            "stateNode": Object {
-              "containerInfo": <div>
-                <h1
-                                class="its-ok"
-                >
-                                Everthing ok!
-                </h1>
-</div>,
-              "context": Object {},
-              "current": [Circular],
-              "earliestPendingTime": 0,
-              "earliestSuspendedTime": 0,
-              "finishedWork": null,
-              "firstBatch": null,
-              "hydrate": false,
-              "latestPendingTime": 0,
-              "latestPingedTime": 0,
-              "latestSuspendedTime": 0,
-              "nextScheduledRoot": null,
-              "pendingChildren": null,
-              "pendingCommitExpirationTime": 0,
-              "pendingContext": null,
-              "remainingExpirationTime": 0,
-            },
-            "tag": 3,
-            "treeBaseTime": 0,
-            "type": null,
-            "updateQueue": Object {
-              "baseState": Object {
-                "element": <WrapperComponent
-                  Component={[Function]}
-                  context={null}
-                  props={
-                                    Object {
-                                                      "children": <Child />,
-                                                    }
-                  }
-/>,
-              },
-              "expirationTime": 0,
-              "firstCapturedEffect": null,
-              "firstCapturedUpdate": null,
-              "firstEffect": null,
-              "firstUpdate": null,
-              "lastCapturedEffect": null,
-              "lastCapturedUpdate": null,
-              "lastEffect": null,
-              "lastUpdate": null,
-            },
-          },
-          "selfBaseTime": 0,
-          "sibling": null,
-          "stateNode": WrapperComponent {
-            "_reactInternalFiber": [Circular],
-            "_reactInternalInstance": Object {},
-            "context": Object {},
-            "props": Object {
-              "Component": [Function],
-              "context": null,
-              "props": Object {
-                "children": <Child />,
-              },
-            },
-            "refs": Object {},
-            "state": Object {
-              "context": null,
-              "mount": true,
-              "props": Object {
-                "children": <Child />,
-              },
-            },
-            "updater": Object {
-              "enqueueForceUpdate": [Function],
-              "enqueueReplaceState": [Function],
-              "enqueueSetState": [Function],
-              "isMounted": [Function],
-            },
-          },
-          "tag": 2,
-          "treeBaseTime": 0,
-          "type": [Function],
-          "updateQueue": null,
-        },
-        "_debugSource": null,
-        "actualDuration": 0,
-        "actualStartTime": 0,
-        "alternate": null,
-        "child": FiberNode {
-          "_debugID": 15,
-          "_debugIsCurrentlyTiming": false,
-          "_debugOwner": null,
-          "_debugSource": Object {
-            "fileName": "/var/www/react-series-challenge/src/components/GifErrorBoundary/tests/index.test.js",
-            "lineNumber": 24,
-          },
-          "actualDuration": 0,
-          "actualStartTime": 0,
-          "alternate": null,
-          "child": FiberNode {
-            "_debugID": 16,
-            "_debugIsCurrentlyTiming": false,
-            "_debugOwner": [Circular],
-            "_debugSource": Object {
-              "fileName": "/var/www/react-series-challenge/src/components/GifErrorBoundary/tests/index.test.js",
-              "lineNumber": 21,
-            },
-            "actualDuration": 0,
-            "actualStartTime": 0,
-            "alternate": null,
-            "child": null,
-            "effectTag": 0,
-            "expirationTime": 0,
-            "firstEffect": null,
-            "index": 0,
-            "key": null,
-            "lastEffect": null,
-            "memoizedProps": Object {
-              "children": "Everthing ok!",
-              "className": "its-ok",
-            },
-            "memoizedState": null,
-            "mode": 0,
-            "nextEffect": null,
-            "pendingProps": Object {
-              "children": "Everthing ok!",
-              "className": "its-ok",
-            },
-            "ref": null,
-            "return": [Circular],
-            "selfBaseTime": 0,
-            "sibling": null,
-            "stateNode": <h1
-              class="its-ok"
->
-              Everthing ok!
-</h1>,
-            "tag": 5,
-            "treeBaseTime": 0,
-            "type": "h1",
-            "updateQueue": null,
-          },
-          "effectTag": 1,
-          "expirationTime": 0,
-          "firstEffect": null,
-          "index": 0,
-          "key": null,
-          "lastEffect": null,
-          "memoizedProps": Object {},
-          "memoizedState": null,
-          "mode": 0,
-          "nextEffect": null,
-          "pendingProps": Object {},
-          "ref": null,
-          "return": [Circular],
-          "selfBaseTime": 0,
-          "sibling": null,
-          "stateNode": null,
-          "tag": 1,
-          "treeBaseTime": 0,
-          "type": [Function],
-          "updateQueue": null,
-        },
-        "effectTag": 1,
-        "expirationTime": 0,
-        "firstEffect": null,
-        "index": 0,
-        "key": null,
-        "lastEffect": null,
-        "memoizedProps": Object {
-          "children": <Child />,
-        },
-        "memoizedState": Object {
-          "errorInfo": "",
-          "hasErrors": false,
-        },
-        "mode": 0,
-        "nextEffect": null,
-        "pendingProps": Object {
-          "children": <Child />,
-        },
-        "ref": null,
-        "return": FiberNode {
-          "_debugID": 13,
-          "_debugIsCurrentlyTiming": false,
-          "_debugOwner": null,
-          "_debugSource": null,
-          "actualDuration": 0,
-          "actualStartTime": 0,
-          "alternate": null,
-          "child": [Circular],
-          "effectTag": 1,
-          "expirationTime": 0,
-          "firstEffect": null,
-          "index": 0,
-          "key": null,
-          "lastEffect": null,
-          "memoizedProps": Object {
-            "Component": [Function],
-            "context": null,
-            "props": Object {
-              "children": <Child />,
-            },
-          },
-          "memoizedState": Object {
-            "context": null,
-            "mount": true,
-            "props": Object {
-              "children": <Child />,
-            },
-          },
-          "mode": 0,
-          "nextEffect": null,
-          "pendingProps": Object {
-            "Component": [Function],
-            "context": null,
-            "props": Object {
-              "children": <Child />,
-            },
-          },
-          "ref": null,
-          "return": FiberNode {
-            "_debugID": 11,
-            "_debugIsCurrentlyTiming": false,
-            "_debugOwner": null,
-            "_debugSource": null,
-            "actualDuration": 0,
-            "actualStartTime": 0,
-            "alternate": FiberNode {
-              "_debugID": 11,
-              "_debugIsCurrentlyTiming": false,
-              "_debugOwner": null,
-              "_debugSource": null,
-              "actualDuration": 0,
-              "actualStartTime": 0,
-              "alternate": [Circular],
-              "child": null,
-              "effectTag": 0,
-              "expirationTime": 1,
-              "firstEffect": null,
-              "index": 0,
-              "key": null,
-              "lastEffect": null,
-              "memoizedProps": null,
-              "memoizedState": null,
-              "mode": 0,
-              "nextEffect": null,
-              "pendingProps": null,
-              "ref": null,
-              "return": null,
-              "selfBaseTime": 0,
-              "sibling": null,
-              "stateNode": Object {
-                "containerInfo": <div>
-                  <h1
-                                    class="its-ok"
-                  >
-                                    Everthing ok!
-                  </h1>
-</div>,
-                "context": Object {},
-                "current": [Circular],
-                "earliestPendingTime": 0,
-                "earliestSuspendedTime": 0,
-                "finishedWork": null,
-                "firstBatch": null,
-                "hydrate": false,
-                "latestPendingTime": 0,
-                "latestPingedTime": 0,
-                "latestSuspendedTime": 0,
-                "nextScheduledRoot": null,
-                "pendingChildren": null,
-                "pendingCommitExpirationTime": 0,
-                "pendingContext": null,
-                "remainingExpirationTime": 0,
-              },
-              "tag": 3,
-              "treeBaseTime": 0,
-              "type": null,
-              "updateQueue": Object {
-                "baseState": null,
-                "expirationTime": 1,
-                "firstCapturedEffect": null,
-                "firstCapturedUpdate": null,
-                "firstEffect": null,
-                "firstUpdate": Object {
-                  "callback": null,
-                  "expirationTime": 1,
-                  "next": null,
-                  "nextEffect": null,
-                  "payload": Object {
-                    "element": <WrapperComponent
-                      Component={[Function]}
-                      context={null}
-                      props={
-                                            Object {
-                                                                  "children": <Child />,
-                                                                }
-                      }
-/>,
-                  },
-                  "tag": 0,
-                },
-                "lastCapturedEffect": null,
-                "lastCapturedUpdate": null,
-                "lastEffect": null,
-                "lastUpdate": Object {
-                  "callback": null,
-                  "expirationTime": 1,
-                  "next": null,
-                  "nextEffect": null,
-                  "payload": Object {
-                    "element": <WrapperComponent
-                      Component={[Function]}
-                      context={null}
-                      props={
-                                            Object {
-                                                                  "children": <Child />,
-                                                                }
-                      }
-/>,
-                  },
-                  "tag": 0,
-                },
-              },
-            },
-            "child": [Circular],
-            "effectTag": 32,
-            "expirationTime": 0,
-            "firstEffect": [Circular],
-            "index": 0,
-            "key": null,
-            "lastEffect": [Circular],
-            "memoizedProps": null,
-            "memoizedState": Object {
-              "element": <WrapperComponent
-                Component={[Function]}
-                context={null}
-                props={
-                                Object {
-                                                "children": <Child />,
-                                              }
-                }
-/>,
-            },
-            "mode": 0,
-            "nextEffect": null,
-            "pendingProps": null,
-            "ref": null,
-            "return": null,
-            "selfBaseTime": 0,
-            "sibling": null,
-            "stateNode": Object {
-              "containerInfo": <div>
-                <h1
-                                class="its-ok"
-                >
-                                Everthing ok!
-                </h1>
-</div>,
-              "context": Object {},
-              "current": [Circular],
-              "earliestPendingTime": 0,
-              "earliestSuspendedTime": 0,
-              "finishedWork": null,
-              "firstBatch": null,
-              "hydrate": false,
-              "latestPendingTime": 0,
-              "latestPingedTime": 0,
-              "latestSuspendedTime": 0,
-              "nextScheduledRoot": null,
-              "pendingChildren": null,
-              "pendingCommitExpirationTime": 0,
-              "pendingContext": null,
-              "remainingExpirationTime": 0,
-            },
-            "tag": 3,
-            "treeBaseTime": 0,
-            "type": null,
-            "updateQueue": Object {
-              "baseState": Object {
-                "element": <WrapperComponent
-                  Component={[Function]}
-                  context={null}
-                  props={
-                                    Object {
-                                                      "children": <Child />,
-                                                    }
-                  }
-/>,
-              },
-              "expirationTime": 0,
-              "firstCapturedEffect": null,
-              "firstCapturedUpdate": null,
-              "firstEffect": null,
-              "firstUpdate": null,
-              "lastCapturedEffect": null,
-              "lastCapturedUpdate": null,
-              "lastEffect": null,
-              "lastUpdate": null,
-            },
-          },
-          "selfBaseTime": 0,
-          "sibling": null,
-          "stateNode": WrapperComponent {
-            "_reactInternalFiber": [Circular],
-            "_reactInternalInstance": Object {},
-            "context": Object {},
-            "props": Object {
-              "Component": [Function],
-              "context": null,
-              "props": Object {
-                "children": <Child />,
-              },
-            },
-            "refs": Object {},
-            "state": Object {
-              "context": null,
-              "mount": true,
-              "props": Object {
-                "children": <Child />,
-              },
-            },
-            "updater": Object {
-              "enqueueForceUpdate": [Function],
-              "enqueueReplaceState": [Function],
-              "enqueueSetState": [Function],
-              "isMounted": [Function],
-            },
-          },
-          "tag": 2,
-          "treeBaseTime": 0,
-          "type": [Function],
-          "updateQueue": null,
-        },
-        "selfBaseTime": 0,
-        "sibling": null,
-        "stateNode": [Circular],
-        "tag": 2,
-        "treeBaseTime": 0,
-        "type": [Function],
-        "updateQueue": null,
-      },
-      "_reactInternalInstance": Object {},
-      "context": Object {},
-      "props": Object {
-        "children": <Child />,
-      },
-      "refs": Object {},
-      "state": Object {
-        "errorInfo": "",
-        "hasErrors": false,
-      },
-      "updater": Object {
-        "enqueueForceUpdate": [Function],
-        "enqueueReplaceState": [Function],
-        "enqueueSetState": [Function],
-        "isMounted": [Function],
-      },
-    },
-    "key": undefined,
-    "nodeType": "class",
-    "props": Object {
-      "children": <Child />,
-    },
-    "ref": null,
-    "rendered": Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "function",
-      "props": Object {},
-      "ref": null,
-      "rendered": Object {
-        "instance": <h1
-          class="its-ok"
->
-          Everthing ok!
-</h1>,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "Everthing ok!",
-          "className": "its-ok",
-        },
-        "ref": null,
-        "rendered": Array [
-          "Everthing ok!",
-        ],
-        "type": "h1",
-      },
-      "type": [Function],
-    },
-    "type": [Function],
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": GifErrorBoundary {
-        "_reactInternalFiber": FiberNode {
-          "_debugID": 14,
-          "_debugIsCurrentlyTiming": false,
-          "_debugOwner": FiberNode {
-            "_debugID": 13,
-            "_debugIsCurrentlyTiming": false,
-            "_debugOwner": null,
-            "_debugSource": null,
-            "actualDuration": 0,
-            "actualStartTime": 0,
-            "alternate": null,
-            "child": [Circular],
-            "effectTag": 1,
-            "expirationTime": 0,
-            "firstEffect": null,
-            "index": 0,
-            "key": null,
-            "lastEffect": null,
-            "memoizedProps": Object {
-              "Component": [Function],
-              "context": null,
-              "props": Object {
-                "children": <Child />,
-              },
-            },
-            "memoizedState": Object {
-              "context": null,
-              "mount": true,
-              "props": Object {
-                "children": <Child />,
-              },
-            },
-            "mode": 0,
-            "nextEffect": null,
-            "pendingProps": Object {
-              "Component": [Function],
-              "context": null,
-              "props": Object {
-                "children": <Child />,
-              },
-            },
-            "ref": null,
-            "return": FiberNode {
-              "_debugID": 11,
-              "_debugIsCurrentlyTiming": false,
-              "_debugOwner": null,
-              "_debugSource": null,
-              "actualDuration": 0,
-              "actualStartTime": 0,
-              "alternate": FiberNode {
-                "_debugID": 11,
-                "_debugIsCurrentlyTiming": false,
-                "_debugOwner": null,
-                "_debugSource": null,
-                "actualDuration": 0,
-                "actualStartTime": 0,
-                "alternate": [Circular],
-                "child": null,
-                "effectTag": 0,
-                "expirationTime": 1,
-                "firstEffect": null,
-                "index": 0,
-                "key": null,
-                "lastEffect": null,
-                "memoizedProps": null,
-                "memoizedState": null,
-                "mode": 0,
-                "nextEffect": null,
-                "pendingProps": null,
-                "ref": null,
-                "return": null,
-                "selfBaseTime": 0,
-                "sibling": null,
-                "stateNode": Object {
-                  "containerInfo": <div>
-                    <h1
-                                        class="its-ok"
-                    >
-                                        Everthing ok!
-                    </h1>
-</div>,
-                  "context": Object {},
-                  "current": [Circular],
-                  "earliestPendingTime": 0,
-                  "earliestSuspendedTime": 0,
-                  "finishedWork": null,
-                  "firstBatch": null,
-                  "hydrate": false,
-                  "latestPendingTime": 0,
-                  "latestPingedTime": 0,
-                  "latestSuspendedTime": 0,
-                  "nextScheduledRoot": null,
-                  "pendingChildren": null,
-                  "pendingCommitExpirationTime": 0,
-                  "pendingContext": null,
-                  "remainingExpirationTime": 0,
-                },
-                "tag": 3,
-                "treeBaseTime": 0,
-                "type": null,
-                "updateQueue": Object {
-                  "baseState": null,
-                  "expirationTime": 1,
-                  "firstCapturedEffect": null,
-                  "firstCapturedUpdate": null,
-                  "firstEffect": null,
-                  "firstUpdate": Object {
-                    "callback": null,
-                    "expirationTime": 1,
-                    "next": null,
-                    "nextEffect": null,
-                    "payload": Object {
-                      "element": <WrapperComponent
-                        Component={[Function]}
-                        context={null}
-                        props={
-                                                Object {
-                                                                        "children": <Child />,
-                                                                      }
-                        }
-/>,
-                    },
-                    "tag": 0,
-                  },
-                  "lastCapturedEffect": null,
-                  "lastCapturedUpdate": null,
-                  "lastEffect": null,
-                  "lastUpdate": Object {
-                    "callback": null,
-                    "expirationTime": 1,
-                    "next": null,
-                    "nextEffect": null,
-                    "payload": Object {
-                      "element": <WrapperComponent
-                        Component={[Function]}
-                        context={null}
-                        props={
-                                                Object {
-                                                                        "children": <Child />,
-                                                                      }
-                        }
-/>,
-                    },
-                    "tag": 0,
-                  },
-                },
-              },
-              "child": [Circular],
-              "effectTag": 32,
-              "expirationTime": 0,
-              "firstEffect": [Circular],
-              "index": 0,
-              "key": null,
-              "lastEffect": [Circular],
-              "memoizedProps": null,
-              "memoizedState": Object {
-                "element": <WrapperComponent
-                  Component={[Function]}
-                  context={null}
-                  props={
-                                    Object {
-                                                      "children": <Child />,
-                                                    }
-                  }
-/>,
-              },
-              "mode": 0,
-              "nextEffect": null,
-              "pendingProps": null,
-              "ref": null,
-              "return": null,
-              "selfBaseTime": 0,
-              "sibling": null,
-              "stateNode": Object {
-                "containerInfo": <div>
-                  <h1
-                                    class="its-ok"
-                  >
-                                    Everthing ok!
-                  </h1>
-</div>,
-                "context": Object {},
-                "current": [Circular],
-                "earliestPendingTime": 0,
-                "earliestSuspendedTime": 0,
-                "finishedWork": null,
-                "firstBatch": null,
-                "hydrate": false,
-                "latestPendingTime": 0,
-                "latestPingedTime": 0,
-                "latestSuspendedTime": 0,
-                "nextScheduledRoot": null,
-                "pendingChildren": null,
-                "pendingCommitExpirationTime": 0,
-                "pendingContext": null,
-                "remainingExpirationTime": 0,
-              },
-              "tag": 3,
-              "treeBaseTime": 0,
-              "type": null,
-              "updateQueue": Object {
-                "baseState": Object {
-                  "element": <WrapperComponent
-                    Component={[Function]}
-                    context={null}
-                    props={
-                                        Object {
-                                                            "children": <Child />,
-                                                          }
-                    }
-/>,
-                },
-                "expirationTime": 0,
-                "firstCapturedEffect": null,
-                "firstCapturedUpdate": null,
-                "firstEffect": null,
-                "firstUpdate": null,
-                "lastCapturedEffect": null,
-                "lastCapturedUpdate": null,
-                "lastEffect": null,
-                "lastUpdate": null,
-              },
-            },
-            "selfBaseTime": 0,
-            "sibling": null,
-            "stateNode": WrapperComponent {
-              "_reactInternalFiber": [Circular],
-              "_reactInternalInstance": Object {},
-              "context": Object {},
-              "props": Object {
-                "Component": [Function],
-                "context": null,
-                "props": Object {
-                  "children": <Child />,
-                },
-              },
-              "refs": Object {},
-              "state": Object {
-                "context": null,
-                "mount": true,
-                "props": Object {
-                  "children": <Child />,
-                },
-              },
-              "updater": Object {
-                "enqueueForceUpdate": [Function],
-                "enqueueReplaceState": [Function],
-                "enqueueSetState": [Function],
-                "isMounted": [Function],
-              },
-            },
-            "tag": 2,
-            "treeBaseTime": 0,
-            "type": [Function],
-            "updateQueue": null,
-          },
-          "_debugSource": null,
-          "actualDuration": 0,
-          "actualStartTime": 0,
-          "alternate": null,
-          "child": FiberNode {
-            "_debugID": 15,
-            "_debugIsCurrentlyTiming": false,
-            "_debugOwner": null,
-            "_debugSource": Object {
-              "fileName": "/var/www/react-series-challenge/src/components/GifErrorBoundary/tests/index.test.js",
-              "lineNumber": 24,
-            },
-            "actualDuration": 0,
-            "actualStartTime": 0,
-            "alternate": null,
-            "child": FiberNode {
-              "_debugID": 16,
-              "_debugIsCurrentlyTiming": false,
-              "_debugOwner": [Circular],
-              "_debugSource": Object {
-                "fileName": "/var/www/react-series-challenge/src/components/GifErrorBoundary/tests/index.test.js",
-                "lineNumber": 21,
-              },
-              "actualDuration": 0,
-              "actualStartTime": 0,
-              "alternate": null,
-              "child": null,
-              "effectTag": 0,
-              "expirationTime": 0,
-              "firstEffect": null,
-              "index": 0,
-              "key": null,
-              "lastEffect": null,
-              "memoizedProps": Object {
-                "children": "Everthing ok!",
-                "className": "its-ok",
-              },
-              "memoizedState": null,
-              "mode": 0,
-              "nextEffect": null,
-              "pendingProps": Object {
-                "children": "Everthing ok!",
-                "className": "its-ok",
-              },
-              "ref": null,
-              "return": [Circular],
-              "selfBaseTime": 0,
-              "sibling": null,
-              "stateNode": <h1
-                class="its-ok"
->
-                Everthing ok!
-</h1>,
-              "tag": 5,
-              "treeBaseTime": 0,
-              "type": "h1",
-              "updateQueue": null,
-            },
-            "effectTag": 1,
-            "expirationTime": 0,
-            "firstEffect": null,
-            "index": 0,
-            "key": null,
-            "lastEffect": null,
-            "memoizedProps": Object {},
-            "memoizedState": null,
-            "mode": 0,
-            "nextEffect": null,
-            "pendingProps": Object {},
-            "ref": null,
-            "return": [Circular],
-            "selfBaseTime": 0,
-            "sibling": null,
-            "stateNode": null,
-            "tag": 1,
-            "treeBaseTime": 0,
-            "type": [Function],
-            "updateQueue": null,
-          },
-          "effectTag": 1,
-          "expirationTime": 0,
-          "firstEffect": null,
-          "index": 0,
-          "key": null,
-          "lastEffect": null,
-          "memoizedProps": Object {
-            "children": <Child />,
-          },
-          "memoizedState": Object {
-            "errorInfo": "",
-            "hasErrors": false,
-          },
-          "mode": 0,
-          "nextEffect": null,
-          "pendingProps": Object {
-            "children": <Child />,
-          },
-          "ref": null,
-          "return": FiberNode {
-            "_debugID": 13,
-            "_debugIsCurrentlyTiming": false,
-            "_debugOwner": null,
-            "_debugSource": null,
-            "actualDuration": 0,
-            "actualStartTime": 0,
-            "alternate": null,
-            "child": [Circular],
-            "effectTag": 1,
-            "expirationTime": 0,
-            "firstEffect": null,
-            "index": 0,
-            "key": null,
-            "lastEffect": null,
-            "memoizedProps": Object {
-              "Component": [Function],
-              "context": null,
-              "props": Object {
-                "children": <Child />,
-              },
-            },
-            "memoizedState": Object {
-              "context": null,
-              "mount": true,
-              "props": Object {
-                "children": <Child />,
-              },
-            },
-            "mode": 0,
-            "nextEffect": null,
-            "pendingProps": Object {
-              "Component": [Function],
-              "context": null,
-              "props": Object {
-                "children": <Child />,
-              },
-            },
-            "ref": null,
-            "return": FiberNode {
-              "_debugID": 11,
-              "_debugIsCurrentlyTiming": false,
-              "_debugOwner": null,
-              "_debugSource": null,
-              "actualDuration": 0,
-              "actualStartTime": 0,
-              "alternate": FiberNode {
-                "_debugID": 11,
-                "_debugIsCurrentlyTiming": false,
-                "_debugOwner": null,
-                "_debugSource": null,
-                "actualDuration": 0,
-                "actualStartTime": 0,
-                "alternate": [Circular],
-                "child": null,
-                "effectTag": 0,
-                "expirationTime": 1,
-                "firstEffect": null,
-                "index": 0,
-                "key": null,
-                "lastEffect": null,
-                "memoizedProps": null,
-                "memoizedState": null,
-                "mode": 0,
-                "nextEffect": null,
-                "pendingProps": null,
-                "ref": null,
-                "return": null,
-                "selfBaseTime": 0,
-                "sibling": null,
-                "stateNode": Object {
-                  "containerInfo": <div>
-                    <h1
-                                        class="its-ok"
-                    >
-                                        Everthing ok!
-                    </h1>
-</div>,
-                  "context": Object {},
-                  "current": [Circular],
-                  "earliestPendingTime": 0,
-                  "earliestSuspendedTime": 0,
-                  "finishedWork": null,
-                  "firstBatch": null,
-                  "hydrate": false,
-                  "latestPendingTime": 0,
-                  "latestPingedTime": 0,
-                  "latestSuspendedTime": 0,
-                  "nextScheduledRoot": null,
-                  "pendingChildren": null,
-                  "pendingCommitExpirationTime": 0,
-                  "pendingContext": null,
-                  "remainingExpirationTime": 0,
-                },
-                "tag": 3,
-                "treeBaseTime": 0,
-                "type": null,
-                "updateQueue": Object {
-                  "baseState": null,
-                  "expirationTime": 1,
-                  "firstCapturedEffect": null,
-                  "firstCapturedUpdate": null,
-                  "firstEffect": null,
-                  "firstUpdate": Object {
-                    "callback": null,
-                    "expirationTime": 1,
-                    "next": null,
-                    "nextEffect": null,
-                    "payload": Object {
-                      "element": <WrapperComponent
-                        Component={[Function]}
-                        context={null}
-                        props={
-                                                Object {
-                                                                        "children": <Child />,
-                                                                      }
-                        }
-/>,
-                    },
-                    "tag": 0,
-                  },
-                  "lastCapturedEffect": null,
-                  "lastCapturedUpdate": null,
-                  "lastEffect": null,
-                  "lastUpdate": Object {
-                    "callback": null,
-                    "expirationTime": 1,
-                    "next": null,
-                    "nextEffect": null,
-                    "payload": Object {
-                      "element": <WrapperComponent
-                        Component={[Function]}
-                        context={null}
-                        props={
-                                                Object {
-                                                                        "children": <Child />,
-                                                                      }
-                        }
-/>,
-                    },
-                    "tag": 0,
-                  },
-                },
-              },
-              "child": [Circular],
-              "effectTag": 32,
-              "expirationTime": 0,
-              "firstEffect": [Circular],
-              "index": 0,
-              "key": null,
-              "lastEffect": [Circular],
-              "memoizedProps": null,
-              "memoizedState": Object {
-                "element": <WrapperComponent
-                  Component={[Function]}
-                  context={null}
-                  props={
-                                    Object {
-                                                      "children": <Child />,
-                                                    }
-                  }
-/>,
-              },
-              "mode": 0,
-              "nextEffect": null,
-              "pendingProps": null,
-              "ref": null,
-              "return": null,
-              "selfBaseTime": 0,
-              "sibling": null,
-              "stateNode": Object {
-                "containerInfo": <div>
-                  <h1
-                                    class="its-ok"
-                  >
-                                    Everthing ok!
-                  </h1>
-</div>,
-                "context": Object {},
-                "current": [Circular],
-                "earliestPendingTime": 0,
-                "earliestSuspendedTime": 0,
-                "finishedWork": null,
-                "firstBatch": null,
-                "hydrate": false,
-                "latestPendingTime": 0,
-                "latestPingedTime": 0,
-                "latestSuspendedTime": 0,
-                "nextScheduledRoot": null,
-                "pendingChildren": null,
-                "pendingCommitExpirationTime": 0,
-                "pendingContext": null,
-                "remainingExpirationTime": 0,
-              },
-              "tag": 3,
-              "treeBaseTime": 0,
-              "type": null,
-              "updateQueue": Object {
-                "baseState": Object {
-                  "element": <WrapperComponent
-                    Component={[Function]}
-                    context={null}
-                    props={
-                                        Object {
-                                                            "children": <Child />,
-                                                          }
-                    }
-/>,
-                },
-                "expirationTime": 0,
-                "firstCapturedEffect": null,
-                "firstCapturedUpdate": null,
-                "firstEffect": null,
-                "firstUpdate": null,
-                "lastCapturedEffect": null,
-                "lastCapturedUpdate": null,
-                "lastEffect": null,
-                "lastUpdate": null,
-              },
-            },
-            "selfBaseTime": 0,
-            "sibling": null,
-            "stateNode": WrapperComponent {
-              "_reactInternalFiber": [Circular],
-              "_reactInternalInstance": Object {},
-              "context": Object {},
-              "props": Object {
-                "Component": [Function],
-                "context": null,
-                "props": Object {
-                  "children": <Child />,
-                },
-              },
-              "refs": Object {},
-              "state": Object {
-                "context": null,
-                "mount": true,
-                "props": Object {
-                  "children": <Child />,
-                },
-              },
-              "updater": Object {
-                "enqueueForceUpdate": [Function],
-                "enqueueReplaceState": [Function],
-                "enqueueSetState": [Function],
-                "isMounted": [Function],
-              },
-            },
-            "tag": 2,
-            "treeBaseTime": 0,
-            "type": [Function],
-            "updateQueue": null,
-          },
-          "selfBaseTime": 0,
-          "sibling": null,
-          "stateNode": [Circular],
-          "tag": 2,
-          "treeBaseTime": 0,
-          "type": [Function],
-          "updateQueue": null,
-        },
-        "_reactInternalInstance": Object {},
-        "context": Object {},
-        "props": Object {
-          "children": <Child />,
-        },
-        "refs": Object {},
-        "state": Object {
-          "errorInfo": "",
-          "hasErrors": false,
-        },
-        "updater": Object {
-          "enqueueForceUpdate": [Function],
-          "enqueueReplaceState": [Function],
-          "enqueueSetState": [Function],
-          "isMounted": [Function],
-        },
-      },
-      "key": undefined,
-      "nodeType": "class",
-      "props": Object {
-        "children": <Child />,
-      },
-      "ref": null,
-      "rendered": Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {},
-        "ref": null,
-        "rendered": Object {
-          "instance": <h1
-            class="its-ok"
->
-            Everthing ok!
-</h1>,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Everthing ok!",
-            "className": "its-ok",
-          },
-          "ref": null,
-          "rendered": Array [
-            "Everthing ok!",
-          ],
-          "type": "h1",
-        },
-        "type": [Function],
-      },
-      "type": [Function],
-    },
-  ],
-  Symbol(enzyme.__options__): Object {
-    "adapter": ReactSixteenAdapter {
-      "options": Object {
-        "enableComponentDidUpdateOnSetState": true,
-      },
-    },
-  },
-}
+<GifErrorBoundary>
+  <Child>
+    <h1
+      className="its-ok"
+    >
+      Everthing ok!
+    </h1>
+  </Child>
+</GifErrorBoundary>
 `;

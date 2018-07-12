@@ -1,4 +1,5 @@
 import React from 'react';
+import toJson from 'enzyme-to-json';
 import { mount } from 'enzyme';
 import GifErrorBoundary from '../index';
 
@@ -26,6 +27,6 @@ describe('GifErrorBoundary', () => {
     );
 
     expect(component.find('.its-ok')).toHaveLength(1);
-    expect(component).toMatchSnapshot();
+    expect(toJson(component)).toMatchSnapshot();
   });
 });
