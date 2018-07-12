@@ -13,7 +13,7 @@ interface IGIFListProps {
     favs: FavsCollection
     onToggleFavorite: any
 }
-export const GIFList = (props: IGIFListProps) => {
+export const GIFList: React.SFC<IGIFListProps> = (props) => {
     const { gifs, onToggleFavorite, favs } = props;
     return (
     <_div>

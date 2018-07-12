@@ -7,20 +7,18 @@ import FavsSearch from './FavsSearch';
 
 import { _div_search } from './FavsView.style'
 
-interface IFavsView {
+interface IFavsViewProps {
     gifs: IGIF[]
 }
 
-class FavsView extends React.Component<IFavsView, any> {
-    public render() {
-        return (<div>
-            <h1 className="center">Your favorite GIFS</h1>
-            <_div_search>
-                <FavsSearch />
-            </_div_search>
-            <GIFList gifs={this.props.gifs} />
-        </div>);
-    }
+const FavsView = (props: IFavsViewProps) => {
+    return (<div>
+        <h1 className="center">Your favorite GIFS</h1>
+        <_div_search>
+            <FavsSearch />
+        </_div_search>
+        <GIFList gifs={props.gifs} />
+    </div>);
 }
 
 function filterFavs(favs: object, query: string) {
