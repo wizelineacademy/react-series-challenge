@@ -31,9 +31,6 @@ function* toogleFavorite(action) {
   yield put(actionTypes.favoriteToggle())
 }
 
-function* watchFavoriteGifs() {
-  yield takeEvery( actionTypes.FAVORITE_GIFS_INIT, getFavoriteGifs )
-}
 
 function* fetchData(url) {
 
@@ -56,6 +53,10 @@ function* fetchingData(action) {
   } catch (error) {
     console.log(error)
   }
+}
+
+function* watchFavoriteGifs() {
+  yield takeEvery( actionTypes.FAVORITE_GIFS_INIT, getFavoriteGifs )
 }
 
 function* watchFetchData() {

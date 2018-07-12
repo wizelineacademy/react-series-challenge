@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 import Nav from '../Nav'
 import SearchBar from '../SearchBar'
 import Gifs from '../Gifs'
-import axios from 'axios'
 import * as actionTypes from '../../actions'
 
 class Favorites extends Component {
@@ -29,8 +28,21 @@ class Favorites extends Component {
     })
   }
 
+  handleSearch = () => {
+    const { query } = this.state
+    const { onFetchData } = this.props
+
+    onFetchData(query)
+
+    const newTitle = !!query ? query : 'Trending Now'
+
+    this.setState({
+      title: newTitle
+    })
+  }
+
   render() {
-    const { trendingGifs, query, loading, title } = this.state
+    const { query, loading, title } = this.state
     const { favoriteGifs } = this.props
     return (
       <Fragment>
@@ -46,8 +58,6 @@ class Favorites extends Component {
             : <Gifs
                 gifs={favoriteGifs}
                 title={title}
-                // addFavorites={this.handleAddFavorites}
-                addFavorites={this.props.onToggleFavorite}
               />
         }
       </Fragment>
@@ -63,8 +73,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onToggleFavorite: (item) => dispatch(actionTypes.favoriteToggleStart(item)),
     onFavoriteGifsInit: () => dispatch(actionTypes.favoriteGifsInit()),
+    onFetchData: (query) => dispatch(actionTypes.fetchDataRequest(query))
   }
 }
 

@@ -1,5 +1,0 @@
-.GifList {
-  display: grid;
-  grid-template-columns: repeat(4, 248px);
-  grid-gap: 1rem;
-}
