@@ -10,10 +10,7 @@ const trendingGifsReducer = (state = initialState, action) => {
   switch (type) {
     case TRENDING_GET: {
       const { gifs } = payload;
-      const newState = {};
-      gifs.forEach((gif) => {
-        newState[gif.id] = { ...gif };
-      });
+      const newState = { ...gifs };
       return newState;
     }
     default:
