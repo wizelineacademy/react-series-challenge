@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`giphyApi Actions toggleFavoriteGif 1`] = `
+Object {
+  "payload": Object {
+    "gif": Object {
+      "8FMLOqBX3TwBxnKbrA": Object {
+        "id": "8FMLOqBX3TwBxnKbrA",
+        "images": Object {
+          "fixed_width": Object {
+            "height": "112",
+            "mp4": "https://media2.giphy.com/media/8FMLOqBX3TwBxnKbrA/200w.mp4",
+            "mp4_size": "142753",
+            "size": "739715",
+            "url": "https://media2.giphy.com/media/8FMLOqBX3TwBxnKbrA/200w.gif",
+            "webp": "https://media2.giphy.com/media/8FMLOqBX3TwBxnKbrA/200w.webp",
+            "webp_size": "265118",
+            "width": "200",
+          },
+        },
+        "slug": "ellamai-ella-mai-bood-up-8FMLOqBX3TwBxnKbrA",
+        "type": "gif",
+      },
+    },
+  },
+  "type": "TOGGLE_FAVORITE_GIF",
+}
+`;
