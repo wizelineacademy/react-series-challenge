@@ -1,20 +1,27 @@
 import React from 'react';
-import './SearchBar.css'
-import { format } from 'util';
-
+import {
+  SearchBarWrapper,
+  SearchBarButton,
+  SearchBarInput,
+  SearchBarForm
+} from './SearchBar.styled'
 
 const SearchBar = (props) => (
-  <div className="SearchBar">
-    <form className="SearchBarForm">
-      <input
+  <SearchBarWrapper className="SearchBar">
+    <SearchBarForm>
+      <SearchBarInput
         type="text"
         placeholder="Search Gifs"
         value={props.value}
         onChange={props.updateQuery}
       />
-    </form>
-    <a onClick={() => props.handleSearch(props.value)}>Search</a>
-  </div>
+    </SearchBarForm>
+    <SearchBarButton
+      onClick={props.handleSearch}
+    >
+      Search
+    </SearchBarButton>
+  </SearchBarWrapper>
 );
 
 export default SearchBar;

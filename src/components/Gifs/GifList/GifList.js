@@ -1,8 +1,8 @@
 import React from 'react';
 import GifCard from '../GifCard/GifCard'
-import './GifList.css'
+import { GifListWrapper } from './GifList.styled'
 
-const GifList = ({data, addFavorites}) => {
+const GifList = ({data}) => {
   let gifs
 
   if (data) {
@@ -18,7 +18,7 @@ const GifList = ({data, addFavorites}) => {
         <GifCard
           gif={dataGif}
           key={dataGif.id}
-          addFavorites={addFavorites}
+          // addFavorites={addFavorites}
         />
       )
     })
@@ -27,9 +27,9 @@ const GifList = ({data, addFavorites}) => {
   }
 
   return (
-    <section className="GifList">
+    <GifListWrapper>
       {gifs}
-    </section>
+    </GifListWrapper>
   )
 }
 

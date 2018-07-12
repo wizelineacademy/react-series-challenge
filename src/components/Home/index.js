@@ -1,12 +1,9 @@
 import React, { Component, Fragment } from 'react'
-import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import Nav from '../Nav'
 import SearchBar from '../SearchBar'
 import Gifs from '../Gifs'
 import * as actionTypes from '../../actions'
-
-import axios from 'axios'
 
 class Home extends Component {
   constructor(props) {
@@ -30,21 +27,37 @@ class Home extends Component {
     })
   }
 
+  handleSearch = () => {
+    const { query } = this.state
+    const { onFetchData } = this.props
+
+    onFetchData(query)
+
+    const newTitle = !!query ? query : 'Trending Now'
+
+    this.setState({
+      title: newTitle
+    })
+  }
+
 
   render() {
-    const { trendingGifs, query, loading, title } = this.state
+    const { query, loading, title } = this.state
     return(
       <Fragment>
         <Nav />
         <SearchBar
           value={query}
           updateQuery={ (e) => this.updateQuery(e) }
-          handleSearch={this.props.onFetchData}
+          handleSearch={this.handleSearch}
         />
         {
           loading
             ? 'Cargando ...'
-            : <Gifs gifs={this.props.gifs} title={title} addFavorites={this.props.onToggleFavorite}/>
+            : <Gifs
+                gifs={this.props.gifs}
+                title={title}
+              />
         }
       </Fragment>
     )
@@ -59,7 +72,6 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onToggleFavorite: (item) => dispatch(actionTypes.favoriteToggleStart(item)),
     onFetchData: (query) => dispatch(actionTypes.fetchDataRequest(query))
   }
 }

@@ -1,18 +1,18 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom'
-import './Nav.css';
+import { NavBar, NavContainer, NavListItem } from './Nav.styled'
 
 const Nav = () => (
-  <nav className="Nav">
-    <div className="NavContainer">
+  <NavBar >
+    <NavContainer >
       <NavLink to="/">GiphySearch</NavLink>
-      <ul className="NavList">
-        <li className="NavListItem">
+      <ul>
+        <NavListItem>
           <NavLink to="/favorites">Favorites</NavLink>
-        </li>
+        </NavListItem>
       </ul>
-    </div>
-  </nav>
+    </NavContainer>
+  </NavBar>
 );
 
 export default Nav;

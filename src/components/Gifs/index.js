@@ -1,12 +1,12 @@
 import React from 'react';
 import GifList from './GifList/GifList'
-import './Gif.css';
+import { GifContainer } from './Gifs.styled'
 
 const Gifs = (props) => (
-  <main className="GifContainer">
+  <GifContainer >
     <h2>{props.title}</h2>
     <GifList data={props.gifs} addFavorites={props.addFavorites}/>
-  </main>
+  </GifContainer>
 );
 
 export default Gifs;
