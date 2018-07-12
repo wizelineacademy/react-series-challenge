@@ -16,7 +16,15 @@ export class Favorites extends Component {
     this.props.toggleFavoriteGif(gif);
   }
 
+  componentDidCatch() {
+    this.setState({ error: 'Error' });
+  }
+
   render() {
+    if (this.state.error) {
+      return (<h1> Error. Please refresh page </h1>);
+    }
+
     const { gifs } = this.props;
     const filteredGifs = this.getFilteredGifs(gifs);
     return (

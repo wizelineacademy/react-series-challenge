@@ -15,6 +15,10 @@ export class Home extends Component {
     }
   }
 
+  componentDidCatch() {
+    this.setState({ error: 'Error' });
+  }
+
   componentDidMount() {
     this.props.fetchTrendingGifs();
   }
@@ -24,6 +28,9 @@ export class Home extends Component {
   }
 
   render() {
+    if (this.state.error) {
+      return (<h1> Error. Please refresh page </h1>);
+    }
     const { gifs } = this.props;
     return (
       <Fragment>
