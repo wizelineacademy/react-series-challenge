@@ -8,6 +8,7 @@ import {
 import SearchGif from './components/SearchGif/SearchGif';
 import MainGifsView from './components/MainGifsView/MainGifsView';
 import FavoriteGifs from './components/FavoriteGifs/FavoriteGifs';
+import NotFound from './components/NotFound/NotFound';
 
 import { Navbar, NavMenu, NavItem, Link, MainContainer, LogoContainer } from './App.styled';
 
@@ -45,7 +46,8 @@ class App extends Component {
 
                       <Route exact path="/trending" component={MainGifsView}/>
                       <Route exact path="/favorites" component={FavoriteGifs}/>
-                      <Redirect from="/" to="/trending"/>
+                      <Redirect exact from="/" to="/trending"/>
+                      <Route component={NotFound} />
 
                   </Switch>
               </MainContainer>
