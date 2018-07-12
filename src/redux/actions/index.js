@@ -67,6 +67,7 @@ export default {
   fetchData,
   fetchChange,
   fetchError,
+  fetchEnd,
   // Local
   localModify,
   localFind,

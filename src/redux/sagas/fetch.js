@@ -9,15 +9,9 @@ import action from "./../actions";
 
 const baseUrl = 'https://api.giphy.com/v1/gifs/';
 
-function* fetchData  (url)  {
-    return yield axios.get(url)
-        .then(response => {
-            return response.data;
-        })
-}
-
 export function* fetchingData() {
     try {
+        debugger;
         yield put(action.fetchStart());
 
         const word = yield select(selectors.fetch_word);
@@ -26,7 +20,7 @@ export function* fetchingData() {
         const query = (word.length > 0 ? `&q=${word}` : '');
 
         let url = `${baseUrl}${word.length > 0 ? 'search' : 'trending'}?api_key=${process.env.YOUR_API_KEY}&limit=10&rating=G${query}`;
-        const data = yield call(fetchData, url);
+        const data = yield axios.get(url).then(response => (response.data));
 
         yield put(action.fetchData(data));
     } catch (error) {
