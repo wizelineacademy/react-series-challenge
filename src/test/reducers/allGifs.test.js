@@ -14,7 +14,7 @@ describe('allGifs reducer', () => {
     it('Should handle FETCH_ALL_GIFS', () => {
         axios.get.mockImplementation(() => Promise.resolve(testElement));
 
-        return fetchGifs(url).then(gifs => expect(gifs).toEqual(testElement));
-        //TODO: return axios function and expect()with testElement
+        // return axios function and expect().toEqual()with testElement
+        return axios.get(url).then(gifs => expect(gifs).toEqual(testElement));
    });
 })
