@@ -6,7 +6,7 @@ const NavBar = ({ links, ...props }) => (
   <NavBarContainer>
     {
       links.map(link => (
-        <NavBarElement active={link.isActive} to={link.url} href={link.url}>
+        <NavBarElement key={link.url} active={link.isActive} to={link.url} href={link.url}>
           {link.text}
         </NavBarElement>
       ))

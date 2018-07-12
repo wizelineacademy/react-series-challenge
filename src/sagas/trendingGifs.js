@@ -8,6 +8,7 @@ const GIPHY_KEY = process.env.REACT_APP_GIPHY_API_KEY;
 const API_URL = process.env.REACT_APP_GIPHY_API_URL;
 const API_TRENDING_GIFS = '/v1/gifs/trending';
 const API_SEARCH_GIFS = '/v1/gifs/search';
+const API_FETCH_LIMIT = 25;
 
 const {
   TRENDING_FETCH,
@@ -26,7 +27,7 @@ const loadTrendingGifsFromEndpoint = () => (
   axios.get(`${API_URL}${API_TRENDING_GIFS}`, {
     params: {
       api_key: GIPHY_KEY,
-      limit: 5,
+      limit: API_FETCH_LIMIT,
       rating: 'G',
     },
   })
@@ -46,7 +47,7 @@ const searchGifsFromEndpoint = text => (
       api_key: GIPHY_KEY,
       q: text,
       offset: 0,
-      limit: 5,
+      limit: API_FETCH_LIMIT,
       rating: 'G',
       lang: 'en',
     },

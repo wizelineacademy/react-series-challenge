@@ -1,24 +1,38 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import {
+  GifContainer,
+  GifTitle,
+  GifImage,
+  GifLikeContainer,
+} from './Gif.style';
+
+import likeContainer from './favorite-heart-like-container.png';
+import likeSelected from './favorite-heart-like-selected.png';
+
 const Gif = ({ object, addFavorite, removeFavorite }) => (
-  <div>
-    <h3>{object.title}</h3>
-    <iframe src={object.embed_url} title={object.title} width="100%" height="100%" />
+  <GifContainer>
+    <GifTitle>{object.title}</GifTitle>
+    <GifImage src={object.embed_url} title={object.title} />
     {
       object.isFavorite ?
         (
-          <button onClick={() => removeFavorite({ payload: { gif: object } })}>
-            Remove from favorite
-          </button>
+          <GifLikeContainer
+            src={likeSelected}
+            alt="Remove from favorite"
+            onClick={() => removeFavorite({ payload: { gif: object } })}
+          />
         ) :
         (
-          <button onClick={() => addFavorite({ payload: { gif: object } })}>
-            Add to favorite
-          </button>
+          <GifLikeContainer
+            src={likeContainer}
+            alt="Add to favorite"
+            onClick={() => addFavorite({ payload: { gif: object } })}
+          />
         )
     }
-  </div>
+  </GifContainer>
 );
 
 Gif.propTypes = {
