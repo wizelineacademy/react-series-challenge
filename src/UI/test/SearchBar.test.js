@@ -25,7 +25,7 @@ describe('SearchBar', () => {
             <StyledSearchbar>
                 <StyledInput 
                 type="text" 
-                placeholder = "Search for awesome gifs"
+                placeholder = "Search for awesome gifs (Click Button To Search)"
                 onChange = { func } />
 
                 <StyledButton onClick = { func1 } />  
@@ -39,7 +39,7 @@ describe('SearchBar', () => {
             <StyledSearchbar>
                 <StyledInput 
                 type="text" 
-                placeholder = "Search for awesome gifs"
+                placeholder = "Search for awesome gifs (Click Button To Search)"
                 onChange = { func } />
 
                 <StyledButton onClick = { func1 } />  

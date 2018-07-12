@@ -2,7 +2,7 @@
 const API_URL = "http://api.giphy.com";
 const API_TRENDS = "/v1/gifs/trending";
 const API_SEARCH = "/v1/gifs/search";
-const API_KEY = "MKGAXNQl5cXUBSBMrXSsufVZ9bqvhX6p"
+const API_KEY = process.env.REACT_APP_GIPHY_API_KEY;
 
 const getDataTrend = async() => {
     try{
