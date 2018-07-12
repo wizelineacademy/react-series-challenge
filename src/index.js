@@ -8,6 +8,7 @@ import store from './store';
 
 import registerServiceWorker from './registerServiceWorker';
 
+require('dotenv').config();
 
 ReactDOM.render(
     <Router>

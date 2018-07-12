@@ -8,9 +8,8 @@ const { fetchedTrendGifs, failedFetchTrendGifs } = trendGifsActions.creators;
 const { SEARCH_GIFS_LOAD } = searchGifsActions.types;
 const { fetchedSearchGifs, failedFetchSearchGifs } = searchGifsActions.creators;
 
-const giphyApiUrl = 'https://api.giphy.com/v1';
-const giphyApiKey = 'iyoTSR6E7wC6lx0XhXApQqHQxbVIfp8v';
-
+const giphyApiUrl = process.env.REACT_APP_GIPHY_API_URL;
+const giphyApiKey = process.env.REACT_APP_GIPHY_API_KEY;
 const fetchGifs = (url) => {
     return axios.get(url)
         .then((response) => response)
