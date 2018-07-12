@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test will work 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <FavoritesList
+    gifts={
+        Object {
+            "gift": Object {
+              "id": "PrASdleOrnZ9C",
+              "name": "awake wake up GIF by Internet Cat Video Festival",
+              "url": "https://media1.giphy.com/media/PrASdleOrnZ9C/giphy-preview.gif",
+            },
+          }
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Array [
+    <Connect(GiftItem)
+      id="PrASdleOrnZ9C"
+      name="awake wake up GIF by Internet Cat Video Festival"
+      url="https://media1.giphy.com/media/PrASdleOrnZ9C/giphy-preview.gif"
+/>,
+  ],
+  Symbol(enzyme.__nodes__): Array [
+    Array [
+      <Connect(GiftItem)
+        id="PrASdleOrnZ9C"
+        name="awake wake up GIF by Internet Cat Video Festival"
+        url="https://media1.giphy.com/media/PrASdleOrnZ9C/giphy-preview.gif"
+/>,
+    ],
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

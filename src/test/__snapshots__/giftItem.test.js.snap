@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test will work 1`] = `
+<GiftItem
+  id="item.id"
+  name="item.title"
+  showGiftModal={[Function]}
+  url="https://media3.giphy.com/media/3ktRws88PRbBVbbYyE/giphy-preview.gif"
+>
+  <styled.img
+    alt=""
+    onClick={[Function]}
+    src="https://media3.giphy.com/media/3ktRws88PRbBVbbYyE/giphy-preview.gif"
+  >
+    <img
+      alt=""
+      className="sc-bdVaJa ixMZfJ"
+      onClick={[Function]}
+      src="https://media3.giphy.com/media/3ktRws88PRbBVbbYyE/giphy-preview.gif"
+    />
+  </styled.img>
+</GiftItem>
+`;
