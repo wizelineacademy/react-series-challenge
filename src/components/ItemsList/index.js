@@ -22,3 +22,4 @@ const mapStateToProps = ({ itemsList }) => {
 };
 
 export default connect(mapStateToProps)(ItemsList);
+export { ItemsList };
