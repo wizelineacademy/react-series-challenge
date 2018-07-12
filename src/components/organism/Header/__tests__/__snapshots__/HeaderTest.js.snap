@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header should render without crashing 1`] = `
+<styled.div>
+  <div>
+    <img
+      alt="Giphy"
+      src="/images/logo.png"
+    />
+    <Menu />
+  </div>
+</styled.div>
+`;
