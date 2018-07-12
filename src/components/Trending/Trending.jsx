@@ -1,15 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 
 import Template from '../Template';
+import NavBar from '../NavBar';
 import GifGrid from '../GifGrid';
 import Gif from '../Gif';
 
 class Trending extends React.Component {
   constructor(props) {
     super(props);
-
     this.handleChange = this.handleChange.bind(this);
   }
 
@@ -36,10 +35,14 @@ class Trending extends React.Component {
       filterTrendingText,
     } = this.props;
 
+    const links = [
+      { text: 'Trending Gifs', url: '/trending', isActive: true },
+      { text: 'Favorite Gifs', url: '/favorite', isActive: false },
+    ];
+
     return (
       <Template>
-        <input name="search-box" type="text" value={filterTrendingText} onChange={this.handleChange} />
-        <Link to="/favorite" href="/favorite">Go to Favorite</Link>
+        <NavBar links={links} placeholder="Search..." type="text" value={filterTrendingText} onChange={this.handleChange} />
         <div>
           <GifGrid
             gifs={trendingGifs}

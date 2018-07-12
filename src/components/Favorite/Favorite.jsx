@@ -1,8 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import Template from '../Template';
 import GifGrid from '../GifGrid';
+import NavBar from '../NavBar';
 
 class Favorite extends React.Component {
   constructor(props) {
@@ -24,10 +24,13 @@ class Favorite extends React.Component {
   render() {
     const { favoriteGifs } = this.props;
     const { filterText } = this.state;
+    const links = [
+      { text: 'Trending Gifs', url: '/trending', isActive: false },
+      { text: 'Favorite Gifs', url: '/favorite', isActive: true },
+    ];
     return (
       <Template>
-        <input name="search-box" type="text" value={filterText} onChange={this.handleChange} />
-        <Link to="/trending" href="/trending">Go to Trending</Link>
+        <NavBar links={links} placeholder="Filter..." type="text" value={filterText} onChange={this.handleChange} />
         <div>
           <GifGrid gifs={favoriteGifs} favoriteGifs={favoriteGifs} filterText={filterText} />
         </div>
