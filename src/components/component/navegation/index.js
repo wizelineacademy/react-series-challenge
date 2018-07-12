@@ -9,6 +9,7 @@ const StyledNavLink = styled(NavLink)`
   }
   &.active{
     color: red;
+    font-size: bold;
   }
 `;
 

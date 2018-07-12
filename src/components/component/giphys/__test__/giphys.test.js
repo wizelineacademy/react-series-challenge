@@ -5,6 +5,8 @@ import { spy } from "sinon";
 import Giphys from "./../index";
 import json from "./mock.json";
 
+
+
 describe('<Giphys> ', () => {
 
   let wraper;

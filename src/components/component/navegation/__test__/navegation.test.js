@@ -1,20 +1,22 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { NavLink } from "react-router-dom";
+
+import toJson from 'enzyme-to-json';
+
 
 import Navegation from "./../index";
 
 describe('<Navegation> ', () => {
 
-  let wraper;
+  let wrapper;
 
-  beforeAll(() => {
-    wraper = shallow(
+  beforeEach(() => {
+    wrapper = shallow(
       <Navegation />
     );
   });
 
-  it('should have two (2) NavLinks', () => {
-    expect(wraper.find(NavLink).length).toEqual(2);
+  it('create a Snapshot ', () => {
+    expect(toJson(wrapper)).toMatchSnapshot();
   });
 });

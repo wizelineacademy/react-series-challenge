@@ -2,6 +2,19 @@ import React, { Component } from "react";
 
 import './giphys.css';
 
+import styled from "styled-components";
+
+const StyledGiphys = styled.div`
+  float: left;
+  position: relative;
+`;
+
+const StyledButton = styled.div`
+  position: absolute;
+  bottom: 0;
+  right: 0;
+`;
+
 class Giphys extends Component {
 
   handleKeep = (event,index) => {
@@ -17,10 +30,10 @@ class Giphys extends Component {
     if (data && data.data) {
       giphyView = data.data.map((v, i) => {
         let view = (
-          <div key={v.id} className="giphy">
-            <button onClick={(event) => this.handleKeep(event, i)}>{`${local.ids.includes(v.id) ? 'undo' : 'keep'}`}</button>
+          <StyledGiphys key={v.id}>
+            <StyledButton onClick={(event) => this.handleKeep(event, i)}>{`${local.ids.includes(v.id) ? 'undo' : 'keep'}`}</StyledButton>
             <img src={v.images.fixed_width.webp} alt={v.title} />
-          </div>
+          </StyledGiphys>
         );
 
         if (local.filter && !v.title.includes(local.filter)) {

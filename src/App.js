@@ -11,15 +11,15 @@ const App = ({ ...props }) => {
     <React.Fragment>
       <Navegation/>
       <Switch>
-      <Route path="/keeps"  component={Favorites} />
-      <Route exact path="/home" component={Home} />
+        <Route path="/keeps"  component={Favorites} />
+        <Route exact path="/home" component={Home} />
+        <Redirect to={{
+          pathname: "/home",
+          state: { currentPath: (window.location.pathname) },
+        }} />
       </Switch>
       </React.Fragment>
     );
   }
 
-  // <Redirect to={{
-  //   pathname: "/home",
-  //   state: { currentPath: 'NOT FOUND PAGE' },
-  // }} />
 export default App;
