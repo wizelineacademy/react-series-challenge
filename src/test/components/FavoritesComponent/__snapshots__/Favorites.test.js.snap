@@ -1,0 +1,143 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Favorites Component should render 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <favCompoent
+    cards={
+        Object {
+            "QOvxr9pGvmZN0LKvqu": Object {
+              "id": "QOvxr9pGvmZN0LKvqu",
+              "images": Object {
+                "original": Object {
+                  "url": "https://media2.giphy.com/media/7vzoRu05YJp2pFMd24/giphy.gif",
+                },
+              },
+              "isFavorite": false,
+              "url": "https://giphy.com/gifs/ellamai-ella-mai-bood-up-7vzoRu05YJp2pFMd24",
+            },
+            "uUkFJshdZAumBu0SMc": Object {
+              "id": "uUkFJshdZAumBu0SMc",
+              "images": Object {
+                "original": Object {
+                  "url": "https://media2.giphy.com/media/7vzoRu05YJp2pFMd24/giphy.gif",
+                },
+              },
+              "isFavorite": false,
+              "url": "https://giphy.com/gifs/ellamai-ella-mai-bood-up-7vzoRu05YJp2pFMd24",
+            },
+          }
+    }
+    loadFavorites={[Function]}
+    searchFavs={[Function]}
+    store={
+        Object {
+            "dispatch": [Function],
+            "getState": [Function],
+            "replaceReducer": [Function],
+            "subscribe": [Function],
+            Symbol(observable): [Function],
+          }
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "cards": Object {
+        "QOvxr9pGvmZN0LKvqu": Object {
+          "id": "QOvxr9pGvmZN0LKvqu",
+          "images": Object {
+            "original": Object {
+              "url": "https://media2.giphy.com/media/7vzoRu05YJp2pFMd24/giphy.gif",
+            },
+          },
+          "isFavorite": false,
+          "url": "https://giphy.com/gifs/ellamai-ella-mai-bood-up-7vzoRu05YJp2pFMd24",
+        },
+        "uUkFJshdZAumBu0SMc": Object {
+          "id": "uUkFJshdZAumBu0SMc",
+          "images": Object {
+            "original": Object {
+              "url": "https://media2.giphy.com/media/7vzoRu05YJp2pFMd24/giphy.gif",
+            },
+          },
+          "isFavorite": false,
+          "url": "https://giphy.com/gifs/ellamai-ella-mai-bood-up-7vzoRu05YJp2pFMd24",
+        },
+      },
+      "loadFavorites": [Function],
+      "searchFavs": [Function],
+      "store": Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+        Symbol(observable): [Function],
+      },
+    },
+    "ref": null,
+    "rendered": null,
+    "type": "favCompoent",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "cards": Object {
+          "QOvxr9pGvmZN0LKvqu": Object {
+            "id": "QOvxr9pGvmZN0LKvqu",
+            "images": Object {
+              "original": Object {
+                "url": "https://media2.giphy.com/media/7vzoRu05YJp2pFMd24/giphy.gif",
+              },
+            },
+            "isFavorite": false,
+            "url": "https://giphy.com/gifs/ellamai-ella-mai-bood-up-7vzoRu05YJp2pFMd24",
+          },
+          "uUkFJshdZAumBu0SMc": Object {
+            "id": "uUkFJshdZAumBu0SMc",
+            "images": Object {
+              "original": Object {
+                "url": "https://media2.giphy.com/media/7vzoRu05YJp2pFMd24/giphy.gif",
+              },
+            },
+            "isFavorite": false,
+            "url": "https://giphy.com/gifs/ellamai-ella-mai-bood-up-7vzoRu05YJp2pFMd24",
+          },
+        },
+        "loadFavorites": [Function],
+        "searchFavs": [Function],
+        "store": Object {
+          "dispatch": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+          Symbol(observable): [Function],
+        },
+      },
+      "ref": null,
+      "rendered": null,
+      "type": "favCompoent",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

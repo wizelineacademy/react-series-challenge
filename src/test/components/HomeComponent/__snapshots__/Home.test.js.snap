@@ -1,0 +1,157 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Favorites Component should render 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Connect(ComponentsHome)
+    cards={
+        Object {
+            "QOvxr9pGvmZN0LKvqu": Object {
+              "id": "QOvxr9pGvmZN0LKvqu",
+              "images": Object {
+                "original": Object {
+                  "url": "https://media2.giphy.com/media/7vzoRu05YJp2pFMd24/giphy.gif",
+                },
+              },
+              "isFavorite": false,
+              "url": "https://giphy.com/gifs/ellamai-ella-mai-bood-up-7vzoRu05YJp2pFMd24",
+            },
+            "uUkFJshdZAumBu0SMc": Object {
+              "id": "uUkFJshdZAumBu0SMc",
+              "images": Object {
+                "original": Object {
+                  "url": "https://media2.giphy.com/media/7vzoRu05YJp2pFMd24/giphy.gif",
+                },
+              },
+              "isFavorite": false,
+              "url": "https://giphy.com/gifs/ellamai-ella-mai-bood-up-7vzoRu05YJp2pFMd24",
+            },
+          }
+    }
+    loadFavorites={[Function]}
+    searchFavs={[Function]}
+    store={
+        Object {
+            "dispatch": [Function],
+            "getState": [Function],
+            "replaceReducer": [Function],
+            "subscribe": [Function],
+            Symbol(observable): [Function],
+          }
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "addFavorites": [Function],
+      "addRemoveFavorites": [Function],
+      "cards": Object {
+        "cards": Object {},
+        "favorites": Object {},
+      },
+      "loadCards": [Function],
+      "loadFavorites": [Function],
+      "loadTrending": [Function],
+      "removeFavorites": [Function],
+      "searchCards": [Function],
+      "searchFavs": [Function],
+      "setFavorites": [Function],
+      "store": Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+        Symbol(observable): [Function],
+      },
+      "storeSubscription": Subscription {
+        "listeners": Object {
+          "clear": [Function],
+          "get": [Function],
+          "notify": [Function],
+          "subscribe": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "dispatch": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+          Symbol(observable): [Function],
+        },
+        "unsubscribe": [Function],
+      },
+    },
+    "ref": null,
+    "rendered": null,
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "addFavorites": [Function],
+        "addRemoveFavorites": [Function],
+        "cards": Object {
+          "cards": Object {},
+          "favorites": Object {},
+        },
+        "loadCards": [Function],
+        "loadFavorites": [Function],
+        "loadTrending": [Function],
+        "removeFavorites": [Function],
+        "searchCards": [Function],
+        "searchFavs": [Function],
+        "setFavorites": [Function],
+        "store": Object {
+          "dispatch": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+          Symbol(observable): [Function],
+        },
+        "storeSubscription": Subscription {
+          "listeners": Object {
+            "clear": [Function],
+            "get": [Function],
+            "notify": [Function],
+            "subscribe": [Function],
+          },
+          "onStateChange": [Function],
+          "parentSub": undefined,
+          "store": Object {
+            "dispatch": [Function],
+            "getState": [Function],
+            "replaceReducer": [Function],
+            "subscribe": [Function],
+            Symbol(observable): [Function],
+          },
+          "unsubscribe": [Function],
+        },
+      },
+      "ref": null,
+      "rendered": null,
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
