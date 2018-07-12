@@ -4,10 +4,6 @@ import { connect } from 'react-redux'
 import Gif from "../../components/Gif"
 
 class HomePage extends Component {
-  state = {
-    openFullScreen: false,
-    selectedImageUrl: ''
-  }
 
   componentDidMount() {
     const { queryTrending } = this.props;
