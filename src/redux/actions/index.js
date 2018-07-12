@@ -1,10 +1,10 @@
 import actions from "../constants/actions";
 
-const fetchChange = (search = '') => {
+const fetchChange = (word = '') => {
   return {
     type: actions.FETCH_REQUEST,
     payload: {
-      search
+      word
     }
   }
 }

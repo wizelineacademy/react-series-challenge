@@ -2,16 +2,16 @@ import actionsDic from "./../../constants/actions";
 import actions from "./../index";
 
 describe('Redux Actions > ', () => {
-  it('should create an action to set "search" string', () => {
-    const search = 'myDummySearch';
+  it('should create an action to set "word" string', () => {
+    const word = 'myDummyWord';
     const expectedAction = {
       type: actionsDic.FETCH_REQUEST,
       payload: {
-        search,
+        word,
       },
     };
 
-    expect(actions.fetchChange(search)).toEqual(expectedAction);
+    expect(actions.fetchChange(word)).toEqual(expectedAction);
   });
 
   it('should create an action to set "filter" string', () => {

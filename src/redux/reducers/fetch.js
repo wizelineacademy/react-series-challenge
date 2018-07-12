@@ -33,8 +33,7 @@ export default (state = initialState, action) => {
     case actions.FETCH_REQUEST: {
       return {
         ...state,
-        type: (payload.search && payload.search !== '' ? 'search' : 'trending'),
-        word: (payload.search && payload.search !== '' ? payload.search : ''),
+        word: payload.word,
       }
     }
     default:
