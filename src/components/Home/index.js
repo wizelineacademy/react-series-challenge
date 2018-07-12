@@ -23,6 +23,7 @@ class Home extends Component {
     }
 }
 
+
 const mapStateToProps = ({ search, favorites: { items: favorites } }) => {
     return { search, favorites }
 }
@@ -38,4 +39,5 @@ const mapDispatchToProps = dispatch => {
     return bindActionCreators({ getSearch }, dispatch)
 }
 
+export { Home }
 export default connect(mapStateToProps, mapDispatchToProps)(Home)

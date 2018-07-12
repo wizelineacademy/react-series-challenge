@@ -1,8 +1,8 @@
-import favorites from '../../actions/favorites';
 import { Title, Gif, Gifs, FavoritesStyled } from './favorites.style'
+import favorites from '../../actions/favorites';
 import SearchBar from './favoritesSearchBar'
-import React, { Component } from 'react'
 import { bindActionCreators } from 'redux';
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 const search = (items, filter) => items.filter(item => Object.values(item).some(value => String(value).toLowerCase().includes(filter.toLowerCase())))

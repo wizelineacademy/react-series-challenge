@@ -16,7 +16,8 @@
   "jest": {
     "collectCoverageFrom": [
       "**/src/**/*.{js,jsx}",
-      "!**/src/registerServiceWorker.{js,jsx}"
+      "!**/src/registerServiceWorker.{js,jsx}",
+      "!**/src/index.js"
     ],
     "coverageThreshold": {
       "global": {
@@ -37,6 +38,7 @@
   },
   "devDependencies": {
     "enzyme": "^3.3.0",
-    "enzyme-adapter-react-16": "^1.1.1"
+    "enzyme-adapter-react-16": "^1.1.1",
+    "jest-styled-components": "^5.0.1"
   }
 }

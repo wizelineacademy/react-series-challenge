@@ -11,8 +11,8 @@ export const Gifs = styled.div`
     display: grid;
     grid-gap: 0.5rem;
     justify-content: center;
-    grid-template-columns: repeat(auto-fill, 12rem);
-    grid-template-rows: repeat(auto-fill, 12rem);
+    grid-template-columns: repeat(auto-fill,12rem);
+    grid-template-rows: repeat(auto-fill,12rem);
 `
 
 export const Gif = styled(gif)`

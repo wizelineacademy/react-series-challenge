@@ -47,5 +47,6 @@ const mapDispatchToProps = dispatch => {
     return bindActionCreators({ getTrending }, dispatch)
 }
 
+export { Trending }
 export default connect(mapStateToProps, mapDispatchToProps)(Trending)
 

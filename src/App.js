@@ -5,7 +5,7 @@ import store from './store'
 import React from 'react';
 
 
-const App = ({ routes = [] }) => {
+const App = ({ routes }) => {
   /**
    * Get link from given routes
    */

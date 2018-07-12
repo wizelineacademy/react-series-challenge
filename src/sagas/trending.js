@@ -12,7 +12,7 @@ export function* watchTrending() {
     ])
 }
 
-function* getTrending() {
+export function* getTrending() {
     try {
         const { data } = yield call(fetchTrending)
         yield put(fetchedTrending(data))
