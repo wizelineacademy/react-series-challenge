@@ -1,14 +1,13 @@
-import App from '../App';
+import ListadoGeneral from '../../components/ListadoGeneral';
 import React from 'react';
 import {shallow} from 'enzyme';
-import 'jest-styled-components';
 
-describe('App', () => {
+describe('ListadoGeneral', () => {
     let wrapper;
 
     beforeEach(() => {
         wrapper = shallow(
-            <App/>
+            <ListadoGeneral/>
         );
     });
 

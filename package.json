@@ -17,7 +17,13 @@
   "jest": {
     "collectCoverageFrom": [
       "**/src/**/*.{js,jsx}",
-      "!**/src/registerServiceWorker.{js,jsx}"
+      "!**/src/registerServiceWorker.{js,jsx}",
+      "!**/src/actions/index.{js,jsx}",
+      "!**/src/middleware/index.{js,jsx}",
+      "!**/src/reducers/index.{js,jsx}",
+      "!**/src/sagas/index.{js,jsx}",
+      "!**/src/selectors/index.{js,jsx}",
+      "!**/src/store/index.{js,jsx}"
     ],
     "coverageThreshold": {
       "global": {
@@ -38,6 +44,7 @@
   },
   "devDependencies": {
     "enzyme": "^3.3.0",
-    "enzyme-adapter-react-16": "^1.1.1"
+    "enzyme-adapter-react-16": "^1.1.1",
+    "jest-styled-components": "^5.0.1"
   }
 }

@@ -1,14 +1,14 @@
-import App from '../App';
+import GiphyElement from '../../components/GiphyElement';
 import React from 'react';
 import {shallow} from 'enzyme';
 import 'jest-styled-components';
 
-describe('App', () => {
+describe('GiphyElement', () => {
     let wrapper;
 
     beforeEach(() => {
         wrapper = shallow(
-            <App/>
+            <GiphyElement/>
         );
     });
 

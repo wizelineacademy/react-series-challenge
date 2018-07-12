@@ -1,14 +1,13 @@
-import App from '../App';
+import ListadoFavoritos from '../../components/ListadoFavoritos';
 import React from 'react';
 import {shallow} from 'enzyme';
-import 'jest-styled-components';
 
-describe('App', () => {
+describe('ListadoFavoritos', () => {
     let wrapper;
 
     beforeEach(() => {
         wrapper = shallow(
-            <App/>
+            <ListadoFavoritos/>
         );
     });
 
