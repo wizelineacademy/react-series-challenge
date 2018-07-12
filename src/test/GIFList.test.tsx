@@ -2,10 +2,10 @@ import * as React from 'react';
 import 'jest-enzyme';
 import 'jest-styled-components'
 import configureStore from 'redux-mock-store'
-import { shallow, mount, ShallowWrapper } from 'enzyme';
-import  { GIFList } from '../components/presentational/GIFList';
-import { AppState } from '../types';
+import { mount } from 'enzyme';
+import  GIFList from '../components/presentational/GIFList';
 import * as GIFS from './GIFS.json'
+import { Provider } from 'react-redux';
 
 describe('GIFList', () => {
     const mockStore = configureStore();
@@ -14,25 +14,20 @@ describe('GIFList', () => {
 
     it('renders withouth crashing', () => {
         store = mockStore(initialState);
-        const state = store.getState() as AppState;
-        const onToggle = jest.fn();
-        const wrapper = mount(<GIFList
-            onToggleFavorite={onToggle}
-            gifs={state.trending}
-            favs={state.favs} />);
+        const wrapper = mount(<Provider store={store}>
+                <GIFList gifs={GIFS} />
+            </Provider>);
         expect(wrapper).toMatchSnapshot();
     });
 
     describe('with empty GIFS', () => {
-        it('matches snapshot', () => {
-            store = mockStore({});
-            const state = store.getState() as AppState;
-            const onToggle = jest.fn();
-            const wrapper = mount(<GIFList
-                onToggleFavorite={onToggle}
-                gifs={state.trending}
-                favs={state.favs} />);
+        it('it displays an message', () => {
+            store = mockStore(initialState);
+            const wrapper = mount(<Provider store={store}>
+                    <GIFList gifs={[]} />
+                </Provider>);
             expect(wrapper).toMatchSnapshot();
+            expect(wrapper).toHaveText('No GIFs found!');
         });
     });
 });

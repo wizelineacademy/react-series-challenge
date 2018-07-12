@@ -17,7 +17,7 @@ export const GIFList: React.SFC<IGIFListProps> = (props) => {
     const { gifs, onToggleFavorite, favs } = props;
     return (
     <_div>
-        { gifs ?
+        { gifs && gifs.length > 0 ?
             gifs.map(gif => {
                 const callback = onToggleFavorite.bind(null, gif);
                 const active = favs[gif.id] !== undefined;
