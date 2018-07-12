@@ -1,3 +1,4 @@
 import logger from './logger';
+import saveFavorites from './saveFavorites';
 
-export default [logger];
+export default [logger, saveFavorites];
