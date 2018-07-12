@@ -1,11 +1,17 @@
 import React from "react";
 
-import './footer.css';
+import styled from 'styled-components';
+
+const StyledFooter = styled.footer`
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+`;
 
 const Footer = () => (
-  <footer className="footer">
+  <StyledFooter className="footer">
     <div>Just a footer =)</div>
-  </footer>
+  </StyledFooter>
 );
 
 export default Footer;

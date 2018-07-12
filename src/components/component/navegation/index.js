@@ -1,13 +1,22 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-import './navegation.css';
+import styled from 'styled-components';
+
+const StyledNavLink = styled(NavLink)`
+  :hover {
+    color: blue;
+  }
+  &.active{
+    color: red;
+  }
+`;
 
 const Navegation = () => (
   <header>
     <ul>
-      <li><NavLink to="/home" activeclass="active">HOME</NavLink></li>
-      <li><NavLink to="/keeps" activeclass="active">Favoritos</NavLink></li>
+      <li><StyledNavLink to="/home" activeClassName="active">HOME</StyledNavLink></li>
+      <li><StyledNavLink to="/keeps" activeClassName="active">Favoritos</StyledNavLink></li>
     </ul>
   </header>
 );

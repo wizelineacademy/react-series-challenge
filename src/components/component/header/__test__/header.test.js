@@ -45,7 +45,6 @@ describe('<Header> ', () => {
     // const handleSubmitSpy = spy(instance, "handleSubmit");
 
     // wrapper.update();
-
     // expect(handleSubmitSpy.calledOnce).toBeFalsy();
     wrapper.find('form').simulate('submit', { preventDefault() { } });
     // expect(handleSubmitSpy.calledOnce).toBeTruthy();

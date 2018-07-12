@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 
+
 // Redux
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
@@ -8,8 +9,6 @@ import { connect } from 'react-redux'
 import selectors from "./../../../redux/selectors";
 // Actions
 import actions from "./../../../redux/actions/";
-
-import './home.css'
 
 // Components
 import Footer from "./../../component/footer";
@@ -25,17 +24,18 @@ export class Home extends Component{
   }
 
   render() {
-    const { data, local, modifyLocal, fetchChange, currentPath } = this.props;
+    const { data, local, modifyLocal, fetchChange, location } = this.props;
 
     let sugestionView;
 
-    if (currentPath) {
-      sugestionView = `We dont have any application path as like this ${currentPath}`;
+
+    if (location && location.state && location.state.currentPath) {
+      sugestionView = `We dont have any application path as like this ${location.state.currentPath}`;
     }
 
     return (
       <div>
-        {(sugestionView ? <p>sugestionView</p> : null)}
+        {(sugestionView ? <p>{sugestionView}</p> : null)}
         <Header home={this.home} action={fetchChange} />
         <Giphys home={this.home} data={data} local={local} modifyLocal={modifyLocal} />
         <Footer />
