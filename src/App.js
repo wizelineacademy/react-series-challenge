@@ -5,19 +5,18 @@ import {Redirect, Route, Switch} from 'react-router-dom';
 import ListadoGeneral from './components/ListadoGeneral';
 import ListadoFavoritos from './components/ListadoFavoritos';
 import logo from './logo.svg';
-import './App.css';
-import {LaLista, UnaVineta, StyledNavLink} from './App.styled';
+import {AppHeader, AppTitle, DivApp, ImgLogo, LaLista, StyledNavLink, UnaVineta} from './App.styled';
 
 class App extends Component {
     render() {
         let idx = 0;
         return (
             <Provider store={store}>
-                <div className="App">
-                    <header className="App-header">
-                        <img src={logo} className="App-logo" alt="logo"/>
-                        <h1 className="App-title">Giphy</h1>
-                    </header>
+                <DivApp>
+                    <AppHeader>
+                        <ImgLogo src={logo} alt="logo"/>
+                        <AppTitle>Giphy</AppTitle>
+                    </AppHeader>
                     <LaLista>
                         <UnaVineta>
                             <StyledNavLink to="/ListadoGeneral" miidx={idx++}>General</StyledNavLink>
@@ -31,7 +30,7 @@ class App extends Component {
                         <Route path="/ListadoFavoritos" component={ListadoFavoritos}/>
                         <Redirect to="/ListadoGeneral"/>
                     </Switch>
-                </div>
+                </DivApp>
             </Provider>
         );
     }

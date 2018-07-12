@@ -1,10 +1,24 @@
-import styled, {injectGlobal} from 'styled-components';
+import styled from 'styled-components';
 import {NavLink} from 'react-router-dom';
 
-injectGlobal`
-    @font-face {
-        font-family: monospace;
-    }
+export const DivApp = styled.div`
+    text-align: center;
+`;
+
+export const AppHeader = styled.header`
+    background-color: #222;
+    height: 150px;
+    padding: 20px;
+    color: white;
+`;
+
+export const AppTitle = styled.h1`
+    font-size: 1.5em;
+`;
+
+export const ImgLogo = styled.img`
+    animation: App-logo-spin infinite 20s linear;
+    height: 80px;
 `;
 
 export const LaLista = styled.ul`

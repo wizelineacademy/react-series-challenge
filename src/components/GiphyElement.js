@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import InfoPortal from './InfoPortal';
 import appActions from '../actions';
+import {ButtonStyled, GiphyElementStyled, HrStyled} from './GiphyElement.styled';
 
 class GiphyElement extends Component {
 
@@ -44,31 +45,32 @@ class GiphyElement extends Component {
             <InfoPortal>
             <span>
                 <p>ID: {this.state.giphy.id}, Slug: {this.state.giphy.slug}, Caption: {this.state.giphy.caption}</p>
-                <button onClick={this.handleHideInfo}>Close</button>
+                <ButtonStyled onClick={this.handleHideInfo}>Close</ButtonStyled>
             </span>
             </InfoPortal>
         );
 
         const addButton = this.state.view === SEARCH && (
-            <button onClick={this.handleAddFavorite}>Favorite</button>
+            <ButtonStyled onClick={this.handleAddFavorite}>Favorite</ButtonStyled>
         );
 
         const removeButton = this.state.view === FAVORITES && (
-            <button onClick={this.handleRemoveFavorite}>Remove</button>
+            <ButtonStyled onClick={this.handleRemoveFavorite}>Remove</ButtonStyled>
         );
 
         return (
-            <span>
+            <GiphyElementStyled>
                 <img
                     slug={this.state.giphy.slug}
                     src={this.state.giphy.images.fixed_height_small.url}
                     alt={this.state.giphy.caption}
                 />
-                <button onClick={this.handleShowInfo}>Info</button>
+                <HrStyled/>
+                <ButtonStyled onClick={this.handleShowInfo}>Info</ButtonStyled>
                 {info}
                 {addButton}
                 {removeButton}
-            </span>
+            </GiphyElementStyled>
         );
     }
 }
