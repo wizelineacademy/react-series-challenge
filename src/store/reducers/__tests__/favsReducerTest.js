@@ -11,7 +11,7 @@ describe("favs reducer", () => {
   it("should handle ACTION_SET_TO_FAV", () => {
     function stateBefore() {
       return {
-        [FAVORITES]: {},
+        FAVORITES: {},
         status: "sending"
       };
     }
@@ -23,12 +23,10 @@ describe("favs reducer", () => {
       }
     };
 
-    const actual = favsReducer({}, action);
+    const actual = favsReducer(stateBefore, action);
 
     const expected = {
-      FAVORITES: {
-        "1": {}
-      },
+      FAVORITES: { undefined: { "1": {} } },
       status: "sending"
     };
     expect(actual).toEqual(expected);

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Input } from "../../../components";
+import Input from "../../atoms/Input/index";
 
 const StyledSearchBar = styled.div`
   margin: 0 auto;

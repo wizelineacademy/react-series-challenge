@@ -1,5 +1,5 @@
 import React from "react";
-import { Header } from "../../../components";
+import Header from "../../organism/Header/index";
 import PropTypes from "prop-types";
 
 const PublicLayout = ({ children }) => (

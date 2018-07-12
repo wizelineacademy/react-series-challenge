@@ -1,5 +1,6 @@
 import React from "react";
-import { PublicLayout, TrendingContainer } from "../../../components";
+import PublicLayout from "../../layouts/PublicLayout/index";
+import TrendingContainer from "../../containers/TrendingContainer/index";
 
 const HomePage = () => {
   return (

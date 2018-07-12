@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
-import { HomePage, DetailPage, FavsPage } from "../components";
+import HomePage from "./pages/HomePage/index";
+import FavsPage from "./pages/FavsPage/index";
 
 const App = () => {
   return (
@@ -8,7 +9,6 @@ const App = () => {
       <Route exact path="/" render={() => <Redirect to="/home" />} />
       <Route path="/home" component={HomePage} />;
       <Route path="/favorites" component={FavsPage} />;
-      <Route path="/detail" component={DetailPage} />;
     </Switch>
   );
 };

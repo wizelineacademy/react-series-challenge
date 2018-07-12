@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import { GiPanel, SearchBar } from "../../../components";
+import SearchBar from "../../molecules/SearchBar/index";
+import GiPanel from "../../molecules/GiPanel/index";
 import { actionFavDelete } from "../../../store/actions";
 import { getFavsData } from "../../../store/selectors/favsSelectors";
 
-class FavsContainer extends Component {
+export class FavsContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {};

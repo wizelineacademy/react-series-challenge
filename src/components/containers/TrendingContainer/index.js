@@ -8,10 +8,10 @@ import {
 } from "../../../store/actions";
 import { getTrendingData } from "../../../store/selectors/trendingSelectors";
 import { getFavsDataIds } from "../../../store/selectors/favsSelectors";
+import SearchBar from "../../molecules/SearchBar/index";
+import GiPanel from "../../molecules/GiPanel/index";
 
-import { GiPanel, SearchBar } from "../../../components";
-
-class TrendingContainer extends Component {
+export class TrendingContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -20,7 +20,10 @@ class TrendingContainer extends Component {
   }
 
   componentDidMount() {
-    this.props.actionTrendingGetDataRequest({});
+    const { actionTrendingGetDataRequest } = this.props;
+    if (actionTrendingGetDataRequest !== undefined) {
+      actionTrendingGetDataRequest({});
+    }
   }
 
   addToFavs = item => {

@@ -1,5 +1,6 @@
 import React from "react";
-import { PublicLayout, FavsContainer } from "../../../components";
+import PublicLayout from "../../layouts/PublicLayout/index";
+import FavsContainer from "../../containers/FavsContainer/index";
 
 const FavsPage = () => {
   return (

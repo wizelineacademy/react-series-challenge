@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "enzyme-to-json": "^3.3.4",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.7",
@@ -17,7 +18,14 @@
   "jest": {
     "collectCoverageFrom": [
       "**/src/**/*.{js,jsx}",
-      "!**/src/registerServiceWorker.{js,jsx}"
+      "!**/src/registerServiceWorker.{js,jsx}",
+      "!src/index.js",
+      "!src/setupTests.js",
+      "!src/App.js",
+      "!src/AppMain.js",
+      "!src/store/sagas.js",
+      "!src/store/index.js",
+      "!src/store/reducers/index.js"
     ],
     "coverageThreshold": {
       "global": {
@@ -38,6 +46,7 @@
   },
   "devDependencies": {
     "enzyme": "^3.3.0",
-    "enzyme-adapter-react-16": "^1.1.1"
+    "enzyme-adapter-react-16": "^1.1.1",
+    "jest-fetch-mock": "^1.6.5"
   }
 }

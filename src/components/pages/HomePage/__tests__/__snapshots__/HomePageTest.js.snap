@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HomePage should render without crashing 1`] = `
+<PublicLayout>
+  <h3>
+    Click to Add a Favorite
+  </h3>
+  <Connect(TrendingContainer) />
+</PublicLayout>
+`;

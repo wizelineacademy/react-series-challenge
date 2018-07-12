@@ -1,5 +1,5 @@
 import React from "react";
-import { Menu } from "../../../components";
+import Menu from "../../molecules/Menu/index";
 import styled from "styled-components";
 
 const StyledHeader = styled.div`

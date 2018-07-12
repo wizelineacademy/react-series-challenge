@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchBar should render without crashing 1`] = `
+<styled.div>
+  <Input
+    placeholder="Type some words..."
+  />
+</styled.div>
+`;
