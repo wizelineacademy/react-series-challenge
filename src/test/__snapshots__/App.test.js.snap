@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App>  create a Snapshot  1`] = `
+<React.Fragment>
+  <Navegation />
+  <Switch>
+    <Route
+      component={[Function]}
+      path="/keeps"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/home"
+    />
+    <Redirect
+      push={false}
+      to={
+        Object {
+          "pathname": "/home",
+          "state": Object {
+            "currentPath": "/",
+          },
+        }
+      }
+    />
+  </Switch>
+</React.Fragment>
+`;

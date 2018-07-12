@@ -1,8 +1,8 @@
 import { all } from 'redux-saga/effects';
 
 // Watchers
-import watchFetchData from './watchers/fetch';
-import watchLocalStorage from './watchers/local';
+import watchFetchData from './fetch';
+import watchLocalStorage from './local';
 
 
 export default function* rootSaga() {

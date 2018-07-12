@@ -1,8 +1,8 @@
 import { put, takeEvery, select } from 'redux-saga/effects';
 
 // actionsDic
-import actions from "../../constants/actions";
-import selectors from "./../../selectors";
+import actions from "../constants/actions";
+import selectors from "./../selectors";
 
 
 const loadData = () => {
@@ -22,11 +22,11 @@ const loadData = () => {
   }
 }
 
-function* getLocalStorage() {
+export function* getLocalStorage() {
   let data = loadData();
   yield put({ type: actions.LOCALSTORAGE_DATA, payload: { data } });
   // TODO: ENABLE
-  yield put({ type: 'FETCH_REQUEST', payload: { search: '' }});
+  yield put({ type: 'FETCH_REQUEST', payload: { word: '' }});
 }
 
 const setData = (data) => {

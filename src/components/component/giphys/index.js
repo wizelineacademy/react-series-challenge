@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import ErrorBoundary from './../errorBoundary';
+
 import styled from "styled-components";
 
 const StyledGiphys = styled.div`
@@ -12,6 +14,20 @@ const StyledButton = styled.button`
   bottom: 0;
   right: 0;
 `;
+
+class ImgG extends Component {
+
+  handleError = (e) => {
+    debugger;
+    throw new Error('img, cant load');
+  }
+
+  render() {
+    const { src, alt } = this.props;
+
+    return <img src={src} alt={alt}  onError={(e)=>this.handleError(e)} />
+  }
+}
 
 class Giphys extends Component {
 
@@ -26,11 +42,14 @@ class Giphys extends Component {
     const { data, local } = this.props;
 
     if (data && data.data) {
+
       giphyView = data.data.map((v, i) => {
         let view = (
           <StyledGiphys key={v.id}>
-            <StyledButton onClick={(event) => this.handleKeep(event, i)}>{`${local.ids.includes(v.id) ? 'undo' : 'keep'}`}</StyledButton>
-            <img src={v.images.fixed_width.webp} alt={v.title} />
+          <StyledButton onClick={(event) => this.handleKeep(event, i)}>{`${local.ids.includes(v.id) ? 'undo' : 'keep'}`}</StyledButton>
+            <ErrorBoundary>
+              <ImgG src={v.images.fixed_width.webp} alt={v.title}  />
+            </ErrorBoundary>
           </StyledGiphys>
         );
 

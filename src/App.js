@@ -6,6 +6,16 @@ import Favorites from "./components/containers/favorites";
 
 import Navegation from "./components/component/navegation";
 
+import { injectGlobal } from 'styled-components';
+
+injectGlobal`
+  body {
+    font-family: 'Roboto Slab', serif;
+    background-color: #9aab9529;
+    font-size:18px;
+  }
+`;
+
 const App = ({ ...props }) => {
   return (
     <React.Fragment>
