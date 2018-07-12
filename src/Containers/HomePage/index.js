@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { queryTrending } from './action'
 import { connect } from 'react-redux'
-import Gif from "../../components/Gif"
+import Gif from "../../components/Gifs"
 
 class HomePage extends Component {
   state = {

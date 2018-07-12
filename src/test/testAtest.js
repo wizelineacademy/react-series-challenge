@@ -1,4 +1,4 @@
-import React from 'react';
+/*import React from 'react';
 import { shallow } from 'enzyme';
 const ABC = ({ children }) => <div>{children}</div>;
 
@@ -8,3 +8,4 @@ describe('test', () => {
     expect(component.text()).toBe('hola');
   });
 });
+*/
