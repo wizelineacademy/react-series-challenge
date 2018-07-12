@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
-export const AppStyledDiv = styled.div`
+export const StyledAppDiv = styled.div`
   text-align: center;
   float:left;
+  width:100%;
 `;
 
 export const StyledFavButton = styled.button`
@@ -27,9 +28,8 @@ export const StyledGifContainer = styled.div`
   text-align:center;
   font-weight:bold;
   font-size:large;
-  padding:5px;
-  border: 3px solid;
-  width:350px;
+  padding:2px;
+  width:30%;
 `
 
 export const StyledFavImg = styled.img`
