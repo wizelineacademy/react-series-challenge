@@ -1,0 +1,198 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GifsList should render with no problems 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Provider
+    mainGifs={
+        Object {
+            "9Y1KGBP9bz0NPKgm0C": Object {
+              "bitly_gif_url": "https://gph.is/2jpQR3t",
+              "bitly_url": "https://gph.is/2jpQR3t",
+              "content_url": "",
+              "embed_url": "https://giphy.com/embed/xT0xelIcrwVocTirvO",
+              "id": "xT0xelIcrwVocTirvO",
+              "images": Object {
+                "original": Object {
+                  "frames": "16",
+                  "hash": "59f44cc8fbabdf1e66b7c094080529b7",
+                  "height": "455",
+                  "mp4": "https://media3.giphy.com/media/xT0xelIcrwVocTirvO/giphy.mp4",
+                  "mp4_size": "398093",
+                  "size": "1875522",
+                  "url": "https://media3.giphy.com/media/xT0xelIcrwVocTirvO/giphy.gif",
+                  "webp": "https://media3.giphy.com/media/xT0xelIcrwVocTirvO/giphy.webp",
+                  "webp_size": "713304",
+                  "width": "455",
+                },
+              },
+              "import_datetime": "2017-11-26 17:34:50",
+              "is_sticker": 0,
+              "slug": "willandgrace-will-and-grace-xT0xelIcrwVocTirvO",
+              "source": "",
+              "source_post_url": "",
+              "source_tld": "",
+              "trending_datetime": "2018-05-25 06:00:01",
+              "type": "gif",
+              "url": "https://giphy.com/gifs/willandgrace-will-and-grace-xT0xelIcrwVocTirvO",
+              "username": "willandgrace",
+            },
+          }
+    }
+    secondaryGifs={Object {}}
+    store={
+        Object {
+            "dispatch": [Function],
+            "getState": [Function],
+            "replaceReducer": [Function],
+            "subscribe": [Function],
+            Symbol(observable): [Function],
+          }
+    }
+>
+    <GifsList
+        mainGifs={
+            Object {
+                "9Y1KGBP9bz0NPKgm0C": Object {
+                  "bitly_gif_url": "https://gph.is/2jpQR3t",
+                  "bitly_url": "https://gph.is/2jpQR3t",
+                  "content_url": "",
+                  "embed_url": "https://giphy.com/embed/xT0xelIcrwVocTirvO",
+                  "id": "xT0xelIcrwVocTirvO",
+                  "images": Object {
+                    "original": Object {
+                      "frames": "16",
+                      "hash": "59f44cc8fbabdf1e66b7c094080529b7",
+                      "height": "455",
+                      "mp4": "https://media3.giphy.com/media/xT0xelIcrwVocTirvO/giphy.mp4",
+                      "mp4_size": "398093",
+                      "size": "1875522",
+                      "url": "https://media3.giphy.com/media/xT0xelIcrwVocTirvO/giphy.gif",
+                      "webp": "https://media3.giphy.com/media/xT0xelIcrwVocTirvO/giphy.webp",
+                      "webp_size": "713304",
+                      "width": "455",
+                    },
+                  },
+                  "import_datetime": "2017-11-26 17:34:50",
+                  "is_sticker": 0,
+                  "slug": "willandgrace-will-and-grace-xT0xelIcrwVocTirvO",
+                  "source": "",
+                  "source_post_url": "",
+                  "source_tld": "",
+                  "trending_datetime": "2018-05-25 06:00:01",
+                  "type": "gif",
+                  "url": "https://giphy.com/gifs/willandgrace-will-and-grace-xT0xelIcrwVocTirvO",
+                  "username": "willandgrace",
+                },
+              }
+        }
+        secondaryGifs={Object {}}
+    />
+</Provider>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "mainGifs": Object {
+        "9Y1KGBP9bz0NPKgm0C": Object {
+          "bitly_gif_url": "https://gph.is/2jpQR3t",
+          "bitly_url": "https://gph.is/2jpQR3t",
+          "content_url": "",
+          "embed_url": "https://giphy.com/embed/xT0xelIcrwVocTirvO",
+          "id": "xT0xelIcrwVocTirvO",
+          "images": Object {
+            "original": Object {
+              "frames": "16",
+              "hash": "59f44cc8fbabdf1e66b7c094080529b7",
+              "height": "455",
+              "mp4": "https://media3.giphy.com/media/xT0xelIcrwVocTirvO/giphy.mp4",
+              "mp4_size": "398093",
+              "size": "1875522",
+              "url": "https://media3.giphy.com/media/xT0xelIcrwVocTirvO/giphy.gif",
+              "webp": "https://media3.giphy.com/media/xT0xelIcrwVocTirvO/giphy.webp",
+              "webp_size": "713304",
+              "width": "455",
+            },
+          },
+          "import_datetime": "2017-11-26 17:34:50",
+          "is_sticker": 0,
+          "slug": "willandgrace-will-and-grace-xT0xelIcrwVocTirvO",
+          "source": "",
+          "source_post_url": "",
+          "source_tld": "",
+          "trending_datetime": "2018-05-25 06:00:01",
+          "type": "gif",
+          "url": "https://giphy.com/gifs/willandgrace-will-and-grace-xT0xelIcrwVocTirvO",
+          "username": "willandgrace",
+        },
+      },
+      "secondaryGifs": Object {},
+    },
+    "ref": null,
+    "rendered": null,
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "mainGifs": Object {
+          "9Y1KGBP9bz0NPKgm0C": Object {
+            "bitly_gif_url": "https://gph.is/2jpQR3t",
+            "bitly_url": "https://gph.is/2jpQR3t",
+            "content_url": "",
+            "embed_url": "https://giphy.com/embed/xT0xelIcrwVocTirvO",
+            "id": "xT0xelIcrwVocTirvO",
+            "images": Object {
+              "original": Object {
+                "frames": "16",
+                "hash": "59f44cc8fbabdf1e66b7c094080529b7",
+                "height": "455",
+                "mp4": "https://media3.giphy.com/media/xT0xelIcrwVocTirvO/giphy.mp4",
+                "mp4_size": "398093",
+                "size": "1875522",
+                "url": "https://media3.giphy.com/media/xT0xelIcrwVocTirvO/giphy.gif",
+                "webp": "https://media3.giphy.com/media/xT0xelIcrwVocTirvO/giphy.webp",
+                "webp_size": "713304",
+                "width": "455",
+              },
+            },
+            "import_datetime": "2017-11-26 17:34:50",
+            "is_sticker": 0,
+            "slug": "willandgrace-will-and-grace-xT0xelIcrwVocTirvO",
+            "source": "",
+            "source_post_url": "",
+            "source_tld": "",
+            "trending_datetime": "2018-05-25 06:00:01",
+            "type": "gif",
+            "url": "https://giphy.com/gifs/willandgrace-will-and-grace-xT0xelIcrwVocTirvO",
+            "username": "willandgrace",
+          },
+        },
+        "secondaryGifs": Object {},
+      },
+      "ref": null,
+      "rendered": null,
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
