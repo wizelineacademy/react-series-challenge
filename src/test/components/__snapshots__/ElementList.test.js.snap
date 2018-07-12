@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ElementList should render without problems 1`] = `
+<div
+  className="sc-EHOje gqTaLh"
+>
+  <h1>
+    No info
+  </h1>
+</div>
+`;
