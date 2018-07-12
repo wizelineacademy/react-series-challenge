@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavBar component render as teh snapshot says 1`] = `
+.c0 {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.c1 {
+  float: left;
+  color: #f2f2f2;
+  background-color: inherit;
+  text-align: center;
+  padding: 14px 16px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.c1:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.c2 {
+  float: left;
+  color: white;
+  background-color: #4CAF50;
+  text-align: center;
+  padding: 14px 16px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.c2:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.c3 {
+  float: right;
+  margin: 14px 16px;
+  height: 14px;
+  width: 200px;
+  border-radius: 5px;
+}
+
+<div
+  className="c0"
+>
+  <a
+    active={false}
+    className="c1"
+    href="/a"
+    to="/a"
+  >
+    a
+  </a>
+  <a
+    active={true}
+    className="c2"
+    href="/b"
+    to="/b"
+  >
+    b
+  </a>
+  <input
+    className="c3"
+    type="text"
+  />
+</div>
+`;
