@@ -32,17 +32,12 @@ const SearchReducer = (state = initialState, action) => {
                 }
             }
             
-            console.log("NEWSTATE", newState);
             // ADDING 
             let foundIndex = newState.gifs.findIndex( (x, index) => {
                 return x.id === payload.id;
             });
 
             const newUpdatedGifData = [...state.gifs]; 
-            console.log("NEWUPDATEDGIF",newUpdatedGifData)
-            console.log("PAYLOAD", payload);
-            console.log("INDICE", foundIndex);
-            console.log("NEW UPDATED", newUpdatedGifData[foundIndex].isFavorite );
             newUpdatedGifData[foundIndex].isFavorite = true;
 
             let payloadIsFavorite = {...payload};

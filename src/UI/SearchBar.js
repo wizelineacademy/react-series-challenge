@@ -6,7 +6,7 @@ const SearchBar = (props) => {
         <StyledSearchbar>
             <StyledInput 
             type="text" 
-            placeholder = "Search for awesome gifs" 
+            placeholder = "Search for awesome gifs (Click Button To Search)" 
             onChange = {(event) => {props.updateState(event.target.value)}} />
 
             <StyledButton onClick = { props.handleSearch } />  

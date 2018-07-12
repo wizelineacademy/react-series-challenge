@@ -5,6 +5,7 @@ import { Route } from 'react-router-dom';
 import GifPage from '../components/GifPage/GifPage'
 import GifFavorite from '../components/GifFavorite/GifFavorite'
 import {StyledLi, StyledNavLink} from '../App.styled'
+import NotFoundPage from '../components/NotFoundPage/NotFoundPage'
 
 describe('App', () => {
   let wrapper;
@@ -22,13 +23,19 @@ describe('App', () => {
 
   test('should set the routes ', () => {
     expect(
-      wrapper.contains(<Route path = "/home" exact component = {GifPage} />)
+      wrapper.contains(<Route path = "/" exact component = {GifPage} />)
     ).toBe(true);
   });
 
   test('should set the routess ', () => {
     expect(
       wrapper.contains(<Route path = "/favorite" exact component = {GifFavorite} />)
+    ).toBe(true);
+  });
+
+  test('should set the routess ', () => {
+    expect(
+      wrapper.contains(<Route path = "*" component = {NotFoundPage} />)
     ).toBe(true);
   });
 

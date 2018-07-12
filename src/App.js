@@ -4,10 +4,11 @@ import store from './store/index';
 import GifPage from './components/GifPage/GifPage'
 import GifFavorite from './components/GifFavorite/GifFavorite';
 import { GifSection, StyledHeader, StyledNavLink, StyledUl, StyledLi, StyledDiv } from './App.styled'
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
-import { themeSunny, themeNightly } from './globalInjection'
-import ThemeSelector from './components/ThemeSelector/ThemeSelector'
+import { themeSunny, themeNightly } from './globalInjection';
+import ThemeSelector from './components/ThemeSelector/ThemeSelector';
+import NotFoundPage from './components/NotFoundPage/NotFoundPage';
 
 class App extends Component {
 
@@ -20,7 +21,6 @@ class App extends Component {
 
   changeTheme = () => {
     this.setState ( (prevState) => ({ nightMode: !prevState.nightMode }) );
-    console.log("Estado es: " + this.state.nightMode);
   }
 
   render() {
@@ -31,7 +31,7 @@ class App extends Component {
               <StyledHeader {...this.props}>
                 <StyledUl>
                     <StyledLi><StyledNavLink 
-                    to = "/home"
+                    to = "/"
                     activeClassName = "act"
                     exact>
                     Home </StyledNavLink></StyledLi>
@@ -46,9 +46,9 @@ class App extends Component {
               </StyledHeader>
               <GifSection>
                 <Switch>
-                  <Route path = "/home" exact component = {GifPage} />
+                  <Route path = "/" exact component = {GifPage} />
                   <Route path = "/favorite" exact component = {GifFavorite} />
-                  <Redirect from = "/" to = "/home" />
+                  <Route path = "*" component = {NotFoundPage} />
                 </Switch>
               </GifSection>
         </StyledDiv>

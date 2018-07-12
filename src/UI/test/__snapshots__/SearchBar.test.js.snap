@@ -23,7 +23,7 @@ ShallowWrapper {
       "children": Array [
         <styled.input
           onChange={[Function]}
-          placeholder="Search for awesome gifs"
+          placeholder="Search for awesome gifs (Click Button To Search)"
           type="text"
 />,
         <styled.button
@@ -39,7 +39,7 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "onChange": [Function],
-          "placeholder": "Search for awesome gifs",
+          "placeholder": "Search for awesome gifs (Click Button To Search)",
           "type": "text",
         },
         "ref": null,
@@ -69,7 +69,7 @@ ShallowWrapper {
         "children": Array [
           <styled.input
             onChange={[Function]}
-            placeholder="Search for awesome gifs"
+            placeholder="Search for awesome gifs (Click Button To Search)"
             type="text"
 />,
           <styled.button
@@ -85,7 +85,7 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "onChange": [Function],
-            "placeholder": "Search for awesome gifs",
+            "placeholder": "Search for awesome gifs (Click Button To Search)",
             "type": "text",
           },
           "ref": null,
