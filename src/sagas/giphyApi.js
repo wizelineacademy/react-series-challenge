@@ -32,7 +32,7 @@ const fetchJson = (...args) => {
   return fetch(args).then((res) => res.json());
 }
 
-function* getTrendingGifs(action) {
+export function* getTrendingGifs(action) {
   let { page, search } = action.payload;
 
   if (page < 0) {
