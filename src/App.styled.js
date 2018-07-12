@@ -1,5 +1,20 @@
-import styled from 'styled-components'
+import styled, { injectGlobal } from 'styled-components'
 import { NavLink } from 'react-router-dom';
+
+injectGlobal`
+  @import url('https://fonts.googleapis.com/css?family=Chela+One');
+  @font-face {
+      font-family: 'Chela One', cursive;
+  }
+  
+  * {
+      font-family: 'Chela One', cursive;
+  }
+
+  html, body {
+    margin: 0;
+  }
+`;
 
 const Navbar = styled.div`
     display: block;
