@@ -9,6 +9,11 @@ describe('FavButton', () => {
         shallow(<FavButton />);
     });
 
+    it('matches snapshot', () => {
+        const wrapper = shallow(<FavButton />)
+        expect(wrapper).toMatchSnapshot()
+    });
+
     describe('heart icon', () => {
         it('contains a white heart', () => {
             const wrapper = mount(<FavButton />);

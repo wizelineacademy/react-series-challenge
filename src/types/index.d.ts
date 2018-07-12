@@ -16,8 +16,12 @@ export interface IGIF {
     title: string
 }
 
+export interface FavsCollection {
+    [id: string]: IGIF
+}
 export interface AppState {
-    favs: any
-    trending: IGIF[]
-    search: string
+    readonly favs: FavsCollection
+    readonly trending: IGIF[]
+    readonly search: string
+    readonly filter_favs: string
 }
