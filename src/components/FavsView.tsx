@@ -11,7 +11,7 @@ interface IFavsViewProps {
     gifs: IGIF[]
 }
 
-const FavsView = (props: IFavsViewProps) => {
+export const FavsView = (props: IFavsViewProps) => {
     return (<div>
         <h1 className="center">Your favorite GIFS</h1>
         <_div_search>
@@ -33,7 +33,4 @@ function filterFavs(favs: object, query: string) {
 function mapStateToProps(state: any) {
     return { gifs: filterFavs(state.favs, state.filter_favs) }
 }
-function mapDispatchToProps(dispatch: Dispatch) {
-    return bindActionCreators({}, dispatch);
-}
-export default connect(mapStateToProps, mapDispatchToProps)(FavsView);
+export default connect(mapStateToProps)(FavsView);
