@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`GifCard should render without problems 1`] = `
+exports[`GifsList should render with no problems 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Provider
-    gif={
+    mainGifs={
         Object {
             "9Y1KGBP9bz0NPKgm0C": Object {
               "bitly_gif_url": "https://gph.is/2jpQR3t",
@@ -40,6 +40,7 @@ ShallowWrapper {
             },
           }
     }
+    secondaryGifs={Object {}}
     store={
         Object {
             "dispatch": [Function],
@@ -50,8 +51,8 @@ ShallowWrapper {
           }
     }
 >
-    <Connect(GifCard)
-        gif={
+    <GifsList
+        mainGifs={
             Object {
                 "9Y1KGBP9bz0NPKgm0C": Object {
                   "bitly_gif_url": "https://gph.is/2jpQR3t",
@@ -86,6 +87,7 @@ ShallowWrapper {
                 },
               }
         }
+        secondaryGifs={Object {}}
     />
 </Provider>,
   Symbol(enzyme.__renderer__): Object {
@@ -98,9 +100,9 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "class",
+    "nodeType": "function",
     "props": Object {
-      "gif": Object {
+      "mainGifs": Object {
         "9Y1KGBP9bz0NPKgm0C": Object {
           "bitly_gif_url": "https://gph.is/2jpQR3t",
           "bitly_url": "https://gph.is/2jpQR3t",
@@ -133,6 +135,7 @@ ShallowWrapper {
           "username": "willandgrace",
         },
       },
+      "secondaryGifs": Object {},
     },
     "ref": null,
     "rendered": null,
@@ -142,9 +145,9 @@ ShallowWrapper {
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "class",
+      "nodeType": "function",
       "props": Object {
-        "gif": Object {
+        "mainGifs": Object {
           "9Y1KGBP9bz0NPKgm0C": Object {
             "bitly_gif_url": "https://gph.is/2jpQR3t",
             "bitly_url": "https://gph.is/2jpQR3t",
@@ -177,6 +180,7 @@ ShallowWrapper {
             "username": "willandgrace",
           },
         },
+        "secondaryGifs": Object {},
       },
       "ref": null,
       "rendered": null,
