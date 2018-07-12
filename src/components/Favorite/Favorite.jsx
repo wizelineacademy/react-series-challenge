@@ -11,6 +11,11 @@ class Favorite extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
+  componentDidMount() {
+    const { fetchFavorite } = this.props;
+    fetchFavorite();
+  }
+
   handleChange(event) {
     const { value } = event.target;
     this.setState(() => ({ filterText: value }));

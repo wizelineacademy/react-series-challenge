@@ -14,8 +14,9 @@ class Trending extends React.Component {
   }
 
   componentDidMount() {
-    const { fetchTrending } = this.props;
+    const { fetchTrending, fetchFavorite } = this.props;
     fetchTrending();
+    fetchFavorite();
   }
 
   handleChange(event) {

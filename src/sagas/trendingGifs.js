@@ -1,4 +1,4 @@
-import { takeEvery, call, put, all } from 'redux-saga/effects';
+import { takeEvery, call, put } from 'redux-saga/effects';
 import axios from 'axios';
 
 import trendingGifs from '../actions/trendingGifs';
@@ -62,9 +62,7 @@ function* searchTredingGifs(action) {
   }));
 }
 
-export default function* () {
-  yield all([
-    takeEvery(TRENDING_FETCH, loadTredingGifs),
-    takeEvery(TRENDING_SEARCH, searchTredingGifs),
-  ]);
-}
+export default [
+  takeEvery(TRENDING_FETCH, loadTredingGifs),
+  takeEvery(TRENDING_SEARCH, searchTredingGifs),
+];

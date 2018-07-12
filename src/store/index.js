@@ -3,7 +3,7 @@ import createSagaMiddleware from 'redux-saga';
 
 import rootReducer from '../reducers';
 import customMiddleware from '../middleware';
-import trendingGifsSaga from '../sagas/trendingGifs';
+import sagas from '../sagas';
 
 const sagasMiddleware = createSagaMiddleware();
 
@@ -25,6 +25,6 @@ const store = createStore(
   composedEnhancers,
 );
 
-sagasMiddleware.run(trendingGifsSaga);
+sagasMiddleware.run(sagas);
 
 export default store;
