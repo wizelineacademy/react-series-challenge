@@ -20,11 +20,9 @@ describe('trendingGifs reducer', () => {
   it('sets the given value for the state for TRENDING_GET', () => {
     action = {
       type: trendingGifsActionDef.types.TRENDING_GET,
-      payload: { gifs: { x: { id: 'x' } } },
+      payload: { gifs: [{ id: 'x' }] },
     };
-    expectedState = {
-      x: { id: 'x' },
-    };
+    expectedState = { x: { id: 'x' } };
     expect(trendingGifsReducer({}, action)).toEqual(expectedState);
   });
 });
