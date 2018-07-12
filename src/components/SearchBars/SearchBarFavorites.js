@@ -22,7 +22,7 @@ export const SearchBarFavorites = (props) =>{
     }
 
     return (
-        <SearchBarStyle  className="SearchBar"
+        <SearchBarStyle
             placeholder={"Search Favorite by name"}
             onChange={(event) => onInputChange(event.target.value)} />
     );

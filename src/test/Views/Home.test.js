@@ -1,9 +1,9 @@
 import React from 'react';
 import configureStore from 'redux-mock-store';
-import { shallow } from 'enzyme'
-import { App } from '../App';
+import { mount } from 'enzyme';
+import Home from '../../components/Views/Home';
 
-describe('App', () => {
+describe('Home', () => {
     const initialState = {};
 
     const mockStore = configureStore();
@@ -12,7 +12,9 @@ describe('App', () => {
 
     beforeEach(()=>{
         store=mockStore(initialState)
-        container=shallow(<App store={store}/>)
+        container=mount(<Home 
+                                gifts={{}}
+                                store={store}/>)
     })
 
     it('should dispatch action', () => {

@@ -1,26 +1,15 @@
-import mockAxios from 'jest-mock-axios';
+import axios from 'axios';
 import { fetchGifts } from '../../../redux/sagas';
 
-// afterEach(() => {
-//     mockAxios.reset();
-// });
- 
-// it('Fetch Gifts', () => {
-//     let catchFn = jest.fn(),
-//         thenFn = jest.fn();
- 
-//     let clientMessage = {text:""};
+jest.mock('axios');
 
-//     let responseObj = { data: 'gifts' };
-//     mockAxios.mockResponse(responseObj);
- 
-//     fetchGifts(clientMessage)
-//         .then(thenFn)
-//         .catch(catchFn);
-
-//     expect(mockAxios.get).toHaveBeenCalledWith('/foobar/', 'hello')
-
-//     expect(thenFn).toHaveBeenCalledWith('gifts');
-// });
+test('should fetch gifts', () => {
+    const resp = {data: {data: 'url'}};
+  
+    // or you could use the following depending on your use case:
+    axios.get.mockImplementation(() => Promise.resolve(resp));
+    fetchGifts({text:""}).then(response => expect(response).toEqual(resp.data))
+    fetchGifts({text:"r"}).then(response => expect(response).toEqual(resp.data))
+});
 
 
