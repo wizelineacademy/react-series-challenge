@@ -1,6 +1,7 @@
 import React from 'react';
 import GifsList from '../../../components/GifsList/GifsList';
-import renderer from 'react-test-renderer';
+// import renderer from 'react-test-renderer';
+import { shallow } from 'enzyme';
 
 const mainGifs = {
     '9Y1KGBP9bz0NPKgm0C': {
@@ -20,8 +21,12 @@ const secondaryGifs = {};
 describe('GifsList', () => {
 
     it('should render without problems', () => {
-        const wrapper = renderer.create(<GifsList mainGifs={mainGifs} secondaryGifs={secondaryGifs} />).toJSON();
+        // const wrapper = renderer.create(<GifsList mainGifs={mainGifs} secondaryGifs={secondaryGifs} />).toJSON();
+        const wrapper = shallow(<GifsList mainGifs={mainGifs} secondaryGifs={secondaryGifs} />);
         expect(wrapper).toMatchSnapshot();
+
+        expect(wrapper.prop('mainGifs')).toMatch(mainGifs);
+        expect(wrapper.prop('secondaryGifs')).toMatch({});
     });
 
 });

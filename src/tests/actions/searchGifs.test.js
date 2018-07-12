@@ -16,6 +16,14 @@ describe('Favorite Gifs Actions', () => {
         expect(creators.loadSearchGifs(testSearchTerm)).toEqual(expectedAction);
     });
 
+    it('should return an empty object', () => {
+        const expectedAction = {
+            type: types.SEARCH_GIFS_LOAD,
+            payload: { }
+        };
+        expect(creators.loadSearchGifs()).toEqual(expectedAction);
+    });
+
     it('should pass a gifs object, with the gif ID as key and the gif itself as value (at least with id)', () => {
         const expectedAction = {
             type: types.SEARCH_GIFS_FETCHED,
@@ -24,6 +32,15 @@ describe('Favorite Gifs Actions', () => {
         };
 
         expect(creators.fetchedSearchGifs(testGif)).toEqual(expectedAction);
+    });
+
+    it('should return an empty object', () => {
+        const expectedAction = {
+            type: types.SEARCH_GIFS_FETCHED,
+            payload: { }
+        };
+
+        expect(creators.fetchedSearchGifs()).toEqual(expectedAction);
     });
 
 
@@ -35,4 +52,14 @@ describe('Favorite Gifs Actions', () => {
 
         expect(creators.failedFetchSearchGifs(testError)).toEqual(expectedAction);
     });
+
+    it('should return an empty object', () => {
+        const expectedAction = {
+            type: types.SEARCH_GIFS_FAILED,
+            payload: { }
+        };
+
+        expect(creators.failedFetchSearchGifs()).toEqual(expectedAction);
+    });
+
 });

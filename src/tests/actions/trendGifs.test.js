@@ -18,6 +18,15 @@ describe('Favorite Gifs Actions', () => {
         expect(creators.fetchedTrendGifs(testGif)).toEqual(expectedAction);
     });
 
+    it('should return an empty object', () => {
+        const expectedAction = {
+            type: types.TREND_GIFS_FETCHED,
+            payload: { }
+        };
+
+        expect(creators.fetchedTrendGifs()).toEqual(expectedAction);
+    });
+
 
     it('should pass an error string if fetch trend gifs fails', () => {
         const expectedAction = {
@@ -28,8 +37,26 @@ describe('Favorite Gifs Actions', () => {
         expect(creators.failedFetchTrendGifs(testError)).toEqual(expectedAction);
     });
 
+    it('should return an empty object', () => {
+        const expectedAction = {
+            type: types.TREND_GIFS_FAILED,
+            payload: { }
+        };
+
+        expect(creators.failedFetchTrendGifs()).toEqual(expectedAction);
+    });
+
 
     it('should receive only the action, with payload as empty object', () => {
+        const expectedAction = {
+            type: types.TREND_GIFS_LOAD,
+            payload: { value: 1 }
+        };
+
+        expect(creators.loadTrendGifs({ value: 1 })).toEqual(expectedAction);
+    });
+
+    it('should return an empty object', () => {
         const expectedAction = {
             type: types.TREND_GIFS_LOAD,
             payload: {}
