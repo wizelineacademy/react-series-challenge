@@ -38,3 +38,5 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(SearchBar);
+
+export { SearchBar };
