@@ -40,7 +40,6 @@ ShallowWrapper {
                                         >
                                                 <img
                                                         alt="logo"
-                                                        className="App-logo"
                                                         src="logo.svg"
                                                 />
                                         </NavLink>
@@ -121,7 +120,6 @@ ShallowWrapper {
                                         >
                                                   <img
                                                             alt="logo"
-                                                            className="App-logo"
                                                             src="logo.svg"
                                                   />
                                         </NavLink>
@@ -203,7 +201,6 @@ ShallowWrapper {
                                           >
                                                         <img
                                                                       alt="logo"
-                                                                      className="App-logo"
                                                                       src="logo.svg"
                                                         />
                                           </NavLink>
@@ -277,7 +274,6 @@ ShallowWrapper {
                                 >
                                                 <img
                                                                 alt="logo"
-                                                                className="App-logo"
                                                                 src="logo.svg"
                                                 />
                                 </NavLink>
@@ -327,7 +323,6 @@ ShallowWrapper {
                     >
                                         <img
                                                             alt="logo"
-                                                            className="App-logo"
                                                             src="logo.svg"
                                         />
                     </NavLink>
@@ -376,7 +371,6 @@ ShallowWrapper {
 >
                       <img
                                             alt="logo"
-                                            className="App-logo"
                                             src="logo.svg"
                       />
 </NavLink>,
@@ -392,7 +386,6 @@ ShallowWrapper {
                       "aria-current": "page",
                       "children": <img
                         alt="logo"
-                        className="App-logo"
                         src="logo.svg"
 />,
                       "to": "/",
@@ -404,7 +397,6 @@ ShallowWrapper {
                       "nodeType": "host",
                       "props": Object {
                         "alt": "logo",
-                        "className": "App-logo",
                         "src": "logo.svg",
                       },
                       "ref": null,
@@ -629,7 +621,6 @@ ShallowWrapper {
                                                   >
                                                             <img
                                                                       alt="logo"
-                                                                      className="App-logo"
                                                                       src="logo.svg"
                                                             />
                                                   </NavLink>
@@ -710,7 +701,6 @@ ShallowWrapper {
                                                 >
                                                             <img
                                                                         alt="logo"
-                                                                        className="App-logo"
                                                                         src="logo.svg"
                                                             />
                                                 </NavLink>
@@ -792,7 +782,6 @@ ShallowWrapper {
                                                 >
                                                                 <img
                                                                                 alt="logo"
-                                                                                className="App-logo"
                                                                                 src="logo.svg"
                                                                 />
                                                 </NavLink>
@@ -866,7 +855,6 @@ ShallowWrapper {
                                     >
                                                       <img
                                                                         alt="logo"
-                                                                        className="App-logo"
                                                                         src="logo.svg"
                                                       />
                                     </NavLink>
@@ -916,7 +904,6 @@ ShallowWrapper {
                       >
                                             <img
                                                                   alt="logo"
-                                                                  className="App-logo"
                                                                   src="logo.svg"
                                             />
                       </NavLink>
@@ -965,7 +952,6 @@ ShallowWrapper {
 >
                         <img
                                                 alt="logo"
-                                                className="App-logo"
                                                 src="logo.svg"
                         />
 </NavLink>,
@@ -981,7 +967,6 @@ ShallowWrapper {
                         "aria-current": "page",
                         "children": <img
                           alt="logo"
-                          className="App-logo"
                           src="logo.svg"
 />,
                         "to": "/",
@@ -993,7 +978,6 @@ ShallowWrapper {
                         "nodeType": "host",
                         "props": Object {
                           "alt": "logo",
-                          "className": "App-logo",
                           "src": "logo.svg",
                         },
                         "ref": null,

@@ -17,7 +17,7 @@ class ComponentsFavorites extends Component {
 			<React.Fragment>
 				<Search searchAction={this.props.searchFavs} />
 				<h1>Trending gif</h1>
-				<CardsList cards={this.props.cards} />
+				<CardsList addRemoveFavorites={this.props.addRemoveFavorites} cards={this.props.cards} />
 			</React.Fragment>
 		);
 	}
@@ -59,4 +59,5 @@ const mapDispatchToProps = (dispatch) => {
 	}, dispatch);
 };
 
+export { ComponentsFavorites };
 export default connect(mapStateToProps, mapDispatchToProps)(ComponentsFavorites);

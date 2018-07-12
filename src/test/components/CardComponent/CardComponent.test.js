@@ -1,6 +1,7 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, render } from 'enzyme';
 import CardComponent from '../../../components/CardComponent';
+import { FavButton } from '../../../components/CardComponent/Card.Styled';
 
 describe('Card Component', () => {
 	const card = {
@@ -13,5 +14,11 @@ describe('Card Component', () => {
 	test('Card Component Shallow', () => {
 		const cardComp = shallow(<CardComponent card={card} />);
 		expect(cardComp).toMatchSnapshot();
+	});
+	it('Should click favorites', () => {
+		const myMockFn = jest.fn();
+		const c = shallow(<CardComponent card={card} addRemoveFavorites={myMockFn} />) 
+		c.find(FavButton).simulate('click');
+		expect(myMockFn.mock.calls.length).toBe(1);
 	});
 });

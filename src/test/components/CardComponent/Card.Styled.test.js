@@ -15,4 +15,8 @@ describe('Card style', () => {
 		const ci = render(<FavButton />);
 		expect(ci).toMatchSnapshot();
 	})
+	it('should receive props', () => {
+		const ci = render(<FavButton favorite />);
+		expect(ci).toMatchSnapshot();
+	});
 });

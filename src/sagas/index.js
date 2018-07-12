@@ -102,7 +102,7 @@ export function* watchForAddRemove(){
 	yield takeEvery(ADD_REMOVE_FAVORITES,favCard);
 }
 
-function* loadFavCard(){
+export function* loadFavCard(){
 	const favs = JSON.parse(localStorage.getItem('favoritesCards'));
 	const favsArr = Object.keys(favs).map((k) => favs[k])
 	yield put({ type:LOAD_CARDS, payload: {cards:favsArr} });

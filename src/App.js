@@ -8,7 +8,6 @@ import {
   Switch,
 } from 'react-router-dom';
 import logo from './logo.svg';
-import './App.css';
 
 import HomeComponent from './components/HomeComponent';
 import FavoritesComponent from './components/FavoritesComponent';
@@ -47,7 +46,7 @@ class App extends Component {
         <AppStyled>
           <header>
             <ul>
-              <li><NavLink to='/' activeclass='active'><img src={logo} className="App-logo" alt="logo" /></NavLink></li>
+              <li><NavLink to='/' activeclass='active'><img src={logo} alt="logo" /></NavLink></li>
               <li><NavLink to='/Home' activeclass='active'>Home</NavLink></li>
               <li><NavLink to='/Favorites' activeclass='active'>Favoritos</NavLink></li>
               <li><button onClick={this.toggleTheme}>Toggle Theme</button></li>

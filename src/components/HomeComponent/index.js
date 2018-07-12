@@ -59,4 +59,5 @@ const mapDispatchToProps = (dispatch) => {
 	}, dispatch);
 };
 
+export { ComponentsHome };
 export default connect(mapStateToProps, mapDispatchToProps)(ComponentsHome);
