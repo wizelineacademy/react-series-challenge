@@ -69,7 +69,7 @@ Search.defaultProps = {
   searchGif: () => { },
 }
 
-
+export { Search as Pure }
 export default connect(mapStateToProps, {
   searchGif,
 })(Search);

@@ -29,8 +29,8 @@ class Favorites extends Component {
     this.props.deleteFav(id);
   }
 
-  gitFilter = (e) => {
-    e.preventDefault();
+  handleSubmit = (e) => {
+    if (e) e.preventDefault();
     this.props.filterFavorites({ param: this.state.searchForm.searchField, favorites: this.props.favorites });
   }
 
@@ -52,7 +52,7 @@ class Favorites extends Component {
                 </div>
               </div>
             </div>
-            <button onClick={() => { this.handleClick(v.id) }}>Eliminar de mis favoritos</button>
+            <button id="deleteFavorites" onClick={() => { this.handleClick(v.id) }}>Eliminar de mis favoritos</button>
           </div>
         );
       })
@@ -62,7 +62,7 @@ class Favorites extends Component {
       <div>
         <Menu />
         <div>
-          <form onSubmit={this.gitFilter}>
+          <form onSubmit={this.handleSubmit}>
             <span>Escribe el nombre de un gif</span>
             <input
               id="search"
@@ -81,7 +81,6 @@ class Favorites extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    data: state.gif,
     favorites: state.favorites,
   }
 }
@@ -98,6 +97,7 @@ Favorites.defaultProps = {
   filterFavorites: () => { },
 }
 
+export { Favorites as Pure }
 export default connect(mapStateToProps, {
   deleteFav,
   getFavorites,

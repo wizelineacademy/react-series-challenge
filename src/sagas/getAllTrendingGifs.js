@@ -14,7 +14,7 @@ export function* watchGetAllTrendingGif() {
         const gifs = yield call(ajax, options);
         yield put(actions.receiveTrendingGifs(gifs));
     } catch (error) {
-        yield put({ type: actions.GET_TRENDING_GIF_FAILED, error });
+        yield put(actions.receiveTrendingGifs(error));
     }
 }
 

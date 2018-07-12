@@ -1,0 +1,147 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Gifs click 1`] = `
+<Gifs
+  add={[Function]}
+  data={
+    Object {
+      "data": Array [
+        Object {
+          "id": "9D5c28pzK5sOcih2oE",
+          "images": Object {
+            "fixed_height_small": Object {
+              "url": "https://media0.giphy.com/media/3o72FeZuTL3u0mG3Vm/100.gif",
+            },
+          },
+          "title": "hola amigo",
+        },
+      ],
+    }
+  }
+  deleteFav={[Function]}
+  favorites={
+    Array [
+      Object {
+        "id": "9D5c28pzK5sOcih2oE",
+        "title": "happy louie anderson GIF by BasketsFX",
+        "url": "https://media3.giphy.com/media/9D5c28pzK5sOcih2oE/100.gif",
+      },
+      Object {
+        "id": "jIptyaX5Q7tdH2jLNZ",
+        "title": "glow alison brie GIF by NETFLIX",
+        "url": "https://media1.giphy.com/media/jIptyaX5Q7tdH2jLNZ/100.gif",
+      },
+    ]
+  }
+  getFavorites={[Function]}
+  match={
+    Object {
+      "path": "/",
+    }
+  }
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+  storeSubscription={
+    Subscription {
+      "listeners": Object {
+        "clear": [Function],
+        "get": [Function],
+        "notify": [Function],
+        "subscribe": [Function],
+      },
+      "onStateChange": [Function],
+      "parentSub": undefined,
+      "store": Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "unsubscribe": [Function],
+    }
+  }
+/>
+`;
+
+exports[`Gifs click1 1`] = `
+<Gifs
+  add={[Function]}
+  data={
+    Object {
+      "data": Array [
+        Object {
+          "id": "9D5c28pzK5sOcih21E",
+          "images": Object {
+            "fixed_height_small": Object {
+              "url": "https://media0.giphy.com/media/3o72FeZuTL3u0mG3Vm/100.gif",
+            },
+          },
+          "title": "hola amigo",
+        },
+      ],
+    }
+  }
+  deleteFav={[Function]}
+  favorites={
+    Array [
+      Object {
+        "id": "9D5c28pzK5sOcih2oE",
+        "title": "happy louie anderson GIF by BasketsFX",
+        "url": "https://media3.giphy.com/media/9D5c28pzK5sOcih2oE/100.gif",
+      },
+      Object {
+        "id": "jIptyaX5Q7tdH2jLNZ",
+        "title": "glow alison brie GIF by NETFLIX",
+        "url": "https://media1.giphy.com/media/jIptyaX5Q7tdH2jLNZ/100.gif",
+      },
+    ]
+  }
+  getFavorites={[Function]}
+  match={
+    Object {
+      "path": "/",
+    }
+  }
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+  storeSubscription={
+    Subscription {
+      "listeners": Object {
+        "clear": [Function],
+        "get": [Function],
+        "notify": [Function],
+        "subscribe": [Function],
+      },
+      "onStateChange": [Function],
+      "parentSub": undefined,
+      "store": Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "unsubscribe": [Function],
+    }
+  }
+/>
+`;

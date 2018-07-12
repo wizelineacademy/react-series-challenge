@@ -10,8 +10,7 @@ import Menu from './../Sidebar/Sidebar';
 import { add, getFavorites, deleteFav } from "./../../actions";
 
 class Gifs extends Component {
-  favorites = (e, obj) => {
-    e.preventDefault();
+  favorites = (obj) => {
     this.props.add(obj);
   }
 
@@ -41,7 +40,7 @@ class Gifs extends Component {
             </div>
             {
               (!check ?
-                <button onClick={(e) => { this.favorites(e, { url: v.images.fixed_height_small.url, id: v.id, title: v.title }) }}>
+                <button onClick={() => { this.favorites({ url: v.images.fixed_height_small.url, id: v.id, title: v.title }) }}>
                   Agregar a favoritos
               </button> :
                 <button onClick={() => { this.handleClick(v.id) }}>Eliminar de mis favoritos</button>
