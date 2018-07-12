@@ -6,7 +6,7 @@ import { toggleFavoriteGif } from '../actions/favorites';
 import NavBar from './NavBar';
 import InfiniteScroll from './InfiniteScroll';
 
-class Home extends Component {
+export class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {

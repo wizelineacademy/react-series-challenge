@@ -4,7 +4,7 @@ import { toggleFavoriteGif } from '../actions/favorites';
 import GifList from './GifList';
 import NavBar from './NavBar';
 
-class Favorites extends Component {
+export class Favorites extends Component {
   constructor(props) {
     super(props);
     this.state = {
