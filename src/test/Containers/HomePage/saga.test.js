@@ -12,7 +12,7 @@ describe('>>>Saga home works ',()=>{
         
         const dummyOutput = "Dummy Output" ,
               testValue = generator.next(dummyOutput).value
-        expect(testValue).toEqual(put(queryTrendingSuccess(dummyOutput)))
+        expect(testValue).toEqual(put(queryTrendingSuccess(undefined)))
      }); 
 
 });
