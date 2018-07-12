@@ -1,0 +1,842 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Should match snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <App
+    routes={
+        Array [
+            Object {
+              "component": [Function],
+              "exact": true,
+              "name": "home",
+              "route": "/",
+            },
+            Object {
+              "component": [Function],
+              "exact": false,
+              "name": "trending",
+              "route": "/trending",
+            },
+            Object {
+              "component": [Function],
+              "exact": false,
+              "name": "favorites",
+              "route": "/favorites",
+            },
+          ]
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": <Provider
+        store={
+                Object {
+                        "dispatch": [Function],
+                        "getState": [Function],
+                        "replaceReducer": [Function],
+                        "subscribe": [Function],
+                        Symbol(observable): [Function],
+                      }
+        }
+>
+        <styled.main>
+                <styled.nav>
+                        <Styled(NavLink)
+                                activeClassName="active"
+                                exact={true}
+                                to="/"
+                        >
+                                 
+                                home
+                                 
+                        </Styled(NavLink)>
+                        <Styled(NavLink)
+                                activeClassName="active"
+                                exact={false}
+                                to="/trending"
+                        >
+                                 
+                                trending
+                                 
+                        </Styled(NavLink)>
+                        <Styled(NavLink)
+                                activeClassName="active"
+                                exact={false}
+                                to="/favorites"
+                        >
+                                 
+                                favorites
+                                 
+                        </Styled(NavLink)>
+                </styled.nav>
+                <styled.section>
+                        <Switch>
+                                <Route
+                                        component={[Function]}
+                                        exact={true}
+                                        path="/"
+                                />
+                                <Route
+                                        component={[Function]}
+                                        exact={false}
+                                        path="/trending"
+                                />
+                                <Route
+                                        component={[Function]}
+                                        exact={false}
+                                        path="/favorites"
+                                />
+                        </Switch>
+                </styled.section>
+        </styled.main>
+</Provider>,
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": <styled.main>
+          <styled.nav>
+                    <Styled(NavLink)
+                              activeClassName="active"
+                              exact={true}
+                              to="/"
+                    >
+                               
+                              home
+                               
+                    </Styled(NavLink)>
+                    <Styled(NavLink)
+                              activeClassName="active"
+                              exact={false}
+                              to="/trending"
+                    >
+                               
+                              trending
+                               
+                    </Styled(NavLink)>
+                    <Styled(NavLink)
+                              activeClassName="active"
+                              exact={false}
+                              to="/favorites"
+                    >
+                               
+                              favorites
+                               
+                    </Styled(NavLink)>
+          </styled.nav>
+          <styled.section>
+                    <Switch>
+                              <Route
+                                        component={[Function]}
+                                        exact={true}
+                                        path="/"
+                              />
+                              <Route
+                                        component={[Function]}
+                                        exact={false}
+                                        path="/trending"
+                              />
+                              <Route
+                                        component={[Function]}
+                                        exact={false}
+                                        path="/favorites"
+                              />
+                    </Switch>
+          </styled.section>
+</styled.main>,
+        "store": Object {
+          "dispatch": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+          Symbol(observable): [Function],
+        },
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <styled.nav>
+              <Styled(NavLink)
+                            activeClassName="active"
+                            exact={true}
+                            to="/"
+              >
+                             
+                            home
+                             
+              </Styled(NavLink)>
+              <Styled(NavLink)
+                            activeClassName="active"
+                            exact={false}
+                            to="/trending"
+              >
+                             
+                            trending
+                             
+              </Styled(NavLink)>
+              <Styled(NavLink)
+                            activeClassName="active"
+                            exact={false}
+                            to="/favorites"
+              >
+                             
+                            favorites
+                             
+              </Styled(NavLink)>
+</styled.nav>,
+            <styled.section>
+              <Switch>
+                            <Route
+                                          component={[Function]}
+                                          exact={true}
+                                          path="/"
+                            />
+                            <Route
+                                          component={[Function]}
+                                          exact={false}
+                                          path="/trending"
+                            />
+                            <Route
+                                          component={[Function]}
+                                          exact={false}
+                                          path="/favorites"
+                            />
+              </Switch>
+</styled.section>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                <Styled(NavLink)
+                  activeClassName="active"
+                  exact={true}
+                  to="/"
+>
+                   
+                  home
+                   
+</Styled(NavLink)>,
+                <Styled(NavLink)
+                  activeClassName="active"
+                  exact={false}
+                  to="/trending"
+>
+                   
+                  trending
+                   
+</Styled(NavLink)>,
+                <Styled(NavLink)
+                  activeClassName="active"
+                  exact={false}
+                  to="/favorites"
+>
+                   
+                  favorites
+                   
+</Styled(NavLink)>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": "home",
+                "nodeType": "class",
+                "props": Object {
+                  "activeClassName": "active",
+                  "children": Array [
+                    " ",
+                    "home",
+                    " ",
+                  ],
+                  "exact": true,
+                  "to": "/",
+                },
+                "ref": null,
+                "rendered": Array [
+                  " ",
+                  "home",
+                  " ",
+                ],
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": "trending",
+                "nodeType": "class",
+                "props": Object {
+                  "activeClassName": "active",
+                  "children": Array [
+                    " ",
+                    "trending",
+                    " ",
+                  ],
+                  "exact": false,
+                  "to": "/trending",
+                },
+                "ref": null,
+                "rendered": Array [
+                  " ",
+                  "trending",
+                  " ",
+                ],
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": "favorites",
+                "nodeType": "class",
+                "props": Object {
+                  "activeClassName": "active",
+                  "children": Array [
+                    " ",
+                    "favorites",
+                    " ",
+                  ],
+                  "exact": false,
+                  "to": "/favorites",
+                },
+                "ref": null,
+                "rendered": Array [
+                  " ",
+                  "favorites",
+                  " ",
+                ],
+                "type": [Function],
+              },
+            ],
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": <Switch>
+                <Route
+                                component={[Function]}
+                                exact={true}
+                                path="/"
+                />
+                <Route
+                                component={[Function]}
+                                exact={false}
+                                path="/trending"
+                />
+                <Route
+                                component={[Function]}
+                                exact={false}
+                                path="/favorites"
+                />
+</Switch>,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": Array [
+                  <Route
+                    component={[Function]}
+                    exact={true}
+                    path="/"
+/>,
+                  <Route
+                    component={[Function]}
+                    exact={false}
+                    path="/trending"
+/>,
+                  <Route
+                    component={[Function]}
+                    exact={false}
+                    path="/favorites"
+/>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": "home",
+                  "nodeType": "class",
+                  "props": Object {
+                    "component": [Function],
+                    "exact": true,
+                    "path": "/",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": "trending",
+                  "nodeType": "class",
+                  "props": Object {
+                    "component": [Function],
+                    "exact": false,
+                    "path": "/trending",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": "favorites",
+                  "nodeType": "class",
+                  "props": Object {
+                    "component": [Function],
+                    "exact": false,
+                    "path": "/favorites",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+              ],
+              "type": [Function],
+            },
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+      "type": [Function],
+    },
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": <Provider
+          store={
+                    Object {
+                              "dispatch": [Function],
+                              "getState": [Function],
+                              "replaceReducer": [Function],
+                              "subscribe": [Function],
+                              Symbol(observable): [Function],
+                            }
+          }
+>
+          <styled.main>
+                    <styled.nav>
+                              <Styled(NavLink)
+                                        activeClassName="active"
+                                        exact={true}
+                                        to="/"
+                              >
+                                         
+                                        home
+                                         
+                              </Styled(NavLink)>
+                              <Styled(NavLink)
+                                        activeClassName="active"
+                                        exact={false}
+                                        to="/trending"
+                              >
+                                         
+                                        trending
+                                         
+                              </Styled(NavLink)>
+                              <Styled(NavLink)
+                                        activeClassName="active"
+                                        exact={false}
+                                        to="/favorites"
+                              >
+                                         
+                                        favorites
+                                         
+                              </Styled(NavLink)>
+                    </styled.nav>
+                    <styled.section>
+                              <Switch>
+                                        <Route
+                                                  component={[Function]}
+                                                  exact={true}
+                                                  path="/"
+                                        />
+                                        <Route
+                                                  component={[Function]}
+                                                  exact={false}
+                                                  path="/trending"
+                                        />
+                                        <Route
+                                                  component={[Function]}
+                                                  exact={false}
+                                                  path="/favorites"
+                                        />
+                              </Switch>
+                    </styled.section>
+          </styled.main>
+</Provider>,
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": <styled.main>
+            <styled.nav>
+                        <Styled(NavLink)
+                                    activeClassName="active"
+                                    exact={true}
+                                    to="/"
+                        >
+                                     
+                                    home
+                                     
+                        </Styled(NavLink)>
+                        <Styled(NavLink)
+                                    activeClassName="active"
+                                    exact={false}
+                                    to="/trending"
+                        >
+                                     
+                                    trending
+                                     
+                        </Styled(NavLink)>
+                        <Styled(NavLink)
+                                    activeClassName="active"
+                                    exact={false}
+                                    to="/favorites"
+                        >
+                                     
+                                    favorites
+                                     
+                        </Styled(NavLink)>
+            </styled.nav>
+            <styled.section>
+                        <Switch>
+                                    <Route
+                                                component={[Function]}
+                                                exact={true}
+                                                path="/"
+                                    />
+                                    <Route
+                                                component={[Function]}
+                                                exact={false}
+                                                path="/trending"
+                                    />
+                                    <Route
+                                                component={[Function]}
+                                                exact={false}
+                                                path="/favorites"
+                                    />
+                        </Switch>
+            </styled.section>
+</styled.main>,
+          "store": Object {
+            "dispatch": [Function],
+            "getState": [Function],
+            "replaceReducer": [Function],
+            "subscribe": [Function],
+            Symbol(observable): [Function],
+          },
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <styled.nav>
+                <Styled(NavLink)
+                                activeClassName="active"
+                                exact={true}
+                                to="/"
+                >
+                                 
+                                home
+                                 
+                </Styled(NavLink)>
+                <Styled(NavLink)
+                                activeClassName="active"
+                                exact={false}
+                                to="/trending"
+                >
+                                 
+                                trending
+                                 
+                </Styled(NavLink)>
+                <Styled(NavLink)
+                                activeClassName="active"
+                                exact={false}
+                                to="/favorites"
+                >
+                                 
+                                favorites
+                                 
+                </Styled(NavLink)>
+</styled.nav>,
+              <styled.section>
+                <Switch>
+                                <Route
+                                                component={[Function]}
+                                                exact={true}
+                                                path="/"
+                                />
+                                <Route
+                                                component={[Function]}
+                                                exact={false}
+                                                path="/trending"
+                                />
+                                <Route
+                                                component={[Function]}
+                                                exact={false}
+                                                path="/favorites"
+                                />
+                </Switch>
+</styled.section>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": Array [
+                  <Styled(NavLink)
+                    activeClassName="active"
+                    exact={true}
+                    to="/"
+>
+                     
+                    home
+                     
+</Styled(NavLink)>,
+                  <Styled(NavLink)
+                    activeClassName="active"
+                    exact={false}
+                    to="/trending"
+>
+                     
+                    trending
+                     
+</Styled(NavLink)>,
+                  <Styled(NavLink)
+                    activeClassName="active"
+                    exact={false}
+                    to="/favorites"
+>
+                     
+                    favorites
+                     
+</Styled(NavLink)>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": "home",
+                  "nodeType": "class",
+                  "props": Object {
+                    "activeClassName": "active",
+                    "children": Array [
+                      " ",
+                      "home",
+                      " ",
+                    ],
+                    "exact": true,
+                    "to": "/",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    " ",
+                    "home",
+                    " ",
+                  ],
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": "trending",
+                  "nodeType": "class",
+                  "props": Object {
+                    "activeClassName": "active",
+                    "children": Array [
+                      " ",
+                      "trending",
+                      " ",
+                    ],
+                    "exact": false,
+                    "to": "/trending",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    " ",
+                    "trending",
+                    " ",
+                  ],
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": "favorites",
+                  "nodeType": "class",
+                  "props": Object {
+                    "activeClassName": "active",
+                    "children": Array [
+                      " ",
+                      "favorites",
+                      " ",
+                    ],
+                    "exact": false,
+                    "to": "/favorites",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    " ",
+                    "favorites",
+                    " ",
+                  ],
+                  "type": [Function],
+                },
+              ],
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": <Switch>
+                  <Route
+                                    component={[Function]}
+                                    exact={true}
+                                    path="/"
+                  />
+                  <Route
+                                    component={[Function]}
+                                    exact={false}
+                                    path="/trending"
+                  />
+                  <Route
+                                    component={[Function]}
+                                    exact={false}
+                                    path="/favorites"
+                  />
+</Switch>,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": Array [
+                    <Route
+                      component={[Function]}
+                      exact={true}
+                      path="/"
+/>,
+                    <Route
+                      component={[Function]}
+                      exact={false}
+                      path="/trending"
+/>,
+                    <Route
+                      component={[Function]}
+                      exact={false}
+                      path="/favorites"
+/>,
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": "home",
+                    "nodeType": "class",
+                    "props": Object {
+                      "component": [Function],
+                      "exact": true,
+                      "path": "/",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": "trending",
+                    "nodeType": "class",
+                    "props": Object {
+                      "component": [Function],
+                      "exact": false,
+                      "path": "/trending",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": "favorites",
+                    "nodeType": "class",
+                    "props": Object {
+                      "component": [Function],
+                      "exact": false,
+                      "path": "/favorites",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                ],
+                "type": [Function],
+              },
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+        "type": [Function],
+      },
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

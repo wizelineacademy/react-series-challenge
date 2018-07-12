@@ -1,0 +1,431 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home Home snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Home
+    favorites={
+        Array [
+            Object {
+              "alt": "BMO",
+              "favorite": false,
+              "images": Object {
+                "downsized": Object {
+                  "url": "https://media3.giphy.com/media/UdtJqVG2gCchy/giphy-downsized.gif",
+                },
+              },
+              "onClick": [Function],
+              "src": "https://media3.giphy.com/media/UdtJqVG2gCchy/giphy-downsized.gif",
+            },
+            Object {
+              "alt": "BMO",
+              "favorite": false,
+              "images": Object {
+                "downsized": Object {
+                  "url": "https://media3.giphy.com/media/UdtJqVG2gCchy/giphy-downsized.gif",
+                },
+              },
+              "onClick": [Function],
+              "src": "https://media3.giphy.com/media/UdtJqVG2gCchy/giphy-downsized.gif",
+            },
+          ]
+    }
+    getTrending={[Function]}
+    search={
+        Array [
+            Object {
+              "alt": "BMO",
+              "favorite": false,
+              "images": Object {
+                "downsized": Object {
+                  "url": "https://media3.giphy.com/media/UdtJqVG2gCchy/giphy-downsized.gif",
+                },
+              },
+              "onClick": [Function],
+              "src": "https://media3.giphy.com/media/UdtJqVG2gCchy/giphy-downsized.gif",
+            },
+            Object {
+              "alt": "BMO",
+              "favorite": false,
+              "images": Object {
+                "downsized": Object {
+                  "url": "https://media3.giphy.com/media/UdtJqVG2gCchy/giphy-downsized.gif",
+                },
+              },
+              "onClick": [Function],
+              "src": "https://media3.giphy.com/media/UdtJqVG2gCchy/giphy-downsized.gif",
+            },
+          ]
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": Array [
+        <styled.h1>
+           Home 
+</styled.h1>,
+        <Connect(Styled(SearchBar))>
+           Search for Gifs 
+</Connect(Styled(SearchBar))>,
+        <styled.div>
+          <Styled(Connect(Component))
+                    alt={undefined}
+                    favorite={true}
+                    gif={
+                              Object {
+                                        "alt": "BMO",
+                                        "favorite": false,
+                                        "images": Object {
+                                          "downsized": Object {
+                                            "url": "https://media3.giphy.com/media/UdtJqVG2gCchy/giphy-downsized.gif",
+                                          },
+                                        },
+                                        "onClick": [Function],
+                                        "src": "https://media3.giphy.com/media/UdtJqVG2gCchy/giphy-downsized.gif",
+                                      }
+                    }
+                    src="https://media3.giphy.com/media/UdtJqVG2gCchy/giphy-downsized.gif"
+          />
+          <Styled(Connect(Component))
+                    alt={undefined}
+                    favorite={true}
+                    gif={
+                              Object {
+                                        "alt": "BMO",
+                                        "favorite": false,
+                                        "images": Object {
+                                          "downsized": Object {
+                                            "url": "https://media3.giphy.com/media/UdtJqVG2gCchy/giphy-downsized.gif",
+                                          },
+                                        },
+                                        "onClick": [Function],
+                                        "src": "https://media3.giphy.com/media/UdtJqVG2gCchy/giphy-downsized.gif",
+                                      }
+                    }
+                    src="https://media3.giphy.com/media/UdtJqVG2gCchy/giphy-downsized.gif"
+          />
+</styled.div>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": " Home ",
+        },
+        "ref": null,
+        "rendered": " Home ",
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": " Search for Gifs ",
+        },
+        "ref": null,
+        "rendered": " Search for Gifs ",
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <Styled(Connect(Component))
+              alt={undefined}
+              favorite={true}
+              gif={
+                            Object {
+                                          "alt": "BMO",
+                                          "favorite": false,
+                                          "images": Object {
+                                            "downsized": Object {
+                                              "url": "https://media3.giphy.com/media/UdtJqVG2gCchy/giphy-downsized.gif",
+                                            },
+                                          },
+                                          "onClick": [Function],
+                                          "src": "https://media3.giphy.com/media/UdtJqVG2gCchy/giphy-downsized.gif",
+                                        }
+              }
+              src="https://media3.giphy.com/media/UdtJqVG2gCchy/giphy-downsized.gif"
+/>,
+            <Styled(Connect(Component))
+              alt={undefined}
+              favorite={true}
+              gif={
+                            Object {
+                                          "alt": "BMO",
+                                          "favorite": false,
+                                          "images": Object {
+                                            "downsized": Object {
+                                              "url": "https://media3.giphy.com/media/UdtJqVG2gCchy/giphy-downsized.gif",
+                                            },
+                                          },
+                                          "onClick": [Function],
+                                          "src": "https://media3.giphy.com/media/UdtJqVG2gCchy/giphy-downsized.gif",
+                                        }
+              }
+              src="https://media3.giphy.com/media/UdtJqVG2gCchy/giphy-downsized.gif"
+/>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "alt": undefined,
+              "favorite": true,
+              "gif": Object {
+                "alt": "BMO",
+                "favorite": false,
+                "images": Object {
+                  "downsized": Object {
+                    "url": "https://media3.giphy.com/media/UdtJqVG2gCchy/giphy-downsized.gif",
+                  },
+                },
+                "onClick": [Function],
+                "src": "https://media3.giphy.com/media/UdtJqVG2gCchy/giphy-downsized.gif",
+              },
+              "src": "https://media3.giphy.com/media/UdtJqVG2gCchy/giphy-downsized.gif",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "alt": undefined,
+              "favorite": true,
+              "gif": Object {
+                "alt": "BMO",
+                "favorite": false,
+                "images": Object {
+                  "downsized": Object {
+                    "url": "https://media3.giphy.com/media/UdtJqVG2gCchy/giphy-downsized.gif",
+                  },
+                },
+                "onClick": [Function],
+                "src": "https://media3.giphy.com/media/UdtJqVG2gCchy/giphy-downsized.gif",
+              },
+              "src": "https://media3.giphy.com/media/UdtJqVG2gCchy/giphy-downsized.gif",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <styled.h1>
+             Home 
+</styled.h1>,
+          <Connect(Styled(SearchBar))>
+             Search for Gifs 
+</Connect(Styled(SearchBar))>,
+          <styled.div>
+            <Styled(Connect(Component))
+                        alt={undefined}
+                        favorite={true}
+                        gif={
+                                    Object {
+                                                "alt": "BMO",
+                                                "favorite": false,
+                                                "images": Object {
+                                                  "downsized": Object {
+                                                    "url": "https://media3.giphy.com/media/UdtJqVG2gCchy/giphy-downsized.gif",
+                                                  },
+                                                },
+                                                "onClick": [Function],
+                                                "src": "https://media3.giphy.com/media/UdtJqVG2gCchy/giphy-downsized.gif",
+                                              }
+                        }
+                        src="https://media3.giphy.com/media/UdtJqVG2gCchy/giphy-downsized.gif"
+            />
+            <Styled(Connect(Component))
+                        alt={undefined}
+                        favorite={true}
+                        gif={
+                                    Object {
+                                                "alt": "BMO",
+                                                "favorite": false,
+                                                "images": Object {
+                                                  "downsized": Object {
+                                                    "url": "https://media3.giphy.com/media/UdtJqVG2gCchy/giphy-downsized.gif",
+                                                  },
+                                                },
+                                                "onClick": [Function],
+                                                "src": "https://media3.giphy.com/media/UdtJqVG2gCchy/giphy-downsized.gif",
+                                              }
+                        }
+                        src="https://media3.giphy.com/media/UdtJqVG2gCchy/giphy-downsized.gif"
+            />
+</styled.div>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": " Home ",
+          },
+          "ref": null,
+          "rendered": " Home ",
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": " Search for Gifs ",
+          },
+          "ref": null,
+          "rendered": " Search for Gifs ",
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <Styled(Connect(Component))
+                alt={undefined}
+                favorite={true}
+                gif={
+                                Object {
+                                                "alt": "BMO",
+                                                "favorite": false,
+                                                "images": Object {
+                                                  "downsized": Object {
+                                                    "url": "https://media3.giphy.com/media/UdtJqVG2gCchy/giphy-downsized.gif",
+                                                  },
+                                                },
+                                                "onClick": [Function],
+                                                "src": "https://media3.giphy.com/media/UdtJqVG2gCchy/giphy-downsized.gif",
+                                              }
+                }
+                src="https://media3.giphy.com/media/UdtJqVG2gCchy/giphy-downsized.gif"
+/>,
+              <Styled(Connect(Component))
+                alt={undefined}
+                favorite={true}
+                gif={
+                                Object {
+                                                "alt": "BMO",
+                                                "favorite": false,
+                                                "images": Object {
+                                                  "downsized": Object {
+                                                    "url": "https://media3.giphy.com/media/UdtJqVG2gCchy/giphy-downsized.gif",
+                                                  },
+                                                },
+                                                "onClick": [Function],
+                                                "src": "https://media3.giphy.com/media/UdtJqVG2gCchy/giphy-downsized.gif",
+                                              }
+                }
+                src="https://media3.giphy.com/media/UdtJqVG2gCchy/giphy-downsized.gif"
+/>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "alt": undefined,
+                "favorite": true,
+                "gif": Object {
+                  "alt": "BMO",
+                  "favorite": false,
+                  "images": Object {
+                    "downsized": Object {
+                      "url": "https://media3.giphy.com/media/UdtJqVG2gCchy/giphy-downsized.gif",
+                    },
+                  },
+                  "onClick": [Function],
+                  "src": "https://media3.giphy.com/media/UdtJqVG2gCchy/giphy-downsized.gif",
+                },
+                "src": "https://media3.giphy.com/media/UdtJqVG2gCchy/giphy-downsized.gif",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "alt": undefined,
+                "favorite": true,
+                "gif": Object {
+                  "alt": "BMO",
+                  "favorite": false,
+                  "images": Object {
+                    "downsized": Object {
+                      "url": "https://media3.giphy.com/media/UdtJqVG2gCchy/giphy-downsized.gif",
+                    },
+                  },
+                  "onClick": [Function],
+                  "src": "https://media3.giphy.com/media/UdtJqVG2gCchy/giphy-downsized.gif",
+                },
+                "src": "https://media3.giphy.com/media/UdtJqVG2gCchy/giphy-downsized.gif",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

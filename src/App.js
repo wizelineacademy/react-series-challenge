@@ -1,21 +1,38 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { Navigation, Link, Main, Layout } from './App.style'
+import { Provider } from 'react-redux'
+import store from './store'
+import React from 'react';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+
+const App = ({ routes }) => {
+  /**
+   * Get link from given routes
+   */
+  const links = routes.map(route => <Link key={route.name} to={route.route} exact={route.exact} activeClassName="active" > {route.name} </Link>)
+  /**
+   * Routes from given routes
+   */
+  const router = routes.map(route => <Route key={route.name} path={route.route} exact={route.exact} component={route.component} />)
+  /**
+   * 
+   */
+  return (
+    <Router>
+      <Provider store={store} >
+        <Layout>
+          <Navigation>
+            {links}
+          </Navigation>
+          <Main>
+            <Switch>
+              {router}
+            </Switch>
+          </Main>
+        </Layout>
+      </Provider>
+    </Router>
+  )
 }
 
 export default App;
