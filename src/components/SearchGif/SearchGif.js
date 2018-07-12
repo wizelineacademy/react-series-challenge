@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import searchGifsActions from '../../actions/searchGifs';
 import favoriteGifsActions from '../../actions/favoriteGifs';
-import { SearchLabel, SearchInput  } from './Searchgif.styled';
+import { SearchLabel, SearchInput  } from './SearchGif.styled';
 
 const FAVORITE_GIFS_PATHNAME = '/favorites';
 const TRENDING_GIFS_PATHNAME = '/trending';

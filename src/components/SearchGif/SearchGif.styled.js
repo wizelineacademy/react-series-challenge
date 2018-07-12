@@ -6,6 +6,7 @@ const SearchLabel = styled.label`
     color: #333;
     text-align: right;
 `;
+SearchLabel.displayName = 'SearchLabel';
 
 const SearchInput = styled.input`
     -webkit-border-radius: 4px;
@@ -21,6 +22,8 @@ const SearchInput = styled.input`
         border-color: #E93D44;
     }
 `;
+
+SearchInput.displayName = 'SearchInput';
 
 export {
     SearchLabel,
