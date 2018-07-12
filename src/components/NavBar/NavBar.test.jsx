@@ -4,7 +4,9 @@ import 'jest-styled-components';
 
 import NavBar from './NarBar';
 
-jest.mock('react-router-dom', () => ({ Link: ({ children, ...rest }) => (<a href="#a" {...rest}>{children}</a>) }));
+jest.mock('react-router-dom', () => ({
+  Link: ({ children, ...rest }) => (<a href="#a" {...rest}>{children}</a>),
+}));
 
 describe('NavBar component', () => {
   let links = null;

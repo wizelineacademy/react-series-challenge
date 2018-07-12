@@ -41,13 +41,8 @@ class Favorite extends React.Component {
 }
 
 Favorite.propTypes = {
-  favoriteGifs: PropTypes.arrayOf(PropTypes.shape({
-    embed_url: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    id: PropTypes.string.isRequired,
-    isFavorite: PropTypes.bool.isRequired,
-  })).isRequired,
   fetchFavorite: PropTypes.func.isRequired,
+  favoriteGifs: PropTypes.object.isRequired,
 };
 
 export default Favorite;

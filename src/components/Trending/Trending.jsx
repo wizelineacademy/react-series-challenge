@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import Template from '../Template';
 import NavBar from '../NavBar';
 import GifGrid from '../GifGrid';
-import Gif from '../Gif';
 
 class Trending extends React.Component {
   constructor(props) {
@@ -39,7 +38,6 @@ class Trending extends React.Component {
       { text: 'Trending Gifs', url: '/trending', isActive: true },
       { text: 'Favorite Gifs', url: '/favorite', isActive: false },
     ];
-
     return (
       <Template>
         <NavBar links={links} placeholder="Search..." type="text" value={filterTrendingText} onChange={this.handleChange} />
@@ -59,7 +57,9 @@ Trending.propTypes = {
   filterTrendingText: PropTypes.string.isRequired,
   fetchTrending: PropTypes.func.isRequired,
   searchTrending: PropTypes.func.isRequired,
-  ...Gif.propTypes,
+  fetchFavorite: PropTypes.func.isRequired,
+  trendingGifs: PropTypes.object.isRequired,
+  favoriteGifs: PropTypes.object.isRequired,
 };
 
 export default Trending;
