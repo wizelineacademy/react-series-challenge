@@ -58,7 +58,7 @@ class GifCard extends Component {
         const gifOverlay = (
             <GifOverlay>
                 <GifTitle>
-                    {gif.title || ''}
+                    { (gif) ? gif.title : 'No GIF'}
                 </GifTitle>
                 <FavoriteBtn onClick={this.onClickFavoriteButton} isFavorite={this.state.isFavorite}>
                     { buttonIcon }
@@ -69,15 +69,17 @@ class GifCard extends Component {
         const gifOverlayLoading = (
             <GifOverlayLoading>
                 <p>Loading...</p>
-                <p>{gif.title}</p>
+                <p>{(gif) ? gif.title : 'No Gif'}</p>
             </GifOverlayLoading>
         );
 
         return (
+            gif ?
             <GifContainer>
                 <Gif src={gif.images.original.webp} onLoad={this.onLoadHandler} gifLoaded={this.state.gifLoaded ? 'LOADED' : 'NOT_LOADED'}/>
                 {!this.state.gifLoaded ? gifOverlayLoading : gifOverlay}
-            </GifContainer>
+            </GifContainer> :
+                <h1>No GIF</h1>
         );
     }
 
