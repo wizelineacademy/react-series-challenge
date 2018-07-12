@@ -23,13 +23,11 @@ describe('SearchBar', () => {
         <SearchBar {...props} />
       </ThemeProvider>
     );
-    //expect(component.find('#search-form')).toHaveLength(1);
-    component
-      .find('#search-form')
-      .first()
-      .simulate('submit', {
-        preventDefault() {},
-      });
+
+    expect(component.find('form')).toHaveLength(1);
+    component.find('form').simulate('submit', {
+      preventDefault() {},
+    });
     expect(onSearchMock.mock.calls.length).toBe(1);
   });
 });

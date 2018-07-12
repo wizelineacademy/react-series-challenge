@@ -45,8 +45,8 @@ const GifModal = ({
 }) => {
   const addFavBtn = (
     <button
-      onClick={e => {
-        e.preventDefault();
+      className="modal-add-fav-btn"
+      onClick={() => {
         addFavoriteId(gif.id);
       }}
     >
@@ -56,8 +56,8 @@ const GifModal = ({
 
   const removeFavBtn = (
     <button
-      onClick={e => {
-        e.preventDefault();
+      className="modal-remove-fav-btn"
+      onClick={() => {
         removeFavoriteId(gif.id);
       }}
     >

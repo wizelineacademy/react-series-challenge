@@ -43,4 +43,42 @@ describe('GifModal component', () => {
     component.find('#close-modal-btn').simulate('click');
     expect(closeModalMock.mock.calls.length).toBe(1);
   });
+
+  it('should trigger addFavoriteId when clicking modal-add-fav-btn', () => {
+    const addFavoriteIdMock = jest.fn();
+    const props = {
+      gif: gifSample,
+      isFavorite: false,
+      isOpen: true,
+      addFavoriteId: addFavoriteIdMock,
+      removeFavoriteId: jest.fn(),
+      closeModal: jest.fn(),
+    };
+
+    const component = mount(<GifModal {...props} />);
+    component
+      .find('.modal-add-fav-btn')
+      .first()
+      .simulate('click');
+    expect(addFavoriteIdMock.mock.calls.length).toBe(1);
+  });
+
+  it('should trigger removeFavoriteId when clicking modal-add-fav-btn', () => {
+    const removeFavoriteIdMock = jest.fn();
+    const props = {
+      gif: gifSample,
+      isFavorite: true,
+      isOpen: true,
+      addFavoriteId: jest.fn(),
+      removeFavoriteId: removeFavoriteIdMock,
+      closeModal: jest.fn(),
+    };
+
+    const component = mount(<GifModal {...props} />);
+    component
+      .find('.modal-remove-fav-btn')
+      .first()
+      .simulate('click');
+    expect(removeFavoriteIdMock.mock.calls.length).toBe(1);
+  });
 });

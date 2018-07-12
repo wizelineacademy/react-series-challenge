@@ -103,11 +103,11 @@ ShallowWrapper {
       "children": Array [
         <styled.img
           alt="gif.title"
-          itemprop="image"
+          itemProp="image"
           src="url"
 />,
         <p
-          itemprop="name"
+          itemProp="name"
 >
           gif.title
 </p>,
@@ -122,7 +122,7 @@ ShallowWrapper {
         <p>
           by: 
           <span
-                    itemprop="author"
+                    itemProp="author"
           >
                     username1
           </span>
@@ -150,7 +150,7 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "alt": "gif.title",
-          "itemprop": "image",
+          "itemProp": "image",
           "src": "url",
         },
         "ref": null,
@@ -163,7 +163,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": "gif.title",
-          "itemprop": "name",
+          "itemProp": "name",
         },
         "ref": null,
         "rendered": "gif.title",
@@ -209,7 +209,7 @@ ShallowWrapper {
           "children": Array [
             "by: ",
             <span
-              itemprop="author"
+              itemProp="author"
 >
               username1
 </span>,
@@ -224,7 +224,7 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": "username1",
-              "itemprop": "author",
+              "itemProp": "author",
             },
             "ref": null,
             "rendered": "username1",
@@ -270,11 +270,11 @@ ShallowWrapper {
         "children": Array [
           <styled.img
             alt="gif.title"
-            itemprop="image"
+            itemProp="image"
             src="url"
 />,
           <p
-            itemprop="name"
+            itemProp="name"
 >
             gif.title
 </p>,
@@ -289,7 +289,7 @@ ShallowWrapper {
           <p>
             by: 
             <span
-                        itemprop="author"
+                        itemProp="author"
             >
                         username1
             </span>
@@ -317,7 +317,7 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "alt": "gif.title",
-            "itemprop": "image",
+            "itemProp": "image",
             "src": "url",
           },
           "ref": null,
@@ -330,7 +330,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": "gif.title",
-            "itemprop": "name",
+            "itemProp": "name",
           },
           "ref": null,
           "rendered": "gif.title",
@@ -376,7 +376,7 @@ ShallowWrapper {
             "children": Array [
               "by: ",
               <span
-                itemprop="author"
+                itemProp="author"
 >
                 username1
 </span>,
@@ -391,7 +391,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": "username1",
-                "itemprop": "author",
+                "itemProp": "author",
               },
               "ref": null,
               "rendered": "username1",
