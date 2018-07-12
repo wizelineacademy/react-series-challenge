@@ -6,6 +6,7 @@ import {loadSearchGifs} from '../actions/searchGifs';
 import {searchFavGifs} from '../actions/favGifs';
 import {ALL_GIFS_VIEW} from "../App";
 import {FAV_GIFS_VIEW} from "../App";
+import { BrowserRouter as Router } from 'react-router-dom';
 
 const SearchBar =  withRouter ((props) => {
 
@@ -27,9 +28,9 @@ const SearchBar =  withRouter ((props) => {
     };
 
     return(
-        <div>
+        <Router>
             <input type="text" id="search" onKeyUp={searchString}/>
-        </div>
+        </Router>
     )
 
 });
