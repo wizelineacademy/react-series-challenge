@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ErrorBoundary>  Will check with the snaptshot  1`] = `
+<div>
+   NOT GETTING HERE ... =( 
+</div>
+`;
+
+exports[`<ErrorBoundary>  Will check with the snaptshot when Error happen 1`] = `
+<ErrorBoundary>
+  <ErrorComponent
+    throw={true}
+  >
+    <div>
+       NOT GETTING HERE ... =( 
+    </div>
+  </ErrorComponent>
+</ErrorBoundary>
+`;

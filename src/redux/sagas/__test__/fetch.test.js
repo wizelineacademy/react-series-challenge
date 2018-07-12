@@ -24,11 +24,19 @@ describe('SAGA local >', () => {
     currentYield = iterator.next().value;
     expect(currentYield).toEqual(put(actions.fetchStart()));
 
-    // assert
+
+    moxios.wait(() => {
+      const request = moxios.requests.mostRecent();
+      request.respondWith({
+        status: 200,
+        response: { data: [] },
+      });
+    });
+
     currentYield = iterator.next().value;
     expect(currentYield).toEqual(select(selectors.fetch_word));
 
     currentYield = iterator.next().value;
-    expect(currentYield).toEqual(0);
+    expect(currentYield).toEqual(put(actions.fetchError(new Error("Cannot read property 'length' of undefined") )));
   });
 });

@@ -1,4 +1,4 @@
-import { put, call, takeEvery, select } from 'redux-saga/effects';
+import { put, takeEvery, select } from 'redux-saga/effects';
 import axios from 'axios';
 
 // actionsDic
@@ -11,7 +11,6 @@ const baseUrl = 'https://api.giphy.com/v1/gifs/';
 
 export function* fetchingData() {
     try {
-        debugger;
         yield put(action.fetchStart());
 
         const word = yield select(selectors.fetch_word);
