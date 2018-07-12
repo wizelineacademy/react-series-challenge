@@ -21,6 +21,7 @@ export class Favorites extends Component {
   }
 
   filteredFavorites = () => {
+    if(!this.props.favorite) return null
     let result = {};
     let matches = Object.keys(this.props.favorite).filter(favorite => {
       let pattern = new RegExp(`.*?${this.state.searchValue}.*?`, 'i');
@@ -38,6 +39,7 @@ export class Favorites extends Component {
     var filtered = this.filteredFavorites();
     let searchToggle = null;
 
+    if(!this.props.favorite) return null
     if(Object.keys(this.props.favorite).length === 0) {
       searchToggle = <EmptyPlaceholder>No tienes favoritos.</EmptyPlaceholder>
     } else {

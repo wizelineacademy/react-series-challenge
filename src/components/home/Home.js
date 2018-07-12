@@ -31,6 +31,7 @@ export class Home extends Component {
   render() {
     let searchToggle = null;
 
+    if(!this.props.trending) return null
     if(Object.keys(this.props.trending).length === 0) {
       searchToggle = <EmptyPlaceholder>¡No hay gifs!</EmptyPlaceholder>
     } else {

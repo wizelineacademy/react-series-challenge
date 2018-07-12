@@ -15,6 +15,7 @@ export const GifList = (props) => {
     }
   }
 
+  if(!props.gifs) return null
   return (
     <StyledGifList>
       {
@@ -27,7 +28,7 @@ export const GifList = (props) => {
             src={props.gifs[gif].images.fixed_width_small.url}
             onClick={() => toggleFavorite(gif)}
           />
-        )
+        )          
       }
     </StyledGifList>
   )
