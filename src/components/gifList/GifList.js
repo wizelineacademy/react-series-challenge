@@ -5,7 +5,7 @@ import favoriteActions from 'actions/favorite';
 import Gif from 'components/gif';
 import { StyledGifList } from './GifList.style'
 
-const GifList = (props) => {
+export const GifList = (props) => {
   let toggleFavorite = (gif) => {
     let gifData = (props.favorite[gif]) || props.gifs[gif]
     if(gifData.liked) {

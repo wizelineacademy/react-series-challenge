@@ -3,6 +3,11 @@ import { connect } from 'react-redux';
 import LikeStatus from 'components/likeStatus';
 import { StyledGif } from './Gif.style'
 
+export const bgColor = (number) => {
+  let seed = number ? number : Math.random()
+  return  `#${(Math.floor(seed*16777215).toString(16))}`;
+}
+
 export const Gif = (props) => {
   let likeRender = <LikeStatus liked={false} />;
   if (
@@ -11,9 +16,6 @@ export const Gif = (props) => {
     Boolean(props.favorite[props.id].liked)
   ) {
     likeRender = <LikeStatus liked={true} />;
-  }
-  let bgColor = () => {
-    return  `#${(Math.floor(Math.random()*16777215).toString(16))}`;
   }
   return (
     <StyledGif bgColor={bgColor} src={props.src} onClick={props.onClick}>

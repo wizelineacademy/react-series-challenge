@@ -11,11 +11,7 @@ export const StyledGif = styled.div.attrs({
   display: flex;
   min-width: 66px;
   position: relative;
-  .like-status {
-    position: absolute;
-    visibility: hidden;
-  }
-  &:hover .like-status {
+  :hover span {
     visibility: visible;
   }
 `

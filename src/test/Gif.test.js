@@ -3,22 +3,22 @@ import { shallow, mount } from 'enzyme';
 import { Gif } from 'components/gif/Gif'
 import GifConnect from 'components/gif/Gif'
 import configureStore from 'redux-mock-store'
+import 'jest-styled-components'
+import toJSON from 'enzyme-to-json'
 
 describe('Gif', () => {
-
   test('renders properly', () => {
     let wrapper = shallow(<Gif></Gif>)
-    expect(wrapper).toMatchSnapshot();
+    expect(toJSON(wrapper)).toMatchSnapshot();
   });
 
   test('receives onClick prop', () => {
-    let wrapper = shallow(<Gif></Gif>)
     const mockClick = jest.fn();
-    wrapper.setProps({ onClick: mockClick });
-    wrapper.find('.gif').simulate(
+    let wrapper = shallow(<Gif onClick={mockClick}/>)
+    wrapper.simulate(
       'click'
     )
-    expect(mockClick.mock.calls.length).toBe(1);
+    expect(mockClick).toHaveBeenCalled();
   });
 
   test('receives title prop', () => {

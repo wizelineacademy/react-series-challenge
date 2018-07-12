@@ -5,7 +5,7 @@ import GifList from 'components/gifList';
 import { StyledHeading1 } from '../Heading1.style'
 import { EmptyPlaceholder } from '../EmptyPlaceholder.style'
 
-class Favorites extends Component {
+export class Favorites extends Component {
   constructor(props) {
     super(props);
     this.state = {

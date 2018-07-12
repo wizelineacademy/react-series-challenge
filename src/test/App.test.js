@@ -1,14 +1,14 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { Favorites } from 'components/favorites/Favorites'
+import App from '../App'
 
 let wrapper;
 
 beforeEach(() => {
-  wrapper = shallow(<Favorites/>)
+  wrapper = shallow(<App/>)
 })
 
-describe('Favorites', () => {
+describe('App', () => {
   test('renders properly', () => {
     expect(wrapper).toMatchSnapshot()
   })

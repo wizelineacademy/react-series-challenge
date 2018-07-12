@@ -17,4 +17,10 @@ describe('SearchBar', () => {
     )
     expect(mockChange.mock.calls.length).toBe(1);
   });
+
+  test('receives placeholder prop', () => {
+    let wrapper = shallow(<SearchBar />)
+    wrapper.setProps({ placeholder: 'TEST PLACEHOLDER' });
+    expect(wrapper.find('input').prop('placeholder')).toBe('TEST PLACEHOLDER');
+  });
 });
