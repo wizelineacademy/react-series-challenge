@@ -4,10 +4,10 @@ const loggerMiddleware = store => next => action => {
   let result = next(action);
 
   // TODO: uncomment
-  // console.group(type);
-  // if(payload) console.log(payload);
-  // console.log(store.getState());
-  // console.groupEnd();
+  console.group(type);
+  if(payload) console.log(payload);
+  console.log(store.getState());
+  console.groupEnd();
 
   return result;
 }
