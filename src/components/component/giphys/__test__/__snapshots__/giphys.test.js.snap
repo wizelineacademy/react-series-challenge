@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Giphys>  Will check with the snaptshot  1`] = `
-<div>
+<giphys__StyledContainer>
   <giphys__StyledGiphys
     key="3o7abttnfEEkYHspu8"
   >
@@ -17,5 +17,5 @@ exports[`<Giphys>  Will check with the snaptshot  1`] = `
       />
     </ErrorBoundary>
   </giphys__StyledGiphys>
-</div>
+</giphys__StyledContainer>
 `;

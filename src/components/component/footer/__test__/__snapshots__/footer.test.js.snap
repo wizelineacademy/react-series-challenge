@@ -5,7 +5,7 @@ exports[`<Footer>  Will check with the snaptshot  1`] = `
   className="footer"
 >
   <div>
-    Just a footer =)
+    Alfonso Ruiz
   </div>
 </footer__StyledFooter>
 `;
