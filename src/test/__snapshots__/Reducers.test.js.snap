@@ -1,0 +1,321 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Reducers applying FILTER_FAVORITES action should match snapshot 1`] = `
+Object {
+  "favorites": Array [],
+  "filterFavorites": "query",
+  "searchQuery": "",
+  "searchResults": Array [],
+  "trendingGifs": Array [],
+}
+`;
+
+exports[`Reducers applying LOAD_SAVED_FAVORITES action should match snapshot 1`] = `
+Object {
+  "favorites": Array [],
+  "filterFavorites": "",
+  "searchQuery": "",
+  "searchResults": Array [],
+  "trendingGifs": Array [],
+}
+`;
+
+exports[`Reducers applying SEARCH_FETCHED action should match snapshot 1`] = `
+Object {
+  "favorites": Array [
+    Object {
+      "favorite": false,
+      "id": "id",
+      "original": "original",
+      "title": "title",
+      "url": "url",
+    },
+  ],
+  "filterFavorites": "",
+  "searchQuery": undefined,
+  "searchResults": Array [
+    Object {
+      "favorite": false,
+      "id": "QMJgdNgjPBpwMOkvJv",
+      "original": "https://media3.giphy.com/media/QMJgdNgjPBpwMOkvJv/giphy.gif",
+      "title": "cardi b GIF by Maroon 5",
+      "url": "https://media3.giphy.com/media/QMJgdNgjPBpwMOkvJv/200_d.gif",
+    },
+  ],
+  "trendingGifs": Array [],
+}
+`;
+
+exports[`Reducers applying TOGGLE_FAVORITE action should match snapshot (when the gif IS already marked as favorite 1`] = `
+Object {
+  "favorites": Array [],
+  "filterFavorites": "",
+  "searchQuery": "",
+  "searchResults": Array [],
+  "trendingGifs": Array [],
+}
+`;
+
+exports[`Reducers applying TOGGLE_FAVORITE action should match snapshot (when the gif is NOT already marked as favorite 1`] = `
+Object {
+  "favorites": Array [
+    Object {
+      "favorite": true,
+      "id": "id",
+      "original": "original",
+      "title": "title",
+      "url": "url",
+    },
+  ],
+  "filterFavorites": "",
+  "searchQuery": "",
+  "searchResults": Array [],
+  "trendingGifs": Array [],
+}
+`;
+
+exports[`Reducers applying TOGGLE_FAVORITE action should match snapshot (with trending) 1`] = `
+Object {
+  "favorites": Array [
+    Object {
+      "favorite": true,
+      "id": "id",
+      "original": "original",
+      "title": "title",
+      "url": "url",
+    },
+  ],
+  "filterFavorites": "",
+  "searchQuery": "",
+  "searchResults": Array [],
+  "trendingGifs": Array [
+    Object {
+      "0": Object {
+        "_score": 0,
+        "bitly_gif_url": "https://gph.is/2HcREOZ",
+        "bitly_url": "https://gph.is/2HcREOZ",
+        "content_url": "",
+        "embed_url": "https://giphy.com/embed/QMJgdNgjPBpwMOkvJv",
+        "id": "QMJgdNgjPBpwMOkvJv",
+        "images": Object {
+          "480w_still": Object {
+            "height": "270",
+            "url": "https://media4.giphy.com/media/QMJgdNgjPBpwMOkvJv/480w_s.jpg",
+            "width": "480",
+          },
+          "downsized": Object {
+            "height": "147",
+            "size": "1401782",
+            "url": "https://media3.giphy.com/media/QMJgdNgjPBpwMOkvJv/giphy-downsized.gif",
+            "width": "261",
+          },
+          "downsized_large": Object {
+            "height": "270",
+            "size": "5426904",
+            "url": "https://media3.giphy.com/media/QMJgdNgjPBpwMOkvJv/giphy.gif",
+            "width": "480",
+          },
+          "downsized_medium": Object {
+            "height": "216",
+            "size": "3371200",
+            "url": "https://media3.giphy.com/media/QMJgdNgjPBpwMOkvJv/giphy-downsized-medium.gif",
+            "width": "384",
+          },
+          "downsized_small": Object {
+            "height": "134",
+            "mp4": "https://media3.giphy.com/media/QMJgdNgjPBpwMOkvJv/giphy-downsized-small.mp4",
+            "mp4_size": "164715",
+            "width": "238",
+          },
+          "downsized_still": Object {
+            "height": "147",
+            "size": "21571",
+            "url": "https://media3.giphy.com/media/QMJgdNgjPBpwMOkvJv/giphy-downsized_s.gif",
+            "width": "261",
+          },
+          "fixed_height": Object {
+            "height": "200",
+            "mp4": "https://media3.giphy.com/media/QMJgdNgjPBpwMOkvJv/200.mp4",
+            "mp4_size": "509222",
+            "size": "3181067",
+            "url": "https://media3.giphy.com/media/QMJgdNgjPBpwMOkvJv/200.gif",
+            "webp": "https://media3.giphy.com/media/QMJgdNgjPBpwMOkvJv/200.webp",
+            "webp_size": "688130",
+            "width": "356",
+          },
+          "fixed_height_downsampled": Object {
+            "height": "200",
+            "size": "248055",
+            "url": "https://media3.giphy.com/media/QMJgdNgjPBpwMOkvJv/200_d.gif",
+            "webp": "https://media3.giphy.com/media/QMJgdNgjPBpwMOkvJv/200_d.webp",
+            "webp_size": "55498",
+            "width": "356",
+          },
+          "fixed_height_small": Object {
+            "height": "100",
+            "mp4": "https://media3.giphy.com/media/QMJgdNgjPBpwMOkvJv/100.mp4",
+            "mp4_size": "196950",
+            "size": "883174",
+            "url": "https://media3.giphy.com/media/QMJgdNgjPBpwMOkvJv/100.gif",
+            "webp": "https://media3.giphy.com/media/QMJgdNgjPBpwMOkvJv/100.webp",
+            "webp_size": "259070",
+            "width": "178",
+          },
+          "fixed_height_small_still": Object {
+            "height": "100",
+            "size": "10941",
+            "url": "https://media3.giphy.com/media/QMJgdNgjPBpwMOkvJv/100_s.gif",
+            "width": "178",
+          },
+          "fixed_height_still": Object {
+            "height": "200",
+            "size": "33137",
+            "url": "https://media3.giphy.com/media/QMJgdNgjPBpwMOkvJv/200_s.gif",
+            "width": "356",
+          },
+          "fixed_width": Object {
+            "height": "112",
+            "mp4": "https://media3.giphy.com/media/QMJgdNgjPBpwMOkvJv/200w.mp4",
+            "mp4_size": "212040",
+            "size": "1165082",
+            "url": "https://media3.giphy.com/media/QMJgdNgjPBpwMOkvJv/200w.gif",
+            "webp": "https://media3.giphy.com/media/QMJgdNgjPBpwMOkvJv/200w.webp",
+            "webp_size": "306522",
+            "width": "200",
+          },
+          "fixed_width_downsampled": Object {
+            "height": "112",
+            "size": "93381",
+            "url": "https://media3.giphy.com/media/QMJgdNgjPBpwMOkvJv/200w_d.gif",
+            "webp": "https://media3.giphy.com/media/QMJgdNgjPBpwMOkvJv/200w_d.webp",
+            "webp_size": "24920",
+            "width": "200",
+          },
+          "fixed_width_small": Object {
+            "height": "56",
+            "mp4": "https://media3.giphy.com/media/QMJgdNgjPBpwMOkvJv/100w.mp4",
+            "mp4_size": "47642",
+            "size": "332575",
+            "url": "https://media3.giphy.com/media/QMJgdNgjPBpwMOkvJv/100w.gif",
+            "webp": "https://media3.giphy.com/media/QMJgdNgjPBpwMOkvJv/100w.webp",
+            "webp_size": "121276",
+            "width": "100",
+          },
+          "fixed_width_small_still": Object {
+            "height": "56",
+            "size": "4780",
+            "url": "https://media3.giphy.com/media/QMJgdNgjPBpwMOkvJv/100w_s.gif",
+            "width": "100",
+          },
+          "fixed_width_still": Object {
+            "height": "112",
+            "size": "13546",
+            "url": "https://media3.giphy.com/media/QMJgdNgjPBpwMOkvJv/200w_s.gif",
+            "width": "200",
+          },
+          "hd": Object {
+            "height": "1080",
+            "mp4": "https://media3.giphy.com/media/QMJgdNgjPBpwMOkvJv/giphy-hd.mp4",
+            "mp4_size": "6491910",
+            "width": "1920",
+          },
+          "looping": Object {
+            "mp4": "https://media3.giphy.com/media/QMJgdNgjPBpwMOkvJv/giphy-loop.mp4",
+            "mp4_size": "2228862",
+          },
+          "original": Object {
+            "frames": "73",
+            "hash": "88ab4ddeb3db162911c8f1a42f9ab04e",
+            "height": "270",
+            "mp4": "https://media3.giphy.com/media/QMJgdNgjPBpwMOkvJv/giphy.mp4",
+            "mp4_size": "794852",
+            "size": "5426904",
+            "url": "https://media3.giphy.com/media/QMJgdNgjPBpwMOkvJv/giphy.gif",
+            "webp": "https://media3.giphy.com/media/QMJgdNgjPBpwMOkvJv/giphy.webp",
+            "webp_size": "1025594",
+            "width": "480",
+          },
+          "original_mp4": Object {
+            "height": "270",
+            "mp4": "https://media3.giphy.com/media/QMJgdNgjPBpwMOkvJv/giphy.mp4",
+            "mp4_size": "794852",
+            "width": "480",
+          },
+          "original_still": Object {
+            "height": "270",
+            "size": "55018",
+            "url": "https://media3.giphy.com/media/QMJgdNgjPBpwMOkvJv/giphy_s.gif",
+            "width": "480",
+          },
+          "preview": Object {
+            "height": "148",
+            "mp4": "https://media3.giphy.com/media/QMJgdNgjPBpwMOkvJv/giphy-preview.mp4",
+            "mp4_size": "46925",
+            "width": "263",
+          },
+          "preview_gif": Object {
+            "height": "69",
+            "size": "49915",
+            "url": "https://media3.giphy.com/media/QMJgdNgjPBpwMOkvJv/giphy-preview.gif",
+            "width": "123",
+          },
+          "preview_webp": Object {
+            "height": "144",
+            "size": "46834",
+            "url": "https://media3.giphy.com/media/QMJgdNgjPBpwMOkvJv/giphy-preview.webp",
+            "width": "256",
+          },
+        },
+        "import_datetime": "2018-06-01 15:22:09",
+        "is_sticker": 0,
+        "rating": "g",
+        "slug": "maroon5-maroon-5-cardi-b-QMJgdNgjPBpwMOkvJv",
+        "source": "",
+        "source_post_url": "",
+        "source_tld": "",
+        "title": "cardi b GIF by Maroon 5",
+        "trending_datetime": "2018-07-11 22:30:01",
+        "type": "gif",
+        "url": "https://giphy.com/gifs/maroon5-maroon-5-cardi-b-QMJgdNgjPBpwMOkvJv",
+        "user": Object {
+          "avatar": "https://media2.giphy.com/avatars/maroon5/PEbr2UyzWosE.jpg",
+          "avatar_url": "https://media2.giphy.com/avatars/maroon5/PEbr2UyzWosE.jpg",
+          "banner_image": "https://media2.giphy.com/headers/maroon5/SWw8125Em2NK.jpg",
+          "banner_url": "https://media2.giphy.com/headers/maroon5/SWw8125Em2NK.jpg",
+          "display_name": "Maroon 5",
+          "profile_url": "https://giphy.com/maroon5/",
+          "username": "maroon5",
+        },
+        "username": "maroon5",
+      },
+      "favorite": false,
+    },
+  ],
+}
+`;
+
+exports[`Reducers applying TRENDING_FETCHED action should match snapshot 1`] = `
+Object {
+  "favorites": Array [
+    Object {
+      "favorite": false,
+      "id": "id",
+      "original": "original",
+      "title": "title",
+      "url": "url",
+    },
+  ],
+  "filterFavorites": "",
+  "searchQuery": "",
+  "searchResults": Array [],
+  "trendingGifs": Array [
+    Object {
+      "favorite": false,
+      "id": "QMJgdNgjPBpwMOkvJv",
+      "original": "https://media3.giphy.com/media/QMJgdNgjPBpwMOkvJv/giphy.gif",
+      "title": "cardi b GIF by Maroon 5",
+      "url": "https://media3.giphy.com/media/QMJgdNgjPBpwMOkvJv/200_d.gif",
+    },
+  ],
+}
+`;
