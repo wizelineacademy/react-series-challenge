@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Actions Action types should match snapshot 1`] = `
+Object {
+  "FILTER_FAVORITES": "FILTER_FAVORITES",
+  "GET_SEARCH": "GET_SEARCH",
+  "GET_TRENDING": "GET_TRENDING",
+  "LOAD_SAVED_FAVORITES": "LOAD_SAVED_FAVORITES",
+  "SEARCH_FETCHED": "SEARCH_FETCHED",
+  "TOGGLE_FAVORITE": "TOGGLE_FAVORITE",
+  "TRENDING_FETCHED": "TRENDING_FETCHED",
+}
+`;
+
+exports[`Actions getTrendingGifs should match snapshot 1`] = `
+Object {
+  "payload": null,
+  "type": "GET_TRENDING",
+}
+`;

@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Constants Constants match snapshot 1`] = `
+Object {
+  "SEARCH_API_URL": "http://api.giphy.com/v1/gifs/search",
+  "TRENDING_API_URL": "http://api.giphy.com/v1/gifs/trending",
+}
+`;
