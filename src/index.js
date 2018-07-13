@@ -5,7 +5,7 @@ import {Provider} from 'react-redux';
 import registerServiceWorker from './registerServiceWorker';
 import store from "./store";
 import { BrowserRouter as Router } from 'react-router-dom';
-
+require('dotenv').config();
 
 ReactDOM.render(
 

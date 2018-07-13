@@ -5,8 +5,8 @@ import {fetchSearchGifs,LOAD_SEARCH_GIFS} from "../actions/searchGifs";
 
 
 //Setting api configuration
-const apiUrl = 'https://api.giphy.com/v1';
-const apiKey = 'X6LoG2xSv6iWz6Vj5RqopNfzCs9iQLaO';
+const apiUrl = process.env.REACT_APP_API_URL;
+const apiKey = process.env.REACT_APP_API_KEY;
 
 //get using axios to api Giphy
 export const fetchGifs = (url) => {
