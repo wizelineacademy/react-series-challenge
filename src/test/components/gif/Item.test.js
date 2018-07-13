@@ -1,11 +1,8 @@
 import React from 'react';
-import { shallow, mount, render } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 import { Item } from '../../../components/gif';
-import {
-  Item as ItemStyled,
-  FavoriteButton
-} from '../../../components/gif/Item.style';
+import { FavoriteButton } from '../../../components/gif/Item.style';
 import 'jest-styled-components';
 
 describe('Item component', () => {
@@ -36,7 +33,7 @@ describe('Item component', () => {
   });
 });
 
-describe.only('Item styled component', () => {
+describe('Item styled component', () => {
   test('should be render favorite icon if received favorite=true', () => {
     const fakeData = {
       images: {

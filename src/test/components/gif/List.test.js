@@ -1,11 +1,7 @@
 import React from 'react';
-import { shallow, mount, render } from 'enzyme';
+import { shallow } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 import List from '../../../components/gif/List';
-import configureStore from 'redux-mock-store';
-
-const middlewares = [];
-const mockStore = configureStore(middlewares);
 
 describe('Favorites component', () => {
   test('should render correctly that is loading if i passed loading=true', () => {

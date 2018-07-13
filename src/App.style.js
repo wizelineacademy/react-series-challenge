@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Header = styled.header`
-  ul {
+  & ul {
     list-style-type: none;
     margin: 0;
     padding: 0 0;
@@ -10,12 +10,12 @@ export const Header = styled.header`
     text-align: left;
   }
 
-  ul li {
+  & ul li {
     display: inline-block;
     margin-right: 15px;
   }
 
-  ul li a {
+  & ul li a {
     display: block;
     color: white;
     text-align: center;
@@ -23,11 +23,7 @@ export const Header = styled.header`
     text-decoration: none;
   }
 
-  ul li a:hover {
+  & ul li a:hover {
     background-color: #111111;
-  }
-
-  ul li input {
-    float: rigth;
   }
 `;

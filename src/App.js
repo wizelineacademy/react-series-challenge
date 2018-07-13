@@ -12,7 +12,7 @@ class App extends Component {
     return (
       <Provider store={store}>
         <BrowserRouter>
-          <div className="App">
+          <div>
             <Header>
               <ul>
                 <li>

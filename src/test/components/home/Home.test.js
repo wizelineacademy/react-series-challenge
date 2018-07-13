@@ -1,7 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import Home from '../../../components/home';
-import { Item } from '../../../components/gif';
 import configureStore from 'redux-mock-store';
 
 const middlewares = [];
