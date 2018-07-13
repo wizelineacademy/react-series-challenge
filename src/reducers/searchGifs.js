@@ -5,7 +5,6 @@ const searchGifs = (state = {}, action) => {
     switch (action.type) {
         case FETCH_SEARCH_GIFS:
             const  { gifs } = action.payload;
-            console.log(gifs);
             return {...gifs};
         default:
             return state;

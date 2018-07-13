@@ -9,7 +9,6 @@ export const loadAllGifs = (payload) => ({
 })
 
 export const fetchAllGifs = (payload) =>{
-    console.log(FETCH_ALL_GIFS);
     return ({
         type : FETCH_ALL_GIFS,
         payload

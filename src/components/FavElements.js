@@ -24,7 +24,6 @@ class FavElements extends Component{
 
 //Set the main stage to props i need to use on this component
 const mapStateToProps = (state) => {
-    console.log('store ', state)
     const {
         favGifs,
     } = state;

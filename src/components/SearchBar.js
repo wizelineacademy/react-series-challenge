@@ -12,14 +12,11 @@ const SearchBar =  withRouter ((props) => {
 
     const searchString = (e) => {
         const {pathname} = props.history.location;
-        console.log('Pathname:', pathname);
         switch (pathname) {
             case ALL_GIFS_VIEW:
-                console.log('All search');
                 props.loadSearchGifs(e.target.value);
                 break;
             case FAV_GIFS_VIEW:
-                console.log('fav search');
                 props.searchFavGifs(e.target.value);
                 break
             default:

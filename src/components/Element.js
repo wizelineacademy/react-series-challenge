@@ -25,11 +25,11 @@ const Element = (props) => {
         )
     } else {
        return (
-           <RelativeDiv>
+           <RelativeDiv onClick={() => props.addItem(props.gif)}>
                <Shadow>
                    <IconFavBlue className="far fa-thumbs-up fa-3x"></IconFavBlue>
                </Shadow>
-               <ElementImg src={props.gif.images.original.webp} onClick={() => props.addItem(props.gif)}/>
+               <ElementImg src={props.gif.images.original.webp} />
            </RelativeDiv>
        )
     }

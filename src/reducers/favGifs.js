@@ -13,9 +13,7 @@ const favGifs = (state =initialState, action) => {
                 delete(newState.favs[action.payload.id])
             }else {
                 newState.favs[action.payload.id] = action.payload;
-                console.log(newState);
             }
-            console.log('State addReducer',newState);
             return newState;
         }
         //Search using a string and adds to favGifs[searchFavs]
