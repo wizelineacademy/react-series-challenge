@@ -1,3 +1,5 @@
+# FOR THIS PROJECT IN NECESARY TO CREATE AN .ENV FILE
+
 # React Series Challenge
 
 The output of this challenge is to create a Giphy Client. You will be applying the concepts that you learned along the course.
@@ -10,7 +12,7 @@ Joins us via [Slack](https://join.slack.com/t/wizelineacademy/shared_invite/enQt
 - Use enzyme and jest for testing
 - Use React Router and React 16 (already included in the boilerplate code)
 - Use Redux Saga for API requests
-- Use Redux for your application's state management 
+- Use Redux for your application's state management
 
 ## Delivery
 

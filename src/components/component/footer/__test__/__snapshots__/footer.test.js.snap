@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Footer>  Will check with the snaptshot  1`] = `
+<footer__StyledFooter
+  className="footer"
+>
+  <div>
+    Alfonso Ruiz
+  </div>
+</footer__StyledFooter>
+`;

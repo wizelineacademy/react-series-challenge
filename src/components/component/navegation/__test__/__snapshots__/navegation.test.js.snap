@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Navegation>  create a Snapshot  1`] = `
+<header>
+  <ul>
+    <li>
+      <navegation__StyledNavLink
+        activeClassName="active"
+        to="/home"
+      >
+        HOME
+      </navegation__StyledNavLink>
+    </li>
+    <li>
+      <navegation__StyledNavLink
+        activeClassName="active"
+        to="/keeps"
+      >
+        Favoritos
+      </navegation__StyledNavLink>
+    </li>
+  </ul>
+</header>
+`;
