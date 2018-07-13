@@ -10,9 +10,10 @@ import { injectGlobal } from 'styled-components';
 
 injectGlobal`
   body {
-    font-family: 'Roboto Slab', serif;
+    font-family: serif;
     background-color: #9aab9529;
     font-size:18px;
+    margin: 0;
   }
 `;
 

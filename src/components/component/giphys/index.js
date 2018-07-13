@@ -5,14 +5,34 @@ import ErrorBoundary from './../errorBoundary';
 import styled from "styled-components";
 
 const StyledGiphys = styled.div`
-  float: left;
+  display: inline-block;
   position: relative;
+  margin: 10px;
+`;
+
+const StyledExit = styled.div`
+  display: block;
+  height: 15px;
 `;
 
 const StyledButton = styled.button`
   position: absolute;
-  bottom: 0;
-  right: 0;
+  bottom: 8px;
+  right: 8px;
+  outline: none;
+  opacity: 0.6;
+  transition: 0.3s;
+  &:hover{
+    padding: 20px;
+    opacity: 1;
+    border-radius: 8px;
+    font-size: 20px;
+  }
+`;
+
+const StyledContainer = styled.div`
+  text-align: center;
+  background-color: #000000e8;
 `;
 
 class ImgG extends Component {
@@ -52,6 +72,10 @@ class Giphys extends Component {
           </StyledGiphys>
         );
 
+        if (i > 0 && (i+1) % 3 === 0) {
+          view = [view,<StyledExit />]
+        }
+
         if (local.filter && !v.title.includes(local.filter)) {
           view = null;
         }
@@ -61,9 +85,9 @@ class Giphys extends Component {
     }
 
     return (
-      <div>
+      <StyledContainer>
         {giphyView}
-      </div>
+      </StyledContainer>
     )
   }
 }
