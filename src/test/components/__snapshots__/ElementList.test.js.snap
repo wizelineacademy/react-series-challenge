@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ElementList should render without problems 1`] = `
+.c0 {
+  grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+  display: grid;
+  grid-gap: 10px;
+}
+
+<div
+  className="c0"
+>
+  <h1>
+    No info
+  </h1>
+</div>
+`;
