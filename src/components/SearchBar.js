@@ -26,7 +26,7 @@ const SearchBar =  withRouter ((props) => {
 
     return(
         <Router>
-            <input type="text" id="search" onKeyUp={searchString}/>
+            <input style={{ width: '500px', textAlign: 'center', height:'40px', fontSize:20}} placeholder='🔎 Type to search for gifs here' type="text" id="search" onKeyUp={searchString}/>
         </Router>
     )
 
@@ -43,4 +43,3 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 export default connect(null, mapDispatchToProps)(SearchBar);
- 

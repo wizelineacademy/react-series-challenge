@@ -13,8 +13,6 @@ class ElementsView extends Component{
     render(){
         return (
             <div>
-                <h2>Type to search for gifs</h2>
-
                 <h4>Main Gifs View!</h4>
                 <ElementList all={this.props.allGifs} search={this.props.searchGifs} />
             </div>
